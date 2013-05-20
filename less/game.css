@@ -1,0 +1,11 @@
+#gameboard {
+  width: 2000px;
+  height: 1000px;
+  position: relative;
+}
+#player {
+  width: 128px;
+  height: 256px;
+  position: absolute;
+  background: url(../img/player.png);
+}
