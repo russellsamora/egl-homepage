@@ -5261,13 +5261,26 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 html {
   overflow: hidden;
   background: #319b9b;
 }
+#blog {
+  position: absolute;
+  right: 0;
+  top: 64px;
+  width: 200px;
+  height: 200px;
+  background: rgba(50, 50, 50, 0.5);
+}
 #gameboard {
-  width: 2000px;
-  height: 1000px;
+  width: 1920px;
+  height: 1080px;
   position: relative;
   background: url(../img/grid.png);
 }
@@ -5277,22 +5290,13 @@ html {
   position: absolute;
   background: url(../img/player.png);
   background-position: -640px;
+  cursor: pointer;
 }
-#tree1 {
-  width: 180px;
-  height: 400px;
-  position: absolute;
-  top: 300px;
-  left: 1400px;
-  background: url(../img/livetree.png);
+.dev {
+  background: rgba(255, 0, 0, 0.5);
 }
-#tree2 {
-  width: 180px;
-  height: 400px;
-  position: absolute;
-  top: 500px;
-  left: 400px;
-  background: url(../img/livetree.png);
+.item {
+  cursor: pointer;
 }
 body,
 html {
