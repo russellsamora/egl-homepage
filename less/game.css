@@ -2,10 +2,11 @@
   width: 2000px;
   height: 1000px;
   position: relative;
+  background: url(../img/gridme.png);
 }
 #player {
   width: 128px;
   height: 256px;
   position: absolute;
-  background: url(../img/player.png);
+  background: url(../img/player.png) #aaaaaa;
 }
