@@ -1,32 +1,28 @@
-var player,
-	direction,
+var direction,
 	currentFrame,
 	numFrames = 2;
 /*** player *****/
 //set skeleton for player data
 function setupPlayer() {
-	player = {
-		selector: $('#player'),
-		otherSelector: document.getElementById('player'),
-		x: 0,
-		y: 0,
-		w: 80,
-		h: 160,
-		offset: {
-			x: 40,
-			y: 80
-		}
-	};
-}
-
-//hard set of player position with no animation
-function setPosition() {
-	player.x = 200;
-	player.y = 100;
-	player.selector.css({
-		top: player.y,
-		left: player.x
-	});
+	var d = document.createElement('div');
+	var i = new Image();
+	i.onload = function() {
+		d.setAttribute('class', player.class);
+		d.setAttribute('id', player.id);
+		$(d).css({
+			position: 'absolute',
+			top: player.y,
+			left: player.x,
+			width: player.w,
+			height: player.h,
+			backgroundImage: 'url(' + i.src + ')',
+			backgroundPosition: '-640px'
+		});
+		gameboard.append(d);
+		player.selector = $('#player');
+		player.otherSelector = document.getElementById('player');
+	}
+	i.src = '../img/' + player.id + '.png';
 }
 
 //figure out where to move the player and move em!

@@ -27,7 +27,12 @@ var width,
 	ready = false,
 	prevMoveX,
 	prevMoveY,
-	hitList;
+	hitList,
+	messageBox,
+	messageBoxP,
+	messageTimeout,
+	preventMovement = false,
+	preventMovementTimer;
 
 var devMode = false;
 
@@ -41,9 +46,9 @@ function init() {
 	setupHits(0);
 	setupEvents();
 	resize();
-	setPosition();
 	loadData('backup');
-	dev();
+	getFeed();
+	// dev();
 }
 
 function setupSelectors() {
@@ -54,35 +59,89 @@ function setupSelectors() {
 	scrollElement.each(function(i) {
         $(this).scrollTop(0).scrollLeft(0);
     });
+    messageBox = $('#message');
+    messageBoxP = $('#message p');
 }
 
 /*** setup ****/
 //bind input events to trigger functionality
 function setupEvents() {
 	gameboard.on('click', function(e) {
-		e.preventDefault();
-		if(!inTransit) {
-			//constrain to the left and top screen
-			var y = Math.max(0,(e.pageY - navBarHeight - player.offset.y)),
-				x = Math.max(0,e.pageX - player.offset.x);
+		//only if we didn't click on the player
+		if(!preventMovement) {
+			//hide boxes
+			clearTimeout(messageTimeout);
+			messageBox.fadeOut();
+			e.preventDefault();
+			if(!inTransit) {
+				//constrain to the left and top screen
+				var y = Math.max(0,(e.pageY - navBarHeight - player.offset.y)),
+					x = Math.max(0,e.pageX - player.offset.x);
 
-			//constrain bottom and right of screen
-			x = Math.min(x, gameboardWidth - player.w);
-			y = Math.min(y, gameboardHeight - player.h);
+				//constrain bottom and right of screen
+				x = Math.min(x, gameboardWidth - player.w);
+				y = Math.min(y, gameboardHeight - player.h);
 
-			var input = {
-				x: x,
-				y: y,
-				edgeX: e.clientX,
-				edgeY: e.clientY
-			};
+				var input = {
+					x: x,
+					y: y,
+					edgeX: e.clientX,
+					edgeY: e.clientY
+				};
 
-			movePlayer(input);
+				movePlayer(input);
+			}
 		}
 	});
 	$(window).on('resize', resize);
-	gameboard.on('click','.item', function(e) {
-		//this.id;
+
+	//show a message box with the items info
+	gameboard.on('click','.backgroundItem', function(e) {
+		//grab the message
+		var index = parseInt($(this).attr('data-index'),10),
+			messages = background[index].messages;
+		
+		showMessage(this, messages);
+	});
+
+	gameboard.on('click','#player', function(e) {
+		messages = player.messages;
+		showMessage(this, messages);
+	});
+}
+
+function showMessage(el, messages) {
+	clearTimeout(preventMovementTimer);
+	preventMovement = true;
+	preventMovementTimer = setTimeout(function() {
+		preventMovement = false;
+	}, 17);
+	var num = messages.length;
+	if(num === 1) {
+		messageBoxP.text(messages[0]);	
+	} else {
+		//pick random?
+		var ran = Math.floor(Math.random() * num);
+		messageBoxP.text(messages[ran]);
+	}
+	
+	//figure out how to align it center
+	var	top = parseInt(el.style.top,10) - 32;
+		left = parseInt(el.style.left,10);
+		mid = left + parseInt(el.style.width,10) / 2;
+
+	var msgWidth = parseInt(messageBox.css('width'), 10),
+		msgLeft = Math.floor(mid - msgWidth / 2);
+	
+	//clear old messages and change position and show and add fade out timer
+	clearTimeout(messageTimeout);
+	messageBox.hide().css({
+		top: top,
+		left: msgLeft
+	}).fadeIn(function() {
+		messageTimeout = setTimeout(function() {
+			messageBox.fadeOut();
+		},3000);
 	});
 }
 
@@ -91,18 +150,18 @@ function setupEnvironment(index) {
 	var b = background[index];
 	//create item, add to dom
 	var d = document.createElement('div');
-	i = new Image();
-	i.src = '../img/' + b.class + '.png';
+	var i = new Image();
 	i.onload = function() {
-		d.setAttribute('class', b.class + ' item');
+		d.setAttribute('class', b.class + ' backgroundItem');
 		d.setAttribute('id', b.id);
-		d.appendChild(i);
+		d.setAttribute('data-index', index);
 		$(d).css({
 			position: 'absolute',
 			top: b.y,
 			left: b.x,
 			width: b.w,
-			height: b.h
+			height: b.h,
+			backgroundImage: 'url(' + i.src + ')'
 		});
 		gameboard.append(d);
 		index++;
@@ -112,6 +171,7 @@ function setupEnvironment(index) {
 			console.log('environment loaded');
 		}
 	}
+	i.src = '../img/' + b.class + '.png';
 }
 
 //load in all the data for the invisible hit tests
@@ -266,7 +326,6 @@ function getHitList(input) {
 			hitList.push(other);
 		}
 	}
-	console.log(hitList);
 }
 
 //stop the current player movement animation
@@ -281,6 +340,36 @@ function stopMove() {
 	player.selector.css({
 		top: prevMoveY,
 		left: prevMoveX
+	});
+}
+
+function getFeed() {
+	$('#blog').rssfeed('http://communityplanit.engagementgamelab.org/?feed=rss2', {
+		limit: 1,
+		header: false,
+		dateformat: 'date',
+		snippet: false,
+		// media: false,
+		errormsg: 'check out our blog at this website!'
+	}, function() {
+		$('iframe').remove();
+		//remove the last paragraph tag (super hack!)
+		$('#blog p').first().remove();
+		$('#blog p').last().remove();
+		$('#blog p').last().remove();
+		$('#blog p').last().remove();
+
+		$('#blog h4 a').attr('target', '_blank');
+		var s = $('#blog p').text(),
+			link = $('#blog h4 a').attr('href');
+		var sub = s.substring(0,144) + '... <a target="_blank" href="' + link + '">[view post]</a>';
+		$('#blog p').html(sub);
+		$('#blog').append('<p style="text-align:center;"><button style="width: 90%;" id="hideBlog" class="btn btn-mini btn-warning" type="button">hide</button><p>')
+		$('#blog').fadeIn();
+		$('#hideBlog').on('click', function() {
+			console.log('ahoy');
+			$('#blog').fadeOut();
+		});
 	});
 }
 

@@ -6,14 +6,45 @@
 html {
 	overflow: hidden;
 	background: @color4;
+	.noHighlight();
 }
 #blog {
-	position: absolute;
+	display: none;
+	padding: 0 10px 0 0;
+	position: fixed;
 	right: 0;
 	top: 64px;
-	width: 200px;
-	height: 200px;
-	background: rgba(50,50,50,0.5);
+	background: @alphaBlack;
+	.rssBody {
+		width: 240px;
+		.rssRow {
+			list-style: none;
+			p {
+				width: 100%;
+				font-size: 1em;
+				font-family: @sansFontFamily;
+				a {
+					@color1;
+					text-shadow: none;
+				}
+				a:hover {
+					@color4;
+					text-decoration: none;
+				}	
+			}
+			h4 {
+				font-size: 1em;
+				a {
+					color: @color1;
+					text-shadow: none;
+				}
+				a:hover {
+					color: @color4;
+					text-decoration: none;
+				}
+			}
+		}
+	}
 }
 #gameboard {
 	width: 1920px;
@@ -21,16 +52,56 @@ html {
 	position: relative;
 	background: url(../img/grid.png);
 }
-#player {
-	width:80px;
-	height:160px;
-	position:absolute;
-	background: url(../img/player.png);
-	background-position: -640px;
+#clickToMove {
+	width: 100%;
+	height: 100%;
+}
+
+.backgroundItem {
 	cursor: pointer;
 }
-.item {
+
+#player {
 	cursor: pointer;
+}
+
+#infoBox {
+	display: none;
+	padding: 10px 0;
+	position:absolute;
+	top: 200px;
+	left: 200px;
+	z-index: @aboveAll;
+	background: @alphaBlack;
+	p {
+		padding: 10px 15px;
+		margin: 0;
+		cursor: default;
+		line-height: 1.2;
+		button {
+
+		}
+	}
+}
+#message {
+	display: none;
+	position:absolute;
+	padding: 10px 0;
+	position:absolute;
+	top: 200px;
+	left: 200px;
+	z-index: @aboveAll;
+	background: @alphaBlack;
+	p {
+		padding: 10px 15px;
+		margin: 0;
+		cursor: default;
+		line-height: 1.2;
+		.noHighlight();
+		button {
+
+		}
+	}
 }
 
 // dev stuff
@@ -39,4 +110,8 @@ html {
 }
 .hitBound {
 	background: rgba(0,0,255,0.4);
+}
+#test {
+	position: absolute;
+	top: 70px;
 }
