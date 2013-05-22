@@ -1,7 +1,7 @@
 var player = {
 	id: 'player',
 	class: 'character',
-	x: 200,
+	x: 550,
 	y: 200,
 	w: 80,
 	h: 160,

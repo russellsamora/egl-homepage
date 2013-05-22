@@ -3,7 +3,7 @@ var direction,
 	numFrames = 2;
 /*** player *****/
 //set skeleton for player data
-function setupPlayer() {
+function setupPlayer(file) {
 	var d = document.createElement('div');
 	var i = new Image();
 	i.onload = function() {
@@ -21,8 +21,11 @@ function setupPlayer() {
 		gameboard.append(d);
 		player.selector = $('#player');
 		player.otherSelector = document.getElementById('player');
+		//now we will enable all sorts of clickin!
+		setupEvents();
+		$('#infoBox').css('left', -360);
 	}
-	i.src = '../img/' + player.id + '.png';
+	i.src = '../img/' + file + '.png';
 }
 
 //figure out where to move the player and move em!

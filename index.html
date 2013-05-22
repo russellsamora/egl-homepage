@@ -35,8 +35,15 @@
 		<div id='gameboard'>
 		</div>
 		<div id='infoBox'>
-			<p>Welcome to the Engagement Game Lab!</p>
-			<p>
+			<div class='content'>
+				<p>To begin, choose a character:</p>
+				<p>
+					<img data-player='player0' src='http://placehold.it/80x160.png'>
+					<img data-player='player1' src='http://placehold.it/80x160.png'>
+					<img data-player='player2' src='http://placehold.it/80x160.png'>
+				</p>
+			</div>
+			<p style='display:none;'>
 				<button class="btn btn-default" type="button">yes</button>
 				<button class="btn btn-warning pull-right" type="button">no</button>
 			</p>
@@ -45,8 +52,10 @@
 			<p>I'm just the bits and bobs of it.</p>
 		</div>
 		<div id='blog'></div>
-		<script src="js/jquery.js"></script>
+		<script src="js/modernizr.js"></script>
+		<script src="js/jquery.js"></script>		
 		<script src="js/feed.js"></script>
+		<script src="js/howler.min.js"></script>
 		<script src='js/miso.min.js'></script>
 		<script src="js/game.js"></script>
 		<script src="js/player.js"></script>

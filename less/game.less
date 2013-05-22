@@ -59,29 +59,34 @@ html {
 
 .backgroundItem {
 	cursor: pointer;
+	z-index: 1;
 }
 
 #player {
+	z-index: 0;
 	cursor: pointer;
 }
 
 #infoBox {
-	display: none;
-	padding: 10px 0;
-	position:absolute;
-	top: 200px;
-	left: 200px;
+	padding: 10px 20px;
+	width: 360px;
+	top: 64px;
+	left:-360px;
+	position:fixed;
 	z-index: @aboveAll;
 	background: @alphaBlack;
 	p {
-		padding: 10px 15px;
-		margin: 0;
 		cursor: default;
 		line-height: 1.2;
-		button {
-
+		img {
+			padding: 0 10px;
+			cursor: pointer;
 		}
 	}
+	h4 {
+		text-align: center;
+	}
+	.transition(left 1s);
 }
 #message {
 	display: none;

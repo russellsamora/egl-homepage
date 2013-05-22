@@ -32,7 +32,11 @@ var width,
 	messageBoxP,
 	messageTimeout,
 	preventMovement = false,
-	preventMovementTimer;
+	preventMovementTimer,
+	infoBox,
+	infoBoxContent,
+	playing = false,
+	$body;
 
 var devMode = false;
 
@@ -42,16 +46,14 @@ $(function() {
 
 function init() {
 	setupSelectors();
-	setupPlayer();
 	setupHits(0);
-	setupEvents();
 	resize();
-	loadData('backup');
 	getFeed();
 	// dev();
 }
 
 function setupSelectors() {
+	$body = $('body');
 	gameboard = $('#gameboard');
 	gameboardWidth = parseInt(gameboard.css('width'),10);
 	gameboardHeight = parseInt(gameboard.css('height'),10);
@@ -59,6 +61,8 @@ function setupSelectors() {
 	scrollElement.each(function(i) {
         $(this).scrollTop(0).scrollLeft(0);
     });
+    infoBox = $('#infoBox');
+    infoBoxContent = $('#infoBox .content');
     messageBox = $('#message');
     messageBoxP = $('#message p');
 }
@@ -66,7 +70,7 @@ function setupSelectors() {
 /*** setup ****/
 //bind input events to trigger functionality
 function setupEvents() {
-	gameboard.on('click', function(e) {
+	$body.on('click', '#gameboard', function(e) {
 		//only if we didn't click on the player
 		if(!preventMovement) {
 			//hide boxes
@@ -96,7 +100,7 @@ function setupEvents() {
 	$(window).on('resize', resize);
 
 	//show a message box with the items info
-	gameboard.on('click','.backgroundItem', function(e) {
+	$body.on('click','#gameboard .backgroundItem', function(e) {
 		//grab the message
 		var index = parseInt($(this).attr('data-index'),10),
 			messages = background[index].messages;
@@ -104,7 +108,7 @@ function setupEvents() {
 		showMessage(this, messages);
 	});
 
-	gameboard.on('click','#player', function(e) {
+	$body.on('click','#player', function(e) {
 		messages = player.messages;
 		showMessage(this, messages);
 	});
@@ -126,7 +130,7 @@ function showMessage(el, messages) {
 	}
 	
 	//figure out how to align it center
-	var	top = parseInt(el.style.top,10) - 32;
+	var	top = parseInt(el.style.top,10) - 12;
 		left = parseInt(el.style.left,10);
 		mid = left + parseInt(el.style.width,10) / 2;
 
@@ -169,6 +173,7 @@ function setupEnvironment(index) {
 			setupEnvironment(index);
 		} else {
 			console.log('environment loaded');
+			loadData('backup');
 		}
 	}
 	i.src = '../img/' + b.class + '.png';
@@ -214,13 +219,14 @@ function loadData(backupData) {
 		});
 	}
 	rawData.fetch({ 
-		success : function() {
+		success: function() {
 			this.each(function(row){
 				gameData.push(row);
 			});
 			ready = true;
+			selectCharacter();
 		},
-		error : function() {
+		error: function() {
 			console.log('having a bad day? Try backup data!');
 			loadData('backup');
 		}
@@ -371,6 +377,19 @@ function getFeed() {
 			$('#blog').fadeOut();
 		});
 	});
+}
+
+function selectCharacter() {
+	$body.on('click','#infoBox img', function() {
+		var p = $(this).attr('data-player');
+		setupPlayer(p);
+	});
+	setTimeout(function() {
+		infoBox.css({
+			left: 0,
+			top: (height/2 - 152)
+		});
+	}, 200);
 }
 
 function dev() {
