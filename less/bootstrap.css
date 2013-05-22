@@ -5328,6 +5328,7 @@ h4 {
 #gameboard {
   width: 1920px;
   height: 1080px;
+  margin-top: 20px;
   position: relative;
   background: url(../img/grid.png);
 }

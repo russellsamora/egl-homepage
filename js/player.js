@@ -88,7 +88,9 @@ function movePlayer(input) {
 	setTimeout(animateWalkCycle, 17);	
 }
 
+//perform a jump move!
 function jumpPlayer() {
+	inTransit = true;
 	player.selector.css('background-position', -720);
 	sound.play('jump');
 	player.selector.animate({
@@ -97,6 +99,7 @@ function jumpPlayer() {
 		$(this).animate({
 			top: player.y
 		},250, function() {
+			inTransit = false;
 			player.selector.css('background-position', -640);
 		});
 	});

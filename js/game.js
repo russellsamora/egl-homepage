@@ -112,7 +112,7 @@ function setupEvents() {
 	$body.on('click','#player', function(e) {
 		if(!inTransit) {
 			messages = player.messages;
-			showMessage(this, messages);	
+			showMessage(this, messages);
 		}
 	});
 
@@ -121,6 +121,7 @@ function setupEvents() {
 			jumpPlayer();
 		}
 	});
+	showMessage(player.otherSelector,['click anywhere to move.']);
 }
 
 function showMessage(el, messages, noFade) {
@@ -130,13 +131,16 @@ function showMessage(el, messages, noFade) {
 		preventMovement = false;
 	}, 17);
 
-	var num = messages.length;
+	var num = messages.length,
+		msg;
 	if(num === 1) {
-		messageBoxP.text(messages[0]);	
+		msg = messages[0];
+		messageBoxP.text(msg);	
 	} else {
 		//pick random?
 		var ran = Math.floor(Math.random() * num);
-		messageBoxP.text(messages[ran]);
+		msg = messages[ran];
+		messageBoxP.text(msg);
 	}
 	
 	//figure out how to align it center
@@ -154,7 +158,7 @@ function showMessage(el, messages, noFade) {
 		left: msgLeft
 	});
 
-	var duration,
+	var duration = msg.length * 80;
 		fade = 200;
 	if(noFade) {
 		fade = 0;
@@ -163,7 +167,7 @@ function showMessage(el, messages, noFade) {
 	messageBox.fadeIn(fade, function() {
 		messageTimeout = setTimeout(function() {
 			messageBox.fadeOut();
-		},3000);
+		}, duration);
 	});
 }
 
@@ -402,10 +406,10 @@ function selectCharacter() {
 		var p = $(this).attr('data-player');
 		setupPlayer(p);
 	});
+	infoBox.css('top', height/2 - 152);
 	setTimeout(function() {
 		infoBox.css({
-			left: 0,
-			top: (height/2 - 152)
+			left: 0
 		});
 	}, 200);
 }
