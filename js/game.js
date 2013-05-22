@@ -101,16 +101,25 @@ function setupEvents() {
 
 	//show a message box with the items info
 	$body.on('click','#gameboard .backgroundItem', function(e) {
-		//grab the message
-		var index = parseInt($(this).attr('data-index'),10),
-			messages = background[index].messages;
-		
-		showMessage(this, messages);
+		if(!inTransit) {
+			//grab the message
+			var index = parseInt($(this).attr('data-index'),10),
+				messages = background[index].messages;
+			showMessage(this, messages);	
+		}
 	});
 
 	$body.on('click','#player', function(e) {
-		messages = player.messages;
-		showMessage(this, messages);
+		if(!inTransit) {
+			messages = player.messages;
+			showMessage(this, messages);	
+		}
+	});
+
+	$body.on('keypress', function(e) { 
+		if(!inTransit && e.which === 32) {
+			jumpPlayer();
+		}
 	});
 }
 
@@ -131,8 +140,8 @@ function showMessage(el, messages, noFade) {
 	}
 	
 	//figure out how to align it center
-	var	top = parseInt(el.style.top,10) - 12;
-		left = parseInt(el.style.left,10);
+	var	top = parseInt(el.style.top,10),
+		left = parseInt(el.style.left,10),
 		mid = left + parseInt(el.style.width,10) / 2;
 
 	var msgWidth = parseInt(messageBox.css('width'), 10),

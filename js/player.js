@@ -88,6 +88,19 @@ function movePlayer(input) {
 	setTimeout(animateWalkCycle, 17);	
 }
 
+function jumpPlayer() {
+	player.selector.css('background-position', -720);
+	sound.play('jump');
+	player.selector.animate({
+		top: player.y - 100
+	}, 250, function() {
+		$(this).animate({
+			top: player.y
+		},250, function() {
+			player.selector.css('background-position', -640);
+		});
+	});
+}
 //switch out sprite for walk cycle
 function animateWalkCycle() {
 	if(inTransit) {
