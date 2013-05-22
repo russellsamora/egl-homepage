@@ -68,6 +68,7 @@ function movePlayer(input) {
 	//figure out if we need to slide screen
 	slideScreen(input);
 
+	hitTest();
 	//set the animation
 	player.selector.animate({
 		top: input.y,
@@ -81,8 +82,6 @@ function movePlayer(input) {
 		});
 	});
 
-	
-	hitTest();
 	//reset frame since it auto counts up (so first is really 0 when it starts)
 	currentFrame = -1;
 	//delay this so if we have a hit right away, we don't animate

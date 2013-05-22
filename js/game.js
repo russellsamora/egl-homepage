@@ -22,7 +22,7 @@ var width,
 	gameboardHeight,
 	scrollElement,
 	maxScroll,
-	navBarHeight = 64,
+	navBarHeight = 80,
 	gameData = [],
 	ready = false,
 	prevMoveX,
@@ -114,12 +114,13 @@ function setupEvents() {
 	});
 }
 
-function showMessage(el, messages) {
+function showMessage(el, messages, noFade) {
 	clearTimeout(preventMovementTimer);
 	preventMovement = true;
 	preventMovementTimer = setTimeout(function() {
 		preventMovement = false;
 	}, 17);
+
 	var num = messages.length;
 	if(num === 1) {
 		messageBoxP.text(messages[0]);	
@@ -142,7 +143,15 @@ function showMessage(el, messages) {
 	messageBox.hide().css({
 		top: top,
 		left: msgLeft
-	}).fadeIn(function() {
+	});
+
+	var duration,
+		fade = 200;
+	if(noFade) {
+		fade = 0;
+	}
+
+	messageBox.fadeIn(fade, function() {
 		messageTimeout = setTimeout(function() {
 			messageBox.fadeOut();
 		},3000);
@@ -347,6 +356,7 @@ function stopMove() {
 		top: prevMoveY,
 		left: prevMoveX
 	});
+	showMessage(player.otherSelector,['Ouch!'], true);
 }
 
 function getFeed() {
@@ -373,7 +383,6 @@ function getFeed() {
 		$('#blog').append('<p style="text-align:center;"><button style="width: 90%;" id="hideBlog" class="btn btn-mini btn-warning" type="button">hide</button><p>')
 		$('#blog').fadeIn();
 		$('#hideBlog').on('click', function() {
-			console.log('ahoy');
 			$('#blog').fadeOut();
 		});
 	});
