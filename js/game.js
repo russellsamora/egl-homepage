@@ -36,6 +36,8 @@ var width,
 	infoBox,
 	infoBoxContent,
 	playing = false,
+	heightBuffer = 20,
+	keyUp = true,
 	$body;
 
 var devMode = false;
@@ -107,22 +109,34 @@ function setupEvents() {
 			showMessage(this, messages);	
 		}
 	});
-
+	//click to move or show message
 	$body.on('click','#player', function(e) {
 		if(!inTransit) {
 			messages = player.messages;
 			showMessage(this, messages);
 		}
 	});
-
+	//jump or dev mode
 	$body.on('keypress', function(e) { 
-		console.log(e.which);
 		if(!inTransit && e.which === 32) {
 			jumpPlayer();
-		} else if(e.which === 100) {
+		} else if(e.which === 114) {
 			dev();
 		}
 	});
+	//wasd move player
+	// $body.on('keydown', function(e) {
+	// 	if(!inTransit && keyUp) {
+	// 		var key = e.which;
+	// 		if(key === 87 || key === 65 || key === 83 || key === 68) {
+	// 			movePlayerKey(key);
+	// 		}	
+	// 	}
+	// });
+	// //end move
+	// $body.on('keyup', function(e) {
+	// 	keyUp = true;
+	// });
 	showMessage(player.otherSelector,['click anywhere to move.']);
 }
 
@@ -183,7 +197,7 @@ function setupEnvironment(index) {
 		//set the background image and append
 		var id = info.class + index;
 		item.setAttribute('id', id);
-		item.setAttribute('class', info.class + ' item bgItem');
+		item.setAttribute('class', info.class + ' item');
 		item.setAttribute('data-index', index);
 		$(item).css({
 			position: 'absolute',
@@ -251,7 +265,7 @@ function resize() {
 }
 
 //slide the screen if the player is transition outside the current frame
-function slideScreen(input) {
+function slideScreen(input, key) {
 	//check for page edge clicking to animate scroll!
 	var destX, destY;
 	//make sure transition isn't too fast.
@@ -302,7 +316,7 @@ function hitTest() {
 		for(var h = 0; h < hitList.length; h++) {
 			var other = hitList[h];
 			//hit test for bottom of both rectangles
-			if((bottomY >= other.bottom) && (bottomY <= other.bottom + 20)) {
+			if((bottomY >= other.bottom) && (bottomY <= other.bottom + heightBuffer)) {
 				var readyToFlip;
 				//if we just crossed hit the vertical intersection, switch the z-index, but only once
 				if(!other.flipped) {
@@ -315,14 +329,18 @@ function hitTest() {
 				}
 				if(readyToFlip) {
 					other.flipped = true;
-					other.selector.toggleClass('fgItem');					
+					other.selector.toggleClass('fgItem');
+					hitList.splice(h,1);				
 				}
 			}
 		}
 		//store the last step so we can place player there for no conflicts on next move
 		prevMoveX = tempX;
 		prevMoveY = tempY;
+
+		//this might be too frequent? ( can just do ever 150 and be safe?)
 		requestAnimationFrame(hitTest);
+		//setTimeout(hitTest,speedAmplifier * (heightBuffer - 10));
 	}
 }
 

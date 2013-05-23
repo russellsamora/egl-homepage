@@ -2,7 +2,7 @@ var player = {
 	id: 'player',
 	class: 'character',
 	x: 550,
-	y: 200,
+	y: 80,
 	w: 80,
 	h: 160,
 	offset: {
