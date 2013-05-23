@@ -46,10 +46,9 @@ $(function() {
 
 function init() {
 	setupSelectors();
-	setupHits(0);
+	setupEnvironment(0);
 	resize();
 	getFeed();
-	// dev();
 }
 
 function setupSelectors() {
@@ -117,8 +116,11 @@ function setupEvents() {
 	});
 
 	$body.on('keypress', function(e) { 
+		console.log(e.which);
 		if(!inTransit && e.which === 32) {
 			jumpPlayer();
+		} else if(e.which === 100) {
+			dev();
 		}
 	});
 	showMessage(player.otherSelector,['click anywhere to move.']);
@@ -144,7 +146,7 @@ function showMessage(el, messages, noFade) {
 	}
 	
 	//figure out how to align it center
-	var	top = parseInt(el.style.top,10),
+	var	top = parseInt(el.style.top,10) + 20,
 		left = parseInt(el.style.left,10),
 		mid = left + parseInt(el.style.width,10) / 2;
 
@@ -173,55 +175,38 @@ function showMessage(el, messages, noFade) {
 
 //load in data for environmental image assets and attach to DOM
 function setupEnvironment(index) {
-	var b = background[index];
+	var info = items[index];
 	//create item, add to dom
-	var d = document.createElement('div');
-	var i = new Image();
-	i.onload = function() {
-		d.setAttribute('class', b.class + ' backgroundItem');
-		d.setAttribute('id', b.id);
-		d.setAttribute('data-index', index);
-		$(d).css({
+	var item = document.createElement('div');
+	var img = new Image();
+	img.onload = function() {
+		//set the background image and append
+		var id = info.class + index;
+		item.setAttribute('id', id);
+		item.setAttribute('class', info.class + ' item bgItem');
+		item.setAttribute('data-index', index);
+		$(item).css({
 			position: 'absolute',
-			top: b.y,
-			left: b.x,
-			width: b.w,
-			height: b.h,
-			backgroundImage: 'url(' + i.src + ')'
+			top: info.y,
+			left: info.x,
+			width: img.width,
+			height: img.height,
+			backgroundImage: 'url(' + img.src + ')'
 		});
-		gameboard.append(d);
+		gameboard.append(item);
+		info.selector = $('#' + id);
+		info.w = img.width;
+		info.h = img.height;
+		info.bottom = info.y + info.h;
 		index++;
-		if(index < background.length) {
+		if(index < items.length) {
 			setupEnvironment(index);
 		} else {
 			console.log('environment loaded');
 			loadData('backup');
 		}
 	}
-	i.src = '../img/' + b.class + '.png';
-}
-
-//load in all the data for the invisible hit tests
-function setupHits(index) {
-	var b = invisibleOverlays[index];
-	//create item, add to dom
-	var d = document.createElement('div');
-	d.setAttribute('id', b.id);
-	d.setAttribute('class', 'hit');
-	$(d).css({
-		position: 'absolute',
-		top: b.y,
-		left: b.x,
-		width: b.w,
-		height: b.h
-	});
-	gameboard.append(d);
-	index++;
-	if(index < invisibleOverlays.length) {
-		setupHits(index);
-	} else {
-		setupEnvironment(0);
-	}
+	img.src = '../img/' + info.class + '.png';
 }
 
 //load in the custom data from either google spreadsheet or backup to csv
@@ -305,34 +290,46 @@ function slideScreen(input) {
 	}
 }
 
-//do a hit test with all invisible objects to see if we need to stop the player movement
+//hit test / flip z-index test on walk cycle
 function hitTest() {
 	//only test if moving...
 	if(inTransit) {
+		//must pull the current position (yuck)
+		var tempX = parseFloat(player.otherSelector.style.left),
+			tempY = parseFloat(player.otherSelector.style.top),
+			bottomY = tempY + player.h;
+		
 		for(var h = 0; h < hitList.length; h++) {
 			var other = hitList[h];
-			//must pull the current position (yuck)
-			var tempX = parseFloat(player.otherSelector.style.left),
-				tempY = parseFloat(player.otherSelector.style.top);
-
-			//classic rectangle hit test -> stop movement
-			if ((tempX + player.w >= other.x) && (tempX <= other.x + other.w) && (tempY + player.h >= other.y) && (tempY <= other.y + other.h)) {
-				stopMove();
-				break;
+			//hit test for bottom of both rectangles
+			if((bottomY >= other.bottom) && (bottomY <= other.bottom + 20)) {
+				var readyToFlip;
+				//if we just crossed hit the vertical intersection, switch the z-index, but only once
+				if(!other.flipped) {
+					readyToFlip = true;
+				}
+				//check for actual collision
+				if ((tempX + player.w >= other.x) && (tempX <= other.x + other.w)) {
+					stopMove();
+					break;
+				}
+				if(readyToFlip) {
+					other.flipped = true;
+					other.selector.toggleClass('fgItem');					
+				}
 			}
-			//store the last step so we can place player there for no conflicts on next move
-			prevMoveX = tempX;
-			prevMoveY = tempY;
-			requestAnimationFrame(hitTest);
 		}
+		//store the last step so we can place player there for no conflicts on next move
+		prevMoveX = tempX;
+		prevMoveY = tempY;
+		requestAnimationFrame(hitTest);
 	}
 }
 
-//create a list of objects that are in the general vicinity of the new path being traveled
-//this will let us iterate thru less objects when doing hit test
-function getHitList(input) {
+function setZIndex(input) {
 	var minX = Math.min(input.x,player.x),
-		minY = Math.min(input.y,player.y);
+		minY = Math.min(input.y,player.y),
+		playerBottom = player.y + player.h;
 
 	if(devMode) {
 		$('.dirtyBound').remove();
@@ -348,10 +345,17 @@ function getHitList(input) {
 		gameboard.append(d);
 	}
 	hitList = [];
-	for(var i = 0; i < invisibleOverlays.length; i++) {
-		var other = invisibleOverlays[i];
+	for(var i = 0; i < items.length; i++) {
+		var other = items[i];
 		if ((minX + input.w >= other.x) && (minX <= other.x + other.w) && (minY + input.h >= other.y) && (minY <= other.y + other.h)) {
+			other.flipped = false;
 			hitList.push(other);
+			//check to see which side the player is on (above or below)
+			if(playerBottom < other.bottom) {
+				other.selector.addClass('fgItem');
+			} else {
+				other.selector.removeClass('fgItem');
+			}
 		}
 	}
 }
@@ -415,7 +419,13 @@ function selectCharacter() {
 }
 
 function dev() {
-	devMode = true;
-	$('.hit').addClass('hitBound');
-	$('#player').css('background-color', 'rgba(0,255,0,0.5)');
+	devMode = !devMode;
+	console.log(devMode);
+	if(devMode) {
+		$('.item').addClass('hitBound');
+		$('#player').css('background-color', 'rgba(0,255,0,0.5)');		
+	} else {
+		$('.item').removeClass('hitBound');
+		$('#player').css('background-color', 'rgba(0,0,0,0)');
+	}
 }

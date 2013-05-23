@@ -63,12 +63,13 @@ function movePlayer(input) {
 	}
 	input.w = absDiffX + player.w;
 	input.h = absDiffY + player.h;
-	getHitList(input);
+	
+	//set the z-indexes to the right value
+	setZIndex(input);
 
 	//figure out if we need to slide screen
 	slideScreen(input);
 
-	hitTest();
 	//set the animation
 	player.selector.animate({
 		top: input.y,
@@ -81,6 +82,9 @@ function movePlayer(input) {
 			'background-position': -640
 		});
 	});
+
+	//for hitting AND for flipping index
+	hitTest();
 
 	//reset frame since it auto counts up (so first is really 0 when it starts)
 	currentFrame = -1;
