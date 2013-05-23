@@ -17,7 +17,6 @@ window.requestAnimationFrame = (function() {
 var width,
 	height,
 	inTransit = false,
-	gameboard,
 	gameboardWidth,
 	gameboardHeight,
 	scrollElement,
@@ -37,8 +36,11 @@ var width,
 	infoBoxContent,
 	playing = false,
 	heightBuffer = 20,
-	keyUp = true,
-	$body;
+	keyUp = true;
+
+var $body,
+	$gameboard,
+	$overlay;
 
 var devMode = false;
 
@@ -55,9 +57,10 @@ function init() {
 
 function setupSelectors() {
 	$body = $('body');
-	gameboard = $('#gameboard');
-	gameboardWidth = parseInt(gameboard.css('width'),10);
-	gameboardHeight = parseInt(gameboard.css('height'),10);
+	$overlay = $('.overlay');
+	$gameboard = $('#gameboard');
+	gameboardWidth = parseInt($gameboard.css('width'),10);
+	gameboardHeight = parseInt($gameboard.css('height'),10);
 	scrollElement = $('html, body');
 	scrollElement.each(function(i) {
         $(this).scrollTop(0).scrollLeft(0);
@@ -101,19 +104,24 @@ function setupEvents() {
 	$(window).on('resize', resize);
 
 	//show a message box with the items info
-	$body.on('click','#gameboard .backgroundItem', function(e) {
+	$body.on('click','#gameboard .item', function(e) {
 		if(!inTransit) {
 			//grab the message
-			var index = parseInt($(this).attr('data-index'),10),
-				messages = background[index].messages;
-			showMessage(this, messages);	
+			preventMove();
+			var index = parseInt($(this).attr('data-index'),10);
+			if(items[index].action) {
+				items[index].action();
+			} else {
+				showMessage(this, items[index].messages);
+			}
 		}
 	});
+
 	//click to move or show message
 	$body.on('click','#player', function(e) {
 		if(!inTransit) {
-			messages = player.messages;
-			showMessage(this, messages);
+			preventMove();
+			showMessage(this, player.messages);
 		}
 	});
 	//jump or dev mode
@@ -137,16 +145,16 @@ function setupEvents() {
 	// $body.on('keyup', function(e) {
 	// 	keyUp = true;
 	// });
+
+	$body.on('click','.returnToGame', function(e) {
+		$overlay.fadeOut();
+	});
+
+	//on load, this is our tutorial
 	showMessage(player.otherSelector,['click anywhere to move.']);
 }
 
 function showMessage(el, messages, noFade) {
-	clearTimeout(preventMovementTimer);
-	preventMovement = true;
-	preventMovementTimer = setTimeout(function() {
-		preventMovement = false;
-	}, 17);
-
 	var num = messages.length,
 		msg;
 	if(num === 1) {
@@ -207,7 +215,7 @@ function setupEnvironment(index) {
 			height: img.height,
 			backgroundImage: 'url(' + img.src + ')'
 		});
-		gameboard.append(item);
+		$gameboard.append(item);
 		info.selector = $('#' + id);
 		info.w = img.width;
 		info.h = img.height;
@@ -360,7 +368,7 @@ function setZIndex(input) {
 			width: input.w,
 			height: input.h
 		});	
-		gameboard.append(d);
+		$gameboard.append(d);
 	}
 	hitList = [];
 	for(var i = 0; i < items.length; i++) {
@@ -446,4 +454,16 @@ function dev() {
 		$('.item').removeClass('hitBound');
 		$('#player').css('background-color', 'rgba(0,0,0,0)');
 	}
+}
+
+function whiteboard() {
+	$overlay.fadeIn();
+}
+
+function preventMove() {
+	clearTimeout(preventMovementTimer);
+	preventMovement = true;
+	preventMovementTimer = setTimeout(function() {
+		preventMovement = false;
+	}, 17);
 }

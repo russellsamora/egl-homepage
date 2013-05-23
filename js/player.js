@@ -19,7 +19,7 @@ function setupPlayer(file) {
 			backgroundImage: 'url(' + i.src + ')',
 			backgroundPosition: '-640px'
 		});
-		gameboard.append(d);
+		$gameboard.append(d);
 		player.selector = $('#player');
 		player.otherSelector = document.getElementById('player');
 		//now we will enable all sorts of clickin!
@@ -27,7 +27,7 @@ function setupPlayer(file) {
 
 		//hide the player picker box
 		$('#infoBox').css('left', -360);
-		$('#gameboard').removeClass('outOfFocus');
+		$gameboard.removeClass('outOfFocus');
 	}
 	i.src = '../img/' + file + '.png';
 }
