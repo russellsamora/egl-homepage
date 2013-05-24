@@ -83,6 +83,8 @@ function setupEvents() {
 
 	//on load, this is our tutorial
 	showMessage({el: player.otherSelector, messages:['click anywhere to move.']});
+	playing = true;
+	tick();
 }
 
 //special event for selecting character, triggers other events to load

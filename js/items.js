@@ -18,5 +18,12 @@ var items = {
 		action: function() {
 			whiteboard();
 		}
+	},
+	'burger': {
+		class: 'burger',
+		x: 500,
+		y: 350,
+		frames: 6,
+		messages: ['le cheezbooooger']
 	}
 };

@@ -29,8 +29,11 @@ var	player,
 var prevMoveX,
 	prevMoveY,
 	hitList,
+	animatedItemList,
 	peopleKeys,
-	itemKeys;
+	itemKeys,
+	currentFrame = 0,
+	numFrames = 64;
 
 var	messageTimeout,
 	preventMovementTimeout;
@@ -82,6 +85,7 @@ function setupSelectors() {
 }
 
 function setupKeys() {
+	animatedItemList = [];
 	peopleKeys = Object.keys(people);
 	itemKeys = Object.keys(items);
 	setupEnvironment(0);
@@ -134,26 +138,38 @@ function showMessage(options) {
 
 //load in data for environmental image assets and attach to DOM
 function setupEnvironment(index) {
-	var info = items[itemKeys[index]];
+	var key = itemKeys[index];
+	var info = items[key];
 	//create item, add to dom
 	var item = document.createElement('div');
 	var img = new Image();
 	img.onload = function() {
 		//set the background image and append
-		item.setAttribute('id', itemKeys[index]);
+		item.setAttribute('id', key);
 		item.setAttribute('class', info.class + ' item');
-		item.setAttribute('data-key', itemKeys[index]);
+		item.setAttribute('data-key', key);
+		var divWidth;
+		//set size, based on if it is animated or not
+		if(info.frames) {
+			//if animted, add it to animation list
+			animatedItemList.push(key);
+			info.curFrame = Math.floor(Math.random() * info.frames);
+			divWidth = Math.floor(img.width / info.frames);
+		} else {
+			divWidth = img.width;
+		}
+		console.log(divWidth);
 		$(item).css({
 			position: 'absolute',
 			top: info.y,
 			left: info.x,
-			width: img.width,
+			width: divWidth,
 			height: img.height,
 			backgroundImage: 'url(' + img.src + ')'
 		});
 		$gameboard.append(item);
-		info.selector = $('#' + itemKeys[index]);
-		info.w = img.width;
+		info.selector = $('#' + key);
+		info.w = divWidth;
 		info.h = img.height;
 		info.bottom = info.y + info.h;
 		index++;
@@ -169,15 +185,16 @@ function setupEnvironment(index) {
 
 //load in the people image files and bind data
 function setupPeople(index) {
-	var info = people[peopleKeys[index]];
+	var key = peopleKeys[index];
+	var info = people[key];
 	//create item, add to dom
 	var item = document.createElement('div');
 	var img = new Image();
 	img.onload = function() {
 		//set the background image and append
-		item.setAttribute('id', peopleKeys[index]);
+		item.setAttribute('id', key);
 		item.setAttribute('class', 'person');
-		item.setAttribute('data-key', peopleKeys[index]);
+		item.setAttribute('data-key', key);
 		$(item).css({
 			position: 'absolute',
 			top: info.y,
@@ -187,7 +204,7 @@ function setupPeople(index) {
 			backgroundImage: 'url(' + img.src + ')'
 		});
 		$gameboard.append(item);
-		info.selector = $('#' + peopleKeys[index]);
+		info.selector = $('#' + key);
 		info.w = img.width;
 		info.h = img.height;
 		info.bottom = info.y + info.h;
@@ -199,8 +216,9 @@ function setupPeople(index) {
 			loadData('backup');
 		}
 	}
-	img.src = '../img/people/' + peopleKeys[index] + '.png';
+	img.src = '../img/people/' + key + '.png';
 }
+
 //load in the custom data from either google spreadsheet or backup to csv
 function loadData(backupData) {
 	var rawData;
@@ -428,6 +446,41 @@ function getFeed() {
 	});
 }
 
+//simple timer to make sure we don't move when click item
+function preventMove() {
+	clearTimeout(preventMovementTimeout);
+	preventMovement = true;
+	preventMovementTimeout = setTimeout(function() {
+		preventMovement = false;
+	}, 17);
+}
+
+function tick() {
+	if(ready && playing) {
+		currentFrame++;
+		if(currentFrame >= numFrames) {
+			currentFrame = 0;
+		}
+		if(currentFrame % 8 === 0) {
+			updateItemAnimations();	
+		}
+		requestAnimationFrame(tick);
+	}
+}
+
+function updateItemAnimations() {
+	for(var a = 0; a < animatedItemList.length; a++) {
+		var item = items[animatedItemList[a]];
+		item.curFrame++;
+		if(item.curFrame >= item.frames) {
+			item.curFrame = 0;
+		}
+		var position = -item.curFrame * item.w;
+		// console.log(position);
+		item.selector.css('background-position', position);
+	}
+}
+
 function dev() {
 	devMode = !devMode;
 	console.log(devMode);
@@ -441,13 +494,4 @@ function dev() {
 		$('.dirtyBound').remove();
 		$('#player').css('background-color', 'rgba(0,0,0,0)');
 	}
-}
-
-//simple timer to make sure we don't move when click item
-function preventMove() {
-	clearTimeout(preventMovementTimeout);
-	preventMovement = true;
-	preventMovementTimeout = setTimeout(function() {
-		preventMovement = false;
-	}, 17);
 }
