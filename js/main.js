@@ -312,7 +312,11 @@ function hitTest() {
 				}
 				if(readyToFlip) {
 					other.flipped = true;
-					other.selector.toggleClass('fgItem');
+					if(other.kind === 'item') {
+						other.selector.toggleClass('fgItem');	
+					} else if(other.kind === 'person') {
+						other.selector.toggleClass('fgPerson');
+					}
 					hitList.splice(h,1);				
 				}
 			}
@@ -346,16 +350,33 @@ function setZIndex(input) {
 		$gameboard.append(d);
 	}
 	hitList = [];
+	//items
 	for(var i = 0; i < itemKeys.length; i++) {
 		var other = items[itemKeys[i]];
 		if ((minX + input.w >= other.x) && (minX <= other.x + other.w) && (minY + input.h >= other.y) && (minY <= other.y + other.h)) {
 			other.flipped = false;
+			other.kind = 'item';
 			hitList.push(other);
 			//check to see which side the player is on (above or below)
 			if(playerBottom < other.bottom) {
 				other.selector.addClass('fgItem');
 			} else {
 				other.selector.removeClass('fgItem');
+			}
+		}
+	}
+	//people
+	for(var i = 0; i < peopleKeys.length; i++) {
+		var other = people[peopleKeys[i]];
+		if ((minX + input.w >= other.x) && (minX <= other.x + other.w) && (minY + input.h >= other.y) && (minY <= other.y + other.h)) {
+			other.flipped = false;
+			other.kind = 'person';
+			hitList.push(other);
+			//check to see which side the player is on (above or below)
+			if(playerBottom < other.bottom) {
+				other.selector.addClass('fgPerson');
+			} else {
+				other.selector.removeClass('fgPerson');
 			}
 		}
 	}
