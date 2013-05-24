@@ -5340,6 +5340,13 @@ h4 {
   cursor: pointer;
   z-index: 2;
 }
+.person {
+  cursor: pointer;
+  z-index: 1;
+}
+.fgPerson {
+  z-index: 4;
+}
 .fgItem {
   z-index: 5;
 }
@@ -5351,11 +5358,11 @@ h4 {
   z-index: 3;
   cursor: pointer;
 }
-#infoBox {
+#chooseCharacter {
   padding: 10px 20px;
-  width: 360px;
+  width: 420px;
   top: 80px;
-  left: -360px;
+  left: -420px;
   position: fixed;
   z-index: 9999;
   background: rgba(50, 50, 50, 0.8);
@@ -5364,15 +5371,15 @@ h4 {
   -o-transition: left 1s;
   transition: left 1s;
 }
-#infoBox p {
+#chooseCharacter p {
   cursor: default;
   line-height: 1.2;
 }
-#infoBox p img {
+#chooseCharacter p img {
   padding: 0 10px;
   cursor: pointer;
 }
-#infoBox h4 {
+#chooseCharacter h4 {
   text-align: center;
 }
 #message {

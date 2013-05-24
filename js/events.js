@@ -36,11 +36,25 @@ function setupEvents() {
 		if(!inTransit) {
 			//grab the message
 			preventMove();
-			var index = parseInt($(this).attr('data-index'),10);
-			if(items[index].action) {
-				items[index].action();
+			var key = $(this).attr('data-key');
+			if(items[key].action) {
+				items[key].action();
 			} else {
-				showMessage(this, items[index].messages);
+				showMessage({el: this, messages: items[key].messages});
+			}
+		}
+	});
+
+	//show a message box with players status message
+	$body.on('click','#gameboard .person', function(e) {
+		if(!inTransit) {
+			//grab the message
+			preventMove();
+			var key = $(this).attr('data-key');
+			if(people[key].action) {
+				people[key].action();
+			} else {
+				showMessage({el: this, messages: people[key].messages, name: key});
 			}
 		}
 	});
@@ -49,7 +63,7 @@ function setupEvents() {
 	$body.on('click','#player', function(e) {
 		if(!inTransit) {
 			preventMove();
-			showMessage(this, player.messages);
+			showMessage({el: this, messages: player.messages});
 		}
 	});
 
@@ -68,10 +82,29 @@ function setupEvents() {
 	});
 
 	//on load, this is our tutorial
-	showMessage(player.otherSelector,['click anywhere to move.']);
+	showMessage({el: player.otherSelector, messages:['click anywhere to move.']});
 }
 
-	//wasd move player
+//special event for selecting character, triggers other events to load
+function selectCharacter() {
+	$body.on('click','#chooseCharacter img', function() {
+		var p = $(this).attr('data-player');
+		player.setup(p, function() {
+			setupEvents();
+			//hide the player picker box
+			$('#chooseCharacter').css('left', -420);
+			$gameboard.removeClass('outOfFocus');
+		});
+	});
+	$chooseCharacter.css('top', height/2 - 152);
+	setTimeout(function() {
+		$chooseCharacter.css({
+			left: 0
+		});
+	}, 200);
+}
+
+//wasd move player
 	// $body.on('keydown', function(e) {
 	// 	if(!inTransit && keyUp) {
 	// 		var key = e.which;

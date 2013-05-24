@@ -38,7 +38,7 @@ function loadPlayer() {
 				self.otherSelector = document.getElementById('player');
 				callback();
 			}
-			i.src = '../img/' + file + '.png';
+			i.src = '../img/player/' + file + '.png';
 		},
 
 		//figure out where to move the player and move em!

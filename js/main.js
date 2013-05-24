@@ -26,10 +26,11 @@ var GAMEBOARD_WIDTH = 2000,
 var	player,
 	sound;
 
-var gameData,
-	prevMoveX,
+var prevMoveX,
 	prevMoveY,
-	hitList;
+	hitList,
+	peopleKeys,
+	itemKeys;
 
 var	messageTimeout,
 	preventMovementTimeout;
@@ -45,8 +46,8 @@ var $body,
 	$overlay,
 	$messageBox,
 	$messageBoxP,
-	$infoBox,
-	$infoBoxContent,
+	$chooseCharacter,
+	$chooseCharacterContent,
 	$scrollElement;
 
 var devMode = false;
@@ -59,7 +60,7 @@ function init() {
 	player = loadPlayer();
 	sound = loadSound();
 	setupSelectors();
-	setupEnvironment(0);
+	setupKeys();
 	resize();
 	getFeed();
 }
@@ -69,8 +70,8 @@ function setupSelectors() {
 	$overlay = $('.overlay');
 	$gameboard = $('#gameboard');
 	$scrollElement = $('html, body');
-    $infoBox = $('#infoBox');
-    $infoBoxContent = $('#infoBox .content');
+    $chooseCharacter = $('#chooseCharacter');
+    $chooseCharacterContent = $('#chooseCharacter .content');
     $messageBox = $('#message');
     $messageBoxP = $('#message p');
 
@@ -80,23 +81,33 @@ function setupSelectors() {
     });
 }
 
-function showMessage(el, messages, noFade) {
-	var num = messages.length,
-		msg;
+function setupKeys() {
+	peopleKeys = Object.keys(people);
+	itemKeys = Object.keys(items);
+	setupEnvironment(0);
+}
+
+function showMessage(options) {
+	var num = options.messages.length,
+		msg = '';
+
+	if(options.name) {
+		msg += options.name + ': ';
+	}
 	if(num === 1) {
-		msg = messages[0];
+		msg += options.messages[0];
 		$messageBoxP.text(msg);	
 	} else {
 		//pick random?
 		var ran = Math.floor(Math.random() * num);
-		msg = messages[ran];
+		msg += options.messages[ran];
 		$messageBoxP.text(msg);
 	}
 	
 	//figure out how to align it center
-	var	top = parseInt(el.style.top,10) + 20,
-		left = parseInt(el.style.left,10),
-		mid = left + parseInt(el.style.width,10) / 2;
+	var	top = parseInt(options.el.style.top,10) + 20,
+		left = parseInt(options.el.style.left,10),
+		mid = left + parseInt(options.el.style.width,10) / 2;
 
 	var msgWidth = parseInt($messageBox.css('width'), 10),
 		msgLeft = Math.floor(mid - msgWidth / 2);
@@ -110,7 +121,7 @@ function showMessage(el, messages, noFade) {
 
 	var duration = msg.length * 80;
 		fade = 200;
-	if(noFade) {
+	if(options.noFade) {
 		fade = 0;
 	}
 
@@ -123,16 +134,15 @@ function showMessage(el, messages, noFade) {
 
 //load in data for environmental image assets and attach to DOM
 function setupEnvironment(index) {
-	var info = items[index];
+	var info = items[itemKeys[index]];
 	//create item, add to dom
 	var item = document.createElement('div');
 	var img = new Image();
 	img.onload = function() {
 		//set the background image and append
-		var id = info.class + index;
-		item.setAttribute('id', id);
+		item.setAttribute('id', itemKeys[index]);
 		item.setAttribute('class', info.class + ' item');
-		item.setAttribute('data-index', index);
+		item.setAttribute('data-key', itemKeys[index]);
 		$(item).css({
 			position: 'absolute',
 			top: info.y,
@@ -142,21 +152,56 @@ function setupEnvironment(index) {
 			backgroundImage: 'url(' + img.src + ')'
 		});
 		$gameboard.append(item);
-		info.selector = $('#' + id);
+		info.selector = $('#' + itemKeys[index]);
 		info.w = img.width;
 		info.h = img.height;
 		info.bottom = info.y + info.h;
 		index++;
-		if(index < items.length) {
+		if(index < itemKeys.length) {
 			setupEnvironment(index);
 		} else {
 			console.log('environment loaded');
+			setupPeople(0);
+		}
+	}
+	img.src = '../img/items/' + info.class + '.png';
+}
+
+//load in the people image files and bind data
+function setupPeople(index) {
+	var info = people[peopleKeys[index]];
+	//create item, add to dom
+	var item = document.createElement('div');
+	var img = new Image();
+	img.onload = function() {
+		//set the background image and append
+		item.setAttribute('id', peopleKeys[index]);
+		item.setAttribute('class', 'person');
+		item.setAttribute('data-key', peopleKeys[index]);
+		$(item).css({
+			position: 'absolute',
+			top: info.y,
+			left: info.x,
+			width: img.width,
+			height: img.height,
+			backgroundImage: 'url(' + img.src + ')'
+		});
+		$gameboard.append(item);
+		info.selector = $('#' + peopleKeys[index]);
+		info.w = img.width;
+		info.h = img.height;
+		info.bottom = info.y + info.h;
+		index++;
+		if(index < peopleKeys.length) {
+			setupPeople(index);
+		} else {
 			loadData('backup');
 		}
 	}
-	img.src = '../img/' + info.class + '.png';
+	console.log(peopleKeys[index]);
+	img.src = '../img/people/' + peopleKeys[index] + '.png';
+	console.log(img.src);
 }
-
 //load in the custom data from either google spreadsheet or backup to csv
 function loadData(backupData) {
 	var rawData;
@@ -175,9 +220,10 @@ function loadData(backupData) {
 	}
 	rawData.fetch({
 		success: function() {
-			gameData = [];
 			this.each(function(row){
-				gameData.push(row);
+				if(people[row.name]) {
+					people[row.name].messages = [row.status];
+				}
 			});
 			ready = true;
 			selectCharacter();
@@ -326,7 +372,7 @@ function stopMove() {
 		top: prevMoveY,
 		left: prevMoveX
 	});
-	showMessage(player.otherSelector,['Ouch!'], true);
+	showMessage({el: player.otherSelector, messages: ['Ouch!'], noFade: true});
 }
 
 //gets the blog feed and shows on screen
@@ -357,25 +403,6 @@ function getFeed() {
 			$('#blog').fadeOut();
 		});
 	});
-}
-
-//special event for selecting character, triggers other events to load
-function selectCharacter() {
-	$body.on('click','#infoBox img', function() {
-		var p = $(this).attr('data-player');
-		player.setup(p, function() {
-			setupEvents();
-			//hide the player picker box
-			$('#infoBox').css('left', -360);
-			$gameboard.removeClass('outOfFocus');
-		});
-	});
-	$infoBox.css('top', height/2 - 152);
-	setTimeout(function() {
-		$infoBox.css({
-			left: 0
-		});
-	}, 200);
 }
 
 function dev() {
