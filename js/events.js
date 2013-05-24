@@ -93,7 +93,6 @@ function selectCharacter() {
 			setupEvents();
 			//hide the player picker box
 			$('#chooseCharacter').css('left', -420);
-			$gameboard.removeClass('outOfFocus');
 		});
 	});
 	$chooseCharacter.css('top', height/2 - 152);

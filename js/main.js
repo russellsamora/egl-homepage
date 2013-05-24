@@ -195,12 +195,11 @@ function setupPeople(index) {
 		if(index < peopleKeys.length) {
 			setupPeople(index);
 		} else {
+			console.log('people loaded');
 			loadData('backup');
 		}
 	}
-	console.log(peopleKeys[index]);
 	img.src = '../img/people/' + peopleKeys[index] + '.png';
-	console.log(img.src);
 }
 //load in the custom data from either google spreadsheet or backup to csv
 function loadData(backupData) {
@@ -226,7 +225,10 @@ function loadData(backupData) {
 				}
 			});
 			ready = true;
-			selectCharacter();
+			console.log('data loaded');
+			$('.loading').delay(1000).fadeOut(function() {
+				selectCharacter();
+			});
 		},
 		error: function() {
 			console.log('having a bad day? Try backup data!');
@@ -344,8 +346,8 @@ function setZIndex(input) {
 		$gameboard.append(d);
 	}
 	hitList = [];
-	for(var i = 0; i < items.length; i++) {
-		var other = items[i];
+	for(var i = 0; i < itemKeys.length; i++) {
+		var other = items[itemKeys[i]];
 		if ((minX + input.w >= other.x) && (minX <= other.x + other.w) && (minY + input.h >= other.y) && (minY <= other.y + other.h)) {
 			other.flipped = false;
 			hitList.push(other);
