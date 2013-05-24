@@ -16,31 +16,38 @@ window.requestAnimationFrame = (function() {
 
 var width,
 	height,
-	inTransit = false,
-	gameboardWidth,
-	gameboardHeight,
-	scrollElement,
-	maxScroll,
-	navBarHeight = 80,
-	gameData = [],
-	ready = false,
+	maxScroll;
+
+var GAMEBOARD_WIDTH = 2000,
+	GAMEBOARD_HEIGHT = 1000,
+	NAVBAR_HEIGHT = 80,
+	HEIGHT_BUFFER = 20; //how much buffer we check for collision detection (height of box)
+
+var	player,
+	sound;
+
+var gameData,
 	prevMoveX,
 	prevMoveY,
-	hitList,
-	messageBox,
-	messageBoxP,
-	messageTimeout,
-	preventMovement = false,
-	preventMovementTimer,
-	infoBox,
-	infoBoxContent,
+	hitList;
+
+var	messageTimeout,
+	preventMovementTimeout;
+
+var ready = false,
 	playing = false,
-	heightBuffer = 20,
+	inTransit = false,
+	preventMovement = false,
 	keyUp = true;
 
 var $body,
 	$gameboard,
-	$overlay;
+	$overlay,
+	$messageBox,
+	$messageBoxP,
+	$infoBox,
+	$infoBoxContent,
+	$scrollElement;
 
 var devMode = false;
 
@@ -49,6 +56,8 @@ $(function() {
 });
 
 function init() {
+	player = loadPlayer();
+	sound = loadSound();
 	setupSelectors();
 	setupEnvironment(0);
 	resize();
@@ -59,99 +68,16 @@ function setupSelectors() {
 	$body = $('body');
 	$overlay = $('.overlay');
 	$gameboard = $('#gameboard');
-	gameboardWidth = parseInt($gameboard.css('width'),10);
-	gameboardHeight = parseInt($gameboard.css('height'),10);
-	scrollElement = $('html, body');
-	scrollElement.each(function(i) {
+	$scrollElement = $('html, body');
+    $infoBox = $('#infoBox');
+    $infoBoxContent = $('#infoBox .content');
+    $messageBox = $('#message');
+    $messageBoxP = $('#message p');
+
+   //reset scrollbar
+   $scrollElement.each(function(i) {
         $(this).scrollTop(0).scrollLeft(0);
     });
-    infoBox = $('#infoBox');
-    infoBoxContent = $('#infoBox .content');
-    messageBox = $('#message');
-    messageBoxP = $('#message p');
-}
-
-/*** setup ****/
-//bind input events to trigger functionality
-function setupEvents() {
-	$body.on('click', '#gameboard', function(e) {
-		//only if we didn't click on the player
-		if(!preventMovement) {
-			//hide boxes
-			clearTimeout(messageTimeout);
-			messageBox.fadeOut();
-			e.preventDefault();
-			if(!inTransit) {
-				//constrain to the left and top screen
-				var y = Math.max(0,(e.pageY - navBarHeight - player.offset.y)),
-					x = Math.max(0,e.pageX - player.offset.x);
-
-				//constrain bottom and right of screen
-				x = Math.min(x, gameboardWidth - player.w);
-				y = Math.min(y, gameboardHeight - player.h);
-
-				var input = {
-					x: x,
-					y: y,
-					edgeX: e.clientX,
-					edgeY: e.clientY
-				};
-
-				movePlayer(input);
-			}
-		}
-	});
-	$(window).on('resize', resize);
-
-	//show a message box with the items info
-	$body.on('click','#gameboard .item', function(e) {
-		if(!inTransit) {
-			//grab the message
-			preventMove();
-			var index = parseInt($(this).attr('data-index'),10);
-			if(items[index].action) {
-				items[index].action();
-			} else {
-				showMessage(this, items[index].messages);
-			}
-		}
-	});
-
-	//click to move or show message
-	$body.on('click','#player', function(e) {
-		if(!inTransit) {
-			preventMove();
-			showMessage(this, player.messages);
-		}
-	});
-	//jump or dev mode
-	$body.on('keypress', function(e) { 
-		if(!inTransit && e.which === 32) {
-			jumpPlayer();
-		} else if(e.which === 114) {
-			dev();
-		}
-	});
-	//wasd move player
-	// $body.on('keydown', function(e) {
-	// 	if(!inTransit && keyUp) {
-	// 		var key = e.which;
-	// 		if(key === 87 || key === 65 || key === 83 || key === 68) {
-	// 			movePlayerKey(key);
-	// 		}	
-	// 	}
-	// });
-	// //end move
-	// $body.on('keyup', function(e) {
-	// 	keyUp = true;
-	// });
-
-	$body.on('click','.returnToGame', function(e) {
-		$overlay.fadeOut();
-	});
-
-	//on load, this is our tutorial
-	showMessage(player.otherSelector,['click anywhere to move.']);
 }
 
 function showMessage(el, messages, noFade) {
@@ -159,12 +85,12 @@ function showMessage(el, messages, noFade) {
 		msg;
 	if(num === 1) {
 		msg = messages[0];
-		messageBoxP.text(msg);	
+		$messageBoxP.text(msg);	
 	} else {
 		//pick random?
 		var ran = Math.floor(Math.random() * num);
 		msg = messages[ran];
-		messageBoxP.text(msg);
+		$messageBoxP.text(msg);
 	}
 	
 	//figure out how to align it center
@@ -172,12 +98,12 @@ function showMessage(el, messages, noFade) {
 		left = parseInt(el.style.left,10),
 		mid = left + parseInt(el.style.width,10) / 2;
 
-	var msgWidth = parseInt(messageBox.css('width'), 10),
+	var msgWidth = parseInt($messageBox.css('width'), 10),
 		msgLeft = Math.floor(mid - msgWidth / 2);
 	
 	//clear old messages and change position and show and add fade out timer
 	clearTimeout(messageTimeout);
-	messageBox.hide().css({
+	$messageBox.hide().css({
 		top: top,
 		left: msgLeft
 	});
@@ -188,9 +114,9 @@ function showMessage(el, messages, noFade) {
 		fade = 0;
 	}
 
-	messageBox.fadeIn(fade, function() {
+	$messageBox.fadeIn(fade, function() {
 		messageTimeout = setTimeout(function() {
-			messageBox.fadeOut();
+			$messageBox.fadeOut();
 		}, duration);
 	});
 }
@@ -247,8 +173,9 @@ function loadData(backupData) {
 			worksheet: '1'
 		});
 	}
-	rawData.fetch({ 
+	rawData.fetch({
 		success: function() {
+			gameData = [];
 			this.each(function(row){
 				gameData.push(row);
 			});
@@ -267,13 +194,13 @@ function resize() {
 	width = $(window).width();
 	height = $(window).height();
 	maxScroll = { 
-		left: Math.max(0,gameboardWidth - width),
-		top: Math.max(0,gameboardHeight - height + navBarHeight)
+		left: Math.max(0,GAMEBOARD_WIDTH - width),
+		top: Math.max(0,GAMEBOARD_HEIGHT - height + NAVBAR_HEIGHT)
 	};
 }
 
 //slide the screen if the player is transition outside the current frame
-function slideScreen(input, key) {
+function slideScreen(input) {
 	//check for page edge clicking to animate scroll!
 	var destX, destY;
 	//make sure transition isn't too fast.
@@ -287,7 +214,7 @@ function slideScreen(input, key) {
 		destX = Math.min(pageXOffset + width / 2, maxScroll.left);
 	}
 	//top edge
-	if(input.edgeY < player.h + navBarHeight && pageYOffset > navBarHeight) {
+	if(input.edgeY < player.h + NAVBAR_HEIGHT && pageYOffset > NAVBAR_HEIGHT) {
 		destY = Math.max(pageYOffset - height / 2, 0);
 	//bottom edge
 	} else if( input.edgeY > height - player.h) {
@@ -297,16 +224,16 @@ function slideScreen(input, key) {
 
 	//choose which to animate (must lump together so it doesn't halt other)
 	if(destX !== undefined && destY !== undefined) {
-		scrollElement.stop().animate({
+		$scrollElement.stop().animate({
 			scrollLeft: destX,
 			scrollTop: destY
 		}, speed,'linear');	
 	} else if(destY !== undefined) {
-		scrollElement.stop().animate({
+		$scrollElement.stop().animate({
 			scrollTop: destY
 		}, speed,'linear');	
 	} else if(destX !== undefined) {
-		scrollElement.stop().animate({
+		$scrollElement.stop().animate({
 			scrollLeft: destX
 		}, speed,'linear');	
 	}
@@ -324,7 +251,7 @@ function hitTest() {
 		for(var h = 0; h < hitList.length; h++) {
 			var other = hitList[h];
 			//hit test for bottom of both rectangles
-			if((bottomY >= other.bottom) && (bottomY <= other.bottom + heightBuffer)) {
+			if((bottomY >= other.bottom) && (bottomY <= other.bottom + HEIGHT_BUFFER)) {
 				var readyToFlip;
 				//if we just crossed hit the vertical intersection, switch the z-index, but only once
 				if(!other.flipped) {
@@ -348,7 +275,7 @@ function hitTest() {
 
 		//this might be too frequent? ( can just do ever 150 and be safe?)
 		requestAnimationFrame(hitTest);
-		//setTimeout(hitTest,speedAmplifier * (heightBuffer - 10));
+		//setTimeout(hitTest,speedAmplifier * (HEIGHT_BUFFER - 10));
 	}
 }
 
@@ -392,7 +319,7 @@ function stopMove() {
 	player.selector.stop(true).css({
 		'background-position': -640
 	});
-	scrollElement.stop(true);
+	$scrollElement.stop(true);
 	player.x = prevMoveX;
 	player.y = prevMoveY;
 	player.selector.css({
@@ -402,6 +329,7 @@ function stopMove() {
 	showMessage(player.otherSelector,['Ouch!'], true);
 }
 
+//gets the blog feed and shows on screen
 function getFeed() {
 	$('#blog').rssfeed('http://communityplanit.engagementgamelab.org/?feed=rss2', {
 		limit: 1,
@@ -431,14 +359,20 @@ function getFeed() {
 	});
 }
 
+//special event for selecting character, triggers other events to load
 function selectCharacter() {
 	$body.on('click','#infoBox img', function() {
 		var p = $(this).attr('data-player');
-		setupPlayer(p);
+		player.setup(p, function() {
+			setupEvents();
+			//hide the player picker box
+			$('#infoBox').css('left', -360);
+			$gameboard.removeClass('outOfFocus');
+		});
 	});
-	infoBox.css('top', height/2 - 152);
+	$infoBox.css('top', height/2 - 152);
 	setTimeout(function() {
-		infoBox.css({
+		$infoBox.css({
 			left: 0
 		});
 	}, 200);
@@ -449,21 +383,21 @@ function dev() {
 	console.log(devMode);
 	if(devMode) {
 		$('.item').addClass('hitBound');
+		$('.item, #player').addClass('bottomBound');
 		$('#player').css('background-color', 'rgba(0,255,0,0.5)');		
 	} else {
 		$('.item').removeClass('hitBound');
+		$('.item, #player').removeClass('bottomBound');
+		$('.dirtyBound').remove();
 		$('#player').css('background-color', 'rgba(0,0,0,0)');
 	}
 }
 
-function whiteboard() {
-	$overlay.fadeIn();
-}
-
+//simple timer to make sure we don't move when click item
 function preventMove() {
-	clearTimeout(preventMovementTimer);
+	clearTimeout(preventMovementTimeout);
 	preventMovement = true;
-	preventMovementTimer = setTimeout(function() {
+	preventMovementTimeout = setTimeout(function() {
 		preventMovement = false;
 	}, 17);
 }

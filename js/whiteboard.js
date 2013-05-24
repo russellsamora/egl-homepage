@@ -1,0 +1,3 @@
+function whiteboard() {
+	$overlay.fadeIn();
+}
