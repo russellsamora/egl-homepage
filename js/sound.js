@@ -10,5 +10,6 @@ function loadSound() {
 			});
 		}
 	};
+	self.init();
 	return self;
 }

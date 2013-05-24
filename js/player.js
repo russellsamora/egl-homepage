@@ -17,6 +17,8 @@ function loadPlayer() {
 			y: 80
 		},
 		messages: ['I am you, you are me....woah.','What?! I am inside a computer?','I am so tired of walking...','Stop clicking on me, it tickles!'],
+		score: 0,
+		response: {},
 
 		setup: function (file, callback) {
 			var d = document.createElement('div');
@@ -131,6 +133,23 @@ function loadPlayer() {
 				var pos = -(direction + currentFrame * player.w) + 'px';
 				player.selector.css('background-position', pos);
 				setTimeout(self.animateWalkCycle, 170);
+			}
+		},
+
+		//decide what to show from the character
+		personAction: function(person) {
+			//if playing the game
+			if(playing) {
+
+			} else {
+				//show the status message
+				var key = $(person).attr('data-key');
+				var options = {
+					el: person,
+					copy: people[key].status,
+					kind: 'status'
+				};
+				showPrompt(options);
 			}
 		}
 	};

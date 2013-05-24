@@ -5397,6 +5397,21 @@ h4 {
   cursor: default;
   line-height: 1.2;
 }
+#prompt {
+  display: none;
+  padding: 0;
+  position: absolute;
+  z-index: 9999;
+  background: rgba(50, 50, 50, 0.8);
+  min-width: 240px;
+  max-width: 480px;
+}
+#prompt p {
+  padding: 10px 15px;
+  margin: 0;
+  cursor: default;
+  line-height: 1.2;
+}
 .dirtyBound {
   background: rgba(255, 0, 0, 0.5);
 }

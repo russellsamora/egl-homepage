@@ -50,12 +50,7 @@ function setupEvents() {
 		if(!inTransit) {
 			//grab the message
 			preventMove();
-			var key = $(this).attr('data-key');
-			if(people[key].action) {
-				people[key].action();
-			} else {
-				showMessage({el: this, messages: people[key].messages, name: key});
-			}
+			player.personAction(this);
 		}
 	});
 
@@ -81,9 +76,17 @@ function setupEvents() {
 		$overlay.fadeOut();
 	});
 
+	$body.on('click', '.startGame', function(e) {
+		playing = true;
+	});
+
+	//always the close button on prompt
+	$body.on('click', '#prompt .button1', function(e) {
+		$prompt.fadeOut('fast');
+	});
+
 	//on load, this is our tutorial
 	showMessage({el: player.otherSelector, messages:['click anywhere to move.']});
-	playing = true;
 	tick();
 }
 

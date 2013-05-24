@@ -51,7 +51,11 @@ var $body,
 	$messageBoxP,
 	$chooseCharacter,
 	$chooseCharacterContent,
-	$scrollElement;
+	$scrollElement,
+	$prompt,
+	$promptCopy,
+	$promptButton0,
+	$promptButton1;
 
 var devMode = false;
 
@@ -77,6 +81,10 @@ function setupSelectors() {
     $chooseCharacterContent = $('#chooseCharacter .content');
     $messageBox = $('#message');
     $messageBoxP = $('#message p');
+    $prompt = $('#prompt');
+    $promptCopy = $('#prompt .copy');
+    $promptButton0 = $('#prompt .button0');
+    $promptButton1 = $('#prompt .button1');
 
    //reset scrollbar
    $scrollElement.each(function(i) {
@@ -91,20 +99,18 @@ function setupKeys() {
 	setupEnvironment(0);
 }
 
+//show a brief message that auto fades away on item
 function showMessage(options) {
 	var num = options.messages.length,
-		msg = '';
+		msg;
 
-	if(options.name) {
-		msg += options.name + ': ';
-	}
 	if(num === 1) {
-		msg += options.messages[0];
+		msg = options.messages[0];
 		$messageBoxP.text(msg);	
 	} else {
-		//pick random?
+		//pick random
 		var ran = Math.floor(Math.random() * num);
-		msg += options.messages[ran];
+		msg = options.messages[ran];
 		$messageBoxP.text(msg);
 	}
 	
@@ -129,11 +135,37 @@ function showMessage(options) {
 		fade = 0;
 	}
 
-	$messageBox.fadeIn(fade, function() {
-		messageTimeout = setTimeout(function() {
-			$messageBox.fadeOut();
-		}, duration);
-	});
+	$messageBox.show();
+	messageTimeout = setTimeout(function() {
+		$messageBox.fadeOut();
+	}, duration);
+}
+
+//display prompt from a character
+function showPrompt(options) {
+	updatePromptButtons(options.kind);
+	$promptCopy.text(options.copy);
+	//update the position then show
+	//align center
+	var	top = parseInt(options.el.style.top,10) - 20,
+		left = parseInt(options.el.style.left,10),
+		mid = left + parseInt(options.el.style.width,10) / 2;
+
+	var msgWidth = parseInt($prompt.css('width'), 10),
+		msgLeft = Math.floor(mid - msgWidth / 2);
+	
+	$prompt.hide().css({
+		top: top,
+		left: msgLeft
+	}).show();
+}
+
+function updatePromptButtons(kind) {
+	if(kind === 'status') {
+		//show bio or close
+		$promptButton0.text('my bio');
+		$promptButton1.text('close');
+	}
 }
 
 //load in data for environmental image assets and attach to DOM
@@ -158,7 +190,6 @@ function setupEnvironment(index) {
 		} else {
 			divWidth = img.width;
 		}
-		console.log(divWidth);
 		$(item).css({
 			position: 'absolute',
 			top: info.y,
@@ -239,7 +270,7 @@ function loadData(backupData) {
 		success: function() {
 			this.each(function(row){
 				if(people[row.name]) {
-					people[row.name].messages = [row.status];
+					people[row.name].status = row.status;
 				}
 			});
 			ready = true;
@@ -413,7 +444,7 @@ function stopMove() {
 		top: prevMoveY,
 		left: prevMoveX
 	});
-	showMessage({el: player.otherSelector, messages: ['Ouch!'], noFade: true});
+	showMessage({el: player.otherSelector, messages: ['Ouch!']});
 }
 
 //gets the blog feed and shows on screen
@@ -456,7 +487,7 @@ function preventMove() {
 }
 
 function tick() {
-	if(ready && playing) {
+	if(ready) {
 		currentFrame++;
 		if(currentFrame >= numFrames) {
 			currentFrame = 0;
@@ -483,7 +514,6 @@ function updateItemAnimations() {
 
 function dev() {
 	devMode = !devMode;
-	console.log(devMode);
 	if(devMode) {
 		$('.item').addClass('hitBound');
 		$('.item, #player').addClass('bottomBound');
