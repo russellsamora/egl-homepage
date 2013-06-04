@@ -50,7 +50,19 @@ function setupEvents() {
 		if(!inTransit) {
 			//grab the message
 			preventMove();
-			player.personAction(this);
+			//if playing the game
+			if(playing) {
+
+			} else {
+				//show the status message
+				var key = $(this).attr('data-key');
+				var options = {
+					el: this,
+					copy: people[key].status,
+					kind: 'status'
+				};
+				showPrompt(options);
+			}
 		}
 	});
 
@@ -78,6 +90,11 @@ function setupEvents() {
 
 	$body.on('click', '.startGame', function(e) {
 		playing = true;
+	});
+
+	//go to profile page from prompt
+	$body.on('click', '#prompt .button0', function(e) {
+		$prompt.fadeOut('fast');
 	});
 
 	//always the close button on prompt

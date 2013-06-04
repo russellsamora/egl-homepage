@@ -64,12 +64,25 @@ $(function() {
 });
 
 function init() {
+	checkReturning();
 	player = loadPlayer();
 	sound = loadSound();
 	setupSelectors();
 	setupKeys();
 	resize();
 	getFeed();
+}
+
+function checkReturning() {
+	var test = localStorage.getItem('egl-game');
+	if(test) {
+		console.log(test);
+		var d = JSON.parse(test);
+		console.log(d);
+	} else {
+		var data = {name: 'russell', age: 26};
+		localStorage.setItem('egl-game', JSON.stringify(data));
+	}
 }
 
 function setupSelectors() {
@@ -516,7 +529,7 @@ function dev() {
 	devMode = !devMode;
 	if(devMode) {
 		$('.item').addClass('hitBound');
-		$('.item, #player').addClass('bottomBound');
+		$('.item').addClass('bottomBound');
 		$('#player').css('background-color', 'rgba(0,255,0,0.5)');		
 	} else {
 		$('.item').removeClass('hitBound');

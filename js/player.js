@@ -2,6 +2,7 @@ function loadPlayer() {
 	var direction,
 		currentFrame,
 		numFrames = 2,
+		walkTimeout = null,
 		speedAmplifier = 7;
 	//set skeleton for player data
 	var self = {
@@ -85,7 +86,7 @@ function loadPlayer() {
 			slideScreen(input);
 
 			//set the animation
-			player.selector.animate({
+			player.selector.stop().animate({
 				top: input.y,
 				left: input.x
 			}, speed, 'linear', function() {
@@ -100,10 +101,13 @@ function loadPlayer() {
 			//for hitting AND for flipping index
 			hitTest();
 
-			//reset frame since it auto counts up (so first is really 0 when it starts)
-			currentFrame = -1;
+			//reset the frame
+			currentFrame = 0;
+			steps = 0;
 			//delay this so if we have a hit right away, we don't animate
+			clearTimeout(walkTimeout);
 			setTimeout(self.animateWalkCycle, 17);	
+
 		},
 
 		//perform a jump move!
@@ -125,6 +129,7 @@ function loadPlayer() {
 
 		//switch out sprite for walk cycle
 		animateWalkCycle: function() {
+			steps++;
 			if(inTransit) {
 				currentFrame++;
 				if(currentFrame >= numFrames) {
@@ -132,24 +137,8 @@ function loadPlayer() {
 				}
 				var pos = -(direction + currentFrame * player.w) + 'px';
 				player.selector.css('background-position', pos);
-				setTimeout(self.animateWalkCycle, 170);
-			}
-		},
-
-		//decide what to show from the character
-		personAction: function(person) {
-			//if playing the game
-			if(playing) {
-
-			} else {
-				//show the status message
-				var key = $(person).attr('data-key');
-				var options = {
-					el: person,
-					copy: people[key].status,
-					kind: 'status'
-				};
-				showPrompt(options);
+				clearTimeout(walkTimeout);
+				walkTimeout = setTimeout(self.animateWalkCycle, 170);
 			}
 		}
 	};

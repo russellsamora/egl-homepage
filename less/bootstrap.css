@@ -5431,6 +5431,9 @@ h4 {
 .navbar .nav {
   margin: 5px 10px;
 }
+.navbar .nav li a.activeLink {
+  color: #ec532b;
+}
 .overlay {
   display: none;
   width: 100%;
