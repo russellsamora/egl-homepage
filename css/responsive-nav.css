@@ -53,3 +53,7 @@ body {
 		padding-right: 20px;
 	}
 }
+#footer p.credit {
+	padding: 10px;
+	text-align: center;
+}
