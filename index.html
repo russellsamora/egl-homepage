@@ -1,93 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-	    <meta charset="utf-8">
-	    <title>Engagement Game Lab</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta name="description" content="engagement game lab">
-	    <meta name="author" content="russell goldenberg">
-	    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-	    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
-
-	    <link href="less/bootstrap.css" rel="stylesheet">
-	    <style>
-			body {
-				padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-			}
-	    </style>
+		<meta charset='utf-8'>
+		<title>EGL</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<meta name='description' content='research lab for games at emerson college'>
+		<meta name='author' content='russell goldenberg'>
+		<link href='css/responsive-nav.css' rel='stylesheet'>
+	    <link href='css/custom-boostrap.css' rel='stylesheet'>
 	</head>
-  
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand" href="/"><img src='img/other/EGL_logo.png'></a>
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-							<li><a href="/games.html">Games</a></li>
-							<li><a href="/research.html">Research</a></li>
-							<li><a href="/people.html">People</a></li>
-						</ul>
-					</div><!--/.nav-collapse -->
+		<div id='wrap'>
+	    	<div class='navbar navbar-inverse navbar-fixed-top'>
+	  			<div class='navbar-inner'>
+	    			<div class='container-fluid'>
+	  					<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>
+							<span class='icon-bar'></span>
+							<span class='icon-bar'></span>
+							<span class='icon-bar'></span>
+						</button>
+						<a class='brand' href='#'>Engagement Game Lab</a>
+						<div class='nav-collapse collapse'>
+							<ul class='nav'>
+								<li><a href='#about'>About</a></li>
+								<li><a href='#projects'>Projects</a></li>
+								<li><a href='#research'>Research</a></li>
+								<li><a href='#blog'>Blog</a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div id='gameboard'>
-		</div>
-		<div id='chooseCharacter'>
-			<div class='content'>
-				<p>To begin, choose a character:</p>
-				<p>
-					<img data-player='player0' src='img/player/choose0.png'>
-					<img data-player='player1' src='img/player/choose1.png'>
-					<img data-player='player2' src='img/player/choose2.png'>
-				</p>
-			</div>
-		</div>
-		<div id='message'>
-			<p></p>
-		</div>
-		<div id='prompt'>
-			<p class='copy'></p>
-			<p>
-				<button class="btn btn-default button0" type="button">yes</button>
-				<button class="btn btn-warning pull-right button1" type="button">no</button>
-			</p>
-		</div>
-		<div id='content'>
-			<p></p>
-			<p>
-				<button class="btn btn-default button0" type="button">yes</button>
-				<button class="btn btn-warning pull-right button1" type="button">no</button>
-			</p>
-		</div>
-		<div id='blog'></div>
-		<script src="js/modernizr.js"></script>
-		<script src="js/jquery.js"></script>		
-		<script src="js/feed.js"></script>
-		<script src="js/howler.min.js"></script>
+			<div id="push"></div>
+   		</div>
+   	</div>
+		<div id='footer'>
+      		<div class='container'>
+	        	<p class='muted credit'>&copy; Engagement Game Lab 2013</p>
+	      	</div>
+	    </div>
+
+    	<!-- Los javascripts -->
+    	<script src='js/modernizr.js'></script>
+		<script src='js/jquery.min.js'></script>		
+		<script src='js/bootstrap.min.js'></script>
+		<script src='js/howler.min.js'></script>
+		<script src='js/feed.min.js'></script>
 		<script src='js/miso.min.js'></script>
-		<script src="js/player.js"></script>
-		<script src="js/items.js"></script>
-		<script src="js/people.js"></script>
-		<script src="js/whiteboard.js"></script>
-		<script src="js/sound.js"></script>
-		<script src="js/events.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/bootstrap/bootstrap-transition.js"></script>
-		<script src="js/bootstrap/bootstrap-alert.js"></script>
-		<script src="js/bootstrap/bootstrap-modal.js"></script>
-		<script src="js/bootstrap/bootstrap-dropdown.js"></script>
-		<script src="js/bootstrap/bootstrap-tooltip.js"></script>
-		<script src="js/bootstrap/bootstrap-button.js"></script>
-		<div class='overlay'>
-			<p class='tutorial'>
-				Were you expecting something better?
-			</p>
-			<p class='returnToGame'>
-				<button class="btn btn-default btn-large" type="button">return to the lab</button>
-			</p>
-		</div>
-		<div class='loading'><p>Loading game...</p></div>
-	</body>
+  </body>
 </html>
