@@ -3,7 +3,7 @@
 	<head>
 		<meta charset='utf-8'>
 		<title>EGL</title>
-		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no'>
 		<meta name='description' content='research lab for games at emerson college'>
 		<meta name='author' content='russell goldenberg'>
 		<link href='http://fonts.googleapis.com/css?family=Arvo:400,700|Average+Sans:400' rel='stylesheet' type='text/css'>
@@ -12,15 +12,16 @@
 	</head>
 	<body>
 		<div id='wrap'>
-	    	<div class='navbar navbar-inverse navbar-fixed-top'>
+	    	<div class='navbar navbar-static-top'>
 	  			<div class='navbar-inner'>
 	    			<div class='container-fluid'>
-	  					<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>
+	  					<!-- <button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>
 							<span class='icon-bar'></span>
 							<span class='icon-bar'></span>
 							<span class='icon-bar'></span>
-						</button>
-						<a class='brand' href='#'>Engagement Game Lab</a>
+							nav
+						</button> -->
+						<a class='brand' href='#'><img src='img/other/EGL_logo.png'></a>
 						<div class='nav-collapse collapse'>
 							<ul class='nav'>
 								<li><a href='#about'>About</a></li>
@@ -31,8 +32,12 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> <!-- end nav -->
 			<div id='gameboard'></div>
+			<div id='pregame'>
+				<img src='img/player/player1.png'>
+			</div>
+			<div id='loading'></div>
 			<div id='push'></div>
    		</div>
    	</div>
@@ -49,5 +54,6 @@
 		<script src='js/howler.min.js'></script>
 		<script src='js/feed.min.js'></script>
 		<script src='js/miso.min.js'></script>
+		<script src='js/main.js'></script>
   </body>
 </html>
