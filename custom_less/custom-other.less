@@ -1,11 +1,4 @@
-#pregame {
-	width: 1400px;
-	height: 1000px;
-	background: red;
-	//background: url(../img/other/chickenongoat.jpg) no-repeat center center;
-	margin: 0 auto;
-}
-
+//ADJUST NAV FOR BIGGER SIZE
 .navbar .nav {
 	margin-top: 12px;
 }
@@ -18,22 +11,30 @@
   }
 }
 
-.navbar .brand {
-	text-shadow: none;
-}
-
-@media (max-width: 800px) {
-	.navbar .btn {
+//RESPONSIVE STUFF
+//don't display game if < 800px
+@media (max-width: 800px){
+	#game, #pregame {
 		display: none;
 	}
-	#pregame {
-		width: 100%;
-		// background: url(../img/other/waiting.jpg) no-repeat center center;
-		// background-size: cover;
-		background: yellow;
+	#nongame {
+		display: block;
 	}
 }
 
-html {
-	overflow: hidden;
+//remove scrollbars if we are displaying the game
+//TODO: must remove this for other pages
+@media (min-width: 801px) {
+	html {
+		overflow: hidden;
+	}
+}
+
+@media (max-height:420px) {
+	#game, #pregame {
+		display: none;
+	}
+	#pregameHelp {
+		display: block;
+	}
 }
