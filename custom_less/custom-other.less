@@ -1,3 +1,6 @@
+html {
+	.box-sizing();
+}
 //ADJUST NAV FOR BIGGER SIZE
 .navbar .nav {
 	margin-top: 12px;
@@ -13,18 +16,27 @@
 
 //RESPONSIVE STUFF
 //don't display game if < 800px
-@media (max-width: 800px){
+@media (max-width: 767px){
 	#game, #pregame {
 		display: none;
 	}
 	#nongame {
 		display: block;
 	}
+	.nav-collapse {
+		display: none;
+	}
+	.navbar .brand {
+		float: none;
+	}
+	.container-fluid {
+		text-align: center;
+	}
 }
 
 //remove scrollbars if we are displaying the game
 //TODO: must remove this for other pages
-@media (min-width: 801px) {
+@media (min-width: 768px) {
 	html {
 		overflow: hidden;
 	}
@@ -37,4 +49,14 @@
 	#pregameHelp {
 		display: block;
 	}
+}
+
+.btn {
+	border: none;
+}
+
+.box-sizing() {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }

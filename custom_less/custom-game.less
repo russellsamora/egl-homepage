@@ -8,20 +8,25 @@
 
 #pregame {
 	width: 400px;
-	height: 200px;
-	border-left: 1px solid;
-	border-right: 1px solid;
-	border-color: #f5f5f5;
-	margin: 0 auto;
-	padding: 0;
-	font-size: 12px;
-	background-color: red;
+	height: 120px;
+	background: @alphaGray;
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	margin-left: -200px;
-	margin-top: -100px;
+	margin-top: -60px;
 	p {
+		margin: 40px 0 0 0;
 		text-align: center;
+	}
+}
+
+#nongame {
+	.row-fluid {
+		.span12 {
+			height: 70px;
+			background: red;
+			border: 1px solid black;
+		}
 	}
 }
