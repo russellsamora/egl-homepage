@@ -4,6 +4,7 @@
 	margin: 0 auto;
 	background: url('../img/office_bg.jpg');
 	cursor: pointer;
+	border: 2px solid @gray;
 }
 
 #pregame {
@@ -24,10 +25,15 @@
 #nongame {
 	margin: 20px 0 0 0;
 	.row-fluid {
+		border: 2px solid @white;
+		height: 70px;
+		background: @gray;
 		.span12 {
-			height: 70px;
-			background: red;
-			border: 1px solid black;
+			color: @white;
+			p {
+				margin: 20px 0 0 0;
+				text-align: center;
+			}
 		}
 	}
 }
