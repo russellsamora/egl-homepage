@@ -1,5 +1,6 @@
-html {
+* {
 	.box-sizing();
+	.no-highlight();
 }
 //ADJUST NAV FOR BIGGER SIZE
 .navbar .nav {
@@ -40,6 +41,9 @@ html {
 	html {
 		overflow: hidden;
 	}
+	#nongame {
+		display: none;
+	}
 }
 
 @media (max-height:420px) {
@@ -55,8 +59,26 @@ html {
 	border: none;
 }
 
+.navbar .brand img {
+	-webkit-filter: grayscale(100%);
+	.transition(all 0.5s);
+	&:hover {
+		-webkit-filter: grayscale(0%);
+	}
+}
+
+//custom mixins
 .box-sizing() {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.no-highlight() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
