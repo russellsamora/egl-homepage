@@ -8,10 +8,10 @@
 }
 .navbar .btn,
 .navbar .btn-group {
-  .navbarVerticalAlign(10px); // Vertically center in navbar
-  background: @red;
+  .navbarVerticalAlign(0px); // Vertically center in navbar
+  background: #333;
   &:hover {
-  	background: darken(@red, 5%);
+  	background: #666;
   }
 }
 
@@ -24,12 +24,12 @@
 	#nongame {
 		display: block;
 	}
-	.nav-collapse {
-		display: none;
-	}
-	.navbar .brand {
-		float: none;
-	}
+	// .nav-collapse {
+	// 	display: none;
+	// }
+	// .navbar .brand {
+	// 	float: none;
+	// }
 	.container-fluid {
 		text-align: center;
 	}
@@ -43,6 +43,11 @@
 	}
 	#nongame {
 		display: none;
+	}
+	//show dropdown on hover
+	ul.nav li.dropdown:hover ul.dropdown-menu {
+	    display: block;
+	    top: 99%;
 	}
 }
 
@@ -59,6 +64,7 @@
 	border: none;
 }
 
+//toggle branding image from gray to color
 .navbar .brand img {
 	-webkit-filter: grayscale(100%);
 	.transition(all 0.5s);
@@ -81,4 +87,18 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+//disable the triangle on the dropdown
+.navbar .nav > li > .dropdown-menu:after, .navbar .nav > li > .dropdown-menu:before {
+  content: none;
+}
+
+//fixed margins and padding for dropdown menu
+.dropdown-menu {
+	padding: 0;
+	border: 2px solid @grayDark;
+	li > a { 
+		padding: 10px 20px;
+	}
 }
