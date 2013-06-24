@@ -2,3 +2,4 @@
 Thumbs.db
 *.sublime-*
 
+/js/.DS_Store
