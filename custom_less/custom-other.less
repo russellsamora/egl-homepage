@@ -15,48 +15,11 @@
   }
 }
 
-//RESPONSIVE STUFF
-//don't display game if < 800px
-@media (max-width: 767px){
-	#game, #pregame {
-		display: none;
-	}
-	#nongame {
-		display: block;
-	}
-	// .nav-collapse {
-	// 	display: none;
-	// }
-	// .navbar .brand {
-	// 	float: none;
-	// }
-	.container-fluid {
-		text-align: center;
-	}
-}
-
-//remove scrollbars if we are displaying the game
-//TODO: must remove this for other pages
 @media (min-width: 768px) {
-	html {
-		overflow: hidden;
-	}
-	#nongame {
-		display: none;
-	}
 	//show dropdown on hover
 	ul.nav li.dropdown:hover ul.dropdown-menu {
 	    display: block;
 	    top: 99%;
-	}
-}
-
-@media (max-height:420px) {
-	#game, #pregame {
-		display: none;
-	}
-	#pregameHelp {
-		display: block;
 	}
 }
 
@@ -97,9 +60,33 @@
 //fixed margins and padding for dropdown menu
 .dropdown-menu {
 	padding: 0;
-	margin: 2px 15px;
+	margin: 0 15px;
 	border: 2px solid @grayDark;
 	li > a { 
 		padding: 10px 20px;
 	}
+}
+
+//---------- foooter -----------
+#footer {
+	h3 {
+		font-size: 1.5em;
+	}
+	i  {
+		padding: 10px;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+
+}
+// ---------------- ABOUT PAGE ------------
+#people {
+	.person {
+		text-align: center;
+	}
+	.headshot {
+		border-radius: 128px;
+	}
+
 }

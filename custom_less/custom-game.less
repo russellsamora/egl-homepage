@@ -1,3 +1,31 @@
+@import 'custom-variables.less';
+@media (max-width: 767px){
+	#game, #pregame {
+		display: none;
+	}
+	#nongame {
+		display: block;
+	}
+}
+
+@media (min-width: 768px) {
+	html {
+		overflow: hidden;
+	}
+	#nongame {
+		display: none;
+	}
+}
+
+@media (max-height:420px) {
+	#game, #pregame {
+		display: none;
+	}
+	#pregameHelp {
+		display: block;
+	}
+}
+
 #game {
 	width:2000px;
 	height: 1000px;
