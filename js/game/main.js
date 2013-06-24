@@ -1,14 +1,26 @@
 //determine if we are playing the game based on some css attribute?
-//also can do a modernizr check here to load in specific files
-
-//load files now that stuff is approved and dom is loaded.
 (function() {
 	var self = window.game = {
 
 		init: function() {
-			console.log('init');
+			//see if the game should be started up based on screen size
+			var gameOn = $('#game').css('display');
+			if(gameOn !== 'none') {
+				//do a check for browser capabilities
+				//modernizr...
+				console.log('start game');
+			} else {
+				return;
+			}
 		}
 	};
-
+	
 	self.init();
+	setupGlobals();
+
+	//private functions
+	function setupGlobals() {
+		window.$BODY = $('body');
+	}
+
 })();
