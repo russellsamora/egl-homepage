@@ -1,6 +1,6 @@
 //determine if we are playing the game based on some css attribute?
 (function() {
-	var self = window.game = {
+	var self = window.$game = {
 
 		init: function() {
 			//see if the game should be started up based on screen size
@@ -8,19 +8,19 @@
 			if(gameOn !== 'none') {
 				//do a check for browser capabilities
 				//modernizr...
+				$game.player.init('player0');
 				console.log('start game');
 			} else {
 				return;
 			}
 		}
 	};
-	
-	self.init();
 	setupGlobals();
 
 	//private functions
 	function setupGlobals() {
 		window.$BODY = $('body');
+		window.$GAMEBOARD = $('#game');
 	}
 
 })();
