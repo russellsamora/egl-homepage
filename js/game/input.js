@@ -1,13 +1,25 @@
+//determine if we are playing the game based on some css attribute?
 (function() {
-	var $BODY = $('body');
+	var self = window.events = {
 
-	$BODY.on('click', '.playGameButton', function(e) {
-		e.preventDefault();
-		$('#pregame').fadeOut('fast');
-		return false;
-	});
+		init: function() {
+		}
+	};
+	
+	self.init();
+	bindEvents();
 
-	$BODY.on('click touch', '#game', function(e) {
-		console.log(e.clientX);
-	});
-}());
+	//private functions
+	function bindEvents() {
+		$BODY.on('click', '.playGameButton', function(e) {
+			e.preventDefault();
+			$('#pregame').fadeOut('fast');
+			return false;
+		});
+
+		$BODY.on('click touch', '#game', function(e) {
+			e.preventDefault();
+			return false;
+		});
+	}
+})();
