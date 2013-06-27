@@ -1,4 +1,4 @@
-//determine if we are playing the game based on some css attribute?
+//main game loop stuff
 (function() {
 	var self = window.$game = {
 
@@ -21,6 +21,12 @@
 	function setupGlobals() {
 		window.$BODY = $('body');
 		window.$GAMEBOARD = $('#game');
+		window.$SCROLL_ELEMENT = $('html, body');
+		window.NAVBAR_HEIGHT = 72;
+		window.GAMEBOARD_WIDTH = 2000;
+		window.GAMEBOARD_HEIGHT = 1000;
+		window.HEIGHT_BUFFER = 20;
+		window.WALL_HEIGHT = 200;
 	}
 
 })();

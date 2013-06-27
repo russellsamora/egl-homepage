@@ -5,11 +5,13 @@
 		_currentFrame,
 		_numFrames = 2,
 		_walkTimeout = null,
-		_speedAmplifier = 7;
+		_speedAmplifier = 7,
+		_steps;
 	
 	var self = $game.player = {
 		//public vars
 		ready: false,
+		inTransit: false,
 		id: 'player',
 		class: 'character',
 		x: 550,
@@ -45,73 +47,95 @@
 				self.ready = true;
 			}
 			i.src = '../../img/player/' + file + '.png';
+		},
+
+
+		//figure out where to move the player and move em!
+		movePlayer: function(input) {
+			self.inTransit = true;
+			
+			//do some spatial calculations to find distance and speed
+			var diffX =  input.x - self.x,
+				diffY = input.y - self.y,
+				absDiffX = Math.abs(diffX),
+				absDiffY = Math.abs(diffY),
+				distance =  Math.sqrt((diffX * diffX) + (diffY * diffY));
+				speed = distance * _speedAmplifier;
+
+			//add on speed to the input with the coords
+			input.speed = speed;
+			//calculate direction
+			if(absDiffY / absDiffX > 1) {
+				if(diffY > 0) {
+					//down
+					// _direction = self.w * 4;
+					_direction = self.w * 4;
+				} else {
+					//up
+					_direction = self.w * 6;
+				}
+			} else {
+				if(diffX > 0) {
+					//right
+					// _direction = self.w * 2;
+					_direction = self.w * 2;
+				} else {
+					//left
+					// _direction = self.w * 1;
+					_direction = 0;
+				}
+			}
+			//TODO: what is this for?? come on russell...
+			input.w = absDiffX + self.w;
+			input.h = absDiffY + self.h;
+			
+			//set the z-indexes to the right value
+			//setZIndex(input);
+
+			//figure out if we need to slide screen
+			_slideScreen(input);
+
+			//reset the frame
+			_currentFrame = 0;
+			_steps = 0;
+
+			//set the animation
+			self.selector.stop().animate({
+				top: input.y,
+				left: input.x
+			}, speed, 'linear', function() {
+				//on walk completion, set new coordinates and change sprite
+				self.inTransit = false;
+				self.x = input.x;
+				self.y = input.y;
+				self.selector.css({
+					'background-position': -self.w * 8
+				});
+			});
+
+			//for hitting AND for flipping index
+			//hitTest();
+
+			//delay this so if we have a hit right away, we don't animate
+			clearTimeout(_walkTimeout);
+			setTimeout(self.animateWalkCycle, 17);	
+
+		},
+
+		//switch out sprite for walk cycle
+		animateWalkCycle: function() {
+			_steps++;
+			if(self.inTransit) {
+				_currentFrame++;
+				if(_currentFrame >= _numFrames) {
+					_currentFrame = 0;
+				}
+				var pos = -(_direction + _currentFrame * self.w) + 'px';
+				self.selector.css('background-position', pos);
+				clearTimeout(_walkTimeout);
+				_walkTimeout = setTimeout(self.animateWalkCycle, 170);
+			}
 		}
-
-		// //figure out where to move the player and move em!
-		// movePlayer: function(input) {
-		// 	inTransit = true;
-		// 	//do some spatial calculations to find distance and speed
-		// 	var diffX =  input.x - player.x,
-		// 		diffY = input.y - player.y,
-		// 		absDiffX = Math.abs(diffX),
-		// 		absDiffY = Math.abs(diffY),
-		// 		distance =  Math.sqrt((diffX * diffX) + (diffY * diffY));
-		// 		speed = distance * speedAmplifier;
-
-		// 	input.speed = speed;
-			
-		// 	//calculate direction
-		// 	//this means its going pretty vertical likely (images: left, right, down, up, idle)
-		// 	if(absDiffY / absDiffX > 1) {
-		// 		if(diffY > 0) {
-		// 			//down
-		// 			direction = 320;
-		// 		} else {
-		// 			//up
-		// 			direction = 480;
-		// 		}
-		// 	} else {
-		// 		if(diffX > 0) {
-		// 			//right
-		// 			direction = 160;
-		// 		} else {
-		// 			//left
-		// 			direction = 0;
-		// 		}
-		// 	}
-		// 	input.w = absDiffX + player.w;
-		// 	input.h = absDiffY + player.h;
-			
-		// 	//set the z-indexes to the right value
-		// 	setZIndex(input);
-
-		// 	//figure out if we need to slide screen
-		// 	slideScreen(input);
-
-		// 	//set the animation
-		// 	player.selector.stop().animate({
-		// 		top: input.y,
-		// 		left: input.x
-		// 	}, speed, 'linear', function() {
-		// 		inTransit = false;
-		// 		player.x = input.x;
-		// 		player.y = input.y;
-		// 		player.selector.css({
-		// 			'background-position': -640
-		// 		});
-		// 	});
-
-		// 	//for hitting AND for flipping index
-		// 	hitTest();
-
-		// 	//reset the frame
-		// 	currentFrame = 0;
-		// 	steps = 0;
-		// 	//delay this so if we have a hit right away, we don't animate
-		// 	clearTimeout(walkTimeout);
-		// 	setTimeout(self.animateWalkCycle, 17);	
-
-		// },
 
 		// //perform a jump move!
 		// jumpPlayer: function() {
@@ -129,20 +153,45 @@
 		// 		});
 		// 	});
 		// },
-
-		// //switch out sprite for walk cycle
-		// animateWalkCycle: function() {
-		// 	steps++;
-		// 	if(inTransit) {
-		// 		currentFrame++;
-		// 		if(currentFrame >= numFrames) {
-		// 			currentFrame = 0;
-		// 		}
-		// 		var pos = -(direction + currentFrame * player.w) + 'px';
-		// 		player.selector.css('background-position', pos);
-		// 		clearTimeout(walkTimeout);
-		// 		walkTimeout = setTimeout(self.animateWalkCycle, 170);
-		// 	}
-		// }
 	};
+
+	//private functions
+	function _slideScreen(input) {
+		//check for page edge clicking to animate scroll!
+		var destX, destY;
+		//make sure transition isn't too fast.
+		var speed = Math.max(500,input.speed);
+
+		//left edge
+		if(input.edgeX < self.w && pageXOffset > 0) {
+			destX = Math.max(pageXOffset - $game.input.width / 2, 0);
+		//right edge
+		} else if( input.edgeX > $game.input.width - self.w) {
+			destX = Math.min(pageXOffset + $game.input.width / 2, $game.input.maxScroll.left);
+		}
+		//top edge
+		if(input.edgeY < self.h + NAVBAR_HEIGHT && pageYOffset > NAVBAR_HEIGHT) {
+			destY = Math.max(pageYOffset - $game.input.height / 2, 0);
+		//bottom edge
+		} else if( input.edgeY > $game.input.height - self.h) {
+			destY = Math.min(pageYOffset + $game.input.height / 2, $game.input.maxScroll.top);
+		}
+		//console.log('y:', input.y,'edge:', input.edgeY,'page:', pageYOffset,'max:', maxScroll.top);
+
+		//choose which to animate (must lump together so it doesn't halt other)
+		if(destX !== undefined && destY !== undefined) {
+			$SCROLL_ELEMENT.stop().animate({
+				scrollLeft: destX,
+				scrollTop: destY
+			}, speed,'linear');	
+		} else if(destY !== undefined) {
+			$SCROLL_ELEMENT.stop().animate({
+				scrollTop: destY
+			}, speed,'linear');	
+		} else if(destX !== undefined) {
+			$SCROLL_ELEMENT.stop().animate({
+				scrollLeft: destX
+			}, speed,'linear');	
+		}
+	}
 })();
