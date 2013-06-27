@@ -162,22 +162,28 @@
 		//make sure transition isn't too fast.
 		var speed = Math.max(500,input.speed);
 
+		//check for CLICKS on edge of screen
 		//left edge
 		if(input.edgeX < self.w && pageXOffset > 0) {
 			destX = Math.max(pageXOffset - $game.input.width / 2, 0);
+		}
 		//right edge
-		} else if( input.edgeX > $game.input.width - self.w) {
+		else if( input.edgeX > $game.input.width - self.w) {
 			destX = Math.min(pageXOffset + $game.input.width / 2, $game.input.maxScroll.left);
 		}
 		//top edge
-		if(input.edgeY < self.h + NAVBAR_HEIGHT && pageYOffset > NAVBAR_HEIGHT) {
+		if(input.edgeY < self.h && pageYOffset > 0) {
 			destY = Math.max(pageYOffset - $game.input.height / 2, 0);
+		} 
 		//bottom edge
-		} else if( input.edgeY > $game.input.height - self.h) {
+		else if( input.edgeY > $game.input.height - self.h) {
 			destY = Math.min(pageYOffset + $game.input.height / 2, $game.input.maxScroll.top);
 		}
-		//console.log('y:', input.y,'edge:', input.edgeY,'page:', pageYOffset,'max:', maxScroll.top);
-
+		//must account for wall since can't click on it...
+		else if(pageYOffset > 0 && input.y < NAVBAR_HEIGHT + WALL_HEIGHT + self.h) {
+			destY = 0;
+		}
+		
 		//choose which to animate (must lump together so it doesn't halt other)
 		if(destX !== undefined && destY !== undefined) {
 			$SCROLL_ELEMENT.stop().animate({

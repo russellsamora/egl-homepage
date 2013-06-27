@@ -97,7 +97,7 @@
 			</div>
 			<div id='push'></div>
    		</div>
-		<div id='footer'>
+		<!-- <div id='footer'>
       		<div class='container'>
       			<div class='row'>
       				<div class='span4'>
@@ -122,7 +122,7 @@
       				</div>
       			</div>
 	      	</div>
-	    </div>
+	    </div> -->
 
     	<!-- Los javascripts -->
     	<script src='/js/libs/lab.js'></script>
@@ -134,6 +134,7 @@
 			.script('js/libs/plugins.js').wait()
 			.script('js/game/main.js')
 			.script('js/game/input.js')
+			.script('js/game/audio.js')
 			.script('js/game/player.js').wait(function() {
 				$game.init();
 			});

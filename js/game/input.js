@@ -9,6 +9,8 @@
 		height: null,
 
 		init: function() {
+			//reset scroll top
+			$SCROLL_ELEMENT.scrollTop(0);
 			_resize();
 		}
 	};
@@ -20,20 +22,19 @@
 	function _bindEvents() {
 		$BODY.on('click', '.playGameButton', function(e) {
 			e.preventDefault();
-			$('#pregame').fadeOut('fast');
+			$('#pregame').fadeOut('fast', function() {
+				$game.ready = true;
+			});
 			return false;
 		});
 
 		$BODY.on('click touch', '#game', function(e) {
 			e.preventDefault();
-			if(!$game.player.inTransit) {
-				// if(!_preventMovement) {
-				
+			if(!$game.player.inTransit && $game.ready) {
 				//hide message boxes
 				// clearTimeout(messageTimeout);
 				// $messageBox.fadeOut();
 				//constrain to bounds of the room
-				console.log(e.pageY);
 				if(e.pageY < WALL_HEIGHT + NAVBAR_HEIGHT) { return false; }
 				if(e.pageY > GAMEBOARD_HEIGHT + NAVBAR_HEIGHT - $game.player.offset.y) { return false; }
 				if(e.pageX <  $game.player.offset.x) { return false; }
