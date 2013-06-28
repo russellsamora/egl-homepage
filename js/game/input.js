@@ -8,11 +8,13 @@
 		maxScroll: null,
 		width: null,
 		height: null,
+		ready: false,
 
 		init: function() {
 			//reset scroll top
 			$SCROLL_ELEMENT.scrollTop(0);
 			_resize();
+			self.ready = true;
 		}
 	};
 	

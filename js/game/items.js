@@ -6,6 +6,7 @@
 	var self = $game.items = {
 		itemKeys: null,
 		data: null,
+		ready: false,
 
 		init: function() {
 			_loadData();
@@ -163,7 +164,7 @@
 			if(index < self.itemKeys.length) {
 				_setupItems(index);
 			} else {
-				console.log('environment loaded');
+				self.ready = true;
 			}
 		}
 		img.src = '/img/items/' + info.class + '.png';

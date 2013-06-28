@@ -6,6 +6,7 @@
 	var self = $game.audio = {
 		fx: null,
 		music: [],
+		ready: false,
 		
 		init: function() {
 			self.fx = new Howl({
@@ -18,7 +19,12 @@
 				var file = '/audio/song' + s + '.mp3';
 				self.music[s] = new Howl({
 					urls: [file],
-					loop: true
+					loop: true,
+					onload: function() {
+						if(this._src === '/audio/song1.mp3') {
+							self.ready = true;
+						}
+					}
 				});
 			}
 		},

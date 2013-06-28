@@ -10,7 +10,8 @@
 			if(gameOn !== 'none') {
 				//do a check for browser capabilities
 				//modernizr...
-				$game.player.init('player0');
+				//start tick to see if everytthing is loaded up
+				_beginGame();
 			} else {
 				return;
 			}
@@ -29,5 +30,14 @@
 		window.HEIGHT_BUFFER = 20;
 		window.WALL_HEIGHT = 200;
 		window.DEV_MODE = false;
+	}
+
+	function _beginGame() {
+		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready) {
+			$game.ready = true;
+			$('.playGameButton').text('play!');
+		} else {
+			requestAnimationFrame(_beginGame);
+		}
 	}
 })();

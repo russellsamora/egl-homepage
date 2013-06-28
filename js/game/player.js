@@ -28,7 +28,8 @@
 		score: 0,
 		response: {},
 
-		init: function (file) {
+		init: function () {
+			var file = 'player0';
 			var d = document.createElement('div');
 			var i = new Image();
 			i.onload = function() {
@@ -157,7 +158,7 @@
 		// 	});
 		// },
 	};
-
+	self.init();
 	//private functions
 	//switch out sprite for walk cycle
 	function _animateWalkCycle() {
