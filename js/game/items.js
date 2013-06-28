@@ -205,7 +205,7 @@
 				y: 450,
 				messages: ['booooombox'],
 				action: function() {
-					$game.audio.nextSong();
+					$game.audio.startMusic();
 				}
 			}
 		};
