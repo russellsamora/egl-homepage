@@ -16,10 +16,10 @@
 			}
 		}
 	};
-	setupGlobals();
+	_setupGlobals();
 
 	//private functions
-	function setupGlobals() {
+	function _setupGlobals() {
 		window.$BODY = $('body');
 		window.$GAMEBOARD = $('#game');
 		window.$SCROLL_ELEMENT = $('html, body');
@@ -28,6 +28,6 @@
 		window.GAMEBOARD_HEIGHT = 1000;
 		window.HEIGHT_BUFFER = 20;
 		window.WALL_HEIGHT = 200;
+		window.DEV_MODE = false;
 	}
-
 })();

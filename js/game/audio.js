@@ -1,7 +1,11 @@
 (function() {
+	var _currentSong = 0,
+		_numSongs = 3,
+		_songTransition = false;
+
 	var self = $game.audio = {
 		fx: null,
-		music: null,
+		music: [],
 		
 		init: function() {
 			self.fx = new Howl({
@@ -10,11 +14,26 @@
 					jump: [0, 700]
 				}
 			});
-			self.music = new Howl({
-				urls: ['/audio/song0.mp3'],
-				volume: 0.3,
-				loop: true
-			});
+			for (var s = 0; s < _numSongs; s++) {
+				var file = '/audio/song' + s + '.mp3';
+				self.music[s] = new Howl({
+					urls: [file],
+					loop: true
+				});
+			}
+		},
+
+		nextSong: function() {
+			if(!_songTransition) {
+				_songTransition = true;
+				self.music[_currentSong].fadeOut(0.0, 1000, function() {
+					_currentSong++;
+					if(_currentSong >= _numSongs) { _currentSong = 0; }
+					self.music[_currentSong].fadeIn(0.3, 2000, function() {
+						_songTransition = false;
+					});
+				});
+			}
 		}
 	};
 

@@ -1,3 +1,4 @@
+@Zmessage: 100;
 @import 'custom-variables.less';
 @media (max-width: 767px){
 	#game, #pregame {
@@ -33,6 +34,28 @@
 	background: url('../img/office_bg.jpg');
 	cursor: pointer;
 	border-top: 2px solid @gray;
+	.item {
+		cursor: pointer;
+		z-index: 2;
+	}
+	.person {
+		cursor: pointer;
+		z-index: 1;
+	}
+	.fgPerson {
+		z-index: 4;
+	}
+	.fgItem {
+		z-index: 5;
+	}
+	.hitItem {
+		cursor: pointer;
+		z-index: 4;
+	}
+	#player {
+		z-index: 3;
+		cursor: pointer;
+	}
 }
 
 #pregame {
@@ -44,6 +67,7 @@
 	top: 50%;
 	margin-left: -200px;
 	margin-top: -60px;
+	z-index: @Zmessage;
 	p {
 		margin: 40px 0 0 0;
 		text-align: center;

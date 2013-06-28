@@ -6,7 +6,9 @@
 		_numFrames = 2,
 		_walkTimeout = null,
 		_speedAmplifier = 7,
-		_steps;
+		_steps,
+		_preventMovement,
+		_preventMovementTimeout;
 	
 	var self = $game.player = {
 		//public vars
@@ -90,16 +92,18 @@
 			input.h = absDiffY + self.h;
 			
 			//set the z-indexes to the right value
-			//setZIndex(input);
-
-			//figure out if we need to slide screen
-			_slideScreen(input);
+			$game.items.setZIndex(input);
 
 			//reset the frame
 			_currentFrame = 0;
 			_steps = 0;
 
-			//set the animation
+
+			//for hitting AND for flipping index
+			$game.items.hitTest();
+
+
+			//set the animation so the player moves
 			self.selector.stop().animate({
 				top: input.y,
 				left: input.x
@@ -112,29 +116,28 @@
 					'background-position': -self.w * 8
 				});
 			});
-
-			//for hitting AND for flipping index
-			//hitTest();
-
 			//delay this so if we have a hit right away, we don't animate
 			clearTimeout(_walkTimeout);
-			setTimeout(self.animateWalkCycle, 17);	
-
+			setTimeout(function() {
+					_animateWalkCycle();
+					_slideScreen(input);
+			}, 51);
 		},
 
-		//switch out sprite for walk cycle
-		animateWalkCycle: function() {
-			_steps++;
-			if(self.inTransit) {
-				_currentFrame++;
-				if(_currentFrame >= _numFrames) {
-					_currentFrame = 0;
-				}
-				var pos = -(_direction + _currentFrame * self.w) + 'px';
-				self.selector.css('background-position', pos);
-				clearTimeout(_walkTimeout);
-				_walkTimeout = setTimeout(self.animateWalkCycle, 170);
-			}
+		stopMove: function(prevMove) {
+			self.inTransit = false;
+			//only need to reset stuff if player started moving
+			self.selector.stop(true).css({
+			'background-position': -self.w * 8
+			});
+			$SCROLL_ELEMENT.stop(true);
+			self.x = prevMove.x;
+			self.y = prevMove.y;
+			self.selector.css({
+				top: prevMove.y,
+				left: prevMove.x
+			});
+			//showMessage({el: player.otherSelector, messages: ['Ouch!']});
 		}
 
 		// //perform a jump move!
@@ -156,48 +159,65 @@
 	};
 
 	//private functions
-	function _slideScreen(input) {
-		//check for page edge clicking to animate scroll!
-		var destX, destY;
-		//make sure transition isn't too fast.
-		var speed = Math.max(500,input.speed);
+	//switch out sprite for walk cycle
+	function _animateWalkCycle() {
+		if(self.inTransit) {
+			_steps++;
+			_currentFrame++;
+			if(_currentFrame >= _numFrames) {
+				_currentFrame = 0;
+			}
+			var pos = -(_direction + _currentFrame * self.w) + 'px';
+			self.selector.css('background-position', pos);
+			clearTimeout(_walkTimeout);
+			_walkTimeout = setTimeout(_animateWalkCycle, 170);
+		}
+	}
 
-		//check for CLICKS on edge of screen
-		//left edge
-		if(input.edgeX < self.w && pageXOffset > 0) {
-			destX = Math.max(pageXOffset - $game.input.width / 2, 0);
-		}
-		//right edge
-		else if( input.edgeX > $game.input.width - self.w) {
-			destX = Math.min(pageXOffset + $game.input.width / 2, $game.input.maxScroll.left);
-		}
-		//top edge
-		if(input.edgeY < self.h && pageYOffset > 0) {
-			destY = Math.max(pageYOffset - $game.input.height / 2, 0);
-		} 
-		//bottom edge
-		else if( input.edgeY > $game.input.height - self.h) {
-			destY = Math.min(pageYOffset + $game.input.height / 2, $game.input.maxScroll.top);
-		}
-		//must account for wall since can't click on it...
-		else if(pageYOffset > 0 && input.y < NAVBAR_HEIGHT + WALL_HEIGHT + self.h) {
-			destY = 0;
-		}
-		
-		//choose which to animate (must lump together so it doesn't halt other)
-		if(destX !== undefined && destY !== undefined) {
-			$SCROLL_ELEMENT.stop().animate({
-				scrollLeft: destX,
-				scrollTop: destY
-			}, speed,'linear');	
-		} else if(destY !== undefined) {
-			$SCROLL_ELEMENT.stop().animate({
-				scrollTop: destY
-			}, speed,'linear');	
-		} else if(destX !== undefined) {
-			$SCROLL_ELEMENT.stop().animate({
-				scrollLeft: destX
-			}, speed,'linear');	
+	//check for page edge clicking to animate scroll!
+	function _slideScreen(input) {
+		if(self.inTransit) {
+			var destX, destY;
+			//make sure transition isn't too fast.
+			var speed = Math.max(500,input.speed);
+
+			//check for CLICKS on edge of screen
+			//left edge
+			if(input.edgeX < self.w && pageXOffset > 0) {
+				destX = Math.max(pageXOffset - $game.input.width / 2, 0);
+			}
+			//right edge
+			else if( input.edgeX > $game.input.width - self.w) {
+				destX = Math.min(pageXOffset + $game.input.width / 2, $game.input.maxScroll.left);
+			}
+			//top edge
+			if(input.edgeY < self.h && pageYOffset > 0) {
+				destY = Math.max(pageYOffset - $game.input.height / 2, 0);
+			} 
+			//bottom edge
+			else if( input.edgeY > $game.input.height - self.h) {
+				destY = Math.min(pageYOffset + $game.input.height / 2, $game.input.maxScroll.top);
+			}
+			//must account for wall since can't click on it...
+			else if(pageYOffset > 0 && input.y < NAVBAR_HEIGHT + WALL_HEIGHT + self.h) {
+				destY = 0;
+			}
+
+			//choose which to animate (must lump together so it doesn't halt other)
+			if(destX !== undefined && destY !== undefined) {
+				$SCROLL_ELEMENT.stop().animate({
+					scrollLeft: destX,
+					scrollTop: destY
+				}, speed,'linear');	
+			} else if(destY !== undefined) {
+				$SCROLL_ELEMENT.stop().animate({
+					scrollTop: destY
+				}, speed,'linear');	
+			} else if(destX !== undefined) {
+				$SCROLL_ELEMENT.stop().animate({
+					scrollLeft: destX
+				}, speed,'linear');	
+			}
 		}
 	}
 })();
