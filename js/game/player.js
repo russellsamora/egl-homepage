@@ -181,9 +181,9 @@
 	function _slideScreen(input) {
 		if(self.inTransit) {
 			var destX, destY;
-			//make sure transition isn't too fast.
+			//make sure transition isn't too fast or too slow
 			var speed = Math.max(500,input.speed);
-
+			speed = Math.min($game.input.longest, speed);
 			//check for CLICKS on edge of screen
 			//left edge
 			if(input.edgeX < self.w && pageXOffset > 0) {

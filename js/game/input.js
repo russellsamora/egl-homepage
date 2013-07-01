@@ -86,6 +86,7 @@
 	function _resize() {
 		self.width = $(window).width();
 		self.height = $(window).height();
+		self.longest = (self.width + self.height) * 2;
 		self.maxScroll = { 
 			left: Math.max(0,GAMEBOARD_WIDTH - self.width),
 			top: Math.max(0,GAMEBOARD_HEIGHT - self.height + NAVBAR_HEIGHT)
