@@ -32,24 +32,26 @@
 			}
 		},
 
-		startMusic: function() {
+		startMusic: function(el) {
 			if(!self.isPlaying) {
 				self.isPlaying = true;
 				_songTransition = true;
+				$game.showMessage({message: 'track' + _currentSong + ' by Russ', el: el});
 				self.music[_currentSong].fadeIn(0.3, 2000, function() {
 					_songTransition = false;
 				});
 			} else {
-				self.nextSong();
+				self.nextSong(el);
 			}
 		},
 
-		nextSong: function() {
+		nextSong: function(el) {
 			if(!_songTransition) {
 				_songTransition = true;
 				self.music[_currentSong].fadeOut(0.0, 1000, function() {
 					_currentSong++;
 					if(_currentSong >= _numSongs) { _currentSong = 0; }
+					$game.showMessage({message: 'track' + _currentSong + ' by Russ', el: el});
 					self.music[_currentSong].fadeIn(0.3, 2000, function() {
 						_songTransition = false;
 					});

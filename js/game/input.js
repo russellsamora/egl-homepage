@@ -62,11 +62,17 @@
 		});
 
 		//clicking on item, show message or do action
-		$BODY.on('click touch','#game .item', function(e) {
-			if(!$game.player.inTransit && $game.ready) {
+		$BODY.on('click touch', '#game .item', function(e) {
+			if(!$game.player.inTransit && $game.playing) {
 				_preventMove();
 				var key = $(this).attr('data-key');
 				$game.items.clicked(key, this);
+			}
+		});
+
+		$BODY.on('click touch', '#player', function(e) {
+			if(!$game.player.inTransit && $game.playing) {
+				_preventMove();
 			}
 		});
 

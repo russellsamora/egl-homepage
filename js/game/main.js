@@ -22,8 +22,8 @@
 		},
 
 		showMessage: function(data) {
-			$MESSAGE_TEXT.text(data.message);	
 			
+			$MESSAGE_TEXT.text(data.message);
 			//figure out how to align it center
 			var	top = parseInt(data.el.style.top,10) - 50,
 				left = parseInt(data.el.style.left,10),
@@ -32,24 +32,23 @@
 			var msgWidth = parseInt($MESSAGE_BOX.css('width'), 10),
 				msgLeft = Math.floor(mid - msgWidth / 2);
 			
+			var duration = 500 + data.message.length * 100;
 			//clear old messages and change position and show and add fade out timer
-			clearTimeout(_messageTimeout);
-			$MESSAGE_BOX.hide().css({
+			self.hideMessage();
+			$MESSAGE_BOX.css({
 				top: top,
 				left: msgLeft
 			});
 
-			var duration = data.message.length * 80;
-
 			$MESSAGE_BOX.show();
 			_messageTimeout = setTimeout(function() {
-				$MESSAGE_BOX.fadeOut();
+				self.hideMessage();
 			}, duration);
 		},
 
 		hideMessage: function() {
 			clearTimeout(_messageTimeout);
-			$MESSAGE_BOX.fadeOut();
+			$MESSAGE_BOX.hide();
 		}
 	};
 	_setupGlobals();

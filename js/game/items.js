@@ -110,11 +110,11 @@
 			}
 		},
 
-		clicked: function(key, selector) {
+		clicked: function(key, el) {
 			if(self.itemData[key].action) {
-				self.itemData[key].action();
+				self.itemData[key].action(el);
 			} else {
-				$game.showMessage({el: selector, message: self.itemData[key].message});
+				$game.showMessage({el: el, message: self.itemData[key].message});
 			}
 		}
 	};
@@ -233,8 +233,8 @@
 				x: 700,
 				y: 450,
 				message: 'booooombox',
-				action: function() {
-					$game.audio.startMusic();
+				action: function(el) {
+					$game.audio.startMusic(el);
 				}
 			}
 		};
