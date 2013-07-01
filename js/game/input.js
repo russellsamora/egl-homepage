@@ -13,8 +13,11 @@
 		init: function() {
 			//reset scroll top
 			$SCROLL_ELEMENT.scrollTop(0);
-			_resize();
 			self.ready = true;
+		},
+
+		forceResize: function() {
+			_resize();
 		}
 	};
 	
@@ -28,6 +31,7 @@
 			if($game.ready) {
 				$('#pregame').fadeOut('fast', function() {
 					$game.playing = true;
+					$game.started = true;
 				});
 			}
 			return false;
@@ -86,6 +90,14 @@
 			left: Math.max(0,GAMEBOARD_WIDTH - self.width),
 			top: Math.max(0,GAMEBOARD_HEIGHT - self.height + NAVBAR_HEIGHT)
 		};
+
+		var gameOn = $('#game').css('display');
+		//resuming game
+		if(gameOn !== 'none' && !$game.playing && $game.started) {
+			$game.resumeGame();
+		} else if(gameOn === 'none' && $game.playing && $game.started) {
+			$game.pauseGame();
+		}
 	}
 
 	//this means an item was clicked on so we dont wanna move on it, but do its action
@@ -96,4 +108,5 @@
 			_preventMovement = false;
 		}, 17);
 	}
+
 })();

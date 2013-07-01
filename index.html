@@ -135,12 +135,17 @@
 			.script('js/libs/bootstrap.min.js')
 			.script('js/libs/modernizr.js')
 			.script('js/libs/plugins.js').wait()
-			.script('js/game/main.js')
-			.script('js/game/input.js')
-			.script('js/game/audio.js')
-			.script('js/game/items.js')
-			.script('js/game/player.js').wait(function() {
-				$game.init();
+			.script('js/game/main.js').wait(function() {
+				var gotGame = $game.init();
+				if(gotGame) {
+					$LAB
+					.script('js/game/input.js')
+					.script('js/game/audio.js')
+					.script('js/game/items.js')
+					.script('js/game/player.js').wait(function() {
+						$game.beginGame();
+					});
+				}
 			});
     	</script>
   </body>

@@ -140,7 +140,7 @@
 				top: prevMove.y,
 				left: prevMove.x
 			});
-			//showMessage({el: player.otherSelector, messages: ['Ouch!']});
+			$game.showMessage({el: self.otherSelector, message: 'Ouch!'});
 		}
 
 		// //perform a jump move!

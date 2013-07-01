@@ -1,12 +1,14 @@
 //main game loop stuff
 (function() {
 	//private vars
-	var _messageTimeout = null;
+	var _messageTimeout = null,
+		_gotGame = null;
 
 	var self = window.$game = {
 
 		ready: false,
 		playing: false,
+		started: false,
 		
 		init: function() {
 			//see if the game should be started up based on screen size
@@ -15,9 +17,19 @@
 				//do a check for browser capabilities
 				//modernizr...
 				//start tick to see if everytthing is loaded up
-				_beginGame();
+				_setupGlobals();
+				_gotGame = true;
 			} else {
-				return;
+				//must handle resize different if we don't initially load game
+				$(window).on('resize', _resize);
+				_gotGame = false;
+			}
+			return _gotGame;
+		},
+
+		beginGame: function() {
+			if(_gotGame) {
+				_beginGame();
 			}
 		},
 
@@ -49,9 +61,20 @@
 		hideMessage: function() {
 			clearTimeout(_messageTimeout);
 			$MESSAGE_BOX.hide();
+		},
+
+		pauseGame: function() {
+			$game.playing = false;
+			$game.audio.pause();
+		},
+
+		resumeGame: function() {
+			$game.playing = true;
+			$game.audio.resume();
+			_tick();
+			
 		}
 	};
-	_setupGlobals();
 
 	//private functions
 	function _setupGlobals() {
@@ -70,8 +93,10 @@
 
 	function _beginGame() {
 		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready) {
+			$game.input.forceResize();
 			$game.ready = true;
 			$('.playGameButton').text('play!');
+
 			if(DEV_MODE) {
 				$('.character').addClass('devHitBoundP');
 				$('.item, .character, .person').addClass('devBottomBound');
@@ -90,6 +115,37 @@
 		} else {
 			var data = {name: 'russell', age: 26};
 			localStorage.setItem('egl-game', JSON.stringify(data));
+		}
+	}
+
+	function _resize() {
+		var gameOn = $('#game').css('display');
+		if(gameOn !== 'none') {
+			//dissable resize function to trigger game start
+			$(window).off('resize');
+			_setupGlobals();
+			_gotGame = true;
+			//load the rest of the scripts
+			$LAB
+			.script('js/game/input.js')
+			.script('js/game/audio.js')
+			.script('js/game/items.js')
+			.script('js/game/player.js').wait(function() {
+				$game.beginGame();
+			});
+		}
+	}
+
+	function _tick() {
+		if(self.playing) {
+			// _currentFrame++;
+			// if(currentFrame >= numFrames) {
+			// 	currentFrame = 0;
+			// }
+			// if(currentFrame % 8 === 0) {
+			// 	updateItemAnimations();	
+			// }
+			requestAnimationFrame(_tick);
 		}
 	}
 })();

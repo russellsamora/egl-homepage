@@ -1,7 +1,8 @@
 (function() {
 	var _currentSong = 0,
 		_numSongs = 3,
-		_songTransition = false;
+		_songTransition = false,
+		_wasPlaying = false;
 
 	var self = $game.audio = {
 		fx: null,
@@ -56,6 +57,21 @@
 						_songTransition = false;
 					});
 				});
+			}
+		},
+
+		resume: function() {
+			if(_wasPlaying) {
+				self.music[_currentSong].fadeIn(0.3, 2000);
+			}
+		},
+
+		pause: function() {
+			if(self.isPlaying) {
+				_wasPlaying = true;
+				self.music[_currentSong].fadeOut(0.0, 1000);
+			} else {
+				_wasPlaying = false;
 			}
 		}
 	};
