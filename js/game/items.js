@@ -54,8 +54,8 @@
 				}
 			}
 			//people
-			for(var i = 0; i < self.peopleKeys.length; i++) {
-				var person = self.peopleData[self.peopleKeys[i]];
+			for(var j = 0; j < self.peopleKeys.length; j++) {
+				var person = self.peopleData[self.peopleKeys[j]];
 				if ((minX + input.w >= person.x) && (minX <= person.x + person.w) && (minY + input.h >= person.y) && (minY <= person.y + person.h)) {
 					person.flipped = false;
 					person.kind = 'person';
@@ -80,14 +80,9 @@
 				
 				for(var h = 0; h < _hitList.length; h++) {
 					var other = _hitList[h];
-					//hit test for bottom of both rectangles
+					//see if player has crossed Y plane and we need to switch zindex
 					if((bottomY >= other.bottom) && (bottomY <= other.bottom + HEIGHT_BUFFER)) {
-						var readyToFlip;
-						//if we just crossed hit the vertical intersection, switch the z-index, but only once
-						if(!other.flipped) {
-							readyToFlip = true;
-						}
-						//check for actual collision
+						//check for collision (must do first so we don't flip if jump pos back)
 						if ((tempX + $game.player.w >= other.x) && (tempX <= other.x + other.w)) {
 							//return prev position doubled so it doesn't overlap for next move
 							var rateX = tempX - _prevMove.x,
@@ -97,15 +92,13 @@
 							$game.player.stopMove(_prevMove);
 							break;
 						}
-						if(readyToFlip) {
+						if(!other.flipped) {
 							other.flipped = true;
 							if(other.kind === 'item') {
 								other.selector.toggleClass('fgItem');
 							} else if(other.kind === 'person') {
 								other.selector.toggleClass('fgPerson');
 							}
-							//remove it from list so we stop detecting
-							_hitList.splice(h,1);				
 						}
 					}
 				}
@@ -209,33 +202,33 @@
 
 	function _loadData() {
 		self.itemData = {
-			'tree1': {
-				class: 'tree',
-				x: 200,
-				y: 150,
-				messages: ['I am tree!']
-			},
-			'desk1': {
-				class: 'desk',
-				x: 800,
-				y: 250,
-				messages: ['wahoo desk! wicked exciting.']
-			},
-			'whiteboard': {
-				class: 'whiteboard',
-				x: 500,
-				y: 150,
-				action: function() {
-					whiteboard();
-				}
-			},
-			'burger': {
-				class: 'burger',
-				x: 500,
-				y: 350,
-				frames: 6,
-				messages: ['le cheezbooooger']
-			},
+			// 'tree1': {
+			// 	class: 'tree',
+			// 	x: 200,
+			// 	y: 150,
+			// 	messages: ['I am tree!']
+			// },
+			// 'desk1': {
+			// 	class: 'desk',
+			// 	x: 800,
+			// 	y: 250,
+			// 	messages: ['wahoo desk! wicked exciting.']
+			// },
+			// 'whiteboard': {
+			// 	class: 'whiteboard',
+			// 	x: 500,
+			// 	y: 150,
+			// 	action: function() {
+			// 		whiteboard();
+			// 	}
+			// },
+			// 'burger': {
+			// 	class: 'burger',
+			// 	x: 500,
+			// 	y: 350,
+			// 	frames: 6,
+			// 	messages: ['le cheezbooooger']
+			// },
 			'boombox': {
 				class: 'boombox',
 				x: 700,
