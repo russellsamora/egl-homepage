@@ -5,13 +5,16 @@
 
 	var self = $game.items = {
 		itemKeys: null,
-		data: null,
+		peopleKeys: null,
+		itemData: null,
+		peopleData: null,
 		ready: false,
 
 		init: function() {
 			_loadData();
-			self.itemKeys = Object.keys(self.data);
-			_setupItems(0);
+			self.itemKeys = Object.keys(self.itemData);
+			self.peopleKeys = Object.keys(self.peopleData);
+			_setupItems(0); //this triggers setupPeple when done
 		},
 
 		setZIndex: function(input) {
@@ -20,9 +23,9 @@
 				playerBottom = $game.player.y + $game.player.h;
 
 			if(DEV_MODE) {
-				$('.dirtyBound').remove();
+				$('.devDirtyBound').remove();
 				var d = document.createElement('div');
-				d.setAttribute('class', 'dirtyBound');
+				d.setAttribute('class', 'devDirtyBound');
 				$(d).css({
 					position: 'absolute',
 					top: minY,
@@ -36,7 +39,7 @@
 			_hitList = [];
 			//items
 			for(var i = 0; i < self.itemKeys.length; i++) {
-				var item = self.data[self.itemKeys[i]];
+				var item = self.itemData[self.itemKeys[i]];
 				//see if it will be in range of the new walk
 				if ((minX + input.w >= item.x) && (minX <= item.x + item.w) && (minY + input.h >= item.y) && (minY <= item.y + item.h)) {
 					item.flipped = false;
@@ -50,21 +53,21 @@
 					}
 				}
 			}
-			// //people
-			// for(var i = 0; i < peopleKeys.length; i++) {
-			// 	var other = people[peopleKeys[i]];
-			// 	if ((minX + input.w >= other.x) && (minX <= other.x + other.w) && (minY + input.h >= other.y) && (minY <= other.y + other.h)) {
-			// 		other.flipped = false;
-			// 		other.kind = 'person';
-			// 		hitList.push(other);
-			// 		//check to see which side the player is on (above or below)
-			// 		if(playerBottom < other.bottom) {
-			// 			other.selector.addClass('fgPerson');
-			// 		} else {
-			// 			other.selector.removeClass('fgPerson');
-			// 		}
-			// 	}
-			// }
+			//people
+			for(var i = 0; i < self.peopleKeys.length; i++) {
+				var person = self.peopleData[self.peopleKeys[i]];
+				if ((minX + input.w >= person.x) && (minX <= person.x + person.w) && (minY + input.h >= person.y) && (minY <= person.y + person.h)) {
+					person.flipped = false;
+					person.kind = 'person';
+					_hitList.push(person);
+					//check to see which side the player is on (above or below)
+					if(playerBottom < person.bottom) {
+						person.selector.addClass('fgPerson');
+					} else {
+						person.selector.removeClass('fgPerson');
+					}
+				}
+			}
 		},
 
 		hitTest: function() {
@@ -97,7 +100,7 @@
 						if(readyToFlip) {
 							other.flipped = true;
 							if(other.kind === 'item') {
-								other.selector.toggleClass('fgItem');	
+								other.selector.toggleClass('fgItem');
 							} else if(other.kind === 'person') {
 								other.selector.toggleClass('fgPerson');
 							}
@@ -115,8 +118,8 @@
 		},
 
 		clicked: function(key) {
-			if(self.data[key].action) {
-				self.data[key].action();
+			if(self.itemData[key].action) {
+				self.itemData[key].action();
 			} else {
 				//TODO
 				//showMessage({el: this, messages: items[key].messages});
@@ -128,10 +131,10 @@
 	//private functions
 	function _setupItems(index) {
 		var key = self.itemKeys[index],
-			info = self.data[key];
-		//create item, add to dom
-		var item = document.createElement('div');
-		var img = new Image();
+			info = self.itemData[key],
+			item = document.createElement('div'),
+			img = new Image();
+
 		img.onload = function() {
 			//set the background image and append
 			item.setAttribute('id', key);
@@ -164,14 +167,48 @@
 			if(index < self.itemKeys.length) {
 				_setupItems(index);
 			} else {
-				self.ready = true;
+				_setupPeople(0);
 			}
 		}
 		img.src = '/img/items/' + info.class + '.png';
 	}
 
+	function _setupPeople(index) {
+		var key = self.peopleKeys[index],
+			info = self.peopleData[key],
+			item = document.createElement('div'),
+			img = new Image();
+
+		img.onload = function() {
+			//set the background image and append
+			item.setAttribute('id', key);
+			item.setAttribute('class', 'person');
+			item.setAttribute('data-key', key);
+			$(item).css({
+				position: 'absolute',
+				top: info.y,
+				left: info.x,
+				width: img.width,
+				height: img.height,
+				backgroundImage: 'url(' + img.src + ')'
+			});
+			$GAMEBOARD.append(item);
+			info.selector = $('#' + key);
+			info.w = img.width;
+			info.h = img.height;
+			info.bottom = info.y + info.h;
+			index++;
+			if(index < self.peopleKeys.length) {
+				_setupPeople(index);
+			} else {
+				_loadPeopleInfo(true); //null for google doc data
+			}
+		}
+		img.src = 'img/people/' + key + '.png';
+	}
+
 	function _loadData() {
-		self.data = {
+		self.itemData = {
 			'tree1': {
 				class: 'tree',
 				x: 200,
@@ -187,7 +224,7 @@
 			'whiteboard': {
 				class: 'whiteboard',
 				x: 500,
-				y: 50,
+				y: 150,
 				action: function() {
 					whiteboard();
 				}
@@ -209,5 +246,67 @@
 				}
 			}
 		};
+
+		self.peopleData = {
+			'steve': {
+				x: 100,
+				y: 600
+			},
+			'eric': {
+				x: 200,
+				y: 600
+			},
+			'russell': {
+				x: 300,
+				y: 600
+			},
+			'sam': {
+				x: 400,
+				y: 600
+			},
+			'aidan': {
+				x: 500,
+				y: 600
+			},
+			'jedd': {
+				x: 600,
+				y: 600
+			},
+			'jesse': {
+				x: 700,
+				y: 600
+			}
+		};
+	}
+
+	function _loadPeopleInfo(backupData) {
+		var rawData;
+		if(backupData) {
+			rawData = new Miso.Dataset({
+				url: '/data/backup.csv',
+				delimiter: ','
+			});
+		} else {
+			rawData = new Miso.Dataset({
+				importer : Miso.Dataset.Importers.GoogleSpreadsheet,
+				parser : Miso.Dataset.Parsers.GoogleSpreadsheet,
+				key : '0AtnV9m5qu78_dEY2dWNIRXNhTk1USk9rRG9McTFuMkE',
+				worksheet: '1'
+			});
+		}
+		rawData.fetch({
+			success: function() {
+				this.each(function(row){
+					if(self.peopleData[row.name]) {
+						self.peopleData[row.name].status = row.status;
+					}
+				});
+				self.ready = true;
+			},
+			error: function() {
+				console.log('having a bad day? Try backup data!');
+				loadData(true);
+			}
+		});
 	}
 })();

@@ -3,6 +3,7 @@
 	var self = window.$game = {
 
 		ready: false,
+		playing: false,
 		
 		init: function() {
 			//see if the game should be started up based on screen size
@@ -29,13 +30,17 @@
 		window.GAMEBOARD_HEIGHT = 1000;
 		window.HEIGHT_BUFFER = 20;
 		window.WALL_HEIGHT = 200;
-		window.DEV_MODE = false;
+		window.DEV_MODE = true;
 	}
 
 	function _beginGame() {
 		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready) {
 			$game.ready = true;
 			$('.playGameButton').text('play!');
+			if(DEV_MODE) {
+				$('.character').addClass('devHitBoundP');
+				$('.item, .character, .person').addClass('devBottomBound');
+			}
 		} else {
 			requestAnimationFrame(_beginGame);
 		}

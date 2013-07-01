@@ -37,16 +37,20 @@
 	.item {
 		cursor: pointer;
 		z-index: 2;
+		background: rgba(255,0,0,0.4); //DEV_MODE
 	}
 	.person {
 		cursor: pointer;
 		z-index: 1;
+		background: rgba(255,0,0,0.4); //DEV_MODE
 	}
 	.fgPerson {
 		z-index: 4;
+		background: rgba(0,255,0,0.4); //DEV MODE
 	}
 	.fgItem {
 		z-index: 5;
+		background: rgba(0,255,0,0.4); //DEV MODE
 	}
 	.hitItem {
 		cursor: pointer;
@@ -93,7 +97,6 @@
 			// background: url(http://2.bp.blogspot.com/-3y9SL7PvwV0/TWY08s-mS0I/AAAAAAAABH8/zT4Ye2boCm0/s1600/goat_1.jpg) no-repeat center center;
 			// background-size: cover;
 			background: @green;
-;
 		}
 		.researchLink {
 			// background: url(http://2.bp.blogspot.com/-3y9SL7PvwV0/TWY08s-mS0I/AAAAAAAABH8/zT4Ye2boCm0/s1600/goat_1.jpg) no-repeat center center;
@@ -111,4 +114,13 @@
 			background: @purple;
 		}
 	}
+}
+.devDirtyBound { //blue for area
+	background: rgba(0,0,255,0.3);
+}
+.devHitBoundP { //yellow for player
+	background: rgba(255,255,0,0.4);	
+}
+.devBottomBound {
+	border-bottom: 20px solid rgba(255,255,255,0.8);
 }

@@ -25,16 +25,18 @@
 	function _bindEvents() {
 		$BODY.on('click', '.playGameButton', function(e) {
 			e.preventDefault();
-			$('#pregame').fadeOut('fast', function() {
-				$game.ready = true;
-			});
+			if($game.ready) {
+				$('#pregame').fadeOut('fast', function() {
+					$game.playing = true;
+				});
+			}
 			return false;
 		});
 
 		//clicking on gameboard for move
 		$BODY.on('click touch', '#game', function(e) {
 			e.preventDefault();
-			if(!$game.player.inTransit && $game.ready && !_preventMovement) {
+			if(!$game.player.inTransit && $game.playing && !_preventMovement) {
 				//hide message boxes
 				// clearTimeout(messageTimeout);
 				// $messageBox.fadeOut();

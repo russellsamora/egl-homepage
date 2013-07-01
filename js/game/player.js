@@ -42,7 +42,7 @@
 					width: self.w,
 					height: self.h,
 					backgroundImage: 'url(' + i.src + ')',
-					backgroundPosition: '-800px'
+					backgroundPosition: '-800px 0'
 				});
 				$GAMEBOARD.append(d);
 				self.selector = $('#player');
@@ -113,8 +113,9 @@
 				self.inTransit = false;
 				self.x = input.x;
 				self.y = input.y;
+				var pos = -self.w * 8 + 'px 0';
 				self.selector.css({
-					'background-position': -self.w * 8
+					'background-position': pos
 				});
 			});
 			//delay this so if we have a hit right away, we don't animate
@@ -128,8 +129,9 @@
 		stopMove: function(prevMove) {
 			self.inTransit = false;
 			//only need to reset stuff if player started moving
+			var pos = -self.w * 8 + 'px 0';
 			self.selector.stop(true).css({
-			'background-position': -self.w * 8
+			'background-position': pos
 			});
 			$SCROLL_ELEMENT.stop(true);
 			self.x = prevMove.x;
@@ -168,7 +170,7 @@
 			if(_currentFrame >= _numFrames) {
 				_currentFrame = 0;
 			}
-			var pos = -(_direction + _currentFrame * self.w) + 'px';
+			var pos = -(_direction + _currentFrame * self.w) + 'px 0';
 			self.selector.css('background-position', pos);
 			clearTimeout(_walkTimeout);
 			_walkTimeout = setTimeout(_animateWalkCycle, 170);
