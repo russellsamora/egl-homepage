@@ -110,12 +110,11 @@
 			}
 		},
 
-		clicked: function(key) {
+		clicked: function(key, selector) {
 			if(self.itemData[key].action) {
 				self.itemData[key].action();
 			} else {
-				//TODO
-				//showMessage({el: this, messages: items[key].messages});
+				$game.showMessage({el: selector, message: self.itemData[key].message});
 			}
 		}
 	};
@@ -202,38 +201,38 @@
 
 	function _loadData() {
 		self.itemData = {
-			// 'tree1': {
-			// 	class: 'tree',
-			// 	x: 200,
-			// 	y: 150,
-			// 	messages: ['I am tree!']
-			// },
-			// 'desk1': {
-			// 	class: 'desk',
-			// 	x: 800,
-			// 	y: 250,
-			// 	messages: ['wahoo desk! wicked exciting.']
-			// },
-			// 'whiteboard': {
-			// 	class: 'whiteboard',
-			// 	x: 500,
-			// 	y: 150,
-			// 	action: function() {
-			// 		whiteboard();
-			// 	}
-			// },
-			// 'burger': {
-			// 	class: 'burger',
-			// 	x: 500,
-			// 	y: 350,
-			// 	frames: 6,
-			// 	messages: ['le cheezbooooger']
-			// },
+			'tree1': {
+				class: 'tree',
+				x: 200,
+				y: 150,
+				message: 'I am tree!'
+			},
+			'desk1': {
+				class: 'desk',
+				x: 800,
+				y: 250,
+				message: 'wahoo desk! wicked exciting.'
+			},
+			'whiteboard': {
+				class: 'whiteboard',
+				x: 500,
+				y: 150,
+				action: function() {
+					whiteboard();
+				}
+			},
+			'burger': {
+				class: 'burger',
+				x: 500,
+				y: 350,
+				frames: 6,
+				message: 'le cheezbooooger'
+			},
 			'boombox': {
 				class: 'boombox',
 				x: 700,
 				y: 450,
-				messages: ['booooombox'],
+				message: 'booooombox',
 				action: function() {
 					$game.audio.startMusic();
 				}

@@ -38,8 +38,7 @@
 			e.preventDefault();
 			if(!$game.player.inTransit && $game.playing && !_preventMovement) {
 				//hide message boxes
-				// clearTimeout(messageTimeout);
-				// $messageBox.fadeOut();
+				$game.hideMessage();
 				//constrain to bounds of the room
 				if(e.pageY < WALL_HEIGHT + NAVBAR_HEIGHT) { return false; }
 				// if(e.pageY > GAMEBOARD_HEIGHT + NAVBAR_HEIGHT - $game.player.offset.y) { return false; }
@@ -67,7 +66,7 @@
 			if(!$game.player.inTransit && $game.ready) {
 				_preventMove();
 				var key = $(this).attr('data-key');
-				$game.items.clicked(key);
+				$game.items.clicked(key, this);
 			}
 		});
 
