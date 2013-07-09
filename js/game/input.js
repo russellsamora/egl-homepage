@@ -78,11 +78,11 @@
 			}
 		});
 
-		$BODY.on('click touch', '#player', function(e) {
-			if(!$game.player.inTransit && $game.playing) {
-				_preventMove();
-			}
-		});
+		// $BODY.on('click touch', '#player', function(e) {
+		// 	if(!$game.player.inTransit && $game.playing) {
+		// 		_preventMove();
+		// 	}
+		// });
 
 		$(window).on('resize', _resize);
 	}

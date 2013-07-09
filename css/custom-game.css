@@ -6,6 +6,9 @@
   #nongame {
     display: block;
   }
+  #blog {
+    display: none;
+  }
 }
 @media (min-width: 768px) {
   html {
@@ -88,14 +91,14 @@
 #blog {
   z-index: 999;
   background: #fff;
-  position: fixed;
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
   margin: 0;
   padding-right: 20px;
   top: 70px;
   right: 0;
   border: 2px solid #555555;
   border-top: none;
-  border-right: none;
   width: 300px;
 }
 #blog ul li {
