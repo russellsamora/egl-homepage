@@ -29,6 +29,7 @@
 
 		beginGame: function() {
 			if(_gotGame) {
+				_getFeed();
 				_beginGame();
 			}
 		},
@@ -156,5 +157,35 @@
 			// }
 			requestAnimationFrame(_tick);
 		}
+	}
+	//gets the blog feed and shows on screen
+	function _getFeed() {
+		$('#blog').rssfeed('http://communityplanit.engagementgamelab.org/?feed=rss2', {
+			limit: 1,
+			header: false,
+			dateformat: 'date',
+			snippet: false,
+			// media: false,
+			errormsg: 'russell made an error.'
+		}, function() {
+			$('iframe').remove();
+			// //remove the last paragraph tag (super hack!)
+			$('#blog p').first().remove();
+			$('#blog p').last().remove();
+			$('#blog p').last().remove();
+			$('#blog p').last().remove();
+
+			$('#blog a').attr('href', 'blog/');
+			var s = $('#blog p').text();
+			var sub = s.substring(0,144) + '... <a target="_blank" href="blog/">[view post]</a>';
+			$('#blog p').html(sub);
+			$('#blog').append('<p style="text-align:center;"><button style="width: 30%;" id="hideBlog" class="btn btn-warning" type="button">hide</button><p>');
+			// $('#blog').fadeIn();
+			$('#hideBlog').on('click', function() {
+				$('#blog').fadeOut(function() {
+					$(this).remove();
+				});
+			});
+		});
 	}
 })();
