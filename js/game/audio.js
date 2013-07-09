@@ -1,81 +1,103 @@
 (function() {
-	var _currentSong = 0,
-		_numSongs = 3,
+	var _playlist,
+		_currentTrack = -1,
 		_songTransition = false,
 		_wasPlaying = false;
 
-	var self = $game.audio = {
+	var audio = $game.audio = {
 		fx: null,
 		music: [],
 		ready: false,
 		isPlaying: false,
 		
 		init: function() {
-			self.fx = new Howl({
+			audio.fx = new Howl({
 				urls: ['/audio/sprites.mp3'],
 				sprite: {
-					jump: [0, 700]
+					jump: [0, 600],
+					thud: [650, 810]
 				}
 			});
-			for (var s = 0; s < _numSongs; s++) {
-				var file = '/audio/song' + s + '.mp3';
-				//TODO ogg files when we have final audio
-				self.music[s] = new Howl({
-					urls: [file],
-					loop: true,
-					onload: function() {
-						//audio ready if first song is loaded
-						if(this._src === '/audio/song0.mp3') {
-							self.ready = true;
-						}
-					}
-				});
-			}
+			_soundcloud();
 		},
 
-		startMusic: function(el) {
-			if(!self.isPlaying) {
-				self.isPlaying = true;
-				_songTransition = true;
-				$game.showMessage({message: 'track' + _currentSong + ' by Russ', el: el});
-				self.music[_currentSong].fadeIn(0.3, 2000, function() {
-					_songTransition = false;
-				});
-			} else {
-				self.nextSong(el);
-			}
-		},
+		toggleMusic: function(el) {
+			audio.isPlaying = !audio.isPlaying;
 
-		nextSong: function(el) {
-			if(!_songTransition) {
-				_songTransition = true;
-				self.music[_currentSong].fadeOut(0.0, 1000, function() {
-					_currentSong++;
-					if(_currentSong >= _numSongs) { _currentSong = 0; }
-					$game.showMessage({message: 'track' + _currentSong + ' by Russ', el: el});
-					self.music[_currentSong].fadeIn(0.3, 2000, function() {
-						_songTransition = false;
-					});
-				});
+			if(audio.isPlaying) {
+				_nextSong(el, true);
+			}
+			else {
+				_playlist.tracks[_currentTrack].song.pause();
 			}
 		},
 
 		resume: function() {
 			if(_wasPlaying) {
-				self.music[_currentSong].fadeIn(0.3, 2000);
+				//audio.music[_currentSong].fadeIn(0.3, 2000);
 			}
 		},
 
 		pause: function() {
-			if(self.isPlaying) {
+			if(audio.isPlaying) {
 				_wasPlaying = true;
-				self.music[_currentSong].fadeOut(0.0, 1000);
+				//audio.music[_currentSong].fadeOut(0.0, 1000);
 			} else {
 				_wasPlaying = false;
 			}
+		},
+
+		playFx: function(sound) {
+			audio.fx.play(sound);
 		}
 	};
 
-	self.init();
+	audio.init();
+
+	function _soundcloud() {
+		//5436979055fc8ee5a906b359a5e5439f
+		//beec0f87e6d1f3d31a65a699f6576c0e
+		SC.initialize({ client_id: '5436979055fc8ee5a906b359a5e5439f' });
+		// SC.stream('/tracks/87515856', function(sound){
+		// 	window.soundd = sound;
+		// 	sound.play();
+		// });
+		SC.get('/playlists/7571022', function(playlist){
+			_playlist = {
+				numTracks: playlist.track_count,
+				tracks: playlist.tracks
+			};
+			audio.ready = true;
+		});
+	}
+
+	function _loadSong() {
+		_songTransition = true;
+		var url = '/tracks/' + _playlist.tracks[_currentTrack].id;
+		SC.stream(url, function(song) {
+			_songTransition = false;
+			_playlist.tracks[_currentTrack].song = song;
+			_playlist.tracks[_currentTrack].song.play();
+		});
+	}
+
+	function _nextSong(el, turnOn) {
+		if(!turnOn) {
+			_playlist.tracks[_currentTrack].song.pause();
+		}
+		_currentTrack++;
+		if(_currentTrack >= _playlist.numTracks) { _currentTrack = 0; }
+		var msg = _playlist.tracks[_currentTrack].title,
+			link = _playlist.tracks[_currentTrack].permalink_url,
+			user = _playlist.tracks[_currentTrack].user.username;
+		$game.showMessage({el: el, message: msg, soundcloud: { link: link, user: user}});
+		if(_playlist.tracks[_currentTrack].song) {
+			setTimeout(function() {
+				_playlist.tracks[_currentTrack].song.play();
+			}, 250);
+		} else {
+			_loadSong();
+		}
+	}
 
 })();

@@ -3,7 +3,7 @@
 	var _hitList,
 		_prevMove = {};
 
-	var self = $game.items = {
+	var items = $game.items = {
 		itemKeys: null,
 		peopleKeys: null,
 		itemData: null,
@@ -12,8 +12,8 @@
 
 		init: function() {
 			_loadData();
-			self.itemKeys = Object.keys(self.itemData);
-			self.peopleKeys = Object.keys(self.peopleData);
+			items.itemKeys = Object.keys(items.itemData);
+			items.peopleKeys = Object.keys(items.peopleData);
 			_setupItems(0); //this triggers setupPeple when done
 		},
 
@@ -38,8 +38,8 @@
 			//reset hit list to empty and build it up, these are the items we will check for collision during walk
 			_hitList = [];
 			//items
-			for(var i = 0; i < self.itemKeys.length; i++) {
-				var item = self.itemData[self.itemKeys[i]];
+			for(var i = 0; i < items.itemKeys.length; i++) {
+				var item = items.itemData[items.itemKeys[i]];
 				//see if it will be in range of the new walk
 				if ((minX + input.w >= item.x) && (minX <= item.x + item.w) && (minY + input.h >= item.y) && (minY <= item.y + item.h)) {
 					item.flipped = false;
@@ -54,8 +54,8 @@
 				}
 			}
 			//people
-			for(var j = 0; j < self.peopleKeys.length; j++) {
-				var person = self.peopleData[self.peopleKeys[j]];
+			for(var j = 0; j < items.peopleKeys.length; j++) {
+				var person = items.peopleData[items.peopleKeys[j]];
 				if ((minX + input.w >= person.x) && (minX <= person.x + person.w) && (minY + input.h >= person.y) && (minY <= person.y + person.h)) {
 					person.flipped = false;
 					person.kind = 'person';
@@ -106,24 +106,24 @@
 				_prevMove.x = tempX;
 				_prevMove.y = tempY;
 
-				requestAnimationFrame(self.hitTest);
+				requestAnimationFrame(items.hitTest);
 			}
 		},
 
 		clicked: function(key, el) {
-			if(self.itemData[key].action) {
-				self.itemData[key].action(el);
+			if(items.itemData[key].action) {
+				items.itemData[key].action(el);
 			} else {
-				$game.showMessage({el: el, message: self.itemData[key].message});
+				$game.showMessage({el: el, message: items.itemData[key].message});
 			}
 		}
 	};
-	self.init();
+	items.init();
 
 	//private functions
 	function _setupItems(index) {
-		var key = self.itemKeys[index],
-			info = self.itemData[key],
+		var key = items.itemKeys[index],
+			info = items.itemData[key],
 			item = document.createElement('div'),
 			img = new Image();
 
@@ -156,7 +156,7 @@
 			info.h = img.height;
 			info.bottom = info.y + info.h;
 			index++;
-			if(index < self.itemKeys.length) {
+			if(index < items.itemKeys.length) {
 				_setupItems(index);
 			} else {
 				_setupPeople(0);
@@ -166,8 +166,8 @@
 	}
 
 	function _setupPeople(index) {
-		var key = self.peopleKeys[index],
-			info = self.peopleData[key],
+		var key = items.peopleKeys[index],
+			info = items.peopleData[key],
 			item = document.createElement('div'),
 			img = new Image();
 
@@ -190,7 +190,7 @@
 			info.h = img.height;
 			info.bottom = info.y + info.h;
 			index++;
-			if(index < self.peopleKeys.length) {
+			if(index < items.peopleKeys.length) {
 				_setupPeople(index);
 			} else {
 				_loadPeopleInfo(true); //null for google doc data
@@ -200,7 +200,7 @@
 	}
 
 	function _loadData() {
-		self.itemData = {
+		items.itemData = {
 			'tree1': {
 				class: 'tree',
 				x: 200,
@@ -234,12 +234,12 @@
 				y: 450,
 				message: 'booooombox',
 				action: function(el) {
-					$game.audio.startMusic(el);
+					$game.audio.toggleMusic(el);
 				}
 			}
 		};
 
-		self.peopleData = {
+		items.peopleData = {
 			'steve': {
 				x: 100,
 				y: 600
@@ -289,11 +289,11 @@
 		rawData.fetch({
 			success: function() {
 				this.each(function(row){
-					if(self.peopleData[row.name]) {
-						self.peopleData[row.name].status = row.status;
+					if(items.peopleData[row.name]) {
+						items.peopleData[row.name].status = row.status;
 					}
 				});
-				self.ready = true;
+				items.ready = true;
 			},
 			error: function() {
 				console.log('having a bad day? Try backup data!');

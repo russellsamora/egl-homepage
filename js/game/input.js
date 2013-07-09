@@ -3,7 +3,7 @@
 	var _preventMovement,
 		_preventMovementTimeout;
 
-	var self = $game.input = {
+	var input = $game.input = {
 
 		maxScroll: null,
 		width: null,
@@ -13,7 +13,7 @@
 		init: function() {
 			//reset scroll top
 			$SCROLL_ELEMENT.scrollTop(0);
-			self.ready = true;
+			input.ready = true;
 		},
 
 		forceResize: function() {
@@ -21,7 +21,7 @@
 		}
 	};
 	
-	self.init();
+	input.init();
 	_bindEvents();
 
 	//private functions
@@ -37,10 +37,14 @@
 			return false;
 		});
 
+		$BODY.on('click', '#game .soundcloud a', function(e) {
+			_preventMove();
+		});
+
 		//clicking on gameboard for move
 		$BODY.on('click touch', '#game', function(e) {
-			e.preventDefault();
 			if(!$game.player.inTransit && $game.playing && !_preventMovement) {
+				e.preventDefault();
 				//hide message boxes
 				$game.hideMessage();
 				//constrain to bounds of the room
@@ -61,8 +65,8 @@
 					edgeY: e.clientY
 				};
 				$game.player.movePlayer(input);
+				return false;
 			}
-			return false;
 		});
 
 		//clicking on item, show message or do action
@@ -84,12 +88,12 @@
 	}
 
 	function _resize() {
-		self.width = $(window).width();
-		self.height = $(window).height();
-		self.longest = (self.width + self.height) * 2;
-		self.maxScroll = { 
-			left: Math.max(0,GAMEBOARD_WIDTH - self.width),
-			top: Math.max(0,GAMEBOARD_HEIGHT - self.height + NAVBAR_HEIGHT)
+		input.width = $(window).width();
+		input.height = $(window).height();
+		input.longest = (input.width + input.height) * 2;
+		input.maxScroll = { 
+			left: Math.max(0,GAMEBOARD_WIDTH - input.width),
+			top: Math.max(0,GAMEBOARD_HEIGHT - input.height + NAVBAR_HEIGHT)
 		};
 
 		var gameOn = $('#game').css('display');

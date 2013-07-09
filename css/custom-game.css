@@ -1,1 +1,140 @@
-@media(max-width:767px){#game,#pregame{display:none}#nongame{display:block}}@media(min-width:768px){html{overflow:hidden}#nongame{display:none}}@media(max-height:420px){#game,#pregame{display:none}#pregameHelp{display:block}}#game{width:2000px;height:1000px;margin:0 auto;background:url('../img/office_bg.jpg');cursor:pointer;border-top:2px solid #555}#game .item{cursor:pointer;z-index:2}#game .person{cursor:pointer;z-index:1}#game .fgPerson{z-index:4}#game .fgItem{z-index:5}#game .hitItem{cursor:pointer;z-index:4}#game #player{z-index:3;cursor:pointer}#game #message{display:none;padding:0;position:absolute;top:200px;left:200px;z-index:100;background:#fff;border:2px solid #333}#game #message p{padding:10px 15px;margin:0;cursor:default;line-height:1.2}#pregame{width:400px;height:120px;background:#fff;border:2px solid #333;position:absolute;left:50%;top:50%;margin-left:-200px;margin-top:-60px;z-index:100}#pregame p{margin:40px 0 0 0;text-align:center}#nongame{margin:20px 0 0 0}#nongame .row-fluid{border:2px solid #fff}#nongame .row-fluid .span4{color:#fff;height:70px;background:#555;cursor:pointer}#nongame .row-fluid .span4 p{padding-top:20px;text-align:center}#nongame .row-fluid .projectsLink{background:#46a546}#nongame .row-fluid .researchLink{background:#f00}#nongame .row-fluid .aboutLink{background:#f89406}#nongame .row-fluid .blogLink{background:#7a43b6}.devDirtyBound{background:rgba(0,0,255,0.3)}.devHitBoundP{background:rgba(255,255,0,0.4)}.devBottomBound{border-bottom:20px solid rgba(255,255,255,0.8)}
+@media (max-width: 767px) {
+  #game,
+  #pregame {
+    display: none;
+  }
+  #nongame {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    overflow: hidden;
+  }
+  #nongame {
+    display: none;
+  }
+}
+@media (max-height: 420px) {
+  #game,
+  #pregame {
+    display: none;
+  }
+  #pregameHelp {
+    display: block;
+  }
+}
+#game {
+  width: 2000px;
+  height: 1000px;
+  margin: 0 auto;
+  background: url('../img/office_bg.jpg');
+  cursor: pointer;
+  border-top: 2px solid #555555;
+}
+#game .item {
+  cursor: pointer;
+  z-index: 2;
+}
+#game .person {
+  cursor: pointer;
+  z-index: 1;
+}
+#game .fgPerson {
+  z-index: 4;
+}
+#game .fgItem {
+  z-index: 5;
+}
+#game .hitItem {
+  cursor: pointer;
+  z-index: 4;
+}
+#game #player {
+  z-index: 3;
+  cursor: pointer;
+}
+#game #message {
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  z-index: 100;
+  background: #ffffff;
+  border: 2px solid #333333;
+}
+#game #message .messageText {
+  padding: 10px 15px;
+  margin: 0;
+  cursor: default;
+  line-height: 1.2;
+}
+#game #message .soundcloud {
+  padding: 0 15px 10px 15px;
+}
+#game #message .soundcloud p {
+  padding: 0;
+  margin: 0;
+}
+#pregame {
+  width: 400px;
+  height: 120px;
+  background: #ffffff;
+  border: 2px solid #333333;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -60px;
+  z-index: 100;
+}
+#pregame p {
+  margin: 40px 0 0 0;
+  text-align: center;
+}
+#nongame {
+  margin: 20px 0 0 0;
+}
+#nongame .row-fluid {
+  border: 2px solid #ffffff;
+}
+#nongame .row-fluid .span4 {
+  color: #ffffff;
+  height: 70px;
+  background: #555555;
+  cursor: pointer;
+}
+#nongame .row-fluid .span4 p {
+  padding-top: 20px;
+  text-align: center;
+}
+#nongame .row-fluid .projectsLink {
+  background: #46a546;
+}
+#nongame .row-fluid .researchLink {
+  background: #ff0000;
+}
+#nongame .row-fluid .aboutLink {
+  background: #f89406;
+}
+#nongame .row-fluid .blogLink {
+  background: #7a43b6;
+}
+.devDirtyBound {
+  background: rgba(0, 0, 255, 0.3);
+}
+.devHitBoundP {
+  background: rgba(255, 255, 0, 0.4);
+}
+.devBottomBound {
+  border-bottom: 20px solid rgba(255, 255, 255, 0.8);
+}
+#lightsOut {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  z-index: 999;
+  display: none;
+}

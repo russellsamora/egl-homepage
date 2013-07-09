@@ -10,7 +10,7 @@
 		_preventMovement,
 		_preventMovementTimeout;
 	
-	var self = $game.player = {
+	var player = $game.player = {
 		//public vars
 		ready: false,
 		inTransit: false,
@@ -33,21 +33,21 @@
 			var d = document.createElement('div');
 			var i = new Image();
 			i.onload = function() {
-				d.setAttribute('class', self.class);
-				d.setAttribute('id', self.id);
+				d.setAttribute('class', player.class);
+				d.setAttribute('id', player.id);
 				$(d).css({
 					position: 'absolute',
-					top: self.y,
-					left: self.x,
-					width: self.w,
-					height: self.h,
+					top: player.y,
+					left: player.x,
+					width: player.w,
+					height: player.h,
 					backgroundImage: 'url(' + i.src + ')',
 					backgroundPosition: '-800px 0'
 				});
 				$GAMEBOARD.append(d);
-				self.selector = $('#player');
-				self.otherSelector = document.getElementById('player');
-				self.ready = true;
+				player.selector = $('#player');
+				player.otherSelector = document.getElementById('player');
+				player.ready = true;
 			}
 			i.src = '../../img/player/' + file + '.png';
 		},
@@ -55,11 +55,11 @@
 
 		//figure out where to move the player and move em!
 		movePlayer: function(input) {
-			self.inTransit = true;
+			player.inTransit = true;
 			
 			//do some spatial calculations to find distance and speed
-			var diffX =  input.x - self.x,
-				diffY = input.y - self.y,
+			var diffX =  input.x - player.x,
+				diffY = input.y - player.y,
 				absDiffX = Math.abs(diffX),
 				absDiffY = Math.abs(diffY),
 				distance =  Math.sqrt((diffX * diffX) + (diffY * diffY));
@@ -71,26 +71,26 @@
 			if(absDiffY / absDiffX > 1) {
 				if(diffY > 0) {
 					//down
-					// _direction = self.w * 4;
-					_direction = self.w * 4;
+					// _direction = player.w * 4;
+					_direction = player.w * 4;
 				} else {
 					//up
-					_direction = self.w * 6;
+					_direction = player.w * 6;
 				}
 			} else {
 				if(diffX > 0) {
 					//right
-					// _direction = self.w * 2;
-					_direction = self.w * 2;
+					// _direction = player.w * 2;
+					_direction = player.w * 2;
 				} else {
 					//left
-					// _direction = self.w * 1;
+					// _direction = player.w * 1;
 					_direction = 0;
 				}
 			}
 			//TODO: what is this for?? come on russell...
-			input.w = absDiffX + self.w;
-			input.h = absDiffY + self.h;
+			input.w = absDiffX + player.w;
+			input.h = absDiffY + player.h;
 			
 			//set the z-indexes to the right value
 			$game.items.setZIndex(input);
@@ -105,16 +105,16 @@
 
 
 			//set the animation so the player moves
-			self.selector.stop().animate({
+			player.selector.stop().animate({
 				top: input.y,
 				left: input.x
 			}, speed, 'linear', function() {
 				//on walk completion, set new coordinates and change sprite
-				self.inTransit = false;
-				self.x = input.x;
-				self.y = input.y;
-				var pos = -self.w * 8 + 'px 0';
-				self.selector.css({
+				player.inTransit = false;
+				player.x = input.x;
+				player.y = input.y;
+				var pos = -player.w * 8 + 'px 0';
+				player.selector.css({
 					'background-position': pos
 				});
 			});
@@ -127,20 +127,21 @@
 		},
 
 		stopMove: function(prevMove) {
-			self.inTransit = false;
+			player.inTransit = false;
 			//only need to reset stuff if player started moving
-			var pos = -self.w * 8 + 'px 0';
-			self.selector.stop(true).css({
+			var pos = -player.w * 8 + 'px 0';
+			player.selector.stop(true).css({
 			'background-position': pos
 			});
 			$SCROLL_ELEMENT.stop(true);
-			self.x = prevMove.x;
-			self.y = prevMove.y;
-			self.selector.css({
+			player.x = prevMove.x;
+			player.y = prevMove.y;
+			player.selector.css({
 				top: prevMove.y,
 				left: prevMove.x
 			});
-			$game.showMessage({el: self.otherSelector, message: 'Ouch!'});
+			$game.showMessage({el: player.otherSelector, message: 'Ouch!'});
+			$game.audio.playFx('thud');
 		}
 
 		// //perform a jump move!
@@ -160,18 +161,18 @@
 		// 	});
 		// },
 	};
-	self.init();
+	player.init();
 	//private functions
 	//switch out sprite for walk cycle
 	function _animateWalkCycle() {
-		if(self.inTransit) {
+		if(player.inTransit) {
 			_steps++;
 			_currentFrame++;
 			if(_currentFrame >= _numFrames) {
 				_currentFrame = 0;
 			}
-			var pos = -(_direction + _currentFrame * self.w) + 'px 0';
-			self.selector.css('background-position', pos);
+			var pos = -(_direction + _currentFrame * player.w) + 'px 0';
+			player.selector.css('background-position', pos);
 			clearTimeout(_walkTimeout);
 			_walkTimeout = setTimeout(_animateWalkCycle, 170);
 		}
@@ -179,30 +180,30 @@
 
 	//check for page edge clicking to animate scroll!
 	function _slideScreen(input) {
-		if(self.inTransit) {
+		if(player.inTransit) {
 			var destX, destY;
 			//make sure transition isn't too fast or too slow
 			var speed = Math.max(500,input.speed);
 			speed = Math.min($game.input.longest, speed);
 			//check for CLICKS on edge of screen
 			//left edge
-			if(input.edgeX < self.w && pageXOffset > 0) {
+			if(input.edgeX < player.w && pageXOffset > 0) {
 				destX = Math.max(pageXOffset - $game.input.width / 2, 0);
 			}
 			//right edge
-			else if( input.edgeX > $game.input.width - self.w) {
+			else if( input.edgeX > $game.input.width - player.w) {
 				destX = Math.min(pageXOffset + $game.input.width / 2, $game.input.maxScroll.left);
 			}
 			//top edge
-			if(input.edgeY < self.h && pageYOffset > 0) {
+			if(input.edgeY < player.h && pageYOffset > 0) {
 				destY = Math.max(pageYOffset - $game.input.height / 2, 0);
 			} 
 			//bottom edge
-			else if( input.edgeY > $game.input.height - self.h) {
+			else if( input.edgeY > $game.input.height - player.h) {
 				destY = Math.min(pageYOffset + $game.input.height / 2, $game.input.maxScroll.top);
 			}
 			//must account for wall since can't click on it...
-			else if(pageYOffset > 0 && input.y < NAVBAR_HEIGHT + WALL_HEIGHT + self.h) {
+			else if(pageYOffset > 0 && input.y < NAVBAR_HEIGHT + WALL_HEIGHT + player.h) {
 				destY = 0;
 			}
 

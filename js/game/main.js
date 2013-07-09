@@ -4,7 +4,7 @@
 	var _messageTimeout = null,
 		_gotGame = null;
 
-	var self = window.$game = {
+	var main = window.$game = {
 
 		ready: false,
 		playing: false,
@@ -34,10 +34,19 @@
 		},
 
 		showMessage: function(data) {
-			
 			$MESSAGE_TEXT.text(data.message);
+			var topOffset = 50;
+			
+			if(data.soundcloud) {
+				$('.soundcloud').show();
+				$('.soundcloud p').html('<a target="_blank" href="' + data.soundcloud.link + '">' + data.soundcloud.user + '</a>');
+				topOffset = 100;
+			} else {
+				$('.soundcloud').hide();
+			}
+			
 			//figure out how to align it center
-			var	top = parseInt(data.el.style.top,10) - 50,
+			var	top = parseInt(data.el.style.top,10) - topOffset,
 				left = parseInt(data.el.style.left,10),
 				mid = left + parseInt(data.el.style.width,10) / 2;
 
@@ -46,7 +55,7 @@
 			
 			var duration = 500 + data.message.length * 100;
 			//clear old messages and change position and show and add fade out timer
-			self.hideMessage();
+			main.hideMessage();
 			$MESSAGE_BOX.css({
 				top: top,
 				left: msgLeft
@@ -54,7 +63,7 @@
 
 			$MESSAGE_BOX.show();
 			_messageTimeout = setTimeout(function() {
-				self.hideMessage();
+				main.hideMessage();
 			}, duration);
 		},
 
@@ -82,7 +91,7 @@
 		window.$GAMEBOARD = $('#game');
 		window.$SCROLL_ELEMENT = $('html, body');
 		window.$MESSAGE_BOX = $('#message');
-		window.$MESSAGE_TEXT = $('#message p');
+		window.$MESSAGE_TEXT = $('#message .messageText');
 		window.NAVBAR_HEIGHT = 72;
 		window.GAMEBOARD_WIDTH = 2000;
 		window.GAMEBOARD_HEIGHT = 1000;
@@ -137,7 +146,7 @@
 	}
 
 	function _tick() {
-		if(self.playing) {
+		if(main.playing) {
 			// _currentFrame++;
 			// if(currentFrame >= numFrames) {
 			// 	currentFrame = 0;
