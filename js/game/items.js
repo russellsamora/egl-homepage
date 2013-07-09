@@ -1,7 +1,8 @@
 (function(){
 
 	var _hitList,
-		_prevMove = {};
+		_prevMove = {},
+		_animatedItems = [];
 
 	var items = $game.items = {
 		itemKeys: null,
@@ -116,6 +117,19 @@
 			} else {
 				$game.showMessage({el: el, message: items.itemData[key].message});
 			}
+		},
+
+		updateItemAnimations: function() {
+			for(var a = 0; a < _animatedItems.length; a++) {
+				var item = items.itemData[_animatedItems[a]];
+				item.curFrame++;
+				if(item.curFrame >= item.frames) {
+					item.curFrame = 0;
+				}
+				var position = -item.curFrame * item.w;
+				// console.log(position);
+				item.selector.css('background-position', position);
+			}
 		}
 	};
 	items.init();
@@ -136,7 +150,7 @@
 			//set size, based on if it is animated or not
 			if(info.frames) {
 				//if animted, add it to animation list
-				//animatedItemList.push(key);
+				_animatedItems.push(key);
 				info.curFrame = Math.floor(Math.random() * info.frames);
 				divWidth = Math.floor(img.width / info.frames);
 			} else {

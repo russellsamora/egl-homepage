@@ -30,8 +30,7 @@
 			e.preventDefault();
 			if($game.ready) {
 				$('#pregame').fadeOut('fast', function() {
-					$game.playing = true;
-					$game.started = true;
+					$game.startTick();
 				});
 			}
 			return false;

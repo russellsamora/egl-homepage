@@ -2,9 +2,11 @@
 (function() {
 	//private vars
 	var _messageTimeout = null,
-		_gotGame = null;
+		_gotGame = null,
+		_numFrames = 64,
+		_currentFrame = 0;
 
-	var main = window.$game = {
+	window.$game = {
 
 		ready: false,
 		playing: false,
@@ -56,7 +58,7 @@
 			
 			var duration = 500 + data.message.length * 100;
 			//clear old messages and change position and show and add fade out timer
-			main.hideMessage();
+			$game.hideMessage();
 			$MESSAGE_BOX.css({
 				top: top,
 				left: msgLeft
@@ -64,7 +66,7 @@
 
 			$MESSAGE_BOX.show();
 			_messageTimeout = setTimeout(function() {
-				main.hideMessage();
+				$game.hideMessage();
 			}, duration);
 		},
 
@@ -82,7 +84,12 @@
 			$game.playing = true;
 			$game.audio.resume();
 			_tick();
-			
+		},
+
+		startTick: function() {
+			$game.playing = true;
+			$game.started = true;
+			_tick();
 		}
 	};
 
@@ -147,14 +154,14 @@
 	}
 
 	function _tick() {
-		if(main.playing) {
-			// _currentFrame++;
-			// if(currentFrame >= numFrames) {
-			// 	currentFrame = 0;
-			// }
-			// if(currentFrame % 8 === 0) {
-			// 	updateItemAnimations();	
-			// }
+		if($game.playing) {
+			_currentFrame++;
+			if(_currentFrame >= _numFrames) {
+				_currentFrame = 0;
+			}
+			if(_currentFrame % 8 === 0) {
+				$game.items.updateItemAnimations();	
+			}
 			requestAnimationFrame(_tick);
 		}
 	}
