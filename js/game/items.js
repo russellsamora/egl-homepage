@@ -45,7 +45,7 @@
 				if ((minX + input.w >= item.x) && (minX <= item.x + item.w) && (minY + input.h >= item.y) && (minY <= item.y + item.h)) {
 					item.flipped = false;
 					item.kind = 'item';
-					_hitList.push(item);
+					if(!item.specialElement) { _hitList.push(item); }
 					//check to see which side the player is on (above or below)
 					if(playerBottom < item.bottom) {
 						item.selector.addClass('fgItem');
@@ -112,10 +112,13 @@
 		},
 
 		clicked: function(key, el) {
-			if(items.itemData[key].action) {
-				items.itemData[key].action(el);
+			var item = items.itemData[key];
+			if(item.action) {
+				item.action(el);
 			} else {
-				$game.showMessage({el: el, message: items.itemData[key].message});
+				if(item.message) {
+					$game.showMessage({el: el, message: item.message});	
+				}
 			}
 		},
 
@@ -137,46 +140,69 @@
 	//private functions
 	function _setupItems(index) {
 		var key = items.itemKeys[index],
-			info = items.itemData[key],
-			item = document.createElement('div'),
-			img = new Image();
+			info = items.itemData[key];
 
-		img.onload = function() {
-			//set the background image and append
+		if(info.specialElement) {
+			var item = document.createElement(info.specialElement);
 			item.setAttribute('id', key);
-			item.setAttribute('class', info.class + ' item');
+			item.setAttribute('class', 'item');
 			item.setAttribute('data-key', key);
-			var divWidth;
-			//set size, based on if it is animated or not
-			if(info.frames) {
-				//if animted, add it to animation list
-				_animatedItems.push(key);
-				info.curFrame = Math.floor(Math.random() * info.frames);
-				divWidth = Math.floor(img.width / info.frames);
-			} else {
-				divWidth = img.width;
-			}
 			$(item).css({
 				position: 'absolute',
 				top: info.y,
 				left: info.x,
-				width: divWidth,
-				height: img.height,
-				backgroundImage: 'url(' + img.src + ')'
+				width: info.w,
+				height: info.h,
 			});
 			$GAMEBOARD.append(item);
+			info.init();
 			info.selector = $('#' + key);
-			info.w = divWidth;
-			info.h = img.height;
-			info.bottom = info.y + info.h;
 			index++;
 			if(index < items.itemKeys.length) {
 				_setupItems(index);
 			} else {
 				_setupPeople(0);
 			}
+		} else {
+			var item = document.createElement('div'),
+				img = new Image();
+				img.onload = function() {
+				//set the background image and append
+				item.setAttribute('id', key);
+				item.setAttribute('class', info.class + ' item'); 
+				item.setAttribute('data-key', key);
+				var divWidth;
+				//set size, based on if it is animated or not
+				if(info.frames) {
+					//if animted, add it to animation list
+					_animatedItems.push(key);
+					info.curFrame = Math.floor(Math.random() * info.frames);
+					divWidth = Math.floor(img.width / info.frames);
+				} else {
+					divWidth = img.width;
+				}
+				$(item).css({
+					position: 'absolute',
+					top: info.y,
+					left: info.x,
+					width: divWidth,
+					height: img.height,
+					backgroundImage: 'url(' + img.src + ')'
+				});
+				$GAMEBOARD.append(item);
+				info.selector = $('#' + key);
+				info.w = divWidth;
+				info.h = img.height;
+				info.bottom = info.y + info.h;
+				index++;
+				if(index < items.itemKeys.length) {
+					_setupItems(index);
+				} else {
+					_setupPeople(0);
+				}
+			}
+			img.src = '/img/items/' + info.class + '.png';
 		}
-		img.src = '/img/items/' + info.class + '.png';
 	}
 
 	function _setupPeople(index) {
@@ -230,9 +256,49 @@
 			'whiteboard': {
 				class: 'whiteboard',
 				x: 500,
-				y: 150,
-				action: function() {
-					whiteboard();
+				y: 150
+				// action: function() {
+				// 	whiteboard();
+				// }
+			},
+			'whiteboardCanvas': {
+				specialElement: 'canvas',
+				w: 190,
+				h: 120, 
+				class: 'whiteboard',
+				x: 505,
+				y: 155,
+				init: function() {
+					var canvas = document.getElementById('whiteboardCanvas'),
+						ctx = canvas.getContext('2d'),
+						drawing = false,
+						started = false;
+					$('#whiteboardCanvas').mousemove(function(e) {
+						if(drawing) {
+							//TODO: WHYYYY doesn't just the offset values work?
+							var x = e.offsetX * 1.6,
+								y = e.offsetY * 1.25;
+							if (!started) {
+								ctx.beginPath();
+								ctx.moveTo(x, y);
+								started = true;
+							} else {
+								ctx.lineTo(x, y);
+								ctx.stroke();
+							}
+						}
+					});
+					$('#whiteboardCanvas').mousedown(function(e) {
+						drawing = true;
+					});
+					$('#whiteboardCanvas').mouseup(function(e) {
+						drawing = false;
+						started = false;
+					});
+					$('#whiteboardCanvas').mouseout(function(e) {
+						started = false;
+						drawing = false;
+					});
 				}
 			},
 			'burger': {
