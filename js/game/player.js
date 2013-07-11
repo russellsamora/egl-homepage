@@ -3,7 +3,10 @@
 	//private vars
 	var _direction,
 		_currentFrame,
-		_numFrames = 2,
+		_numFrames = 8,
+		_idleFrame = 0,
+		_idleData = [0,2,2,0,2,2,1,0,2,0,2,2,1,2,0,2,2,0,2],
+		_numIdleFrames = _idleData.length,
 		_walkTimeout = null,
 		_speedAmplifier = 7,
 		_steps,
@@ -18,11 +21,11 @@
 		class: 'character',
 		x: 550,
 		y: 250,
-		w: 100,
-		h: 200,
+		w: 80,
+		h: 160,
 		offset: {
-			x: 50,
-			y: 100
+			x: 40,
+			y: 80
 		},
 		messages: ['I am you, you are me....woah.','What?! I am inside a computer?','I am so tired of walking...','Stop clicking on me, it tickles!'],
 		score: 0,
@@ -42,7 +45,7 @@
 					width: player.w,
 					height: player.h,
 					backgroundImage: 'url(' + i.src + ')',
-					backgroundPosition: '-800px 0'
+					backgroundPosition: '0 0'
 				});
 				$GAMEBOARD.append(d);
 				player.selector = $('#player');
@@ -71,21 +74,18 @@
 			if(absDiffY / absDiffX > 1) {
 				if(diffY > 0) {
 					//down
-					// _direction = player.w * 4;
-					_direction = player.w * 4;
+					_direction = player.h * 2;
 				} else {
 					//up
-					_direction = player.w * 6;
+					_direction = player.h * 1;
 				}
 			} else {
 				if(diffX > 0) {
 					//right
-					// _direction = player.w * 2;
-					_direction = player.w * 2;
+					_direction = player.h * 4;
 				} else {
 					//left
-					// _direction = player.w * 1;
-					_direction = 0;
+					_direction = player.h * 3;
 				}
 			}
 			//TODO: what is this for?? come on russell...
@@ -113,7 +113,7 @@
 				player.inTransit = false;
 				player.x = input.x;
 				player.y = input.y;
-				var pos = -player.w * 8 + 'px 0';
+				var pos = '0 0';
 				player.selector.css({
 					'background-position': pos
 				});
@@ -129,7 +129,7 @@
 		stopMove: function(prevMove) {
 			player.inTransit = false;
 			//only need to reset stuff if player started moving
-			var pos = -player.w * 8 + 'px 0';
+			var pos = '0 0';
 			player.selector.stop(true).css({
 			'background-position': pos
 			});
@@ -142,6 +142,18 @@
 			});
 			$game.showMessage({el: player.otherSelector, message: 'Ouch!'});
 			$game.audio.playFx('thud');
+		},
+
+		idle: function() {
+			if(!player.inTransit) {
+				_idleFrame++;
+				if(_idleFrame >= _numIdleFrames) {
+					_idleFrame = 0;
+				}
+				var frame = _idleData[_idleFrame],
+					pos = -(frame * player.w) + 'px ' + '0';
+				player.selector.css('background-position', pos);
+			}
 		}
 
 		// //perform a jump move!
@@ -171,7 +183,7 @@
 			if(_currentFrame >= _numFrames) {
 				_currentFrame = 0;
 			}
-			var pos = -(_direction + _currentFrame * player.w) + 'px 0';
+			var pos = -(_currentFrame * player.w) + 'px ' + -_direction + 'px';
 			player.selector.css('background-position', pos);
 			clearTimeout(_walkTimeout);
 			_walkTimeout = setTimeout(_animateWalkCycle, 170);
@@ -195,11 +207,11 @@
 				destX = Math.min(pageXOffset + $game.input.width / 2, $game.input.maxScroll.left);
 			}
 			//top edge
-			if(input.edgeY < player.h && pageYOffset > 0) {
+			if(input.edgeY < player.h / 2 && pageYOffset > 0) {
 				destY = Math.max(pageYOffset - $game.input.height / 2, 0);
 			} 
-			//bottom edge
-			else if( input.edgeY > $game.input.height - player.h) {
+			//bottom edge (was - player.h)
+			else if( input.edgeY > $game.input.height - player.h / 2) {
 				destY = Math.min(pageYOffset + $game.input.height / 2, $game.input.maxScroll.top);
 			}
 			//must account for wall since can't click on it...

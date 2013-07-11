@@ -105,7 +105,7 @@
 		window.GAMEBOARD_HEIGHT = 1000;
 		window.HEIGHT_BUFFER = 20;
 		window.WALL_HEIGHT = 200;
-		window.DEV_MODE = false;
+		window.DEV_MODE = true;
 	}
 
 	function _beginGame() {
@@ -160,14 +160,15 @@
 				_currentFrame = 0;
 			}
 			if(_currentFrame % 8 === 0) {
-				$game.items.updateItemAnimations();	
+				$game.items.updateItemAnimations();
+				$game.player.idle();
 			}
 			requestAnimationFrame(_tick);
 		}
 	}
 	//gets the blog feed and shows on screen
 	function _getFeed() {
-		$('#blog').rssfeed('http://communityplanit.engagementgamelab.org/?feed=rss2', {
+		$('#blog').rssfeed('http://engagementgamelab.wordpress.com/feed/', {
 			limit: 1,
 			header: false,
 			dateformat: 'date',
@@ -178,8 +179,9 @@
 			$('iframe').remove();
 			// //remove the last paragraph tag (super hack!)
 			$('#blog p').first().remove();
-			$('#blog p').last().remove();
-			$('#blog p').last().remove();
+			$('#blog br').remove();
+			$('#blog ul li a').last().remove();
+			$('#blog ul li img').last().remove();
 			$('#blog p').last().remove();
 
 			$('#blog a').attr('href', 'blog/');
@@ -187,7 +189,6 @@
 			var sub = s.substring(0,144) + '... <a target="_blank" href="blog/">[view post]</a>';
 			$('#blog p').html(sub);
 			$('#blog').append('<p style="text-align:center;"><button style="width: 30%;" id="hideBlog" class="btn btn-warning" type="button">hide</button><p>');
-			// $('#blog').fadeIn();
 			$('#hideBlog').on('click', function() {
 				$('#blog').fadeOut(function() {
 					$(this).remove();

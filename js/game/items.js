@@ -45,7 +45,7 @@
 				if ((minX + input.w >= item.x) && (minX <= item.x + item.w) && (minY + input.h >= item.y) && (minY <= item.y + item.h)) {
 					item.flipped = false;
 					item.kind = 'item';
-					if(!item.specialElement) { _hitList.push(item); }
+					_hitList.push(item);
 					//check to see which side the player is on (above or below)
 					if(playerBottom < item.bottom) {
 						item.selector.addClass('fgItem');
@@ -111,13 +111,24 @@
 			}
 		},
 
-		clicked: function(key, el) {
+		clickedItem: function(key, el) {
 			var item = items.itemData[key];
 			if(item.action) {
 				item.action(el);
 			} else {
 				if(item.message) {
 					$game.showMessage({el: el, message: item.message});	
+				}
+			}
+		},
+
+		clickedPerson: function(key, el) {
+			var person = items.peopleData[key];
+			if(person.action) {
+				person.action(el);
+			} else {
+				if(person.status) {
+					$game.showMessage({el: el, message: person.status});	
 				}
 			}
 		},
@@ -129,7 +140,7 @@
 				if(item.curFrame >= item.frames) {
 					item.curFrame = 0;
 				}
-				var position = -item.curFrame * item.w;
+				var position = -item.curFrame * item.w + 'px 0';
 				// console.log(position);
 				item.selector.css('background-position', position);
 			}
@@ -241,18 +252,6 @@
 
 	function _loadData() {
 		items.itemData = {
-			'tree1': {
-				class: 'tree',
-				x: 200,
-				y: 150,
-				message: 'I am tree!'
-			},
-			'desk1': {
-				class: 'desk',
-				x: 800,
-				y: 250,
-				message: 'wahoo desk! wicked exciting.'
-			},
 			'whiteboard': {
 				class: 'whiteboard',
 				x: 500,
@@ -303,7 +302,7 @@
 			},
 			'burger': {
 				class: 'burger',
-				x: 500,
+				x: 800,
 				y: 350,
 				frames: 6,
 				message: 'le cheezbooooger'
@@ -322,31 +321,7 @@
 		items.peopleData = {
 			'steve': {
 				x: 100,
-				y: 600
-			},
-			'eric': {
-				x: 200,
-				y: 600
-			},
-			'russell': {
-				x: 300,
-				y: 600
-			},
-			'sam': {
-				x: 400,
-				y: 600
-			},
-			'aidan': {
-				x: 500,
-				y: 600
-			},
-			'jedd': {
-				x: 600,
-				y: 600
-			},
-			'jesse': {
-				x: 700,
-				y: 600
+				y: 300
 			}
 		};
 	}

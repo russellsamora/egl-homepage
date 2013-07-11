@@ -34,14 +34,15 @@
 
 		resume: function() {
 			if(_wasPlaying) {
-				//audio.music[_currentSong].fadeIn(0.3, 2000);
+				_playlist.tracks[_currentTrack].song.play();
 			}
 		},
 
 		pause: function() {
 			if(audio.isPlaying) {
 				_wasPlaying = true;
-				//audio.music[_currentSong].fadeOut(0.0, 1000);
+				_playlist.tracks[_currentTrack].song.pause();
+				
 			} else {
 				_wasPlaying = false;
 			}

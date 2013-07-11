@@ -73,15 +73,17 @@
 			if(!$game.player.inTransit && $game.playing) {
 				_preventMove();
 				var key = $(this).attr('data-key');
-				$game.items.clicked(key, this);
+				$game.items.clickedItem(key, this);
 			}
 		});
 
-		// $BODY.on('click touch', '#player', function(e) {
-		// 	if(!$game.player.inTransit && $game.playing) {
-		// 		_preventMove();
-		// 	}
-		// });
+		$BODY.on('click touch', '#game .person', function(e) {
+			if(!$game.player.inTransit && $game.playing) {
+				_preventMove();
+				var key = $(this).attr('data-key');
+				$game.items.clickedPerson(key, this);
+			}
+		});
 
 		$(window).on('resize', _resize);
 	}

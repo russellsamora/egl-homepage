@@ -38,16 +38,20 @@
 #game .item {
   cursor: pointer;
   z-index: 2;
+  background: rgba(255, 0, 0, 0.4);
 }
 #game .person {
   cursor: pointer;
   z-index: 1;
+  background: rgba(255, 0, 0, 0.4);
 }
 #game .fgPerson {
   z-index: 4;
+  background: rgba(0, 255, 0, 0.4);
 }
 #game .fgItem {
   z-index: 5;
+  background: rgba(0, 255, 0, 0.4);
 }
 #game .hitItem {
   cursor: pointer;
@@ -80,6 +84,9 @@
   padding: 0;
   margin: 0;
 }
+#game #whiteboardCanvas {
+  cursor: crosshair;
+}
 #game #lightsOut {
   width: 100%;
   height: 100%;
@@ -103,6 +110,7 @@
 }
 #blog ul li {
   list-style: none;
+  margin: 0;
 }
 #blog a {
   text-decoration: none;
