@@ -51,6 +51,7 @@
 				player.selector = $('#player');
 				player.otherSelector = document.getElementById('player');
 				player.ready = true;
+				console.log('player ready');
 			}
 			i.src = '../../img/player/' + file + '.png';
 		},

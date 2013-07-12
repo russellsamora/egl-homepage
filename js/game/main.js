@@ -4,7 +4,9 @@
 	var _messageTimeout = null,
 		_gotGame = null,
 		_numFrames = 64,
-		_currentFrame = 0;
+		_currentFrame = 0,
+		_numDrawings = 0,
+		_drawingSaved = false;
 
 	window.$game = {
 
@@ -89,7 +91,29 @@
 		startTick: function() {
 			$game.playing = true;
 			$game.started = true;
+			$('#blog').show();
 			_tick();
+			$.get('/db/drawingCount.php',
+				function(data) {
+					_numDrawings = parseInt(data, 10);
+					console.log(_numDrawings);
+				}, 'text');
+		},
+
+		exitAndSave: function() {
+			console.log('goodbye');
+			$game.saveDrawing();
+		},
+
+		saveDrawing: function() {
+			var whiteboard = document.getElementById('whiteboardCanvas'),
+				url = whiteboard.toDataURL('img/png');
+			$.post('/db/saveDrawing.php', {image: url},
+				function(res) {
+					if(res === 'good') {
+						_drawingSaved = true;
+					}
+				}, 'text');
 		}
 	};
 
@@ -103,9 +127,9 @@
 		window.NAVBAR_HEIGHT = 72;
 		window.GAMEBOARD_WIDTH = 2000;
 		window.GAMEBOARD_HEIGHT = 1000;
-		window.HEIGHT_BUFFER = 20;
+		// window.HEIGHT_BUFFER = 20;
 		window.WALL_HEIGHT = 200;
-		window.DEV_MODE = true;
+		window.DEV_MODE = false;
 	}
 
 	function _beginGame() {
@@ -116,7 +140,7 @@
 
 			if(DEV_MODE) {
 				$('.character').addClass('devHitBoundP');
-				$('.item, .character, .person').addClass('devBottomBound');
+				// $('.item, .character, .person').addClass('devBottomBound');
 			}
 		} else {
 			requestAnimationFrame(_beginGame);

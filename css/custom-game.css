@@ -1,13 +1,11 @@
 @media (max-width: 767px) {
   #game,
-  #pregame {
+  #pregame,
+  #blog {
     display: none;
   }
   #nongame {
     display: block;
-  }
-  #blog {
-    display: none;
   }
 }
 @media (min-width: 768px) {
@@ -18,15 +16,6 @@
     display: none;
   }
 }
-@media (max-height: 420px) {
-  #game,
-  #pregame {
-    display: none;
-  }
-  #pregameHelp {
-    display: block;
-  }
-}
 #game {
   width: 2000px;
   height: 1000px;
@@ -35,23 +24,44 @@
   cursor: pointer;
   border-top: 2px solid #555555;
 }
+#game #pregame {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  z-index: 999;
+  cursor: default;
+}
+#game #pregame .instructions {
+  width: 640px;
+  margin: 40px auto;
+  color: white;
+}
+#game #pregame .instructions h2 {
+  color: #f89406;
+}
+#game #pregame .instructions p {
+  margin: 20px 0;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+#game #pregame .instructions p.playGame {
+  margin: 40px;
+  text-align: center;
+}
 #game .item {
   cursor: pointer;
   z-index: 2;
-  background: rgba(255, 0, 0, 0.4);
 }
 #game .person {
   cursor: pointer;
   z-index: 1;
-  background: rgba(255, 0, 0, 0.4);
 }
 #game .fgPerson {
   z-index: 4;
-  background: rgba(0, 255, 0, 0.4);
 }
 #game .fgItem {
   z-index: 5;
-  background: rgba(0, 255, 0, 0.4);
 }
 #game .hitItem {
   cursor: pointer;
@@ -87,16 +97,8 @@
 #game #whiteboardCanvas {
   cursor: crosshair;
 }
-#game #lightsOut {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  z-index: 999;
-  display: none;
-}
 #blog {
-  z-index: 999;
+  z-index: 998;
   background: #fff;
   background: rgba(255, 255, 255, 0.9);
   position: absolute;
@@ -106,6 +108,7 @@
   right: 0;
   border: 2px solid #555555;
   border-top: none;
+  display: none;
   width: 300px;
 }
 #blog ul li {
@@ -114,22 +117,6 @@
 }
 #blog a {
   text-decoration: none;
-}
-#pregame {
-  width: 400px;
-  height: 120px;
-  background: #ffffff;
-  border: 2px solid #333333;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -200px;
-  margin-top: -60px;
-  z-index: 100;
-}
-#pregame p {
-  margin: 40px 0 0 0;
-  text-align: center;
 }
 #nongame {
   margin: 20px 0 0 0;
@@ -164,7 +151,4 @@
 }
 .devHitBoundP {
   background: rgba(255, 255, 0, 0.4);
-}
-.devBottomBound {
-  border-bottom: 20px solid rgba(255, 255, 255, 0.8);
 }

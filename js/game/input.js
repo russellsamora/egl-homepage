@@ -14,6 +14,7 @@
 			//reset scroll top
 			$SCROLL_ELEMENT.scrollTop(0);
 			input.ready = true;
+			console.log('input ready');
 		},
 
 		forceResize: function() {
@@ -86,6 +87,11 @@
 		});
 
 		$(window).on('resize', _resize);
+
+		//save out any important info on exit
+		$(window).on('beforeunload', function() {
+			$game.exitAndSave();
+		});
 	}
 
 	function _resize() {
