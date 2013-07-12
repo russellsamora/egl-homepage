@@ -2,13 +2,15 @@
 
 	var _hitList,
 		_prevMove = {},
-		_animatedItems = [];
+		_animatedItems = [],
+		_markerColor = '#ff0000';
 
 	var items = $game.items = {
 		itemKeys: null,
 		peopleKeys: null,
 		itemData: null,
 		peopleData: null,
+		whiteboardDrawingExists: false,
 		ready: false,
 
 		init: function() {
@@ -123,10 +125,9 @@
 			var item = items.itemData[key];
 			if(item.action) {
 				item.action(el);
-			} else {
-				if(item.message) {
-					$game.showMessage({el: el, message: item.message});	
-				}
+			}
+			if(item.message) {
+				$game.showMessage({el: el, message: item.message});	
 			}
 		},
 
@@ -260,30 +261,21 @@
 
 	function _loadData() {
 		items.itemData = {
-			'whiteboard': {
-				class: 'whiteboard',
-				x: 500,
-				y: 150
-				// action: function() {
-				// 	whiteboard();
-				// }
-			},
 			'whiteboardCanvas': {
 				specialElement: 'canvas',
-				w: 190,
-				h: 120, 
+				w: 360,
+				h: 165, 
 				class: 'whiteboard',
-				x: 505,
-				y: 155,
+				x: 820,
+				y: 70,
 				init: function() {
 					var canvas = document.getElementById('whiteboardCanvas'),
 						ctx = canvas.getContext('2d');
 						drawing = false,
 						started = false;
 						doneTimer = null;
-					ctx.strokeStyle = '#999';
-					ctx.lineWidth = 3;
-					ctx.lineCap = 'round';
+					ctx.lineWidth = 2;
+					// ctx.lineCap = 'round';
 					$('#whiteboardCanvas').mousemove(function(e) {
 						if(drawing) {
 							//TODO: WHYYYY doesn't just the offset values work?
@@ -292,8 +284,10 @@
 								x = e.layerX;
 								y = e.layerY;
 							} else {
-								x = e.offsetX * 1.6;
-								y = e.offsetY * 1.25;
+								// x = e.offsetX * 1.6;
+								// y = e.offsetY * 1.25;
+								x = e.offsetX * 0.85;
+								y = e.offsetY * 0.9;
 							}
 							if (!started) {
 								ctx.beginPath();
@@ -306,6 +300,8 @@
 						}
 					});
 					$('#whiteboardCanvas').mousedown(function(e) {
+						ctx.strokeStyle = _markerColor;
+						items.whiteboardDrawingExists = true;
 						drawing = true;
 						clearTimeout(doneTimer);
 					});
@@ -327,6 +323,43 @@
 						started = false;
 						drawing = false;
 					});
+				},
+				clearBoard: function() {
+					var canvas = document.getElementById('whiteboardCanvas'),
+						ctx = canvas.getContext('2d');
+					ctx.clearRect(0,0,360,165);
+					clearTimeout(doneTimer);
+				}
+			},
+			'marker1': {
+				class: 'marker1',
+				x: 1100,
+				y: 240,
+				message: 'Red marker, go!',
+				action: function() {
+					_markerColor = '#ff0000';
+				}
+			},
+			'marker2': {
+				class: 'marker2',
+				x: 1050,
+				y: 246,
+				message: 'Blue marker, I choose you!',
+				action: function() {
+					_markerColor = '#0000ff';
+				}
+			},
+			'eraser': {
+				class: 'eraser',
+				x: 850,
+				y: 245,
+				message: 'I feel just like Sisyphus...',
+				action: function() {
+					if(items.whiteboardDrawingExists) {
+						$game.saveDrawing();
+					}
+					items.itemData['whiteboardCanvas'].clearBoard();
+					items.whiteboardDrawingExists = false;
 				}
 			},
 			'burger': {

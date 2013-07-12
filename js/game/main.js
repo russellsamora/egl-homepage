@@ -5,8 +5,7 @@
 		_gotGame = null,
 		_numFrames = 64,
 		_currentFrame = 0,
-		_numDrawings = 0,
-		_drawingSaved = false;
+		_numDrawings = 0;
 
 	window.$game = {
 
@@ -89,10 +88,15 @@
 		},
 
 		startTick: function() {
-			$game.playing = true;
-			$game.started = true;
-			$('#blog').show();
-			_tick();
+			if(!$game.ready) {
+				requestAnimationFrame($game.startTick);
+			} else {
+				$('#pregame').fadeOut();
+				$game.playing = true;
+				$game.started = true;
+				$('#blog').show();
+				_tick();
+			}
 			// $.get('/db/drawingCount.php',
 			// 	function(data) {
 			// 		_numDrawings = parseInt(data, 10);
@@ -106,14 +110,13 @@
 		},
 
 		saveDrawing: function() {
-			if(!_drawingSaved) {
+			if($game.items.whiteboardDrawingExists) {
 				var whiteboard = document.getElementById('whiteboardCanvas'),
 					url = whiteboard.toDataURL('img/png');
 				$.post('/db/saveDrawing.php', {image: url},
 					function(res) {
 						if(res === 'good') {
 							console.log('saved');
-							_drawingSaved = true;
 						}
 					}, 'text');
 				}
@@ -132,15 +135,13 @@
 		window.GAMEBOARD_HEIGHT = 1000;
 		window.HEIGHT_BUFFER = 10;
 		window.WALL_HEIGHT = 200;
-		window.DEV_MODE = true;
+		window.DEV_MODE = false;
 	}
 
 	function _beginGame() {
 		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready) {
 			$game.input.forceResize();
 			$game.ready = true;
-			$('.playGameButton').text('play!');
-
 			if(DEV_MODE) {
 				$('.character').addClass('devHitBoundP');
 				// $('.item, .character, .person').addClass('devBottomBound');

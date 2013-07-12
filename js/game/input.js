@@ -29,11 +29,9 @@
 	function _bindEvents() {
 		$BODY.on('click', '.playGameButton', function(e) {
 			e.preventDefault();
-			if($game.ready) {
-				$('#pregame').fadeOut('fast', function() {
-					$game.startTick();
-				});
-			}
+			$('.playGame').hide();
+			$('.loading').show();
+			$game.startTick();
 			return false;
 		});
 
