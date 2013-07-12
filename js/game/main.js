@@ -106,14 +106,17 @@
 		},
 
 		saveDrawing: function() {
-			var whiteboard = document.getElementById('whiteboardCanvas'),
-				url = whiteboard.toDataURL('img/png');
-			$.post('/db/saveDrawing.php', {image: url},
-				function(res) {
-					if(res === 'good') {
-						_drawingSaved = true;
-					}
-				}, 'text');
+			if(!_drawingSaved) {
+				var whiteboard = document.getElementById('whiteboardCanvas'),
+					url = whiteboard.toDataURL('img/png');
+				$.post('/db/saveDrawing.php', {image: url},
+					function(res) {
+						if(res === 'good') {
+							console.log('saved');
+							_drawingSaved = true;
+						}
+					}, 'text');
+				}
 		}
 	};
 

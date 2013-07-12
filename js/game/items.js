@@ -279,6 +279,7 @@
 						ctx = canvas.getContext('2d');
 						drawing = false,
 						started = false;
+						doneTimer = null;
 					ctx.strokeStyle = '#999';
 					ctx.lineWidth = 3;
 					ctx.lineCap = 'round';
@@ -305,14 +306,21 @@
 					});
 					$('#whiteboardCanvas').mousedown(function(e) {
 						drawing = true;
+						clearTimeout(doneTimer);
 					});
 					$('#whiteboardCanvas').mouseup(function(e) {
 						drawing = false;
 						started = false;
+						doneTimer = setTimeout(function() {
+							$game.saveDrawing();	
+						}, 10000);
 					});
 					$('#whiteboardCanvas').mouseout(function(e) {
 						started = false;
 						drawing = false;
+						doneTimer = setTimeout(function() {
+							$game.saveDrawing();	
+						},10000);
 					});
 				}
 			},
