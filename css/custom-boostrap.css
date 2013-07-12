@@ -8691,7 +8691,10 @@ a.badge:focus {
 #footer a:hover {
   text-decoration: none;
 }
-#footer .span4 {
+#footer .span4 h3 {
+  text-align: center;
+}
+#footer .socialMedia {
   text-align: center;
 }
 #people .person {

@@ -2,7 +2,7 @@
 <html lang='en'>
 	<head>
 		<meta charset='utf-8'>
-		<title>EGL - blog</title>
+		<title>EGL - about</title>
 		<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
 		<meta name='description' content='research lab for social games and civic engagement at Emerson College'>
 		<meta name='author' content='russell goldenberg'>
@@ -49,8 +49,8 @@
 								<li class='dropdown'>
 									<a href='/research' class='dropdown-toggle disabled' data-toggle='dropdown'>Research</a>
 									<ul class='dropdown-menu'>
-										<li><a data-target='#' href='/projects/communityplanit'>Stuff 1</a>
-										<li><a data-target='#' href='/projects/communityplanit'>Stuff 2</a>
+										<li><a data-target='#' href='/research/index.html#initiatives'>Initiatives</a>
+										<li><a data-target='#' href='/research/index.html#publications'>Publications</a>
 									</ul>
 								</li>
 								<li class='dropdown'>
@@ -69,7 +69,34 @@
 				</div>
 			</div> <!-- end nav -->
 			<div class='container'>
-				<div id='blog'>
+				<div class='row'>
+					<div class='span12'>
+						<h2> Projects </h2>
+					</div>
+				</div>
+				<div id='projects'>
+					<div class='row'>
+						<div class='span4'>
+							<h3> Community PlanIt </h3>
+						</div>
+						<div class='span4'>
+							<h3> Civic Seed </h3>
+						</div>
+						<div class='span4'>
+							<h3> Participatory Chinatown </h3>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span4'>
+							<h3> Hub2 </h3>
+						</div>
+						<div class='span4'>
+							<h3> Nyami Nyami </h3>
+						</div>
+						<div class='span4'>
+							<h3> Student Projects </h3>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div id='push'></div>
@@ -106,9 +133,7 @@
     	<script>
     		$LAB
     		.script('/js/libs/jquery.min.js').wait()
-			.script('/js/libs/bootstrap.min.js')
-			.script('/js/libs/plugins.js').wait()
-			.script('/js/other/blog.js');
+			.script('/js/libs/bootstrap.min.js');
     	</script>
   </body>
 </html>
