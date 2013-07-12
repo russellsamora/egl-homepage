@@ -2,7 +2,8 @@
 	var _playlist,
 		_currentTrack = -1,
 		_songTransition = false,
-		_wasPlaying = false;
+		_wasPlaying = false,
+		soundcloudEnable = false;
 
 	var audio = $game.audio = {
 		fx: null,
@@ -22,13 +23,15 @@
 		},
 
 		toggleMusic: function(el) {
-			audio.isPlaying = !audio.isPlaying;
+			if(_soundcloudEnabled) {
+				audio.isPlaying = !audio.isPlaying;
 
-			if(audio.isPlaying) {
-				_nextSong(el, true);
-			}
-			else {
-				_playlist.tracks[_currentTrack].song.pause();
+				if(audio.isPlaying) {
+					_nextSong(el, true);
+				}
+				else {
+					_playlist.tracks[_currentTrack].song.pause();
+				}
 			}
 		},
 
@@ -56,19 +59,21 @@
 	audio.init();
 
 	function _soundcloud() {
-		//5436979055fc8ee5a906b359a5e5439f
-		//beec0f87e6d1f3d31a65a699f6576c0e
 		SC.initialize({ client_id: '5436979055fc8ee5a906b359a5e5439f' });
-		// SC.stream('/tracks/87515856', function(sound){
-		// 	window.soundd = sound;
-		// 	sound.play();
-		// });
-		SC.get('/playlists/7571022', function(playlist){
-			_playlist = {
-				numTracks: playlist.track_count,
-				tracks: playlist.tracks
-			};
-			audio.ready = true;
+		SC.get('/playlists/7571022', function(playlist, error){
+			if(error) {
+				console.log('soundcloud error', error);
+				_soundcloudEnabled = false;
+			} 
+			else {
+				_playlist = {
+					numTracks: playlist.track_count,
+					tracks: playlist.tracks
+				};
+				_soundcloudEnabled = true;
+			}
+			audio.ready = true;	
+			console.log('audio ready');
 		});
 	}
 
