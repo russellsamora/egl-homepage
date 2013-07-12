@@ -19,6 +19,8 @@
 					thud: [650, 810]
 				}
 			});
+			audio.ready = true;	
+			console.log('audio ready');
 			_soundcloud();
 		},
 
@@ -72,8 +74,6 @@
 				};
 				_soundcloudEnabled = true;
 			}
-			audio.ready = true;	
-			console.log('audio ready');
 		});
 	}
 
