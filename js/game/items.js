@@ -88,18 +88,19 @@
 				for(var h = 0; h < _hitList.length; h++) {
 					var other = _hitList[h];
 					//see if player has crossed Y plane and we need to switch zindex
-					var diff = bottomY - other.bottom < 0 ? -1 : 1;
+					var yDiff = bottomY - other.bottom,
+						diff =  yDiff < 0 ? -1 : 1;
+					//check for collision (must do first so we don't flip if jump pos back)
+					if ((tempX + $game.player.w >= other.x) && (tempX <= other.x + other.w) && (Math.abs(yDiff) < HEIGHT_BUFFER)) {
+						//return prev position doubled so it doesn't overlap for next move
+						var rateX = tempX - _prevMove.x,
+							rateY = tempY - _prevMove.y;
+						_prevMove.x -= rateX;
+						_prevMove.y -= rateY;
+						$game.player.stopMove(_prevMove);
+						break;
+					}
 					if(diff !== other.side) {
-						//check for collision (must do first so we don't flip if jump pos back)
-						if ((tempX + $game.player.w >= other.x) && (tempX <= other.x + other.w)) {
-							//return prev position doubled so it doesn't overlap for next move
-							var rateX = tempX - _prevMove.x,
-								rateY = tempY - _prevMove.y;
-							_prevMove.x -= rateX;
-							_prevMove.y -= rateY;
-							$game.player.stopMove(_prevMove);
-							break;
-						}
 						if(!other.flipped) {
 							other.flipped = true;
 							if(other.kind === 'item') {
@@ -309,18 +310,22 @@
 						clearTimeout(doneTimer);
 					});
 					$('#whiteboardCanvas').mouseup(function(e) {
+						if(started) {
+							doneTimer = setTimeout(function() {
+								$game.saveDrawing();
+							}, 10000);
+						}
 						drawing = false;
 						started = false;
-						doneTimer = setTimeout(function() {
-							$game.saveDrawing();	
-						}, 10000);
 					});
 					$('#whiteboardCanvas').mouseout(function(e) {
+						if(started) {
+							doneTimer = setTimeout(function() {
+								$game.saveDrawing();
+							}, 10000);
+						}
 						started = false;
 						drawing = false;
-						doneTimer = setTimeout(function() {
-							$game.saveDrawing();	
-						},10000);
 					});
 				}
 			},

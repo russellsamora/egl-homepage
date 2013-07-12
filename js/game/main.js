@@ -93,11 +93,11 @@
 			$game.started = true;
 			$('#blog').show();
 			_tick();
-			$.get('/db/drawingCount.php',
-				function(data) {
-					_numDrawings = parseInt(data, 10);
-					console.log(_numDrawings);
-				}, 'text');
+			// $.get('/db/drawingCount.php',
+			// 	function(data) {
+			// 		_numDrawings = parseInt(data, 10);
+			// 		console.log(_numDrawings);
+			// 	}, 'text');
 		},
 
 		exitAndSave: function() {
@@ -130,9 +130,9 @@
 		window.NAVBAR_HEIGHT = 72;
 		window.GAMEBOARD_WIDTH = 2000;
 		window.GAMEBOARD_HEIGHT = 1000;
-		// window.HEIGHT_BUFFER = 20;
+		window.HEIGHT_BUFFER = 10;
 		window.WALL_HEIGHT = 200;
-		window.DEV_MODE = false;
+		window.DEV_MODE = true;
 	}
 
 	function _beginGame() {
@@ -221,6 +221,11 @@
 					$(this).remove();
 				});
 			});
+			setTimeout(function() {
+				$('#blog').fadeOut(function() {
+					$(this).remove();
+				});
+			}, 10000);
 		});
 	}
 })();
