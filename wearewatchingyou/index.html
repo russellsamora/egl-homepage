@@ -1,0 +1,50 @@
+<!--
+          .         .              
+          |         |              
+,-. ,-. ,-| ,-. ;-. |-. ,-. ;-. ,-:
+|   | | | | |-' | | | | |-' |   | |
+`-' `-' `-' `-' ' ' `-' `-' '   `-|
+                                `-'
+-->
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>EGL watches you</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			img {
+				border: 2px solid #ccc;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='nsa'></div>
+	</body>
+	<script src='/js/libs/jquery.min.js'></script>
+	<script>
+		var num;
+		$.get('/db/drawingCount.php',
+			function(data) {
+				num = parseInt(data, 10);
+				loadImage(0);
+			}, 'text');
+
+		function loadImage(index) {
+			var item = document.createElement('img'),
+				img = new Image();
+				img.onload = function() {
+					$('body').append(img);
+					index++;
+					if(index < num)	{
+						loadImage(index);
+					}
+				}
+			img.src = '/img/whiteboard/image' + index + '.png';
+		}
+	</script>
+</html>
