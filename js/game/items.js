@@ -48,9 +48,13 @@
 					_hitList.push(item);
 					//check to see which side the player is on (above or below)
 					if(playerBottom < item.bottom) {
+						//above
 						item.selector.addClass('fgItem');
+						item.side = -1;
 					} else {
+						//below
 						item.selector.removeClass('fgItem');
+						item.side = 1;
 					}
 				}
 			}
@@ -64,8 +68,10 @@
 					//check to see which side the player is on (above or below)
 					if(playerBottom < person.bottom) {
 						person.selector.addClass('fgPerson');
+						person.side = -1;
 					} else {
 						person.selector.removeClass('fgPerson');
+						person.side = 1;
 					}
 				}
 			}
@@ -82,7 +88,8 @@
 				for(var h = 0; h < _hitList.length; h++) {
 					var other = _hitList[h];
 					//see if player has crossed Y plane and we need to switch zindex
-					if((bottomY >= other.bottom) && (bottomY <= other.bottom + HEIGHT_BUFFER)) {
+					var diff = bottomY - other.bottom < 0 ? -1 : 1;
+					if(diff !== other.side) {
 						//check for collision (must do first so we don't flip if jump pos back)
 						if ((tempX + $game.player.w >= other.x) && (tempX <= other.x + other.w)) {
 							//return prev position doubled so it doesn't overlap for next move
@@ -244,7 +251,7 @@
 			if(index < items.peopleKeys.length) {
 				_setupPeople(index);
 			} else {
-				_loadPeopleInfo(true); //null for google doc data
+				_loadPeopleInfo(); //null for google doc data
 			}
 		}
 		img.src = 'img/people/' + key + '.png';
@@ -269,14 +276,23 @@
 				y: 155,
 				init: function() {
 					var canvas = document.getElementById('whiteboardCanvas'),
-						ctx = canvas.getContext('2d'),
+						ctx = canvas.getContext('2d');
 						drawing = false,
 						started = false;
+					ctx.strokeStyle = '#999';
+					ctx.lineWidth = 3;
+					ctx.lineCap = 'round';
 					$('#whiteboardCanvas').mousemove(function(e) {
 						if(drawing) {
 							//TODO: WHYYYY doesn't just the offset values work?
-							var x = e.offsetX * 1.6,
+							var x,y;
+							if(e.layerX || e.layerX == 0) { //firefox
+								x = e.layerX;
+								y = e.layerY;
+							} else {
+								x = e.offsetX * 1.6;
 								y = e.offsetY * 1.25;
+							}
 							if (!started) {
 								ctx.beginPath();
 								ctx.moveTo(x, y);
@@ -312,9 +328,7 @@
 				x: 700,
 				y: 450,
 				message: 'booooombox',
-				action: function(el) {
-					$game.audio.toggleMusic(el);
-				}
+				action: function(el) { $game.audio.toggleMusic(el); }
 			}
 		};
 
@@ -349,6 +363,7 @@
 					}
 				});
 				items.ready = true;
+				console.log('items ready');
 			},
 			error: function() {
 				console.log('having a bad day? Try backup data!');
