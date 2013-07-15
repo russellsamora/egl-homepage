@@ -41,6 +41,7 @@
 
 		//clicking on gameboard for move
 		$BODY.on('click touch', '#game', function(e) {
+			$('#bioCard').hide();
 			if(!$game.player.inTransit && $game.playing && !_preventMovement) {
 				e.preventDefault();
 				//hide message boxes
@@ -82,6 +83,10 @@
 				var key = $(this).attr('data-key');
 				$game.items.clickedPerson(key, this);
 			}
+		});
+
+		$BODY.on('click touch', '#bioCard', function() {
+			$(this).hide();
 		});
 
 		$(window).on('resize', _resize);

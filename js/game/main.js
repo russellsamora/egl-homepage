@@ -41,7 +41,8 @@
 
 		showMessage: function(data) {
 			$MESSAGE_TEXT.text(data.message);
-			var topOffset = 50;
+			var topOffset = 50,
+				msgLength = data.message.length + 3;
 			
 			if(data.soundcloud) {
 				$('.soundcloud').show();
@@ -56,15 +57,16 @@
 				left = parseInt(data.el.style.left,10),
 				mid = left + parseInt(data.el.style.width,10) / 2;
 
-			var msgWidth = parseInt($MESSAGE_BOX.css('width'), 10),
-				msgLeft = Math.floor(mid - msgWidth / 2);
+			// var msgWidth = parseInt($MESSAGE_BOX.css('width'), 10),
+			var msgLeft = Math.floor(mid - msgLength * 8 / 2);
 			
-			var duration = 500 + data.message.length * 100;
+			var duration = 300 + msgLength * 100;
 			//clear old messages and change position and show and add fade out timer
 			$game.hideMessage();
 			$MESSAGE_BOX.css({
 				top: top,
-				left: msgLeft
+				left: msgLeft,
+				width: msgLength * 8
 			}).show();
 			_messageTimeout = setTimeout(function() {
 				$game.hideMessage();
@@ -95,6 +97,11 @@
 				$game.playing = true;
 				$game.started = true;
 				$('#blog').show();
+				setTimeout(function() {
+				$('#blog').fadeOut(function() {
+					$(this).remove();
+				});
+			}, 10000);
 				_tick();
 			}
 			// $.get('/db/drawingCount.php',
@@ -212,11 +219,6 @@
 					$(this).remove();
 				});
 			});
-			setTimeout(function() {
-				$('#blog').fadeOut(function() {
-					$(this).remove();
-				});
-			}, 10000);
 		});
 	}
 })();

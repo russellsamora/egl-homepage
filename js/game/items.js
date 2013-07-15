@@ -145,7 +145,6 @@
 				$('#bioCard .bioTitle span').text(person.jobTitle);
 				$('#bioCard .bioAbout span').text(person.about);
 
-				//TODO: place / display bio card
 				$('#bioCard').show();
 				$game.user.game.people[key] = {bio: true};
 				$game.updateStorage();
@@ -271,28 +270,28 @@
 
 	function _loadData() {
 		items.itemData = {
-			'marker1': {
-				class: 'marker1',
-				x: 1100,
-				y: 240,
-				message: 'Red marker, go! I said...Go red marker, faster than a speeding bullet.',
-				action: function() {
-					$game.whiteboard.setColor('#ff0000');
-				}
-			},
 			'marker2': {
 				class: 'marker2',
 				x: 1050,
-				y: 246,
+				y: 243,
 				message: 'Blue marker, I choose you!',
 				action: function() {
 					$game.whiteboard.setColor('#0000ff');
 				}
 			},
+			'marker1': {
+				class: 'marker1',
+				x: 1100,
+				y: 239,
+				message: 'Red marker, go!',
+				action: function() {
+					$game.whiteboard.setColor('#ff0000');
+				}
+			},
 			'eraser': {
 				class: 'eraser',
 				x: 850,
-				y: 245,
+				y: 243,
 				message: 'I feel just like Sisyphus...',
 				action: function() {
 					if($game.whiteboard.drawingExists) {
