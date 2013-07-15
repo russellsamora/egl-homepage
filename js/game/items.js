@@ -3,14 +3,13 @@
 	var _hitList,
 		_prevMove = {},
 		_animatedItems = [],
-		_markerColor = '#ff0000';
+		_animatedPeople = [];
 
 	var items = $game.items = {
 		itemKeys: null,
 		peopleKeys: null,
 		itemData: null,
 		peopleData: null,
-		whiteboardDrawingExists: false,
 		ready: false,
 
 		init: function() {
@@ -145,13 +144,11 @@
 		updateItemAnimations: function() {
 			for(var a = 0; a < _animatedItems.length; a++) {
 				var item = items.itemData[_animatedItems[a]];
-				item.curFrame++;
-				if(item.curFrame >= item.frames) {
-					item.curFrame = 0;
-				}
-				var position = -item.curFrame * item.w + 'px 0';
-				// console.log(position);
-				item.selector.css('background-position', position);
+				_animateItem(item);
+			}
+			for(var a = 0; a < _animatedPeople.length; a++) {
+				var item = items.peopleData[_animatedPeople[a]];
+				_animateItem(item);
 			}
 		}
 	};
@@ -160,69 +157,46 @@
 	//private functions
 	function _setupItems(index) {
 		var key = items.itemKeys[index],
-			info = items.itemData[key];
-
-		if(info.specialElement) {
-			var item = document.createElement(info.specialElement);
+			info = items.itemData[key],
+			item = document.createElement('div'),
+			img = new Image();
+		
+		img.onload = function() {
+			//set the background image and append
 			item.setAttribute('id', key);
-			item.setAttribute('class', 'item');
+			item.setAttribute('class', info.class + ' item'); 
 			item.setAttribute('data-key', key);
+			var divWidth;
+			//set size, based on if it is animated or not
+			if(info.frames) {
+				//if animted, add it to animation list
+				_animatedItems.push(key);
+				info.curFrame = Math.floor(Math.random() * info.frames);
+				divWidth = Math.floor(img.width / info.frames);
+			} else {
+				divWidth = img.width;
+			}
 			$(item).css({
 				position: 'absolute',
 				top: info.y,
 				left: info.x,
-				width: info.w,
-				height: info.h,
+				width: divWidth,
+				height: img.height,
+				backgroundImage: 'url(' + img.src + ')'
 			});
 			$GAMEBOARD.append(item);
-			info.init();
 			info.selector = $('#' + key);
+			info.w = divWidth;
+			info.h = img.height;
+			info.bottom = info.y + info.h;
 			index++;
 			if(index < items.itemKeys.length) {
 				_setupItems(index);
 			} else {
 				_setupPeople(0);
 			}
-		} else {
-			var item = document.createElement('div'),
-				img = new Image();
-				img.onload = function() {
-				//set the background image and append
-				item.setAttribute('id', key);
-				item.setAttribute('class', info.class + ' item'); 
-				item.setAttribute('data-key', key);
-				var divWidth;
-				//set size, based on if it is animated or not
-				if(info.frames) {
-					//if animted, add it to animation list
-					_animatedItems.push(key);
-					info.curFrame = Math.floor(Math.random() * info.frames);
-					divWidth = Math.floor(img.width / info.frames);
-				} else {
-					divWidth = img.width;
-				}
-				$(item).css({
-					position: 'absolute',
-					top: info.y,
-					left: info.x,
-					width: divWidth,
-					height: img.height,
-					backgroundImage: 'url(' + img.src + ')'
-				});
-				$GAMEBOARD.append(item);
-				info.selector = $('#' + key);
-				info.w = divWidth;
-				info.h = img.height;
-				info.bottom = info.y + info.h;
-				index++;
-				if(index < items.itemKeys.length) {
-					_setupItems(index);
-				} else {
-					_setupPeople(0);
-				}
-			}
-			img.src = '/img/items/' + info.class + '.png';
 		}
+		img.src = '/img/items/' + info.class + '.png';
 	}
 
 	function _setupPeople(index) {
@@ -236,17 +210,27 @@
 			item.setAttribute('id', key);
 			item.setAttribute('class', 'person');
 			item.setAttribute('data-key', key);
+			var divWidth;
+			//set size, based on if it is animated or not
+			if(info.frames) {
+				//if animted, add it to animation list
+				_animatedPeople.push(key);
+				info.curFrame = Math.floor(Math.random() * info.frames);
+				divWidth = Math.floor(img.width / info.frames);
+			} else {
+				divWidth = img.width;
+			}
 			$(item).css({
 				position: 'absolute',
 				top: info.y,
 				left: info.x,
-				width: img.width,
+				width: divWidth,
 				height: img.height,
 				backgroundImage: 'url(' + img.src + ')'
 			});
 			$GAMEBOARD.append(item);
 			info.selector = $('#' + key);
-			info.w = img.width;
+			info.w = divWidth;
 			info.h = img.height;
 			info.bottom = info.y + info.h;
 			index++;
@@ -261,83 +245,13 @@
 
 	function _loadData() {
 		items.itemData = {
-			'whiteboardCanvas': {
-				specialElement: 'canvas',
-				w: 360,
-				h: 165, 
-				class: 'whiteboard',
-				x: 820,
-				y: 70,
-				init: function() {
-					var canvas = document.getElementById('whiteboardCanvas'),
-						ctx = canvas.getContext('2d');
-						drawing = false,
-						started = false;
-						doneTimer = null;
-					ctx.lineWidth = 2;
-					// ctx.lineCap = 'round';
-					$('#whiteboardCanvas').mousemove(function(e) {
-						if(drawing) {
-							//TODO: WHYYYY doesn't just the offset values work?
-							var x,y;
-							if(e.layerX || e.layerX == 0) { //firefox
-								x = e.layerX;
-								y = e.layerY;
-							} else {
-								// x = e.offsetX * 1.6;
-								// y = e.offsetY * 1.25;
-								x = e.offsetX * 0.85;
-								y = e.offsetY * 0.9;
-							}
-							if (!started) {
-								ctx.beginPath();
-								ctx.moveTo(x, y);
-								started = true;
-							} else {
-								ctx.lineTo(x, y);
-								ctx.stroke();
-							}
-						}
-					});
-					$('#whiteboardCanvas').mousedown(function(e) {
-						ctx.strokeStyle = _markerColor;
-						items.whiteboardDrawingExists = true;
-						drawing = true;
-						clearTimeout(doneTimer);
-					});
-					$('#whiteboardCanvas').mouseup(function(e) {
-						if(started) {
-							doneTimer = setTimeout(function() {
-								$game.saveDrawing();
-							}, 10000);
-						}
-						drawing = false;
-						started = false;
-					});
-					$('#whiteboardCanvas').mouseout(function(e) {
-						if(started) {
-							doneTimer = setTimeout(function() {
-								$game.saveDrawing();
-							}, 10000);
-						}
-						started = false;
-						drawing = false;
-					});
-				},
-				clearBoard: function() {
-					var canvas = document.getElementById('whiteboardCanvas'),
-						ctx = canvas.getContext('2d');
-					ctx.clearRect(0,0,360,165);
-					clearTimeout(doneTimer);
-				}
-			},
 			'marker1': {
 				class: 'marker1',
 				x: 1100,
 				y: 240,
 				message: 'Red marker, go!',
 				action: function() {
-					_markerColor = '#ff0000';
+					$game.whiteboard.setColor('#ff0000');
 				}
 			},
 			'marker2': {
@@ -346,7 +260,7 @@
 				y: 246,
 				message: 'Blue marker, I choose you!',
 				action: function() {
-					_markerColor = '#0000ff';
+					$game.whiteboard.setColor('#0000ff');
 				}
 			},
 			'eraser': {
@@ -355,19 +269,19 @@
 				y: 245,
 				message: 'I feel just like Sisyphus...',
 				action: function() {
-					if(items.whiteboardDrawingExists) {
-						$game.saveDrawing();
+					if($game.whiteboard.drawingExists) {
+						$game.whiteboard.saveDrawing();
 					}
-					items.itemData['whiteboardCanvas'].clearBoard();
-					items.whiteboardDrawingExists = false;
+					$game.whiteboard.clearBoard();
 				}
 			},
-			'burger': {
-				class: 'burger',
-				x: 800,
-				y: 350,
-				frames: 6,
-				message: 'le cheezbooooger'
+			'coffee': {
+				class: 'coffee',
+				x: 330,
+				y: 390,
+				frames: 4,
+				message: 'feelin\' hot hot hot!',
+				animation: [0,1,3,0,2,1,0,3,1,2]
 			},
 			'boombox': {
 				class: 'boombox',
@@ -381,7 +295,9 @@
 		items.peopleData = {
 			'steve': {
 				x: 100,
-				y: 300
+				y: 300,
+				frames: 4,
+				animation: [0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,1,1,0,0,0,1,2,3,2,1,0,0,0,0,0,0,0,0]
 			}
 		};
 	}
@@ -416,5 +332,15 @@
 				loadData(true);
 			}
 		});
+	}
+
+	function _animateItem(item) {
+		item.curFrame++;
+		if(item.curFrame >= item.animation.length) {
+			item.curFrame = 0;
+		}
+		var position = - item.animation[item.curFrame] * item.w + 'px 0';
+		// console.log(position);
+		item.selector.css('background-position', position);
 	}
 })();

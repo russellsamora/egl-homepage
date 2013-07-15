@@ -106,20 +106,6 @@
 
 		exitAndSave: function() {
 			console.log('goodbye');
-			$game.saveDrawing();
-		},
-
-		saveDrawing: function() {
-			if($game.items.whiteboardDrawingExists) {
-				var whiteboard = document.getElementById('whiteboardCanvas'),
-					url = whiteboard.toDataURL('img/png');
-				$.post('/db/saveDrawing.php', {image: url},
-					function(res) {
-						if(res === 'good') {
-							console.log('saved');
-						}
-					}, 'text');
-				}
 		}
 	};
 
@@ -139,7 +125,7 @@
 	}
 
 	function _beginGame() {
-		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready) {
+		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready && $game.whiteboard.ready) {
 			$game.input.forceResize();
 			$game.ready = true;
 			if(DEV_MODE) {
