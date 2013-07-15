@@ -12,6 +12,7 @@
 		ready: false,
 		playing: false,
 		started: false,
+		user: null,
 		
 		init: function() {
 			//see if the game should be started up based on screen size
@@ -32,6 +33,7 @@
 
 		beginGame: function() {
 			if(_gotGame) {
+				_checkReturning();
 				_getFeed();
 				_beginGame();
 			}
@@ -63,9 +65,7 @@
 			$MESSAGE_BOX.css({
 				top: top,
 				left: msgLeft
-			});
-
-			$MESSAGE_BOX.show();
+			}).show();
 			_messageTimeout = setTimeout(function() {
 				$game.hideMessage();
 			}, duration);
@@ -106,6 +106,11 @@
 
 		exitAndSave: function() {
 			console.log('goodbye');
+			$game.updateStorage();
+		},
+
+		updateStorage: function() {
+			localStorage.setItem('egl-user', JSON.stringify($game.user));
 		}
 	};
 
@@ -121,7 +126,7 @@
 		window.GAMEBOARD_HEIGHT = 1000;
 		window.HEIGHT_BUFFER = 10;
 		window.WALL_HEIGHT = 200;
-		window.DEV_MODE = false;
+		window.DEV_MODE = true;
 	}
 
 	function _beginGame() {
@@ -138,14 +143,13 @@
 	}
 
 	function _checkReturning() {
-		var test = localStorage.getItem('egl-game');
-		if(test) {
-			console.log(test);
-			var d = JSON.parse(test);
-			console.log(d);
+		var storage = localStorage.getItem('egl-user');
+		if(storage) {
+			$game.user = JSON.parse(storage);
 		} else {
-			var data = {name: 'russell', age: 26};
-			localStorage.setItem('egl-game', JSON.stringify(data));
+			var id = Math.random().toString(36).slice(2);
+			$game.user = {id: id, game: { people: {} }};
+			localStorage.setItem('egl-user', JSON.stringify($game.user));
 		}
 	}
 

@@ -88,7 +88,7 @@
 		},
 
 		saveDrawing: function() {
-			if(whiteboard.drawingExists) {
+			if(whiteboard.drawingExists && _unsavedDrawing) {
 				var url = _canvas.toDataURL('img/png');
 				$.post('/db/saveDrawing.php', {image: url},
 					function(res) {

@@ -132,12 +132,23 @@
 
 		clickedPerson: function(key, el) {
 			var person = items.peopleData[key];
-			if(person.action) {
-				person.action(el);
-			} else {
+			//see if the user has clicked them first
+			if($game.user.game.people[key]) {
+				//show status
 				if(person.status) {
 					$game.showMessage({el: el, message: person.status});	
 				}
+			} else {
+				//show bio card
+				$('#bioCard img').attr('src', 'img/people/bio/' + key + '.png');
+				$('#bioCard .bioName span').text(person.fullName);
+				$('#bioCard .bioTitle span').text(person.jobTitle);
+				$('#bioCard .bioAbout span').text(person.about);
+
+				//TODO: place / display bio card
+				$('#bioCard').show();
+				$game.user.game.people[key] = {bio: true};
+				$game.updateStorage();
 			}
 		},
 
@@ -237,10 +248,25 @@
 			if(index < items.peopleKeys.length) {
 				_setupPeople(index);
 			} else {
-				_loadPeopleInfo(); //null for google doc data
+				_preloadBioCards(0);
 			}
 		}
 		img.src = 'img/people/' + key + '.png';
+	}
+
+	function _preloadBioCards(index) {		
+		var img = new Image();
+		img.onload = function() {
+
+			index++;
+			if(index < items.peopleKeys.length) {
+				_setupPeople(index);
+			} else {
+				_loadPeopleInfo(true); //set to null for google doc
+			}
+		}
+		var person = items.peopleKeys[index];
+		img.src = 'img/people/bio/' + person + '.png';
 	}
 
 	function _loadData() {
@@ -249,7 +275,7 @@
 				class: 'marker1',
 				x: 1100,
 				y: 240,
-				message: 'Red marker, go!',
+				message: 'Red marker, go! I said...Go red marker, faster than a speeding bullet.',
 				action: function() {
 					$game.whiteboard.setColor('#ff0000');
 				}
@@ -287,7 +313,7 @@
 				class: 'boombox',
 				x: 700,
 				y: 450,
-				message: 'booooombox',
+				// message: 'booooombox',
 				action: function(el) { $game.audio.toggleMusic(el); }
 			}
 		};
@@ -295,9 +321,12 @@
 		items.peopleData = {
 			'steve': {
 				x: 100,
-				y: 300,
+				y: 350,
 				frames: 4,
-				animation: [0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,1,1,0,0,0,1,2,3,2,1,0,0,0,0,0,0,0,0]
+				animation: [0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,1,1,0,0,0,1,2,3,2,1,0,0,0,0,0,0,0,0],
+				fullName: 'Steve Walter',
+				jobTitle: 'Lab Coordinator',
+				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			}
 		};
 	}
