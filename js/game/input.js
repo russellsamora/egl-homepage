@@ -41,7 +41,9 @@
 
 		//clicking on gameboard for move
 		$BODY.on('click touch', '#game', function(e) {
-			$('#bioCard').hide();
+			if($game.items.showingBio) {
+				$('#bioCard').hide();	
+			}
 			if(!$game.player.inTransit && $game.playing && !_preventMovement) {
 				e.preventDefault();
 				//hide message boxes

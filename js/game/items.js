@@ -10,6 +10,7 @@
 		peopleKeys: null,
 		itemData: null,
 		peopleData: null,
+		showingBio : false,
 		ready: false,
 
 		init: function() {
@@ -146,6 +147,9 @@
 				$('#bioCard .bioAbout span').text(person.about);
 
 				$('#bioCard').show();
+				setTimeout(function() {
+					items.showingBio = true;
+				}, 17);
 				$game.user.game.people[key] = {bio: true};
 				$game.updateStorage();
 			}
@@ -300,14 +304,6 @@
 					$game.whiteboard.clearBoard();
 				}
 			},
-			'coffee': {
-				class: 'coffee',
-				x: 330,
-				y: 390,
-				frames: 4,
-				message: 'feelin\' hot hot hot!',
-				animation: [0,1,3,0,2,1,0,3,1,2]
-			},
 			'boombox': {
 				class: 'boombox',
 				x: 700,
@@ -321,8 +317,8 @@
 			'steve': {
 				x: 100,
 				y: 350,
-				frames: 4,
-				animation: [0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,1,1,0,0,0,1,2,3,2,1,0,0,0,0,0,0,0,0],
+				frames: 8,
+				animation: [4,5,6,7,0,1,2,3,6,7,5,6,5,0,1,4,5,6,7,6,5,4,0,1,2,1,0,6,5,7,4,6,5,4],
 				fullName: 'Steve Walter',
 				jobTitle: 'Lab Coordinator',
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'

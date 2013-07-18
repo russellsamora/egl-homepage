@@ -133,7 +133,7 @@
 		window.GAMEBOARD_HEIGHT = 1000;
 		window.HEIGHT_BUFFER = 10;
 		window.WALL_HEIGHT = 200;
-		window.DEV_MODE = true;
+		window.DEV_MODE = false;
 	}
 
 	function _beginGame() {
@@ -150,6 +150,8 @@
 	}
 
 	function _checkReturning() {
+		//TODO: remove this dev thing
+		localStorage.clear();
 		var storage = localStorage.getItem('egl-user');
 		if(storage) {
 			$game.user = JSON.parse(storage);
