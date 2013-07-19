@@ -21,9 +21,6 @@
 }
 
 @media (min-width: 768px) {
-	.navbar {
-		border-bottom: 2px solid @gray;
-	}
 	html {
 		overflow: hidden;
 	}
@@ -36,7 +33,7 @@
 	.no-highlight();
 	width:2000px;
 	height: 1000px;
-	margin: 81px auto 0 auto;
+	margin: 0 auto 0 auto;
 	background: url('../img/office_bg.jpg');
 	cursor: pointer;
 	#pregame {
@@ -45,7 +42,7 @@
 		background: #222;
 		background: rgba(0,0,0,0.85);
 		position: fixed;
-		top: 81px;
+		top: 80px;
 		z-index: @aboveAll0;
 		cursor: default;
 		.instructions {
@@ -225,3 +222,17 @@
 // .devBottomBound {
 // 	border-bottom: 20px solid rgba(255,255,255,0.8);
 // }
+
+
+//special animation test
+#cloud1 {
+	-webkit-animation: 20s cloud infinite linear;
+	@-webkit-keyframes cloud {
+		from {
+			background-position-x: -255px;
+		}
+		to {
+			background-position-x: 85px;
+		}
+	}
+}

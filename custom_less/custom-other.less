@@ -8,9 +8,9 @@
 .navbar .btn,
 .navbar .btn-group {
   .navbarVerticalAlign(0px); // Vertically center in navbar
-  background: #333;
+  background: @grayDark;
   &:hover {
-  	background: #666;
+  	background: @gray;
   }
 }
 
@@ -19,6 +19,10 @@
 	ul.nav li.dropdown:hover ul.dropdown-menu {
 	    display: block;
 	    top: 99%;
+	}
+	.navbar {
+		border-bottom: 1px solid @gray;
+		// box-shadow: 0 2px 8px 0 rgba(50,50,50,0.15);
 	}
 }
 
@@ -111,13 +115,13 @@
 
 //---------- foooter -----------
 #footer {
-	background: @greenDark;
+	background: @greenDarker;
 	color: @white;
 	text-align: center;
 	h3 {
 		margin: 20px 0 5px 0;
 		line-height: 1;
-		color: @greenLight;
+		color: @greenLighter;
 	}
 	p {
 		margin: 5px;
@@ -130,17 +134,18 @@
 		margin: 10px;
 		span {
 			font-weight: 700;
-			color: @greenLight;
+			color: @greenLighter;
 		}
 	}
 }
 // ---------------- ABOUT PAGE ------------
 #mission {
+	margin-top: 40px;
 	.missionBody {
 		h1,h2,h3 {
-			color: @greenLight;
+			color: @greenLighter;
 		}
-		background: @greenDark;
+		background: @greenDarker;
 		color: @white;
 		padding: 5px 30px;
 	}	

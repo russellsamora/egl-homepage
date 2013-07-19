@@ -17,7 +17,7 @@
 								The Engagement Game Lab (EGL) is an applied research lab at <a href='http://emerson.edu' target='_blank'>Emerson College</a> focusing on the development and study of games, technology, and new media to enhance civic life. The EGL works directly with its partner communities to design and facilitate civic engagement processes, augment stakeholder deliberation, and broaden the diversity of participants in local decision-making.
 							</p>
 							<p>
-								The EGL is also the home of DARG, a project in collaboration with the Mayor’s office of New Urban Mechanics for researching and evaluating civic innovation tools created in cooperation with the city.
+								The EGL is also the home of DARG, a project in collaboration with the Mayor's office of New Urban Mechanics for researching and evaluating civic innovation tools created in cooperation with the city.
 							</p>
 
 						</div>

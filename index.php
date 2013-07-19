@@ -14,9 +14,7 @@
 	</head>
 	<body>
 		<div id='wrap'>
-	    	<div class='navbar navbar-fixed-top'>
-	  			<?php include 'nav.php' ?>
-			</div> <!-- end nav -->
+  			<?php include 'nav.php' ?>
 			<div id='game'>
 				<div id='message'>
 					<p class='messageText'></p>

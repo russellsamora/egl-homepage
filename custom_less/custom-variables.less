@@ -12,10 +12,15 @@
 @green:                 #78cbd1;
 @red:                   #ff5622;
 
-@redDark:				darken(@red, 15%);
-@redLight:				lighten(@red, 15%);
-@greenDark:				darken(@green, 15%);
-@greenLight:			lighten(@green, 15%);
+@redDarker:				darken(@red, 15%);
+@redLighter:			lighten(@red, 15%);
+@redDarkest:			darken(@red, 25%);
+@redLightest:			lighten(@red, 25%);
+
+@greenDarker:			darken(@green, 15%);
+@greenLighter:			lighten(@green, 15%);
+@greenDarkest:			darken(@green, 25%);
+@greenLightest:			lighten(@green, 25%);
 
 
 //not used
@@ -37,7 +42,7 @@
 
 // Links
 // -------------------------
-@linkColor:             @redDark;
+@linkColor:             @redDarker;
 @linkColorHover:        @red;
 
 
@@ -93,7 +98,7 @@
 @btnInfoBackground:                 #5bc0de;
 @btnInfoBackgroundHighlight:        #2f96b4;
 
-@btnSuccessBackground:              @greenDark;
+@btnSuccessBackground:              @greenDarker;
 @btnSuccessBackgroundHighlight:     @green;
 
 @btnWarningBackground:              lighten(@orange, 15%);

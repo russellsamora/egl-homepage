@@ -3,7 +3,8 @@
 	var _hitList,
 		_prevMove = {},
 		_animatedItems = [],
-		_animatedPeople = [];
+		_animatedPeople = [],
+		_pfx = ["webkit", "moz", "MS", "o", ""];
 
 	var items = $game.items = {
 		itemKeys: null,
@@ -180,7 +181,8 @@
 			item.setAttribute('id', key);
 			item.setAttribute('class', info.class + ' item'); 
 			item.setAttribute('data-key', key);
-			var divWidth;
+			var divWidth, divHeight;
+
 			//set size, based on if it is animated or not
 			if(info.frames) {
 				//if animted, add it to animation list
@@ -189,19 +191,28 @@
 				divWidth = Math.floor(img.width / info.frames);
 			} else {
 				divWidth = img.width;
+				divHeight = img.height;
+			}
+			//we are animating with css instead of spritesheet
+			if(info.css) {
+				divWidth = info.css.w;
+				divHeight = info.css.h;
 			}
 			$(item).css({
 				position: 'absolute',
 				top: info.y,
 				left: info.x,
 				width: divWidth,
-				height: img.height,
+				height: divHeight,
 				backgroundImage: 'url(' + img.src + ')'
 			});
 			$GAMEBOARD.append(item);
+			if(info.css) {
+				info.css.init();
+			}
 			info.selector = $('#' + key);
 			info.w = divWidth;
-			info.h = img.height;
+			info.h = divHeight;
 			info.bottom = info.y + info.h;
 			index++;
 			if(index < items.itemKeys.length) {
@@ -310,6 +321,22 @@
 				y: 450,
 				// message: 'booooombox',
 				action: function(el) { $game.audio.toggleMusic(el); }
+			},
+			'cloud1': {
+				class: 'cloud',
+				x: 449,
+				y: 155,
+				css: {
+					w: 106,
+					h: 44,
+					init: function() {
+						var anim = document.getElementById('cloud1');
+						_prefixedEvent(anim, "AnimationIteration", _animationListener);
+					},
+					changeImage: function() {
+						$('#cloud1').css('background-position', '-255px 44px');
+					}
+				}
 			}
 		};
 
@@ -366,5 +393,21 @@
 		var position = - item.animation[item.curFrame] * item.w + 'px 0';
 		// console.log(position);
 		item.selector.css('background-position', position);
+	}
+
+	function _prefixedEvent(element, type, callback) {
+		for (var p = 0; p < _pfx.length; p++) {
+		if (!_pfx[p]) type = type.toLowerCase();
+		element.addEventListener(_pfx[p]+type, callback, false);
+		}
+	}
+
+	function _animationListener(e) {
+		var key = e.srcElement.id,
+			item = items.itemData[key];
+
+		if(typeof item.css.changeImage === 'function') {
+			item.css.changeImage();
+		}
 	}
 })();

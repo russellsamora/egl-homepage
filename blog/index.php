@@ -6,9 +6,7 @@
 	</head>
 	<body>
 		<div id='wrap'>
-			<div class='navbar navbar-static-top'>
-	  			<?php include '../nav.php' ?>
-			</div> <!-- end nav -->
+  			<?php include '../nav.php' ?>
 			<div class='container'>
 				<div class='row'>
 					<div class='span8 offset2'>

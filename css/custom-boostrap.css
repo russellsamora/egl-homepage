@@ -8615,16 +8615,19 @@ a.badge:focus {
 .navbar .btn,
 .navbar .btn-group {
   margin-top: 20px;
-  background: #333;
+  background: #555555;
 }
 .navbar .btn:hover,
 .navbar .btn-group:hover {
-  background: #666;
+  background: #999999;
 }
 @media (min-width: 768px) {
   ul.nav li.dropdown:hover ul.dropdown-menu {
     display: block;
     top: 99%;
+  }
+  .navbar {
+    border-bottom: 1px solid #999999;
   }
 }
 @media (max-width: 1040px) {
@@ -8719,6 +8722,9 @@ a.badge:focus {
 #footer .social p span {
   font-weight: 700;
   color: #b1e1e4;
+}
+#mission {
+  margin-top: 40px;
 }
 #mission .missionBody {
   background: #40b4bc;
