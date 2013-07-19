@@ -32,13 +32,13 @@ body {
 	height: auto !important;
 	height: 100%;
 	/* Negative indent footer by it's height */
-	margin: 0 auto -300px;
+	margin: 0 auto -380px;
 }
 
 /* Set the fixed height of the footer here */
 #push,
 #footer {
-	height: 300px;
+	height: 380px;
 }
 #footer {
 	background-color: #ccc;

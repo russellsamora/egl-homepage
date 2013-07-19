@@ -1,76 +1,12 @@
 <!DOCTYPE html>
 <html lang='en'>
 	<head>
-		<meta charset='utf-8'>
-		<title>EGL - about</title>
-		<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
-		<meta name='description' content='research lab for social games and civic engagement at Emerson College'>
-		<meta name='author' content='russell goldenberg'>
-		<meta name='keywords' content='EGL, Engagement Game Lab, Boston, Massachusetts, games, data visualization, civic engagement, research, social, gamification, social games, games for change'>
-		<meta name='distribution' content='web'>
-		<!-- <link href='http://fonts.googleapis.com/css?family=Arvo:400,700|Average+Sans:400' rel='stylesheet' 
-		type='text/css'> -->
-		<script type="text/javascript" src="//use.typekit.net/rgv4yci.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		<link href='/css/responsive-nav.css' rel='stylesheet'>
-	    <link href='/css/custom-boostrap.css' rel='stylesheet'>
-	    <script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-41820986-1', 'engagementgamelab.org');
-		  ga('send', 'pageview');
-		</script>
+		<?php include '../head.php' ?>
 	</head>
 	<body>
 		<div id='wrap'>
 	    	<div class='navbar navbar-static-top'>
-	  			<div class='navbar-inner'>
-	    			<div class='container-fluid'>
-	  					<button type='button' class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>
-							<span class='icon-bar'></span>
-							<span class='icon-bar'></span>
-							<span class='icon-bar'></span>
-						</button>
-						<p class='tagline'>
-							Researching and Designing Play That Matters 
-						</p>
-						<a class='brand' href='/'><img src='/img/other/EGL_logo.png'></a>
-						<div class='nav-collapse collapse'>
-							<ul class='nav'>
-								<li class='dropdown'>
-									<a href='/projects' class='dropdown-toggle disabled' data-toggle='dropdown'>PROJECTS</a>
-									<ul class='dropdown-menu'>
-										<li><a data-target='#' href='/projects/community_planit'>COMMUNITY PLANIT</a>
-										<li><a data-target='#' href='/projects/civic_seed'>CIVIC SEED</a></li>
-										<li><a data-target='#' href='/projects/participatory_chinatown'>PARTICIPATORY CHINATOWN</a></li>
-										<li><a data-target='#' href='/projects/nyami_nyami'>NYAMI NYAMI</a></li>
-									</ul>
-								</li>
-								<li class='dropdown'>
-									<a href='/research' class='dropdown-toggle disabled' data-toggle='dropdown'>RESEARCH</a>
-									<ul class='dropdown-menu'>
-										<li><a data-target='#' href='/research/index.html#initiatives'>INITIATIVES</a></li>
-										<li><a data-target='#' href='/research/index.html#publications'>PUBLICATIONS</a></li>
-										<li><a data-target='#' href='/research/index.html#publications'>COURSES</a></li>
-									</ul>
-								</li>
-								<li class='dropdown'>
-									<a href='/about' class='dropdown-toggle disabled' data-toggle='dropdown'>ABOUT</a>
-									<ul class='dropdown-menu'>
-										<li><a data-target='#' href='/about/index.html#mission'>WHAT WE DO</a></li>
-										<li><a data-target='#' href='/about/index.html#people'>PEOPLE</a></li>
-										<li><a data-target='#' href='/about/index.html#press'>PRESS</a></li>
-										<li><a data-target='#' href='/about/index.html#partners'>PARTNERS</a></li>
-									</ul>
-								</li>
-								<li><a href='/blog'>BLOG</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
+	    		<?php include '../nav.php' ?>
 			</div> <!-- end nav -->
 			<div class='container'>
 				<div id='mission'>
@@ -304,32 +240,7 @@
 			</div>
 			<div id='push'></div>
    		</div>
-		<div id='footer'>
-      		<div class='container'>
-      			<div class='row'>
-      				<div class='span4 lab'>
-      					<h3>Engagement Game Lab</h3>
-      					<p>
-      						We are an applied research lab dedicated to innovating the ways people participate in civic life and expanding the study of citizenship in a digital era.
-      					</p>
-      				</div>
-      				<div class='span4 socialMedia'>
-      					<h3>Follow Us</h3>
-      					<p>
-      						<a href='http://twitter.com/engagelab' target='_blank'><i class='icon-twitter icon-2x'></i></a>
-      						<a href='https://www.facebook.com/pages/Engagement-Game-Lab/481824145162627' target='_blank'><i class='icon-facebook icon-2x'></a></i>
-      						<a href='http://github.com/engagementgamelab' target='_blank'><i class='icon-github icon-2x'></i></a></p>
-      					<p><a href='http://emerson.edu/' target='_blank'>Emerson College</a></p>
-      				</div>
-      				<div class='span4 contactUs'>
-      					<h3>Contact Us</h3>
-      					<p><span>e-mail:</span> info [at] engagementgamelab.org</p>
-      					<p><span>phone:</span> 617.824.3030</p>
-      					<p><span>address:</span> 2 boylston st (3rd floor), boston, ma 02116</p>
-      				</div>
-      			</div>
-	      	</div>
-	    </div>
+		<?php include '../footer.php' ?>
 
     	<!-- Los javascripts -->
     	<script src='/js/libs/lab.js'></script>

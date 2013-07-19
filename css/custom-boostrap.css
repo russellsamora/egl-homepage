@@ -8696,20 +8696,29 @@ a.badge:focus {
   text-align: center;
   color: #cccccc;
 }
+#footer {
+  background: #40b4bc;
+  color: #ffffff;
+  text-align: center;
+}
 #footer h3 {
-  font-size: 1.4em;
+  margin: 20px 0 5px 0;
+  line-height: 1;
+  color: #b1e1e4;
+}
+#footer p {
+  margin: 5px;
 }
 #footer i {
   padding: 10px;
 }
-#footer a:hover {
-  text-decoration: none;
+#footer .social p {
+  font-size: 1em;
+  margin: 10px;
 }
-#footer .span4 h3 {
-  text-align: center;
-}
-#footer .socialMedia {
-  text-align: center;
+#footer .social p span {
+  font-weight: 700;
+  color: #b1e1e4;
 }
 #mission .missionBody {
   background: #40b4bc;
