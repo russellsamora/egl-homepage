@@ -1,10 +1,18 @@
+.no-highlight() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 @zMessage: 100;
 @aboveAll0: 999;
 @aboveAll1: 998;
 @belowPlayer: 10;
 @import 'custom-variables.less';
 @media (max-width: 767px) {
-	#game, #pregame, #blog {
+	#game, #pregame, #blogTease {
 		display: none;
 	}
 	#nongame {
@@ -25,9 +33,10 @@
 }
 
 #game {
+	.no-highlight();
 	width:2000px;
 	height: 1000px;
-	margin: 68px auto 0 auto;
+	margin: 81px auto 0 auto;
 	background: url('../img/office_bg.jpg');
 	cursor: pointer;
 	#pregame {
@@ -36,12 +45,12 @@
 		background: #222;
 		background: rgba(0,0,0,0.85);
 		position: fixed;
-		top: 68px;
+		top: 81px;
 		z-index: @aboveAll0;
 		cursor: default;
 		.instructions {
 			h2 {
-				color: @orange;
+				font-weight: 100;
 			}
 			// width: 60%;
 			// max-width: 800px;
@@ -51,8 +60,7 @@
 			color: white;
 			p {
 				margin: 20px 0;
-				font-size: 1.2em;
-				line-height: 1.4;
+				font-weight: 100;
 			}
 			p.playGame {
 				margin: 40px;
@@ -106,7 +114,6 @@
 			margin: 0;
 			cursor: default;
 			font-family: @monoFontFamily;
-			line-height: 1.2;
 			text-align: center;
 		}
 		.soundcloud {
@@ -142,25 +149,33 @@
 	}
 }
 
-#blog {
+#blogTease {
 	z-index: @aboveAll1;
-	background: #fff;
-	background: rgba(255,255,255,0.9);
-	position: absolute;
+	background: @alphaGray;
+	position: fixed;
 	margin: 0;
 	padding-right: 20px;
-	top: 70px;
+	top: 81px;
 	right: 0;
-	border: 2px solid @gray;
-	border-top: none;
 	display: none;
 	width: 300px;
-	ul li {
-		list-style: none;
-		margin: 0;
+	color: @white;
+	h4 {
+		margin: 10px 0;
+	}
+	ul {
+		margin: 0 0 0 25px;
+		li {
+			list-style: none;
+			margin: 0;
+		}
 	}
 	a {
 		text-decoration: none;
+	}
+	p {
+		margin: 5px 0 20px 0;
+		font-size: 1em;
 	}
 }
 

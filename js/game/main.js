@@ -96,12 +96,12 @@
 				$('#pregame').fadeOut();
 				$game.playing = true;
 				$game.started = true;
-				$('#blog').show();
+				$('#blogTease').show();
 				setTimeout(function() {
-				$('#blog').fadeOut(function() {
-					$(this).remove();
-				});
-			}, 10000);
+					$('#blogTease').fadeOut(function() {
+						$(this).remove();
+					});
+				}, 10000);
 				_tick();
 			}
 			// $.get('/db/drawingCount.php',
@@ -195,7 +195,7 @@
 	}
 	//gets the blog feed and shows on screen
 	function _getFeed() {
-		$('#blog').rssfeed('http://engagementgamelab.wordpress.com/feed/', {
+		$('#blogTease').rssfeed('http://engagementgamelab.wordpress.com/feed/', {
 			limit: 1,
 			header: false,
 			dateformat: 'date',
@@ -205,19 +205,19 @@
 		}, function() {
 			$('iframe').remove();
 			// //remove the last paragraph tag (super hack!)
-			$('#blog p').first().remove();
-			$('#blog br').remove();
-			$('#blog ul li a').last().remove();
-			$('#blog ul li img').last().remove();
-			$('#blog p').last().remove();
+			$('#blogTease p').first().remove();
+			$('#blogTease br').remove();
+			$('#blogTease ul li a').last().remove();
+			$('#blogTease ul li img').last().remove();
+			$('#blogTease p').last().remove();
 
-			$('#blog a').attr('href', 'blog/');
-			var s = $('#blog p').text();
+			$('#blogTease a').attr('href', 'blog/');
+			var s = $('#blogTease p').text();
 			var sub = s.substring(0,144) + '... <a target="_blank" href="blog/">[view post]</a>';
-			$('#blog p').html(sub);
-			$('#blog').append('<p style="text-align:center;"><button style="width: 30%;" id="hideBlog" class="btn btn-warning" type="button">hide</button><p>');
+			$('#blogTease p').html(sub);
+			$('#blogTease').append('<p style="text-align:center;"><button style="width: 30%;" id="hideBlog" class="btn" type="button">HIDE</button><p>');
 			$('#hideBlog').on('click', function() {
-				$('#blog').fadeOut(function() {
+				$('#blogTease').fadeOut(function() {
 					$(this).remove();
 				});
 			});

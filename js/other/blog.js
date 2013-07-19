@@ -15,6 +15,8 @@
 			$(parent).text(text);
 		});
 
+		$('#blog .rssRow div').addClass('date');
+
 		//some tidying
 		$('#blog ul li').each(function() {
 			var p = $(this).find('p');

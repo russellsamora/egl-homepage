@@ -1,29 +1,33 @@
-//custom colors rg
+//EGL color palette
 
 @alphaGray: rgba(50,50,50,0.8);
-
-// Grays
-// -------------------------
 @black:                 #000;
 @grayDarker:            #222;
-@grayDark:              #333;
-@gray:                  #555;
-@grayLight:             #999;
+@grayDark:              #555;
+@gray:                  #999;
+@grayLight:             #ccc;
 @grayLighter:           #eee;
 @white:                 #fff;
 
+@green:                 #78cbd1;
+@red:                   #ff5622;
 
-// Accent colors
-// -------------------------
+@redDark:				darken(@red, 15%);
+@redLight:				lighten(@red, 15%);
+@greenDark:				darken(@green, 15%);
+@greenLight:			lighten(@green, 15%);
+
+
+//not used
 @blue:                  #049cdb;
 @blueDark:              #0064cd;
-@green:                 #46a546;
-@red:                   #ff0000;
 @yellow:                #ffc40d;
-@orange:                #f89406;
+@orange:                #FF9D58;
 @pink:                  #c3325f;
 @purple:                #7a43b6;
 
+//custom russell
+@headerColor:			@green;
 
 // Scaffolding
 // -------------------------
@@ -33,20 +37,20 @@
 
 // Links
 // -------------------------
-@linkColor:             @red;
-@linkColorHover:        darken(@linkColor, 15%);
+@linkColor:             @redDark;
+@linkColorHover:        @red;
 
 
 // Typography
 // -------------------------
-@sansFontFamily:        'Average Sans', "Helvetica Neue", Helvetica, Arial, sans-serif; //rg
+@sansFontFamily:        'proxima-nova', serif, 'Helvetica Neue', Helvetica, Arial, sans-serif; //rg
 @serifFontFamily:       'Arvo', Georgia, "Times New Roman", Times, serif; //rg
 @monoFontFamily:        'Inconsolata', Monaco, Menlo, Consolas, "Courier New", monospace;
 
-@baseFontSize:          14px;
-@baseFontFamily:        @serifFontFamily;
-@baseLineHeight:        20px;
-@altFontFamily:         @serifFontFamily;
+@baseFontSize:          1em;
+@baseFontFamily:        @sansFontFamily;
+@baseLineHeight:        1.4;
+@altFontFamily:         @sansFontFamily;
 
 @headingsFontFamily:    @sansFontFamily; // empty to use BS default, @baseFontFamily
 @headingsFontWeight:    bold;    // instead of browser default, bold
@@ -79,9 +83,9 @@
 
 // Buttons
 // -------------------------
-@btnBackground:                     @white;
-@btnBackgroundHighlight:            darken(@white, 10%);
-@btnBorder:                         #ccc;
+@btnBackground:                     @linkColor;
+@btnBackgroundHighlight:            @linkColorHover;
+@btnBorder:                         @linkColor;
 
 @btnPrimaryBackground:              @linkColor;
 @btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
@@ -89,8 +93,8 @@
 @btnInfoBackground:                 #5bc0de;
 @btnInfoBackgroundHighlight:        #2f96b4;
 
-@btnSuccessBackground:              #62c462;
-@btnSuccessBackgroundHighlight:     #51a351;
+@btnSuccessBackground:              @greenDark;
+@btnSuccessBackgroundHighlight:     @green;
 
 @btnWarningBackground:              lighten(@orange, 15%);
 @btnWarningBackgroundHighlight:     @orange;
@@ -119,7 +123,7 @@
 @dropdownDividerTop:            #e5e5e5;
 @dropdownDividerBottom:         @white;
 
-@dropdownLinkColor:             @grayDark;
+@dropdownLinkColor:             @gray;
 @dropdownLinkColorHover:        @white;
 @dropdownLinkColorActive:       @white;
 
@@ -180,8 +184,8 @@
 @navbarBackground:                @white;
 @navbarBorder:                    none;
 
-@navbarText:                      @grayDark;
-@navbarLinkColor:                 @grayDark;
+@navbarText:                      @gray;
+@navbarLinkColor:                 @gray;
 @navbarLinkColorHover:            @red;
 @navbarLinkColorActive:           @red;
 @navbarLinkBackgroundHover:       transparent;
