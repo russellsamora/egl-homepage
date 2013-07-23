@@ -98,6 +98,7 @@
   margin: 0;
   cursor: default;
   font-family: 'Inconsolata', Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 1em;
   text-align: center;
 }
 #game #message .soundcloud {
@@ -106,6 +107,7 @@
 #game #message .soundcloud p {
   padding: 0;
   margin: 0;
+  font-size: .8em;
 }
 #game #bioCard {
   display: none;
@@ -121,6 +123,7 @@
 }
 #game #bioCard p {
   margin: 10px;
+  font-size: 1em;
 }
 #game #bioCard img {
   margin: 10px;
@@ -193,14 +196,51 @@
 .devHitBoundP {
   background: rgba(255, 255, 0, 0.4);
 }
-#cloud1 {
-  -webkit-animation: 20s cloud infinite linear;
+#cloud0 {
+  -webkit-animation: 20s cloudZero infinite linear;
+  background-position-x: -85px;
 }
-@-webkit-keyframes cloud {
+@-webkit-keyframes cloudZero {
   from {
-    background-position-x: -255px;
+    background-position-x: -85px;
   }
   to {
-    background-position-x: 85px;
+    background-position-x: 193px;
+  }
+}
+#cloud1 {
+  -webkit-animation: 20s cloudOne infinite linear 30s;
+  background-position-x: -85px;
+}
+@-webkit-keyframes cloudOne {
+  from {
+    background-position-x: -85px;
+  }
+  to {
+    background-position-x: 193px;
+  }
+}
+#cloud2 {
+  background-position-x: -85px;
+  -webkit-animation: 20s cloudTwo infinite linear 60s;
+}
+@-webkit-keyframes cloudTwo {
+  from {
+    background-position-x: -85px;
+  }
+  to {
+    background-position-x: 193px;
+  }
+}
+#cloud3 {
+  background-position-x: -85px;
+  -webkit-animation: 20s cloudThree infinite linear 90s;
+}
+@-webkit-keyframes cloudThree {
+  from {
+    background-position-x: -85px;
+  }
+  to {
+    background-position-x: 193px;
   }
 }

@@ -322,8 +322,36 @@
 				// message: 'booooombox',
 				action: function(el) { $game.audio.toggleMusic(el); }
 			},
+			'cloud0': {
+				class: 'cloud0',
+				x: 0,
+				y: 155,
+				css: {
+					w: 52,
+					h: 44,
+					init: function() {
+						var anim = document.getElementById('cloud0');
+						_prefixedEvent(anim, "AnimationIteration", _animationListener);
+						$(anim).css('background-image', 'url(/img/items/cloud0.png)');
+					},
+					imageIndex: 0,
+					numImages: 3,
+					updateImage: function() {
+						// $('#cloud1').css('background-position', '-255px 44px');
+						this.imageIndex++;
+						if(this.imageIndex >= this.numImages) {
+							this.imageIndex = 0;
+							//update bg
+						}
+						var url = 'url(img/items/cloud' + this.imageIndex + '.png)';
+						$('#cloud0').css({
+							backgroundImage: url
+						});
+					}
+				}
+			},
 			'cloud1': {
-				class: 'cloud',
+				class: 'cloud1',
 				x: 449,
 				y: 155,
 				css: {
@@ -332,12 +360,80 @@
 					init: function() {
 						var anim = document.getElementById('cloud1');
 						_prefixedEvent(anim, "AnimationIteration", _animationListener);
+						$(anim).css('background-image', 'url(/img/items/cloud0.png)');
 					},
-					changeImage: function() {
-						$('#cloud1').css('background-position', '-255px 44px');
+					imageIndex: 0,
+					numImages: 3,
+					updateImage: function() {
+						// $('#cloud1').css('background-position', '-255px 44px');
+						this.imageIndex++;
+						if(this.imageIndex >= this.numImages) {
+							this.imageIndex = 0;
+							//update bg
+						}
+						var url = 'url(img/items/cloud' + this.imageIndex + '.png)';
+						$('#cloud1').css({
+							backgroundImage: url
+						});
 					}
 				}
-			}
+			},
+			'cloud2': {
+				class: 'cloud2',
+				x: 1447,
+				y: 155,
+				css: {
+					w: 106,
+					h: 44,
+					init: function() {
+						var anim = document.getElementById('cloud2');
+						_prefixedEvent(anim, "AnimationIteration", _animationListener);
+						$(anim).css('background-image', 'url(/img/items/cloud0.png)');
+					},
+					imageIndex: 0,
+					numImages: 3,
+					updateImage: function() {
+						// $('#cloud2').css('background-position', '-255px 44px');
+						this.imageIndex++;
+						if(this.imageIndex >= this.numImages) {
+							this.imageIndex = 0;
+							//update bg
+						}
+						var url = 'url(img/items/cloud' + this.imageIndex + '.png)';
+						$('#cloud2').css({
+							backgroundImage: url
+						});
+					}
+				}
+			},
+			'cloud3': {
+				class: 'cloud2',
+				x: 1948,
+				y: 155,
+				css: {
+					w: 52,
+					h: 44,
+					init: function() {
+						var anim = document.getElementById('cloud3');
+						_prefixedEvent(anim, "AnimationIteration", _animationListener);
+						$(anim).css('background-image', 'url(/img/items/cloud0.png)');
+					},
+					imageIndex: 0,
+					numImages: 3,
+					updateImage: function() {
+						// $('#cloud1').css('background-position', '-255px 44px');
+						this.imageIndex++;
+						if(this.imageIndex >= this.numImages) {
+							this.imageIndex = 0;
+							//update bg
+						}
+						var url = 'url(img/items/cloud' + this.imageIndex + '.png)';
+						$('#cloud3').css({
+							backgroundImage: url
+						});
+					}
+				}
+			},
 		};
 
 		items.peopleData = {
@@ -406,8 +502,8 @@
 		var key = e.srcElement.id,
 			item = items.itemData[key];
 
-		if(typeof item.css.changeImage === 'function') {
-			item.css.changeImage();
+		if(typeof item.css.updateImage === 'function') {
+			item.css.updateImage();
 		}
 	}
 })();
