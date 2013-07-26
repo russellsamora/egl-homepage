@@ -130,6 +130,9 @@
 			if(item.message) {
 				$game.showMessage({el: el, message: item.message});	
 			}
+			if(!item.invisible) {
+				_preventMove();	
+			}
 		},
 
 		clickedPerson: function(key, el) {
@@ -434,6 +437,25 @@
 					}
 				}
 			},
+			'plant0': {
+				class: 'plant0',
+				x: 200,
+				y: 400,
+				invisible: true
+				
+			},
+			'plant1': {
+				class: 'plant1',
+				x: 600,
+				y: 600,
+				invisible: true
+			},
+			'couch': {
+				class: 'couch',
+				x: 800,
+				y: 300,
+				invisible: true
+			}
 		};
 
 		items.peopleData = {
