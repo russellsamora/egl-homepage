@@ -129,7 +129,7 @@
 		window.$MESSAGE_BOX = $('#message');
 		window.$MESSAGE_TEXT = $('#message .messageText');
 		window.NAVBAR_HEIGHT = 80;
-		window.GAMEBOARD_WIDTH = 2000;
+		window.GAMEBOARD_WIDTH = 2800;
 		window.GAMEBOARD_HEIGHT = 1000;
 		window.HEIGHT_BUFFER = 10;
 		window.WALL_HEIGHT = 200;

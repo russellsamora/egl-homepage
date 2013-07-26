@@ -43,24 +43,29 @@
     function _getContent(id) {
         var url = _baseUrl + 'action=parse&pageid=' + id +  '&prop=text&format=json&callback=?';
         $.getJSON(url, function(data) {
-            var title = data.parse.title,
-                content = JSON.stringify(data.parse.text['*']);
+            var content = JSON.stringify(data.parse.text['*']);
                 startIndex = content.indexOf('<p>'),
-                endIndex = content.indexOf('</p>') + 3,
-                sub = content.substring(startIndex,endIndex),
-                newP = $(sub),
-                text = newP.text(),
-                clean = text.replace('\\/g','').replace(/\[.*?\]/g, ' ');
+                endIndex = content.indexOf('</p>') + 3;
 
-            console.log(clean);
-            //deny it for length or keywords
-            if(clean.length < 50 || clean.length > 300 || clean.indexOf('This is a list') > -1 || clean.indexOf('Coordinates:') > -1) {
-                console.log('failed');
+            if(startIndex > -1 && endIndex > -1 && endIndex > startIndex) {
+                var sub = content.substring(startIndex,endIndex),
+                    newP = $(sub),
+                    text = newP.text(),
+                    clean = text.replace('\\/g','').replace(/\[.*?\]/g, ' ');
+
+                console.log(clean);
+                //deny it for length or keywords
+                if(clean.length < 50 || clean.length > 300 || clean.indexOf('This is a list') > -1 || clean.indexOf('Coordinates:') > -1) {
+                    console.log('too picky');
+                    _getArticle();
+                    return false;
+                }
+                console.log('passed');
+                _nextBlurb = clean;
+            } else {
+                console.log('bad apple');
                 _getArticle();
-                return false;
             }
-            console.log('passed');
-            _nextBlurb = clean;
         });
     }
 

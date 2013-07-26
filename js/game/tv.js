@@ -17,8 +17,8 @@
 				
 				$(tele).css({
 					position: 'absolute',
-					top: 40,
-					left: 1675,
+					top: 23,
+					left: 2467,
 					width: 160,
 					height: 120,
 					backgroundImage: 'url(' + img.src + ')'
