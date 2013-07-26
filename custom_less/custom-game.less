@@ -36,37 +36,76 @@
 	margin: 0 auto 0 auto;
 	background: url('../img/office_bg.jpg');
 	cursor: pointer;
+	position: relative;
 	#pregame {
 		width: 100%;
 		height: 100%;
 		background: #222;
-		background: rgba(0,0,0,0.85);
+		background: fade(@greenDarkest, 85%);
 		position: fixed;
 		top: 80px;
 		z-index: @aboveAll0;
 		cursor: default;
 		.instructions {
 			h2 {
-				font-weight: 100;
+				font-weight: 900;
+				font-size: 3.7em;
+				color: @greenLighter;
+				line-height: 1;
+				margin: 0;
 			}
+			
 			// width: 60%;
 			// max-width: 800px;
 			// min-width: 420px;
-			width: 640px;
+			width: 720px;
 			margin: 40px auto;
-			color: white;
+			color: #eee;
 			p {
 				margin: 20px 0;
+				font-weight: 300;
+			}
+			p.enter {
+				margin: 0 0 -16px 90px;
+				font-weight: 400;
+				font-size: 1.8em;
+			}
+			p.description {
+				text-align: right;
 				font-weight: 100;
+				font-size: 1.3em;
+				margin: 0;
 			}
 			p.playGame {
 				margin: 40px;
 				text-align: center;
+				a {
+					background: @white;
+					font-size: 1.4em;
+					letter-spacing: .1em;
+					font-weight: 900;
+					color: @red;
+					padding: 54px 26px;
+					border-radius: 100px;
+					border: 8px solid @greenLighter;
+					span {
+						font-style: italic;
+					}
+					&:hover {
+						background: @redLightest;
+						color: @redDarker;
+					}
+				}
 			}
 			p.loading {
 				display: none;
 				margin: 40px;
 				text-align: center;
+			}
+			p.howTo {
+				font-size: 1em;
+				text-align: center;
+				color: @greenLighter;
 			}
 		}
 	}
@@ -155,7 +194,7 @@
 	position: fixed;
 	margin: 0;
 	padding-right: 20px;
-	top: 81px;
+	top: 80px;
 	right: 0;
 	display: none;
 	width: 300px;

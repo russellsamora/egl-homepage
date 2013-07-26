@@ -128,7 +128,7 @@
 		window.$SCROLL_ELEMENT = $('html, body');
 		window.$MESSAGE_BOX = $('#message');
 		window.$MESSAGE_TEXT = $('#message .messageText');
-		window.NAVBAR_HEIGHT = 72;
+		window.NAVBAR_HEIGHT = 80;
 		window.GAMEBOARD_WIDTH = 2000;
 		window.GAMEBOARD_HEIGHT = 1000;
 		window.HEIGHT_BUFFER = 10;
@@ -137,7 +137,7 @@
 	}
 
 	function _beginGame() {
-		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready && $game.whiteboard.ready) {
+		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready && $game.whiteboard.ready && $game.tv.ready) {
 			$game.input.forceResize();
 			$game.ready = true;
 			if(DEV_MODE) {

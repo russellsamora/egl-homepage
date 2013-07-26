@@ -31,18 +31,23 @@
 				</div>
 				<div id='pregame'>
 					<div class='instructions'>
-						<h2> Welcome to the Engagement Game Lab! </h2>
-						<p> 
-							Click PLAY to begin the interactive experience, meet our staff, and explore the lab and our projects. Just click (or touch) anywhere in the environment to move. Clicking people or objects lets you interact. Are you ready?
-						</p>
-						<p> If you prefer a traditional browsing experience, you can use the navigation at the top of the page instead.
+						<p class='enter'>Enter the</p>
+						<h2>Engagement Game Lab:</h2>
+						<p class='description'> 
+							Explore the lab, meet our staff, and find out about what we do.
 						</p>
 						<p class='playGame'>
-							<a class='playGameButton btn btn-large'>PLAY!</a>
+							<a class='playGameButton btn btn-large'>PLAY<span>!</span></a>
 						</p>
 						<p class='loading'>
 							loading...
 						</p>
+						<p class='howTo'>
+							Game Instructions: Click to explore.
+						</p>
+						<!-- <p class='tinyasterisk'>
+							*If you prefer a traditional browsing experience, you can use the navigation at the top of the page instead.
+						</p> -->
 					</div>
 				</div>
 			</div>
@@ -87,6 +92,8 @@
 					.script('js/game/audio.js')
 					.script('js/game/items.js')
 					.script('js/game/whiteboard.js')
+					.script('js/game/tv.js')
+					.script('js/game/wiki.js')
 					.script('js/game/player.js').wait(function() {
 						$game.beginGame();
 					});

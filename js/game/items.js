@@ -288,7 +288,7 @@
 			'marker2': {
 				class: 'marker2',
 				x: 1050,
-				y: 243,
+				y: 173,
 				message: 'Blue marker, I choose you!',
 				action: function() {
 					$game.whiteboard.setColor('#0000ff');
@@ -297,7 +297,7 @@
 			'marker1': {
 				class: 'marker1',
 				x: 1100,
-				y: 239,
+				y: 169,
 				message: 'Red marker, go!',
 				action: function() {
 					$game.whiteboard.setColor('#ff0000');
@@ -306,7 +306,7 @@
 			'eraser': {
 				class: 'eraser',
 				x: 850,
-				y: 243,
+				y: 173,
 				message: 'I feel just like Sisyphus...',
 				action: function() {
 					if($game.whiteboard.drawingExists) {
@@ -325,7 +325,7 @@
 			'cloud0': {
 				class: 'cloud0',
 				x: 0,
-				y: 155,
+				y: 75,
 				css: {
 					w: 52,
 					h: 44,
@@ -353,7 +353,7 @@
 			'cloud1': {
 				class: 'cloud1',
 				x: 449,
-				y: 155,
+				y: 75,
 				css: {
 					w: 106,
 					h: 44,
@@ -381,7 +381,7 @@
 			'cloud2': {
 				class: 'cloud2',
 				x: 1447,
-				y: 155,
+				y: 75,
 				css: {
 					w: 106,
 					h: 44,
@@ -409,7 +409,7 @@
 			'cloud3': {
 				class: 'cloud2',
 				x: 1948,
-				y: 155,
+				y: 75,
 				css: {
 					w: 52,
 					h: 44,
@@ -439,7 +439,7 @@
 		items.peopleData = {
 			'steve': {
 				x: 100,
-				y: 350,
+				y: 300,
 				frames: 8,
 				animation: [4,5,6,7,0,1,2,3,6,7,5,6,5,0,1,4,5,6,7,6,5,4,0,1,2,1,0,6,5,7,4,6,5,4],
 				fullName: 'Steve Walter',

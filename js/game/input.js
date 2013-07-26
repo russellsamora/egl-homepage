@@ -56,7 +56,7 @@
 				if(e.pageX > GAMEBOARD_WIDTH - $game.player.offset.x) { return false; }
 
 				// var y = e.pageY - $game.player.offset.y,
-				var y = e.pageY - $game.player.h,
+				var y = e.pageY - $game.player.h - $game.player.offset.y,
 					x = e.pageX - $game.player.offset.x;
 
 				var input = {

@@ -28,37 +28,75 @@
   margin: 0 auto 0 auto;
   background: url('../img/office_bg.jpg');
   cursor: pointer;
+  position: relative;
 }
 #game #pregame {
   width: 100%;
   height: 100%;
   background: #222;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(51, 144, 150, 0.85);
   position: fixed;
   top: 80px;
   z-index: 999;
   cursor: default;
 }
 #game #pregame .instructions {
-  width: 640px;
+  width: 720px;
   margin: 40px auto;
-  color: white;
+  color: #eee;
 }
 #game #pregame .instructions h2 {
-  font-weight: 100;
+  font-weight: 900;
+  font-size: 3.7em;
+  color: #b1e1e4;
+  line-height: 1;
+  margin: 0;
 }
 #game #pregame .instructions p {
   margin: 20px 0;
+  font-weight: 300;
+}
+#game #pregame .instructions p.enter {
+  margin: 0 0 -16px 90px;
+  font-weight: 400;
+  font-size: 1.8em;
+}
+#game #pregame .instructions p.description {
+  text-align: right;
   font-weight: 100;
+  font-size: 1.3em;
+  margin: 0;
 }
 #game #pregame .instructions p.playGame {
   margin: 40px;
   text-align: center;
 }
+#game #pregame .instructions p.playGame a {
+  background: #ffffff;
+  font-size: 1.4em;
+  letter-spacing: .1em;
+  font-weight: 900;
+  color: #ff5622;
+  padding: 54px 26px;
+  border-radius: 100px;
+  border: 8px solid #b1e1e4;
+}
+#game #pregame .instructions p.playGame a span {
+  font-style: italic;
+}
+#game #pregame .instructions p.playGame a:hover {
+  background: #ffb8a2;
+  color: #d43200;
+}
 #game #pregame .instructions p.loading {
   display: none;
   margin: 40px;
   text-align: center;
+}
+#game #pregame .instructions p.howTo {
+  font-size: 1em;
+  text-align: center;
+  color: #b1e1e4;
 }
 #game .item {
   cursor: pointer;
@@ -139,7 +177,7 @@
   position: fixed;
   margin: 0;
   padding-right: 20px;
-  top: 81px;
+  top: 80px;
   right: 0;
   display: none;
   width: 300px;

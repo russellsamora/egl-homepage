@@ -14,10 +14,10 @@
 				board.setAttribute('id', 'whiteboardCanvas');
 			$(board).css({
 				position: 'absolute',
-				top: 70,
+				top: 0,
 				left: 820,
 				width: 360,
-				height: 165
+				height: 175
 			});
 			$GAMEBOARD.append(board);
 
