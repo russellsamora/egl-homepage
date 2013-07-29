@@ -192,6 +192,7 @@
 				_animatedItems.push(key);
 				info.curFrame = Math.floor(Math.random() * info.frames);
 				divWidth = Math.floor(img.width / info.frames);
+				divHeight = img.height;
 			} else {
 				divWidth = img.width;
 				divHeight = img.height;
@@ -292,9 +293,9 @@
 				class: 'marker2',
 				x: 1050,
 				y: 173,
-				message: 'Blue marker, I choose you!',
+				message: 'Green marker, I choose you!',
 				action: function() {
-					$game.whiteboard.setColor('#0000ff');
+					$game.whiteboard.setColor('#78cbd1');
 				}
 			},
 			'marker1': {
@@ -303,7 +304,7 @@
 				y: 169,
 				message: 'Red marker, go!',
 				action: function() {
-					$game.whiteboard.setColor('#ff0000');
+					$game.whiteboard.setColor('#ff5622');
 				}
 			},
 			'eraser': {
@@ -414,7 +415,7 @@
 				x: 1948,
 				y: 75,
 				css: {
-					w: 52,
+					w: 106,
 					h: 44,
 					init: function() {
 						var anim = document.getElementById('cloud3');
@@ -455,6 +456,15 @@
 				x: 800,
 				y: 300,
 				invisible: true
+			}
+			,
+			'water': {
+				class: 'water',
+				x: 400,
+				y: 200,
+				invisible: true,
+				frames: 7,
+				animation: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5,6]
 			}
 		};
 

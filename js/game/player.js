@@ -141,7 +141,7 @@
 				top: prevMove.y,
 				left: prevMove.x
 			});
-			$game.showMessage({el: player.otherSelector, message: 'Ouch!'});
+			//$game.showMessage({el: player.otherSelector, message: 'Ouch!'});
 			$game.audio.playFx('thud');
 		},
 

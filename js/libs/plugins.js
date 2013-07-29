@@ -1,3 +1,5 @@
+window.lastTime = 0;
+
 window.requestAnimationFrame = (function() {
 	return window.requestAnimationFrame ||
 		window.webkitRequestAnimationFrame ||
@@ -7,9 +9,9 @@ window.requestAnimationFrame = (function() {
 		function(callback, element) {
 			// window.setTimeout(callback, _tickSpeed); // <-- OLD VERSION
 			var currTime = new Date().getTime();
-			var timeToCall = Math.max(0, 16 - (currTime - _lastTime));
+			var timeToCall = Math.max(0, 16 - (currTime - lastTime));
 			var id = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
-			_lastTime = currTime + timeToCall;
+			lastTime = currTime + timeToCall;
 			return id;
 		};
 }());
