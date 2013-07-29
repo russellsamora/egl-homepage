@@ -16,7 +16,8 @@
 				urls: ['/audio/sprites.mp3'],
 				sprite: {
 					jump: [0, 600],
-					thud: [650, 810]
+					thud: [650, 810],
+					water: [1000, 1500]
 				}
 			});
 			audio.ready = true;	

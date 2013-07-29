@@ -2,8 +2,8 @@
 
 	var _hitList,
 		_prevMove = {},
-		_animatedItems = [],
-		_animatedPeople = [],
+		_animatedItemKeys = [],
+		_animatedPeopleKeys = [],
 		_pfx = ["webkit", "moz", "MS", "o", ""];
 
 	var items = $game.items = {
@@ -131,7 +131,7 @@
 				$game.showMessage({el: el, message: item.message});	
 			}
 			if(!item.invisible) {
-				_preventMove();	
+				$game.input.preventMove();
 			}
 		},
 
@@ -160,12 +160,12 @@
 		},
 
 		updateItemAnimations: function() {
-			for(var a = 0; a < _animatedItems.length; a++) {
-				var item = items.itemData[_animatedItems[a]];
+			for(var a = 0; a < _animatedItemKeys.length; a++) {
+				var item = items.itemData[_animatedItemKeys[a]];
 				_animateItem(item);
 			}
-			for(var a = 0; a < _animatedPeople.length; a++) {
-				var item = items.peopleData[_animatedPeople[a]];
+			for(var a = 0; a < _animatedPeopleKeys.length; a++) {
+				var item = items.peopleData[_animatedPeopleKeys[a]];
 				_animateItem(item);
 			}
 		}
@@ -189,7 +189,7 @@
 			//set size, based on if it is animated or not
 			if(info.frames) {
 				//if animted, add it to animation list
-				_animatedItems.push(key);
+				_animatedItemKeys.push(key);
 				info.curFrame = Math.floor(Math.random() * info.frames);
 				divWidth = Math.floor(img.width / info.frames);
 				divHeight = img.height;
@@ -243,7 +243,7 @@
 			//set size, based on if it is animated or not
 			if(info.frames) {
 				//if animted, add it to animation list
-				_animatedPeople.push(key);
+				_animatedPeopleKeys.push(key);
 				info.curFrame = Math.floor(Math.random() * info.frames);
 				divWidth = Math.floor(img.width / info.frames);
 			} else {
@@ -464,7 +464,18 @@
 				y: 200,
 				invisible: true,
 				frames: 7,
-				animation: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5,6]
+				animation: [0,1,2,3,4,5,6],
+				paused: false,
+				playSound: function() {
+					$game.audio.playFx('water');
+				},
+				sleep: function() {
+					this.paused = true;
+					setTimeout(function(self) {
+						self.paused = false;
+						self.playSound();
+					}, 8000, this);
+				}
 			}
 		};
 
@@ -514,13 +525,19 @@
 	}
 
 	function _animateItem(item) {
-		item.curFrame++;
-		if(item.curFrame >= item.animation.length) {
-			item.curFrame = 0;
+		//console.log(item.paused, item.curFrame, item.animation.length);
+		if(!item.paused) {
+			item.curFrame++;
+			if(item.curFrame >= item.animation.length) {
+				item.curFrame = 0;
+				if(item.sleep) {
+					item.sleep();
+				}
+			}
+			var position = - item.animation[item.curFrame] * item.w + 'px 0';
+			// console.log(position);
+			item.selector.css('background-position', position);
 		}
-		var position = - item.animation[item.curFrame] * item.w + 'px 0';
-		// console.log(position);
-		item.selector.css('background-position', position);
 	}
 
 	function _prefixedEvent(element, type, callback) {

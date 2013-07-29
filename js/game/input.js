@@ -19,6 +19,15 @@
 
 		forceResize: function() {
 			_resize();
+		},
+
+		//this means an item was clicked on so we dont wanna move on it, but do its action
+		preventMove: function () {
+			clearTimeout(_preventMovementTimeout);
+			_preventMovement = true;
+			_preventMovementTimeout = setTimeout(function() {
+				_preventMovement = false;
+			}, 17);
 		}
 	};
 	
@@ -36,7 +45,7 @@
 		});
 
 		$BODY.on('click', '#game .soundcloud a', function(e) {
-			_preventMove();
+			input.preventMove();
 		});
 
 		//clicking on gameboard for move
@@ -80,7 +89,7 @@
 
 		$BODY.on('click touch', '#game .person', function(e) {
 			if(!$game.player.inTransit && $game.playing) {
-				_preventMove();
+				input.preventMove();
 				var key = $(this).attr('data-key');
 				$game.items.clickedPerson(key, this);
 			}
@@ -114,15 +123,6 @@
 		} else if(gameOn === 'none' && $game.playing && $game.started) {
 			$game.pauseGame();
 		}
-	}
-
-	//this means an item was clicked on so we dont wanna move on it, but do its action
-	function _preventMove () {
-		clearTimeout(_preventMovementTimeout);
-		_preventMovement = true;
-		_preventMovementTimeout = setTimeout(function() {
-			_preventMovement = false;
-		}, 17);
 	}
 
 })();
