@@ -23,11 +23,14 @@
 						<img src='img/soundcloud/black_text.png'>
 					</div>
 				</div>
-				<div id='bioCard'>
-					<img class='bioImage'>
-					<p class='bioName'>Name: <span></span></p>
-					<p class='bioTitle'>Title: <span></span></p>
-					<p class='bioAbout'>About: <span></span></p>
+				<div id='popupBox'>
+					<div class='bio'>
+						<img class='bioImage'>
+						<p class='bioName'>Name: <span></span></p>
+						<p class='bioTitle'>Title: <span></span></p>
+						<p class='bioAbout'>About: <span></span></p>
+					</div>
+					<div class='wiki'><p></p></div>
 				</div>
 				<div id='pregame'>
 					<div class='instructions'>

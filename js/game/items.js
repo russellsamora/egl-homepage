@@ -145,12 +145,14 @@
 				}
 			} else {
 				//show bio card
-				$('#bioCard img').attr('src', 'img/people/bio/' + key + '.png');
-				$('#bioCard .bioName span').text(person.fullName);
-				$('#bioCard .bioTitle span').text(person.jobTitle);
-				$('#bioCard .bioAbout span').text(person.about);
+				$('#popupBox img').attr('src', 'img/people/bio/' + key + '.png');
+				$('#popupBox .bioName span').text(person.fullName);
+				$('#popupBox .bioTitle span').text(person.jobTitle);
+				$('#popupBox .bioAbout span').text(person.about);
 
-				$('#bioCard').show();
+				$('#popupBox .bio').show();
+				$('#popupBox .wiki').hide();
+				$('#popupBox').show();
 				setTimeout(function() {
 					items.showingBio = true;
 				}, 17);
@@ -462,7 +464,7 @@
 				class: 'water',
 				x: 400,
 				y: 200,
-				invisible: true,
+				// invisible: true,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
 				paused: false,
@@ -475,6 +477,16 @@
 						self.paused = false;
 						self.playSound();
 					}, 8000, this);
+				},
+				action: function() {
+					var wiki = $game.wiki.getWiki();
+					$('#popupBox .wiki p').text(wiki);
+					$('#popupBox .bio').hide();
+					$('#popupBox .wiki').show();
+					$('#popupBox').show();
+					setTimeout(function() {
+						items.showingBio = true;
+					}, 17);
 				}
 			}
 		};

@@ -8724,10 +8724,10 @@ a.badge:focus {
   color: #b1e1e4;
 }
 #mission {
-  margin-top: 40px;
+  width: 100%;
+  background: #40b4bc;
 }
 #mission .missionBody {
-  background: #40b4bc;
   color: #ffffff;
   padding: 5px 30px;
 }

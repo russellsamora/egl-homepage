@@ -18,7 +18,7 @@
                 _getContent(id);
             } else {
                 setTimeout(function() {
-                    console.log('wiki failed us.');
+                    console.log('wiki bad');
                     _getArticle();
                 }, 17);
             }
@@ -55,12 +55,12 @@
 
                 // console.log(clean);
                 //deny it for length or keywords
-                if(clean.length < 50 || clean.length > 300 || clean.indexOf('This is a list') > -1 || clean.indexOf('Coordinates:') > -1) {
+                if(clean.length < 50 || clean.length > 300 || clean.indexOf('This is a list') > -1 || clean.indexOf('Coordinates:') > -1 || clean.indexOf('.svg') > -1) {
                     // console.log('too picky');
                     _getArticle();
                     return false;
                 }
-                // console.log('passed');
+                console.log('wiki good');
                 _nextBlurb = clean;
             } else {
                 // console.log('bad apple');

@@ -51,7 +51,8 @@
 		//clicking on gameboard for move
 		$BODY.on('click touch', '#game', function(e) {
 			if($game.items.showingBio) {
-				$('#bioCard').hide();	
+				$('#popupBox').hide();
+				$game.items.showingBio = false;
 			}
 			if(!$game.player.inTransit && $game.playing && !_preventMovement) {
 				e.preventDefault();
@@ -95,7 +96,7 @@
 			}
 		});
 
-		$BODY.on('click touch', '#bioCard', function() {
+		$BODY.on('click touch', '#popupBox', function() {
 			$(this).hide();
 		});
 
