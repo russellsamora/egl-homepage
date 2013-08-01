@@ -27,7 +27,7 @@
 			_ctx.strokeStyle = '#ff0000';
 
 			//bind functions
-			$('#whiteboardCanvas').mousemove(function(e) {
+			$('#whiteboardCanvas').on('mousemove touchmove', function(e) {
 				if(_drawing) {
 					var x,y;
 					//TODO: firefox
@@ -49,12 +49,12 @@
 				}
 			});
 
-			$('#whiteboardCanvas').mousedown(function(e) {
+			$('#whiteboardCanvas').on('mousedown touchstart', function(e) {
 				whiteboard.drawingExists = true;
 				_drawing = true;
 				clearTimeout(_doneTimer);
 			});
-			$('#whiteboardCanvas').mouseup(function(e) {
+			$('#whiteboardCanvas').on('mouseup touchend', function(e) {
 				if(_started) {
 					_doneTimer = setTimeout(function() {
 						whiteboard.saveDrawing();
