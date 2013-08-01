@@ -13,6 +13,7 @@
 		init: function() {
 			//reset scroll top
 			$SCROLL_ELEMENT.scrollTop(0);
+			$SCROLL_ELEMENT.scrollLeft(0);
 			input.ready = true;
 			console.log('input ready');
 		},

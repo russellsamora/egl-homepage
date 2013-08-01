@@ -101,17 +101,17 @@
 }
 #game .item {
   cursor: pointer;
-  z-index: 2;
+  z-index: 1;
 }
 #game .person {
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
 }
 #game .fgPerson {
-  z-index: 4;
+  z-index: 5;
 }
 #game .fgItem {
-  z-index: 5;
+  z-index: 4;
 }
 #game .hitItem {
   cursor: pointer;
@@ -148,7 +148,7 @@
   margin: 0;
   font-size: .8em;
 }
-#game #bioCard {
+#game #popupBox {
   display: none;
   position: fixed;
   padding: 0;
@@ -160,11 +160,11 @@
   background: #ffffff;
   border: 2px solid #555555;
 }
-#game #bioCard p {
+#game #popupBox p {
   margin: 10px;
   font-size: 1em;
 }
-#game #bioCard img {
+#game #popupBox img {
   margin: 10px;
   float: left;
   border-radius: 100px;
@@ -282,4 +282,7 @@
   to {
     background-position-x: 193px;
   }
+}
+.offscreen {
+  display: none;
 }

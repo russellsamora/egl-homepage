@@ -174,13 +174,11 @@
 					|| (left + $game.input.width) < item.x) {
 					if(item.onScreen) {
 						$(item.selector).addClass('offscreen');
-						console.log(itemName, 'toggle off');
 					}
 					item.onScreen = false;
 				} else {
 					if(!item.onScreen) {
 						$(item.selector).removeClass('offscreen');
-						console.log(itemName, 'toggle on');
 					}
 					item.onScreen = true;
 				}
@@ -226,7 +224,6 @@
 			item.setAttribute('class', info.class + ' item'); 
 			item.setAttribute('data-key', key);
 			var divWidth, divHeight;
-
 			//set size, based on if it is animated or not
 			if(info.frames) {
 				//if animted, add it to animation list
@@ -308,7 +305,9 @@
 			if(index < items.peopleKeys.length) {
 				_setupPeople(index);
 			} else {
-				_preloadBioCards(0);
+				//TODO: uncomment this
+				//_preloadBioCards(0);
+				_loadPeopleInfo(true);
 			}
 		}
 		img.src = 'img/people/' + key + '.png';
@@ -317,11 +316,11 @@
 	function _preloadBioCards(index) {		
 		var img = new Image();
 		img.onload = function() {
-
 			index++;
 			if(index < items.peopleKeys.length) {
 				_setupPeople(index);
 			} else {
+
 				_loadPeopleInfo(true); //set to null for google doc
 			}
 		}
@@ -369,15 +368,15 @@
 			},
 			'playButton': {
 				class: 'playButton',
-				x: 649,
-				y: 285,
+				x: 644,
+				y: 283,
 				// message: 'booooombox',
 				action: function(el) { $game.audio.toggleMusic(el); }
 			},
 			'stopButton': {
 				class: 'stopButton',
 				x: 675,
-				y: 285,
+				y: 283,
 				// message: 'booooombox',
 				action: function(el) { $game.audio.toggleMusic(el); }
 			},
@@ -493,10 +492,16 @@
 					}
 				}
 			},
+			'bookshelf': {
+				class: 'bookshelf',
+				x: 130,
+				y: 0,
+				invisible: true
+			},
 			'plant0': {
 				class: 'plant0',
-				x: 200,
-				y: 400,
+				x: -60,
+				y: 160,
 				invisible: true
 				
 			},
@@ -511,12 +516,11 @@
 				x: 800,
 				y: 300,
 				invisible: true
-			}
-			,
+			},
 			'water': {
 				class: 'water',
-				x: 400,
-				y: 200,
+				x: 500,
+				y: 500,
 				// invisible: true,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
@@ -547,12 +551,46 @@
 
 		items.peopleData = {
 			'steve': {
-				x: 100,
-				y: 300,
+				x: 1400,
+				y: 500,
 				frames: 8,
 				animation: [4,5,6,7,0,1,2,3,6,7,5,6,5,0,1,4,5,6,7,6,5,4,0,1,2,1,0,6,5,7,4,6,5,4],
 				fullName: 'Steve Walter',
 				jobTitle: 'Lab Coordinator',
+				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+			},
+			'eric': {
+				x: 250,
+				y: 80,
+				frames: 5,
+				animation: [0,1,2,3,4],
+				paused: false,
+				sleep: function() {
+					this.paused = true;
+					var timeout = Math.floor(Math.random() * 10000 + 4000);
+					setTimeout(function(self) {
+						self.paused = false;
+					}, timeout, this);
+				},
+				fullName: 'Eric Gordon',
+				jobTitle: 'Director',
+				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+			},
+			'jedd': {
+				x: 1730,
+				y: 90,
+				frames: 4,
+				animation: [2,0,1,2,2,2,0,0,1,1,1,0,0,1,2,1,3,3,3,0,0,1,0,0,1,2,1,1,0,0,0,1,2],
+				paused: false,
+				sleep: function() {
+					this.paused = true;
+					var timeout = Math.floor(Math.random() * 4000 + 2000);
+					setTimeout(function(self) {
+						self.paused = false;
+					}, timeout, this);
+				},
+				fullName: 'Jedd Cohen',
+				jobTitle: 'Curriculum Developer',
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			}
 		};

@@ -50,13 +50,13 @@
             if(startIndex > -1 && endIndex > -1 && endIndex > startIndex) {
                 var dirty = content.substring(startIndex,endIndex);
                 //make sure it doesn't have an svg, is a list, or a coordinate
-                if(dirty.indexOf('.svg') > -1 ||  dirty.indexOf('This is a list') > -1 || dirty.indexOf('Coordinates:') > -1) {
+                if(dirty.indexOf('upload.wikimedia.org') > -1 || dirty.indexOf('This is a list') > -1 || dirty.indexOf('Coordinates:') > -1) {
                     return false;
                 }
                 //clean it up
                 var newP = $(dirty),
                     text = newP.text(),
-                    clean = text.replace('\\/g','').replace(/\[.*?\]/g, ' ');
+                    clean = text.replace(/\\/g, '').replace(/\[.*?\]/g, ' ');
                 
                 //if it isn't the write length, try again
                 if(clean.length < 50 || clean.length > 300) {
@@ -64,7 +64,6 @@
                     return false;
                 } 
                 console.log('wiki good');
-                console.log(clean);
                 _nextBlurb = clean;
             } else {
                 _getArticle();
