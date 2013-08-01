@@ -161,6 +161,45 @@
 			}
 		},
 
+		checkScreen: function() {
+			//get current window position
+			var left = pageXOffset,
+				top = pageYOffset;
+			//compare each item and see if it is on screen
+			for (var itemName in items.itemData) {
+				var item = items.itemData[itemName];
+				if(	top > (item.y + item.h) 
+					|| (top + $game.input.height) < item.y 
+					|| left > (item.x + item.w) 
+					|| (left + $game.input.width) < item.x) {
+					if(item.onScreen) {
+						$(item.selector).addClass('offscreen');
+						console.log(itemName, 'toggle off');
+					}
+					item.onScreen = false;
+				} else {
+					if(!item.onScreen) {
+						$(item.selector).removeClass('offscreen');
+						console.log(itemName, 'toggle on');
+					}
+					item.onScreen = true;
+				}
+			}
+			//compare people
+			for (var personName in items.peopleData) {
+				var person = items.peopleData[personName];
+				if(	top > (person.y + person.h) 
+					|| (top + $game.input.height) < person.y 
+					|| left > (person.x + person.w) 
+					|| (left + $game.input.width) < person.x) {
+					person.onScreen = false;
+				} else {
+					person.onScreen = true;
+				}
+			}
+			//if it is AND it has changed state (off/on) then toggle class
+		},
+
 		updateItemAnimations: function() {
 			for(var a = 0; a < _animatedItemKeys.length; a++) {
 				var item = items.itemData[_animatedItemKeys[a]];
@@ -220,6 +259,7 @@
 			info.w = divWidth;
 			info.h = divHeight;
 			info.bottom = info.y + info.h;
+			info.onScreen = true;
 			index++;
 			if(index < items.itemKeys.length) {
 				_setupItems(index);
@@ -323,8 +363,21 @@
 			},
 			'boombox': {
 				class: 'boombox',
-				x: 700,
-				y: 450,
+				x: 600,
+				y: 250,
+				message: 'booooombox'
+			},
+			'playButton': {
+				class: 'playButton',
+				x: 649,
+				y: 285,
+				// message: 'booooombox',
+				action: function(el) { $game.audio.toggleMusic(el); }
+			},
+			'stopButton': {
+				class: 'stopButton',
+				x: 675,
+				y: 285,
 				// message: 'booooombox',
 				action: function(el) { $game.audio.toggleMusic(el); }
 			},
@@ -473,10 +526,11 @@
 				},
 				sleep: function() {
 					this.paused = true;
+					var timeout = Math.floor(Math.random() * 20000 + 4000);
 					setTimeout(function(self) {
 						self.paused = false;
 						self.playSound();
-					}, 8000, this);
+					}, timeout, this);
 				},
 				action: function() {
 					var wiki = $game.wiki.getWiki();
@@ -538,7 +592,7 @@
 
 	function _animateItem(item) {
 		//console.log(item.paused, item.curFrame, item.animation.length);
-		if(!item.paused) {
+		if(!item.paused && item.onScreen) {
 			item.curFrame++;
 			if(item.curFrame >= item.animation.length) {
 				item.curFrame = 0;

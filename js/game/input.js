@@ -47,7 +47,6 @@
 		$BODY.on('click', '#game .soundcloud a', function(e) {
 			input.preventMove();
 		});
-
 		//clicking on gameboard for move
 		$BODY.on('click touch', '#game', function(e) {
 			if($game.items.showingBio) {
@@ -116,7 +115,7 @@
 			left: Math.max(0,GAMEBOARD_WIDTH - input.width),
 			top: Math.max(0,GAMEBOARD_HEIGHT - input.height + NAVBAR_HEIGHT)
 		};
-
+		$game.items.checkScreen();
 		var gameOn = $('#game').css('display');
 		//resuming game
 		if(gameOn !== 'none' && !$game.playing && $game.started) {

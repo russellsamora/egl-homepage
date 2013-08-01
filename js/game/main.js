@@ -140,6 +140,7 @@
 		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready && $game.whiteboard.ready && $game.tv.ready) {
 			$game.input.forceResize();
 			$game.ready = true;
+			$game.items.checkScreen();
 			if(DEV_MODE) {
 				$('.character').addClass('devHitBoundP');
 				// $('.item, .character, .person').addClass('devBottomBound');
@@ -185,6 +186,10 @@
 			_currentFrame++;
 			if(_currentFrame >= _numFrames) {
 				_currentFrame = 0;
+			}
+			//add / remove items from onscreen rendering
+			if($game.player.inTransit) {
+				$game.items.checkScreen();
 			}
 			if(_currentFrame % 8 === 0) {
 				$game.items.updateItemAnimations();
