@@ -48,26 +48,28 @@
                 endIndex = content.indexOf('</p>') + 3;
 
             if(startIndex > -1 && endIndex > -1 && endIndex > startIndex) {
-                var sub = content.substring(startIndex,endIndex),
-                    newP = $(sub),
-                    text = newP.text(),
-                    clean = text.replace('\\/g','').replace(/\[.*?\]/g, ' ');
-
-                // console.log(clean);
-                //deny it for length or keywords
-                if(clean.length < 50 || clean.length > 300 || clean.indexOf('This is a list') > -1 || clean.indexOf('Coordinates:') > -1 || clean.indexOf('.svg') > -1) {
-                    // console.log('too picky');
-                    _getArticle();
+                var dirty = content.substring(startIndex,endIndex);
+                //make sure it doesn't have an svg, is a list, or a coordinate
+                if(dirty.indexOf('.svg') > -1 ||  dirty.indexOf('This is a list') > -1 || dirty.indexOf('Coordinates:') > -1) {
                     return false;
                 }
+                //clean it up
+                var newP = $(dirty),
+                    text = newP.text(),
+                    clean = text.replace('\\/g','').replace(/\[.*?\]/g, ' ');
+                
+                //if it isn't the write length, try again
+                if(clean.length < 50 || clean.length > 300) {
+                    _getArticle();
+                    return false;
+                } 
                 console.log('wiki good');
+                console.log(clean);
                 _nextBlurb = clean;
             } else {
-                // console.log('bad apple');
                 _getArticle();
             }
         });
     }
-
     _getArticle();
 })();
