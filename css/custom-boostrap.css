@@ -8728,13 +8728,33 @@ a.badge:focus {
   background: #40b4bc;
 }
 #mission .missionBody {
-  color: #ffffff;
-  padding: 5px 30px;
+  min-width: 320px;
+  max-width: 960px;
+  width: 85%;
+  margin: 35px auto;
+  color: #d7f0f1;
+}
+#mission .missionBody p {
+  font-weight: 100;
 }
 #mission .missionBody h1,
 #mission .missionBody h2,
 #mission .missionBody h3 {
   color: #b1e1e4;
+}
+#mission .missionBody .bigIdea {
+  font-size: 2.2em;
+  font-weight: 100;
+}
+#mission .missionBody .bigIdea a {
+  color: #ffffff;
+  font-weight: 300;
+}
+#people {
+  margin-top: 20px;
+}
+#people .person {
+  margin-bottom: 20px;
 }
 #people .person p {
   text-align: center;
@@ -8744,12 +8764,20 @@ a.badge:focus {
   font-weight: 700;
   color: #555555;
 }
-#people .person p:nth-child(4) {
+#people .person .collapse p {
   text-align: left;
   color: #999999;
 }
+#people .person .collapse p:nth-child(2) {
+  text-align: center;
+}
 #people .headshot {
   border-radius: 96px;
+  border: 4px solid #d7f0f1;
+  cursor: pointer;
+}
+#people .trigger {
+  cursor: pointer;
 }
 h1,
 h2,

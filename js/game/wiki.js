@@ -49,7 +49,7 @@
 
             if(startIndex > -1 && endIndex > -1 && endIndex > startIndex) {
                 var dirty = content.substring(startIndex,endIndex);
-                //make sure it doesn't have an svg, is a list, or a coordinate
+                //make sure it doesn't have an upload, is a list, or a coordinate
                 if(dirty.indexOf('upload.wikimedia.org') > -1 || dirty.indexOf('This is a list') > -1 || dirty.indexOf('Coordinates:') > -1) {
                     return false;
                 }
@@ -59,7 +59,7 @@
                     clean = text.replace(/\\/g, '').replace(/\[.*?\]/g, ' ');
                 
                 //if it isn't the write length, try again
-                if(clean.length < 50 || clean.length > 300) {
+                if(clean.length < 75 || clean.length > 300) {
                     _getArticle();
                     return false;
                 } 

@@ -592,6 +592,23 @@
 				fullName: 'Jedd Cohen',
 				jobTitle: 'Curriculum Developer',
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+			},
+			'christina': {
+				x: 1050,
+				y: 200,
+				frames: 4,
+				animation: [0,1,2,3,1,1,2,3,1,2,3,1,2,3,1,2,2,3,2,1,2],
+				paused: false,
+				sleep: function() {
+					this.paused = true;
+					var timeout = Math.floor(Math.random() * 3000 + 2000);
+					setTimeout(function(self) {
+						self.paused = false;
+					}, timeout, this);
+				},
+				fullName: 'Christina Wilson',
+				jobTitle: 'CPI Project Manager',
+				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			}
 		};
 	}

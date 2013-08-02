@@ -140,18 +140,34 @@
 }
 // ---------------- ABOUT PAGE ------------
 #mission {
-	margin-top: 40px;
+	width: 100%;
+	background: @greenDarker;
 	.missionBody {
+		min-width: 320px;
+		max-width: 960px;
+		width: 85%;
+		margin: 35px auto;
+		p {
+			font-weight: 100;
+		}
 		h1,h2,h3 {
 			color: @greenLighter;
 		}
-		background: @greenDarker;
-		color: @white;
-		padding: 5px 30px;
+		color: @greenLightest;
+		.bigIdea {
+			font-size: 2.2em;
+			font-weight: 100;
+			a {
+				color: @white;
+				font-weight: 300;
+			}
+		}
 	}	
 }
 #people {
+	margin-top: 20px;
 	.person {
+		margin-bottom: 20px;
 		p {
 			text-align: center;
 			font-size: 1em;
@@ -160,13 +176,23 @@
 			font-weight: 700;
 			color: @grayDark;
 		}
-		p:nth-child(4) {
-			text-align: left;
-			color: @gray;
+		.collapse {
+			p {
+				text-align: left;
+				color: @gray;	
+			}
+			p:nth-child(2) {
+				text-align: center;
+			}
 		}
 	}
 	.headshot {
 		border-radius: 96px;
+		border: 4px solid @greenLightest;
+		cursor: pointer;
+	}
+	.trigger {
+		cursor: pointer;
 	}
 
 }
