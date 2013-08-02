@@ -37,7 +37,11 @@
 						<p class='enter'>Enter the</p>
 						<h2>Engagement Game Lab:</h2>
 						<p class='description'> 
-							Explore the lab, meet our staff, and find out about what we do.
+							<!-- An applied research lab harnessing play for civic engagement. -->
+							<!-- An applied research lab dedicated to harnessing play for civic engagement. -->
+							<!-- An applied research lab designing games for civic engagement. -->
+							<!-- An applied research lab, foreplay, and civic engagement. -->
+							An applied research lab for play and civic engagement.
 						</p>
 						<p class='playGame'>
 							<a class='playGameButton btn btn-large'>PLAY<span>!</span></a>
@@ -46,7 +50,9 @@
 							loading...
 						</p>
 						<p class='howTo'>
-							Game Instructions: Click to explore.
+							Meet our staff, faculty, and students, explore our projects, and find out more about what we do. 
+							<br>Game Instructions: Click to explore.
+							<!-- Game Instructions: Click to explore. -->
 						</p>
 						<!-- <p class='tinyasterisk'>
 							*If you prefer a traditional browsing experience, you can use the navigation at the top of the page instead.

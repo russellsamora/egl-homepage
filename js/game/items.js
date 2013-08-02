@@ -53,11 +53,18 @@
 					if(playerBottom < item.bottom) {
 						//above
 						item.selector.addClass('fgItem');
+						//HACK
+						if(item.bind) {
+							items.peopleData[item.bind].selector.addClass('fgPerson');
+						}
 						item.side = -1;
 					} else {
 						//below
 						item.selector.removeClass('fgItem');
 						item.side = 1;
+						if(item.bind) {
+							items.peopleData[item.bind].selector.removeClass('fgPerson');
+						}
 					}
 				}
 			}
@@ -108,6 +115,10 @@
 							other.flipped = true;
 							if(other.kind === 'item') {
 								other.selector.toggleClass('fgItem');
+								//HACK
+								if(other.bind) {
+									items.peopleData[other.bind].selector.toggleClass('fgPerson');
+								}
 							} else if(other.kind === 'person') {
 								other.selector.toggleClass('fgPerson');
 							}
@@ -515,7 +526,8 @@
 				class: 'couch',
 				x: 800,
 				y: 300,
-				invisible: true
+				invisible: true,
+				bind: 'christina' 
 			},
 			'water': {
 				class: 'water',

@@ -8642,6 +8642,9 @@ a.badge:focus {
   .nav li {
     text-align: center;
   }
+  .navbar-static-top {
+    margin: 0;
+  }
 }
 .navbar .brand {
   padding: 10px;
