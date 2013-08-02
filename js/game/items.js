@@ -371,14 +371,14 @@
 				x: 644,
 				y: 283,
 				// message: 'booooombox',
-				action: function(el) { $game.audio.toggleMusic(el); }
+				action: function() { $game.audio.play(); }
 			},
 			'stopButton': {
 				class: 'stopButton',
 				x: 675,
 				y: 283,
 				// message: 'booooombox',
-				action: function(el) { $game.audio.toggleMusic(el); }
+				action: function() { $game.audio.pause(); }
 			},
 			'cloud0': {
 				class: 'cloud0',

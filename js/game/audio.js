@@ -1,6 +1,6 @@
 (function() {
 	var _playlist,
-		_currentTrack = -1,
+		_currentTrack = 0,
 		_songTransition = false,
 		_wasPlaying = false,
 		soundcloudEnable = false;
@@ -25,22 +25,11 @@
 			_soundcloud();
 		},
 
-		toggleMusic: function(el) {
+		play: function() {
 			if(_soundcloudEnabled) {
-				audio.isPlaying = !audio.isPlaying;
-
-				if(audio.isPlaying) {
-					_nextSong(el, true);
+				if(!_songTransition) {
+					_nextSong();	
 				}
-				else {
-					_playlist.tracks[_currentTrack].song.pause();
-				}
-			}
-		},
-
-		resume: function() {
-			if(_wasPlaying) {
-				_playlist.tracks[_currentTrack].song.play();
 			}
 		},
 
@@ -51,6 +40,13 @@
 				
 			} else {
 				_wasPlaying = false;
+			}
+			audio.isPlaying = false;
+		},
+
+		resume: function() {
+			if(_wasPlaying && _soundcloudEnabled) {
+				_playlist.tracks[_currentTrack].song.play();
 			}
 		},
 
@@ -84,27 +80,38 @@
 		SC.stream(url, function(song) {
 			_songTransition = false;
 			_playlist.tracks[_currentTrack].song = song;
-			_playlist.tracks[_currentTrack].song.play();
+			_playSong();
 		});
 	}
 
-	function _nextSong(el, turnOn) {
-		if(!turnOn) {
-			_playlist.tracks[_currentTrack].song.pause();
+	function _nextSong(ended) {
+		//we are skipping
+		console.log(ended, audio.isPlaying);
+		if(audio.isPlaying) {
+			if(!ended) {
+				_playlist.tracks[_currentTrack].song.pause();	
+			}
+			_currentTrack++;
 		}
-		_currentTrack++;
 		if(_currentTrack >= _playlist.numTracks) { _currentTrack = 0; }
 		var msg = _playlist.tracks[_currentTrack].title,
 			link = _playlist.tracks[_currentTrack].permalink_url,
 			user = _playlist.tracks[_currentTrack].user.username;
-		$game.showMessage({el: el, message: msg, soundcloud: { link: link, user: user}});
+		//$game.showMessage({el: el, message: msg, soundcloud: { link: link, user: user}});
 		if(_playlist.tracks[_currentTrack].song) {
-			setTimeout(function() {
-				_playlist.tracks[_currentTrack].song.play();
-			}, 250);
+			_playSong();
 		} else {
 			_loadSong();
 		}
+	}
+
+	function _playSong() {
+		audio.isPlaying = true;
+		_playlist.tracks[_currentTrack].song.play({
+			onfinish: function() {
+				setTimeout(_nextSong, 100, true);
+			}
+		});
 	}
 
 })();
