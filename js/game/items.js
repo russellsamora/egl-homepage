@@ -156,13 +156,13 @@
 				}
 			} else {
 				//show bio card
-				$('#popupBox img').attr('src', 'img/people/bio/' + key + '.png');
+				$('#popupBox img').attr('src', 'img/people/bio/real_' + key + '.jpg');
 				$('#popupBox .bioName span').text(person.fullName);
 				$('#popupBox .bioTitle span').text(person.jobTitle);
 				$('#popupBox .bioAbout span').text(person.about);
 
+				$game.hidePopup();
 				$('#popupBox .bio').show();
-				$('#popupBox .wiki').hide();
 				$('#popupBox').show();
 				setTimeout(function() {
 					items.showingBio = true;
@@ -336,7 +336,7 @@
 			}
 		}
 		var person = items.peopleKeys[index];
-		img.src = 'img/people/bio/' + person + '.png';
+		img.src = 'img/people/bio/real_' + person + '.jpg';
 	}
 
 	function _loadData() {

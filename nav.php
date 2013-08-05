@@ -15,30 +15,36 @@
 					<li class='dropdown'>
 						<a href='/projects' class='dropdown-toggle disabled' data-toggle='dropdown'>PROJECTS</a>
 						<ul class='dropdown-menu'>
-							<li><a data-target='#' href='/projects/community_planit'>COMMUNITY PLANIT</a>
-							<li><a data-target='#' href='/projects/civic_seed'>CIVIC SEED</a></li>
-							<li><a data-target='#' href='/projects/participatory_chinatown'>PARTICIPATORY CHINATOWN</a></li>
-							<li><a data-target='#' href='/projects/nyami_nyami'>NYAMI NYAMI</a></li>
+							<li><a data-target='#' href='/projects'>COMMUNITY PLANIT</a>
+							<li><a data-target='#' href='/projects'>CIVIC SEED</a></li>
+							<li><a data-target='#' href='/projects'>PARTICIPATORY CHINATOWN</a></li>
+							<li><a data-target='#' href='/projects'>NYAMI NYAMI</a></li>
 						</ul>
 					</li>
 					<li class='dropdown'>
 						<a href='/research' class='dropdown-toggle disabled' data-toggle='dropdown'>RESEARCH</a>
 						<ul class='dropdown-menu'>
-							<li><a data-target='#' href='/research/index.html#initiatives'>INITIATIVES</a></li>
-							<li><a data-target='#' href='/research/index.html#publications'>PUBLICATIONS</a></li>
-							<li><a data-target='#' href='/research/index.html#publications'>COURSES</a></li>
+							<li><a data-target='#' href='/research/#initiatives'>INITIATIVES</a></li>
+							<li><a data-target='#' href='/research/#publications'>PUBLICATIONS</a></li>
+							<li><a data-target='#' href='/research/#courses'>COURSES</a></li>
 						</ul>
 					</li>
 					<li class='dropdown'>
-						<a href='/about' class='dropdown-toggle disabled' data-toggle='dropdown'>ABOUT</a>
+						<a href='/about/' class='dropdown-toggle disabled' data-toggle='dropdown'>ABOUT</a>
 						<ul class='dropdown-menu'>
-							<li><a data-target='#' href='/about/index.html#mission'>WHAT WE DO</a></li>
-							<li><a data-target='#' href='/about/index.html#people'>PEOPLE</a></li>
-							<li><a data-target='#' href='/about/index.html#press'>PRESS</a></li>
-							<li><a data-target='#' href='/about/index.html#partners'>PARTNERS</a></li>
+							<li><a data-target='#' href='/about/#whatwedo'>WHAT WE DO</a></li>
+							<li><a data-target='#' href='/about/#people'>PEOPLE</a></li>
+							<li><a data-target='#' href='/about/#press'>PRESS</a></li>
+							<li><a data-target='#' href='/about/#partners'>PARTNERS</a></li>
 						</ul>
 					</li>
-					<li><a href='/blog'>BLOG</a></li>
+					<li class='dropdown'>
+						<a href='/resources/' class='dropdown-toggle disabled' data-toggle='dropdown'>RESOURCES</a>
+						<ul class='dropdown-menu'>
+							<li><a data-target='#' href='/resources/#whatwedo'>BLOG</a></li>
+							<li><a data-target='#' href='/resources/#stuff'>STUFF</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>

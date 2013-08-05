@@ -78,6 +78,12 @@
 			$MESSAGE_BOX.hide();
 		},
 
+		hidePopup: function() {
+			$('#popupBox .wiki').hide();
+			$('#popupBox .soundcloud').hide();
+			$('#popupBox .bio').hide();
+		},
+
 		pauseGame: function() {
 			$game.playing = false;
 			$game.audio.pause();
@@ -133,7 +139,7 @@
 		window.GAMEBOARD_HEIGHT = 1000;
 		window.HEIGHT_BUFFER = 10;
 		window.WALL_HEIGHT = 200;
-		window.DEV_MODE = false;
+		window.DEV_MODE = true;
 	}
 
 	function _beginGame() {
@@ -175,6 +181,9 @@
 			.script('js/game/input.js')
 			.script('js/game/audio.js')
 			.script('js/game/items.js')
+			.script('js/game/whiteboard.js')
+			.script('js/game/tv.js')
+			.script('js/game/wiki.js')
 			.script('js/game/player.js').wait(function() {
 				$game.beginGame();
 			});

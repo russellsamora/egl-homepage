@@ -18,10 +18,6 @@
 			<div id='game'>
 				<div id='message'>
 					<p class='messageText'></p>
-					<div class='soundcloud'>
-						<p></p>
-						<img src='img/soundcloud/black_text.png'>
-					</div>
 				</div>
 				<div id='popupBox'>
 					<div class='bio'>
@@ -31,6 +27,11 @@
 						<p class='bioAbout'>About: <span></span></p>
 					</div>
 					<div class='wiki'><p></p></div>
+					<div class='soundcloud'>
+						<p class='songTitle'></p>
+						<p class='user'></p>
+						<p><img src='img/soundcloud/black_text.png'></p>
+					</div>
 				</div>
 				<div id='pregame'>
 					<div class='instructions'>
@@ -81,6 +82,31 @@
 					<div class='span4 blogLink'>
 						<p>Blog</p>
 					</div>
+				</div>
+			</div>
+			<div id='nongameH'>
+				<div class='container'>
+					<div class='row'>
+						<div class='span12'>
+							<p>
+								Welcome to the Engagement Game Lab! If you make your browser taller, you can play a game to learn about what we do.
+							</p>
+						</div>
+					</div>
+					<!-- <div class='row'>
+						<div class='span3'>
+							<p>Projects</p>
+						</div>
+						<div class='span3'>
+							<p>Projects</p>
+						</div>
+						<div class='span3'>
+							<p>Projects</p>
+						</div>
+						<div class='span3'>
+							<p>Projects</p>
+						</div>
+					</div> -->
 				</div>
 			</div>
 			<!-- <div id='push'></div> -->

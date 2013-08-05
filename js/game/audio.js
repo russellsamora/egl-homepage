@@ -3,7 +3,8 @@
 		_currentTrack = 0,
 		_songTransition = false,
 		_wasPlaying = false,
-		soundcloudEnable = false;
+		soundcloudEnable = false,
+		_infoTimer = null;
 
 	var audio = $game.audio = {
 		fx: null,
@@ -16,7 +17,7 @@
 				urls: ['/audio/sprites.mp3'],
 				sprite: {
 					jump: [0, 600],
-					thud: [650, 810],
+					thud: [650, 350],
 					water: [1000, 1500]
 				}
 			});
@@ -94,10 +95,6 @@
 			_currentTrack++;
 		}
 		if(_currentTrack >= _playlist.numTracks) { _currentTrack = 0; }
-		var msg = _playlist.tracks[_currentTrack].title,
-			link = _playlist.tracks[_currentTrack].permalink_url,
-			user = _playlist.tracks[_currentTrack].user.username;
-		//$game.showMessage({el: el, message: msg, soundcloud: { link: link, user: user}});
 		if(_playlist.tracks[_currentTrack].song) {
 			_playSong();
 		} else {
@@ -112,6 +109,24 @@
 				setTimeout(_nextSong, 100, true);
 			}
 		});
+
+		//display info
+		var song = _playlist.tracks[_currentTrack].title,
+			link = _playlist.tracks[_currentTrack].permalink_url,
+			user = _playlist.tracks[_currentTrack].user.username,
+			html = '<a href="' + link + '" target="_blank">' + song + '</a>';
+
+		$('#popupBox .soundcloud .songTitle').html(html);
+		$('#popupBox .soundcloud .user').text(user);
+
+		$('#popupBox .soundcloud').show();
+		$('#popupBox .bio').hide();
+		$('#popupBox .wiki').hide();
+		$('#popupBox').show();
+		clearTimeout(_infoTimer);
+		var _infoTimer = setTimeout(function() {
+			$('#popupBox').hide();
+		}, 4000);
 	}
 
 })();
