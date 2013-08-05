@@ -7,7 +7,7 @@
 }
 .navbar .btn,
 .navbar .btn-group {
-  .navbarVerticalAlign(0px); // Vertically center in navbar
+  .navbarVerticalAlign(-10px); // Vertically center in navbar
   background: @grayDark;
   &:hover {
   	background: @gray;
@@ -26,7 +26,7 @@
 	}
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1080px) {
 	.tagline {
 		display: none;
 	}
@@ -61,7 +61,7 @@
 .tagline {
 	float: right;
 	font-weight: 100;
-	letter-spacing: .1em;
+	letter-spacing: .2em;
 	font-size: .9em;
 	margin: 31px 0 0 0;
 	color: @gray;
@@ -118,7 +118,7 @@
 
 //---------- foooter -----------
 #footer {
-	background: @greenDarker;
+	background: @greenDarkest;
 	color: @white;
 	text-align: center;
 	h3 {
@@ -142,10 +142,11 @@
 	}
 }
 // ---------------- ABOUT PAGE ------------
-#mission {
+#whatwedo {
 	width: 100%;
 	background: @greenDarker;
-	.missionBody {
+	padding-bottom: 40px;
+	.whatwedoBody {
 		min-width: 320px;
 		max-width: 960px;
 		width: 85%;
@@ -225,4 +226,9 @@ a {
 	&:hover {
 		color: @white;
 	}
+}
+
+//padding so when anchor links jump they start at top
+.anchor {
+	padding-top: 80px;
 }

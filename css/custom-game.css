@@ -1,10 +1,22 @@
 @media (max-width: 767px) {
   #game,
   #pregame,
-  #blogTease {
+  #blogTease,
+  #nongameH {
     display: none;
   }
   #nongame {
+    display: block;
+  }
+}
+@media (max-height: 540px) and (min-width: 768px) {
+  #game,
+  #pregame,
+  #blogTease,
+  #nongame {
+    display: none;
+  }
+  #nongameH {
     display: block;
   }
 }
@@ -102,16 +114,20 @@
 #game .item {
   cursor: pointer;
   z-index: 1;
+  background: rgba(255, 0, 0, 0.4);
 }
 #game .person {
   cursor: pointer;
   z-index: 2;
+  background: rgba(255, 0, 0, 0.4);
 }
 #game .fgPerson {
   z-index: 5;
+  background: rgba(0, 255, 0, 0.4);
 }
 #game .fgItem {
   z-index: 4;
+  background: rgba(0, 255, 0, 0.4);
 }
 #game .hitItem {
   cursor: pointer;
@@ -140,14 +156,6 @@
   font-size: 1em;
   text-align: center;
 }
-#game #message .soundcloud {
-  padding: 0 15px 10px 15px;
-}
-#game #message .soundcloud p {
-  padding: 0;
-  margin: 0;
-  font-size: .8em;
-}
 #game #popupBox {
   display: none;
   position: fixed;
@@ -164,10 +172,19 @@
   margin: 10px;
   font-size: 1em;
 }
-#game #popupBox img {
-  margin: 10px;
+#game #popupBox .soundcloud {
+  padding: 10px;
+}
+#game #popupBox .soundcloud p {
+  text-align: center;
+  padding: 2px 0;
+  margin: 0;
+}
+#game #popupBox .bioImage {
+  width: 96px;
+  border-radius: 48px;
+  margin: 0 10px;
   float: left;
-  border-radius: 100px;
 }
 #game #whiteboardCanvas {
   cursor: crosshair;

@@ -12,10 +12,19 @@
 @belowPlayer: 10;
 @import 'custom-variables.less';
 @media (max-width: 767px) {
-	#game, #pregame, #blogTease {
+	#game, #pregame, #blogTease, #nongameH {
 		display: none;
 	}
 	#nongame {
+		display: block;
+	}
+}
+
+@media (max-height: 540px) and (min-width: 768px) {
+	#game, #pregame, #blogTease, #nongame {
+		display: none;
+	}
+	#nongameH {
 		display: block;
 	}
 }
@@ -116,20 +125,20 @@
 	.item {
 		cursor: pointer;
 		z-index: 1;
-		// background: rgba(255,0,0,0.4); //DEV_MODE
+		background: rgba(255,0,0,0.4); //DEV_MODE
 	}
 	.person {
 		cursor: pointer;
 		z-index: 2;
-		// background: rgba(255,0,0,0.4); //DEV_MODE
+		background: rgba(255,0,0,0.4); //DEV_MODE
 	}
 	.fgPerson {
 		z-index: 5;
-		// background: rgba(0,255,0,0.4); //DEV_MODE
+		background: rgba(0,255,0,0.4); //DEV_MODE
 	}
 	.fgItem {
 		z-index: 4;
-		// background: rgba(0,255,0,0.4); //DEV_MODE
+		background: rgba(0,255,0,0.4); //DEV_MODE
 	}
 	.hitItem {
 		cursor: pointer;
@@ -157,14 +166,6 @@
 			font-size: 1em;
 			text-align: center;
 		}
-		.soundcloud {
-			padding: 0 15px 10px 15px;
-			p {
-				padding: 0;
-				margin: 0;
-				font-size: .8em;
-			}
-		}
 	}
 	#popupBox {
 		display: none;
@@ -181,10 +182,19 @@
 			margin: 10px;
 			font-size: 1em;
 		}
-		img {
-			margin: 10px;
+		.soundcloud {
+			padding: 10px;
+			p {
+				text-align: center;
+				padding: 2px 0;
+				margin: 0;
+			}
+		}
+		.bioImage {
+			width: 96px;
+			border-radius: 48px;
+			margin: 0 10px;
 			float: left;
-			border-radius: 100px;
 		}
 	}
 	#whiteboardCanvas {
@@ -258,7 +268,8 @@
 		}
 	}
 }
-
+#nongameH {
+}
 .devDirtyBound { //blue for area
 	background: rgba(0,0,255,0.3);
 }

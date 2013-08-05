@@ -8614,7 +8614,7 @@ a.badge:focus {
 }
 .navbar .btn,
 .navbar .btn-group {
-  margin-top: 20px;
+  margin-top: 25px;
   background: #555555;
 }
 .navbar .btn:hover,
@@ -8630,7 +8630,7 @@ a.badge:focus {
     border-bottom: 1px solid #999999;
   }
 }
-@media (max-width: 1040px) {
+@media (max-width: 1080px) {
   .tagline {
     display: none;
   }
@@ -8662,7 +8662,7 @@ a.badge:focus {
 .tagline {
   float: right;
   font-weight: 100;
-  letter-spacing: .1em;
+  letter-spacing: .2em;
   font-size: .9em;
   margin: 31px 0 0 0;
   color: #999999;
@@ -8703,7 +8703,7 @@ a.badge:focus {
   color: #cccccc;
 }
 #footer {
-  background: #40b4bc;
+  background: #339096;
   color: #ffffff;
   text-align: center;
 }
@@ -8726,30 +8726,31 @@ a.badge:focus {
   font-weight: 700;
   color: #b1e1e4;
 }
-#mission {
+#whatwedo {
   width: 100%;
   background: #40b4bc;
+  padding-bottom: 40px;
 }
-#mission .missionBody {
+#whatwedo .whatwedoBody {
   min-width: 320px;
   max-width: 960px;
   width: 85%;
   margin: 35px auto;
   color: #d7f0f1;
 }
-#mission .missionBody p {
+#whatwedo .whatwedoBody p {
   font-weight: 100;
 }
-#mission .missionBody h1,
-#mission .missionBody h2,
-#mission .missionBody h3 {
+#whatwedo .whatwedoBody h1,
+#whatwedo .whatwedoBody h2,
+#whatwedo .whatwedoBody h3 {
   color: #b1e1e4;
 }
-#mission .missionBody .bigIdea {
+#whatwedo .whatwedoBody .bigIdea {
   font-size: 2.2em;
   font-weight: 100;
 }
-#mission .missionBody .bigIdea a {
+#whatwedo .whatwedoBody .bigIdea a {
   color: #ffffff;
   font-weight: 300;
 }
@@ -8808,6 +8809,9 @@ a:hover {
 }
 .btn:hover {
   color: #ffffff;
+}
+.anchor {
+  padding-top: 80px;
 }
 .pull-right {
   float: right;
