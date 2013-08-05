@@ -25,7 +25,7 @@
 				});
 				$GAMEBOARD.append(tele);
 			}
-			img.src = 'http://russellgoldenberg.com/labGifs/fresh.gif';
+			img.src = 'http://engagementgamelab.org/labGifs/fresh.gif';
 			console.log('tv ready');
 			tv.ready = true;
 		}

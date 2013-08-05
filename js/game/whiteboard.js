@@ -90,7 +90,7 @@
 		saveDrawing: function() {
 			if(whiteboard.drawingExists) {
 				var url = _canvas.toDataURL('img/png');
-				$.post('/db/saveDrawing.php', {image: url},
+				$.post('../../db/saveDrawing.php', {image: url},
 					function(res) {
 						if(res === 'good') {
 							console.log('saved');

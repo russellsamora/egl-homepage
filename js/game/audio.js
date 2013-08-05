@@ -14,7 +14,7 @@
 		
 		init: function() {
 			audio.fx = new Howl({
-				urls: ['/audio/sprites.mp3'],
+				urls: ['../../audio/sprites.mp3'],
 				sprite: {
 					jump: [0, 600],
 					thud: [650, 350],

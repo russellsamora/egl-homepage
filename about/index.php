@@ -30,7 +30,7 @@
 					</div>
 					<div class='row'>
 						<div class='span4 person'>
-							<p><img data-toggle='collapse' data-target='#ericBio' src='/img/people/bio/eric.jpg' data-real='eric' class='headshot'></p>
+							<p><img data-toggle='collapse' data-target='#ericBio' src='../img/people/bio/eric.jpg' data-real='eric' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#ericBio'>Eric Gordon, PhD</p>
 							<p class='trigger' data-toggle='collapse' data-target='#ericBio'>Director</p>
 							<div id='ericBio' class='collapse out'>
@@ -89,7 +89,7 @@
 							</div>
 						</div>
 						<div class='span4 person'>
-							<p><img data-toggle='collapse' data-target='#samBio'  src='/img/people/bio/sam.jpg' data-real='sam' class='headshot' style='background: url(/img/people/bio/real_sam.jpg);'></p>
+							<p><img data-toggle='collapse' data-target='#samBio'  src='../img/people/bio/sam.jpg' data-real='sam' class='headshot' style='background: url(../img/people/bio/real_sam.jpg);'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#samBio'>Sam Liberty</p>
 							<p class='trigger' data-toggle='collapse' data-target='#samBio'>Game Writer</p>
 							<div id='samBio' class='collapse out'>
@@ -107,7 +107,7 @@
 							</div>
 						</div>
 						<div class='span4 person'>
-							<p><img data-toggle='collapse' data-target='#aidanBio'  src='/img/people/bio/aidan.jpg' data-real='aidan' class='headshot'></p>
+							<p><img data-toggle='collapse' data-target='#aidanBio'  src='../img/people/bio/aidan.jpg' data-real='aidan' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#aidanBio'>Aidan O'Donohue</p>
 							<p class='trigger' data-toggle='collapse' data-target='#aidanBio'>Designer</p>
 							<div id='aidanBio' class='collapse out'>
@@ -121,7 +121,7 @@
 					</div>
 					<div class='row'>
 						<div class='span4 person'>
-							<p><img data-toggle='collapse' data-target='#jeddBio' src='/img/people/bio/jedd.jpg' data-real='jedd' class='headshot'></p>
+							<p><img data-toggle='collapse' data-target='#jeddBio' src='../img/people/bio/jedd.jpg' data-real='jedd' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#jeddBio'>Jedd Cohen</p>
 							<p class='trigger' data-toggle='collapse' data-target='#jeddBio'>Curriculum Developer</p>
 							<div id='jeddBio' class='collapse out'>
@@ -133,7 +133,7 @@
 							</div>
 						</div>
 						<div class='span4 person'>
-							<p><img data-toggle='collapse' data-target='#christinaBio' src='/img/people/bio/christina.jpg' data-real='christina' class='headshot'></p>
+							<p><img data-toggle='collapse' data-target='#christinaBio' src='../img/people/bio/christina.jpg' data-real='christina' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#christinaBio'>Christina Wilson</p>
 							<p class='trigger' data-toggle='collapse' data-target='#christinaBio'>Project Manager</p>
 							<div id='christinaBio' class='collapse out'>

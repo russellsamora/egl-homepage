@@ -156,7 +156,7 @@
 				}
 			} else {
 				//show bio card
-				$('#popupBox img').attr('src', 'img/people/bio/real_' + key + '.jpg');
+				$('#popupBox img').attr('src', '../../img/people/bio/real_' + key + '.jpg');
 				$('#popupBox .bioName span').text(person.fullName);
 				$('#popupBox .bioTitle span').text(person.jobTitle);
 				$('#popupBox .bioAbout span').text(person.about);
@@ -275,7 +275,7 @@
 				_setupPeople(0);
 			}
 		}
-		img.src = '/img/items/' + info.class + '.png';
+		img.src = '../../img/items/' + info.class + '.png';
 	}
 
 	function _setupPeople(index) {
@@ -321,7 +321,7 @@
 				_loadPeopleInfo(true);
 			}
 		}
-		img.src = 'img/people/' + key + '.png';
+		img.src = '../../img/people/' + key + '.png';
 	}
 
 	function _preloadBioCards(index) {		
@@ -336,7 +336,7 @@
 			}
 		}
 		var person = items.peopleKeys[index];
-		img.src = 'img/people/bio/real_' + person + '.jpg';
+		img.src = '../../img/people/bio/real_' + person + '.jpg';
 	}
 
 	function _loadData() {
@@ -412,7 +412,7 @@
 							this.imageIndex = 0;
 							//update bg
 						}
-						var url = 'url(img/items/cloud' + this.imageIndex + '.png)';
+						var url = 'url(../../img/items/cloud' + this.imageIndex + '.png)';
 						$('#cloud0').css({
 							backgroundImage: url
 						});
@@ -440,7 +440,7 @@
 							this.imageIndex = 0;
 							//update bg
 						}
-						var url = 'url(img/items/cloud' + this.imageIndex + '.png)';
+						var url = 'url(../../img/items/cloud' + this.imageIndex + '.png)';
 						$('#cloud1').css({
 							backgroundImage: url
 						});
@@ -468,7 +468,7 @@
 							this.imageIndex = 0;
 							//update bg
 						}
-						var url = 'url(img/items/cloud' + this.imageIndex + '.png)';
+						var url = 'url(../../img/items/cloud' + this.imageIndex + '.png)';
 						$('#cloud2').css({
 							backgroundImage: url
 						});
@@ -496,7 +496,7 @@
 							this.imageIndex = 0;
 							//update bg
 						}
-						var url = 'url(img/items/cloud' + this.imageIndex + '.png)';
+						var url = 'url(../../img/items/cloud' + this.imageIndex + '.png)';
 						$('#cloud3').css({
 							backgroundImage: url
 						});
