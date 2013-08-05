@@ -56,7 +56,6 @@
 			i.src = '../../img/player/' + file + '.png';
 		},
 
-
 		//figure out where to move the player and move em!
 		movePlayer: function(input) {
 			player.inTransit = true;
@@ -193,6 +192,7 @@
 
 	//check for page edge clicking to animate scroll!
 	function _slideScreen(input) {
+		//console.log('y:', input.y, 'edge:', input.edgeY, 'page', pageYOffset);
 		if(player.inTransit) {
 			var destX, destY;
 			//make sure transition isn't too fast or too slow
@@ -208,15 +208,20 @@
 				destX = Math.min(pageXOffset + $game.input.width / 2, $game.input.maxScroll.left);
 			}
 			//top edge
-			if(input.edgeY < player.h / 2 && pageYOffset > 0) {
+			if(input.edgeY < player.h + NAVBAR_HEIGHT && pageYOffset > 0) {
 				destY = Math.max(pageYOffset - $game.input.height / 2, 0);
+				//console.log('+', destY);
 			} 
 			//bottom edge (was - player.h)
-			else if( input.edgeY > $game.input.height - player.h / 2) {
+			else if( input.edgeY > $game.input.height - player.h) {
 				destY = Math.min(pageYOffset + $game.input.height / 2, $game.input.maxScroll.top);
+				//console.log('-', destY);
+				destY = input.y < destY ? input.y - 10 : destY;	
+				//console.log('-', destY);
 			}
 			//must account for wall since can't click on it...
-			else if(pageYOffset > 0 && input.y < NAVBAR_HEIGHT + WALL_HEIGHT + player.h) {
+			else if(pageYOffset > 0 && input.y < WALL_HEIGHT + player.h) {
+				//console.log(0);
 				destY = 0;
 			}
 
