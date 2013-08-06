@@ -7,7 +7,7 @@
 	var names = ['eric', 'russell', 'stephen', 'jesse', 'sam', 'aidan', 'jedd', 'christina'];
 	
 	//_preloadImages(0);
-	
+	_loaded = true;
 	//hover events for swapping pics
 	$('.headshot').on('mouseenter', function() {
 		if(_loaded) {

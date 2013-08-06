@@ -8729,7 +8729,7 @@ a.badge:focus {
 #whatwedo {
   width: 100%;
   background: #40b4bc;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 #whatwedo .whatwedoBody {
   min-width: 320px;
@@ -8753,9 +8753,6 @@ a.badge:focus {
 #whatwedo .whatwedoBody .bigIdea a {
   color: #ffffff;
   font-weight: 300;
-}
-#people {
-  margin-top: 20px;
 }
 #people .person {
   margin-bottom: 20px;
@@ -8782,6 +8779,41 @@ a.badge:focus {
 }
 #people .trigger {
   cursor: pointer;
+}
+#press h2 {
+  font-weight: 100;
+  font-size: 3em;
+  text-align: center;
+}
+#press .article {
+  font-size: .9em;
+}
+#press .article span {
+  font-weight: 700;
+}
+#press .article a {
+  font-size: 1.2em;
+}
+#press .morePressButton {
+  text-align: center;
+}
+#press .morePressButton button {
+  font-weight: 300;
+}
+#press #morePress p {
+  font-size: 1.2em;
+}
+#press #morePress h3 {
+  font-weight: 900;
+  letter-spacing: .15em;
+}
+#press .prominentArticle {
+  border-bottom: 1px dashed #78cbd1;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#partners p {
+  text-align: center;
 }
 h1,
 h2,

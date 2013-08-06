@@ -5,9 +5,7 @@
 	</head>
 	<body>
 		<div id='wrap'>
-	    	<div class='navbar navbar-static-top'>
-	    		<?php include '../nav.php' ?>
-			</div> <!-- end nav -->
+    		<?php include '../nav.php' ?>
 			<div id='whatwedo' class='anchor'>
 				<div class='row'>
 					<div class='whatwedoBody'>
@@ -112,7 +110,7 @@
 							<p class='trigger' data-toggle='collapse' data-target='#aidanBio'>Designer</p>
 							<div id='aidanBio' class='collapse out'>
 								<p>
-									Aidan
+									Aidan graduated from the Rhode Island School of Design with a degree in painting, and has also studied design and architecture. In addition to her work at the lab, she works as an illustrator and teaches art to children with special needs. She splits her time between Boston and NYC and still loves to draw.
 								</p>
 								<p>
 								</p>
@@ -126,9 +124,12 @@
 							<p class='trigger' data-toggle='collapse' data-target='#jeddBio'>Curriculum Developer</p>
 							<div id='jeddBio' class='collapse out'>
 								<p>
-									Jedd
+									 Jedd is working to adapt Community PlanIt for use in schools and other community and advocacy organizations. He earned his EdM at the Harvard Graduate School of Education and has worked throughout the education sector as a policy researcher, community organizer, and teacher. He's interested in the ways that people and organizations learn. Contact: jedd [at] engagementgamelab.org.
 								</p>
 								<p>
+									<a target='_blank' href='http://twitter.com/JeddCohen' target='_blank'><i class='icon-twitter icon-large' rel='tooltip' data-title='twitter'></i></a>
+	      							<a target='_blank' href='http://www.linkedin.com/profile/view?id=17264239&trk=nav_responsive_tab_profile' target='_blank'><i class='icon-linkedin icon-large' rel='tooltip' data-title='linkedIn'></i></a>
+	      							<a target='_blank' href='http://teachingasactionresearch.wordpress.com/' target='_blank'><i class='icon-star icon-large' rel='tooltip' data-title='portfolio'></i></a>
 								</p>
 							</div>
 						</div>
@@ -152,14 +153,73 @@
 							<h2>Press</h2>
 						</div>
 					</div>
+
+					<!-- first press article -->
+					<div class='row'>
+						<div class='span8'>
+							<p class='quote'>
+								"Community PlanIt is a game about the issues that face local government, designed to get people (especially young people) more involved and understanding of what goes in to managing their communities."
+							</p>
+						</div>
+					</div>
 					<div class='row'>
 						<div class='span12'>
-							<button class='btn btn-default' data-toggle='collapse' data-target='#morePress' >More Press</button>
+							<p class='article text-right'>
+								<a href='http://www.fastcoexist.com/1681625/connecting-citizens-to-their-government-by-turning-it-into-a-game' target='_blank'>Connecting Citizens to Their Government By Turning It Into a Game</a><br> in <span>Fast Company</span>, March 29, 2013
+							</p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12 prominentArticle'>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span6'>
+							<p class='article'>
+								<a href='http://www.statetechmagazine.com/article/2013/07/mobilize-citizen-engagement-gamification' target='_blank'>Mobilize Citizen Engagement with Gamification</a><br> in <span>State Tech</span>, July 31, 2013
+							</p>
+							<p class='quote'>
+								"Making something social means making something relevant. Sharing on social media might already be habitual for some, but in order for sharing a CRM report to be part of a reflective habit loop, the thing shared cannot just be the action; it has to be the reflection."
+							</p>
+						</div>
+						<div class='span6'>
+							<p class='article'>
+								<a href='http://www.edtechmagazine.com/higher/article/2013/03/games-grow-colleges-recognize-power-gamification' target='_blank'>Games Grow Up: Colleges Recognize the Power of Gamification</a><br> on <span>EdTech</span>, March 28, 2013
+							</p>
+							<p class='quote'>
+								"At Boston's Emerson College, the Engagement Game Lab focuses on crafting complete game experiences that lower barriers to civic involvement."
+							</p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span6'>
+							<p class='article'>
+								<a href='http://www.nbcphiladelphia.com/video/#!/news/tech/Interactive-Game-Helps-With-Urban-Planning/188768411' target='_blank'>Interactive Game Helps With Urban Panning</a><br> on <span>NBC 10 Philadelphia Nightly News</span>, January 29, 2013 (Video)
+							</p>
+							<p class='quote'>
+								NBC10 reports on Philly 2035: The Game on Community PlanIt
+							</p>
+						</div>
+						<div class='span6'>
+							<p class='article'>
+								<a href='http://wdet.org/shows/craig-fahle-show/episode/twenty-four-seven-future-game-detroit-works/' target='_blank'>"24/7 Detroit and the Future"</a><br> on <span>NPR's Craig Fahle Show on WDET (Detroit)</span>, June 6, 2012
+							</p>
+							<p class='quote'>
+								Eric Gordon joins Craig Fahle of WDET in-studio to discuss the Community PlanIt game, Detroit 24/7.
+							</p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12'>
+							<p class='morePressButton'>
+								<button class='btn btn-default' data-toggle='collapse' data-target='#morePress' >More Press</button>
+							</p>
 						</div>
 					</div>
 					<div id='morePress' class='collapse out'>
 						<div class='row'>
 							<div class='span12'>
+								<h3>GENERAL</h3>
 								<p>
 									<a href="http://nonprofitquarterly.org/policysocial-context/22132-new-community-planning-game-attracts-youth.html" target="_blank">New Community Planning Game Attracts Youth</a> in Nonprofit Quarterly, April 15, 2013
 								</p>
@@ -176,63 +236,29 @@
 						</div>
 						<div class='row'>
 							<div class='span12'>
-								<h3>Community PlanIt</h3>
-								<p>
-									<a href="http://www.fastcoexist.com/1681625/connecting-citizens-to-their-government-by-turning-it-into-a-game">Connecting Citizens to Their Government By Turning It Into a Game</a> in Fast Company, March 29, 2013
-								</p>
-								<p>
-									<a href="http://www.edtechmagazine.com/higher/article/2013/03/games-grow-colleges-recognize-power-gamification">Games Grow Up: Colleges Recognize the Power of Gamification</a> on EdTech, March 28, 2013
-								</p>
-								<p>
-									<a href="http://techpresident.com/community-planit">Researchers Say Turning Community Planning Into a Game Actually Works</a> in TechPresident, March 1, 2013
-								</p>
-								<p>
-									<a href="http://planphilly.com/eyesonthestreet/2013/01/29/philadelphia2035-game-on" target="_blank">Philly 2035: Game On</a> on <em>PlanPhilly</em>, January 29, 2013
-								</p>
-								<p>
-									<a href="http://www.nbcphiladelphia.com/video/#!/news/tech/Interactive-Game-Helps-With-Urban-Planning/188768411" target="_blank">Interactive Game Helps With Urban Panning</a> on NBC 10 Philadelphia <em>Nightly News</em> , January 29, 2013 (Video)
-								</p>
-								<p>
-									<a href="http://www.salemnews.com/local/x1746083234/Whats-The-Point">Whats "The Point?" Video Game, Planning Project Focused on Salem Neighborhood</a> on<em> Salem News </em>, January 29, 2013
-								</p>
-								<p>
-									<a title="Craig Fahle show" href="http://wdetfm.org/shows/craig-fahle-show/episode/twenty-four-seven-future-game-detroit-works/" target="_blank">"24/7 Detroit and the Future"</a> on NPRs <em>Craig Fahle Show on WDET (Detroit)</em>, June 6, 2012
-								</p>
-								<p>
-									<a title="Xconomy" href="http://www.xconomy.com/detroit/2012/05/04/new-digital-game-social-network-to-help-detroiters-map-citys-future/" target="_blank">"New Digital Game, Social Network to Help Detroiters Map Citys Future"</a> in <em>Xconomy</em>, May 4, 2012
-								</p>
-								<p>
-									<a title="Patriot Ledger" href="http://www.patriotledger.com/topstories/x792224155/Game-to-allow-Quincy-residents-to-PlanIt" target="_blank">"Game to Allow Quincy Residents to "PlanIt"</a> in <em>Patriot Ledger</em>, May 4, 2012
-								</p>
-								<p>
-									<a title="Knight Foundation merging media, minds and money" href="http://www.bostonglobe.com/business/2011/11/22/knight-foundation-merging-media-minds-and-money/WK8Vi8kbDQIBFapFxZm7JM/story.html?s_campaign=sm_tw" target="_blank">"Knight Foundation merging media, minds and money"</a> in <em>The Boston Globe</em>, November 22, 2011
-								</p>
-								<p>
-									<a title="Civic Engagement Turns Into a Game" href="http://www.niemanlab.org/2011/09/community-planit-turns-civic-engagement-into-a-game-and-the-prize-is-better-discourse/" target="_blank">"Community PlanIt turns civic engagement into a game"</a> in <em>Nieman Journalism Lab</em>, September 15, 2011.
-								</p>
-								<p>
-									<a href="http://www.abc.net.au/rn/bydesign/stories/2011/3249548.htm" target="_blank">"[Interview] Networked digital communities"</a> on ABC National Radios <em>By Design</em>, June 25, 2011.
-								</p>
-								<p>
-									<a href="http://www.lowellsun.com/rss/ci_18352285" target="_blank">"Weigh in on planning process online"</a> in Lowell Sun, June 25, 2011.
-								</p>
-								<p>
-									<a href="http://techpresident.com/blog-entry/boston-city-hall-pursues-innovation-house" target="_blank">"In Boston, City Hall Pursues Innovation In-House"</a> in <em>TechPresident</em>, April 21, 2011.
-								</p>
-								<p>
-									<a href="http://www.boston.com/yourtown/news/quincy/2010/11/video_game_hopes_to_spur_civic.html" target="_blank">"Video game hopes to spur civic involvement among Quincys Asians"</a> in <em>The Boston Globe</em>, November 14, 2010.
-								</p>
-								<p>
-									<a href="http://www.movements.org/blog/entry/saving-the-world-one-game-at-a-time/">"Saving the World, One Game at a Time"</a> in <em>Movements.org</em>, May 14, 2010.
-								</p>
-								<p>
-									<a href="http://americancity.org/columns/entry/2636/" target="_blank">"Using Games To Increase Civic Engagement"</a> in <em>Next American City</em>, September 24, 2010.
-								</p>
+								<h3>COMMUNITY PLANIT</h3>
+								<p><a href="http://www.fastcoexist.com/1681625/connecting-citizens-to-their-government-by-turning-it-into-a-game">Connecting Citizens to Their Government By Turning It Into a Game</a> in Fast Company, March 29, 2013</p>
+								<p><a href="http://www.edtechmagazine.com/higher/article/2013/03/games-grow-colleges-recognize-power-gamification">Games Grow Up: Colleges Recognize the Power of Gamification</a> on EdTech, March 28, 2013</p>
+								<p><a href="http://techpresident.com/community-planit">Researchers Say Turning Community Planning Into a Game Actually Works</a> in TechPresident, March 1, 2013</p>
+								<p><a href="http://planphilly.com/eyesonthestreet/2013/01/29/philadelphia2035-game-on" target="_blank">Philly 2035: Game On</a> on <em>PlanPhilly</em>, January 29, 2013</p>
+								<p><a href="http://www.nbcphiladelphia.com/video/#!/news/tech/Interactive-Game-Helps-With-Urban-Planning/188768411" target="_blank">Interactive Game Helps With Urban Panning</a> on NBC 10 Philadelphia <em>Nightly News</em> , January 29, 2013 (Video)</p>
+								<p><a href="http://www.salemnews.com/local/x1746083234/Whats-The-Point">Whats "The Point?" Video Game, Planning Project Focused on Salem Neighborhood</a> on<em> Salem News </em>, January 29, 2013</p>
+								<p><a title="Craig Fahle show" href="http://wdetfm.org/shows/craig-fahle-show/episode/twenty-four-seven-future-game-detroit-works/" target="_blank">"24/7 Detroit and the Future"</a> on NPRs <em>Craig Fahle Show on WDET (Detroit)</em>, June 6, 2012</p>
+								<p><a title="Xconomy" href="http://www.xconomy.com/detroit/2012/05/04/new-digital-game-social-network-to-help-detroiters-map-citys-future/" target="_blank">"New Digital Game, Social Network to Help Detroiters Map Citys Future"</a> in <em>Xconomy</em>, May 4, 2012</p>
+								<p><a title="Patriot Ledger" href="http://www.patriotledger.com/topstories/x792224155/Game-to-allow-Quincy-residents-to-PlanIt" target="_blank">"Game to Allow Quincy Residents to "PlanIt"</a> in <em>Patriot Ledger</em>, May 4, 2012</p>
+								<p><a title="Knight Foundation merging media, minds and money" href="http://www.bostonglobe.com/business/2011/11/22/knight-foundation-merging-media-minds-and-money/WK8Vi8kbDQIBFapFxZm7JM/story.html?s_campaign=sm_tw" target="_blank">"Knight Foundation merging media, minds and money"</a> in <em>The Boston Globe</em>, November 22, 2011</p>
+								<p><a title="Civic Engagement Turns Into a Game" href="http://www.niemanlab.org/2011/09/community-planit-turns-civic-engagement-into-a-game-and-the-prize-is-better-discourse/" target="_blank">"Community PlanIt turns civic engagement into a game"</a> in <em>Nieman Journalism Lab</em>, September 15, 2011.</p>
+								<p><a href="http://www.abc.net.au/rn/bydesign/stories/2011/3249548.htm" target="_blank">"[Interview] Networked digital communities"</a> on ABC National Radios <em>By Design</em>, June 25, 2011.</p>
+								<p><a href="http://www.lowellsun.com/rss/ci_18352285" target="_blank">"Weigh in on planning process online"</a> in Lowell Sun, June 25, 2011.</p>
+								<p><a href="http://techpresident.com/blog-entry/boston-city-hall-pursues-innovation-house" target="_blank">"In Boston, City Hall Pursues Innovation In-House"</a> in <em>TechPresident</em>, April 21, 2011.</p>
+								<p><a href="http://www.boston.com/yourtown/news/quincy/2010/11/video_game_hopes_to_spur_civic.html" target="_blank">"Video game hopes to spur civic involvement among Quincys Asians"</a> in <em>The Boston Globe</em>, November 14, 2010.</p>
+								<p><a href="http://www.movements.org/blog/entry/saving-the-world-one-game-at-a-time/">"Saving the World, One Game at a Time"</a> in <em>Movements.org</em>, May 14, 2010.</p>
+								<p><a href="http://americancity.org/columns/entry/2636/" target="_blank">"Using Games To Increase Civic Engagement"</a> in <em>Next American City</em>, September 24, 2010.</p>
 							</div>
 						</div>
 						<div class='row'>
 							<div class='span12'>
-								<h3>Participatory Chinatown</h3>
+								<h3>PARTICAPTORY CHINATOWN</h3>
 								<p><a href="http://www.huffingtonpost.com/charles-tsai/can-violent-games-promote_b_889606.html" target="_blank">"Can Violent Games Promote Peace?"</a> in <em>Huffington Post</em>, July 5 , 2011.</p>
 								<p><a href="http://www.treehugger.com/files/2011/06/games-for-change-2011-best-new-green-apps-video-games.php" target="_blank">"Games for Change 2011: The Best New Green Apps &amp; Video Games"</a> in <em>Treehugger</em>, June 22, 2011.</p>
 								<p><a href="http://www.lafabriquedelacite.com/focus/quand-la-conception-des-espaces-publics-devient-un-jeu" target="_blank">"Quand la conception des espaces publics devient un jeu"</a> in <em>La Fabrique de la Cite</em>, April 14, 2011.</p>
@@ -252,7 +278,7 @@
 						</div>
 						<div class='row'>
 							<div class='span12'>
-								<h3>Hub2</h3>
+								<h3>HUB2</h3>
 								<p><a href="http://www.fastcompany.com/blog/cliff-kuang/design-innovation/second-act-second-life-urban-planning-tool" target="_blank">"A Second Act for Second LIfe, as an Urban Planning Tool"</a> in <em>Fast Company</em>, June 11, 2009.</p>
 								<p><a href="http://www.metropolismag.com/pov/20090608/qa-eric-gordon-on-community-planning-with-second-life" target="_blank">"Q&amp;A: Eric Gordon on Community Planning with Second Life"</a> in <em>Metropolis POV</em>, June 8, 2009.</p>
 								<p><a href="http://www.boston.com/business/technology/articles/2008/11/10/virtual_business_for_real/" target="_blank">"Virtual Business, For Real</a>?" in <em>The Boston Globe</em>, November 10, 2008.</p>
@@ -265,68 +291,65 @@
 				<div id='partners' class='anchor'>
 					<div class='row'>
 						<div class='span12'>
-							<h2> Who We've Worked With </h2>
+							<h2> Partners </h2>
 						</div>
 					</div>
 					<div class='row'>
 						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+							<p><img src='/img/other/partners/bps_logo.jpg'></p>
 						</div>
 						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+							<p><img src='/img/other/partners/detroit_logo.jpg'></p>
 						</div>
 						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+							<p><img src='/img/other/partners/mapc_logo.jpg'></p>
 						</div>
 						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+							<p><img src='/img/other/partners/tufts_logo.jpg'></p>
 						</div>
 					</div>
 					<div class='row'>
 						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+							<p><img src='/img/other/partners/pcpc_logo.jpg'></p>
 						</div>
 						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+							<p><img src='/img/other/partners/redcross_logo.jpg'></p>
 						</div>
 						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+							<p><img src='/img/other/partners/num_logo.jpg'></p>
 						</div>
 						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+							<p><img src='/img/other/partners/fhi_logo.jpg'></p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span3'>
+							<p><img src='/img/other/partners/berkman_logo.jpg'></p>
+						</div>
+						<div class='span3'>
+							<p><img src='/img/other/partners/capecod_logo.jpg'></p>
+						</div>
+						<div class='span3'>
+							<p><img src='/img/other/partners/nscdc_logo.jpg'></p>
+						</div>
+						<div class='span3'>
+							<p><img src='/img/other/partners/cdags_logo.jpg'></p>
 						</div>
 					</div>
 					<div class='row'>
 						<div class='span12'>
-							<h2> Funders </h2>
+							<h2> Major Funders </h2>
 						</div>
 					</div>
 					<div class='row'>
-						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+						<div class='span4'>
+							<p><img src='/img/other/partners/macarthur_logo.jpg'></p>
 						</div>
-						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+						<div class='span4'>
+							<p><img src='/img/other/partners/knight_logo.jpg'></p>
 						</div>
-						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
-						</div>
-						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
-						</div>
-					</div>
-					<div class='row'>
-						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
-						</div>
-						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
-						</div>
-						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
-						</div>
-						<div class='span3'>
-							<p><img src='http://placehold.it/120x120.png'></p>
+						<div class='span4'>
+							<p><img src='/img/other/partners/pearson_logo.jpg'></p>
 						</div>
 					</div>
 				</div>
