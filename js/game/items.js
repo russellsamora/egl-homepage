@@ -118,9 +118,25 @@
 								//HACK
 								if(other.bind) {
 									items.peopleData[other.bind].selector.toggleClass('fgPerson');
+									//must find bound and set flipped so it doesn't flop HA
+									for(var h = 0; h < _hitList.length; h++) {
+										if(other.bind === _hitList[h].bindName) {
+											_hitList[h].flipped = true;
+										}
+									}
 								}
 							} else if(other.kind === 'person') {
 								other.selector.toggleClass('fgPerson');
+								//HACK
+								if(other.bind) {
+									items.itemData[other.bind].selector.toggleClass('fgItem');
+									//must find bound and set flipped so it doesn't flop HA
+									for(var h = 0; h < _hitList.length; h++) {
+										if(other.bind === _hitList[h].bindName) {
+											_hitList[h].flipped = true;
+										}
+									}
+								}
 							}
 						}
 					}
@@ -527,7 +543,8 @@
 				x: 800,
 				y: 300,
 				invisible: true,
-				bind: 'christina' 
+				bind: 'christina',
+				bindName: 'couch'
 			},
 			'water': {
 				class: 'water',
@@ -620,7 +637,9 @@
 				},
 				fullName: 'Christina Wilson',
 				jobTitle: 'Project Manager',
-				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.',
+				bindName: 'christina',
+				bind: 'couch'
 			},
 			'aidan': {
 				x: 1900,
@@ -654,6 +673,23 @@
 				},
 				fullName: 'Sam Liberty',
 				jobTitle: 'Game Writer',
+				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+			},
+			'russell': {
+				x: 300,
+				y: 500,
+				frames: 3,
+				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
+				// paused: false,
+				// sleep: function() {
+				// 	this.paused = true;
+				// 	var timeout = Math.floor(Math.random() * 500 + 500);
+				// 	setTimeout(function(self) {
+				// 		self.paused = false;
+				// 	}, timeout, this);
+				// },
+				fullName: 'Russell Goldenberg',
+				jobTitle: 'Hacker in Chief',
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			}
 		};

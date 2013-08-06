@@ -8785,14 +8785,11 @@ a.badge:focus {
   font-size: 3em;
   text-align: center;
 }
-#press .article {
-  font-size: .9em;
-}
 #press .article span {
   font-weight: 700;
 }
-#press .article a {
-  font-size: 1.2em;
+#press .quote {
+  font-size: 1.1em;
 }
 #press .morePressButton {
   text-align: center;

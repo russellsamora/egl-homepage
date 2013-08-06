@@ -41,7 +41,7 @@
 								</div>
 						</div>
 						<div class='span4 person'>
-							<p><img data-toggle='collapse' data-target='#stephenBio' src='http://placehold.it/192x192.png' data-real='stephen' class='headshot'></p>
+							<p><img data-toggle='collapse' data-target='#stephenBio' src='../img/people/bio/stephen.jpg' data-real='stephen' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#stephenBio'>Stephen Walter</p>
 							<p class='trigger' data-toggle='collapse' data-target='#stephenBio'>Managing Director</p>
 							<div id='stephenBio' class='collapse out'>
@@ -53,7 +53,7 @@
 							</div>
 						</div>
 						<div class='span4 person'>
-							<p><img data-toggle='collapse' data-target='#russellBio' src='http://placehold.it/192x192.png' data-real='russell' class='headshot'></p>
+							<p><img data-toggle='collapse' data-target='#russellBio' src='../img/people/bio/russell.jpg' data-real='russell' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#russellBio'>Russell Goldenberg</p>
 							<p class='trigger' data-toggle='collapse' data-target='#russellBio'>Hacker in Chief</p>
 							<div id='russellBio' class='collapse out'>
@@ -153,27 +153,15 @@
 							<h2>Press</h2>
 						</div>
 					</div>
-
-					<!-- first press article -->
 					<div class='row'>
-						<div class='span8'>
+						<div class='span6'>
+							<p class='article'>
+								<a href='http://www.fastcoexist.com/1681625/connecting-citizens-to-their-government-by-turning-it-into-a-game' target='_blank'>Connecting Citizens to Their Government By Turning It Into a Game</a><br> in <span>Fast Company</span>, March 29, 2013
+							</p>
 							<p class='quote'>
 								"Community PlanIt is a game about the issues that face local government, designed to get people (especially young people) more involved and understanding of what goes in to managing their communities."
 							</p>
 						</div>
-					</div>
-					<div class='row'>
-						<div class='span12'>
-							<p class='article text-right'>
-								<a href='http://www.fastcoexist.com/1681625/connecting-citizens-to-their-government-by-turning-it-into-a-game' target='_blank'>Connecting Citizens to Their Government By Turning It Into a Game</a><br> in <span>Fast Company</span>, March 29, 2013
-							</p>
-						</div>
-					</div>
-					<div class='row'>
-						<div class='span12 prominentArticle'>
-						</div>
-					</div>
-					<div class='row'>
 						<div class='span6'>
 							<p class='article'>
 								<a href='http://www.statetechmagazine.com/article/2013/07/mobilize-citizen-engagement-gamification' target='_blank'>Mobilize Citizen Engagement with Gamification</a><br> in <span>State Tech</span>, July 31, 2013
@@ -182,6 +170,8 @@
 								"Making something social means making something relevant. Sharing on social media might already be habitual for some, but in order for sharing a CRM report to be part of a reflective habit loop, the thing shared cannot just be the action; it has to be the reflection."
 							</p>
 						</div>
+					</div>
+					<div class='row'>
 						<div class='span6'>
 							<p class='article'>
 								<a href='http://www.edtechmagazine.com/higher/article/2013/03/games-grow-colleges-recognize-power-gamification' target='_blank'>Games Grow Up: Colleges Recognize the Power of Gamification</a><br> on <span>EdTech</span>, March 28, 2013
@@ -190,22 +180,30 @@
 								"At Boston's Emerson College, the Engagement Game Lab focuses on crafting complete game experiences that lower barriers to civic involvement."
 							</p>
 						</div>
-					</div>
-					<div class='row'>
 						<div class='span6'>
 							<p class='article'>
 								<a href='http://www.nbcphiladelphia.com/video/#!/news/tech/Interactive-Game-Helps-With-Urban-Planning/188768411' target='_blank'>Interactive Game Helps With Urban Panning</a><br> on <span>NBC 10 Philadelphia Nightly News</span>, January 29, 2013 (Video)
 							</p>
 							<p class='quote'>
-								NBC10 reports on Philly 2035: The Game on Community PlanIt
+								NBC10 reports on Philly 2035: The Game on Community PlanIt.
 							</p>
 						</div>
+					</div>
+					<div class='row'>
 						<div class='span6'>
 							<p class='article'>
 								<a href='http://wdet.org/shows/craig-fahle-show/episode/twenty-four-seven-future-game-detroit-works/' target='_blank'>"24/7 Detroit and the Future"</a><br> on <span>NPR's Craig Fahle Show on WDET (Detroit)</span>, June 6, 2012
 							</p>
 							<p class='quote'>
 								Eric Gordon joins Craig Fahle of WDET in-studio to discuss the Community PlanIt game, Detroit 24/7.
+							</p>
+						</div>
+						<div class='span6'>
+							<p class='article'>
+								<a href='http://www.xconomy.com/detroit/2012/05/04/new-digital-game-social-network-to-help-detroiters-map-citys-future/' target='_blank'>"New Digital Game, Social Network to Help Detroiters Map City's Future"</a><br>in <span>Xconomy</span>, May 4, 2012
+							</p>
+							<p class='quote'>
+								"'We interviewed a lot of the players, and many said they had wanted to participate before, but they weren't interested in standing up and speaking at a meeting,' Gordon says. 'We found that people really liked having time and space online to form their opinions.'"
 							</p>
 						</div>
 					</div>
@@ -336,6 +334,8 @@
 							<p><img src='/img/other/partners/cdags_logo.jpg'></p>
 						</div>
 					</div>
+				</div>
+				<div id='funders' class='anchor'>
 					<div class='row'>
 						<div class='span12'>
 							<h2> Major Funders </h2>
