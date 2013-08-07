@@ -59,7 +59,7 @@
 				//hide message boxes
 				$game.hideMessage();
 				//constrain to bounds of the room
-				if(e.pageY < WALL_HEIGHT + NAVBAR_HEIGHT) { return false; }
+				if(e.pageY < WALL_HEIGHT + NAVBAR_HEIGHT + 5) { return false; }
 				// if(e.pageY > GAMEBOARD_HEIGHT + NAVBAR_HEIGHT - $game.player.offset.y) { return false; }
 				if(e.pageY > GAMEBOARD_HEIGHT + NAVBAR_HEIGHT) { return false; }
 				if(e.pageX <  $game.player.offset.x) { return false; }

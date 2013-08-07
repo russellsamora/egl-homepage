@@ -390,20 +390,20 @@
 			'boombox': {
 				class: 'boombox',
 				x: 600,
-				y: 250,
+				y: 150,
 				message: 'booooombox'
 			},
 			'playButton': {
 				class: 'playButton',
 				x: 644,
-				y: 283,
+				y: 183,
 				// message: 'booooombox',
 				action: function() { $game.audio.play(); }
 			},
 			'stopButton': {
 				class: 'stopButton',
 				x: 675,
-				y: 283,
+				y: 183,
 				// message: 'booooombox',
 				action: function() { $game.audio.pause(); }
 			},
@@ -523,33 +523,42 @@
 				class: 'bookshelf',
 				x: 130,
 				y: 0,
-				invisible: true
+				action: function() {
+					var wiki = $game.wiki.getWiki();
+					$('#popupBox .wiki p').text(wiki);
+					$game.hidePopup();
+					$('#popupBox .wiki').show();
+					$('#popupBox').show();
+					setTimeout(function() {
+						items.showingBio = true;
+					}, 17);
+				}
 			},
 			'plant0': {
 				class: 'plant0',
 				x: -60,
-				y: 160,
+				y: 130,
 				invisible: true
 				
 			},
 			'plant1': {
 				class: 'plant1',
-				x: 600,
-				y: 600,
+				x: 1100,
+				y: 260,
 				invisible: true
 			},
 			'couch': {
 				class: 'couch',
 				x: 800,
-				y: 300,
+				y: 400,
 				invisible: true,
 				bind: 'christina',
 				bindName: 'couch'
 			},
 			'water': {
 				class: 'water',
-				x: 500,
-				y: 500,
+				x: 200,
+				y: 600,
 				// invisible: true,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
@@ -564,27 +573,23 @@
 						self.paused = false;
 						self.playSound();
 					}, timeout, this);
-				},
-				action: function() {
-					var wiki = $game.wiki.getWiki();
-					$('#popupBox .wiki p').text(wiki);
-					$('#popupBox .bio').hide();
-					$('#popupBox .wiki').show();
-					$('#popupBox').show();
-					setTimeout(function() {
-						items.showingBio = true;
-					}, 17);
 				}
+			},
+			'coffeetable': {
+				class: 'coffeetable',
+				x: 1000,
+				y: 650,
+				invisible: true
 			}
 		};
 
 		items.peopleData = {
-			'steve': {
-				x: 1400,
+			'stephen': {
+				x: 300,
 				y: 500,
 				frames: 8,
 				animation: [4,5,6,7,0,1,2,3,6,7,5,6,5,0,1,4,5,6,7,6,5,4,0,1,2,1,0,6,5,7,4,6,5,4],
-				fullName: 'Steve Walter',
+				fullName: 'Stephen Walter',
 				jobTitle: 'Managing Director',
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			},
@@ -606,7 +611,7 @@
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			},
 			'jedd': {
-				x: 1730,
+				x: 2100,
 				y: 90,
 				frames: 4,
 				animation: [2,0,1,2,2,2,0,0,1,1,1,0,0,1,2,1,3,3,3,0,0,1,0,0,1,2,1,1,0,0,0,1,2],
@@ -623,8 +628,8 @@
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			},
 			'christina': {
-				x: 1050,
-				y: 200,
+				x: 950,
+				y: 300,
 				frames: 4,
 				animation: [0,1,2,3,1,1,2,3,1,2,3,1,2,3,1,2,2,3,2,1,2],
 				paused: false,
@@ -642,7 +647,7 @@
 				bind: 'couch'
 			},
 			'aidan': {
-				x: 1900,
+				x: 2500,
 				y: 400,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
@@ -659,8 +664,8 @@
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			},
 			'sam': {
-				x: 2250,
-				y: 500,
+				x: 1300,
+				y: 550,
 				frames: 8,
 				animation: [0,1,2,3,4,5,6,7],
 				paused: false,
@@ -676,19 +681,28 @@
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			},
 			'russell': {
-				x: 300,
-				y: 500,
+				x: 1500,
+				y: 70,
 				frames: 3,
 				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
-				// paused: false,
-				// sleep: function() {
-				// 	this.paused = true;
-				// 	var timeout = Math.floor(Math.random() * 500 + 500);
-				// 	setTimeout(function(self) {
-				// 		self.paused = false;
-				// 	}, timeout, this);
-				// },
 				fullName: 'Russell Goldenberg',
+				jobTitle: 'Hacker in Chief',
+				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+			},
+			'jesse': {
+				x: 1800,
+				y: 550,
+				frames: 5,
+				animation: [0,1,2,1,2,0,4,0,2,0,1,2,4,3,4,2,2,1,0],
+				paused: false,
+				sleep: function() {
+					this.paused = true;
+					var timeout = Math.floor(Math.random() * 1000 + 1900);
+					setTimeout(function(self) {
+						self.paused = false;
+					}, timeout, this);
+				},
+				fullName: 'Jesse Baldwin-Philippi',
 				jobTitle: 'Hacker in Chief',
 				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
 			}

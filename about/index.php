@@ -36,7 +36,7 @@
 									Eric studies civic media, mediated cities and playful engagement. He is a fellow at the <a title="Berkman Center" target='_blank' href="http://cyber.law.harvard.edu/">Berkman Center for Internet and Society</a> at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College where he focuses on the design and research of digital games and social software that foster local civic engagement. He is the co-author of a new book about location-based media called <a title="Net Locality" href="http://www.amazon.com/Net-Locality-Location-Matters-Networked/dp/1405180609" target="_blank">Net Locality:</a> Why Location Matters in a Networked World (Blackwell Publishing, 2011) and the author of <a title="urban spectator" href="http://www.amazon.com/gp/product/1584658037/ref=pd_lpo_k2_dp_sr_1?pf_rd_p=486539851&amp;pf_rd_s=lpo-top-stripe-1&amp;pf_rd_t=201&amp;pf_rd_i=1405180609&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_r=1YDTYQRRDDQW1CQKT8JR" target="_blank">The Urban Spectator</a>: American Concept Cities From Kodak to Google (Dartmouth, 2010).
 								</p>
 								<p>
-									<a target='_blank' href='http://twitter.com/ericbot' target='_blank'><i class='icon-twitter icon-large' rel='tooltip' data-title='twitter'></i></a>
+									<a href='http://twitter.com/ericbot' target='_blank'><i class='icon-twitter icon-large' rel='tooltip' data-title='twitter'></i></a>
 								</p>
 								</div>
 						</div>
@@ -46,9 +46,10 @@
 							<p class='trigger' data-toggle='collapse' data-target='#stephenBio'>Managing Director</p>
 							<div id='stephenBio' class='collapse out'>
 								<p>
-									Stephen studies and makes media for enhancing the understanding and use of complex systems, intersectionality, and playful experience for civic and community advocacy.  He has led the design and development of media for civic engagement nationally and abroad, including the games Community PlanIt, Civic Seed, and Nyami Nyami. He has worked with the International Red Cross, the U.S. State Department, the MAPC, the Cape Cod Commission, Tufts University, the cities of Boston, Philadelphia, and Detroit, and the Knight, Pearson, and MacArthur Foundations.
+									Stephen makes and studies media for civic engagement and social justice that aim to foster and amplify experiences of complexity, pluralism, and play. He's worked at Boston EMS, the Boston Public Health Commission, the Boston Center for the Arts, the Harvard Graduate School of Education, and the PBS television shows Frontline and Nova. At the EGL, he's helped lead the design and development of civic media projects in Detroit, Boston, Philadelphia, Los Angeles, South Africa, Sweden, and Zambia. He is a person.
 								</p>
 								<p>
+									<a href='http://www.chrono-synclastic-infundibulum.com/' target='_blank'><i class='icon-star icon-large' rel='tooltip' data-title='website'></i></a>
 								</p>
 							</div>
 						</div>
@@ -74,7 +75,7 @@
 					</div>
 					<div class='row'>
 						<div class='span4 person'>
-							<p><img data-toggle='collapse' data-target='#jesseBio' src='http://placehold.it/192x192.png' data-real='jesse' class='headshot'></p>
+							<p><img data-toggle='collapse' data-target='#jesseBio' src='../img/people/bio/jesse.jpg' data-real='jesse' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#jesseBio'>Jesse Baldwin-Philippi, PhD</p>
 							<p class='trigger' data-toggle='collapse' data-target='#jesseBio'>Researcher &amp; Visiting Professor</p>
 							<div id='jesseBio' class='collapse out'>
@@ -82,7 +83,7 @@
 									Jesse is a visiting faculty member in Emerson's Department of Visual and Media Arts, and studies civic engagement, citizenship, and digital media. Her work is fundamentally concerned with how engagement with new technologies can restructure forms of political participation and ideas about citizenship, and has covered a variety of topics from political campaigns to games to government innovation. Visit <a href='http://jessebp.com' target='_blank'>her work</a> or contact her at Jessica_Philippi [at] emerson.edu. Download latest cv <a href='http://jessebp.com/cv' target='_blank'>here</a>.
 								</p>
 								<p>
-									<a target='_blank' href='http://twitter.com/jesse_b_p' target='_blank'><i class='icon-twitter icon-large'></i></a>
+									<a target='_blank' href='http://twitter.com/jesse_b_p' target='_blank'><i class='icon-twitter icon-large rel='tooltip' data-title='twitter''></i></a>
 								</p>
 							</div>
 						</div>

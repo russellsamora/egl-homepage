@@ -16,23 +16,35 @@
 					<div class='row'>
 						<div class='span4'>
 							<h3> Community PlanIt </h3>
+							<p><img src='http://placehold.it/192x192.png'></p>
+							<p>This is some text that will describe the project.  The project is amazing and you can find out more at the project page.</p>
 						</div>
 						<div class='span4'>
 							<h3> Civic Seed </h3>
+							<p><img src='http://placehold.it/192x192.png'></p>
+							<p>This is some text that will describe the project.  The project is amazing and you can find out more at the project page.</p>
 						</div>
 						<div class='span4'>
 							<h3> Participatory Chinatown </h3>
+							<p><img src='http://placehold.it/192x192.png'></p>
+							<p>This is some text that will describe the project.  The project is amazing and you can find out more at the project page.</p>
 						</div>
 					</div>
 					<div class='row'>
 						<div class='span4'>
 							<h3> Hub2 </h3>
+							<p><img src='http://placehold.it/192x192.png'></p>
+							<p>This is some text that will describe the project.  The project is amazing and you can find out more at the project page.</p>
 						</div>
 						<div class='span4'>
 							<h3> Nyami Nyami </h3>
+							<p><img src='http://placehold.it/192x192.png'></p>
+							<p>This is some text that will describe the project.  The project is amazing and you can find out more at the project page.</p>
 						</div>
 						<div class='span4'>
 							<h3> Student Projects </h3>
+							<p><img src='http://placehold.it/192x192.png'></p>
+							<p>This is some text that will describe the project.  The project is amazing and you can find out more at the project page.</p>
 						</div>
 					</div>
 				</div>
