@@ -8812,6 +8812,23 @@ a.badge:focus {
 #funders p {
   text-align: center;
 }
+#projects {
+  margin-bottom: 160px;
+  margin-top: 80px;
+}
+#projects .description {
+  font-size: 1.2em;
+}
+#projects h3 {
+  text-align: center;
+}
+#projects .picture {
+  text-align: center;
+}
+#projects .picture img {
+  border-radius: 96px;
+  border: 4px solid #d7f0f1;
+}
 h1,
 h2,
 h3 {
