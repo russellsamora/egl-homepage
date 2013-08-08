@@ -8685,13 +8685,15 @@ a.badge:focus {
   display: none;
 }
 .blogContainer {
-  margin-top: 140px;
   margin-bottom: 100px;
 }
 .blogContainer p {
   padding: 0;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.blogContainer .postImage {
+  margin-top: 40px;
 }
 .blogContainer .postDate {
   font-weight: 700;
@@ -8702,7 +8704,9 @@ a.badge:focus {
   border-bottom: 1px dashed #999999;
 }
 .blogContainer .post {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #999999;
+  padding-bottom: 40px;
 }
 .blogContainer .post p {
   font-weight: 100;
@@ -8847,6 +8851,9 @@ a.badge:focus {
 }
 #projects .description {
   font-size: 1.2em;
+}
+#projects .description span {
+  font-weight: 700;
 }
 #projects h3 {
   text-align: center;
