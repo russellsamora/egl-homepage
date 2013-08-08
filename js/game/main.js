@@ -66,7 +66,7 @@
 			$MESSAGE_BOX.css({
 				top: top,
 				left: msgLeft,
-				width: msgLength * 8
+				width: msgLength * 9
 			}).show();
 			_messageTimeout = setTimeout(function() {
 				$game.hideMessage();

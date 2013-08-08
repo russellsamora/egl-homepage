@@ -7,15 +7,11 @@
 	<body>
 		<div id='wrap'>
   			<?php include '../nav.php' ?>
-			<div class='container'>
-				<div class='row'>
-					<div class='span8 offset2'>
-						<div id='blog'></div>
-					</div>
-				</div>
+			<div class='container blogContainer'>
 			</div>
 			<div id='push'></div>
    		</div>
+   		<div id='blog'></div>
    		<?php include '../footer.php' ?>
 
     	<!-- Los javascripts -->

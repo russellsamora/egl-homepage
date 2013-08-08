@@ -213,7 +213,7 @@
 				//console.log('+', destY);
 			} 
 			//bottom edge (was - player.h)
-			else if( input.edgeY > $game.input.height - player.h) {
+			else if( input.edgeY > $game.input.height - player.h / 2) {
 				destY = Math.min(pageYOffset + $game.input.height / 2, $game.input.maxScroll.top);
 				//console.log('-', destY);
 				destY = input.y < destY ? input.y - 10 : destY;	

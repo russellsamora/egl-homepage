@@ -92,29 +92,41 @@
 	}
 }
 
+
+//------------ blog scthuff-------
 #blog {
-	ul li {
-		list-style: none;
-		margin: 20px 0 40px 0;
+	display: none;
+}
+
+.blogContainer {
+	margin-top: 140px;
+	margin-bottom: 100px;
+	p {
+		padding: 0;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
-	iframe {
-		width: 80%;
-		max-width: 640px;
-		min-width: 300px;
+	.postImage {
+		img {
+		}
 	}
-	h4 {
-		color: @headerColor;
-		font-size: 1.8em;
-		font-weight: 800;
-		text-align: center;
-		line-height: 1;
-		margin: 10px;
+	.postDate {
+		font-weight: 700;
 	}
-	.date {
-		text-align: center;
-		color: @grayLight;
+	.postTitle {
+		font-size: 1em;
+		padding-bottom: 10px;
+		border-bottom: 1px dashed @gray;
+	}
+	.post {
+		margin-bottom: 60px;
+		p {
+		font-weight: 100;
+		}
 	}
 }
+
+
 
 //---------- foooter -----------
 #footer {
@@ -236,6 +248,19 @@
 #partners, #funders {
 	p {
 		text-align: center;
+		img {
+			-webkit-filter: grayscale(100%);
+			-moz-filter: grayscale(100%);
+			-o-filter: grayscale(100%);
+			&:hover {
+				-webkit-filter: grayscale(0%);
+				-moz-filter: grayscale(0%);
+				-o-filter: grayscale(0%);
+				.transition(-webkit-filter 0.4s);
+				.transition(-moz-filter 0.4s);
+				.transition(-o-filter 0.4s);
+			}
+		}
 	}
 }
 

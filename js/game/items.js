@@ -172,10 +172,10 @@
 				}
 			} else {
 				//show bio card
-				$('#popupBox img').attr('src', '../../img/people/bio/real_' + key + '.jpg');
+				$('#popupBox .bioImage').attr('src', '../../img/people/bio/real_' + key + '.jpg');
 				$('#popupBox .bioName span').text(person.fullName);
 				$('#popupBox .bioTitle span').text(person.jobTitle);
-				$('#popupBox .bioAbout span').text(person.about);
+				$('#popupBox .bioAbout span').html(person.about);
 
 				$game.hidePopup();
 				$('#popupBox .bio').show();
@@ -391,7 +391,7 @@
 				class: 'boombox',
 				x: 600,
 				y: 150,
-				message: 'booooombox'
+				message: 'use my buttons to pump up the jams!'
 			},
 			'playButton': {
 				class: 'playButton',
@@ -543,9 +543,11 @@
 			},
 			'plant1': {
 				class: 'plant1',
-				x: 1100,
-				y: 260,
-				invisible: true
+				x: 2050,
+				y: 550,
+				invisible: true,
+				bind: 'jesse',
+				bindName: 'plant1'
 			},
 			'couch': {
 				class: 'couch',
@@ -557,8 +559,8 @@
 			},
 			'water': {
 				class: 'water',
-				x: 200,
-				y: 600,
+				x: 1340,
+				y: 50,
 				// invisible: true,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
@@ -591,7 +593,7 @@
 				animation: [4,5,6,7,0,1,2,3,6,7,5,6,5,0,1,4,5,6,7,6,5,4,0,1,2,1,0,6,5,7,4,6,5,4],
 				fullName: 'Stephen Walter',
 				jobTitle: 'Managing Director',
-				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+				about: '...'
 			},
 			'eric': {
 				x: 250,
@@ -608,7 +610,7 @@
 				},
 				fullName: 'Eric Gordon',
 				jobTitle: 'Director',
-				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+				about: '...'
 			},
 			'jedd': {
 				x: 2100,
@@ -625,7 +627,7 @@
 				},
 				fullName: 'Jedd Cohen',
 				jobTitle: 'Curriculum Developer',
-				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+				about: '...'
 			},
 			'christina': {
 				x: 950,
@@ -642,7 +644,7 @@
 				},
 				fullName: 'Christina Wilson',
 				jobTitle: 'Project Manager',
-				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.',
+				about: '...',
 				bindName: 'christina',
 				bind: 'couch'
 			},
@@ -661,7 +663,7 @@
 				},
 				fullName: 'Aidan O\'Donohue',
 				jobTitle: 'Designer',
-				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+				about: '...'
 			},
 			'sam': {
 				x: 1300,
@@ -678,7 +680,7 @@
 				},
 				fullName: 'Sam Liberty',
 				jobTitle: 'Game Writer',
-				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+				about: '...'
 			},
 			'russell': {
 				x: 1500,
@@ -687,7 +689,7 @@
 				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
 				fullName: 'Russell Goldenberg',
 				jobTitle: 'Hacker in Chief',
-				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+				about: '...'
 			},
 			'jesse': {
 				x: 1800,
@@ -704,7 +706,9 @@
 				},
 				fullName: 'Jesse Baldwin-Philippi',
 				jobTitle: 'Hacker in Chief',
-				about: 'I love puppies, frogs, bananas, working at the EGL, brewing beer with friends, drinking that beer with friends, and gnomes.'
+				about: '...',
+				bind: 'plant1',
+				bindName: 'jesse'
 			}
 		};
 	}

@@ -22,15 +22,15 @@
 				<div id='popupBox'>
 					<div class='bio'>
 						<img class='bioImage'>
-						<p class='bioName'>Name: <span></span></p>
-						<p class='bioTitle'>Title: <span></span></p>
-						<p class='bioAbout'>About: <span></span></p>
+						<p class='bioName'>NAME: <span></span></p>
+						<p class='bioTitle'>TITLE: <span></span></p>
+						<p class='bioAbout'>ABOUT: <span></span></p>
 					</div>
 					<div class='wiki'><p></p></div>
 					<div class='soundcloud'>
 						<p class='songTitle'></p>
 						<p class='user'></p>
-						<p><img src='img/soundcloud/black_text.png'></p>
+						<p><img src='img/soundcloud/white_text.png'></p>
 					</div>
 				</div>
 				<div id='pregame'>

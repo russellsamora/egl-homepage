@@ -8681,26 +8681,31 @@ a.badge:focus {
   padding: 10px 20px;
   color: #ffffff;
 }
-#blog ul li {
-  list-style: none;
-  margin: 20px 0 40px 0;
+#blog {
+  display: none;
 }
-#blog iframe {
-  width: 80%;
-  max-width: 640px;
-  min-width: 300px;
+.blogContainer {
+  margin-top: 140px;
+  margin-bottom: 100px;
 }
-#blog h4 {
-  color: #78cbd1;
-  font-size: 1.8em;
-  font-weight: 800;
-  text-align: center;
-  line-height: 1;
-  margin: 10px;
+.blogContainer p {
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-#blog .date {
-  text-align: center;
-  color: #cccccc;
+.blogContainer .postDate {
+  font-weight: 700;
+}
+.blogContainer .postTitle {
+  font-size: 1em;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #999999;
+}
+.blogContainer .post {
+  margin-bottom: 60px;
+}
+.blogContainer .post p {
+  font-weight: 100;
 }
 #footer {
   background: #339096;
@@ -8811,6 +8816,30 @@ a.badge:focus {
 #partners p,
 #funders p {
   text-align: center;
+}
+#partners p img,
+#funders p img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+}
+#partners p img:hover,
+#funders p img:hover {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  -webkit-transition: -webkit-filter 0.4s;
+  -moz-transition: -webkit-filter 0.4s;
+  -o-transition: -webkit-filter 0.4s;
+  transition: -webkit-filter 0.4s;
+  -webkit-transition: -moz-filter 0.4s;
+  -moz-transition: -moz-filter 0.4s;
+  -o-transition: -moz-filter 0.4s;
+  transition: -moz-filter 0.4s;
+  -webkit-transition: -o-filter 0.4s;
+  -moz-transition: -o-filter 0.4s;
+  -o-transition: -o-filter 0.4s;
+  transition: -o-filter 0.4s;
 }
 #projects {
   margin-bottom: 160px;
