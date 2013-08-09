@@ -6,6 +6,16 @@
 	<body>
 		<div id='wrap'>
 			<?php include '../nav.php' ?>
+			<div id='projectBlurb'>
+				<div class='row'>
+					<div class='projectBlurbBody'>
+						<!-- <h2> What We Do </h2> -->
+						<p class='bigIdea'>
+							Our games and play-based projects were designed in partnership with the Knight Foundation, Tufts University, The Red Cross / Red Crescent Climate Center, and <a href='/about/#partners' target='_blank'>others</a>.
+						</p>
+					</div>
+				</div>
+			</div>
 			<div class='container'>
 				<div id='projects'>
 					<div class='row'>

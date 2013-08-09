@@ -8865,6 +8865,35 @@ a.badge:focus {
   border-radius: 96px;
   border: 4px solid #d7f0f1;
 }
+#projectBlurb {
+  width: 100%;
+  background: #d43200;
+  padding-bottom: 60px;
+  padding-top: 40px;
+}
+#projectBlurb .projectBlurbBody {
+  min-width: 320px;
+  max-width: 960px;
+  width: 85%;
+  margin: 35px auto;
+  color: #ffb8a2;
+}
+#projectBlurb .projectBlurbBody p {
+  font-weight: 100;
+}
+#projectBlurb .projectBlurbBody h1,
+#projectBlurb .projectBlurbBody h2,
+#projectBlurb .projectBlurbBody h3 {
+  color: #ff916f;
+}
+#projectBlurb .projectBlurbBody .bigIdea {
+  font-size: 2.2em;
+  font-weight: 100;
+}
+#projectBlurb .projectBlurbBody .bigIdea a {
+  color: #ffffff;
+  font-weight: 300;
+}
 h1,
 h2,
 h3 {
