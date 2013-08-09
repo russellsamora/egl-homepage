@@ -223,13 +223,23 @@
 			$('#blogTease br').remove();
 			$('#blogTease ul li a').last().remove();
 			$('#blogTease ul li img').last().remove();
-			$('#blogTease p').last().remove();
+			//$('#blogTease p').last().remove();
 
 			$('#blogTease a').attr('href', 'blog/');
-			var s = $('#blogTease p').text();
-			var sub = s.substring(0,144) + '... <a target="_blank" href="blog/">[view post]</a>';
-			$('#blogTease p').html(sub);
+
+			//get the text to truncate
+			var textP = $('#blogTease p').eq(1),
+				allText = textP.text();
+			var sub = allText.substring(0,144) + '... <a target="_blank" href="blog/">[view post]</a>';
+			textP.html(sub);
+
+			//remove everything after first text paragraph
+			var sliced = $('#blogTease p').slice(2);
+			sliced.each(function(i) {
+				$(this).remove();
+			});
 			$('#blogTease').append('<p style="text-align:center;"><button style="width: 30%;" id="hideBlog" class="btn" type="button">HIDE</button><p>');
+			
 			$('#hideBlog').on('click', function() {
 				$('#blogTease').fadeOut(function() {
 					$(this).remove();
