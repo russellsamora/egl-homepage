@@ -19,6 +19,9 @@
 				<div id='message'>
 					<p class='messageText'></p>
 				</div>
+				<div id='help'>
+					<p>This is the lab. Click anywhere to walk.  Click on people to interact with them.</p>
+				</div>
 				<div id='popupBox'>
 					<div class='bio'>
 						<img class='bioImage'>

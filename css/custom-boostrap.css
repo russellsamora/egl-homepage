@@ -8630,7 +8630,7 @@ a.badge:focus {
     border-bottom: 1px solid #999999;
   }
 }
-@media (max-width: 1080px) {
+@media (max-width: 1160px) {
   .tagline {
     display: none;
   }

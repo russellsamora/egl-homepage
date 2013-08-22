@@ -102,12 +102,16 @@
 				$('#pregame').fadeOut();
 				$game.playing = true;
 				$game.started = true;
+				$('#help').show();
 				$('#blogTease').show();
 				setTimeout(function() {
 					$('#blogTease').fadeOut(function() {
 						$(this).remove();
 					});
 				}, 10000);
+				setTimeout(function() {
+					$('#help').hide().remove();
+				}, 3000);
 				_tick();
 			}
 			// $.get('/db/drawingCount.php',

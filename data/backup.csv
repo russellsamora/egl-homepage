@@ -1,9 +1,9 @@
 name,status,prompt,premature,visited,content1,content2,content3,dependsOn
 stephen,I am busy...,filler,filler,filler,filler,filler,filler,crat
-eric,prepare yourself for a very long statement.  I am talking right now about green boston or something. this is a test. what happens with a long,filler,filler,filler,filler,filler,filler,stephen
-russell,Ain't nothing gunna break my stride,filler,filler,filler,filler,filler,filler,eric
+eric,Welcome to the EGL!,filler,filler,filler,filler,filler,filler,stephen
+russell, russell.isCoding(true);,filler,filler,filler,filler,filler,filler,eric
 sam,Words words words,filler,filler,filler,filler,filler,filler,russell
 aidan,I love to draw!,filler,filler,filler,filler,filler,filler,sam
 jedd,I am definitely the tallest in the office,filler,filler,filler,filler,filler,filler,aidan
-jesse,I am a dinosaur bird,filler,filler,filler,filler,filler,filler,jedd
+jesse,I love dinosaurs.,filler,filler,filler,filler,filler,filler,jedd
 christina,Let the community plan it!,filler,filler,filler,filler,filler,filler,christina

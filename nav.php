@@ -17,8 +17,10 @@
 						<ul class='dropdown-menu'>
 							<li><a data-target='#' href='/projects'>COMMUNITY PLANIT</a>
 							<li><a data-target='#' href='/projects'>CIVIC SEED</a></li>
+							<li><a data-target='#' href='/projects'>UPRIVER</a></li>
 							<li><a data-target='#' href='/projects'>PARTICIPATORY CHINATOWN</a></li>
-							<li><a data-target='#' href='/projects'>NYAMI NYAMI</a></li>
+							<li><a data-target='#' href='/projects'>HUB2</a></li>
+							<li><a data-target='#' href='/projects'>STUDENT PROJECTS</a></li>
 						</ul>
 					</li>
 					<li class='dropdown'>
@@ -41,12 +43,11 @@
 						<a href='/resources' class='dropdown-toggle disabled' data-toggle='dropdown'>RESOURCES</a>
 						<ul class='dropdown-menu'>
 							<li><a data-target='#' href='/resources/#courses'>COURSES</a></li>
-							<li><a data-target='#' href='/resources/#manual'>MANUAL</a></li>
-							<li><a data-target='#' href='/resources/#curriculum'>CURRICULUM</a></li>
-							<li><a data-target='#' href='/resources/#num'>NEW URBAN MECHANICS</a></li>
-							<li><a data-target='#' href='/blog'>BLOG</a></li>
+							<li><a data-target='#' href='/resources/#manual'>GUIDE BOOK</a></li>
+							<!-- <li><a data-target='#' href='/blog'>BLOG</a></li> -->
 						</ul>
 					</li>
+					<li><a data-target='#' href='/blog'>BLOG</a></li>
 				</ul>
 			</div>
 		</div>

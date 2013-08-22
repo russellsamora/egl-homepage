@@ -148,6 +148,25 @@
 		z-index: 3;
 		cursor: pointer;
 	}
+	#help {
+		display: none;
+		position: fixed;
+		padding: 0;
+		top: 50%;
+		left: 50%;
+		margin-left: -160px;
+		margin-top: -150px;
+		width: 320px;
+		z-index: @zMessage;
+		background: fade(@greenDarkest, 85%);
+		border: 4px solid @greenLighter;
+		p {
+			color: @white;
+			margin: 10px;
+			font-size: 1.3em;
+			font-weight: 100;
+		}
+	}
 	#message {
 		display: none;
 		position:absolute;

@@ -593,7 +593,7 @@
 				animation: [4,5,6,7,0,1,2,3,6,7,5,6,5,0,1,4,5,6,7,6,5,4,0,1,2,1,0,6,5,7,4,6,5,4],
 				fullName: 'Stephen Walter',
 				jobTitle: 'Managing Director',
-				about: '...'
+				about: 'Stephen makes and studies media for civic engagement and social justice that aim to foster and amplify experiences of complexity, pluralism, and play.'
 			},
 			'eric': {
 				x: 250,
@@ -610,7 +610,7 @@
 				},
 				fullName: 'Eric Gordon',
 				jobTitle: 'Director',
-				about: '...'
+				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.'
 			},
 			'jedd': {
 				x: 2100,
@@ -627,7 +627,7 @@
 				},
 				fullName: 'Jedd Cohen',
 				jobTitle: 'Curriculum Developer',
-				about: '...'
+				about: 'Jedd is working to adapt Community PlanIt for use in schools and other community and advocacy organizations.'
 			},
 			'christina': {
 				x: 950,
@@ -644,7 +644,7 @@
 				},
 				fullName: 'Christina Wilson',
 				jobTitle: 'Project Manager',
-				about: '...',
+				about: 'Christina\'s abiding interests in open access to a participatory democracy, ethics, and the role of technology in shaping human experiences drew her to the Engagement Game Lab.',
 				bindName: 'christina',
 				bind: 'couch'
 			},
@@ -663,7 +663,7 @@
 				},
 				fullName: 'Aidan O\'Donohue',
 				jobTitle: 'Designer',
-				about: '...'
+				about: 'Aidan graduated from the Rhode Island School of Design with a degree in painting, and has also studied design and architecture.'
 			},
 			'sam': {
 				x: 1300,
@@ -680,7 +680,7 @@
 				},
 				fullName: 'Sam Liberty',
 				jobTitle: 'Game Writer',
-				about: '...'
+				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of the Spoiled Flush Games design studio. '
 			},
 			'russell': {
 				x: 1500,
@@ -689,7 +689,7 @@
 				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
 				fullName: 'Russell Goldenberg',
 				jobTitle: 'Hacker in Chief',
-				about: '...'
+				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.'
 			},
 			'jesse': {
 				x: 1800,
@@ -706,7 +706,7 @@
 				},
 				fullName: 'Jesse Baldwin-Philippi',
 				jobTitle: 'Hacker in Chief',
-				about: '...',
+				about: 'Jesse is a visiting faculty member in Emerson\'s Department of Visual and Media Arts, and studies civic engagement, citizenship, and digital media.',
 				bind: 'plant1',
 				bindName: 'jesse'
 			}

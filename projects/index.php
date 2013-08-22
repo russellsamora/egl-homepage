@@ -29,7 +29,7 @@
 						</div>
 						<div class='span4'>
 							<p class='picture'><img src='/img/projects/nyami.jpg'></p>
-							<p class='description'><span>Nyami Nyami</span> is made in partnership with the Red Cross / Red Crescent Climate  Center.  This game will teach people living in <!-- the Zambezi River valley in --> Zimbabwe to predict dangerous floods.</p>
+							<p class='description'><span>UpRiver!</span> is made in partnership with the Red Cross / Red Crescent Climate  Center.  This game will teach people living in <!-- the Zambezi River valley in --> Zimbabwe to predict dangerous floods.</p>
 						</div>
 					</div>
 					<div class='row'>
