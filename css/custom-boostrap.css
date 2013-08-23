@@ -8896,6 +8896,13 @@ a.badge:focus {
   color: #ffffff;
   font-weight: 300;
 }
+#courses h2 {
+  margin-bottom: 0;
+}
+#courses .professor p {
+  font-weight: 800;
+  letter-spacing: .1em;
+}
 h1,
 h2,
 h3 {
