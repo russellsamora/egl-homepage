@@ -8712,7 +8712,7 @@ a.badge:focus {
   font-weight: 100;
 }
 #footer {
-  background: #339096;
+  background: #555555;
   color: #ffffff;
   text-align: center;
 }
@@ -8723,6 +8723,8 @@ a.badge:focus {
 }
 #footer p {
   margin: 5px;
+  font-weight: 100;
+  font-size: 1.2em;
 }
 #footer i {
   padding: 10px;

@@ -15,12 +15,12 @@
 					<li class='dropdown'>
 						<a href='/projects' class='dropdown-toggle disabled' data-toggle='dropdown'>PROJECTS</a>
 						<ul class='dropdown-menu'>
-							<li><a data-target='#' href='/projects'>COMMUNITY PLANIT</a>
-							<li><a data-target='#' href='/projects'>CIVIC SEED</a></li>
-							<li><a data-target='#' href='/projects'>UPRIVER</a></li>
-							<li><a data-target='#' href='/projects'>PARTICIPATORY CHINATOWN</a></li>
-							<li><a data-target='#' href='/projects'>HUB2</a></li>
-							<li><a data-target='#' href='/projects'>STUDENT PROJECTS</a></li>
+							<li><a data-target='#' href='/projects/community-planit'>COMMUNITY PLANIT</a>
+							<li><a data-target='#' href='/projects/civic-seed'>CIVIC SEED</a></li>
+							<li><a data-target='#' href='/projects/upriver'>UPRIVER</a></li>
+							<li><a data-target='#' href='/projects/participatory-chinatown'>PARTICIPATORY CHINATOWN</a></li>
+							<li><a data-target='#' href='/projects/hub2'>HUB2</a></li>
+							<li><a data-target='#' href='/projects/student-projects'>STUDENT PROJECTS</a></li>
 						</ul>
 					</li>
 					<li class='dropdown'>
