@@ -17,6 +17,11 @@
 				<div id='courses' class='anchor'>
 					<div class='row'>
 						<div class='span12'>
+							<h2>Courses</h2>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12'>
 							<h2>
 								VM-420: Games and Social Change
 							</h2>
@@ -62,6 +67,31 @@
 					</div>
 				</div>
 				<div id='guidebook' class='anchor'>
+					<div class='row'>
+						<div class='span12'>
+							<h2>Guide Book</h2>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12'>
+							<p>
+								The Engagement Game Lab has created this guidebook as a resource for people and organizations interested in tapping the power of play to engage people in real-world processes. In the Engagement Game Guidebook you'll learn:
+							</p>
+							<ul>
+								<li>What is an Engagement Game?</li>
+								<li>How are they used?</li>
+								<li>Who benefits from them and how?</li>
+								<li>How do you design one?</li>
+								<li>What challenges should you expect to encounter, and how do you address them?</li>
+							</ul>
+							<p>
+								With full descriptions and illustrative examples.
+							</p>
+							<p>
+								<a href='#' target='_blank'>Click here</a> to download a PDF of the Engagement Game Guidebook. [Image of the front cover]
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div id='push'></div>

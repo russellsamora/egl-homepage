@@ -399,6 +399,12 @@
 	}
 }
 
+#guidebook {
+	ul {
+		padding-left: 30px;
+	}
+}
+
 
 //modifications of original boostrap
 h1,h2,h3 {
@@ -434,6 +440,29 @@ a {
 }
 
 // PROJECT TEMPLATE PAGE
+.whatIsIt {
+	background: white;
+	.projectLogo {
+		p {
+			text-align: center;
+			margin: 110px 0 0 0;
+		}
+	}
+	p.projectTagline {
+		color: @white;
+		background: @green;
+		margin-top: 0;
+		text-align: center;
+		padding: 10px 5px;
+		font-size: 1.2em;
+		font-weight: 100;
+	}
+	.briefOverview {
+		p {
+			color: @white;
+		}
+	}
+}
 .theGame {
 	p {
 		span {
@@ -446,5 +475,27 @@ a {
 		span {
 			font-weight: 800;
 		}
+	}
+}
+.specialBackground {
+	background: url('../img/grid.png');
+}
+.videoContainer {
+	position: relative;
+	padding-bottom: 25%;
+	// padding-top: 30px;
+	height: 100%;
+	overflow: hidden;
+	// min-height: 240px;
+	// text-align: center;
+	// padding-top: 30px;
+	iframe {
+		// width: auto;
+		// height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 }

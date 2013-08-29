@@ -8980,6 +8980,9 @@ a.badge:focus {
   font-weight: 800;
   letter-spacing: .1em;
 }
+#guidebook ul {
+  padding-left: 30px;
+}
 h1,
 h2,
 h3 {
@@ -9011,11 +9014,46 @@ a:hover {
 .anchor {
   padding-top: 80px;
 }
+.whatIsIt {
+  background: white;
+}
+.whatIsIt .projectLogo p {
+  text-align: center;
+  margin: 110px 0 0 0;
+}
+.whatIsIt p.projectTagline {
+  color: #ffffff;
+  background: #78cbd1;
+  margin-top: 0;
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 1.2em;
+  font-weight: 100;
+}
+.whatIsIt .briefOverview p {
+  color: #ffffff;
+}
 .theGame p span {
   font-weight: 800;
 }
 .realActions p span {
   font-weight: 800;
+}
+.specialBackground {
+  background: url('../img/grid.png');
+}
+.videoContainer {
+  position: relative;
+  padding-bottom: 25%;
+  height: 100%;
+  overflow: hidden;
+}
+.videoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .pull-right {
   float: right;

@@ -4,33 +4,26 @@
 		<?php include '../../head.php' ?>
 	</head>
 	<body>
-		<div id='wrap'>
+		<div id='wrap' class='specialBackground'>
 			<?php include '../../nav.php' ?>
+			<div class='whatIsIt'>
+				<div class='projectLogo'>
+					<p><a href='http://communityplanit.org' target='_blank'><img src='../../img/projects/logos/cpi.png'></a>
+					</p>
+				</div>
+				<p class='projectTagline'>
+					Your Voice, Your Stake, Your Move!		
+				</p>
+			</div>
 			<div class='container'>
-				<div class='whatIsIt'>
-					<div class='row'>
-						<div class='span12 projectLogo'>
-							<p><a href='http://communityplanit.org' target='_blank'><img src='../../img/projects/logos/cpi.png'></a></p>
-						</div>
+				<div class='row briefOverview'>
+					<div class='span6'>
+							<p>
+								Community PlanIt is playful and dynamic way to give input to city officials for long-range strategic planning, while rallying around awards for local causes, connecting with others in your community, and gaining a sense of empowerment in the process of active of civic engagement.
+							</p>
 					</div>
-					<div class='row'>
-						<div class='span6 projectTagline'>
-							<p>
-								Your Voice, Your Stake, Your Move!
-							</p>
-						</div>
-					</div>
-					<div class='row'>
-						<div class='span12'>
-							<p>
-								<a href='http://communityplanit.org' target='_blank'>Community PlanIt</a> is playful and dynamic way to give input to city officials for long-range strategic planning, while rallying around awards for local causes, connecting with others in your community, and gaining a sense of empowerment in the process of active of civic engagement.
-							</p>
-						</div>
-						<div class='span12'>
-							<p>
-								<img src='http://placehold.it/480x240.png'>
-							</p>
-						</div>
+					<div class='span6 videoContainer'>
+						<iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe>
 					</div>
 				</div>
 				<div class='realProblem'>
