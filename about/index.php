@@ -155,7 +155,15 @@
 						</div>
 					</div>
 					<div class='row'>
-						<div class='span6'>
+						<div class='span6 triangle2 stagger'>
+							<p class='article'>
+								<a href='http://www.bostonglobe.com/business/2013/08/11/emerson-game-lab-aims-fix-local-global-problems/rBvmc2H2j2kYkfY3NvKA5H/story.html' target='_blank'>Emerson Game Lab Aims to Fix Local, Global Problems</a><br>in <span>The Boston Globe</span>, August 12, 2013
+							</p>
+							<p class='quote'>
+								Detailed coverage of the lab, its goals, design philosophy, and projects, especially our flagship game, Community PlanIt.
+							</p>
+						</div>
+						<div class='span6 triangle'>
 							<p class='article'>
 								<a href='http://www.fastcoexist.com/1681625/connecting-citizens-to-their-government-by-turning-it-into-a-game' target='_blank'>Connecting Citizens to Their Government By Turning It Into a Game</a><br> in <span>Fast Company</span>, March 29, 2013
 							</p>
@@ -163,7 +171,9 @@
 								"Community PlanIt is a game about the issues that face local government, designed to get people (especially young people) more involved and understanding of what goes in to managing their communities."
 							</p>
 						</div>
-						<div class='span6'>
+					</div>
+					<div class='row'>
+						<div class='span6 triangle'>
 							<p class='article'>
 								<a href='http://www.statetechmagazine.com/article/2013/07/mobilize-citizen-engagement-gamification' target='_blank'>Mobilize Citizen Engagement with Gamification</a><br> in <span>State Tech</span>, July 31, 2013
 							</p>
@@ -171,9 +181,7 @@
 								"Making something social means making something relevant. Sharing on social media might already be habitual for some, but in order for sharing a CRM report to be part of a reflective habit loop, the thing shared cannot just be the action; it has to be the reflection."
 							</p>
 						</div>
-					</div>
-					<div class='row'>
-						<div class='span6'>
+						<div class='span6 triangle2 stagger'>
 							<p class='article'>
 								<a href='http://www.edtechmagazine.com/higher/article/2013/03/games-grow-colleges-recognize-power-gamification' target='_blank'>Games Grow Up: Colleges Recognize the Power of Gamification</a><br> on <span>EdTech</span>, March 28, 2013
 							</p>
@@ -181,7 +189,9 @@
 								"At Boston's Emerson College, the Engagement Game Lab focuses on crafting complete game experiences that lower barriers to civic involvement."
 							</p>
 						</div>
-						<div class='span6'>
+					</div>
+					<div class='row'>
+						<div class='span6 triangle2'>
 							<p class='article'>
 								<a href='http://www.nbcphiladelphia.com/video/#!/news/tech/Interactive-Game-Helps-With-Urban-Planning/188768411' target='_blank'>Interactive Game Helps With Urban Panning</a><br> on <span>NBC 10 Philadelphia Nightly News</span>, January 29, 2013 (Video)
 							</p>
@@ -189,22 +199,12 @@
 								NBC10 reports on Philly 2035: The Game on Community PlanIt.
 							</p>
 						</div>
-					</div>
-					<div class='row'>
-						<div class='span6'>
+						<div class='span6 triangle'>
 							<p class='article'>
-								<a href='http://wdet.org/shows/craig-fahle-show/episode/twenty-four-seven-future-game-detroit-works/' target='_blank'>"24/7 Detroit and the Future"</a><br> on <span>NPR's Craig Fahle Show on WDET (Detroit)</span>, June 6, 2012
+								<a href='http://wdet.org/shows/craig-fahle-show/episode/twenty-four-seven-future-game-detroit-works/' target='_blank'>24/7 Detroit and the Future</a><br> on <span>NPR's Craig Fahle Show on WDET (Detroit)</span>, June 6, 2012
 							</p>
 							<p class='quote'>
 								Eric Gordon joins Craig Fahle of WDET in-studio to discuss the Community PlanIt game, Detroit 24/7.
-							</p>
-						</div>
-						<div class='span6'>
-							<p class='article'>
-								<a href='http://www.xconomy.com/detroit/2012/05/04/new-digital-game-social-network-to-help-detroiters-map-citys-future/' target='_blank'>"New Digital Game, Social Network to Help Detroiters Map City's Future"</a><br>in <span>Xconomy</span>, May 4, 2012
-							</p>
-							<p class='quote'>
-								"'We interviewed a lot of the players, and many said they had wanted to participate before, but they weren't interested in standing up and speaking at a meeting,' Gordon says. 'We found that people really liked having time and space online to form their opinions.'"
 							</p>
 						</div>
 					</div>
@@ -295,16 +295,16 @@
 					</div>
 					<div class='row'>
 						<div class='span3'>
-							<p><img src='/img/other/partners/bps_logo.jpg'></p>
+							<p><a target='_blank' href='http://www.bostonpublicschools.org/'><img src='/img/other/partners/bps_logo.jpg'></a></p>
 						</div>
 						<div class='span3'>
-							<p><img src='/img/other/partners/detroit_logo.jpg'></p>
+							<p><a target='_blank' href='http://detroitworksproject.com/'><img src='/img/other/partners/detroit_logo.jpg'></a></p>
 						</div>
 						<div class='span3'>
-							<p><img src='/img/other/partners/mapc_logo.jpg'></p>
+							<p><a target='_blank' href='http://www.mapc.org/'><img src='/img/other/partners/mapc_logo.jpg'></a></p>
 						</div>
 						<div class='span3'>
-							<p><img src='/img/other/partners/tufts_logo.jpg'></p>
+							<p><a target='_blank' href='http://www.tufts.edu/'><img src='/img/other/partners/tufts_logo.jpg'></a></p>
 						</div>
 					</div>
 					<div class='row'>
@@ -312,24 +312,24 @@
 							<p><img src='/img/other/partners/pcpc_logo.jpg'></p>
 						</div>
 						<div class='span3'>
-							<p><img src='/img/other/partners/redcross_logo.jpg'></p>
+							<p><a target='_blank' href='http://www.climatecentre.org/'><img src='/img/other/partners/redcross_logo.jpg'></a></p>
 						</div>
 						<div class='span3'>
-							<p><img src='/img/other/partners/num_logo.jpg'></p>
+							<p><a target='_blank' href='http://www.newurbanmechanics.org/'><img src='/img/other/partners/num_logo.jpg'></a></p>
 						</div>
 						<div class='span3'>
-							<p><img src='/img/other/partners/fhi_logo.jpg'></p>
+							<p><a target='_blank' href='http://www.fhi360.org/'><img src='/img/other/partners/fhi_logo.jpg'></a></p>
 						</div>
 					</div>
 					<div class='row'>
 						<div class='span3'>
-							<p><img src='/img/other/partners/berkman_logo.jpg'></p>
+							<p><a target='_blank' href='http://cyber.law.harvard.edu/'><img src='/img/other/partners/berkman_logo.jpg'></a></p>
 						</div>
 						<div class='span3'>
-							<p><img src='/img/other/partners/capecod_logo.jpg'></p>
+							<p><a target='_blank' href='http://capecodcommission.org'><img src='/img/other/partners/capecod_logo.jpg'></a></p>
 						</div>
 						<div class='span3'>
-							<p><img src='/img/other/partners/nscdc_logo.jpg'></p>
+							<p><a target='_blank' href='http://northshorecdc.org'><img src='/img/other/partners/nscdc_logo.jpg'></a></p>
 						</div>
 						<div class='span3'>
 							<p><img src='/img/other/partners/cdags_logo.jpg'></p>
@@ -344,13 +344,13 @@
 					</div>
 					<div class='row'>
 						<div class='span4'>
-							<p><img src='/img/other/partners/macarthur_logo.jpg'></p>
+							<p><a target='_blank' href='http://www.macfound.org/'><img src='/img/other/partners/macarthur_logo.jpg'></a></p>
 						</div>
 						<div class='span4'>
-							<p><img src='/img/other/partners/knight_logo.jpg'></p>
+							<p><a target='_blank' href='http://www.knightfoundation.org/'><img src='/img/other/partners/knight_logo.jpg'></a></p>
 						</div>
 						<div class='span4'>
-							<p><img src='/img/other/partners/pearson_logo.jpg'></p>
+							<p><a target='_blank' href='http://www.pearsonfoundation.org/'><img src='/img/other/partners/pearson_logo.jpg'></a></p>
 						</div>
 					</div>
 				</div>

@@ -8795,11 +8795,20 @@ a.badge:focus {
   font-size: 3em;
   text-align: center;
 }
+#press .article {
+  margin-top: 10px;
+}
 #press .article span {
   font-weight: 700;
 }
+#press .article a {
+  font-weight: 100;
+  color: #ffffff;
+  font-size: 1.2em;
+}
 #press .quote {
   font-size: 1.1em;
+  color: #266b70;
 }
 #press .morePressButton {
   text-align: center;
@@ -8847,6 +8856,70 @@ a.badge:focus {
   -o-transition: -o-filter 0.4s;
   transition: -o-filter 0.4s;
 }
+.triangle {
+  background: #78cbd1;
+  position: relative;
+  padding: 0 10px;
+  border: 5px solid #78cbd1;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+.triangle:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  /* value = - border-top-width - border-bottom-width */
+
+  left: 70px;
+  /* controls horizontal position */
+
+  border-width: 20px 20px 0;
+  border-style: solid;
+  border-color: #78cbd1 transparent;
+  /* reduce the damage in FF3.0 */
+
+  display: block;
+  width: 0;
+}
+.triangle2 {
+  background: #78cbd1;
+  position: relative;
+  padding: 0 10px;
+  border: 5px solid #78cbd1;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+.triangle2:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  /* value = - border-top-width - border-bottom-width */
+
+  right: 70px;
+  /* controls horizontal position */
+
+  border-width: 20px 20px 0;
+  border-style: solid;
+  border-color: #78cbd1 transparent;
+  /* reduce the damage in FF3.0 */
+
+  display: block;
+  width: 0;
+}
+.stagger {
+  margin-top: 30px;
+}
+.antistagger {
+  margin-top: -80px;
+}
+.antistagger2 {
+  margin-top: -60px;
+}
+/* creates the smaller  triangle */
 #projects {
   margin-bottom: 160px;
   margin-top: 80px;
@@ -8856,6 +8929,10 @@ a.badge:focus {
 }
 #projects .description span {
   font-weight: 700;
+}
+#projects .description .when {
+  font-weight: 300;
+  color: #78cbd1;
 }
 #projects h3 {
   text-align: center;
@@ -8933,6 +9010,12 @@ a:hover {
 }
 .anchor {
   padding-top: 80px;
+}
+.theGame p span {
+  font-weight: 800;
+}
+.realActions p span {
+  font-weight: 800;
 }
 .pull-right {
   float: right;

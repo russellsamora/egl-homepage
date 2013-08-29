@@ -219,12 +219,19 @@
 		text-align: center;
 	}
 	.article {
+		margin-top: 10px;
 		span {
 			font-weight: 700;
+		}
+		a {
+			font-weight: 100;
+			color: @white;
+			font-size: 1.2em;
 		}
 	}
 	.quote {
 		font-size: 1.1em;
+		color: @greenSuperDarkest;
 	}
 	.morePressButton {
 		text-align: center;
@@ -266,6 +273,67 @@
 	}
 }
 
+.triangle {
+	background: @green;
+	position: relative;
+	padding: 0 10px; 
+	border: 5px solid @green;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-bottom: 40px;
+}
+// triangles for press
+.triangle:before {
+	content: "";
+	position: absolute;
+	bottom: -20px; /* value = - border-top-width - border-bottom-width */
+	left: 70px; /* controls horizontal position */
+    border-width: 20px 20px 0;
+	border-style: solid;
+    border-color: @green transparent;
+    /* reduce the damage in FF3.0 */
+    display: block; 
+    width: 0;
+}
+
+.triangle2 {
+	background: @green;
+	position: relative;
+	padding: 0 10px; 
+	border: 5px solid @green;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-bottom: 40px;
+}
+// triangles for press
+.triangle2:before {
+	content: "";
+	position: absolute;
+	bottom: -20px; /* value = - border-top-width - border-bottom-width */
+	right: 70px; /* controls horizontal position */
+    border-width: 20px 20px 0;
+	border-style: solid;
+    border-color: @green transparent;
+    /* reduce the damage in FF3.0 */
+    display: block; 
+    width: 0;
+}
+
+.stagger {
+	margin-top: 30px;
+}
+.antistagger {
+	margin-top: -80px;
+}
+.antistagger2 {
+	margin-top: -60px;
+}
+
+/* creates the smaller  triangle */
+
+
 //-------------- PROJECTS PAGE ------------
 #projects {
 	margin-bottom: 160px;
@@ -274,6 +342,10 @@
 		font-size: 1.2em;
 		span {
 			font-weight: 700;
+		}
+		.when {
+			font-weight: 300;
+			color: @green;
 		}
 	}
 	h3 {
@@ -359,4 +431,20 @@ a {
 //padding so when anchor links jump they start at top
 .anchor {
 	padding-top: 80px;
+}
+
+// PROJECT TEMPLATE PAGE
+.theGame {
+	p {
+		span {
+			font-weight: 800;
+		}
+	}
+}
+.realActions {
+	p {
+		span {
+			font-weight: 800;
+		}
+	}
 }
