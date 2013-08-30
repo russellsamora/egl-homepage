@@ -108,8 +108,10 @@
 							<p>
 								With full descriptions and illustrative examples.
 							</p>
+							<p><img src='/img/projects/other/guidebook_cover_small.jpg'>
+							</p>
 							<p>
-								<a href='#' target='_blank'>Click here</a> to download a PDF of the Engagement Game Guidebook. [Image of the front cover]
+								<a href='/pdfs/EngagementGameGuide.pdf' target='_blank'>Click here</a> to download a PDF of the Engagement Game Guidebook.
 							</p>
 						</div>
 					</div>

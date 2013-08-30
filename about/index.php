@@ -355,8 +355,9 @@
 					</div>
 				</div>
 			</div>
-			<div id='push'></div>
+			<!-- <div id='push'></div> -->
    		</div>
+
 		<?php include '../footer.php' ?>
 
     	<!-- Los javascripts -->

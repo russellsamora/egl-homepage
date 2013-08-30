@@ -44,11 +44,10 @@
 					<li class='dropdown'>
 						<a href='/resources' class='dropdown-toggle disabled' data-toggle='dropdown'>RESOURCES</a>
 						<ul class='dropdown-menu'>
-							<li><a data-target='#' href='/blog'>BLOG</a></li>
+							<!-- <li><a data-target='#' href='/blog'>BLOG</a></li> -->
 							<li><a data-target='#' href='/resources/#courses'>COURSES</a></li>
 							<li><a data-target='#' href='/resources/#guidebook'>GUIDE BOOK</a></li>
 							<li><a data-target='#' href='/projects/community-planit/curriculum'>CPI CURRICULUM</a></li>
-							<!-- <li><a data-target='#' href='/blog'>BLOG</a></li> -->
 						</ul>
 					</li>
 				</ul>

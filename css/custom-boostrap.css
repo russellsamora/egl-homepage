@@ -8895,6 +8895,23 @@ a.badge:focus {
   margin-top: -60px;
 }
 /* creates the smaller  triangle */
+#initiatives {
+  margin-top: 80px;
+}
+#initiatives h4 {
+  color: #ffffff;
+  background: #78cbd1;
+  font-weight: 300;
+  font-size: 2em;
+  padding: 10px;
+  margin-bottom: 0;
+}
+#initiatives img {
+  width: 100%;
+}
+#initiatives p {
+  color: #999999;
+}
 #projects {
   margin-bottom: 160px;
   margin-top: 80px;
@@ -9018,6 +9035,11 @@ a:hover {
   font-size: 1.5em;
   font-weight: 100;
 }
+.briefOverview p span {
+  font-weight: 800;
+  letter-spacing: .1em;
+  font-size: 1.3em;
+}
 .briefOverview .videoContainer {
   padding-top: 30px;
 }
@@ -9057,6 +9079,9 @@ a:hover {
   .whatIsIt .projectLogo p {
     margin: 0;
     padding-top: 20px;
+  }
+  #initiatives {
+    margin-top: 20px;
   }
 }
 .pull-right {

@@ -7,21 +7,23 @@
 		<div id='wrap'>
   			<?php include '../nav.php' ?>
 			<div class='container'>
-				<div id='initiatves'>
-					<div class='row'>
+				<div id='initiatives'>
+					<!-- <div class='row'>
 						<div class='span12'>
 							<h2> Initiatives </h2>
 						</div>
-					</div>
+					</div> -->
 					<div class='row'>
 						<div class='span6'>
 							<h4> Design Action Research for Government Project (DARG) </h4>
+							<img src='/img/research/boston2.jpg'>
 							<p>
 								The Design Action Research for Government Project (DARG) is a partnership between EGL and the Mayor's Office of New Urban Mechanics in Boston. DARG is a model for collaboration between government and universities, and its goal is to advance the capacity of local governments to foster civic engagement through technological innovations. Its mission is to provide a conceptual framework and evaluative capacity to guide city-level innovations that create opportunities for the public to meaningfully engage in the creation and study of public lThe project employs techniques of action and design research to source, create, and study civic technology projects in Boston. Undertaking a research program that goes beyond traditional measures of engagement, DARG also aims to improve the way research concerning civic media in governance takes place. 
 							</p>
 						</div>
 						<div class='span6'>
-							<h4> Global/Networked Citizenship </h4>
+							<h4><br> Global/Networked Citizenship </h4>
+							<img src='/img/research/hands2.jpg'>
 							<p>
 								This initiative involves multiple ongoing research projects that explore transformations in the definition and qualities of citizenship in the context of new digital tools and practices, and focuses both on global and local citizenship in a digital era. In our international projects, we are building and researching games for international humanitarian organizations and programs dedicated to improving media literacy and activism. Our local projects explore concepts of play, connectivity, and attention in various spaces of civic life, from deliberative planning issues to electoral campaigns. The research is based on data gathered from the lab's affiliated games and tools as well as analysis of digital media used by governmental institutions.
 							</p>
@@ -30,12 +32,14 @@
 					<div class='row'>
 						<div class='span6'>
 							<h4> Play and Civic Learning </h4>
+							<img src='/img/research/game2.jpg'>
 							<p>
 								This initiative looks at how games and play create productive informal learning environments for young people and adults. Focusing on a variety of games, and engaging in both qualitative and quantitative analysis of how people use playful civic tools and how play affects civic attitudes and behaviors. Specifically, we ask: What are the affordances of online games for civic learning and participation? How can games develop specific civic skills like deliberative capabilities and efficacy? Can they increase players' levels of engagement?
 							</p>
 						</div>
 						<div class='span6'>
 							<h4> Youth and Civic Media </h4>
+							<img src='/img/research/kids2.jpg'>
 							<p>
 								This project investigates how games and social media tools enable youth to engage in civic issues, and examines the impact of this engagement. Using game data across multiple platforms and numerous cities, we focus on areas of youth empowerment and connection to civic life, the benefits of intergenerational publics, and ways of framing civic issues for youth.
 							</p>
@@ -94,7 +98,7 @@
     	<script src='/js/libs/lab.js'></script>
     	<script>
     		$LAB
-    		.script('/js/libs/jquery.min.js').w<a>a</a>it()
+    		.script('/js/libs/jquery.min.js').wait()
 			.script('/js/libs/bootstrap.min.js');
     	</script>
   </body>

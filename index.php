@@ -66,6 +66,11 @@
 			</div>
 			<div id='blogTease'></div>
 			<div id='nongame'>
+				<!-- <div class='row-fluid'>
+					<div class='span12'>
+						<p><span>Welcome to the Engagement Game Lab</span>, an applied research lab for play and civic engagement.  </p>
+					</div>
+				</div> -->
 				<div class='row-fluid'>
 					<div class='span4 projectsLink'>
 						<p><a href='projects/'>PROJECTS</a></p>
@@ -85,6 +90,12 @@
 					<div class='span4 blogLink'>
 						<p><a href='resources/'>RESOURCES</a></p>
 					</div>
+				</div>
+				<div class='row-fluid'>
+					<div class='span12'>
+					<p>
+						Visit this site on a desktop or tablet to enter and explore the lab, play our game, and learn more about what we do.
+					</p>
 				</div>
 			</div>
 			<div id='nongameH'>
