@@ -49,7 +49,7 @@
 				<div id='publications'>
 					<div class='row'>
 						<div class='span12'>
-							<h2> Publications </h2>
+							<h2> PUBLICATIONS </h2>
 						</div>
 					</div>
 					<div class='row'>

@@ -321,6 +321,32 @@
 		color: @gray;
 	}
 }
+#publications {
+	margin-bottom: 80px;
+	h2 {
+		color: @white;
+		background: @green;
+		text-align: center;
+		padding:10px;
+		font-weight: 700;
+		letter-spacing: .1em;
+		margin-bottom: 0;
+	}
+	p {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 20px 10px;
+		font-weight: 300;
+		line-height: 1.2;
+		a {
+			color: @greenDarkest;
+			font-weight: 400;
+		}
+	}
+	p:nth-child(odd) {
+		background: @grayLighter;
+	}
+}
 
 //-------------- PROJECTS PAGE ------------
 #projects {
@@ -523,3 +549,7 @@ a {
 		margin-top: 20px;
 	}
 }
+
+// .navbar-inner {
+// 	background: rgba(255,255,255,.9);
+// }
