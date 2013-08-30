@@ -68,22 +68,22 @@
 			<div id='nongame'>
 				<div class='row-fluid'>
 					<div class='span4 projectsLink'>
-						<p>Projects</p>
+						<p><a href='projects/'>PROJECTS</a></p>
 					</div>
 				</div>
 				<div class='row-fluid'>
 					<div class='span4 researchLink'>
-						<p>Research</p>
+						<p><a href='research/'>RESEARCH</a></p>
 					</div>
 				</div>
 				<div class='row-fluid'>
 					<div class='span4 aboutLink'>
-						<p>About</p>
+						<p><a href='about/'>ABOUT</a></p>
 					</div>
 				</div>
 				<div class='row-fluid'>
 					<div class='span4 blogLink'>
-						<p>Blog</p>
+						<p><a href='resources/'>RESOURCES</a></p>
 					</div>
 				</div>
 			</div>
@@ -92,8 +92,9 @@
 					<div class='row'>
 						<div class='span12'>
 							<p>
-								Welcome to the Engagement Game Lab! If you make your browser taller, you can play a game to learn about what we do.
+								<span>Welcome to the Engagement Game Lab</span>, an applied research lab for play and civic engagement.  Make your browser taller to enter and explore the lab, play our game, and learn more about what we do.
 							</p>
+							<p><img src='img/nongame.jpg'></p>
 						</div>
 					</div>
 					<!-- <div class='row'>

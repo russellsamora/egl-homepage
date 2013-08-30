@@ -522,17 +522,7 @@
 			'bookshelf': {
 				class: 'bookshelf',
 				x: 130,
-				y: 0,
-				action: function() {
-					var wiki = $game.wiki.getWiki();
-					$('#popupBox .wiki p').text(wiki);
-					$game.hidePopup();
-					$('#popupBox .wiki').show();
-					$('#popupBox').show();
-					setTimeout(function() {
-						items.showingBio = true;
-					}, 17);
-				}
+				y: 0
 			},
 			'plant0': {
 				class: 'plant0',
@@ -575,6 +565,16 @@
 						self.paused = false;
 						self.playSound();
 					}, timeout, this);
+				},
+				action: function() {
+					var wiki = $game.wiki.getWiki();
+					$('#popupBox .wiki p').text(wiki);
+					$game.hidePopup();
+					$('#popupBox .wiki').show();
+					$('#popupBox').show();
+					setTimeout(function() {
+						items.showingBio = true;
+					}, 17);
 				}
 			},
 			'coffeetable': {
@@ -705,7 +705,7 @@
 					}, timeout, this);
 				},
 				fullName: 'Jesse Baldwin-Philippi',
-				jobTitle: 'Hacker in Chief',
+				jobTitle: 'Rsearcher & Visiting Professor',
 				about: 'Jesse is a visiting faculty member in Emerson\'s Department of Visual and Media Arts, and studies civic engagement, citizenship, and digital media.',
 				bind: 'plant1',
 				bindName: 'jesse'

@@ -41,7 +41,7 @@
 	<div class='row social'>
 		<div class='span12'> 
 			<p>
-				<span>address: </span>2 boylston st (3rd floor), boston, ma 02116
+				<span>address: </span>120 Boylston St, Boston, MA 02116
 			</p>
 		</div>
 	</div>

@@ -18,6 +18,8 @@
 							<li><a data-target='#' href='/projects/community-planit'>COMMUNITY PLANIT</a>
 							<li><a data-target='#' href='/projects/civic-seed'>CIVIC SEED</a></li>
 							<li><a data-target='#' href='/projects/upriver'>UPRIVER</a></li>
+							<li><a data-target='#' href='/projects/street-cred'>STREET CRED</a></li>
+							<li><a data-target='#' href='/projects/habitat'>HABIT@</a></li>
 							<li><a data-target='#' href='/projects/participatory-chinatown'>PARTICIPATORY CHINATOWN</a></li>
 							<li><a data-target='#' href='/projects/hub2'>HUB2</a></li>
 							<li><a data-target='#' href='/projects/student-projects'>STUDENT PROJECTS</a></li>

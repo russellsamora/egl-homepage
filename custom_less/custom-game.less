@@ -11,32 +11,6 @@
 @aboveAll1: 998;
 @belowPlayer: 10;
 @import 'custom-variables.less';
-@media (max-width: 767px) {
-	#game, #pregame, #blogTease, #nongameH {
-		display: none;
-	}
-	#nongame {
-		display: block;
-	}
-}
-
-@media (max-height: 540px) and (min-width: 768px) {
-	#game, #pregame, #blogTease, #nongame {
-		display: none;
-	}
-	#nongameH {
-		display: block;
-	}
-}
-
-@media (min-width: 768px) {
-	html {
-		overflow: hidden;
-	}
-	#nongame {
-		display: none;
-	}
-}
 
 #game {
 	.no-highlight();
@@ -282,8 +256,13 @@
 			background: @gray;
 			cursor: pointer;
 			p {
+				a {
+					color: @white;	
+				}
 				padding-top: 20px;
 				text-align: center;
+				font-weight: 800;
+				letter-spacing: .1em;
 			}
 		}
 		.projectsLink {
@@ -294,22 +273,29 @@
 		.researchLink {
 			// background: url(http://2.bp.blogspot.com/-3y9SL7PvwV0/TWY08s-mS0I/AAAAAAAABH8/zT4Ye2boCm0/s1600/goat_1.jpg) no-repeat center center;
 			// background-size: cover;
-			background: @red;
+			background: @greenDarker;
 		}
 		.aboutLink {
 			// background: url(http://2.bp.blogspot.com/-3y9SL7PvwV0/TWY08s-mS0I/AAAAAAAABH8/zT4Ye2boCm0/s1600/goat_1.jpg) no-repeat center center;
 			// background-size: cover;
-			background: @orange;
+			background: @greenDarkest;
 		}
 		.blogLink {
 			// background: url(http://2.bp.blogspot.com/-3y9SL7PvwV0/TWY08s-mS0I/AAAAAAAABH8/zT4Ye2boCm0/s1600/goat_1.jpg) no-repeat center center;
 			// background-size: cover;
-			background: @purple;
+			background: @greenSuperDarkest;
 		}
 	}
 }
 #nongameH {
 	display: none;
+	p {
+		span {
+			font-weight: 700;
+		}
+		font-weight: 100;
+		color: @white;
+	}
 }
 .devDirtyBound { //blue for area
 	background: rgba(0,0,255,0.3);
@@ -375,4 +361,34 @@
 //general hiding class
 .offscreen {
 	display: none;
+}
+
+@media (max-width: 767px) {
+	#game, #pregame, #blogTease, #nongameH {
+		display: none;
+	}
+	#nongame {
+		display: block;
+	}
+}
+
+@media (max-height: 540px) and (min-width: 768px) {
+	#game, #pregame, #blogTease, #nongame {
+		display: none;
+	}
+	#nongameH {
+		display: block;
+	}
+	body {
+		background: @green;
+	}
+}
+
+@media (min-width: 768px) {
+	html {
+		overflow: hidden;
+	}
+	#nongame {
+		display: none;
+	}
 }

@@ -1,33 +1,3 @@
-@media (max-width: 767px) {
-  #game,
-  #pregame,
-  #blogTease,
-  #nongameH {
-    display: none;
-  }
-  #nongame {
-    display: block;
-  }
-}
-@media (max-height: 540px) and (min-width: 768px) {
-  #game,
-  #pregame,
-  #blogTease,
-  #nongame {
-    display: none;
-  }
-  #nongameH {
-    display: block;
-  }
-}
-@media (min-width: 768px) {
-  html {
-    overflow: hidden;
-  }
-  #nongame {
-    display: none;
-  }
-}
 #game {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -267,21 +237,33 @@
 #nongame .row-fluid .span4 p {
   padding-top: 20px;
   text-align: center;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+#nongame .row-fluid .span4 p a {
+  color: #ffffff;
 }
 #nongame .row-fluid .projectsLink {
   background: #78cbd1;
 }
 #nongame .row-fluid .researchLink {
-  background: #ff5622;
+  background: #40b4bc;
 }
 #nongame .row-fluid .aboutLink {
-  background: #ff9d58;
+  background: #339096;
 }
 #nongame .row-fluid .blogLink {
-  background: #7a43b6;
+  background: #266b70;
 }
 #nongameH {
   display: none;
+}
+#nongameH p {
+  font-weight: 100;
+  color: #ffffff;
+}
+#nongameH p span {
+  font-weight: 700;
 }
 .devDirtyBound {
   background: rgba(0, 0, 255, 0.3);
@@ -339,4 +321,37 @@
 }
 .offscreen {
   display: none;
+}
+@media (max-width: 767px) {
+  #game,
+  #pregame,
+  #blogTease,
+  #nongameH {
+    display: none;
+  }
+  #nongame {
+    display: block;
+  }
+}
+@media (max-height: 540px) and (min-width: 768px) {
+  #game,
+  #pregame,
+  #blogTease,
+  #nongame {
+    display: none;
+  }
+  #nongameH {
+    display: block;
+  }
+  body {
+    background: #78cbd1;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    overflow: hidden;
+  }
+  #nongame {
+    display: none;
+  }
 }

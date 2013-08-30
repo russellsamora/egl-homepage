@@ -23,7 +23,7 @@
 					<div class='row'>
 						<div class='span12'>
 							<h2>
-								VM-420: Games and Social Change
+								VM 420: Games and Social Change
 							</h2>
 						</div>
 					</div>
@@ -44,7 +44,7 @@
 					<div class='row'>
 						<div class='span12'>
 							<h2>
-								IN-374: Civic Media
+								IN 374: Civic Media
 							</h2>
 						</div>
 					</div>
@@ -62,6 +62,27 @@
 							</p>
 							<p>
 								This class will not only explore the various goals campaigns are using digital tools to meet, but will also focus on what type of citizen these tools are enabling and encouraging people to become. We will look at academic research surrounding citizenship and engagement in a digital era and cover research into many genres of civic media, from citizen journalism to hackathons. Additionally, it will focus on questions of design: How best can we, as media creators, encourage certain behaviors? What type of citizens are we building when we make design choices?
+							</p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12'>
+							<h2>
+								VM 402-03: Cyberactivism: Crashing the System
+							</h2>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12 professor'>
+							<p>
+								PROFESSOR MARUTA VITOLS
+							</p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12'>
+							<p>
+								Digital technology has not only allowed for the unprecedented global dissemination of information within the last decades, new media have become a powerful tool for social and political activists everywhere. From the <a href='http://moveon.org' target='_blank'>MoveOn.org</a> movement to the events of the Arab Spring, online social networks provide an influential contemporary forum for advocating for change. This course explores "cyberactivism" both in theory and in practice, investigating the different approaches used today to transform our virtual and real worlds. 
 							</p>
 						</div>
 					</div>

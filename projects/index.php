@@ -34,9 +34,19 @@
 					</div>
 					<div class='row'>
 						<div class='span4'>
+							<p class='picture'><a href='hub2/'><img src='/img/projects/hub2.jpg'></a></p>
+							<p class='description'><span>Street Cred</span> brings citizens together in virtual spaces to collaborate, participate in workshops, and reimagine their communities together. <span class='when'>[2011]</span></p>
+						</div>
+						<div class='span4'>
+							<p class='picture'><a href='student-projects/'><img src='/img/projects/students.jpg'></a></p>
+							<p class='description'><span>Habit@</span>Engagement Game Lab students create their own games and projects, including Level 257, a monthly multi-media exploration of games.</p>
+						</div>
+						<div class='span4'>
 							<p class='picture'><a href='participatory-chinatown/'><img src='/img/projects/chinatown.jpg'></a></p>
 							<p class='description'><span>Participatory Chinatown</span> players explored a digital, 3D version of Boston's Chinatown neighborhood, and took on the role of Chinatown residents faced with real challenges and decisions. <span class='when'>[2012]</span></p>							
 						</div>
+					</div>
+					<div class='row'>
 						<div class='span4'>
 							<p class='picture'><a href='hub2/'><img src='/img/projects/hub2.jpg'></a></p>
 							<p class='description'><span>Hub2</span> brings citizens together in virtual spaces to collaborate, participate in workshops, and reimagine their communities together. <span class='when'>[2011]</span></p>

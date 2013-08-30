@@ -190,7 +190,9 @@ Cape Cod - "Cape-2-0" (July - Aug 2013)
     	<script>
     		$LAB
     		.script('/js/libs/jquery.min.js').wait()
-			.script('/js/libs/bootstrap.min.js');
+			.script('/js/libs/bootstrap.min.js').wait()
+			.script('/js/libs/fitvids.js').wait()
+			.script('/js/other/vimeo.js');
     	</script>
   </body>
 </html>
