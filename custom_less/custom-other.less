@@ -175,8 +175,9 @@
 		}
 	}
 	.headshot {
-		border-radius: 96px;
-		border: 4px solid @greenLightest;
+		.border-radius(96px);
+		//border: 4px solid @greenLightest;
+		box-shadow: 0px 0px 0px 4px @greenLightest;
 		cursor: pointer;
 	}
 	.trigger {
@@ -248,9 +249,7 @@
 	position: relative;
 	padding: 0 10px; 
 	border: 5px solid @green;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	.border-radius(10px);
 	margin-bottom: 40px;
 }
 // triangles for press
@@ -272,9 +271,7 @@
 	position: relative;
 	padding: 0 10px; 
 	border: 5px solid @green;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	.border-radius(10px);
 	margin-bottom: 40px;
 }
 // triangles for press
@@ -368,8 +365,9 @@
 	.picture {
 		text-align: center;
 		img {
-			border-radius: 96px;
-			border: 4px solid @greenLightest;
+			.border-radius(96px);
+			//border: 4px solid @greenLightest;
+			box-shadow: 0px 0px 0px 2px @greenLightest;
 		}
 	}
 }
@@ -404,18 +402,56 @@
 
 //---------------- RESOURCES PAGE 
 #courses {
-	h2 {
-		margin-bottom: 0;
+	h1 {
+		text-align: center;
 	}
-	.professor p{
+	.courseTitle {
+		background: @grayLighter;
+		color: @greenDarker;
+		margin-bottom: 0;
+		padding: 15px;
+	}
+	.professor {
+		background: @green;
+		color: @greenLightest;
 		font-weight: 800;
+		margin-top: 0;
+		margin-bottom: 0;
 		letter-spacing: .1em;
+		padding: 15px 15px 45px 15px;
+	}
+	.course {
+		margin-top: 0;
+		background: @greenLightest;
+		color: @gray;
+		padding: 15px;
 	}
 }
 
 #guidebook {
+	margin-top: 80px;
+	padding-top: 0;
+	margin-bottom: 80px;
+	// background: @redLightest;
+	h2 {
+		// color: @white;
+		text-align: center;
+	}
+	.border-radius(10px);
+	//border: 4px solid @greenLightest;
+	box-shadow: 0px 0px 0px 4px @greenLighter;
 	ul {
 		padding-left: 30px;
+	}
+	.guideLinkP {
+		text-align: center;
+	}
+	.bookImage {
+		text-align: center;
+		padding: 10px;
+	}
+	.bookDescription {
+		padding: 10px;
 	}
 }
 

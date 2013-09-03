@@ -1293,7 +1293,10 @@ input[type="color"],
   border: 1px solid #cccccc;
   -webkit-transition: border linear .2s, box-shadow linear .2s;
   -moz-transition: border linear .2s, box-shadow linear .2s;
+  -webkit-transition: border linear .2s, -webkit-box-shadow linear .2s;
+  -moz-transition: border linear .2s, -moz-box-shadow linear .2s;
   -o-transition: border linear .2s, box-shadow linear .2s;
+  -ms-transition: border linear .2s, box-shadow linear .2s;
   transition: border linear .2s, box-shadow linear .2s;
 }
 textarea:focus,
@@ -2517,8 +2520,11 @@ ul.icons li [class*=" icon-"] {
   border: solid 1px #eeeeee;
   padding: .2em .25em .15em;
   -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
   -moz-border-radius: 3px;
+  -moz-background-clip: padding;
   border-radius: 3px;
+  background-clip: padding-box;
 }
 .icon-2x {
   font-size: 2em;
@@ -2526,8 +2532,11 @@ ul.icons li [class*=" icon-"] {
 .icon-2x.icon-border {
   border-width: 2px;
   -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
   -moz-border-radius: 4px;
+  -moz-background-clip: padding;
   border-radius: 4px;
+  background-clip: padding-box;
 }
 .icon-3x {
   font-size: 3em;
@@ -2535,8 +2544,11 @@ ul.icons li [class*=" icon-"] {
 .icon-3x.icon-border {
   border-width: 3px;
   -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
   -moz-border-radius: 5px;
+  -moz-background-clip: padding;
   border-radius: 5px;
+  background-clip: padding-box;
 }
 .icon-4x {
   font-size: 4em;
@@ -2544,8 +2556,11 @@ ul.icons li [class*=" icon-"] {
 .icon-4x.icon-border {
   border-width: 4px;
   -webkit-border-radius: 6px;
+  -webkit-background-clip: padding-box;
   -moz-border-radius: 6px;
+  -moz-background-clip: padding;
   border-radius: 6px;
+  background-clip: padding-box;
 }
 .pull-right {
   float: right;
@@ -4412,6 +4427,7 @@ ul.icons {
   -webkit-transition: opacity 0.15s linear;
   -moz-transition: opacity 0.15s linear;
   -o-transition: opacity 0.15s linear;
+  -ms-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 .fade.in {
@@ -4424,6 +4440,7 @@ ul.icons {
   -webkit-transition: height 0.35s ease;
   -moz-transition: height 0.35s ease;
   -o-transition: height 0.35s ease;
+  -ms-transition: height 0.35s ease;
   transition: height 0.35s ease;
 }
 .collapse.in {
@@ -4438,6 +4455,9 @@ ul.icons {
   text-shadow: 0 1px 0 #ffffff;
   opacity: 0.2;
   filter: alpha(opacity=20);
+  -webkit-opacity: 20;
+  -moz-opacity: 20;
+  opacity: 20;
 }
 .close:hover,
 .close:focus {
@@ -4446,6 +4466,9 @@ ul.icons {
   cursor: pointer;
   opacity: 0.4;
   filter: alpha(opacity=40);
+  -webkit-opacity: 40;
+  -moz-opacity: 40;
+  opacity: 40;
 }
 button.close {
   padding: 0;
@@ -4537,6 +4560,9 @@ button.close {
   background-image: none;
   opacity: 0.65;
   filter: alpha(opacity=65);
+  -webkit-opacity: 65;
+  -moz-opacity: 65;
+  opacity: 65;
 }
 .btn-large {
   padding: 11px 19px;
@@ -5292,6 +5318,9 @@ input[type="submit"].btn.btn-mini {
   border-bottom-color: #ffffff;
   opacity: 1;
   filter: alpha(opacity=100);
+  -webkit-opacity: 100;
+  -moz-opacity: 100;
+  opacity: 100;
 }
 .tabs-stacked .open > a:hover,
 .tabs-stacked .open > a:focus {
@@ -5823,6 +5852,7 @@ input[type="submit"].btn.btn-mini {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
+  -ms-transition: none;
   transition: none;
 }
 .navbar-inverse .navbar-search .search-query:-moz-placeholder {
@@ -6052,6 +6082,9 @@ input[type="submit"].btn.btn-mini {
 .modal-backdrop.fade.in {
   opacity: 0.8;
   filter: alpha(opacity=80);
+  -webkit-opacity: 80;
+  -moz-opacity: 80;
+  opacity: 80;
 }
 .modal {
   position: fixed;
@@ -6075,6 +6108,7 @@ input[type="submit"].btn.btn-mini {
   -webkit-transition: opacity .3s linear, top .3s ease-out;
   -moz-transition: opacity .3s linear, top .3s ease-out;
   -o-transition: opacity .3s linear, top .3s ease-out;
+  -ms-transition: opacity .3s linear, top .3s ease-out;
   transition: opacity .3s linear, top .3s ease-out;
   top: -25%;
 }
@@ -6144,12 +6178,17 @@ input[type="submit"].btn.btn-mini {
   visibility: visible;
   font-size: 11px;
   line-height: 1.4;
-  opacity: 0;
   filter: alpha(opacity=0);
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
 }
 .tooltip.in {
   opacity: 0.8;
   filter: alpha(opacity=80);
+  -webkit-opacity: 80;
+  -moz-opacity: 80;
+  opacity: 80;
 }
 .tooltip.top {
   margin-top: -3px;
@@ -6365,6 +6404,7 @@ input[type="submit"].btn.btn-mini {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 a.thumbnail:hover,
@@ -6549,13 +6589,14 @@ a.badge:focus {
   -webkit-transition: width 0.6s ease;
   -moz-transition: width 0.6s ease;
   -o-transition: width 0.6s ease;
+  -ms-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 .progress-striped .bar {
   background-color: #149bdf;
+  -o-background-size: 40px 40px;
   -webkit-background-size: 40px 40px;
   -moz-background-size: 40px 40px;
-  -o-background-size: 40px 40px;
   background-size: 40px 40px;
 }
 .progress.active .bar {
@@ -6634,6 +6675,7 @@ a.badge:focus {
   -webkit-transition: 0.6s ease-in-out left;
   -moz-transition: 0.6s ease-in-out left;
   -o-transition: 0.6s ease-in-out left;
+  -ms-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
 }
 .carousel-inner > .item > img,
@@ -6687,6 +6729,9 @@ a.badge:focus {
   border: 3px solid #ffffff;
   opacity: 0.5;
   filter: alpha(opacity=50);
+  -webkit-opacity: 50;
+  -moz-opacity: 50;
+  opacity: 50;
 }
 .carousel-control.right {
   left: auto;
@@ -6698,6 +6743,9 @@ a.badge:focus {
   text-decoration: none;
   opacity: 0.9;
   filter: alpha(opacity=90);
+  -webkit-opacity: 90;
+  -moz-opacity: 90;
+  opacity: 90;
 }
 .carousel-indicators {
   position: absolute;
@@ -8599,6 +8647,9 @@ a.badge:focus {
   }
 }
 * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
 
@@ -8632,6 +8683,7 @@ a.badge:focus {
   -webkit-transition: -webkit-filter 0.5s;
   -moz-transition: -webkit-filter 0.5s;
   -o-transition: -webkit-filter 0.5s;
+  -ms-transition: -webkit-filter 0.5s;
   transition: -webkit-filter 0.5s;
 }
 .tagline {
@@ -8759,8 +8811,13 @@ a.badge:focus {
   text-align: center;
 }
 #people .headshot {
+  -webkit-border-radius: 96px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 96px;
+  -moz-background-clip: padding;
   border-radius: 96px;
-  border: 4px solid #d7f0f1;
+  background-clip: padding-box;
+  box-shadow: 0px 0px 0px 4px #d7f0f1;
   cursor: pointer;
 }
 #people .trigger {
@@ -8821,14 +8878,17 @@ a.badge:focus {
   -webkit-transition: -webkit-filter 0.4s;
   -moz-transition: -webkit-filter 0.4s;
   -o-transition: -webkit-filter 0.4s;
+  -ms-transition: -webkit-filter 0.4s;
   transition: -webkit-filter 0.4s;
   -webkit-transition: -moz-filter 0.4s;
   -moz-transition: -moz-filter 0.4s;
   -o-transition: -moz-filter 0.4s;
+  -ms-transition: -moz-filter 0.4s;
   transition: -moz-filter 0.4s;
   -webkit-transition: -o-filter 0.4s;
   -moz-transition: -o-filter 0.4s;
   -o-transition: -o-filter 0.4s;
+  -ms-transition: -o-filter 0.4s;
   transition: -o-filter 0.4s;
 }
 .triangle {
@@ -8837,8 +8897,11 @@ a.badge:focus {
   padding: 0 10px;
   border: 5px solid #78cbd1;
   -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
   -moz-border-radius: 10px;
+  -moz-background-clip: padding;
   border-radius: 10px;
+  background-clip: padding-box;
   margin-bottom: 40px;
 }
 .triangle:before {
@@ -8864,8 +8927,11 @@ a.badge:focus {
   padding: 0 10px;
   border: 5px solid #78cbd1;
   -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
   -moz-border-radius: 10px;
+  -moz-background-clip: padding;
   border-radius: 10px;
+  background-clip: padding-box;
   margin-bottom: 40px;
 }
 .triangle2:before {
@@ -8959,8 +9025,13 @@ a.badge:focus {
   text-align: center;
 }
 #projects .picture img {
+  -webkit-border-radius: 96px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 96px;
+  -moz-background-clip: padding;
   border-radius: 96px;
-  border: 4px solid #d7f0f1;
+  background-clip: padding-box;
+  box-shadow: 0px 0px 0px 2px #d7f0f1;
 }
 #projectBlurb {
   width: 100%;
@@ -8991,15 +9062,57 @@ a.badge:focus {
   color: #ffffff;
   font-weight: 300;
 }
-#courses h2 {
-  margin-bottom: 0;
+#courses h1 {
+  text-align: center;
 }
-#courses .professor p {
+#courses .courseTitle {
+  background: #eeeeee;
+  color: #40b4bc;
+  margin-bottom: 0;
+  padding: 15px;
+}
+#courses .professor {
+  background: #78cbd1;
+  color: #d7f0f1;
   font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 0;
   letter-spacing: .1em;
+  padding: 15px 15px 45px 15px;
+}
+#courses .course {
+  margin-top: 0;
+  background: #d7f0f1;
+  color: #999999;
+  padding: 15px;
+}
+#guidebook {
+  margin-top: 80px;
+  padding-top: 0;
+  margin-bottom: 80px;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+  box-shadow: 0px 0px 0px 4px #b1e1e4;
+}
+#guidebook h2 {
+  text-align: center;
 }
 #guidebook ul {
   padding-left: 30px;
+}
+#guidebook .guideLinkP {
+  text-align: center;
+}
+#guidebook .bookImage {
+  text-align: center;
+  padding: 10px;
+}
+#guidebook .bookDescription {
+  padding: 10px;
 }
 h1,
 h2,

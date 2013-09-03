@@ -5,6 +5,12 @@ $dbpass = 'root';
 $dbname = 'egl';
 $dbtable = 'whiteboard';
 
+// $dbhost = 'localhost';
+// $dbuser = 'gamelib';
+// $dbpass = 'Gnomes4eva!';
+// $dbname = 'egl';
+// $dbtable = 'whiteboard';
+
 $con = mysql_connect($dbhost,$dbuser,$dbpass);
 if (!$con)
   {
