@@ -9223,6 +9223,9 @@ a:hover {
     margin-top: 20px;
   }
 }
+.extraPadding {
+  margin-bottom: 80px;
+}
 .pull-right {
   float: right;
 }

@@ -35,18 +35,13 @@
 						</div>
 						<div class='span12'>
 							<p>	
-								<span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br>
+								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
 
-								<img src='http://placehold.it/160x160.png' style='float:left; padding: 10px;'>
-								
-
-								Civic leaders and town planners often seek community input when trying to imagine solutions to complex issues that take into consideration the actual needs of the community. With our busy schedules and other pressing obligations, it is often difficult, if not outright impossible, for people to attend in-person town hall meetings where input is given, costs and benefits are debated, and decisions get made.
- 
+								<!-- <img src='http://placehold.it/160x160.png' style='float:left; padding: 10px;'> -->
+								Civic leaders and town planners often seek community input when trying to imagine solutions to complex issues that take into consideration the actual needs of the community. With our busy schedules and other pressing obligations, it is often difficult, if not outright impossible, for people to attend in-person town hall meetings where input is given, costs and benefits are debated, and decisions get made. 
 								Even if one can attend such official gatherings, not everyone feels comfortable standing up before others and voicing their opinion. Meetings can be dominated by the loudest voices in the room, not always the most prudent or knowledgeable.
- 
 								To lower the barriers for participation we must remove obstacles:
-									scheduling conflicts									discomfort with public speaking
-									lack of transportation or simple boredom or disenchantment with public processes.
+								scheduling conflicts discomfort with public speaking lack of transportation or simple boredom or disenchantment with public processes.
 
 							</p>
 						</div>
