@@ -29,7 +29,7 @@
 				<div class='realProblem'>
 					<div class='row'>
 						<div class='span12'>
-							<h2 class='funTitle'>
+							<h2 class='funTitle indentH2'>
 								Context
 							</h2>
 						</div>
@@ -54,23 +54,13 @@
 							<h2 class='funTitle'>The Game</h2>
 							<p>
 								<img class='inlineImageRightSmall' src='../../img/projects/other/trophy.png'>
-								<span>The Goal</span> Complete challenge questions and themed missions to earn 'coins' that you can pledge to help win money for local causes while contributing a real-world planning process.
+								<span>The Goal-</span> Complete challenge questions and themed missions to earn 'coins' that you can pledge to help win money for local causes while contributing a real-world planning process.
 							</p>
 							<p>
-								<span>Stake in the Conversation</span> <em>Tell your story, make your voice heard and connect with others in your community</em>
-								Community PlanIt is not just an online survey, nor is it a gimmicky digital suggestion box, both of which can feel merely pro forma or ineffectual to those who use them. Community PlanIt's player profiles not only give planners valuable information about who is offering input, but also allows other players to understand your stake in the issue based on how you identify (student, homeowner, business owner, city planner, etc.) and how you affiliate yourself (by neighborhood, membership in community organizations, belonging to a certain school).
+								<span>Play-</span> A Community PlanIt game takes place over a number of missions, each time-limited to one week. To complete a mission, players must answer all challenges within the mission by answering questions about their experiences and vision of their community. A challenge could be something as simple as dropping a pin on a map in their favorite place, or as complex as reading a series of informative resources, and then making a decision about a specific planned policy - or anything in between.<br><br><img class='inlineImageLeftBig' src='../../img/projects/other/cpi3.jpg'>After every three challenges, players must stop and answer a trivia question about their community, asked by the pesky but well-meaning Crats.
  							</p>
  							<p>
-								When you know a little bit about the players you're interacting with, it's easier to engage in a conversation with some sense of their perspective. And people may surprise you, confounding your preconceived notions of what a business owner or a middle school student might have to say about a matter!
-							</p>
- 							<p>
- 								<img class='inlineImageLeftBig' src='../../img/projects/other/cpi3.jpg'>
-								<span>It's About Community-Building</span> <em>What if I know nothing / know everything about this topic?</em>
-								Players without much expertise get the chance to learn about the issues as they advance through the missions, thanks to in-game resources and knowledge shared by other players. Meanwhile, real experts get the chance to pass on what they know through the Soapbox and interactive Comments sections. Overall knowledge of the community increases, solutions are arrived at organically, and good ideas rise to the top.
- 							</p>
- 							<p>
-								<span>Three Weeks / Three Missions</span> <em>Why time-limited games?</em>
-								Planning projects have deadlines to meet in various phases, and if community input is to have a meaningful effect on decision-making, then it needs to happen in a concentrated way. In the context of an online game, players have a chance to reflect on their opinions and those of others through a series of thematically linked challenge questions that unfold over the course of a week. This time limit creates a fun sense of urgency for players as the clock ticks down, even as it gives players ample time to play using the resources embedded in the game or doing their own research to inform their answers. Meanwhile, interacting with other players who have responded to challenge questions, opens up dialogue- and earns you points.
+								<span>Rewards-</span> Each challenge and trivia question players complete earn them virtual coins, which they can pledge to real-world causes. Players can also earn awards, which include a coin bonus, by participating in discussion and deliberation throughout the game. At the end of the game, the three top causes will receive real-world funding to make their project a reality.
 							</p>
 						</div>
 					</div>

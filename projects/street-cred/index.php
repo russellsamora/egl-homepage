@@ -30,7 +30,7 @@
 				<div class='realProblem'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>
+							<h2 class='funTitle indentH2'>
 								Context
 							</h2>
 						</div>
@@ -38,7 +38,7 @@
 							<p>	
 								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
 
-								<!-- <img src='http://placehold.it/160x160.png' style='float:left; padding: 10px;'> -->
+								<img class='inlineImage' src='../../img/projects/other/streetcred1.png'> 
 								Reporting tools like Citizens Connect or NYC 311 do a great job of helping people report problems, but our research shows they are not very good at getting citizens to reflect on the actions they take, or to connect with their local community. So we began to ask: Can we get this tool to be more social? Can we make people take more actions, and take specific actions? Can we get people to intentionally look for problems rather than accidentally stumble on issues? 
 
 							</p>
@@ -48,8 +48,9 @@
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Game</h2>
+							<h2 class='funTitle'>The Game</h2>
 							<p>
+								<img class='inlineImageRightSmall' src='../../img/projects/other/streetcred2.png'> 
 								Players are prompted to take specific actions using already-existing tools such as Citizens Connect, and are rewarded with badges, which contribute to larger campaigns and real-life rewards. Actions, badges, and campaigns all contribute to a social reputation system that allows players to see their participation within the context of other engaged citizens.
 							</p>
 						</div>
@@ -58,10 +59,16 @@
 				<div class='realActions extraPadding'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Real-World Action/Results</h2>
-							<p>
-								Players get started using the Citizens Connect app and once they claim their StreetCred profile, they are prompted to use the app to complete campaigns, which are particuar combinations of actions such as reporting potholes, visiting a public park or library, or watering a tree planted by the City of Boston. With each action you take, you'll earn cred. And when you complete campaigns, you'll earn a digital badge to celebrate your work. The community can also work together to complete collaborative community campaigns. 
+							<h2 class='funTitle'>The Real-World Action/Results</h2>
+							<p> 
+								Players get started using the Citizens Connect app and once they claim their StreetCred profile, they are prompted to use the app to complete campaigns, which are particular combinations of actions such as reporting potholes, visiting a public park or library, or watering a tree planted by the City of Boston. With each real-world action you take, you'll earn cred. And when you complete campaigns, you'll earn a digital badge to celebrate your work. The community can also work together to complete collaborative community campaigns.
+
 							</p>
+							<ul>
+								<li>City officials receive more and better data about issues that require their attention </li>
+								<li>Players get better public services tailored to their reports </li>
+								<li>Communication and recognition of community issues is increased by the social sharing element of game </li>
+							</ul>
 						</div>
 					</div>
 				</div>

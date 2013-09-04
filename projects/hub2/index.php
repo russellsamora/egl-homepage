@@ -8,7 +8,7 @@
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
 				<div class='projectLogo'>
-					<p><a href='http://hub2.org' target='_blank'><img src='../../img/projects/logos/hub2.jpg'></a>
+					<p><a href='http://hub2.org' target='_blank'><img src='../../img/projects/logos/hub2.png'></a>
 					</p>
 				</div>
 				<p class='projectTagline'>
@@ -29,7 +29,7 @@
 				<div class='realProblem'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>
+							<h2 class='funTitle'>
 								Context
 							</h2>
 						</div>
@@ -46,8 +46,9 @@
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Game</h2>
+							<h2 class='funTitle'>The Game</h2>
 							<p>
+								<img class='inlineImageRightSmall' src='../../img/projects/other/bicycle.png'>
 								Hub2 was supported by the City of Boston, the Boston Redevelopment Authority (BRA) and the Allston Development Group (ADG) of Harvard University, and took place from June to August of 2008. The project consisted of formal in-person workshops, where groups of participants immersed themselves in a virtual space, moved things around, proposed ideas, role played, and experienced various spatial configurations. It also included informal drop-in hours, where community members individually experienced the design and contributed their ideas in the online conversation about the park. The project was designed as a supplement to traditional community meetings that were facilitated at the same time by ADG.
 							</p>
 							<p>
@@ -62,7 +63,7 @@
 				<div class='realActions extraPadding'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Real-World Action/Results</h2>
+							<h2 class='funTitle'>The Real-World Action/Results</h2>
 							<p>
 								Hub2 facilitated eight workshops, with a total of 120 people participating, about half of whom were under 25 years old. Throughout the 3 months of the project, drop-in hours took place Monday through Friday from 3 to 5 in the afternoon and on Saturdays from noon to 3. Approximately 75 people attended these informal sessions, some of whom returned to participate in one of the formal workshops. To help facilitate the meetings, four 'youth interpreters' were hired. These internet-savvy local youth served a dual purpose: 'technology experts' who aided participants with the computers, and viral advertisements who attracted young participants to the process. The latter purpose was clearly effective, as Hub2 workshops attracted more than 60 participants aged 14-25, compared to zero in this age range in the traditional meetings which occurred in the same time frame.
 							</p>

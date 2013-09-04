@@ -8,7 +8,7 @@
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
 				<div class='projectLogo'>
-					<p><a href='http://participatorychinatown.org' target='_blank'><img src='../../img/projects/logos/chinatown.jpg'></a>
+					<p><a href='http://participatorychinatown.org' target='_blank'><img src='../../img/projects/logos/chinatown.png'></a>
 					</p>
 				</div>
 				<p class='projectTagline'>
@@ -19,7 +19,7 @@
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								<span>Participatory Chinatown</span> is a 3-D immersive game designed to be part of the master planning process for Boston's Chinatown.  Participatory Chinatown won the Games for Change 2011 Direct Impact Award!
+								<span>Participatory Chinatown</span> is a 3-D immersive game designed to be part of the master planning process for Boston's Chinatown. Participatory Chinatown won the <a href='http://www.gamesforchange.org/festival2011/awards/direct-impact/participatory-chinatown/' target='_blank'>Games for Change 2011 Direct Impact Award</a>.
 							</p>
 					</div>
 					<div class='span6 videoContainer'>
@@ -30,7 +30,7 @@
 				<div class='realProblem'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>
+							<h2 class='funTitle indentH2'>
 								Context
 							</h2>
 						</div>
@@ -38,7 +38,7 @@
 							<p>	
 								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
 
-								<!-- <img src='http://placehold.it/160x160.png' style='float:left; padding: 10px;'> -->
+								<img class='inlineImage' src='../../img/projects/other/chinatown.png'>
 								Since 1990, Chinatown, a 46-acre neighborhood in Boston, 
 								has been engaged in several master-planning processes to 
 								determine the future growth pattern of the neighborhood. 
@@ -67,39 +67,13 @@
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Game</h2>
+							<h2 class='funTitle'>The Game</h2>
 							<p>
-								You assume the role of one of 15 virtual residents and work to complete your assigned quest - finding a job, housing, or place to socialize. But look out! Sometimes language skills, income level, or other circumstances can make your task more challenging. Whatever your experience, you'll then be tasked with considering the future of the neighborhood by walking through and commenting on proposed development sites. Every one of your comments and decisions will be shared with real life decision-makers.
-								Participatory Chinatown is a multi-user game designed to 
-								be played in real time, in a shared physical space. The 
-								game was built using the Sandstone platform by Muzzy 
-								Lane. We chose Sandstone because its built-in 
-								features were conducive for educational games and because 
-								we were able to use it to build a game capable of running in 
-								a web browser.
+								<img class='inlineImageRightBig' src='../../img/projects/other/chinatown1.jpg'>
+								You assume the role of one of 15 virtual residents and work to complete your assigned quest - finding a job, housing, or place to socialize. But look out! Sometimes language skills, income level, or other circumstances can make your task more challenging. Whatever your experience, you'll then be tasked with considering the future of the neighborhood by walking through and commenting on proposed development sites. Every one of your comments and decisions will be shared with real life decision-makers. Participatory Chinatown is a multi-user game designed to be played in real time, in a shared physical space. 
 							</p>
 							<p>
-								The game launched on the evening of 3 May 2010 in a 
-								large community room in Boston's Chinatown, where 48 
-								people from the community gathered to play. The space 
-								was filled with five long rectangular tables, each with the capacity to fit 10 or 15 laptops. A projection screen was placed in the front of the room to which the facilitators on 
-								occasion asked players to direct their attention. But the 
-								conversation and digital interactions taking place at the 
-								individual tables was the focal point of each player's 
-								experience. In addition to the physical proximity of players 
-								sharing a table, each table represented a multi-player game 
-								where players could interact in a shared virtual 
-								environment. While all players were playing the same 
-								game, there were five distinct instances of the game going 
-								on at once with about 10-15 players in each instance. The 
-								meeting was facilitated in such a way that the small group 
-								interactions at the tables and in the virtual Chinatown were 
-								periodically shared with the front of the room. This was 
-								meant to produce a dynamic environment that could extend 
-								the game dynamics into the physical room. To address 
-								Chinatown's diverse language needs, the game was 
-								playable in either English or Chinese, and a translator was 
-								present throughout the meeting.
+								The game launched on the evening of 3 May 2010 in a large community room in Boston's Chinatown, where 48 people from the community gathered to play. The conversation and digital interactions taking place at communal play tables was the focal point of each player's experience. In addition to the physical proximity of players sharing a table, each table represented a multi-player game where players could interact in a shared virtual environment. The meeting was facilitated in such a way that the small group interactions at the tables and in the virtual Chinatown were periodically shared with the front of the room. This was meant to produce a dynamic environment that could extend the game dynamics into the physical room. To address Chinatown's diverse language needs, the game was playable in either English or Chinese, and a translator was present throughout the meeting.
 							</p>
 						</div>
 					</div>
@@ -107,7 +81,7 @@
 				<div class='realActions extraPadding'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Real-World Action/Results</h2>
+							<h2 class='funTitle'>The Real-World Action/Results</h2>
 							<p>
 								The community's knowledge that this public meeting 
 								would be based around the Participatory Chinatown game 

@@ -8,11 +8,11 @@
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
 				<div class='projectLogo'>
-					<p><a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/students.jpg'></a>
+					<p><a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/studentprojects.png'></a>
 					</p>
 				</div>
 				<p class='projectTagline'>
-					Student Projects
+					---
 				</p>
 			</div>
 			<div class='container projectPage'>

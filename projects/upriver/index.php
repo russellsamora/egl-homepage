@@ -8,7 +8,7 @@
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
 				<div class='projectLogo'>
-					<p><a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/upriver.jpg'></a>
+					<p><a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/upriver.png'></a>
 					</p>
 				</div>
 				<p class='projectTagline'>
@@ -19,10 +19,11 @@
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								<span>UpRiver</span> is a game that enables flood prediction and communication for people living on and near high-risk zones of flood-prone rivers. Players use SMS-enabled cell phones to report, predict, and gather information about the current and future water level of the river, local to them.
+								<span>UpRiver</span> is a game that enables communication and flood prediction for people living in high-risk areas along major rivers. Players use SMS-enabled cell phones to report, predict, and gather information about the current and future water level of the river, local to them.
 							</p>
 					</div>
 					<div class='span6 videoContainer'>
+						<img src='../../img/projects/other/upriver1.jpg'>
 						<!-- <iframe src="//www.youtube.com/embed/jA5sz-ymv6k" frameborder="0" allowfullscreen></iframe> -->
 						<!-- <iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe> -->
 					</div>
@@ -30,7 +31,7 @@
 				<div class='realProblem'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>
+							<h2 class='funTitle'>
 								Context
 							</h2>
 						</div>
@@ -39,7 +40,7 @@
 								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
 
 								<!-- <img src='http://placehold.it/160x160.png' style='float:left; padding: 10px;'> -->
-								Every year, people die in completely predictable floods. A rainstorm in the mountains overflows the banks of the Zambezi river, and water flows downstream, hitting each population in order from the source of the flood to the sea, where the river empties. 
+								Every year, people die in completely predictable floods. A rainstorm in the mountains overflows the banks of the Zambezi river, and water flows downstream, hitting each population in order from the source of the flood to the sea, where the river empties.
 							</p>
 							<p>
 								Lives and property are lost, and millions of dollars in humanitarian aid is spent to alleviate these crisis because:
@@ -55,8 +56,9 @@
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Game</h2>
+							<h2 class='funTitle'>The Game</h2>
 							<p>
+								<img class='inlineImage' src='../../img/projects/other/africa.png'>
 								<span>The Goal:</span>
 								UpRiver challenges players to predict what the water level in their area will be at a future date. At the end of a play period, the player who has earned the most in-game currency wins real world rewards such as free text messages or cell phone minutes.
 							</p>
@@ -67,8 +69,11 @@
 							<p>
 								<span>How To Play:</span>
 								First, players earn game currency by reporting the water level, weather, and other real-time information about their local area. They can earn more by placing bets about future conditions. The farther out their predictions, and more accurate their guesses, the larger the reward.
+								
 								<br><br>
+								<img class='inlineImageRightBig' src='../../img/projects/other/upriver2.jpg'>
 								To help make more accurate guesses, players may also purchase information about what players upstream from them are reporting, or buy access to a computer model. In the end, the player who is best able to leverage this information into accurate predictions will win the day.
+
 							</p>
 						</div>
 					</div>
@@ -76,7 +81,7 @@
 				<div class='realActions extraPadding'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Real-World Action/Results</h2>
+							<h2 class='funTitle'>The Real-World Action/Results</h2>
 							<p>
 								Each game action results in a specific real-world outcome.
 							</p>

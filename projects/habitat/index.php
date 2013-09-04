@@ -19,7 +19,7 @@
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								A <span>Habit@</span> is an ecosystem of civic technologies, deployed on a local scale.  It is designed to both give local citizens many ways to make their voice heard, access important information, and take action with others in their community. 
+								A <span>Habit@</span> is an ecosystem of civic technologies, deployed on a local scale. It is  designed to give local citizens many ways to both make their voice heard and access important information, and take action with others in their community.
 							</p>
 					</div>
 					<div class='span6 videoContainer'>
@@ -29,7 +29,7 @@
 				<div class='realProblem'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>
+							<h2 class='funTitle'>
 								Context
 							</h2>
 						</div>
@@ -47,7 +47,7 @@
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Project</h2>
+							<h2 class='funTitle'>The Project</h2>
 							<p>
 								All Habit@ technologies will be implemented in the Dudley Street neighborhood of Boston, with the help from a local organization, the Dudley Street Neighborhood Initiative (DSNI).
 							</p>
@@ -68,9 +68,9 @@
 				<div class='realActions extraPadding'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Research</h2>
+							<h2 class='funTitle'>The Research</h2>
 							<p>
-								The DSNI Technology Habit@ project is designed to both give local citizens many ways to make their voice heard, access important information, and take action with others in their community. The research associated with the project is designed to investigate the effects of the Habit@ on civic life, how innovation occurs in local community organizations, and best practices for replicating Habit@ in other neighborhoods.
+								The research associated with the DSNI Technology Habit@ project is designed to investigate the effects of the Habit@ on civic life, how innovation occurs in local community organizations, and best practices for replicating Habit@ in other neighborhoods.
 								<br>
 								<br>
 								Within this context, we ask the following research questions:

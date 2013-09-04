@@ -29,7 +29,7 @@
 						</div>
 						<div class='span4'>
 							<p class='picture'><a href='upriver/'><img src='/img/projects/upriver.jpg'></a></p>
-							<p class='description'><span>UpRiver!</span> is made in partnership with the Red Cross / Red Crescent Climate  Center.  This game will teach people living in <!-- the Zambezi River valley in --> Zimbabwe to predict dangerous floods. <span class='when'>[now]</span></p>
+							<p class='description'><span>UpRiver</span> is made in partnership with the Red Cross / Red Crescent Climate Center. This game will teach people living in high-risk areas to predict dangerous floods. <span class='when'>[now]</span></p>
 						</div>
 					</div>
 					<div class='row'>
@@ -39,7 +39,7 @@
 						</div>
 						<div class='span4'>
 							<p class='picture'><a href='habitat/'><img src='/img/projects/habitat.jpg'></a></p>
-							<p class='description'><span>Habit@</span> is designed to both give local citizens many ways to make their voice heard, access important information, and take action with others in their community. <span class='when'>[now]</span></p>
+							<p class='description'><span>Habit@</span> is designed to give local citizens many ways to both make their voice heard and access important information, and take action with others in their community. <span class='when'>[now]</span></p>
 						</div>
 						<div class='span4'>
 							<p class='picture'><a href='participatory-chinatown/'><img src='/img/projects/chinatown.jpg'></a></p>
