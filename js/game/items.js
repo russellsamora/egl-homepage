@@ -164,28 +164,47 @@
 
 		clickedPerson: function(key, el) {
 			var person = items.peopleData[key];
-			//see if the user has clicked them first
-			if($game.user.game.people[key]) {
-				//show status
-				if(person.status) {
-					$game.showMessage({el: el, message: person.status});	
-				}
-			} else {
-				//show bio card
-				$('#popupBox .bioImage').attr('src', '../../img/people/bio/real_' + key + '.jpg');
-				$('#popupBox .bioName span').text(person.fullName);
-				$('#popupBox .bioTitle span').text(person.jobTitle);
-				$('#popupBox .bioAbout span').html(person.about);
+			$game.showMessage({el: el, message: person.status, bioKey: key});
+			// //see if the user has clicked them first
+			// if($game.user.game.people[key]) {
+			// 	//show status
+			// 	if(person.status) {
+			// 		$game.showMessage({el: el, message: person.status});
+			// 	}
+			// } else {
+			// 	//show bio card
+			// 	$('#popupBox .bioImage').attr('src', '../../img/people/bio/real_' + key + '.jpg');
+			// 	$('#popupBox .bioName span').text(person.fullName);
+			// 	$('#popupBox .bioTitle span').text(person.jobTitle);
+			// 	$('#popupBox .bioAbout span').html(person.about);
 
-				$game.hidePopup();
-				$('#popupBox .bio').show();
-				$('#popupBox').show();
-				setTimeout(function() {
-					items.showingBio = true;
-				}, 17);
-				$game.user.game.people[key] = {bio: true};
-				$game.updateStorage();
-			}
+			// 	$game.hidePopup();
+			// 	$('#popupBox .bio').show();
+			// 	$('#popupBox').show();
+			// 	setTimeout(function() {
+			// 		items.showingBio = true;
+			// 	}, 17);
+			// 	$game.user.game.people[key] = {bio: true};
+			// 	$game.updateStorage();
+			// }
+		},
+
+		showBioCard: function(key) {
+			$game.hideMessage();
+			var person = items.peopleData[key];
+			$('#popupBox .bioImage').attr('src', '../../img/people/bio/real_' + key + '.jpg');
+			$('#popupBox .bioName span').text(person.fullName);
+			$('#popupBox .bioTitle span').text(person.jobTitle);
+			$('#popupBox .bioAbout span').html(person.about);
+
+			$game.hidePopup();
+			$('#popupBox .bio').show();
+			$('#popupBox').show();
+			setTimeout(function() {
+				items.showingBio = true;
+			}, 17);
+			$game.user.game.people[key] = {bio: true};
+			$game.updateStorage();
 		},
 
 		checkScreen: function() {

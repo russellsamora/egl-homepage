@@ -40,10 +40,20 @@
 		},
 
 		showMessage: function(data) {
-			$MESSAGE_TEXT.text(data.message);
+			//add link for bio
 			var topOffset = 50,
 				msgLength = data.message.length + 3;
+
+			if(data.bioKey) {
+				data.message += ' <a href"#" data-key="' + data.bioKey + '"> (view bio)</a>';
+				msgLength += 10;
+			}
+			$MESSAGE_TEXT.html(data.message);
 			
+			if(data.bioKey) {
+				$game.input.bindMessageLink();
+			}
+
 			if(data.soundcloud) {
 				$('.soundcloud').show();
 				$('.soundcloud p').html('<a target="_blank" href="' + data.soundcloud.link + '">' + data.soundcloud.user + '</a>');

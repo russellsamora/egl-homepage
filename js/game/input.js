@@ -29,6 +29,16 @@
 			_preventMovementTimeout = setTimeout(function() {
 				_preventMovement = false;
 			}, 17);
+		},
+
+		bindMessageLink: function() {
+			$('.messageText a').on('click', function(e) {
+				e.preventDefault();
+				var key = $(this).attr('data-key');
+				$game.items.showBioCard(key);
+				input.preventMove();
+				return false;
+			});
 		}
 	};
 	
@@ -105,7 +115,7 @@
 		//save out any important info on exit
 		$(window).on('beforeunload', function() {
 			$game.exitAndSave();
-		});
+		});		
 	}
 
 	function _resize() {
