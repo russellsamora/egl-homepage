@@ -30,7 +30,7 @@
 						<div class='span4 person'>
 							<p><img data-toggle='collapse' data-target='#ericBio' src='../img/people/bio/eric.jpg' data-real='eric' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#ericBio'>Eric Gordon, PhD</p>
-							<p class='trigger' data-toggle='collapse' data-target='#ericBio'>Director</p>
+							<p class='trigger' data-toggle='collapse' data-target='#ericBio'>Executive Director</p>
 							<div id='ericBio' class='collapse out'>
 								<p>
 									Eric studies civic media, mediated cities and playful engagement. He is a fellow at the <a title="Berkman Center" target='_blank' href="http://cyber.law.harvard.edu/">Berkman Center for Internet and Society</a> at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College where he focuses on the design and research of digital games and social software that foster local civic engagement. He is the co-author of a new book about location-based media called <a title="Net Locality" href="http://www.amazon.com/Net-Locality-Location-Matters-Networked/dp/1405180609" target="_blank">Net Locality:</a> Why Location Matters in a Networked World (Blackwell Publishing, 2011) and the author of <a title="urban spectator" href="http://www.amazon.com/gp/product/1584658037/ref=pd_lpo_k2_dp_sr_1?pf_rd_p=486539851&amp;pf_rd_s=lpo-top-stripe-1&amp;pf_rd_t=201&amp;pf_rd_i=1405180609&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_r=1YDTYQRRDDQW1CQKT8JR" target="_blank">The Urban Spectator</a>: American Concept Cities From Kodak to Google (Dartmouth, 2010).

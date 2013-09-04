@@ -321,6 +321,9 @@
 #publications {
 	margin-bottom: 80px;
 	h2 {
+		text-align: center;
+	}
+	.subH2 {
 		color: @white;
 		background: @green;
 		text-align: center;
@@ -494,7 +497,80 @@ a {
 	p, h2 {
 		padding: 5px 10px;
 	}
+	.funTitle {
+		font-weight: 800;
+		font-size: 2.5em;
+		color: @red;
+		margin-bottom: 0;
+	} 
+	.inlineImage {
+		float:left;
+		margin-right: 20px;
+		width: 20%;
+		min-width: 96px;
+	}
+	.inlineImageLeftBig {
+		float:left;
+		margin-right: 20px;
+		width: 40%;
+		min-width: 160px;
+		border: 4px solid @green;
+		.border-radius(10px);
+	}
+	.inlineImageRightBig {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		float:right;
+		margin-left: 20px;
+		width: 40%;
+		min-width: 160px;
+		border: 8px solid @white;
+		.border-radius(10px);
+	}
+	.inlineImageRightSmall {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		float:right;
+		margin-left: 20px;
+		width: 20%;
+		min-width: 96px;
+	}
+	.realProblem {
+		h2 {
+			margin-left: 21.5%;
+			padding-bottom: 0;
+		}
+		p {
+			margin: 0;
+			padding: 20px;
+			padding-top: 0;
+			text-align: justify;
+		}
+		margin-bottom: 40px;
+	}
+	.theGame {
+		h2 {
+			margin-top: -35px;
+		}
+		background: @white;
+		p {
+			// text-align: justify;
+			color: @greenDarkest;
+			padding-left: 20px;
+			padding-right: 20px;
+			span {
+				font-weight: 800;
+			}
+		}
+	}
+	.theMedia {
+		text-align: center;
+		iframe {
+			max-width: 640px;
+		}
+	}
 }
+
 .whatIsIt {
 	background: white;
 	.projectLogo {
@@ -535,13 +611,6 @@ a {
 	padding-bottom: 40px;
 	border-bottom: 1px dashed @greenDarker;
 }
-.theGame {
-	p {
-		span {
-			font-weight: 800;
-		}
-	}
-}
 .realActions {
 	p {
 		span {
@@ -566,7 +635,7 @@ a {
 	}
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
 	.tagline {
 		display: none;
 	}

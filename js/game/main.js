@@ -45,8 +45,8 @@
 				msgLength = data.message.length + 3;
 
 			if(data.bioKey) {
-				data.message += ' <a href"#" data-key="' + data.bioKey + '"> (view bio)</a>';
-				msgLength += 10;
+				data.message += ' <a href"#" data-key="' + data.bioKey + '"> [view bio]</a>';
+				msgLength += 20;
 			}
 			$MESSAGE_TEXT.html(data.message);
 			
@@ -113,12 +113,12 @@
 				$game.playing = true;
 				$game.started = true;
 				$('#help').show();
-				$('#blogTease').show();
-				setTimeout(function() {
-					$('#blogTease').fadeOut(function() {
-						$(this).remove();
-					});
-				}, 10000);
+				// $('#blogTease').show();
+				// setTimeout(function() {
+				// 	$('#blogTease').fadeOut(function() {
+				// 		$(this).remove();
+				// 	});
+				// }, 10000);
 				setTimeout(function() {
 					$('#help').hide().remove();
 				}, 3000);

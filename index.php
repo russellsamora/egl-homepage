@@ -20,7 +20,7 @@
 					<p class='messageText'></p>
 				</div>
 				<div id='help'>
-					<p>This is the lab. Click anywhere to walk.  Click on people to interact with them.</p>
+					<p>This is the lab. Click on people to interact with them.</p>
 				</div>
 				<div id='popupBox'>
 					<div class='bio'>
@@ -93,9 +93,10 @@
 				</div>
 				<div class='row-fluid'>
 					<div class='span12'>
-					<p>
-						Visit this site on a desktop or tablet to enter and explore the lab, play our game, and learn more about what we do.
-					</p>
+						<p>
+							Visit this site on a desktop or tablet to enter and explore the lab, play our game, and learn more about what we do.
+						</p>
+					</div>
 				</div>
 			</div>
 			<div id='nongameH'>

@@ -49,7 +49,12 @@
 				<div id='publications'>
 					<div class='row'>
 						<div class='span12'>
-							<h2> PUBLICATIONS </h2>
+							<h2>Publications</h2>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12'>
+							<h2 class='subH2'> BOOKS </h2>
 						</div>
 					</div>
 					<div class='row'>
@@ -58,6 +63,15 @@
 
 							<p>Gordon, E. (2010). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.amazon.com%2FUrban-Spectator-American-Concept-Cities-Interfaces%2Fdp%2F1584658037%2Fref%3Dpd_sim_b_4&sa=D&sntz=1&usg=AFQjCNG14db2gFYAZGwtavr3vT0eKBl-4g' target='_blank'>The Urban Spectator: American Concept-cities From Kodak to Google. Hanover, NH: Dartmouth University Press.</a></p>
 
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12'>
+							<h2 class='subH2'> ARTICLES </h2>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span12'>
 							<p>Gordon, E. and Baldwin-Philippi, J. (working paper). <a href='http://www.google.com/url?q=http%3A%2F%2Fengagementgamelab.org%2Fwp-content%2Fuploads%2F2012%2F10%2Freduced_2.3_civicLearningCPI_eg.pdf&sa=D&sntz=1&usg=AFQjCNH7OihLhZswCuVun3RbVNHHZWi1EQ' target='_blank'>"Playful Civic Learning: Creating Opportunities for Local Engagement Through Digital Games"</a></p>
 
 							<p>Gordon, E and Jessica Baldwin-Philippi. (forthcoming) <a href='' target='_blank'>"Making a Habit Out of Engagement: How the Culture of Open Data Is Reframing Civic Life" in Code for America Open Data Anthology. O'Reilly Media.</a></p>

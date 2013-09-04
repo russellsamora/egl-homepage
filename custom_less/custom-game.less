@@ -159,6 +159,11 @@
 			font-family: @monoFontFamily;
 			font-size: 1em;
 			text-align: center;
+			a {
+				cursor: pointer;
+				letter-spacing: 0;
+				color: @redLightest;
+			}
 		}
 	}
 	#popupBox {
@@ -372,6 +377,15 @@
 	}
 }
 
+@media (min-width: 768px) {
+	html {
+		overflow: hidden;
+	}
+	#nongame {
+		display: none;
+	}
+}
+
 @media (max-height: 540px) and (min-width: 768px) {
 	#game, #pregame, #blogTease, #nongame {
 		display: none;
@@ -381,14 +395,5 @@
 	}
 	body {
 		background: @green;
-	}
-}
-
-@media (min-width: 768px) {
-	html {
-		overflow: hidden;
-	}
-	#nongame {
-		display: none;
 	}
 }

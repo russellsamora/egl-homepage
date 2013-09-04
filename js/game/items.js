@@ -628,7 +628,7 @@
 					}, timeout, this);
 				},
 				fullName: 'Eric Gordon',
-				jobTitle: 'Director',
+				jobTitle: 'Executive Director',
 				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.'
 			},
 			'jedd': {

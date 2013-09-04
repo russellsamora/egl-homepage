@@ -12,7 +12,7 @@
 					</p>
 				</div>
 				<p class='projectTagline'>
-					Habit@
+					Understanding local technology ecosystems in urban neighborhoods
 				</p>
 			</div>
 			<div class='container projectPage'>
@@ -47,7 +47,7 @@
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Game</h2>
+							<h2>The Project</h2>
 							<p>
 								All Habit@ technologies will be implemented in the Dudley Street neighborhood of Boston, with the help from a local organization, the Dudley Street Neighborhood Initiative (DSNI).
 							</p>
@@ -68,7 +68,7 @@
 				<div class='realActions extraPadding'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>The Real-World Action/Results</h2>
+							<h2>The Research</h2>
 							<p>
 								The DSNI Technology Habit@ project is designed to both give local citizens many ways to make their voice heard, access important information, and take action with others in their community. The research associated with the project is designed to investigate the effects of the Habit@ on civic life, how innovation occurs in local community organizations, and best practices for replicating Habit@ in other neighborhoods.
 								<br>

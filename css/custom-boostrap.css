@@ -8982,6 +8982,9 @@ a.badge:focus {
   margin-bottom: 80px;
 }
 #publications h2 {
+  text-align: center;
+}
+#publications .subH2 {
   color: #ffffff;
   background: #78cbd1;
   text-align: center;
@@ -9149,6 +9152,87 @@ a:hover {
 .projectPage h2 {
   padding: 5px 10px;
 }
+.projectPage .funTitle {
+  font-weight: 800;
+  font-size: 2.5em;
+  color: #ff5622;
+  margin-bottom: 0;
+}
+.projectPage .inlineImage {
+  float: left;
+  margin-right: 20px;
+  width: 20%;
+  min-width: 96px;
+}
+.projectPage .inlineImageLeftBig {
+  float: left;
+  margin-right: 20px;
+  width: 40%;
+  min-width: 160px;
+  border: 4px solid #78cbd1;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+.projectPage .inlineImageRightBig {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: right;
+  margin-left: 20px;
+  width: 40%;
+  min-width: 160px;
+  border: 8px solid #ffffff;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+.projectPage .inlineImageRightSmall {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: right;
+  margin-left: 20px;
+  width: 20%;
+  min-width: 96px;
+}
+.projectPage .realProblem {
+  margin-bottom: 40px;
+}
+.projectPage .realProblem h2 {
+  margin-left: 21.5%;
+  padding-bottom: 0;
+}
+.projectPage .realProblem p {
+  margin: 0;
+  padding: 20px;
+  padding-top: 0;
+  text-align: justify;
+}
+.projectPage .theGame {
+  background: #ffffff;
+}
+.projectPage .theGame h2 {
+  margin-top: -35px;
+}
+.projectPage .theGame p {
+  color: #339096;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.projectPage .theGame p span {
+  font-weight: 800;
+}
+.projectPage .theMedia {
+  text-align: center;
+}
+.projectPage .theMedia iframe {
+  max-width: 640px;
+}
 .whatIsIt {
   background: white;
 }
@@ -9187,9 +9271,6 @@ a:hover {
   text-align: center;
   padding-top: 30px;
 }
-.theGame p span {
-  font-weight: 800;
-}
 .realActions p span {
   font-weight: 800;
 }
@@ -9205,7 +9286,7 @@ a:hover {
     border-bottom: 1px solid #999999;
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
   .tagline {
     display: none;
   }

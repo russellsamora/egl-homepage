@@ -142,6 +142,11 @@
   font-size: 1em;
   text-align: center;
 }
+#game #message .messageText a {
+  cursor: pointer;
+  letter-spacing: 0;
+  color: #ffb8a2;
+}
 #game #popupBox {
   display: none;
   position: fixed;
@@ -333,6 +338,14 @@
     display: block;
   }
 }
+@media (min-width: 768px) {
+  html {
+    overflow: hidden;
+  }
+  #nongame {
+    display: none;
+  }
+}
 @media (max-height: 540px) and (min-width: 768px) {
   #game,
   #pregame,
@@ -345,13 +358,5 @@
   }
   body {
     background: #78cbd1;
-  }
-}
-@media (min-width: 768px) {
-  html {
-    overflow: hidden;
-  }
-  #nongame {
-    display: none;
   }
 }
