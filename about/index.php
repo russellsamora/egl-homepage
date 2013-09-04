@@ -146,6 +146,33 @@
 								</p>
 							</div>
 						</div>
+						<div class='span4 person'>
+							<p><img data-toggle='collapse' data-target='#studentBio' src='../img/people/bio/student.jpg' data-real='student' class='headshot'></p>
+							<p class='trigger' data-toggle='collapse' data-target='#studentBio'>Students</p>
+							<p class='trigger' data-toggle='collapse' data-target='#studentBio'>Lab Assistants</p>
+							<div id='studentBio' class='collapse out'>
+								<p>
+									<span class='studentType'>Graduate Students</span>
+									<br>
+									<span class='studentName'>Wade Kimbrough</span>- research (games and climate change)
+									<br>
+									<span class='studentName'>Brandon Sichling</span>- research (games and identity)
+									<br>
+									<span class='studentName'>Hanah Engleson</span>- video production
+									<br>
+									<span class='studentName'>Xia Sheng</span>- animation
+									<br>
+									<span class='studentName'>Jordan Pailthorpe</span>- creative writing
+									<br>
+									<br>
+									<span class='studentType'>Undergraduate Students</span>
+									<br>
+									<span class='studentName'>Alexandra Bey</span>- Graphics
+									<br>
+									<span class='studentName'>Colin Egge</span>- Web Design
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div id='press' class='anchor'>

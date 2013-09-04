@@ -47,7 +47,7 @@
 							<!-- <li><a data-target='#' href='/blog'>BLOG</a></li> -->
 							<li><a data-target='#' href='/resources/#courses'>COURSES</a></li>
 							<li><a data-target='#' href='/resources/#guidebook'>GUIDE BOOK</a></li>
-							<li><a data-target='#' href='/projects/community-planit/curriculum'>CPI CURRICULUM</a></li>
+							<!-- <li><a data-target='#' href='/projects/community-planit/curriculum'>CPI CURRICULUM</a></li> -->
 						</ul>
 					</li>
 				</ul>

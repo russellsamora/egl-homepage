@@ -8823,6 +8823,14 @@ a.badge:focus {
 #people .trigger {
   cursor: pointer;
 }
+#people #studentBio p .studentType {
+  color: #222222;
+  font-weight: 500;
+}
+#people #studentBio p .studentName {
+  color: #40b4bc;
+  font-weight: 700;
+}
 #press h2 {
   font-size: 3em;
   text-align: center;
@@ -8961,9 +8969,6 @@ a.badge:focus {
   margin-top: -60px;
 }
 /* creates the smaller  triangle */
-#initiatives {
-  margin-top: 80px;
-}
 #initiatives h4 {
   color: #ffffff;
   background: #78cbd1;
@@ -9067,6 +9072,8 @@ a.badge:focus {
 }
 #courses h1 {
   text-align: center;
+  color: #ff5622;
+  font-weight: 800;
 }
 #courses .courseTitle {
   background: #eeeeee;
@@ -9315,6 +9322,9 @@ a:hover {
 }
 .extraPadding {
   margin-bottom: 80px;
+}
+.extraTopPadding {
+  padding-top: 80px;
 }
 ol,
 ul {

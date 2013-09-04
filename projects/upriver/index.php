@@ -8,7 +8,8 @@
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
 				<div class='projectLogo'>
-					<p><a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/upriver.png'></a>
+					<p>
+						<a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/upriver.png'></a>
 					</p>
 				</div>
 				<p class='projectTagline'>
@@ -58,7 +59,7 @@
 						<div class='span12'>
 							<h2 class='funTitle'>The Game</h2>
 							<p>
-								<img class='inlineImage' src='../../img/projects/other/africa.png'>
+								<img class='inlineImage' src='../../img/projects/other/upriver3.png'>
 								<span>The Goal:</span>
 								UpRiver challenges players to predict what the water level in their area will be at a future date. At the end of a play period, the player who has earned the most in-game currency wins real world rewards such as free text messages or cell phone minutes.
 							</p>

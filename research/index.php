@@ -13,7 +13,7 @@
 							<h2> Initiatives </h2>
 						</div>
 					</div> -->
-					<div class='row'>
+					<div class='row extraTopPadding'>
 						<div class='span6'>
 							<h4> Design Action Research for Government Project (DARG) </h4>
 							<img src='/img/research/boston2.jpg'>

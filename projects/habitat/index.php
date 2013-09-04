@@ -19,7 +19,7 @@
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								A <span>Habit@</span> is an ecosystem of civic technologies, deployed on a local scale. It is  designed to give local citizens many ways to both make their voice heard and access important information, and take action with others in their community.
+								A <span>Habit@</span> is an ecosystem of civic technologies and tools, deployed on a local, physical scale. It is designed to give local citizens many ways to both make their voice heard and access important information, and take action with others in their community.
 							</p>
 					</div>
 					<div class='span6 videoContainer'>
@@ -38,8 +38,10 @@
 								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
 
 								<!-- <img src='http://placehold.it/160x160.png' style='float:left; padding: 10px;'> -->
-								As considerable energy builds around civic innovation, there is little effort to frame new tools within a larger context of localized innovation, which disconnects tools from their local context, limits their reach, and reduces their capacity to introduce systemic change within a neighborhood. 
-
+								As buzz builds around the idea of civic innovation, there has been little effort to actually frame the new tools created out of this movement. This disconnects tools from their local context, limits their reach, and reduces their capacity to introduce systemic change within a neighborhood.
+							</p>
+							<p>
+								By creating a Habit@, those tools can exist as a living part of the community. But would this actually be beneficial? Could it even work? The Habit@ project seeks to unpack and answer these questions.
 							</p>
 						</div>
 					</div>

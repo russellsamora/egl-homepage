@@ -183,6 +183,18 @@
 	.trigger {
 		cursor: pointer;
 	}
+	#studentBio {
+		p {
+			.studentType {
+				color: @grayDarker;
+				font-weight: 500;
+			}
+			.studentName {
+				color: @greenDarker;
+				font-weight: 700;
+			}
+		}
+	}
 }
 #press {
 	h2 {
@@ -302,7 +314,6 @@
 
 //-------------- RESEARCH PAGE ------------
 #initiatives {
-	margin-top: 80px;
 	h4 {
 		color: @white;
 		background: @green;
@@ -407,6 +418,8 @@
 #courses {
 	h1 {
 		text-align: center;
+		color: @red;
+		font-weight: 800;
 	}
 	.courseTitle {
 		background: @grayLighter;
@@ -671,6 +684,9 @@ a {
 
 .extraPadding {
 	margin-bottom: 80px;
+}
+.extraTopPadding {
+	padding-top: 80px;
 }
 ol,ul {
 	padding-left: 40px;

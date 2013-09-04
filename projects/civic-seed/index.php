@@ -37,7 +37,7 @@
 							<p>	
 								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
 
-								<img class='inlineImage' src='../../img/projects/other/civic_seed_tree2.png'> 
+								<img class='inlineImage' src='../../img/projects/other/civic_seed3.png'> 
 								Many incoming university students are eager to make an impact on their school's partner communities and give something back to the people who live there. However, to most, the people and challenges of these communities are unknown, and under-trained volunteers can even do more harm than good. 
 							</p>
 							<p>
@@ -54,7 +54,7 @@
 								The color has vanished! Can you help bring it back?
 									
 								<!-- <img class='inlineImageRightSmall' src='../../img/projects/other/civic_seed_statue.png'> -->
-								<img class='inlineImageRightBig' src='../../img/projects/other/civic_seed_shot.jpg'>
+								<img class='inlineImageRightBig' src='../../img/projects/other/civic_seed1.jpg'>
 								In Civic Seed, students get to explore a fantastical world, engage with the people who live there, and work together to solve a mystery and help bring the world back to life. 
 
 								Reflective learning is mixed with puzzle-solving, social gaming, and collaborative art.
@@ -70,7 +70,7 @@
 							<h2 class='funTitle'>The Real-World Action/Results</h2>
 							<p>
 								<span>Real Learning-</span> Players take part in a reflective, collaborative learning process that prepares them to engage effectively in partner communities and make a positive, informed inpact.
-								<img class='inlineImageRightSmall' src='../../img/projects/other/civic_seed_statue.png'>
+								<img class='inlineImageRightSmall' src='../../img/projects/other/civic_seed2.png'>
 							</p>
 							<p>
 								<span>The Civic Resume-</span> By playing the game, student-players not only learn about civic engagement, they become certified to civically engage with their partner communities. Game actions and responses are recorded and transformed into a civic resume -- a sharable profile, owned by the player, that lets partners understand a student's background, skills, goals, and motivations.

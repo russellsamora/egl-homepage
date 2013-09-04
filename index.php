@@ -106,7 +106,7 @@
 							<p>
 								<span>Welcome to the Engagement Game Lab</span>, an applied research lab for play and civic engagement.  Make your browser taller to enter and explore the lab, play our game, and learn more about what we do.
 							</p>
-							<p><img src='img/nongame.jpg'></p>
+							<p style='text-align:center;'><img src='img/nongame.jpg'></p>
 						</div>
 					</div>
 					<!-- <div class='row'>

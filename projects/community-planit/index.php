@@ -37,7 +37,7 @@
 							<p>	
 								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
 
-								<img class='inlineImage' src='../../img/projects/other/yaycrat.png'>
+								<img class='inlineImage' src='../../img/projects/other/cpi1.png'>
 								Civic leaders and town planners often seek community input when trying to imagine solutions to complex issues that take into consideration the actual needs of the community. With our busy schedules and other pressing obligations, it is often difficult, if not outright impossible, for people to attend in-person town hall meetings where input is given, costs and benefits are debated, and decisions get made. 
 								Even if one can attend such official gatherings, not everyone feels comfortable standing up before others and voicing their opinion. <img class='inlineImageRightBig' src='../../img/projects/other/cpi2.jpg'>Meetings can be dominated by the loudest voices in the room, not always the most prudent or knowledgeable.
 								To lower the barriers for participation we must remove obstacles:
@@ -53,7 +53,7 @@
 						<div class='span12'>
 							<h2 class='funTitle'>The Game</h2>
 							<p>
-								<img class='inlineImageRightSmall' src='../../img/projects/other/trophy.png'>
+								<img class='inlineImageRightSmall' src='../../img/projects/other/cpi4.png'>
 								<span>The Goal-</span> Complete challenge questions and themed missions to earn 'coins' that you can pledge to help win money for local causes while contributing a real-world planning process.
 							</p>
 							<p>
@@ -156,13 +156,14 @@ Cape Cod - "Cape-2-0" (July - Aug 2013)
 						</div>
 					</div>
 				</div>
-				<div class='curriculum'>
+				<div class='curriculum extraPadding'>
 					<div class='row'>
 						<div class='span12'>
-							<h2>Curriculum</h2>
+							<h2 class='funTitle'>Curriculum</h2>
 							<p>
-								[link to .pdf download of CPI curriculum]
+								The curriculum is a structured series of activities, ideas, and questions that interested communities can use to develop and implement their own instance of Community PlanIt. The curriculum takes its users through the work of choosing a game topic, researching the issues, developing game content and media, doing outreach and fundraising, and facilitating game play and community deliberation. Curriculum development is funded by the Pearson Foundation's New Learning Institute, which is collaborating with the Engagement Game Lab on this project.
 							</p>
+							<p> Curriculum site will be available soon...</p>
 						</div>
 					</div>
 				</div>

@@ -48,7 +48,7 @@
 						<div class='span12'>
 							<h2 class='funTitle'>The Game</h2>
 							<p>
-								<img class='inlineImageRightSmall' src='../../img/projects/other/bicycle.png'>
+								<img class='inlineImageRightSmall' src='../../img/projects/other/hub1.png'>
 								Hub2 was supported by the City of Boston, the Boston Redevelopment Authority (BRA) and the Allston Development Group (ADG) of Harvard University, and took place from June to August of 2008. The project consisted of formal in-person workshops, where groups of participants immersed themselves in a virtual space, moved things around, proposed ideas, role played, and experienced various spatial configurations. It also included informal drop-in hours, where community members individually experienced the design and contributed their ideas in the online conversation about the park. The project was designed as a supplement to traditional community meetings that were facilitated at the same time by ADG.
 							</p>
 							<p>

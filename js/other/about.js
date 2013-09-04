@@ -4,7 +4,7 @@
 	//init toolttips
 	$('[rel=tooltip]').tooltip();
 
-	var names = ['eric', 'russell', 'stephen', 'jesse', 'sam', 'aidan', 'jedd', 'christina'];
+	var names = ['eric', 'russell', 'stephen', 'jesse', 'sam', 'aidan', 'jedd', 'christina', 'student'];
 	
 	//_preloadImages(0);
 	_loaded = true;

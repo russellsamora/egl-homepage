@@ -192,13 +192,13 @@
 			_gotGame = true;
 			//load the rest of the scripts
 			$LAB
-			.script('input.js')
-			.script('audio.js')
-			.script('items.js')
-			.script('whiteboard.js')
-			.script('tv.js')
-			.script('wiki.js')
-			.script('player.js').wait(function() {
+			.script('js/game/input.js')
+			.script('js/game/audio.js')
+			.script('js/game/items.js')
+			.script('js/game/whiteboard.js')
+			.script('js/game/tv.js')
+			.script('js/game/wiki.js')
+			.script('js/game/player.js').wait(function() {
 				$game.beginGame();
 			});
 		}

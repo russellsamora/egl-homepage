@@ -38,7 +38,7 @@
 							<p>	
 								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
 
-								<img class='inlineImage' src='../../img/projects/other/chinatown.png'>
+								<img class='inlineImage' src='../../img/projects/other/chinatown2.png'>
 								Since 1990, Chinatown, a 46-acre neighborhood in Boston, 
 								has been engaged in several master-planning processes to 
 								determine the future growth pattern of the neighborhood. 

@@ -90,7 +90,8 @@
 					<div class='row'>
 						<div class='span12'>
 							<p class='guideLinkP'>
-								<a href='/pdfs/EngagementGameGuide.pdf' target='_blank'>Click here to download a PDF version</a>
+								Download Coming Soon...
+								<!-- <a href='/pdfs/EngagementGameGuide.pdf' target='_blank'>Click here to download a PDF version</a> -->
 							</p>
 						</div>
 					</div>
