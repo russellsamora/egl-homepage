@@ -8,14 +8,14 @@
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
 				<div class='projectLogo'>
-					<p><a href='http://hub2.org' target='_blank'><img src='../../img/projects/logos/cs.jpg'></a>
+					<p><a href='http://hub2.org' target='_blank'><img src='../../img/projects/logos/hub2.jpg'></a>
 					</p>
 				</div>
 				<p class='projectTagline'>
 					At the Hub
 				</p>
 			</div>
-			<div class='container'>
+			<div class='container projectPage'>
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
@@ -23,7 +23,7 @@
 							</p>
 					</div>
 					<div class='span6 videoContainer'>
-						<!-- <iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe> -->
+						<img src='../../img/projects/other/hub2.jpg'>
 					</div>
 				</div>
 				<div class='realProblem'>
@@ -49,9 +49,11 @@
 							<h2>The Game</h2>
 							<p>
 								Hub2 was supported by the City of Boston, the Boston Redevelopment Authority (BRA) and the Allston Development Group (ADG) of Harvard University, and took place from June to August of 2008. The project consisted of formal in-person workshops, where groups of participants immersed themselves in a virtual space, moved things around, proposed ideas, role played, and experienced various spatial configurations. It also included informal drop-in hours, where community members individually experienced the design and contributed their ideas in the online conversation about the park. The project was designed as a supplement to traditional community meetings that were facilitated at the same time by ADG.
-
+							</p>
+							<p>
 								The core of the Hub2 project was the in-person workshop. In each 90-minute session, up to 15 participants gathered in the local community center and sat around tables configured in a V pattern. Participants sat in front of laptops with the Second Life application running. While Second Life is an expansive three-dimensional environment wherein tens of thousands of users occupy spaces, play games and build, Hub2 participants saw only a small piece of this environment - a place called Boston Island. The island included a 3D model of the park space, complete with the surrounding buildings and structures. Each participant was given an avatar - a digital character that they could move around the space. As participants inhabited the space, they would see the back of their avatar's head as well as the avatars of all other participants. In this virtual group setting, they were invited in to explore the park space.
-
+							</p>
+							<p>
 								Participants were given a particular 'skin' for their avatar - an old man in a wheelchair, a small child, a woman and a dog - and they were asked to act out certain scenarios, such as walking to the library from the picnic area or parking their car and entering the garden. Once completed, participants would have the opportunity to verbalize reactions and suggest physical changes. The last 20 minutes of each 90-minute workshop was devoted to individual commentary. Participants could walk through the space to leave comments and plant virtual flags in the ground by an object or area of interest. They could then vote on the flagged spaces. Flags would turn shades of red or green depending on the number of likes or dislikes. Players could also comment within flags, adding specific notes to given areas. Comments could be read by all and were saved as part of the 'virtual sketch' of the overall session. Each virtual sketch was saved and made available to the larger community, including architects, planners, and developers.
 							</p>
 						</div>

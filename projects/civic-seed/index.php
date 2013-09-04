@@ -15,7 +15,7 @@
 					Let Knowledge Take Root
 				</p>
 			</div>
-			<div class='container'>
+			<div class='container projectPage'>
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
@@ -23,7 +23,7 @@
 							</p>
 					</div>
 					<div class='span6 videoContainer'>
-						<iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe>
+						<iframe src="//player.vimeo.com/video/64315985?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class='realProblem'>
@@ -72,7 +72,7 @@
 						<div class='span12'>
 							<h2>The Real-World Action/Results</h2>
 							<p>
-								<span>The CiviC Resume</span> - By playing the game, student-players not only learn about civic engagement, they become certified to civically engage with their partner communities. Game actions and responses are recorded and transformed into a civic resume -- a sharable profile, owned by the player, that lets partners understand a student's background, skills, goals, and motivations.
+								<span>The Civic Resume</span> - By playing the game, student-players not only learn about civic engagement, they become certified to civically engage with their partner communities. Game actions and responses are recorded and transformed into a civic resume -- a sharable profile, owned by the player, that lets partners understand a student's background, skills, goals, and motivations.
 							</p>
 						</div>
 					</div>

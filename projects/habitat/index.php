@@ -8,22 +8,22 @@
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
 				<div class='projectLogo'>
-					<p><a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/cs.jpg'></a>
+					<p><img src='../../img/projects/logos/habitat.jpg'>
 					</p>
 				</div>
 				<p class='projectTagline'>
 					Habit@
 				</p>
 			</div>
-			<div class='container'>
+			<div class='container projectPage'>
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								A <span>Habit@</span> is an ecosystem of civic technologies, deployed on a local scale. 
+								A <span>Habit@</span> is an ecosystem of civic technologies, deployed on a local scale.  It is designed to both give local citizens many ways to make their voice heard, access important information, and take action with others in their community. 
 							</p>
 					</div>
 					<div class='span6 videoContainer'>
-						<iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe>
+						<img src='../../img/projects/other/habitat3.jpg'>
 					</div>
 				</div>
 				<div class='realProblem'>
@@ -49,10 +49,19 @@
 						<div class='span12'>
 							<h2>The Game</h2>
 							<p>
-								All Habit@ technologies will be implemented in the Dudley Street neighborhood of Boston, with the help from a local organization, the Dudley Street Neighborhood Initiative (DSNI). 
-								<br>
-								The DSNI Technology Habit@ consists of six tools, which will be implemented from November 2013 - April 2014.  1) a set of touchscreens with internet access and helpful applications 2) a projection screen that will display results from a public outreach effort led by a local community group; 3) a visioning cart (plexiglass cart on which citizens can draw what they'd prefer to take the place of empty space/existing structures); 4) Planning on the Street using Textizen (a Code for America app) campaign; 5) a Community PlanIt (*LINK) mission; 6) a StreetCred (*LINK) campaign.
+								All Habit@ technologies will be implemented in the Dudley Street neighborhood of Boston, with the help from a local organization, the Dudley Street Neighborhood Initiative (DSNI).
 							</p>
+							<p>
+								The DSNI Technology Habit@ consists of six tools, which will be implemented from November 2013 - April 2014.
+							</p>
+								<ol>
+									<li>a set of touchscreens with internet access and helpful applications</li>
+									<li>a projection screen that will display results from a public outreach effort led by a local community group</li>
+									<li>a visioning cart (plexiglass cart on which citizens can draw what they'd prefer to take the place of empty space/existing structures)</li>
+									<li>Planning on the Street using Textizen (a Code for America app) campaign</li>
+									<li>a <a href='http://communityplanit.org' target='_blank'>Community PlanIt</a> mission</li> 
+									<li>a <a href='http://streetcredu.us' target='_blank'>StreetCred</a> campaign</li>
+								</ol>							
 						</div>
 					</div>
 				</div>
@@ -62,13 +71,16 @@
 							<h2>The Real-World Action/Results</h2>
 							<p>
 								The DSNI Technology Habit@ project is designed to both give local citizens many ways to make their voice heard, access important information, and take action with others in their community. The research associated with the project is designed to investigate the effects of the Habit@ on civic life, how innovation occurs in local community organizations, and best practices for replicating Habit@ in other neighborhoods.
+								<br>
+								<br>
 								Within this context, we ask the following research questions:
-								1) Can a cohort of innovations affect people's relationships to civic life (relationship to community organizations, feelings of efficacy, social/communal connection) differently than single interventions?
-								2)  Can a cohort of interventions affect more people than simply those who interact with them?
-								3) What meanings do people ascribe to civic media in their community (i.e. are tools seen as efficient for everyday life, connections to government institutions, methods of person empowerment, etc)? 
-								4)          What are best practices for implementing each tool, and what is needed from DSNI?
-
 							</p>
+							<ol>
+								<li>Can a cohort of innovations affect people's relationships to civic life (relationship to community organizations, feelings of efficacy, social/communal connection) differently than single interventions?</li>
+								<li>Can a cohort of interventions affect more people than simply those who interact with them?</li>
+								<li>What meanings do people ascribe to civic media in their community (i.e. are tools seen as efficient for everyday life, connections to government institutions, methods of person empowerment, etc)?</li>
+								<li>What are best practices for implementing each tool, and what is needed from DSNI?</li>
+							</ol>
 						</div>
 					</div>
 				</div>

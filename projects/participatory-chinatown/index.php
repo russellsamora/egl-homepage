@@ -15,7 +15,7 @@
 					Participatory Chinatown
 				</p>
 			</div>
-			<div class='container'>
+			<div class='container projectPage'>
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
@@ -56,7 +56,8 @@
 								again so that the community may assess past changes and 
 								plan for the future. The recently completed 2010 master 
 								plan took the form of five public meetings between July 2009 and June 2010.
-								<br><br>
+							</p>
+							<p>
  								The resulting plan was meant to guide conversation for the coming decade. In addition to 
 								the traditional mechanism of engaging the community in town-hall style meetings, Participatory Chinatown was introduced into the process in order to create better learning and increase diversity of participants.
 							</p>
@@ -75,7 +76,9 @@
 								Lane. We chose Sandstone because its built-in 
 								features were conducive for educational games and because 
 								we were able to use it to build a game capable of running in 
-								a web browser. 
+								a web browser.
+							</p>
+							<p>
 								The game launched on the evening of 3 May 2010 in a 
 								large community room in Boston's Chinatown, where 48 
 								people from the community gathered to play. The space 
@@ -123,7 +126,10 @@
 								two ways: 1) through the explication of biographical detail 
 								in narrative form, and 2) through the experience of moving 
 								an avatar with a specific biography through a familiar 
-								environment. Participatory Chinatown
+								environment.
+							</p>
+							<p>
+								Participatory Chinatown
 								demonstrated that an immersive, role-playing experience 
 								can give participants in a community meeting a strong 
 								feeling of connection to the neighborhood and a deep 

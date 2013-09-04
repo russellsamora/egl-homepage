@@ -15,7 +15,7 @@
 					Let Knowledge Take Root
 				</p>
 			</div>
-			<div class='container'>
+			<div class='container projectPage'>
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>

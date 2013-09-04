@@ -8,22 +8,22 @@
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
 				<div class='projectLogo'>
-					<p><a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/cs.jpg'></a>
+					<p><a href='http://streetcred.us' target='_blank'><img src='../../img/projects/logos/streetcred.png'></a>
 					</p>
 				</div>
 				<p class='projectTagline'>
 					Take action, earn street cred, improve your city
 				</p>
 			</div>
-			<div class='container'>
+			<div class='container projectPage'>
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								<span>StreetCred</span> is a game-based civic badging API that is meant to expand the types of civic actions people take using existing tools like Citizens Connect or Foursquare
+								<span>StreetCred</span>  connects your civic actions to ongoing campaigns so the community can achieve big goals together.  It is a game-based civic badging API that is meant to expand the types of civic actions people take using existing tools like Citizens Connect or Foursquare
 							</p>
 					</div>
 					<div class='span6 videoContainer'>
-						<iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe>
+						<img src='../../img/projects/other/iphone.png'>
 					</div>
 				</div>
 				<div class='realProblem'>

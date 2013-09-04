@@ -9031,7 +9031,7 @@ a.badge:focus {
   -moz-background-clip: padding;
   border-radius: 96px;
   background-clip: padding-box;
-  box-shadow: 0px 0px 0px 2px #d7f0f1;
+  box-shadow: 0px 0px 0px 4px #d7f0f1;
 }
 #projectBlurb {
   width: 100%;
@@ -9145,6 +9145,10 @@ a:hover {
 .anchor {
   padding-top: 80px;
 }
+.projectPage p,
+.projectPage h2 {
+  padding: 5px 10px;
+}
 .whatIsIt {
   background: white;
 }
@@ -9180,6 +9184,7 @@ a:hover {
   font-size: 1.3em;
 }
 .briefOverview .videoContainer {
+  text-align: center;
   padding-top: 30px;
 }
 .theGame p span {
@@ -9225,6 +9230,10 @@ a:hover {
 }
 .extraPadding {
   margin-bottom: 80px;
+}
+ol,
+ul {
+  padding-left: 30px;
 }
 .pull-right {
   float: right;

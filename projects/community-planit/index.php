@@ -15,7 +15,7 @@
 					Your Voice, Your Stake, Your Move!		
 				</p>
 			</div>
-			<div class='container'>
+			<div class='container projectPage'>
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
