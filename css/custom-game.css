@@ -240,13 +240,14 @@
   cursor: pointer;
 }
 #nongame .row-fluid .span4 p {
-  padding-top: 20px;
   text-align: center;
   font-weight: 800;
   letter-spacing: .1em;
 }
 #nongame .row-fluid .span4 p a {
   color: #ffffff;
+  display: block;
+  padding: 20px;
 }
 #nongame .row-fluid .projectsLink {
   background: #78cbd1;

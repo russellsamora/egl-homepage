@@ -9048,7 +9048,6 @@ a.badge:focus {
   padding-top: 40px;
 }
 #projectBlurb .projectBlurbBody {
-  min-width: 320px;
   max-width: 960px;
   width: 85%;
   margin: 35px auto;
@@ -9318,6 +9317,10 @@ a:hover {
   }
   .theMedia {
     display: none;
+  }
+  #whatwedo .whatwedoBody .bigIdea,
+  #projectBlurb .projectBlurbBody .bigIdea {
+    font-size: 1.5em;
   }
 }
 .extraPadding {
