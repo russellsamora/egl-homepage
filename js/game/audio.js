@@ -87,7 +87,7 @@
 
 	function _nextSong(ended) {
 		//we are skipping
-		console.log(ended, audio.isPlaying);
+		// console.log(ended, audio.isPlaying);
 		if(audio.isPlaying) {
 			if(!ended) {
 				_playlist.tracks[_currentTrack].song.pause();	

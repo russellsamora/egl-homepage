@@ -92,9 +92,7 @@
 				var url = _canvas.toDataURL('img/png');
 				$.post('../../db/saveDrawing.php', {image: url},
 					function(res) {
-						if(res === 'good') {
-							console.log('saved');
-						}
+						console.log(res);
 					}, 'text');
 				}
 		}
