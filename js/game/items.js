@@ -352,8 +352,8 @@
 				_setupPeople(index);
 			} else {
 				//TODO: uncomment this
-				//_preloadBioCards(0);
-				_loadPeopleInfo(true);
+				// _preloadBioCards(0);
+				_loadPeopleInfo();
 			}
 		}
 		img.src = '../../img/people/' + key + '.png';
@@ -366,11 +366,12 @@
 			if(index < items.peopleKeys.length) {
 				_setupPeople(index);
 			} else {
-
-				_loadPeopleInfo(true); //set to null for google doc
+				console.log('s');
+				_loadPeopleInfo(); //set to null for google doc
 			}
 		}
 		var person = items.peopleKeys[index];
+
 		img.src = '../../img/people/bio/real_' + person + '.jpg';
 	}
 

@@ -88,61 +88,7 @@
 					<div class='row'>
 						<div class='span12'>
 							<h2 class='funTitle'>Implementations</h2>
-							<p>
-<br>
-<br>
-Salem BPS - "What's the Point?" (Sept - Oct 2011)
-Issue: Quality Schools
-Registered Players: 460
-Responses generated: 2612
-Coins earned: 86340
-191 active players
-90 players under age 18
-81 players had no prior experience communicating with government
-81 players had never previously taken part in a planning process
-135 players from inside the Salem community
- 
- 
-<br>
-<br>
-Detroit - "Detroit 24/7" (May 2012)
-Issue: Detroit Master Plan
-Registered Players: 1090
-Active players: 600+
-Responses generated: 8500+
-Active players: 600+
-Coins earned:
-74% of players under age 18
-458 players were residents inside the City of Detroit
-After the game, 120 people came to a public town hall meeting to share their ideas and plan for next steps
- 
-<br>
-<br>
-Philadelphia - "Philadelphia 2035" (Jan - Feb 2013)
-Issue: Philadelphia Master Plan in University-Southwest Neighborhood
-318 active players
-4893 responses
-179110 coins earned
-127 players age 18 - 30
-91 players age 31 - 40
-75 had no prior experience communicating with government
-133 had never previously taken part in a planning process
- 
- 
-<br>
-<br>
-Cape Cod - "Cape-2-0" (July - Aug 2013)
-399 registered players
-140 active players
-2345 responses
-98870 coins earned
-62 players over age 50
-32 players age 41 - 50
-106 had communicated with government previously
-133 had never previously taken part in a planning process
-
-
-							</p>
+							<p style='text-align:center;'><img src='../../img/projects/other/table.jpg'></p>
 						</div>
 					</div>
 				</div>
