@@ -110,7 +110,6 @@
 				requestAnimationFrame($game.startTick);
 			} else {
 				$('#pregame').fadeOut();
-				$game.playing = true;
 				$game.started = true;
 				$('#help').show();
 				// $('#blogTease').show();
@@ -122,7 +121,6 @@
 				setTimeout(function() {
 					$('#help').hide().remove();
 				}, 3000);
-				_tick();
 			}
 			// $.get('/db/drawingCount.php',
 			// 	function(data) {
@@ -165,6 +163,8 @@
 				$('.character').addClass('devHitBoundP');
 				// $('.item, .character, .person').addClass('devBottomBound');
 			}
+			$game.playing = true;
+			_tick();
 		} else {
 			requestAnimationFrame(_beginGame);
 		}

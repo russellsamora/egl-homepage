@@ -58,9 +58,10 @@
   background: #ffffff;
   font-size: 1.4em;
   letter-spacing: .1em;
+  line-height: 1;
   font-weight: 900;
   color: #ff5622;
-  padding: 36px 26px;
+  padding: 36px 26px 56px 26px;
   border-radius: 100px;
   border: 8px solid #b1e1e4;
 }

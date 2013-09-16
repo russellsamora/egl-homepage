@@ -64,7 +64,7 @@
 				$('#popupBox').hide();
 				$game.items.showingBio = false;
 			}
-			if(!$game.player.inTransit && $game.playing && !_preventMovement) {
+			if(!$game.player.inTransit && $game.playing && $game.started && !_preventMovement) {
 				e.preventDefault();
 				//hide message boxes
 				$game.hideMessage();
