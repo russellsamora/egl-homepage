@@ -60,7 +60,7 @@
 								<span>Play-</span> A Community PlanIt game takes place over a number of missions, each time-limited to one week. To complete a mission, players must answer all challenges within the mission by answering questions about their experiences and vision of their community. A challenge could be something as simple as dropping a pin on a map in their favorite place, or as complex as reading a series of informative resources, and then making a decision about a specific planned policy - or anything in between.<br><br><img class='inlineImageLeftBig' src='../../img/projects/other/cpi3.jpg'>After every three challenges, players must stop and answer a trivia question about their community, asked by the pesky but well-meaning Crats.
  							</p>
  							<p>
-								<span>Rewards-</span> Each challenge and trivia question players complete earn them virtual coins, which they can pledge to real-world causes. Players can also earn awards, which include a coin bonus, by participating in discussion and deliberation throughout the game. At the end of the game, the three top causes will receive real-world funding to make their project a reality.
+								<span>Support For Local Causes-</span> Each challenge and trivia question players complete earn them virtual coins, which they can pledge to real-world causes. Players can also earn awards, which include a coin bonus, by participating in discussion and deliberation throughout the game. At the end of the game, the three top causes will receive real-world funding to make their project a reality.
 							</p>
 						</div>
 					</div>

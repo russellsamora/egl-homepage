@@ -69,7 +69,7 @@
 						<div class='span12'>
 							<h2 class='funTitle'>The Real-World Action/Results</h2>
 							<p>
-								<span>Real Learning-</span> Players take part in a reflective, collaborative learning process that prepares them to engage effectively in partner communities and make a positive, informed inpact.
+								<span>Real Learning-</span> Players take part in a reflective, collaborative learning process that prepares them to engage effectively in partner communities and make a positive, informed impact.
 								<img class='inlineImageRightSmall' src='../../img/projects/other/civic_seed2.png'>
 							</p>
 							<p>

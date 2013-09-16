@@ -46,7 +46,7 @@
 							<p class='trigger' data-toggle='collapse' data-target='#stephenBio'>Managing Director</p>
 							<div id='stephenBio' class='collapse out'>
 								<p>
-									Stephen makes and studies media for civic engagement and social justice that aim to foster and amplify experiences of complexity, pluralism, and play. He's worked at Boston EMS, the Boston Public Health Commission, the Boston Center for the Arts, the Harvard Graduate School of Education, and the PBS television shows Frontline and Nova. At the EGL, he's helped lead the design and development of civic media projects in Detroit, Boston, Philadelphia, Los Angeles, South Africa, Sweden, and Zambia. He is a person.
+									Stephen makes and studies media that aim to foster and amplify experiences of complexity, difference, and play. He's worked at Boston EMS, the Boston Public Health Commission, the Boston Center for the Arts, the Harvard Graduate School of Education, and the PBS television shows Frontline and Nova. At the EGL, he's helped lead the design and development of civic media projects in Detroit, Boston, Philadelphia, Los Angeles, South Africa, Sweden, and Zambia. He is a person.
 								</p>
 								<p>
 									<a href='http://www.chrono-synclastic-infundibulum.com/' target='_blank'><i class='icon-star icon-large' rel='tooltip' data-title='website'></i></a>
@@ -56,7 +56,7 @@
 						<div class='span4 person'>
 							<p><img data-toggle='collapse' data-target='#russellBio' src='../img/people/bio/russell.jpg' data-real='russell' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#russellBio'>Russell Goldenberg</p>
-							<p class='trigger' data-toggle='collapse' data-target='#russellBio'>Hacker in Chief</p>
+							<p class='trigger' data-toggle='collapse' data-target='#russellBio'>Hacker-in-Chief</p>
 							<div id='russellBio' class='collapse out'>
 								<p>
 									Russell is an interactive developer.  When not coding, you can find him cooking up something 
@@ -90,7 +90,7 @@
 						<div class='span4 person'>
 							<p><img data-toggle='collapse' data-target='#samBio'  src='../img/people/bio/sam.jpg' data-real='sam' class='headshot' style='background: url(../img/people/bio/real_sam.jpg);'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#samBio'>Sam Liberty</p>
-							<p class='trigger' data-toggle='collapse' data-target='#samBio'>Game Writer</p>
+							<p class='trigger' data-toggle='collapse' data-target='#samBio'>Lead Game Writer</p>
 							<div id='samBio' class='collapse out'>
 								<p>
 									Sam is lead writer for EGL's projects, including Community PlanIt and Civic Seed, and one half of the 
@@ -108,7 +108,7 @@
 						<div class='span4 person'>
 							<p><img data-toggle='collapse' data-target='#aidanBio'  src='../img/people/bio/aidan.jpg' data-real='aidan' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#aidanBio'>Aidan O'Donohue</p>
-							<p class='trigger' data-toggle='collapse' data-target='#aidanBio'>Designer</p>
+							<p class='trigger' data-toggle='collapse' data-target='#aidanBio'>Art Director</p>
 							<div id='aidanBio' class='collapse out'>
 								<p>
 									Aidan graduated from the Rhode Island School of Design with a degree in painting, and has also studied design and architecture. In addition to her work at the lab, she works as an illustrator and teaches art to children with special needs. She splits her time between Boston and NYC and still loves to draw.
@@ -140,7 +140,7 @@
 							<p class='trigger' data-toggle='collapse' data-target='#christinaBio'>Project Manager</p>
 							<div id='christinaBio' class='collapse out'>
 								<p>
-									Christina's abiding interests in open access to a participatory democracy, ethics, and the role of technology in shaping human experiences drew her to the Engagement Game Lab. With degrees from the University of Chicago (A.B., English Language &amp; Literature) and University of Southern California (M.A., English: Film, Literature &amp; Culture), she brings a love of language, philosophy and the visual arts a to bear on her work at the lab, thinking through and spreading the word about the possibilities opened up by meaningful play in public deliberation, broaching reasonable solutions to complex problems.
+									Christina's abiding interests in open access to a participatory democracy, ethics, and the role of technology in shaping human experiences drew her to the Engagement Game Lab. With degrees from the University of Chicago (A.B., English Language &amp; Literature) and University of Southern California (M.A., English: Film, Literature &amp; Culture), she brings a love of language, philosophy and the visual arts a to bear on her work at the lab, thinking through and spreading the word about the possibilities opened up by meaningful play in public deliberation, broaching reasonable solutions to complex problems. Email at christina [at] engagmentgamelab.org
 								</p>
 								<p>
 								</p>
@@ -154,22 +154,22 @@
 								<p>
 									<span class='studentType'>Graduate Students</span>
 									<br>
-									<span class='studentName'>Wade Kimbrough</span>- research (games and climate change)
+									<span class='studentName'>Wade Kimbrough</span>- Research (games and climate change)
 									<br>
-									<span class='studentName'>Brandon Sichling</span>- research (games and identity)
+									<span class='studentName'>Brandon Sichling</span>- Research (games and identity)
 									<br>
-									<span class='studentName'>Hanah Engleson</span>- video production
+									<span class='studentName'>Hanhah Engleson</span>- Video production
 									<br>
-									<span class='studentName'>Xia Sheng</span>- animation
+									<span class='studentName'>Xia Sheng</span>- Animation
 									<br>
-									<span class='studentName'>Jordan Pailthorpe</span>- creative writing
+									<span class='studentName'>Jordan Pailthorpe</span>- Game writing
 									<br>
 									<br>
 									<span class='studentType'>Undergraduate Students</span>
 									<br>
-									<span class='studentName'>Alexandra Bey</span>- Graphics
+									<span class='studentName'>Alexandra Eby</span>- Graphics
 									<br>
-									<span class='studentName'>Colin Egge</span>- Web Design
+									<span class='studentName'>Colin Egge</span>- Web design
 								</p>
 							</div>
 						</div>

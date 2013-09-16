@@ -613,7 +613,7 @@
 				animation: [4,5,6,7,0,1,2,3,6,7,5,6,5,0,1,4,5,6,7,6,5,4,0,1,2,1,0,6,5,7,4,6,5,4],
 				fullName: 'Stephen Walter',
 				jobTitle: 'Managing Director',
-				about: 'Stephen makes and studies media for civic engagement and social justice that aim to foster and amplify experiences of complexity, pluralism, and play.'
+				about: 'Stephen makes and studies media that aim to foster and amplify experiences of complexity, difference, and play.'
 			},
 			'eric': {
 				x: 250,
@@ -708,7 +708,7 @@
 				frames: 3,
 				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
 				fullName: 'Russell Goldenberg',
-				jobTitle: 'Hacker in Chief',
+				jobTitle: 'Hacker-in-Chief',
 				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.'
 			},
 			'jesse': {

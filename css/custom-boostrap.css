@@ -9224,7 +9224,11 @@ a:hover {
   background: #ffffff;
 }
 .projectPage .theGame h2 {
-  margin-top: -35px;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 3em;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 .projectPage .theGame p {
   color: #339096;
@@ -9233,6 +9237,10 @@ a:hover {
 }
 .projectPage .theGame p span {
   font-weight: 800;
+}
+.projectPage .theGame p:first-child {
+  padding-top: 0;
+  margin-top: 0;
 }
 .projectPage .theMedia {
   text-align: center;

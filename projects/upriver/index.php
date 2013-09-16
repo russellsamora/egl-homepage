@@ -20,7 +20,7 @@
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								<span>UpRiver</span> is a game that enables communication and flood prediction for people living in high-risk areas along major rivers. Players use SMS-enabled cell phones to report, predict, and gather information about the current and future water level of the river, local to them.
+								<span>UpRiver</span> is a multi-phase game (physical and digital) that enables communication and flood prediction for people living in high-risk areas along major rivers. The physical game teaches the principles of flood prediction. The digital game lets players use SMS-enabled cell phones to report, predict, and gather information about the current and future water level of the river, local to them.
 							</p>
 					</div>
 					<div class='span6 videoContainer'>
@@ -49,8 +49,11 @@
 							<ul>
 								<li>No universal early warning system is currently in place</li>
 								<li>Those in and around affected areas do not or cannot effectively share information</li>
-								<li>Many who live in high-risk areas do not even realize that floods can be prevented</li>
+								<li>Many who live in high-risk areas do not even realize that floods can be predicted</li>
 							</ul>
+							<p>
+								UpRiver was designed in cooperation with the Red Cross /  Red Crescent Climate Centre and the Zambian Red  Cross, which works directly with people affected by floods to communicate these important ideas and save lives.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -65,7 +68,10 @@
 							</p>
 							<p>
 								<span>The Equipment:</span>
-								UpRiver is played via text message, so any SMS-enabled cell phone can be used.
+								In the physical phase, players simulate water levels along the river with cups filled with different amounts of water. Water is added or subtracted from the cups with sponges, and players are asked to predict the final level.
+								<br>
+								<br>
+								In the digital phase, UpRiver is played via text message, so any SMS-enabled cell phone can be used.
 							</p>
 							<p>
 								<span>How To Play:</span>
@@ -84,14 +90,13 @@
 						<div class='span12'>
 							<h2 class='funTitle'>The Real-World Action/Results</h2>
 							<p>
-								Each game action results in a specific real-world outcome.
+								In both phases of the game, players learn principles of flood prediction and computer modelling. In the digital phase, each game action also results in a specific real-world outcome.
 							</p>
 							<ul>
 								<li>Reporting the river level and other local conditions helps make the computer model more accurate</li>
-								<li>Making bets on future conditions teaches the principle of prediction to people unfamiliar with the concept</li>
-								<li>Players learn to trust computer prediction models</li>
-								<li>Gifting cell phone minutes to players makes it easy for people to communicate</li>
-								<li>Gives people at different points along the river reason to communicate, and turns information sharing into a habit</li>
+								<li>Making bets on future, non-abstract conditions teaches the principle of prediction to people unfamiliar with the concept</li>
+								<li>Gifting cell phone minutes to players makes it easier for people to communicate</li>
+								<li>Real world rewards give people at different points along the river reason to communicate, and makes a habit of sharing important information</li>
 							</ul>
 						</div>
 					</div>

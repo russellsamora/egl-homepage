@@ -20,7 +20,8 @@
 					<p class='messageText'></p>
 				</div>
 				<div id='help'>
-					<p>This is the lab. Click on people to interact with them.</p>
+					<!-- <p>This is the lab. Click on people to interact with them.</p> -->
+					<p>You are in the lab. Click to explore.</p>
 				</div>
 				<div id='popupBox'>
 					<div class='bio'>
@@ -48,14 +49,13 @@
 							An applied research lab for play and civic engagement.
 						</p>
 						<p class='playGame'>
-							<a class='playGameButton btn btn-large'>PLAY<span>!</span></a>
+							<a class='playGameButton btn btn-large'><span class='tinify'>click to</span><br>PLAY<span>!</span></a>
 						</p>
 						<p class='loading'>
 							loading...
 						</p>
 						<p class='howTo'>
 							Meet our staff, faculty, and students, explore our projects, and find out more about what we do. 
-							<br>Game Instructions: Click to explore.
 							<!-- Game Instructions: Click to explore. -->
 						</p>
 						<!-- <p class='tinyasterisk'>

@@ -1,15 +1,15 @@
 <?php 
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = 'root';
-$dbname = 'egl';
-$dbtable = 'whiteboard';
-
 // $dbhost = 'localhost';
-// $dbuser = 'gamelib';
-// $dbpass = 'Gnomes4eva!';
+// $dbuser = 'root';
+// $dbpass = 'root';
 // $dbname = 'egl';
 // $dbtable = 'whiteboard';
+
+$dbhost = 'gamelib.db.6483931.hostedresource.com';
+$dbuser = 'gamelib';
+$dbpass = 'Gnomes4eva!';
+$dbname = 'gamelib';
+$dbtable = 'whiteboard';
 
 $con = mysql_connect($dbhost,$dbuser,$dbpass);
 if (!$con)

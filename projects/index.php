@@ -11,7 +11,7 @@
 					<div class='projectBlurbBody'>
 						<!-- <h2> What We Do </h2> -->
 						<p class='bigIdea'>
-							Our games and play-based projects were designed in partnership with the Knight Foundation, Tufts University, The Red Cross / Red Crescent Climate Center, and <a href='/about/#partners' target='_blank'>others</a>.
+							Our engagement games and play-based projects are all designed not just to facilitate official processes, education, and real-world action, but to natively be real-world actions themselves. They are designed and built in cooperation with our <a href='/about/#partners' target='_blank'>partners</a>.
 						</p>
 					</div>
 				</div>
