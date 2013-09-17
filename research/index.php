@@ -72,7 +72,7 @@
 					</div>
 					<div class='row'>
 						<div class='span12'>
-							<p>Gordon, E. and Baldwin-Philippi, J. (working paper). <a href='http://www.google.com/url?q=http%3A%2F%2Fengagementgamelab.org%2Fwp-content%2Fuploads%2F2012%2F10%2Freduced_2.3_civicLearningCPI_eg.pdf&sa=D&sntz=1&usg=AFQjCNH7OihLhZswCuVun3RbVNHHZWi1EQ' target='_blank'>"Playful Civic Learning: Creating Opportunities for Local Engagement Through Digital Games"</a></p>
+							<p>Gordon and Baldwin-Philippi (2013). "Playful Civic Learning: Enabling Lateral Trust and Reflection in Game-based Public Participation," working paper.</a></p>
 
 							<p>Gordon, E and Jessica Baldwin-Philippi. (forthcoming) <a href='' target='_blank'>"Making a Habit Out of Engagement: How the Culture of Open Data Is Reframing Civic Life" in Code for America Open Data Anthology. O'Reilly Media.</a></p>
 
