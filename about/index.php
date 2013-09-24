@@ -202,7 +202,7 @@
 					<div class='row'>
 						<div class='span6 triangle'>
 							<p class='article'>
-								<a href='http://video.pbs.org/video/2365073145/' target='_blank'>Is School Enough</a><br> on <span>PBS</span>, September 3, 2013
+								<a href='http://video.pbs.org/video/2365073145/' target='_blank'>Is School Enough?</a><br> on <span>PBS</span>, September 3, 2013
 							</p>
 							<p class='quote'>
 								Community PlanIt is featured in this PBS special about how new technologies are breaking new ground in education.
