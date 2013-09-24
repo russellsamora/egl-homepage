@@ -202,10 +202,10 @@
 					<div class='row'>
 						<div class='span6 triangle'>
 							<p class='article'>
-								<a href='http://www.statetechmagazine.com/article/2013/07/mobilize-citizen-engagement-gamification' target='_blank'>Mobilize Citizen Engagement with Gamification</a><br> in <span>State Tech</span>, July 31, 2013
+								<a href='http://video.pbs.org/video/2365073145/' target='_blank'>Is School Enough</a><br> on <span>PBS</span>, September 3, 2013
 							</p>
 							<p class='quote'>
-								"Making something social means making something relevant. Sharing on social media might already be habitual for some, but in order for sharing a CRM report to be part of a reflective habit loop, the thing shared cannot just be the action; it has to be the reflection."
+								Community PlanIt is featured in this PBS special about how new technologies are breaking new ground in education.
 							</p>
 						</div>
 						<div class='span6 triangle2 stagger'>
