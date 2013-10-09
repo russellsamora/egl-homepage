@@ -85,7 +85,6 @@
 				$game.items.showingBio = false;
 			}
 			if(!$game.player.inTransit && $game.playing && $game.started && !_preventMovement) {
-				console.log('move');
 				e.preventDefault();
 				//hide message boxes
 				$game.hideMessage();

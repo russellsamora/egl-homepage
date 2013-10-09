@@ -256,6 +256,10 @@
 				var item = items.peopleData[_animatedPeopleKeys[a]];
 				_animateItem(item);
 			}
+		},
+
+		showChallenge: function(key) {
+			console.log(key);
 		}
 	};
 	items.init();
