@@ -24,79 +24,53 @@
 	#pregame {
 		width: 100%;
 		height: 100%;
-		background: #222;
-		background: fade(@greenDarkest, 85%);
+		// background: #222;
+		// background: fade(@greenDarkest, 85%);
 		position: fixed;
 		top: 80px;
 		z-index: @aboveAll0;
 		cursor: default;
-		.instructions {
-			h2 {
-				font-weight: 900;
-				font-size: 3.7em;
-				color: @greenLighter;
-				line-height: 1;
-				margin: 0;
+		.leftHalf {
+			width: 50%;
+			float: left;
+			background: white;
+			height: 100%;
+			color: @gray;
+			span {
+				color: @red;
 			}
-			
-			// width: 60%;
-			// max-width: 800px;
-			// min-width: 420px;
-			width: 720px;
-			margin: 40px auto;
-			color: #eee;
-			p {
-				margin: 20px 0;
-				font-weight: 300;
-			}
-			p.enter {
-				margin: 0 0 -16px 90px;
-				font-weight: 400;
-				font-size: 1.8em;
-			}
-			p.description {
-				// width: 500px;
-				// float: right;
-				text-align: right;
-				font-weight: 100;
-				font-size: 1.4em;
-				margin: 0;
-			}
-			p.playGame {
-				// clear: both;
-				margin: 40px;
-				text-align: center;
-				a {
-					background: @white;
-					font-size: 1.4em;
-					letter-spacing: .1em;
-					line-height: 1;
-					font-weight: 900;
-					color: @red;
-					padding: 36px 26px 56px 26px;
-					border-radius: 100px;
-					border: 8px solid @greenLighter;
-					span {
-						font-style: italic;
-					}
-					span.tinify {
-						font-size: .6em;
-					}
-					&:hover {
-						background: @redLightest;
-						color: @redDarker;
-					}
+		}
+		.rightHalf {
+			color: white;
+			// color: @red;
+			width: 50%;
+			background: fade(@red, 80%);
+			float: left;
+			height: 100%;
+		}
+		.introText {
+			max-width: 500px;
+			width: 80%;
+			margin: 0 auto;
+			margin-top: 80px;
+		}
+		.specialLink {
+			width: 100px;
+			margin: 0 auto;
+			font-weight: 800;
+		}
+		.playBig {
+			width: 200px;
+			margin: 0 auto;
+			font-size: 4em;
+			font-weight: 800;
+			letter-spacing: 0.2em;
+			margin-top: 60px;
+			a {
+				color: white;
+				&:hover {
+					color: @redLighter;
 				}
-			}
-			p.loading {
-				display: none;
-				margin: 40px;
-				text-align: center;
-			}
-			p.howTo {
-				font-size: 1em;
-				text-align: center;
-				color: @greenLighter;
 			}
 		}
 	}
@@ -136,10 +110,12 @@
 		margin-top: -150px;
 		width: 360px;
 		z-index: @zMessage;
-		background: fade(@greenDarkest, 85%);
+		// background: fade(@greenDarkest, 85%);
+		background: rgba(255,255,255,0.9);
 		border: 4px solid @greenLighter;
 		p {
 			color: @white;
+			color: @greenDarker;
 			margin: 10px;
 			font-size: 1.3em;
 			font-weight: 100;
@@ -153,11 +129,13 @@
 		top: 0;
 		left: 0;
 		z-index: @zMessage;
-		background: fade(@greenDarkest, 85%);
+		// background: fade(@greenDarkest, 85%);
+		background: rgba(255,255,255,0.9);
 		border: 4px solid @greenLighter;
 		width: auto;
 		.messageText {
 			color: @white;
+			color: @greenDarker;
 			padding: 10px 10px;
 			margin: 0;
 			cursor: default;
@@ -165,9 +143,12 @@
 			font-size: 1em;
 			text-align: center;
 			a {
+				background: @red;
+				border-radius: 5px;
+				padding: 5px;
 				cursor: pointer;
 				letter-spacing: 0;
-				color: @redLightest;
+				color: white;
 			}
 		}
 	}
@@ -181,10 +162,12 @@
 		margin-top: -150px;
 		width: 640px;
 		z-index: @zMessage;
-		background: fade(@greenDarkest, 85%);
+		// background: fade(@greenDarkest, 85%);
+		background: rgba(255,255,255,0.9);
 		border: 4px solid @greenLighter;
 		p {
 			color: @white;
+			color: @greenDarker;
 			margin: 10px;
 			font-size: 1.3em;
 			font-weight: 100;
@@ -192,6 +175,7 @@
 		.bio {
 			p {
 				color: @greenLightest;
+				color: @greenDarkest;
 				font-weight: 900;	
 				letter-spacing: .2em;
 			}
@@ -220,6 +204,12 @@
 			margin: 0 10px;
 			float: left;
 		}
+		.beginGame {
+			border-radius: 5px;
+			background: @red;
+			color: white;
+			padding: 8px;
+		}
 	}
 	#challengeBox {
 		display: none;
@@ -231,9 +221,11 @@
 		width: 720px;
 		z-index: @zMessage;
 		background: fade(@greenDarkest, 85%);
+		background: rgba(255,255,255,0.9);
 		border: 4px solid @greenLighter;
 		p {
 			color: @white;
+			color: @greenDarker;
 			margin: 10px;
 			font-size: 1.3em;
 			font-weight: 100;

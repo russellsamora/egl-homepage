@@ -19,7 +19,7 @@
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								<span>Community PlanIt</span> is a playful and dynamic way to give input to city officials for long-range strategic planning, while rallying around awards for local causes, connecting with others in your community, and gaining a sense of empowerment in the process of active of civic engagement.
+								<span><a target='_blank' href='http://communityplanit.org'>Community PlanIt</a></span> is a playful and dynamic way to give input to city officials for long-range strategic planning, while rallying around awards for local causes, connecting with others in your community, and gaining a sense of empowerment in the process of active of civic engagement.
 							</p>
 					</div>
 					<div class='span6 videoContainer'>

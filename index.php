@@ -37,37 +37,32 @@
 						<p><img src='img/soundcloud/white_text.png'></p>
 					</div>
 					<div class='gameInstructions'>
-						<p>These are the instructions</p>
-						<p>These are the instructions</p>
-						<p>These are the instructions</p>
-						<p>These are the instructions</p>
+						<p>Welcome to the Engagement Game Lib!</p>
+						<p>To create your own lib, you must talk everybody in the lab.  However, order matters.  Each person will have a challenge to complete before you fill out the lib.  They will also have a clue for who to go see next.</p>
+						<p style='text-align:center; padding:10px;'><a href='#' class='beginGame'>Begin Game</a></p>
 					</div>
 				</div>
 				<div id='challengeBox'>
 				</div>
 				<div id='pregame'>
-					<div class='instructions'>
-						<p class='enter'>Enter the</p>
-						<h2>Engagement Game Lab:</h2>
-						<p class='description'> 
-							<!-- An applied research lab harnessing play for civic engagement. -->
-							<!-- An applied research lab dedicated to harnessing play for civic engagement. -->
-							<!-- An applied research lab designing games for civic engagement. -->
-							<!-- An applied research lab, foreplay, and civic engagement. -->
-							An applied research lab for play and civic engagement.
+					<div class='leftHalf'>
+						<p class='introText'>
+							This paragraph says stuff about how awesome the lab is and <a href='/about'>WHO WE ARE</a>. We don't only make the most amazing games ever but do <a href='/research'>RESEARCH</a> and stuff.  We have a lot of really sweetly great  <a href='/projects'>GAMES</a> that have real world impacts yada yada yada.  Or just check out some  <a href='/resources'>RESOURCES</a> for more cool things.
+							<br><br>
+							From the blog: Egnagemtent jgaelk tis on fire !!! readsz blog. sjdflkjsdklfjdsflkjsdf lsdkfjsdlkfj <a href='/blog'>read more</a>
 						</p>
-						<p class='playGame'>
-							<a class='playGameButton btn btn-large'><span class='tinify'>click to</span><br>PLAY<span>!</span></a>
+						<!-- <p class='specialLink'>ABOUT</p>
+						<p class='specialLink'>PROJECTS</p>
+						<p class='specialLink'>RESEARCH</p>
+						<p class='specialLink'>RESOURCES</p> -->
+					</div>
+					<div class='rightHalf'>
+						<p class='introText'>
+							This blurb says that you can play a game to experience how awesome we are.   You can meet our staff and learn about what we do, funly!
 						</p>
-						<p class='loading'>
+						<p class='playBig'><a href='' class='playGameButton'>PLAY<em>!</em></a></p>
+						<!-- <p class='loading'>
 							loading...
-						</p>
-						<p class='howTo'>
-							Meet our staff, faculty, and students, explore our projects, and find out more about what we do. 
-							<!-- Game Instructions: Click to explore. -->
-						</p>
-						<!-- <p class='tinyasterisk'>
-							*If you prefer a traditional browsing experience, you can use the navigation at the top of the page instead.
 						</p> -->
 					</div>
 				</div>

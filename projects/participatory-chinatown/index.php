@@ -19,7 +19,7 @@
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								<span>Participatory Chinatown</span> is a 3-D immersive game designed to be part of the master planning process for Boston's Chinatown. Participatory Chinatown won the <a href='http://www.gamesforchange.org/festival2011/awards/direct-impact/participatory-chinatown/' target='_blank'>Games for Change 2011 Direct Impact Award</a>.
+								<span><a href='http://participatorychinatown.org' target='_blank'>Participatory Chinatown</a></span> is a 3-D immersive game designed to be part of the master planning process for Boston's Chinatown. Participatory Chinatown won the <a href='http://www.gamesforchange.org/festival2011/awards/direct-impact/participatory-chinatown/' target='_blank'>Games for Change 2011 Direct Impact Award</a>.
 							</p>
 					</div>
 					<div class='span6 videoContainer'>

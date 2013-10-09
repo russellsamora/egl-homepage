@@ -19,7 +19,7 @@
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								<span>StreetCred</span>  connects your civic actions to ongoing campaigns so the community can achieve big goals together. Designed in partnership with the City of Boston, StreetCred is a game-based civic badging API that is meant to expand the types of civic actions people take using existing tools like Citizens Connect or Foursquare.
+								<span><a target='_blank' href='http://streetcred.us'>StreetCred</a></span>  connects your civic actions to ongoing campaigns so the community can achieve big goals together. Designed in partnership with the City of Boston, StreetCred is a game-based civic badging API that is meant to expand the types of civic actions people take using existing tools like Citizens Connect or Foursquare.
 							</p>
 					</div>
 					<div class='span6 videoContainer'>

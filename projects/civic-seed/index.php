@@ -19,7 +19,7 @@
 				<div class='row briefOverview'>
 					<div class='span6'>
 							<p>
-								<span>Civic Seed</span> is a multi-player RPG that harnesses the power of online social play to teach and certify students to civically engage with partner communities.
+								<span><a target='_blank' href='http://civicseed.org'>Civic Seed</a></span> is a multi-player RPG that harnesses the power of online social play to teach and certify students to civically engage with partner communities.
 							</p>
 					</div>
 					<div class='span6 videoContainer'>

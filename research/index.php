@@ -74,7 +74,7 @@
 						<div class='span12'>
 							<p>Gordon and Baldwin-Philippi (2013). "Playful Civic Learning: Enabling Lateral Trust and Reflection in Game-based Public Participation," working paper.</a></p>
 
-							<p>Gordon, E and Jessica Baldwin-Philippi. (forthcoming) <a href='' target='_blank'>"Making a Habit Out of Engagement: How the Culture of Open Data Is Reframing Civic Life" in Code for America Open Data Anthology. O'Reilly Media.</a></p>
+							<p>Gordon, E and Jessica Baldwin-Philippi. (forthcoming) "Making a Habit Out of Engagement: How the Culture of Open Data Is Reframing Civic Life" in Code for America Open Data Anthology. O'Reilly Media.</p>
 
 							<p>Baldwin-Philippi, J. and Gordon E. (2013). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.bostonarearesearchinitiative.net%2Fpolicy-briefs.php&sa=D&sntz=1&usg=AFQjCNHlC7dkvWiJfDArdOQeyoqbsPlikg' target='_blank'>"Designing Citizen Relationship Management Systems to Cultivate Good Civic Habits." Boston Area Research Initiative Policy Brief."</a></p>
 
