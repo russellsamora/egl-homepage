@@ -31,6 +31,14 @@
 			}, 17);
 		},
 
+		preventMoveForever: function() {
+			_preventMovement = true;
+		},
+
+		enableMove: function() {
+			_preventMovement = false;
+		},
+
 		bindMessageLink: function() {
 			$('.messageText a').on('click', function(e) {
 				e.preventDefault();
@@ -57,6 +65,15 @@
 				$game.items.showChallenge(key);
 				input.preventMove();
 				$('messageText a').off('click');
+				return false;
+			});
+		},
+
+		bindNextSlide: function() {
+			$('#challengeBox a').on('click', function(e) {
+				e.preventDefault();
+				$('#challengeBox a').off('click');
+				$game.items.nextSlide();
 				return false;
 			});
 		},

@@ -5,8 +5,7 @@
 		_gotGame = null,
 		_numFrames = 64,
 		_currentFrame = 0,
-		_numDrawings = 0,
-		_targetOrder = ['stephen','eric','christina','russell','sam','aidan','jedd','jesse'];
+		_numDrawings = 0;
 
 	window.$game = {
 
@@ -14,6 +13,7 @@
 		playing: false,
 		started: false,
 		user: null,
+		targetOrder: ['stephen','eric','christina','russell','sam','aidan','jedd','jesse'],
 		
 		init: function() {
 			//see if the game should be started up based on screen size
@@ -171,13 +171,14 @@
 			$('#popupBox').show();
 			$game.localStore.started = true;
 			$game.localStore.playing = true;
-			$game.localStore.targetIndex = 0;
-			$game.localStore.targetPerson = _targetOrder[$game.localStore.targetIndex];
+			$('#cover').show();
+			$game.localStore.targetPerson = $game.targetOrder[$game.localStore.targetIndex];
 			$game.updateStorage();
 		},
 
 		stopPlaying: function() {
 			$game.localStore.playing = false;
+			$('#cover').hide();
 			$game.updateStorage();
 		}
 	};
@@ -221,7 +222,7 @@
 			$game.localStore = JSON.parse(storage);
 		} else {
 			var id = Math.random().toString(36).slice(2);
-			$game.localStore = {id: id, people: {}};
+			$game.localStore = {id: id, people: {}, targetIndex: 0, answers: []};
 			$game.updateStorage();
 		}
 	}
@@ -260,6 +261,13 @@
 			if(_currentFrame % 8 === 0) {
 				$game.items.updateItemAnimations();
 				$game.player.idle();
+				// if($game.localStore.playing) {
+				// 	var r = Math.floor(Math.random() * 255),
+				// 		g = Math.floor(Math.random() * 255),
+				// 		b = Math.floor(Math.random() * 255);
+				// 	var col = 'rgba(' + r +','+g+','+b+',0.4)';
+				// 	$('#cover').css('background', col);
+				// }
 			}
 			requestAnimationFrame(_tick);
 		}

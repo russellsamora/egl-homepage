@@ -43,6 +43,8 @@
 						<p>These are the instructions</p>
 					</div>
 				</div>
+				<div id='challengeBox'>
+				</div>
 				<div id='pregame'>
 					<div class='instructions'>
 						<p class='enter'>Enter the</p>
@@ -69,6 +71,7 @@
 						</p> -->
 					</div>
 				</div>
+				<div id='cover'></div>
 			</div>
 			<div id='blogTease'></div>
 			<div id='nongame'>

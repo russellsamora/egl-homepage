@@ -4,7 +4,9 @@
 		_prevMove = {},
 		_animatedItemKeys = [],
 		_animatedPeopleKeys = [],
-		_pfx = ["webkit", "moz", "MS", "o", ""];
+		_pfx = ["webkit", "moz", "MS", "o", ""],
+		_challengeSlide = 0,
+		_currentKey = null;
 
 	var items = $game.items = {
 		itemKeys: null,
@@ -184,7 +186,7 @@
 					if($game.localStore.people[key]) {
 						msg = person.past;
 					} else {
-						msg = person.futurel;
+						msg = person.future;
 					}
 				}
 			} else {
@@ -259,8 +261,37 @@
 		},
 
 		showChallenge: function(key) {
-			console.log(key);
+			$('#challengeBox').hide().empty();
+			_challengeSlide = 0;
+			_currentKey = key;
+			$game.hideMessage();
+			_addChallengeContent();
+			$('#challengeBox').show();
+			setTimeout(function() {
+				$game.input.preventMoveForever();
+			}, 100);
+		},
+
+		nextSlide: function() {
+			_challengeSlide += 1;
+			if(_challengeSlide === 1) {
+				_addChallengeContent();
+			}
+			else if(_challengeSlide === 2) {
+				//submit answer
+				var answer = $('#challengeAnswer').val();
+				$game.localStore.answers.push(answer);
+				$game.localStore.targetIndex += 1;
+				$game.localStore.targetPerson = $game.targetOrder[$game.localStore.targetIndex];
+				$game.localStore.people[_currentKey] = true;
+				$game.updateStorage();
+				_addChallengeContent();
+			} else if(_challengeSlide === 3) {
+				$('#challengeBox').hide();
+				$game.input.enableMove();
+			}
 		}
+
 	};
 	items.init();
 
@@ -636,7 +667,10 @@
 				past: 'past',
 				present: 'present',
 				future: 'future',
-				clue: 'clue'
+				clue: 'clue',
+				information: '<p>This is the lab. We make stuff. What more can I say?</p>',
+				question: 'What is your favorite color?',
+				questionType: 'open'
 			},
 			'eric': {
 				x: 250,
@@ -846,5 +880,29 @@
 		if(typeof item.css.updateImage === 'function') {
 			item.css.updateImage();
 		}
+	}
+
+	function _addChallengeContent() {
+		$('#challengeBox').empty();
+		var person = items.peopleData[_currentKey],
+			html;
+		if(_challengeSlide === 0) {
+			//show info
+			html = person.information;
+			html += '<p><a href="#" class="nextSlide">Next</a></p>';
+		} else if(_challengeSlide === 1) {
+			//show question
+			question = person.question;
+			html = '<p>' + question + '</p>';
+			html += '<p><input id="challengeAnswer"></input></p>';
+			html += '<p><a href="#" class="nextSlide">Submit</a></p>';
+		} else {
+			//show victory and clue
+			clue = person.clue;
+			html = '<p>Thanks! ' + clue + '</p>';
+			html += '<p><a href="#" class="nextSlide">Close</a></p>';
+		}
+		$('#challengeBox').html(html);
+		$game.input.bindNextSlide();
 	}
 })();
