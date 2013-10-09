@@ -37,6 +37,7 @@
 								</p>
 								<p>
 									<a href='http://twitter.com/ericbot' target='_blank'><i class='icon-twitter icon-large' rel='tooltip' data-title='twitter'></i></a>
+									<a href='http://placeofsocialmedia.com/' target='_blank'><i class='icon-star icon-large' rel='tooltip' data-title='blog'></i></a>
 								</p>
 								</div>
 						</div>

@@ -9301,7 +9301,7 @@ a:hover {
     border-bottom: 1px solid #999999;
   }
 }
-@media (max-width: 1120px) {
+@media (max-width: 1170px) {
   .tagline {
     display: none;
   }
