@@ -62,12 +62,20 @@
 					$game.input.bindMessageLink();
 				}
 			} else {
+				if(data.crat) {
+					data.message +=  '<a href"#" data-key="crat"> [stop!]</a>';
+					msgLength += 5;
+				}
 				if(data.target) {
 					data.message += ' <a href"#" data-key="' + data.bioKey + '"> [view]</a>';
 				}
 				$MESSAGE_TEXT.html(data.message);
+				
 				if(data.target) {
 					$game.input.bindChallengeLink();
+				}
+				if(data.crat) {
+					$game.input.bindMessageLink();
 				}
 			}
 
@@ -106,7 +114,6 @@
 		},
 
 		hidePopup: function() {
-			$game.input.preventMove();
 			$('#popupBox .wiki').hide();
 			$('#popupBox .soundcloud').hide();
 			$('#popupBox .bio').hide();
@@ -166,6 +173,11 @@
 			$game.localStore.playing = true;
 			$game.localStore.targetIndex = 0;
 			$game.localStore.targetPerson = _targetOrder[$game.localStore.targetIndex];
+			$game.updateStorage();
+		},
+
+		stopPlaying: function() {
+			$game.localStore.playing = false;
 			$game.updateStorage();
 		}
 	};

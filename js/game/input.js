@@ -36,7 +36,11 @@
 				e.preventDefault();
 				var key = $(this).attr('data-key');
 				if(key === 'crat') {
-					$game.showGameInstructions();
+					if($game.localStore.playing) {
+						$game.stopPlaying();	
+					} else {
+						$game.showGameInstructions();
+					}
 				} else {
 					$game.items.showBioCard(key);	
 				}
@@ -124,6 +128,7 @@
 		});
 
 		$BODY.on('click touch', '#popupBox', function() {
+			$game.input.preventMove();
 			$(this).hide();
 		});
 

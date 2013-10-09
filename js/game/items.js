@@ -174,17 +174,17 @@
 				if($game.localStore.targetPerson === key) {
 					//determine if player has talked to them yet
 					if($game.localStore.people[key]) {
-						msg = 'you already took my money';
+						msg = person.clue;
 					} else {
-						msg = 'i have challenge for you.';
+						msg = person.present;
 						target = true;
 					}
 				} else {
 					//see if we unlockeed them already
 					if($game.localStore.people[key]) {
-						msg = 'dude, move on.';
+						msg = person.past;
 					} else {
-						msg = 'i will see you in the future';
+						msg = person.futurel;
 					}
 				}
 			} else {
@@ -610,9 +610,12 @@
 				class: 'crat',
 				x: 600,
 				y: 150,
-				messageData: 'Hey dude. You can play a game or explore the lab.',
 				action: function(el) {
-					$game.showMessage({el: el, message: this.messageData, crat: true});
+					var msg = 'Hey dude. You can play a game or explore the lab.';
+					if($game.localStore.playing) {
+						msg = 'Want to stop playing? Just say so!';
+					}
+					$game.showMessage({el: el, message: msg, crat: true});
 				}	
 			}
 		};
@@ -625,7 +628,11 @@
 				animation: [4,5,6,7,0,1,2,3,6,7,5,6,5,0,1,4,5,6,7,6,5,4,0,1,2,1,0,6,5,7,4,6,5,4],
 				fullName: 'Stephen Walter',
 				jobTitle: 'Managing Director',
-				about: 'Stephen makes and studies media that aim to foster and amplify experiences of complexity, difference, and play.'
+				about: 'Stephen makes and studies media that aim to foster and amplify experiences of complexity, difference, and play.',
+				past: 'past',
+				present: 'present',
+				future: 'future',
+				clue: 'clue'
 			},
 			'eric': {
 				x: 250,
@@ -642,7 +649,11 @@
 				},
 				fullName: 'Eric Gordon',
 				jobTitle: 'Executive Director',
-				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.'
+				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.',
+				past: 'past',
+				present: 'present',
+				future: 'future',
+				clue: 'clue'
 			},
 			'jedd': {
 				x: 2100,
@@ -659,7 +670,11 @@
 				},
 				fullName: 'Jedd Cohen',
 				jobTitle: 'Curriculum Developer',
-				about: 'Jedd is working to adapt Community PlanIt for use in schools and other community and advocacy organizations.'
+				about: 'Jedd is working to adapt Community PlanIt for use in schools and other community and advocacy organizations.',
+				past: 'past',
+				present: 'present',
+				future: 'future',
+				clue: 'clue'
 			},
 			'christina': {
 				x: 950,
@@ -678,7 +693,11 @@
 				jobTitle: 'Project Manager',
 				about: 'Christina\'s abiding interests in open access to a participatory democracy, ethics, and the role of technology in shaping human experiences drew her to the Engagement Game Lab.',
 				bindName: 'christina',
-				bind: 'couch'
+				bind: 'couch',
+				past: 'past',
+				present: 'present',
+				future: 'future',
+				clue: 'clue'
 			},
 			'aidan': {
 				x: 2500,
@@ -695,7 +714,11 @@
 				},
 				fullName: 'Aidan O\'Donohue',
 				jobTitle: 'Designer',
-				about: 'Aidan graduated from the Rhode Island School of Design with a degree in painting, and has also studied design and architecture.'
+				about: 'Aidan graduated from the Rhode Island School of Design with a degree in painting, and has also studied design and architecture.',
+				past: 'past',
+				present: 'present',
+				future: 'future',
+				clue: 'clue'
 			},
 			'sam': {
 				x: 1300,
@@ -712,7 +735,11 @@
 				},
 				fullName: 'Sam Liberty',
 				jobTitle: 'Game Writer',
-				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of the Spoiled Flush Games design studio. '
+				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of the Spoiled Flush Games design studio. ',
+				past: 'past',
+				present: 'present',
+				future: 'future',
+				clue: 'clue'
 			},
 			'russell': {
 				x: 1500,
@@ -721,7 +748,11 @@
 				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
 				fullName: 'Russell Goldenberg',
 				jobTitle: 'Hacker-in-Chief',
-				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.'
+				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.',
+				past: 'past',
+				present: 'present',
+				future: 'future',
+				clue: 'clue'
 			},
 			'jesse': {
 				x: 1800,
@@ -740,7 +771,11 @@
 				jobTitle: 'Rsearcher & Visiting Professor',
 				about: 'Jesse is a visiting faculty member in Emerson\'s Department of Visual and Media Arts, and studies civic engagement, citizenship, and digital media.',
 				bind: 'plant1',
-				bindName: 'jesse'
+				bindName: 'jesse',
+				past: 'past',
+				present: 'present',
+				future: 'future',
+				clue: 'clue'
 			}
 		};
 	}
