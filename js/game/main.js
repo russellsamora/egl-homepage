@@ -5,7 +5,8 @@
 		_gotGame = null,
 		_numFrames = 64,
 		_currentFrame = 0,
-		_numDrawings = 0;
+		_numDrawings = 0,
+		_targetOrder = ['stephen','eric','christina','russell','sam','aidan','jedd','jesse'];
 
 	window.$game = {
 
@@ -44,14 +45,30 @@
 			var topOffset = 50,
 				msgLength = data.message.length + 3;
 
-			if(data.bioKey) {
-				data.message += ' <a href"#" data-key="' + data.bioKey + '"> [view bio]</a>';
-				msgLength += 20;
-			}
-			$MESSAGE_TEXT.html(data.message);
-			
-			if(data.bioKey) {
-				$game.input.bindMessageLink();
+			if(!$game.localStore.playing) {
+				if(data.bioKey) {
+					data.message += ' <a href"#" data-key="' + data.bioKey + '"> [view bio]</a>';
+					msgLength += 20;
+				}
+
+				if(data.crat) {
+					data.message += ' <a href"#" data-key="crat"> [play now!]</a>';
+					msgLength += 10;
+				}
+
+				$MESSAGE_TEXT.html(data.message);
+				
+				if(data.bioKey || data.crat) {
+					$game.input.bindMessageLink();
+				}
+			} else {
+				if(data.target) {
+					data.message += ' <a href"#" data-key="' + data.bioKey + '"> [view]</a>';
+				}
+				$MESSAGE_TEXT.html(data.message);
+				if(data.target) {
+					$game.input.bindChallengeLink();
+				}
 			}
 
 			if(data.soundcloud) {
@@ -89,9 +106,11 @@
 		},
 
 		hidePopup: function() {
+			$game.input.preventMove();
 			$('#popupBox .wiki').hide();
 			$('#popupBox .soundcloud').hide();
 			$('#popupBox .bio').hide();
+			$('#popupBox .gameInstructions').hide();
 		},
 
 		pauseGame: function() {
@@ -135,7 +154,19 @@
 		},
 
 		updateStorage: function() {
-			localStorage.setItem('egl-user', JSON.stringify($game.user));
+			localStorage.setItem('egl-game', JSON.stringify($game.localStore));
+		},
+
+		showGameInstructions: function() {
+			$game.hideMessage();
+			$game.hidePopup();
+			$('#popupBox .gameInstructions').show();
+			$('#popupBox').show();
+			$game.localStore.started = true;
+			$game.localStore.playing = true;
+			$game.localStore.targetIndex = 0;
+			$game.localStore.targetPerson = _targetOrder[$game.localStore.targetIndex];
+			$game.updateStorage();
 		}
 	};
 
@@ -173,13 +204,13 @@
 	function _checkReturning() {
 		//TODO: remove this dev thing
 		localStorage.clear();
-		var storage = localStorage.getItem('egl-user');
+		var storage = localStorage.getItem('egl-game');
 		if(storage) {
-			$game.user = JSON.parse(storage);
+			$game.localStore = JSON.parse(storage);
 		} else {
 			var id = Math.random().toString(36).slice(2);
-			$game.user = {id: id, game: { people: {} }};
-			localStorage.setItem('egl-user', JSON.stringify($game.user));
+			$game.localStore = {id: id, people: {}};
+			$game.updateStorage();
 		}
 	}
 

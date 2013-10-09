@@ -36,6 +36,12 @@
 						<p class='user'></p>
 						<p><img src='img/soundcloud/white_text.png'></p>
 					</div>
+					<div class='gameInstructions'>
+						<p>These are the instructions</p>
+						<p>These are the instructions</p>
+						<p>These are the instructions</p>
+						<p>These are the instructions</p>
+					</div>
 				</div>
 				<div id='pregame'>
 					<div class='instructions'>

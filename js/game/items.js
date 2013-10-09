@@ -164,29 +164,34 @@
 
 		clickedPerson: function(key, el) {
 			var person = items.peopleData[key];
-			$game.showMessage({el: el, message: person.status, bioKey: key});
-			// //see if the user has clicked them first
-			// if($game.user.game.people[key]) {
-			// 	//show status
-			// 	if(person.status) {
-			// 		$game.showMessage({el: el, message: person.status});
-			// 	}
-			// } else {
-			// 	//show bio card
-			// 	$('#popupBox .bioImage').attr('src', '../../img/people/bio/real_' + key + '.jpg');
-			// 	$('#popupBox .bioName span').text(person.fullName);
-			// 	$('#popupBox .bioTitle span').text(person.jobTitle);
-			// 	$('#popupBox .bioAbout span').html(person.about);
-
-			// 	$game.hidePopup();
-			// 	$('#popupBox .bio').show();
-			// 	$('#popupBox').show();
-			// 	setTimeout(function() {
-			// 		items.showingBio = true;
-			// 	}, 17);
-			// 	$game.user.game.people[key] = {bio: true};
-			// 	$game.updateStorage();
-			// }
+			//see if in game mode
+			var msg, target;
+			if($game.localStore.playing) {
+				//current target && not visited
+				//current target && visited
+				//future target
+				//past target
+				if($game.localStore.targetPerson === key) {
+					//determine if player has talked to them yet
+					if($game.localStore.people[key]) {
+						msg = 'you already took my money';
+					} else {
+						msg = 'i have challenge for you.';
+						target = true;
+					}
+				} else {
+					//see if we unlockeed them already
+					if($game.localStore.people[key]) {
+						msg = 'dude, move on.';
+					} else {
+						msg = 'i will see you in the future';
+					}
+				}
+			} else {
+				msg = person.status;
+			}
+			
+			$game.showMessage({el: el, message: msg, bioKey: key, target: target});
 		},
 
 		showBioCard: function(key) {
@@ -203,8 +208,6 @@
 			setTimeout(function() {
 				items.showingBio = true;
 			}, 17);
-			$game.user.game.people[key] = {bio: true};
-			$game.updateStorage();
 		},
 
 		checkScreen: function() {
@@ -409,8 +412,8 @@
 			},
 			'boombox': {
 				class: 'boombox',
-				x: 600,
-				y: 150,
+				x: 1400,
+				y: 550,
 				message: 'use my buttons to pump up the jams!'
 			},
 			'playButton': {
@@ -602,6 +605,15 @@
 				x: 1000,
 				y: 650,
 				invisible: true
+			},
+			'crat': {
+				class: 'crat',
+				x: 600,
+				y: 150,
+				messageData: 'Hey dude. You can play a game or explore the lab.',
+				action: function(el) {
+					$game.showMessage({el: el, message: this.messageData, crat: true});
+				}	
 			}
 		};
 

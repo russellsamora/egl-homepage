@@ -35,11 +35,27 @@
 			$('.messageText a').on('click', function(e) {
 				e.preventDefault();
 				var key = $(this).attr('data-key');
-				$game.items.showBioCard(key);
+				if(key === 'crat') {
+					$game.showGameInstructions();
+				} else {
+					$game.items.showBioCard(key);	
+				}
 				input.preventMove();
+				$('messageText a').off('click');
 				return false;
 			});
-		}
+		},
+
+		bindChallengeLink: function() {
+			$('.messageText a').on('click', function(e) {
+				e.preventDefault();
+				var key = $(this).attr('data-key');
+				$game.items.showChallenge(key);
+				input.preventMove();
+				$('messageText a').off('click');
+				return false;
+			});
+		},
 	};
 	
 	input.init();
@@ -65,6 +81,7 @@
 				$game.items.showingBio = false;
 			}
 			if(!$game.player.inTransit && $game.playing && $game.started && !_preventMovement) {
+				console.log('move');
 				e.preventDefault();
 				//hide message boxes
 				$game.hideMessage();
