@@ -20,7 +20,6 @@
 					<p class='messageText'></p>
 				</div>
 				<div id='help'>
-					<!-- <p>This is the lab. Click on people to interact with them.</p> -->
 					<p>You are in the lab. Click to explore.</p>
 				</div>
 				<div id='popupBox'>
@@ -47,34 +46,26 @@
 				<div id='pregame'>
 					<div class='leftHalf'>
 						<p class='introText'>
-							This paragraph says stuff about how awesome the lab is and <a href='/about'>WHO WE ARE</a>. We don't only make the most amazing games ever but do <a href='/research'>RESEARCH</a> and stuff.  We have a lot of really sweetly great  <a href='/projects'>GAMES</a> that have real world impacts yada yada yada.  Or just check out some  <a href='/resources'>RESOURCES</a> for more cool things.
+							We are an applied research lab that designs and studies playful approaches to serious problems. Our <a href='#'>PROJECTS</a> span from urban planning in Detroit to disaster preparedness in Zambia. Our <a href='#'>RESEARCH</a> is heavily integrated with all our projects and ranges from issues of global/networked citizenship to youth and civic media. Check out our <a href='#'>RESOURCES</a> page for design guides, curriculums, and courses, and learn more <a href='#'>ABOUT US</a> (in a standard fashion). 
 							<br><br>
-							From the blog: Egnagemtent jgaelk tis on fire !!! readsz blog. sjdflkjsdklfjdsflkjsdf lsdkfjsdlkfj <a href='/blog'>read more</a>
+							<!-- MAKE UPDATES HERE -->
+							<span>
+								In the news: New York Times writes scathing review of the Engagement Game Lab. <a href='/blog'>[read it]</a>
+							</span>
 						</p>
-						<!-- <p class='specialLink'>ABOUT</p>
-						<p class='specialLink'>PROJECTS</p>
-						<p class='specialLink'>RESEARCH</p>
-						<p class='specialLink'>RESOURCES</p> -->
 					</div>
 					<div class='rightHalf'>
 						<p class='introText'>
-							This blurb says that you can play a game to experience how awesome we are.   You can meet our staff and learn about what we do, funly!
+							Curious about engagement games? Interested in learning more about who we are and how we do what we do? Unsure of what clicking the word below does? Ride the lightning:
 						</p>
 						<p class='playBig'><a href='' class='playGameButton'>PLAY<em>!</em></a></p>
-						<!-- <p class='loading'>
-							loading...
-						</p> -->
+						<p class='loading'>loading...</p>
 					</div>
 				</div>
 				<div id='cover'></div>
 			</div>
 			<div id='blogTease'></div>
 			<div id='nongame'>
-				<!-- <div class='row-fluid'>
-					<div class='span12'>
-						<p><span>Welcome to the Engagement Game Lab</span>, an applied research lab for play and civic engagement.  </p>
-					</div>
-				</div> -->
 				<div class='row-fluid'>
 					<div class='span4 projectsLink'>
 						<p><a href='projects/'>PROJECTS</a></p>
@@ -113,23 +104,8 @@
 							<p style='text-align:center;'><img src='img/nongame.jpg'></p>
 						</div>
 					</div>
-					<!-- <div class='row'>
-						<div class='span3'>
-							<p>Projects</p>
-						</div>
-						<div class='span3'>
-							<p>Projects</p>
-						</div>
-						<div class='span3'>
-							<p>Projects</p>
-						</div>
-						<div class='span3'>
-							<p>Projects</p>
-						</div>
-					</div> -->
 				</div>
 			</div>
-			<!-- <div id='push'></div> -->
    		</div>
     	<!-- Los javascripts -->
     	<script src='js/libs/lab.js'></script>

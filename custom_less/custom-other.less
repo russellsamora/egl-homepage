@@ -2,7 +2,40 @@
 	.box-sizing();
 }
 
+//ADJUST NAV FOR BIGGER SIZE
+.navbar .nav {
+	margin-top: 12px;
+}
+.navbar .btn,
+.navbar .btn-group {
+  .navbarVerticalAlign(-10px); // Vertically center in navbar
+  background: @grayDark;
+  &:hover {
+  	background: @gray;
+  }
+}
 
+//toggle branding image from gray to color
+.navbar .brand {
+	padding: 10px;
+	img {
+		-webkit-filter: grayscale(0%);
+		&:hover {
+			-webkit-filter: grayscale(100%);
+			.transition(-webkit-filter 0.5s);
+		}
+	}
+
+}
+
+.tagline {
+	float: right;
+	font-weight: 100;
+	letter-spacing: .2em;
+	font-size: .9em;
+	margin: 31px 0 0 0;
+	color: @gray;
+}
 
 //custom mixins
 .box-sizing() {
@@ -609,46 +642,6 @@ a {
 	//background: url('../img/retina_wood.png');
 	background: @greenLightest;
 }
-
-//ADJUST NAV FOR BIGGER SIZE
-.navbar {
-	.nav {
-		margin-top: 12px;
-	}
-	ul {
-		padding-left: 20px;
-	}
-}
-.navbar .btn,
-.navbar .btn-group {
-  .navbarVerticalAlign(-10px); // Vertically center in navbar
-  background: @grayDark;
-  &:hover {
-  	background: @gray;
-  }
-}
-
-//toggle branding image from gray to color
-.navbar .brand {
-	padding: 10px;
-	img {
-		-webkit-filter: grayscale(0%);
-		&:hover {
-			-webkit-filter: grayscale(100%);
-			.transition(-webkit-filter 0.5s);
-		}
-	}
-
-}
-
-.tagline {
-	float: right;
-	font-weight: 100;
-	letter-spacing: .2em;
-	font-size: .9em;
-	margin: 31px 0 0 0;
-	color: @gray;
-}
 	
 @media (min-width: 768px) {
 	//show dropdown on hover
@@ -662,7 +655,7 @@ a {
 	}
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1280px) {
 	.tagline {
 		display: none;
 	}
