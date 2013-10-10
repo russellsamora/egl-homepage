@@ -56,7 +56,7 @@
 					</div>
 					<div class='rightHalf'>
 						<p class='introText'>
-							Curious about engagement games? Interested in learning more about who we are and how we do what we do? Unsure of what clicking the word below does? Ride the lightning:
+							Curious about engagement games? Interested in learning more about who we are and how we do what we do? Unsure of what clicking the word below does? For the most extraordinary answers to these questions, there is only one path forward:
 						</p>
 						<p class='playBig'><a href='' class='playGameButton'>PLAY<em>!</em></a></p>
 						<p class='loading'>loading...</p>
