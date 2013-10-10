@@ -28,15 +28,16 @@
   height: 100%;
   color: #999999;
 }
-#game #pregame .leftHalf span {
-  color: #ff5622;
-}
 #game #pregame .rightHalf {
   color: white;
   width: 50%;
   background: rgba(255, 86, 34, 0.8);
   float: left;
   height: 100%;
+}
+#game #pregame .rightHalf .loading {
+  text-align: center;
+  display: none;
 }
 #game #pregame .introText {
   max-width: 500px;
