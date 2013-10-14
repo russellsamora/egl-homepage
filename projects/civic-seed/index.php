@@ -38,10 +38,10 @@
 								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
 
 								<img class='inlineImage' src='../../img/projects/other/civic_seed3.png'> 
-								Many incoming university students are eager to make an impact on their school's partner communities and give something back to the people who live there. However, to most, the people and challenges of these communities are unknown, and under-trained volunteers can even do more harm than good. 
+								Many incoming university students are eager to get involved with their school's partner communities and create positive change. However, to most, the people and challenges of these communities are unknown, and under-trained volunteers can even do more harm than good.
 							</p>
 							<p>
-								For local organizations, it's difficult to know which students have the necessary knowledge and skills to make a positive impact, and whose personal goals align with the goals of the organization and the community. 
+								For local organizations, it's difficult to know which students have the necessary knowledge and skills to collaborate effectively and whose personal goals align with the goals of the organization and the community.
 							</p>
 						</div>
 					</div>
