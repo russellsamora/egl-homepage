@@ -5,7 +5,8 @@
 		_gotGame = null,
 		_numFrames = 64,
 		_currentFrame = 0,
-		_numDrawings = 0;
+		_numDrawings = 0,
+		_discoMode = false;
 
 	window.$game = {
 
@@ -47,12 +48,12 @@
 
 			if(!$game.localStore.playing) {
 				if(data.bioKey) {
-					data.message += ' <a href"#" data-key="' + data.bioKey + '"> [view bio]</a>';
-					msgLength += 20;
+					data.message += ' <a href"#" data-key="' + data.bioKey + '">view bio</a>';
+					msgLength += 10;
 				}
 
 				if(data.crat) {
-					data.message += ' <a href"#" data-key="crat"> [play now!]</a>';
+					data.message += ' <a href"#" data-key="crat">play now</a>';
 					msgLength += 10;
 				}
 
@@ -63,11 +64,12 @@
 				}
 			} else {
 				if(data.crat) {
-					data.message +=  '<a href"#" data-key="crat"> [stop!]</a>';
+					data.message +=  ' <a href"#" data-key="crat">stop</a>';
 					msgLength += 5;
 				}
 				if(data.target) {
-					data.message += ' <a href"#" data-key="' + data.bioKey + '"> [view]</a>';
+					data.message += ' <a href"#>view</a>';
+					msgLength += 5;
 				}
 				$MESSAGE_TEXT.html(data.message);
 				
@@ -180,6 +182,13 @@
 			$game.localStore.playing = false;
 			$('#cover').hide();
 			$game.updateStorage();
+		},
+
+		toggleDiscoMode: function() {
+			_discoMode = !_discoMode;
+			if(!_discoMode) {
+				$('#cover').css('background','rgba(0,0,0,.4)');
+			}
 		}
 	};
 
@@ -222,7 +231,7 @@
 			$game.localStore = JSON.parse(storage);
 		} else {
 			var id = Math.random().toString(36).slice(2);
-			$game.localStore = {id: id, people: {}, targetIndex: 0, answers: []};
+			$game.localStore = {id: id, people: {}, targetIndex: 0, answers: [], tasks: {stephen: true, eric: false, christina: false, sam: false, russell: true, aidan: false, jedd: true, jesse: false}};
 			$game.updateStorage();
 		}
 	}
@@ -261,13 +270,13 @@
 			if(_currentFrame % 8 === 0) {
 				$game.items.updateItemAnimations();
 				$game.player.idle();
-				// if($game.localStore.playing) {
-				// 	var r = Math.floor(Math.random() * 255),
-				// 		g = Math.floor(Math.random() * 255),
-				// 		b = Math.floor(Math.random() * 255);
-				// 	var col = 'rgba(' + r +','+g+','+b+',0.4)';
-				// 	$('#cover').css('background', col);
-				// }
+				if(_discoMode) {
+					var r = Math.floor(Math.random() * 255),
+						g = Math.floor(Math.random() * 255),
+						b = Math.floor(Math.random() * 255);
+					var col = 'rgba(' + r +','+g+','+b+',0.4)';
+					$('#cover').css('background', col);
+				}
 			}
 			requestAnimationFrame(_tick);
 		}

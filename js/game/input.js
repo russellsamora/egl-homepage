@@ -61,8 +61,7 @@
 		bindChallengeLink: function() {
 			$('.messageText a').on('click', function(e) {
 				e.preventDefault();
-				var key = $(this).attr('data-key');
-				$game.items.showChallenge(key);
+				$game.items.showChallenge();
 				input.preventMove();
 				$('messageText a').off('click');
 				return false;
@@ -86,7 +85,8 @@
 	function _bindEvents() {
 		$BODY.on('click', '.playGameButton', function(e) {
 			e.preventDefault();
-			$('.playGame').hide();
+			//hide PLAY button show loading
+			$('.playBig').hide();
 			$('.loading').show();
 			$game.startTick();
 			return false;
@@ -154,6 +154,12 @@
 		$(window).on('beforeunload', function() {
 			$game.exitAndSave();
 		});		
+
+		$('.beginGame').on('click', function(e) {
+			e.preventDefault();
+			$('#popupBox').hide(); 
+			return false;
+		});
 	}
 
 	function _resize() {

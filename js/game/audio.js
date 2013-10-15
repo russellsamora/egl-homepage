@@ -86,8 +86,11 @@
 	}
 
 	function _nextSong(ended) {
-		//we are skipping
-		// console.log(ended, audio.isPlaying);
+		//if game mode then mark as complete
+		if($game.localStore.playing && $game.localStore.targetPerson === 'sam') {
+			$game.localStore.tasks.sam = true;
+			$game.updateStorage();
+		}
 		if(audio.isPlaying) {
 			if(!ended) {
 				_playlist.tracks[_currentTrack].song.pause();	

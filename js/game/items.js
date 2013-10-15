@@ -5,8 +5,7 @@
 		_animatedItemKeys = [],
 		_animatedPeopleKeys = [],
 		_pfx = ["webkit", "moz", "MS", "o", ""],
-		_challengeSlide = 0,
-		_currentKey = null;
+		_challengeSlide = 0;
 
 	var items = $game.items = {
 		itemKeys: null,
@@ -165,7 +164,8 @@
 		},
 
 		clickedPerson: function(key, el) {
-			var person = items.peopleData[key];
+			var person = items.peopleData[key],
+				game = person.game;
 			//see if in game mode
 			var msg, target;
 			if($game.localStore.playing) {
@@ -176,17 +176,22 @@
 				if($game.localStore.targetPerson === key) {
 					//determine if player has talked to them yet
 					if($game.localStore.people[key]) {
-						msg = person.clue;
+						msg = game.clue;
 					} else {
-						msg = person.present;
-						target = true;
+						//check if they did mini challenge (task)
+						if($game.localStore.tasks[key]) {
+							msg = game.present;
+							target = true;
+						} else {
+							msg = game.task;
+						}
 					}
 				} else {
 					//see if we unlockeed them already
 					if($game.localStore.people[key]) {
-						msg = person.past;
+						msg = game.past;
 					} else {
-						msg = person.future;
+						msg = game.future;
 					}
 				}
 			} else {
@@ -254,16 +259,15 @@
 				var item = items.itemData[_animatedItemKeys[a]];
 				_animateItem(item);
 			}
-			for(var a = 0; a < _animatedPeopleKeys.length; a++) {
-				var item = items.peopleData[_animatedPeopleKeys[a]];
+			for(var b = 0; b < _animatedPeopleKeys.length; b++) {
+				var item = items.peopleData[_animatedPeopleKeys[b]];
 				_animateItem(item);
 			}
 		},
 
-		showChallenge: function(key) {
+		showChallenge: function() {
 			$('#challengeBox').hide().empty();
 			_challengeSlide = 0;
-			_currentKey = key;
 			$game.hideMessage();
 			_addChallengeContent();
 			$('#challengeBox').show();
@@ -281,12 +285,21 @@
 				//submit answer
 				var answer = $('#challengeAnswer').val();
 				$game.localStore.answers.push(answer);
+				$game.localStore.people[$game.localStore.targetPerson] = true;
 				$game.localStore.targetIndex += 1;
-				$game.localStore.targetPerson = $game.targetOrder[$game.localStore.targetIndex];
-				$game.localStore.people[_currentKey] = true;
+				//TODO: a game over check
+				if($game.localStore.targetIndex >= $game.targetOrder.length) {
+					$game.localStore.over = true;
+				} else {
+					$game.localStore.targetPerson = $game.targetOrder[$game.localStore.targetIndex];
+				}
 				$game.updateStorage();
 				_addChallengeContent();
 			} else if(_challengeSlide === 3) {
+				if($game.localStore.over) {
+					var name = $('#libName').val();
+					_saveLib(name);
+				}
 				$('#challengeBox').hide();
 				$game.input.enableMove();
 			}
@@ -448,13 +461,28 @@
 			'boombox': {
 				class: 'boombox',
 				x: 1400,
-				y: 550,
+				y: 450,
 				message: 'use my buttons to pump up the jams!'
+			},
+			'discoball': {
+				class: 'discoball',
+				x: 600,
+				y: -50,
+				action: function() {
+					$game.toggleDiscoMode();
+					setTimeout(function() {
+						$game.toggleDiscoMode();
+					}, 5000);
+					if($game.localStore.playing && $game.localStore.targetPerson === 'jesse') {
+						$game.localStore.tasks.jesse = true;
+						$game.updateStorage();
+					}
+				}
 			},
 			'playButton': {
 				class: 'playButton',
-				x: 644,
-				y: 183,
+				x: 900,
+				y: 283,
 				// message: 'booooombox',
 				action: function() { $game.audio.play(); }
 			},
@@ -464,6 +492,111 @@
 				y: 183,
 				// message: 'booooombox',
 				action: function() { $game.audio.pause(); }
+			},
+			'upButton': {
+				class: 'upButton',
+				x: 2580,
+				y: 145,
+				action: function() { 
+					//switch gif source
+					var url = 'url(' + 'http://engagementgamelab.org/labGifs/fresh.gif)';
+					$('#tele').css('background-image', url);
+				}
+			},
+			'downButton': {
+				class: 'downButton',
+				x: 2600,
+				y: 145,
+				action: function() { 
+					//switch gif source
+					var url = 'url(' + 'img/other/panda.gif)';
+					$('#tele').css('background-image', url);
+					if($game.localStore.playing && $game.localStore.targetPerson === 'christina') {
+						$game.localStore.tasks.christina = true;
+						$game.updateStorage();
+					}
+				}
+			},
+			'bookshelf': {
+				class: 'bookshelf',
+				x: 130,
+				y: 0
+			},
+			'plant0': {
+				class: 'plant0',
+				x: -60,
+				y: 130,
+				invisible: true
+				
+			},
+			'plant1': {
+				class: 'plant1',
+				x: 2050,
+				y: 550,
+				invisible: true,
+				bind: 'jesse',
+				bindName: 'plant1'
+			},
+			'couch': {
+				class: 'couch',
+				x: 800,
+				y: 400,
+				invisible: true,
+				bind: 'christina',
+				bindName: 'couch'
+			},
+			'water': {
+				class: 'water',
+				x: 1340,
+				y: 50,
+				// invisible: true,
+				frames: 7,
+				animation: [0,1,2,3,4,5,6],
+				paused: false,
+				playSound: function() {
+					$game.audio.playFx('water');
+				},
+				sleep: function() {
+					this.paused = true;
+					var timeout = Math.floor(Math.random() * 20000 + 4000);
+					setTimeout(function(self) {
+						self.paused = false;
+						self.playSound();
+					}, timeout, this);
+				},
+				action: function() {
+					var wiki = $game.wiki.getWiki();
+					$('#popupBox .wiki p').text(wiki);
+					$game.hidePopup();
+					$('#popupBox .wiki').show();
+					$('#popupBox').show();
+					setTimeout(function() {
+						items.showingBio = true;
+					}, 17);
+					//only add as task done if steve is current target
+					if($game.localStore.playing && $game.localStore.targetPerson === 'eric') {
+						$game.localStore.tasks.eric = true;
+						$game.updateStorage();
+					}
+				}
+			},
+			'coffeetable': {
+				class: 'coffeetable',
+				x: 1000,
+				y: 650,
+				invisible: true
+			},
+			'crat': {
+				class: 'crat',
+				x: 600,
+				y: 150,
+				action: function(el) {
+					var msg = 'Hey dude. You can play a game or explore the lab.';
+					if($game.localStore.playing) {
+						msg = 'Want to stop playing? Just say so!';
+					}
+					$game.showMessage({el: el, message: msg, crat: true});
+				}	
 			},
 			'cloud0': {
 				class: 'cloud0',
@@ -577,82 +710,6 @@
 					}
 				}
 			},
-			'bookshelf': {
-				class: 'bookshelf',
-				x: 130,
-				y: 0
-			},
-			'plant0': {
-				class: 'plant0',
-				x: -60,
-				y: 130,
-				invisible: true
-				
-			},
-			'plant1': {
-				class: 'plant1',
-				x: 2050,
-				y: 550,
-				invisible: true,
-				bind: 'jesse',
-				bindName: 'plant1'
-			},
-			'couch': {
-				class: 'couch',
-				x: 800,
-				y: 400,
-				invisible: true,
-				bind: 'christina',
-				bindName: 'couch'
-			},
-			'water': {
-				class: 'water',
-				x: 1340,
-				y: 50,
-				// invisible: true,
-				frames: 7,
-				animation: [0,1,2,3,4,5,6],
-				paused: false,
-				playSound: function() {
-					$game.audio.playFx('water');
-				},
-				sleep: function() {
-					this.paused = true;
-					var timeout = Math.floor(Math.random() * 20000 + 4000);
-					setTimeout(function(self) {
-						self.paused = false;
-						self.playSound();
-					}, timeout, this);
-				},
-				action: function() {
-					var wiki = $game.wiki.getWiki();
-					$('#popupBox .wiki p').text(wiki);
-					$game.hidePopup();
-					$('#popupBox .wiki').show();
-					$('#popupBox').show();
-					setTimeout(function() {
-						items.showingBio = true;
-					}, 17);
-				}
-			},
-			'coffeetable': {
-				class: 'coffeetable',
-				x: 1000,
-				y: 650,
-				invisible: true
-			},
-			'crat': {
-				class: 'crat',
-				x: 600,
-				y: 150,
-				action: function(el) {
-					var msg = 'Hey dude. You can play a game or explore the lab.';
-					if($game.localStore.playing) {
-						msg = 'Want to stop playing? Just say so!';
-					}
-					$game.showMessage({el: el, message: msg, crat: true});
-				}	
-			}
 		};
 
 		items.peopleData = {
@@ -664,13 +721,17 @@
 				fullName: 'Stephen Walter',
 				jobTitle: 'Managing Director',
 				about: 'Stephen makes and studies media that aim to foster and amplify experiences of complexity, difference, and play.',
-				past: 'past',
-				present: 'present',
-				future: 'future',
-				clue: 'clue',
-				information: '<p>This is the lab. We make stuff. What more can I say?</p>',
-				question: 'What is your favorite color?',
-				questionType: 'open'
+				game: {
+					past: 'We have already talked. Please let me get back to work!',
+					task: 'no task from me.',
+					present: 'You found me! How about I learn you some stuff?',
+					future: 'No future from me.',
+					clue: 'No clue from me.',
+					information: '<p>Replace me.</p>',
+					question: 'What is the real world problem that interests you?',
+					questionType: 'open',
+					maxLength: 50
+				}
 			},
 			'eric': {
 				x: 250,
@@ -688,31 +749,17 @@
 				fullName: 'Eric Gordon',
 				jobTitle: 'Executive Director',
 				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.',
-				past: 'past',
-				present: 'present',
-				future: 'future',
-				clue: 'clue'
-			},
-			'jedd': {
-				x: 2100,
-				y: 90,
-				frames: 4,
-				animation: [2,0,1,2,2,2,0,0,1,1,1,0,0,1,2,1,3,3,3,0,0,1,0,0,1,2,1,1,0,0,0,1,2],
-				paused: false,
-				sleep: function() {
-					this.paused = true;
-					var timeout = Math.floor(Math.random() * 4000 + 2000);
-					setTimeout(function(self) {
-						self.paused = false;
-					}, timeout, this);
-				},
-				fullName: 'Jedd Cohen',
-				jobTitle: 'Curriculum Developer',
-				about: 'Jedd is working to adapt Community PlanIt for use in schools and other community and advocacy organizations.',
-				past: 'past',
-				present: 'present',
-				future: 'future',
-				clue: 'clue'
+				game: {
+					past: 'We have already talked. Please, let me get back to work!',
+					task: 'You must learn a great fact from the wise one.',
+					present: 'Ahh you have gained much knowledge.',
+					future: 'Aren\'t you supposed to be looking for someone else?',
+					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
+					information: '<p>Replace me</p>',
+					question: 'What action do you want the game to faciilate?',
+					questionType: 'open',
+					maxLength: 50
+				}
 			},
 			'christina': {
 				x: 950,
@@ -732,31 +779,37 @@
 				about: 'Christina\'s abiding interests in open access to a participatory democracy, ethics, and the role of technology in shaping human experiences drew her to the Engagement Game Lab.',
 				bindName: 'christina',
 				bind: 'couch',
-				past: 'past',
-				present: 'present',
-				future: 'future',
-				clue: 'clue'
+				game: {
+					past: 'We have already talked. Please let me get back to work!',
+					task: 'You must learn a great fact from the wise one.',
+					present: 'Ahh you have gained much knowledge.',
+					future: 'I will never be your future because I am first.',
+					clue: 'Her name rhymes with Bristina...',
+					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
+					question: 'Who is the target audience?',
+					questionType: 'open',
+					maxLength: 50
+				}
 			},
-			'aidan': {
-				x: 2500,
-				y: 400,
-				frames: 7,
-				animation: [0,1,2,3,4,5,6],
-				paused: false,
-				sleep: function() {
-					this.paused = true;
-					var timeout = Math.floor(Math.random() * 3000 + 2000);
-					setTimeout(function(self) {
-						self.paused = false;
-					}, timeout, this);
-				},
-				fullName: 'Aidan O\'Donohue',
-				jobTitle: 'Designer',
-				about: 'Aidan graduated from the Rhode Island School of Design with a degree in painting, and has also studied design and architecture.',
-				past: 'past',
-				present: 'present',
-				future: 'future',
-				clue: 'clue'
+			'russell': {
+				x: 1500,
+				y: 70,
+				frames: 3,
+				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
+				fullName: 'Russell Goldenberg',
+				jobTitle: 'Hacker-in-Chief',
+				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.',
+				game: {
+					past: 'We have already talked. Please let me get back to work!',
+					task: 'You must learn a great fact from the wise one.',
+					present: 'Ahh you have gained much knowledge.',
+					future: 'I will never be your future because I am first.',
+					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
+					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
+					question: 'What technology do you want to use to implement?',
+					questionType: 'open',
+					maxLength: 50
+				}
 			},
 			'sam': {
 				x: 1300,
@@ -774,23 +827,73 @@
 				fullName: 'Sam Liberty',
 				jobTitle: 'Game Writer',
 				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of the Spoiled Flush Games design studio. ',
-				past: 'past',
-				present: 'present',
-				future: 'future',
-				clue: 'clue'
+				game: {
+					past: 'We have already talked. Please let me get back to work!',
+					task: 'You must learn a great fact from the wise one.',
+					present: 'Ahh you have gained much knowledge.',
+					future: 'I will never be your future because I am first.',
+					clue: 'I love games! But the old timey stuff mostly...',
+					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
+					question: 'What is the gameplay?',
+					questionType: 'open',
+					maxLength: 50
+				}
 			},
-			'russell': {
-				x: 1500,
-				y: 70,
-				frames: 3,
-				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
-				fullName: 'Russell Goldenberg',
-				jobTitle: 'Hacker-in-Chief',
-				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.',
-				past: 'past',
-				present: 'present',
-				future: 'future',
-				clue: 'clue'
+			'aidan': {
+				x: 2500,
+				y: 400,
+				frames: 7,
+				animation: [0,1,2,3,4,5,6],
+				paused: false,
+				sleep: function() {
+					this.paused = true;
+					var timeout = Math.floor(Math.random() * 3000 + 2000);
+					setTimeout(function(self) {
+						self.paused = false;
+					}, timeout, this);
+				},
+				fullName: 'Aidan O\'Donohue',
+				jobTitle: 'Designer',
+				about: 'Aidan graduated from the Rhode Island School of Design with a degree in painting, and has also studied design and architecture.',
+				game: {
+					past: 'We have already talked. Please let me get back to work!',
+					task: 'You must learn a great fact from the wise one.',
+					present: 'Ahh you have gained much knowledge.',
+					future: 'I will never be your future because I am first.',
+					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
+					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
+					question: 'What style do you want?',
+					questionType: 'open',
+					maxLength: 50
+				}
+			},
+			'jedd': {
+				x: 2100,
+				y: 90,
+				frames: 4,
+				animation: [2,0,1,2,2,2,0,0,1,1,1,0,0,1,2,1,3,3,3,0,0,1,0,0,1,2,1,1,0,0,0,1,2],
+				paused: false,
+				sleep: function() {
+					this.paused = true;
+					var timeout = Math.floor(Math.random() * 4000 + 2000);
+					setTimeout(function(self) {
+						self.paused = false;
+					}, timeout, this);
+				},
+				fullName: 'Jedd Cohen',
+				jobTitle: 'Curriculum Developer',
+				about: 'Jedd is working to adapt Community PlanIt for use in schools and other community and advocacy organizations.',
+				game: {
+					past: 'We have already talked. Please let me get back to work!',
+					task: 'You must learn a great fact from the wise one.',
+					present: 'Ahh you have gained much knowledge.',
+					future: 'I will never be your future because I am first.',
+					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
+					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
+					question: 'Who are you going to work with to make this happen?',
+					questionType: 'open',
+					maxLength: 50
+				}
 			},
 			'jesse': {
 				x: 1800,
@@ -810,10 +913,17 @@
 				about: 'Jesse is a visiting faculty member in Emerson\'s Department of Visual and Media Arts, and studies civic engagement, citizenship, and digital media.',
 				bind: 'plant1',
 				bindName: 'jesse',
-				past: 'past',
-				present: 'present',
-				future: 'future',
-				clue: 'clue'
+				game: {
+					past: 'We have already talked. Please let me get back to work!',
+					task: 'You must learn a great fact from the wise one.',
+					present: 'Ahh you have gained much knowledge.',
+					future: 'I will never be your future because I am first.',
+					clue: 'Ahhhahaha',
+					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
+					question: 'How will you evaluate the game to see if it work?',
+					questionType: 'open',
+					maxLength: 50
+				}
 			}
 		};
 	}
@@ -884,25 +994,53 @@
 
 	function _addChallengeContent() {
 		$('#challengeBox').empty();
-		var person = items.peopleData[_currentKey],
+		var person = items.peopleData[$game.localStore.targetPerson],
+			game = person.game,
 			html;
-		if(_challengeSlide === 0) {
+		//if game over
+		if($game.localStore.over) {
+			//create Lib
+			_createLib();
+			html = '<p>Congrats! Here is your game lib:</p>';
+			html += '<p>'+ $game.localStore.lib +'</p>';
+			html += '<p><input id="libName" maxLength="20"></input></p>';
+			html += '<p><a href="#" class="nextSlide">Close</a></p>';
+
+		} else if(_challengeSlide === 0) {
 			//show info
-			html = person.information;
+			html = game.information;
 			html += '<p><a href="#" class="nextSlide">Next</a></p>';
 		} else if(_challengeSlide === 1) {
 			//show question
-			question = person.question;
-			html = '<p>' + question + '</p>';
-			html += '<p><input id="challengeAnswer"></input></p>';
+			html = '<p>' + game.question + '</p>';
+			html += '<p><input id="challengeAnswer" maxLength="' + person.maxLength +'"></input></p>';
 			html += '<p><a href="#" class="nextSlide">Submit</a></p>';
 		} else {
 			//show victory and clue
-			clue = person.clue;
-			html = '<p>Thanks! ' + clue + '</p>';
+			html = '<p>Thanks! ' + game.clue + '</p>';
 			html += '<p><a href="#" class="nextSlide">Close</a></p>';
 		}
 		$('#challengeBox').html(html);
 		$game.input.bindNextSlide();
+	}
+
+	function _saveLib(name) {
+		var lib = $game.localStore.lib,
+			score = Math.floor(Math.random() * 100);
+		$.post('../../db/saveLib.php', {lib: lib, score: score, name: name},
+			function(res) {
+				console.log(res);
+			}, 'text');
+	}
+
+	function _createLib() {
+		$game.localStore.lib = 'First thing is ' + $game.localStore.answers[0];
+		$game.localStore.lib += 'First thing is ' + $game.localStore.answers[1];
+		$game.localStore.lib += 'First thing is ' + $game.localStore.answers[2];
+		$game.localStore.lib += 'First thing is ' + $game.localStore.answers[3];
+		$game.localStore.lib += 'First thing is ' + $game.localStore.answers[4];
+		$game.localStore.lib += 'First thing is ' + $game.localStore.answers[5];
+		$game.localStore.lib += 'First thing is ' + $game.localStore.answers[6];
+		$game.localStore.lib += 'First thing is ' + $game.localStore.answers[7];
 	}
 })();
