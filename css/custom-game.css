@@ -130,7 +130,6 @@
 }
 #game #message .messageText a {
   background: #ff5622;
-  border-radius: 5px;
   padding: 5px;
   cursor: pointer;
   letter-spacing: 0;
@@ -175,10 +174,10 @@
   margin: 0;
 }
 #game #popupBox .soundcloud p a {
-  color: #ffb8a2;
+  color: #ff5622;
 }
 #game #popupBox .soundcloud .user {
-  color: #d7f0f1;
+  color: #777;
 }
 #game #popupBox .bioImage {
   width: 96px;
@@ -187,7 +186,6 @@
   float: left;
 }
 #game #popupBox .beginGame {
-  border-radius: 5px;
   background: #ff5622;
   color: white;
   padding: 8px;
@@ -214,6 +212,35 @@
 }
 #game #whiteboardCanvas {
   cursor: crosshair;
+}
+#game #inventory {
+  position: fixed;
+  padding: 0;
+  top: 200px;
+  left: 50%;
+  margin-left: -360px;
+  width: 720px;
+  z-index: 100;
+  background: white;
+  border: 4px solid #b1e1e4;
+}
+#game #inventory p {
+  color: #ffffff;
+  color: #40b4bc;
+  margin: 10px;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+#game #inventory p img {
+  border: 2px solid #78cbd1;
+  margin: 7px;
+}
+#game #inventoryButton p {
+  color: white;
+  font-size: 3em;
+  position: fixed;
+  right: 10px;
+  top: 30px;
 }
 #cover {
   width: 100%;
@@ -351,6 +378,13 @@
 }
 .offscreen {
   display: none;
+}
+#challengeBox .nextSlide {
+  background: #ff5622;
+  color: white;
+  padding: 5px;
+  float: right;
+  margin-bottom: 10px;
 }
 @media (max-width: 767px) {
   #game,

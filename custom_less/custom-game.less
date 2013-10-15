@@ -144,7 +144,6 @@
 			text-align: center;
 			a {
 				background: @red;
-				border-radius: 5px;
 				padding: 5px;
 				cursor: pointer;
 				letter-spacing: 0;
@@ -191,11 +190,11 @@
 				padding: 2px 0;
 				margin: 0;
 				a {
-					color: @redLightest;
+					color: @red;
 				}
 			}
 			.user {
-				color: @greenLightest;
+				color: #777;
 			}
 		}
 		.bioImage {
@@ -205,7 +204,6 @@
 			float: left;
 		}
 		.beginGame {
-			border-radius: 5px;
 			background: @red;
 			color: white;
 			padding: 8px;
@@ -233,6 +231,36 @@
 	}
 	#whiteboardCanvas {
 		cursor: crosshair;
+	}
+	#inventory {
+		// display: none;
+		position: fixed;
+		padding: 0;
+		top: 200px;
+		left: 50%;
+		margin-left: -360px;
+		width: 720px;
+		z-index: @zMessage;
+		background: white;
+		border: 4px solid @greenLighter;
+		p {
+			color: @white;
+			color: @greenDarker;
+			margin: 10px;
+			font-size: 1.3em;
+			font-weight: 100;
+			img {
+				border: 2px solid @green;
+				margin: 7px;
+			}
+		}
+	}
+	#inventoryButton p {
+		color: white;
+		font-size: 3em;
+		position: fixed;
+		right: 10px;
+		top: 30px;
 	}
 }
 
@@ -390,6 +418,24 @@
 .offscreen {
 	display: none;
 }
+
+//challenge box
+#challengeBox {
+	.nextSlide {
+		background: @red;
+		color: white;
+		padding: 5px;
+		float: right;
+		margin-bottom: 10px;
+	}
+}
+
+
+
+
+
+
+
 
 @media (max-width: 767px) {
 	#game, #pregame, #blogTease, #nongameH {
