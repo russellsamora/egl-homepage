@@ -33,7 +33,7 @@
 					<div class='soundcloud'>
 						<p class='songTitle'></p>
 						<p class='user'></p>
-						<p><img src='img/soundcloud/white_text.png'></p>
+						<p><img src='img/soundcloud/black_text.png'></p>
 					</div>
 					<div class='gameInstructions'>
 						<p>Welcome to the Engagement Game Lib!</p>
@@ -43,6 +43,21 @@
 				</div>
 				<div id='challengeBox'>
 				</div>
+				<!-- <div id='inventoryButton'>
+					<p><i class='icon-briefcase'></i></p>
+				</div> -->
+				<!-- <div id='inventory'>
+					<p>
+						<img src='img/people/inventory/stephen.jpg'>
+						<img src='img/people/inventory/eric.jpg'>
+						<img src='img/people/inventory/christina.jpg'>
+						<img src='img/people/inventory/russell.jpg'>
+						<img src='img/people/inventory/sam.jpg'>
+						<img src='img/people/inventory/aidan.jpg'>
+						<img src='img/people/inventory/jedd.jpg'>
+						<img src='img/people/inventory/jesse.jpg'>
+					</p>
+				</div> -->
 				<div id='pregame'>
 					<div class='leftHalf'>
 						<p class='introText'>

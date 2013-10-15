@@ -14,6 +14,71 @@
 				</div>
 			</div> -->
 			<div class='container'>
+				<div id='darg' class='anchor'>
+					<h1>Guidebooks</h1>
+					<div class='guidebookBox'>
+						<div class='row'>
+							<div class='span12'>
+								<h2>DARG Guidebook</h2>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='span3'>
+								<p class='bookImage'>
+									<img src='/img/projects/other/darg_guidebook.jpg'>
+								</p>
+							</div>
+							<div class='span9 bookDescription'>
+								<p>
+									The Design Action Research with Government (DARG) guidebook describes how government, community organizations and academic researchers can collaborate on developing new tools, processes and knowledge for innovating civic life in cities. <br><br>The guide calls for a more deliberate approach to technology experimentation within city government that leads to lasting relationships between organizations and citizens and sharable findings across knowledge networks.
+								</p>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='span12'>
+								<p class='guideLinkP'>
+									<a href='/pdfs/darg.pdf' target='_blank'>Click here to download a PDF version</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id='guidebook'>
+					<div class='guidebookBox'>
+						<div class='row'>
+							<div class='span12'>
+								<h2>Engagement Game Guidebook</h2>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='span3'>
+								<p class='bookImage'>
+									<img src='/img/projects/other/guidebook_cover_small.jpg'>
+								</p>
+							</div>
+							<div class='span9 bookDescription'>
+								<p>
+									The Engagement Game Lab has created this guidebook as a resource for people and organizations interested in tapping the power of play to engage people in real-world processes. In the Engagement Game Guidebook you'll learn:
+								</p>
+								<ul>
+									<li>What is an Engagement Game?</li>
+									<li>How are they used?</li>
+									<li>Who benefits from them and how?</li>
+									<li>How do you design one?</li>
+									<li>What challenges should you expect to encounter, and how do you address them?</li>
+								</ul>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='span12'>
+								<p class='guideLinkP'>
+									Download Coming Soon...
+									<!-- <a href='/pdfs/EngagementGameGuide.pdf' target='_blank'>Click here to download a PDF version</a> -->
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div id='courses' class='anchor'>
 					<div class='row'>
 						<div class='span12'>
@@ -58,40 +123,6 @@
 							</p>
 							<p class='course'>
 								Digital technology has not only allowed for the unprecedented global dissemination of information within the last decades, new media have become a powerful tool for social and political activists everywhere. From the <a href='http://moveon.org' target='_blank'>MoveOn.org</a> movement to the events of the Arab Spring, online social networks provide an influential contemporary forum for advocating for change. This course explores "cyberactivism" both in theory and in practice, investigating the different approaches used today to transform our virtual and real worlds. 
-							</p>
-						</div>
-					</div>
-				</div>
-				<div id='guidebook' class='anchor'>
-					<div class='row'>
-						<div class='span12'>
-							<h2>Guide Book</h2>
-						</div>
-					</div>
-					<div class='row'>
-						<div class='span3'>
-							<p class='bookImage'>
-								<img src='/img/projects/other/guidebook_cover_small.jpg'>
-							</p>
-						</div>
-						<div class='span9 bookDescription'>
-							<p>
-								The Engagement Game Lab has created this guidebook as a resource for people and organizations interested in tapping the power of play to engage people in real-world processes. In the Engagement Game Guidebook you'll learn:
-							</p>
-							<ul>
-								<li>What is an Engagement Game?</li>
-								<li>How are they used?</li>
-								<li>Who benefits from them and how?</li>
-								<li>How do you design one?</li>
-								<li>What challenges should you expect to encounter, and how do you address them?</li>
-							</ul>
-						</div>
-					</div>
-					<div class='row'>
-						<div class='span12'>
-							<p class='guideLinkP'>
-								Download Coming Soon...
-								<!-- <a href='/pdfs/EngagementGameGuide.pdf' target='_blank'>Click here to download a PDF version</a> -->
 							</p>
 						</div>
 					</div>

@@ -9069,6 +9069,9 @@ a.badge:focus {
   color: #ffffff;
   font-weight: 300;
 }
+#courses {
+  margin-bottom: 80px;
+}
 #courses h1 {
   text-align: center;
   color: #ff5622;
@@ -9095,10 +9098,9 @@ a.badge:focus {
   color: #999999;
   padding: 15px;
 }
-#guidebook {
+.guidebookBox {
   margin-top: 80px;
   padding-top: 0;
-  margin-bottom: 80px;
   -webkit-border-radius: 10px;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 10px;
@@ -9107,21 +9109,26 @@ a.badge:focus {
   background-clip: padding-box;
   box-shadow: 0px 0px 0px 4px #b1e1e4;
 }
-#guidebook h2 {
+.guidebookBox h2 {
   text-align: center;
 }
-#guidebook ul {
+.guidebookBox ul {
   padding-left: 30px;
 }
-#guidebook .guideLinkP {
+.guidebookBox .guideLinkP {
   text-align: center;
 }
-#guidebook .bookImage {
+.guidebookBox .bookImage {
   text-align: center;
   padding: 10px;
 }
-#guidebook .bookDescription {
+.guidebookBox .bookDescription {
   padding: 10px;
+}
+#darg h1 {
+  text-align: center;
+  color: #ff5622;
+  font-weight: 800;
 }
 h1,
 h2,
