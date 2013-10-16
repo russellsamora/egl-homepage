@@ -474,13 +474,13 @@
 			},
 			'boombox': {
 				class: 'boombox',
-				x: 1400,
-				y: 450,
+				x: 1450,
+				y: 700,
 				message: 'use my buttons to pump up the jams!'
 			},
 			'discoball': {
 				class: 'discoball',
-				x: 600,
+				x: 2200,
 				y: -50,
 				action: function() {
 					$game.toggleDiscoMode();
@@ -495,15 +495,15 @@
 			},
 			'playButton': {
 				class: 'playButton',
-				x: 900,
-				y: 283,
+				x: 1492,
+				y: 734,
 				// message: 'booooombox',
 				action: function() { $game.audio.play(); }
 			},
 			'stopButton': {
 				class: 'stopButton',
-				x: 675,
-				y: 183,
+				x: 1525,
+				y: 734,
 				// message: 'booooombox',
 				action: function() { $game.audio.pause(); }
 			},
@@ -557,16 +557,16 @@
 			},
 			'plant1': {
 				class: 'plant1',
-				x: 2050,
-				y: 550,
-				invisible: true,
-				bind: 'jesse',
-				bindName: 'plant1'
+				x: 800,
+				y: 650,
+				invisible: true
+				// bind: 'jesse',
+				// bindName: 'plant1'
 			},
 			'couch': {
 				class: 'couch',
-				x: 800,
-				y: 400,
+				x: 1560,
+				y: 150,
 				invisible: true,
 				bind: 'christina',
 				bindName: 'couch'
@@ -608,8 +608,8 @@
 			},
 			'coffeetable': {
 				class: 'coffeetable',
-				x: 1000,
-				y: 650,
+				x: 2400,
+				y: 500,
 				invisible: true
 			},
 			'crat': {
@@ -802,8 +802,8 @@
 				}
 			},
 			'christina': {
-				x: 950,
-				y: 300,
+				x: 1620,
+				y: 70,
 				frames: 4,
 				animation: [0,1,2,3,1,1,2,3,1,2,3,1,2,3,1,2,2,3,2,1,2],
 				paused: false,
@@ -839,8 +839,8 @@
 				}
 			},
 			'russell': {
-				x: 1500,
-				y: 70,
+				x: 1900,
+				y: 450,
 				frames: 3,
 				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
 				fullName: 'Russell Goldenberg',
@@ -866,8 +866,8 @@
 				}
 			},
 			'sam': {
-				x: 1300,
-				y: 550,
+				x: 2300,
+				y: 200,
 				frames: 8,
 				animation: [0,1,2,3,4,5,6,7],
 				paused: false,
@@ -901,8 +901,8 @@
 				}
 			},
 			'aidan': {
-				x: 2500,
-				y: 400,
+				x: 1000,
+				y: 200,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
 				paused: false,
@@ -936,8 +936,8 @@
 				}
 			},
 			'jedd': {
-				x: 2100,
-				y: 90,
+				x: 1600,
+				y: 450,
 				frames: 4,
 				animation: [2,0,1,2,2,2,0,0,1,1,1,0,0,1,2,1,3,3,3,0,0,1,0,0,1,2,1,1,0,0,0,1,2],
 				paused: false,
@@ -971,8 +971,8 @@
 				}
 			},
 			'jesse': {
-				x: 1800,
-				y: 550,
+				x: 1000,
+				y: 620,
 				frames: 5,
 				animation: [0,1,2,1,2,0,4,0,2,0,1,2,4,3,4,2,2,1,0],
 				paused: false,
@@ -986,8 +986,8 @@
 				fullName: 'Jesse Baldwin-Philippi',
 				jobTitle: 'Rsearcher & Visiting Professor',
 				about: 'Jesse is a visiting faculty member in Emerson\'s Department of Visual and Media Arts, and studies civic engagement, citizenship, and digital media.',
-				bind: 'plant1',
-				bindName: 'jesse',
+				// bind: 'plant1',
+				// bindName: 'jesse',
 				game: {
 					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
 					task: 'no task from me.',
