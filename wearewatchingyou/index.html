@@ -27,11 +27,12 @@
 	</body>
 	<script src='/js/libs/jquery.min.js'></script>
 	<script>
-		var num;
+		var num,
+			count = 0;
 		$.get('/db/drawingCount.php',
 			function(data) {
 				num = parseInt(data, 10);
-				loadImage(0);
+				loadImage(num - 1);
 			}, 'text');
 
 		function loadImage(index) {
@@ -39,10 +40,17 @@
 				img = new Image();
 				img.onload = function() {
 					$('body').append(img);
-					index++;
-					if(index < num)	{
+					index--;
+					count++;
+					if(index > -1 && count < 120) {
 						loadImage(index);
 					}
+				}
+				img.onerror = function() {
+					index--;
+					if(index > -1 && count < 120) {
+						loadImage(index);
+					}	
 				}
 			img.src = '/img/whiteboard/image' + index + '.png';
 		}
