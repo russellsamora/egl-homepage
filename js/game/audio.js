@@ -131,9 +131,8 @@
 		$('#popupBox .soundcloud .songTitle').html(html);
 		$('#popupBox .soundcloud .user').text(user);
 
-		$('#popupBox .soundcloud').show();
-		$('#popupBox .bio').hide();
-		$('#popupBox .wiki').hide();
+		$game.hidePopup();
+		$('#popupBox .soundcloud').show();		
 		$('#popupBox').show();
 		clearTimeout(_infoTimer);
 		var _infoTimer = setTimeout(function() {

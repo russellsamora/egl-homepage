@@ -19,8 +19,8 @@
 		inTransit: false,
 		id: 'player',
 		class: 'character',
-		x: 500,
-		y: 150,
+		x: 450,
+		y: 250,
 		w: 80,
 		h: 160,
 		offset: {

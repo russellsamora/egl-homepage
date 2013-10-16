@@ -17,9 +17,10 @@
 		user: null,
 		targetOrder: ['stephen','eric','christina','russell','sam','aidan','jedd','jesse'],
 		iconNames: {
-			dongle: 'bolt',
+			dongle: 'code-fork',
 			trophy: 'trophy',
-			badge: 'star'
+			badge: 'shield',
+			bitcoin: 'bitcoin'
 		},
 		
 		init: function() {
