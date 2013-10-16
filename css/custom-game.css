@@ -189,6 +189,9 @@
   color: white;
   padding: 8px;
 }
+#game #popupBox .gameInstructions {
+  display: none;
+}
 #game #challengeBox {
   display: none;
   position: fixed;
@@ -239,7 +242,7 @@
   background: rgba(255, 255, 255, 0.8);
   color: rgba(255, 86, 34, 0.8);
   border: 2px solid white;
-  padding: 5px;
+  padding: 5px 5px 0 5px;
 }
 #game #inventoryButton p i:hover {
   color: #ff5622;
@@ -262,6 +265,9 @@
   margin: 10px;
   font-size: 1.3em;
   font-weight: 100;
+}
+#game #inventory p i {
+  padding: 3px;
 }
 #game #inventory p img {
   border: 2px solid #78cbd1;
@@ -288,6 +294,9 @@
   font-size: 3em;
   font-weight: 500;
   z-index: 100;
+}
+#game .reward i {
+  color: white;
 }
 #cover {
   width: 100%;

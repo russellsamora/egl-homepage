@@ -210,6 +210,9 @@
 			color: white;
 			padding: 8px;
 		}
+		.gameInstructions {
+			display: none;
+		}
 	}
 	#challengeBox {
 		display: none;
@@ -263,7 +266,7 @@
 					color: @red;
 				}
 				border: 2px solid white;
-				padding: 5px;
+				padding: 5px 5px 0 5px;
 			}
 			font-size: 3em;
 		}
@@ -285,6 +288,9 @@
 			margin: 10px;
 			font-size: 1.3em;
 			font-weight: 100;
+			i {
+				padding: 3px;
+			}
 			img {
 				border: 2px solid @green;
 				margin: 7px;
@@ -312,6 +318,9 @@
 		font-size: 3em;
 		font-weight: 500;
 		z-index: @zMessage;
+		i {
+			color: white;
+		}
 	}
 }
 
