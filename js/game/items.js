@@ -541,10 +541,12 @@
 				x: 165,
 				y: 68,
 				action: function() {
+					//open secret images page
+					window.open('http://engagementgamelab.org/wearewatchingyou/index.html', '_blank');
+					window.focus();
 					if($game.localStore.playing && $game.localStore.targetPerson === 'jedd') {
 						$game.localStore.tasks.jedd = true;
 						$game.updateStorage();
-						//TODO: make sound or something
 					}
 				}
 			},

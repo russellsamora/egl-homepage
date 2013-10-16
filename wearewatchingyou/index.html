@@ -28,7 +28,8 @@
 	<script src='/js/libs/jquery.min.js'></script>
 	<script>
 		var num,
-			count = 0;
+			count = 0,
+			max = 50;
 		$.get('/db/drawingCount.php',
 			function(data) {
 				num = parseInt(data, 10);
@@ -42,13 +43,13 @@
 					$('body').append(img);
 					index--;
 					count++;
-					if(index > -1 && count < 120) {
+					if(index > -1 && count < max) {
 						loadImage(index);
 					}
 				}
 				img.onerror = function() {
 					index--;
-					if(index > -1 && count < 120) {
+					if(index > -1 && count < max) {
 						loadImage(index);
 					}	
 				}
