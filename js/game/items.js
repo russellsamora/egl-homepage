@@ -186,6 +186,8 @@
 							msg = game.task;
 						}
 					}
+				} else if($game.localStore.previousPerson === key) {
+					msg = game.chatClue;
 				} else {
 					//see if we unlockeed them already
 					if($game.localStore.people[key]) {
@@ -286,15 +288,27 @@
 				var answer = $('#challengeAnswer').val();
 				$game.localStore.answers.push(answer);
 				$game.localStore.people[$game.localStore.targetPerson] = true;
+				//set color in inventory
+				var selector = '.' + $game.localStore.targetPerson + 'Inventory';
+				$(selector).removeClass('grayscale');
+
 				$game.localStore.targetIndex += 1;
 				//TODO: a game over check
 				if($game.localStore.targetIndex >= $game.targetOrder.length) {
 					$game.localStore.over = true;
-				} else {
+				}
+				//congrats with clue screen
+				_addChallengeContent();
+
+				
+				if(!$game.localStore.over) {
+					$game.localStore.previousPerson = $game.localStore.targetPerson;
 					$game.localStore.targetPerson = $game.targetOrder[$game.localStore.targetIndex];
 				}
+				var sound = 'win' + $game.localStore.targetIndex - 1;
+				$game.audio.playFx(sound);
 				$game.updateStorage();
-				_addChallengeContent();
+
 			} else if(_challengeSlide === 3) {
 				if($game.localStore.over) {
 					var name = $('#libName').val();
@@ -522,6 +536,18 @@
 				x: 130,
 				y: 0
 			},
+			'book': {
+				class: 'book',
+				x: 165,
+				y: 68,
+				action: function() {
+					if($game.localStore.playing && $game.localStore.targetPerson === 'jedd') {
+						$game.localStore.tasks.jedd = true;
+						$game.updateStorage();
+						//TODO: make sound or something
+					}
+				}
+			},
 			'plant0': {
 				class: 'plant0',
 				x: -60,
@@ -591,9 +617,9 @@
 				x: 600,
 				y: 150,
 				action: function(el) {
-					var msg = 'Hey dude. You can play a game or explore the lab.';
+					var msg = 'Hey there! Havin\' fun exploring the Lab? Want to kick things into high gear? We\'ll help you create your own engagement game! Just enter "game-mode" and start playing.';
 					if($game.localStore.playing) {
-						msg = 'Want to stop playing? Just say so!';
+						msg = 'Want to exit Game Mode? Your progress will be saved.';
 					}
 					$game.showMessage({el: el, message: msg, crat: true});
 				}	
@@ -722,15 +748,21 @@
 				jobTitle: 'Managing Director',
 				about: 'Stephen makes and studies media that aim to foster and amplify experiences of complexity, difference, and play.',
 				game: {
-					past: 'We have already talked. Please let me get back to work!',
+					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
 					task: 'no task from me.',
-					present: 'You found me! How about I learn you some stuff?',
+					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
 					future: 'No future from me.',
-					clue: 'No clue from me.',
-					information: '<p>Replace me.</p>',
-					question: 'What is the real world problem that interests you?',
+					reward: {
+						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						name: 'dongle',
+						count: 3
+					},
+					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
+					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
+					question: 'What real world problem will your engagement game help solve?',
 					questionType: 'open',
-					maxLength: 50
+					maxLength: 40
 				}
 			},
 			'eric': {
@@ -755,6 +787,7 @@
 					present: 'Ahh you have gained much knowledge.',
 					future: 'Aren\'t you supposed to be looking for someone else?',
 					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
+					chatClue: 'I just talked to you. Here is the clue again.',
 					information: '<p>Replace me</p>',
 					question: 'What action do you want the game to faciilate?',
 					questionType: 'open',
@@ -785,6 +818,7 @@
 					present: 'Ahh you have gained much knowledge.',
 					future: 'I will never be your future because I am first.',
 					clue: 'Her name rhymes with Bristina...',
+					chatClue: 'I just talked to you. Here is the clue again.',
 					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
 					question: 'Who is the target audience?',
 					questionType: 'open',
@@ -805,6 +839,7 @@
 					present: 'Ahh you have gained much knowledge.',
 					future: 'I will never be your future because I am first.',
 					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
+					chatClue: 'I just talked to you. Here is the clue again.',
 					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
 					question: 'What technology do you want to use to implement?',
 					questionType: 'open',
@@ -833,6 +868,7 @@
 					present: 'Ahh you have gained much knowledge.',
 					future: 'I will never be your future because I am first.',
 					clue: 'I love games! But the old timey stuff mostly...',
+					chatClue: 'I just talked to you. Here is the clue again.',
 					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
 					question: 'What is the gameplay?',
 					questionType: 'open',
@@ -861,6 +897,7 @@
 					present: 'Ahh you have gained much knowledge.',
 					future: 'I will never be your future because I am first.',
 					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
+					chatClue: 'I just talked to you. Here is the clue again.',
 					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
 					question: 'What style do you want?',
 					questionType: 'open',
@@ -889,6 +926,7 @@
 					present: 'Ahh you have gained much knowledge.',
 					future: 'I will never be your future because I am first.',
 					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
+					chatClue: 'I just talked to you. Here is the clue again.',
 					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
 					question: 'Who are you going to work with to make this happen?',
 					questionType: 'open',
@@ -919,6 +957,7 @@
 					present: 'Ahh you have gained much knowledge.',
 					future: 'I will never be your future because I am first.',
 					clue: 'Ahhhahaha',
+					chatClue: 'I just talked to you. Here is the clue again.',
 					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
 					question: 'How will you evaluate the game to see if it work?',
 					questionType: 'open',
@@ -1003,7 +1042,7 @@
 			_createLib();
 			html = '<p>Congrats! Here is your game lib:</p>';
 			html += '<p>'+ $game.localStore.lib +'</p>';
-			html += '<p><input id="libName" maxLength="20"></input></p>';
+			html += '<p>Enter your name: <input id="libName" maxLength="20"></input></p>';
 			html += '<p><a href="#" class="nextSlide">Close</a></p>';
 
 		} else if(_challengeSlide === 0) {
@@ -1012,13 +1051,15 @@
 			html += '<p><a href="#" class="nextSlide">Next</a></p>';
 		} else if(_challengeSlide === 1) {
 			//show question
-			html = '<p>' + game.question + '</p>';
-			html += '<p><input id="challengeAnswer" maxLength="' + person.maxLength +'"></input></p>';
+			html = '<p><span class="h3like">Q: </span>' + game.question + '</p>';
+			html += '<p>lead in text <input id="challengeAnswer" maxLength="' + game.maxLength +'"></input></p>';
 			html += '<p><a href="#" class="nextSlide">Submit</a></p>';
 		} else {
 			//show victory and clue
-			html = '<p>Thanks! ' + game.clue + '</p>';
+			html = '<p>' + game.reward.text + '</p>';
+			html += '<p>' + game.clue + '</p>';
 			html += '<p><a href="#" class="nextSlide">Close</a></p>';
+			$game.spawnReward(game.reward);
 		}
 		$('#challengeBox').html(html);
 		$game.input.bindNextSlide();

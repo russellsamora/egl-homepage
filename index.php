@@ -36,28 +36,41 @@
 						<p><img src='img/soundcloud/black_text.png'></p>
 					</div>
 					<div class='gameInstructions'>
-						<p>Welcome to the Engagement Game Lib!</p>
-						<p>To create your own lib, you must talk everybody in the lab.  However, order matters.  Each person will have a challenge to complete before you fill out the lib.  They will also have a clue for who to go see next.</p>
+						<h3>Welcome to the Engagement Game Lib!</h3>
+						<p>Game Mode Activated! Like the dramatic lighting? You can <b>EXIT</b> Game Mode at any time by coming back to me. To begin your journey, search the lab for the staff member with <b>THE MOST COFFEE</b>. Good luck!</p>
 						<p style='text-align:center; padding:10px;'><a href='#' class='beginGame'>Begin Game</a></p>
 					</div>
 				</div>
 				<div id='challengeBox'>
 				</div>
-				<!-- <div id='inventoryButton'>
+				<div id='inventoryButton'>
 					<p><i class='icon-briefcase'></i></p>
-				</div> -->
-				<!-- <div id='inventory'>
+				</div>
+				<div id='inventory'>
+					<h3>INVENTORY</h3>
 					<p>
-						<img src='img/people/inventory/stephen.jpg'>
-						<img src='img/people/inventory/eric.jpg'>
-						<img src='img/people/inventory/christina.jpg'>
-						<img src='img/people/inventory/russell.jpg'>
-						<img src='img/people/inventory/sam.jpg'>
-						<img src='img/people/inventory/aidan.jpg'>
-						<img src='img/people/inventory/jedd.jpg'>
-						<img src='img/people/inventory/jesse.jpg'>
+						<span>Trophies Earned:</span>
+						<span class='trophy'></span>
 					</p>
-				</div> -->
+					<p>
+						<span>Dongles Grabbed:</span>
+						<span class='dongle'></span>
+					</p>
+					<p>
+						<span>Arbitrary Badges:</span>
+						<span class='badge'></span>
+					</p>
+					<p>
+						<img class='grayscale ericInventory' src='img/people/inventory/eric.jpg'>
+						<img class='grayscale samInventory' src='img/people/inventory/sam.jpg'>
+						<img class='grayscale jeddInventory' src='img/people/inventory/jedd.jpg'>
+						<img class='grayscale jesseInventory' src='img/people/inventory/jesse.jpg'>
+						<img class='grayscale stephenInventory' src='img/people/inventory/stephen.jpg'>
+						<img class='grayscale russellInventory' src='img/people/inventory/russell.jpg'>
+						<img class='grayscale aidanInventory' src='img/people/inventory/aidan.jpg'>
+						<img class='grayscale christinaInventory' src='img/people/inventory/christina.jpg'>
+					</p>
+				</div>
 				<div id='pregame'>
 					<div class='leftHalf'>
 						<p class='introText'>

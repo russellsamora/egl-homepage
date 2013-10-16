@@ -45,8 +45,10 @@
 				var key = $(this).attr('data-key');
 				if(key === 'crat') {
 					if($game.localStore.playing) {
+						$('#inventoryButton').hide();
 						$game.stopPlaying();	
 					} else {
+						$('#inventoryButton').show();
 						$game.showGameInstructions();
 					}
 				} else {
@@ -69,9 +71,9 @@
 		},
 
 		bindNextSlide: function() {
-			$('#challengeBox a').on('click', function(e) {
+			$('#challengeBox .nextSlide').on('click', function(e) {
 				e.preventDefault();
-				$('#challengeBox a').off('click');
+				$('#challengeBox .nextSlide').off('click');
 				$game.items.nextSlide();
 				return false;
 			});
@@ -155,9 +157,15 @@
 			$game.exitAndSave();
 		});		
 
-		$('.beginGame').on('click', function(e) {
+		$BODY.on('click','.beginGame', function(e) {
 			e.preventDefault();
 			$('#popupBox').hide(); 
+			return false;
+		});
+
+		$BODY.on('click', '#inventoryButton, #inventory', function(e) {
+			e.preventDefault();
+			$('#inventory').toggle();
 			return false;
 		});
 	}

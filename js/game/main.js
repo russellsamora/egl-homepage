@@ -6,7 +6,8 @@
 		_numFrames = 64,
 		_currentFrame = 0,
 		_numDrawings = 0,
-		_discoMode = false;
+		_discoMode = false,
+		_maxMsgWidth = 520;
 
 	window.$game = {
 
@@ -15,6 +16,11 @@
 		started: false,
 		user: null,
 		targetOrder: ['stephen','eric','christina','russell','sam','aidan','jedd','jesse'],
+		iconNames: {
+			dongle: 'bolt',
+			trophy: 'trophy',
+			badge: 'star'
+		},
 		
 		init: function() {
 			//see if the game should be started up based on screen size
@@ -95,19 +101,28 @@
 				mid = left + parseInt(data.el.style.width,10) / 2;
 
 			// var msgWidth = parseInt($MESSAGE_BOX.css('width'), 10),
-			var msgLeft = Math.floor(mid - msgLength * 8 / 2);
-			
+			var realMsgLength = Math.min(msgLength * 9, _maxMsgWidth);
+			var realMsgWidth = Math.min(msgLength * 9, _maxMsgWidth);
+			var msgLeft = Math.floor(mid - realMsgLength / 2);
+
 			var duration = 300 + msgLength * 100;
 			//clear old messages and change position and show and add fade out timer
 			$game.hideMessage();
+			$MESSAGE_TEXT.removeClass('centerText');
+			if(realMsgWidth < _maxMsgWidth) {
+				$MESSAGE_TEXT.addClass('centerText');
+			}
 			$MESSAGE_BOX.css({
 				top: top,
 				left: msgLeft,
-				width: msgLength * 9
+				width: realMsgWidth
 			}).show();
-			_messageTimeout = setTimeout(function() {
-				$game.hideMessage();
-			}, duration);
+
+			if(!data.crat && !data.target) {
+				_messageTimeout = setTimeout(function() {
+					$game.hideMessage();
+				}, duration);
+			}
 		},
 
 		hideMessage: function() {
@@ -175,6 +190,11 @@
 			$game.localStore.playing = true;
 			$('#cover').show();
 			$game.localStore.targetPerson = $game.targetOrder[$game.localStore.targetIndex];
+			if($game.localStore.targetIndex > 0) {
+				$game.localStore.previousPerson = $game.targetOrder[$game.localStore.targetIndex -1];
+			} else {
+				$game.localStore.previousPerson = null;
+			}
 			$game.updateStorage();
 		},
 
@@ -189,6 +209,28 @@
 			if(!_discoMode) {
 				$('#cover').css('background','rgba(0,0,0,.4)');
 			}
+		},
+
+		spawnReward: function(reward) {
+			var html = '<p class="reward">+' + reward.count + ' <i class="icon-' + $game.iconNames[reward.name] + '"></i></p>';
+			$GAMEBOARD.append(html);
+			//add to inventory
+			var selector = '.' + reward.name;
+			for(var i = 0; i < reward.count; i++) {
+				$(selector).append('<i class="icon-' + $game.iconNames[reward.name] + '">');
+			}
+
+			//animated it off
+			$('.reward').animate({
+				opacity: 1
+			}, 500, function() {
+				$(this).animate({
+					opacity: 0,
+					top: '-10px',
+				},2000, function() {
+					$(this).remove();
+				});
+			});
 		}
 	};
 
@@ -231,7 +273,19 @@
 			$game.localStore = JSON.parse(storage);
 		} else {
 			var id = Math.random().toString(36).slice(2);
-			$game.localStore = {id: id, people: {}, targetIndex: 0, answers: [], tasks: {stephen: true, eric: false, christina: false, sam: false, russell: true, aidan: false, jedd: true, jesse: false}};
+			$game.localStore = {
+				id: id, 
+				people: {}, 
+				targetIndex: 0, 
+				answers: [], 
+				tasks: {stephen: true, eric: false, christina: false, sam: false, russell: true, aidan: false, jedd: false, jesse: false},
+				inventory: {
+					trophies: 0,
+					dongles: 0,
+					badges: 0
+				}
+			};
+
 			$game.updateStorage();
 		}
 	}

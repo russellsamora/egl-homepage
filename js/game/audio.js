@@ -14,11 +14,20 @@
 		
 		init: function() {
 			audio.fx = new Howl({
-				urls: ['../../audio/sprites.mp3'],
+				urls: ['../../audio/sprites.mp3','../../audio/sprites.ogg'],
 				sprite: {
 					jump: [0, 600],
 					thud: [650, 350],
-					water: [1000, 1500]
+					water: [1000, 500],
+					win0: [1600, 700],
+					win1: [2300, 700],
+					win2: [3000, 600],
+					win3: [3600, 700],
+					win4: [4300, 800],
+					win5: [5100, 900],
+					win6: [6000, 1500],
+					win7: [7500, 1400],
+					win8: [8900, 1100]
 				}
 			});
 			audio.ready = true;	
