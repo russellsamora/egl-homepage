@@ -20,7 +20,7 @@
 					<p class='messageText'></p>
 				</div>
 				<div id='help'>
-					<p>You are in the lab. Click to explore.</p>
+					<p>CLICK TO EXPLORE</p>
 				</div>
 				<div id='popupBox'>
 					<div class='bio'>
@@ -49,16 +49,20 @@
 				<div id='inventory'>
 					<h3>INVENTORY</h3>
 					<p>
-						<span>Trophies Earned:</span>
+						<span>Trophies:</span>
 						<span class='trophy'></span>
 					</p>
 					<p>
-						<span>Dongles Grabbed:</span>
+						<span>Dongles:</span>
 						<span class='dongle'></span>
 					</p>
 					<p>
 						<span>Arbitrary Badges:</span>
 						<span class='badge'></span>
+					</p>
+					<p>
+						<span>Fake Bitcoins:</span>
+						<span class='bitcoin'></span>
 					</p>
 					<p>
 						<img class='grayscale ericInventory' src='img/people/inventory/eric.jpg'>

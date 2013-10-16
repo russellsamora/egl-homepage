@@ -305,7 +305,7 @@
 					$game.localStore.previousPerson = $game.localStore.targetPerson;
 					$game.localStore.targetPerson = $game.targetOrder[$game.localStore.targetIndex];
 				}
-				var sound = 'win' + $game.localStore.targetIndex - 1;
+				var sound = 'win' + ($game.localStore.targetIndex - 1);
 				$game.audio.playFx(sound);
 				$game.updateStorage();
 
@@ -584,7 +584,7 @@
 				},
 				sleep: function() {
 					this.paused = true;
-					var timeout = Math.floor(Math.random() * 20000 + 4000);
+					var timeout = Math.floor(Math.random() * 40000 + 4000);
 					setTimeout(function(self) {
 						self.paused = false;
 						self.playSound();
@@ -761,6 +761,7 @@
 					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
 					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
 					question: 'What real world problem will your engagement game help solve?',
+					lead: 'The issue is ',
 					questionType: 'open',
 					maxLength: 40
 				}
@@ -782,16 +783,22 @@
 				jobTitle: 'Executive Director',
 				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.',
 				game: {
-					past: 'We have already talked. Please, let me get back to work!',
-					task: 'You must learn a great fact from the wise one.',
-					present: 'Ahh you have gained much knowledge.',
-					future: 'Aren\'t you supposed to be looking for someone else?',
-					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
-					chatClue: 'I just talked to you. Here is the clue again.',
-					information: '<p>Replace me</p>',
-					question: 'What action do you want the game to faciilate?',
+					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
+					task: 'no task from me.',
+					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
+					future: 'No future from me.',
+					reward: {
+						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						name: 'dongle',
+						count: 3
+					},
+					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
+					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
+					question: 'What real world problem will your engagement game help solve?',
+					lead: 'The issue is ',
 					questionType: 'open',
-					maxLength: 50
+					maxLength: 40
 				}
 			},
 			'christina': {
@@ -813,16 +820,22 @@
 				bindName: 'christina',
 				bind: 'couch',
 				game: {
-					past: 'We have already talked. Please let me get back to work!',
-					task: 'You must learn a great fact from the wise one.',
-					present: 'Ahh you have gained much knowledge.',
-					future: 'I will never be your future because I am first.',
-					clue: 'Her name rhymes with Bristina...',
-					chatClue: 'I just talked to you. Here is the clue again.',
-					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
-					question: 'Who is the target audience?',
+					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
+					task: 'no task from me.',
+					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
+					future: 'No future from me.',
+					reward: {
+						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						name: 'dongle',
+						count: 3
+					},
+					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
+					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
+					question: 'What real world problem will your engagement game help solve?',
+					lead: 'The issue is ',
 					questionType: 'open',
-					maxLength: 50
+					maxLength: 40
 				}
 			},
 			'russell': {
@@ -834,16 +847,22 @@
 				jobTitle: 'Hacker-in-Chief',
 				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.',
 				game: {
-					past: 'We have already talked. Please let me get back to work!',
-					task: 'You must learn a great fact from the wise one.',
-					present: 'Ahh you have gained much knowledge.',
-					future: 'I will never be your future because I am first.',
-					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
-					chatClue: 'I just talked to you. Here is the clue again.',
-					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
-					question: 'What technology do you want to use to implement?',
+					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
+					task: 'no task from me.',
+					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
+					future: 'No future from me.',
+					reward: {
+						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						name: 'dongle',
+						count: 3
+					},
+					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
+					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
+					question: 'What real world problem will your engagement game help solve?',
+					lead: 'The issue is ',
 					questionType: 'open',
-					maxLength: 50
+					maxLength: 40
 				}
 			},
 			'sam': {
@@ -863,16 +882,22 @@
 				jobTitle: 'Game Writer',
 				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of the Spoiled Flush Games design studio. ',
 				game: {
-					past: 'We have already talked. Please let me get back to work!',
-					task: 'You must learn a great fact from the wise one.',
-					present: 'Ahh you have gained much knowledge.',
-					future: 'I will never be your future because I am first.',
-					clue: 'I love games! But the old timey stuff mostly...',
-					chatClue: 'I just talked to you. Here is the clue again.',
-					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
-					question: 'What is the gameplay?',
+					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
+					task: 'no task from me.',
+					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
+					future: 'No future from me.',
+					reward: {
+						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						name: 'dongle',
+						count: 3
+					},
+					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
+					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
+					question: 'What real world problem will your engagement game help solve?',
+					lead: 'The issue is ',
 					questionType: 'open',
-					maxLength: 50
+					maxLength: 40
 				}
 			},
 			'aidan': {
@@ -892,16 +917,22 @@
 				jobTitle: 'Designer',
 				about: 'Aidan graduated from the Rhode Island School of Design with a degree in painting, and has also studied design and architecture.',
 				game: {
-					past: 'We have already talked. Please let me get back to work!',
-					task: 'You must learn a great fact from the wise one.',
-					present: 'Ahh you have gained much knowledge.',
-					future: 'I will never be your future because I am first.',
-					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
-					chatClue: 'I just talked to you. Here is the clue again.',
-					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
-					question: 'What style do you want?',
+					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
+					task: 'no task from me.',
+					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
+					future: 'No future from me.',
+					reward: {
+						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						name: 'dongle',
+						count: 3
+					},
+					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
+					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
+					question: 'What real world problem will your engagement game help solve?',
+					lead: 'The issue is ',
 					questionType: 'open',
-					maxLength: 50
+					maxLength: 40
 				}
 			},
 			'jedd': {
@@ -921,16 +952,22 @@
 				jobTitle: 'Curriculum Developer',
 				about: 'Jedd is working to adapt Community PlanIt for use in schools and other community and advocacy organizations.',
 				game: {
-					past: 'We have already talked. Please let me get back to work!',
-					task: 'You must learn a great fact from the wise one.',
-					present: 'Ahh you have gained much knowledge.',
-					future: 'I will never be your future because I am first.',
-					clue: 'You must now travel through the murky depths of knowledge and visit the gatekeeper.',
-					chatClue: 'I just talked to you. Here is the clue again.',
-					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
-					question: 'Who are you going to work with to make this happen?',
+					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
+					task: 'no task from me.',
+					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
+					future: 'No future from me.',
+					reward: {
+						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						name: 'dongle',
+						count: 3
+					},
+					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
+					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
+					question: 'What real world problem will your engagement game help solve?',
+					lead: 'The issue is ',
 					questionType: 'open',
-					maxLength: 50
+					maxLength: 40
 				}
 			},
 			'jesse': {
@@ -952,16 +989,22 @@
 				bind: 'plant1',
 				bindName: 'jesse',
 				game: {
-					past: 'We have already talked. Please let me get back to work!',
-					task: 'You must learn a great fact from the wise one.',
-					present: 'Ahh you have gained much knowledge.',
-					future: 'I will never be your future because I am first.',
-					clue: 'Ahhhahaha',
-					chatClue: 'I just talked to you. Here is the clue again.',
-					information: '<p>This is the lab. We make stuff. What more can I say?</p>',
-					question: 'How will you evaluate the game to see if it work?',
+					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
+					task: 'no task from me.',
+					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
+					future: 'No future from me.',
+					reward: {
+						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						name: 'dongle',
+						count: 3
+					},
+					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
+					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
+					question: 'What real world problem will your engagement game help solve?',
+					lead: 'The issue is ',
 					questionType: 'open',
-					maxLength: 50
+					maxLength: 40
 				}
 			}
 		};
@@ -1052,7 +1095,7 @@
 		} else if(_challengeSlide === 1) {
 			//show question
 			html = '<p><span class="h3like">Q: </span>' + game.question + '</p>';
-			html += '<p>lead in text <input id="challengeAnswer" maxLength="' + game.maxLength +'"></input></p>';
+			html += '<p>' + game.lead + ' <input id="challengeAnswer" maxLength="' + game.maxLength +'"></input></p>';
 			html += '<p><a href="#" class="nextSlide">Submit</a></p>';
 		} else {
 			//show victory and clue

@@ -226,9 +226,12 @@
 			}, 500, function() {
 				$(this).animate({
 					opacity: 0,
-					top: '-10px',
+					top: '0px',
 				},2000, function() {
 					$(this).remove();
+				});
+				$('#inventoryButton p i').animate({opacity: 0.5}, 500, function() {
+					$('#inventoryButton p i').animate({opacity: 1},500);
 				});
 			});
 		}
