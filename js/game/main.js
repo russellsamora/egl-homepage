@@ -43,7 +43,7 @@
 		beginGame: function() {
 			if(_gotGame) {
 				_checkReturning();
-				_getFeed();
+				//_getFeed();
 				_beginGame();
 			}
 		},
@@ -200,6 +200,8 @@
 		},
 
 		stopPlaying: function() {
+			clearTimeout(_messageTimeout);
+			$game.hideMessage();
 			$game.localStore.playing = false;
 			$('#cover').hide();
 			$game.updateStorage();
@@ -282,14 +284,22 @@
 				people: {}, 
 				targetIndex: 0, 
 				answers: [], 
-				tasks: {stephen: true, eric: false, christina: false, sam: false, russell: true, aidan: false, jedd: false, jesse: false},
+				tasks: {
+					stephen: true,
+					eric: true,
+					christina: true,
+					sam: true,
+					russell: true,
+					aidan: true,
+					jedd: true,
+					jesse: true
+				},
 				inventory: {
 					trophies: 0,
 					dongles: 0,
 					badges: 0
 				}
 			};
-
 			$game.updateStorage();
 		}
 	}

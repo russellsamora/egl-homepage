@@ -310,12 +310,11 @@
 				$game.updateStorage();
 
 			} else if(_challengeSlide === 3) {
-				if($game.localStore.over) {
-					var name = $('#libName').val();
-					_saveLib(name);
-				}
 				$('#challengeBox').hide();
 				$game.input.enableMove();
+				if($game.localStore.over) {
+					_promptName();
+				}
 			}
 		}
 
@@ -1097,9 +1096,7 @@
 			_createLib();
 			html = '<p>Congrats! Here is your game lib:</p>';
 			html += '<p>'+ $game.localStore.lib +'</p>';
-			html += '<p>Enter your name: <input id="libName" maxLength="20"></input></p>';
 			html += '<p><a href="#" class="nextSlide">Close</a></p>';
-
 		} else if(_challengeSlide === 0) {
 			//show info
 			html = game.information;
@@ -1118,6 +1115,20 @@
 		}
 		$('#challengeBox').html(html);
 		$game.input.bindNextSlide();
+	}
+
+	function _promptName() {
+		$('#challengeBox').empty();
+		var html = '<p>Enter your name to submit your lib:</p><p><input id="libName" maxLength="20"></input></p>';
+		html += '<p><a href="#" class="saveLib">Submit</a></p>';
+		$('#challengeBox').html(html).show();
+		$BODY.on('click','.saveLib', function(e) {
+			e.preventDefault();
+				var name = $('#libName').val();
+				_saveLib(name);
+			$('#challengeBox').hide();
+			return false;
+		});
 	}
 
 	function _saveLib(name) {
