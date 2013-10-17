@@ -618,6 +618,16 @@
 				class: 'crat',
 				x: 600,
 				y: 150,
+				frames: 3,
+				animation: [0,1,2,1,0,0,0,1,2,1],
+				paused: false,
+				sleep: function() {
+					this.paused = true;
+					var timeout = Math.floor(Math.random() * 6000 + 2000);
+					setTimeout(function(self) {
+						self.paused = false;
+					}, timeout, this);
+				},
 				action: function(el) {
 					var msg = 'Hey there! Havin\' fun exploring the Lab? Want to kick things into high gear? We\'ll help you create your own engagement game! Just enter "game-mode" and start playing.';
 					if($game.localStore.playing) {

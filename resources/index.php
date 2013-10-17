@@ -72,8 +72,7 @@
 						<div class='row'>
 							<div class='span12'>
 								<p class='guideLinkP'>
-									Download Coming Soon...
-									<!-- <a href='/pdfs/EngagementGameGuide.pdf' target='_blank'>Click here to download a PDF version</a> -->
+									<a href='/pdfs/engagement_game_guide.pdf' target='_blank'>Click here to download a PDF version</a>
 								</p>
 							</div>
 						</div>

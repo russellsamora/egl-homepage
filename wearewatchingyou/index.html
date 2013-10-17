@@ -12,7 +12,7 @@
 		<meta charset='utf-8'>
 		<title>EGL watches you</title>
 		<style>
-			body {
+			body, #nsa {
 				margin: 0;
 				padding: 0;
 			}
@@ -20,16 +20,23 @@
 				border: 2px solid #ccc;
 				margin: 10px;
 			}
+			h3 {
+				color: #ff5622;
+				font-family: Helvetica;
+				font-weight: 800;
+				padding: 20px;
+			}
 		</style>
 	</head>
 	<body>
+		<h3>RECENT WHITEBOARD ACTIVITY</h3>
 		<div id='nsa'></div>
 	</body>
 	<script src='/js/libs/jquery.min.js'></script>
 	<script>
 		var num,
 			count = 0,
-			max = 50;
+			max = 69;
 		$.get('/db/drawingCount.php',
 			function(data) {
 				num = parseInt(data, 10);
@@ -40,7 +47,7 @@
 			var item = document.createElement('img'),
 				img = new Image();
 				img.onload = function() {
-					$('body').append(img);
+					$('#nsa').append(img);
 					index--;
 					count++;
 					if(index > -1 && count < max) {
