@@ -30,14 +30,10 @@
 			$('#whiteboardCanvas').on('mousemove touchmove', function(e) {
 				if(_drawing) {
 					var x,y;
-					//TODO: firefox
-					if(e.layerX || e.layerX == 0) { //firefox?
-						x = e.layerX;
-						y = e.layerY;
-					} else {
-						x = e.offsetX * 0.85;
-						y = e.offsetY * 0.9;
-					}
+
+					x = e.originalEvent.layerX * 0.85;
+					y = e.originalEvent.layerY * 0.9;
+					
 					if (!_started) {
 						_ctx.beginPath();
 						_ctx.moveTo(x, y);
