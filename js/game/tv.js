@@ -10,7 +10,7 @@
 
 		init: function() {
 			var tele = document.createElement('div'),
-			img = new Image();
+				img = new Image();
 		
 			img.onload = function() {
 				tele.setAttribute('id', 'tele'); 
@@ -24,6 +24,8 @@
 					backgroundImage: 'url(' + img.src + ')'
 				});
 				$GAMEBOARD.append(tele);
+
+				_loadPanda();
 			}
 			img.src = 'http://engagementgamelab.org/labGifs/fresh.gif';
 			console.log('tv ready');
@@ -32,3 +34,8 @@
 	};
 	tv.init();
 })();
+
+function _loadPanda() {
+	var img = new Image();
+	img.src = 'http://engagementgamelab.org/labGifs/fresh.gif';
+}

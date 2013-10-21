@@ -248,6 +248,9 @@
 							<div class='span12'>
 								<h3>GENERAL</h3>
 								<p>
+									<a href="http://www.statetechmagazine.com/article/2013/09/how-gamification-helps-local-governments-engage-employees-and-citizens" target="_blank">How Gamification Helps Local Governments Engage Employees and Citizens</a> in State Tech Magazine, September 30, 2013
+								</p>
+								<p>
 									<a href="http://nonprofitquarterly.org/policysocial-context/22132-new-community-planning-game-attracts-youth.html" target="_blank">New Community Planning Game Attracts Youth</a> in Nonprofit Quarterly, April 15, 2013
 								</p>
 								<p>
