@@ -85,6 +85,9 @@
 
 	//private functions
 	function _bindEvents() {
+		//disable scroll ipad?
+		// document.ontouchmove = function(e){ e.preventDefault(); }
+		
 		$BODY.on('click', '.playGameButton', function(e) {
 			e.preventDefault();
 			//hide PLAY button show loading

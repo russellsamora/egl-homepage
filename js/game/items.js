@@ -574,8 +574,8 @@
 			},
 			'water': {
 				class: 'water',
-				x: 1340,
-				y: 50,
+				x: 100,
+				y: 650,
 				// invisible: true,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
@@ -590,21 +590,6 @@
 						self.paused = false;
 						self.playSound();
 					}, timeout, this);
-				},
-				action: function() {
-					var wiki = $game.wiki.getWiki();
-					$('#popupBox .wiki p').text(wiki);
-					$game.hidePopup();
-					$('#popupBox .wiki').show();
-					$('#popupBox').show();
-					setTimeout(function() {
-						items.showingBio = true;
-					}, 17);
-					//only add as task done if steve is current target
-					if($game.localStore.playing && $game.localStore.targetPerson === 'eric') {
-						$game.localStore.tasks.eric = true;
-						$game.updateStorage();
-					}
 				}
 			},
 			'coffeetable': {
@@ -633,6 +618,36 @@
 						msg = 'Want to exit Game Mode? Your progress will be saved.';
 					}
 					$game.showMessage({el: el, message: msg, crat: true});
+				}	
+			},
+			'rob': {
+				class: 'rob',
+				x: 1300,
+				y: 30,
+				frames: 5,
+				animation: [0,1,2,3,4],
+				paused: false,
+				sleep: function() {
+					this.paused = true;
+					var timeout = Math.floor(Math.random() * 2000 + 2000);
+					setTimeout(function(self) {
+						self.paused = false;
+					}, timeout, this);
+				},
+				action: function() {
+					var wiki = $game.wiki.getWiki();
+					$('#popupBox .wiki p').text(wiki);
+					$game.hidePopup();
+					$('#popupBox .wiki').show();
+					$('#popupBox').show();
+					setTimeout(function() {
+						items.showingBio = true;
+					}, 17);
+					//only add as task done if steve is current target
+					if($game.localStore.playing && $game.localStore.targetPerson === 'eric') {
+						$game.localStore.tasks.eric = true;
+						$game.updateStorage();
+					}
 				}	
 			},
 			'cloud0': {
@@ -912,7 +927,7 @@
 				}
 			},
 			'aidan': {
-				x: 1000,
+				x: 850,
 				y: 200,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
