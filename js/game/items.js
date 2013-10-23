@@ -477,10 +477,21 @@
 				y: 700,
 				message: 'use my buttons to pump up the jams!'
 			},
+			'coffeemaker': {
+				class: 'coffee',
+				x: 50,
+				y: 650,
+				frames: 8,
+				animation: [0,1,2,3,4,5,6,7],
+				paused: false
+			},
 			'discoball': {
 				class: 'discoball',
-				x: 2200,
-				y: -50,
+				x: 1205,
+				y: -150,
+				frames: 8,
+				animation: [0,1,2,3,4,5,6,7],
+				paused: false,
 				action: function() {
 					$game.toggleDiscoMode();
 					setTimeout(function() {
@@ -574,7 +585,7 @@
 			},
 			'water': {
 				class: 'water',
-				x: 100,
+				x: 2200,
 				y: 650,
 				// invisible: true,
 				frames: 7,
@@ -595,15 +606,15 @@
 			'coffeetable': {
 				class: 'coffeetable',
 				x: 2400,
-				y: 500,
+				y: 800,
 				invisible: true
 			},
 			'crat': {
 				class: 'crat',
 				x: 600,
 				y: 150,
-				frames: 3,
-				animation: [0,1,2,1,0,0,0,1,2,1],
+				frames: 8,
+				animation: [0,1,2,3,4,5,6,7],
 				paused: false,
 				sleep: function() {
 					this.paused = true;
@@ -809,19 +820,19 @@
 				jobTitle: 'Executive Director',
 				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.',
 				game: {
-					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
-					task: 'no task from me.',
-					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
-					future: 'No future from me.',
+					past: 'Bored? You could always talk to Rob and learn some more facts.',
+					task: 'You\'ve found me, the fearless leader of the Lab. I really want to help you make your engagement game, but first you must prove your wisdom by learning a fact from one of our Fount of Knowledge.',
+					present: 'You learned a most-excellent fact. You are now ready.',
+					future: 'Later...',
 					reward: {
-						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
-						name: 'dongle',
-						count: 3
+						text: 'I like it! You\'ve earned an award!',
+						name: 'award',
+						count: 1
 					},
-					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
-					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
-					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
-					question: 'What real world problem will your engagement game help solve?',
+					clue: 'To find your next guide, you\'ll have to take a seat.',
+					chatClue: 'Still looking for her? I thought my clue was easy enough. Have a seat, get it?',
+					information: '<p>The difference between engagement games and other "learning" or "serious" games is action. An engagement game doesn\'t just teach about a topic or encourage later action - the very act of playing the game <b>is</b> real-world action. </p><p>For instance, in <a href="/projects/upriver/" target="_blank">UpRiver</a>, the game requires players to make real predictions about river levels near them and accurately measure those levels. This arms them with real-life information that could save them from floods!</p>',
+					question: 'What real-world action will your game facilitate?',
 					lead: 'The issue is ',
 					questionType: 'open',
 					maxLength: 40
@@ -846,19 +857,19 @@
 				bindName: 'christina',
 				bind: 'couch',
 				game: {
-					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
-					task: 'no task from me.',
-					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
-					future: 'No future from me.',
+					past: 'Check out Community PlanIt on our projects page.',
+					task: 'Oh! Nice to meet you. I think you\'re ready for the next step in developing your game... but first do me a solid and put on the Panda Cam. Then we\'ll talk.',
+					present: 'Pandas, yay!',
+					future: 'Dear Sir or madam... no, that\'s not right at all. Hmmm...',
 					reward: {
-						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
-						name: 'dongle',
-						count: 3
+						text: 'Very good! I award you six arbitrary badges.',
+						name: 'badge',
+						count: 6
 					},
-					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
-					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
-					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
-					question: 'What real world problem will your engagement game help solve?',
+					clue: 'Wow, you\'ve earned the Badge-Collector Badge! Great job. For the next stage in the game, you\'ll need to get technical.',
+					chatClue: 'Found that tech-savvy EGLer yet? His face was just on the TV.',
+					information: '<p>Our engagement games are developed in cooperation with community partners. By working with organizations who have a need and are experts on their communities, we can create games that come from a place of trust and knowledge. </p><p>For example, when we create a game on our <a href="/community-planit" target="_blank">Community PlanIt</a> platform, we partner with local planning departments, non-profit organizations, and local governments.</p>',
+					question: 'Who will you partner with to make your game a success?',
 					lead: 'The issue is ',
 					questionType: 'open',
 					maxLength: 40

@@ -18,7 +18,7 @@
 		targetOrder: ['stephen','eric','christina','russell','sam','aidan','jedd','jesse'],
 		iconNames: {
 			dongle: 'code-fork',
-			trophy: 'trophy',
+			award: 'trophy',
 			badge: 'shield',
 			bitcoin: 'bitcoin'
 		},
@@ -190,6 +190,7 @@
 			$game.localStore.started = true;
 			$game.localStore.playing = true;
 			$('#cover').show();
+			$('.discoball').show();
 			$game.localStore.targetPerson = $game.targetOrder[$game.localStore.targetIndex];
 			if($game.localStore.targetIndex > 0) {
 				$game.localStore.previousPerson = $game.targetOrder[$game.localStore.targetIndex -1];
@@ -204,13 +205,21 @@
 			$game.hideMessage();
 			$game.localStore.playing = false;
 			$('#cover').hide();
+			$('.discoball').hide();
 			$game.updateStorage();
 		},
 
 		toggleDiscoMode: function() {
 			_discoMode = !_discoMode;
 			if(!_discoMode) {
+				$('.discoball').animate({
+					top: '-150px'
+				})
 				$('#cover').css('background','rgba(0,0,0,.4)');
+			} else {
+				$('.discoball').animate({
+					top: '-10px'
+				},1000);
 			}
 		},
 
@@ -218,7 +227,7 @@
 			var html = '<p class="reward">+' + reward.count + ' <i class="icon-' + $game.iconNames[reward.name] + '"></i></p>';
 			$GAMEBOARD.append(html);
 			//add to inventory
-			var selector = '.' + reward.name;
+			var selector = '.' + $game.iconNames[reward.name];
 			for(var i = 0; i < reward.count; i++) {
 				$(selector).append('<i class="icon-' + $game.iconNames[reward.name] + '">');
 			}
@@ -286,8 +295,8 @@
 				answers: [], 
 				tasks: {
 					stephen: true,
-					eric: true,
-					christina: true,
+					eric: false,
+					christina: false,
 					sam: true,
 					russell: true,
 					aidan: true,
@@ -295,9 +304,10 @@
 					jesse: true
 				},
 				inventory: {
-					trophies: 0,
+					awards: 0,
 					dongles: 0,
-					badges: 0
+					badges: 0,
+					coins: 0
 				}
 			};
 			$game.updateStorage();
