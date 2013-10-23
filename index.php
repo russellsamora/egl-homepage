@@ -78,7 +78,7 @@
 				<div id='pregame'>
 					<div class='leftHalf'>
 						<p class='introText'>
-							We are an applied research lab that designs and studies playful approaches to serious problems. Our <a href='/projects'>PROJECTS</a> span from urban planning in Detroit to disaster preparedness in Zambia. Our <a href='/research'>RESEARCH</a> is heavily integrated with all our projects and ranges from issues of global/networked citizenship to youth and civic media. Check out our <a href='/resources'>RESOURCES</a> page for design guides, curriculums, and courses, and learn more <a href='/about'>ABOUT US</a> (in a standard fashion). 
+							We are an applied research lab at Emerson College that designs and studies playful approaches to serious problems. Our <a href='/projects'>PROJECTS</a> span from community engagement in Detroit to disaster preparedness in Zambia. Our <a href='/research'>RESEARCH</a> frames all our projects and ranges from issues of global/networked citizenship to youth and civic media. Check out our <a href='/resources'>RESOURCES</a> page for design guides, curricula, and courses, or learn some more <a href='/about'>ABOUT US</a>.
 							<br><br>
 							<!-- MAKE UPDATES HERE -->
 							<!-- <span>

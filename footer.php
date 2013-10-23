@@ -20,7 +20,7 @@
 						<a href='http://github.com/engagementgamelab' target='_blank'><i class='icon-github icon-2x'></i></a>
 					</p>
 					<p>
-						<a href='http://emerson.edu/' target='_blank'>Emerson College</a>
+						<a href='http://emerson.edu/' target='_blank'><img src='/img/other/emerson.png'></a>
 					</p>
 				</div>
 		</div>

@@ -8,7 +8,7 @@
     		<?php include '../nav.php' ?>
 			<div id='whatwedo' class='anchor'>
 				<div class='row'>
-					<div class='whatwedoBody'>
+					<div class='researchBody'>
 						<!-- <h2> What We Do </h2> -->
 						<p class='bigIdea'>
 							The Engagement Game Lab (EGL) is an applied research lab at <a href='http://emerson.edu' target='_blank'>Emerson College</a> focusing on the development and study of games, technology, and new media to enhance civic life.

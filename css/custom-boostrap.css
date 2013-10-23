@@ -9207,33 +9207,60 @@ a.badge:focus {
   font-weight: 700;
   color: #b1e1e4;
 }
-#whatwedo {
+#whatwedo,
+#researchTop {
   width: 100%;
   background: #40b4bc;
   padding-bottom: 60px;
 }
-#whatwedo .whatwedoBody {
+#whatwedo .whatwedoBody,
+#researchTop .whatwedoBody,
+#whatwedo .researchBody,
+#researchTop .researchBody {
   min-width: 320px;
   max-width: 960px;
   width: 85%;
   margin: 35px auto;
   color: #d7f0f1;
 }
-#whatwedo .whatwedoBody p {
+#whatwedo .whatwedoBody p,
+#researchTop .whatwedoBody p,
+#whatwedo .researchBody p,
+#researchTop .researchBody p {
   font-weight: 100;
 }
 #whatwedo .whatwedoBody h1,
+#researchTop .whatwedoBody h1,
+#whatwedo .researchBody h1,
+#researchTop .researchBody h1,
 #whatwedo .whatwedoBody h2,
-#whatwedo .whatwedoBody h3 {
+#researchTop .whatwedoBody h2,
+#whatwedo .researchBody h2,
+#researchTop .researchBody h2,
+#whatwedo .whatwedoBody h3,
+#researchTop .whatwedoBody h3,
+#whatwedo .researchBody h3,
+#researchTop .researchBody h3 {
   color: #b1e1e4;
 }
-#whatwedo .whatwedoBody .bigIdea {
+#whatwedo .whatwedoBody .bigIdea,
+#researchTop .whatwedoBody .bigIdea,
+#whatwedo .researchBody .bigIdea,
+#researchTop .researchBody .bigIdea {
   font-size: 2.2em;
   font-weight: 100;
 }
-#whatwedo .whatwedoBody .bigIdea a {
+#whatwedo .whatwedoBody .bigIdea a,
+#researchTop .whatwedoBody .bigIdea a,
+#whatwedo .researchBody .bigIdea a,
+#researchTop .researchBody .bigIdea a {
   color: #ffffff;
   font-weight: 300;
+}
+#whatwedo .researchBody .bigIdea,
+#researchTop .researchBody .bigIdea {
+  font-size: 1.8em;
+  line-height: 1.2;
 }
 #people .person {
   margin-bottom: 20px;
