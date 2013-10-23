@@ -212,7 +212,7 @@
   font-size: 1.3em;
   font-weight: 100;
 }
-#game #challengeBox input {
+#game #challengeBox input.open {
   width: 50%;
   margin-left: 5px;
   line-height: 1;
@@ -222,8 +222,12 @@
   border-bottom: 1px solid #ff5622;
   background: none;
 }
-#game #challengeBox input:focus {
+#game #challengeBox input.open:focus {
   outline: none;
+}
+#game #challengeBox input.multiple {
+  margin-top: -2px;
+  margin-right: 10px;
 }
 #game #whiteboardCanvas {
   cursor: crosshair;

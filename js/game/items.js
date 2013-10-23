@@ -285,7 +285,14 @@
 			}
 			else if(_challengeSlide === 2) {
 				//submit answer
-				var answer = $('#challengeAnswer').val();
+				var person = items.peopleData[$game.localStore.targetPerson];
+				var answer;
+				if(person.game.questionType === 'multiple') {
+					answer = $('input[name=challenge]:checked').val();
+					console.log(answer);
+				} else {
+					answer = $('#challengeAnswer').val();
+				}
 				$game.localStore.answers.push(answer);
 				$game.localStore.people[$game.localStore.targetPerson] = true;
 				//set color in inventory
@@ -884,21 +891,22 @@
 				jobTitle: 'Hacker-in-Chief',
 				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.',
 				game: {
-					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
-					task: 'no task from me.',
-					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
-					future: 'No future from me.',
+					past: 'Your game\'s coming along great. You\'re almost done!',
+					task: 'Hey, robo-dude. I think you\'re ready to start building your game, but I\'m too busy to help you. Take care of this bit of coding for me, and I\'ll help you.',
+					present: 'Sweet. Let\'s get crackin.',
+					future: 'Can\'t talk. Coding.',
 					reward: {
-						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
-						name: 'dongle',
-						count: 3
+						text: 'That sounds good to me! Here\'s some stuff!',
+						name: 'bitcoin',
+						count: 8
 					},
-					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
-					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
-					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
-					question: 'What real world problem will your engagement game help solve?',
+					clue: 'Next, you need to take your idea and play around with it a little. Who could help you do that?',
+					chatClue: 'What are you waiting for? It\'s your move.',
+					information: '<p>When we design games, we think about how people will actually play them, and what the best medium might be to reach the audience we\'ve invisioned for the game. Many of our games are web-based, like <a href="/projects/civic-seed/" target="_blank">Civic Seed</a>, so players can colaborate online in a shared virtual environment. Others, like the first phase of UprRiver, are low-tech, played with physical pieces, so people can play them even without electricity.</p>',
+					question: 'What medium will your game be created in? Pick one:',
+					answers: ['Web Game built in HTML5', 'Mobile App for smart phones', 'A physical game played live in a real space', 'SMS (text messaging) game', 'Social Media game played through existing platforms', 'Alternate Reality Game'],
 					lead: 'The issue is ',
-					questionType: 'open',
+					questionType: 'multiple',
 					maxLength: 40
 				}
 			},
@@ -919,19 +927,19 @@
 				jobTitle: 'Game Writer',
 				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of the Spoiled Flush Games design studio. ',
 				game: {
-					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
-					task: 'no task from me.',
-					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
-					future: 'No future from me.',
+					past: 'I\'ve redesigned this game. Now it\'s gin rummy, but with flame-throwers.',
+					task: 'Ready to rock and roll? So am I, but first, put on some tunes, and then I\'ll help you.',
+					present: 'Awesome song! It looks like you\'ve got a solid framwork around your game. You know who will play it, and what real-world action you\'re trying to enable, and you also know what format the game will be created in. Now it\'s time to figure out the narrative of your game.',
+					future: 'This game combines Sorry, Monopoly, Candy Land, and Trivial Persuit. It is the worst game ever. Come back later.',
 					reward: {
-						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						text: 'Awesome! You earned the Write Stuff award! Also, take a dongle.',
 						name: 'dongle',
-						count: 3
+						count: 1
 					},
-					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
-					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
-					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
-					question: 'What real world problem will your engagement game help solve?',
+					clue: 'For your next task, you must find... your creator.',
+					chatClue: 'Haven\'t found your creator yet? Maybe this game\'s not drawing you in.',
+					information: '<p>Narrative can be a powerful driver for player engagement. In Civic Seed, we created a fantasy world where players control avatars and interact with strange people and palces. Compare that to Community PlanIt, where players play as themeselves, and move through challenges by answering questions about real-world issues. What approach you use is a big part of your design, but largely a matter tone.</p>',
+					question: 'What will the narrative of your game be?',
 					lead: 'The issue is ',
 					questionType: 'open',
 					maxLength: 40
@@ -1130,7 +1138,15 @@
 		} else if(_challengeSlide === 1) {
 			//show question
 			html = '<p><span class="h3like">Q: </span>' + game.question + '</p>';
-			html += '<p>' + game.lead + ' <input id="challengeAnswer" maxLength="' + game.maxLength +'"></input></p>';
+			if(person.game.questionType === 'multiple') {
+				html += '<p>';
+				for (var i = 0; i < person.game.answers.length; i++) {
+					html += '<input type="radio" class="multiple" name="challenge" value="' + person.game.answers[i] + '"><span class="labelText">' + person.game.answers[i] + '</span><br>' 
+				}
+				html += '</p>';
+			} else {
+				html += '<p>' + game.lead + ' <input class="open" id="challengeAnswer" maxLength="' + game.maxLength +'"></input></p>';	
+			}
 			html += '<p><a href="#" class="nextSlide">Submit</a></p>';
 		} else {
 			//show victory and clue

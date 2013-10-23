@@ -50,7 +50,7 @@
 					<h3>INVENTORY</h3>
 					<p>
 						<span>Trophies:</span>
-						<span class='trophy'></span>
+						<span class='award'></span>
 					</p>
 					<p>
 						<span>Dongles:</span>

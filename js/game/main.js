@@ -227,7 +227,7 @@
 			var html = '<p class="reward">+' + reward.count + ' <i class="icon-' + $game.iconNames[reward.name] + '"></i></p>';
 			$GAMEBOARD.append(html);
 			//add to inventory
-			var selector = '.' + $game.iconNames[reward.name];
+			var selector = '.' + reward.name;
 			for(var i = 0; i < reward.count; i++) {
 				$(selector).append('<i class="icon-' + $game.iconNames[reward.name] + '">');
 			}
