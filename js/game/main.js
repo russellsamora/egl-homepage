@@ -19,7 +19,7 @@
 		iconNames: {
 			dongle: 'code-fork',
 			award: 'trophy',
-			badge: 'shield',
+			shield: 'shield',
 			bitcoin: 'bitcoin'
 		},
 		
@@ -225,14 +225,21 @@
 		},
 
 		spawnReward: function(reward) {
-			var html = '<p class="reward">+' + reward.count + ' <i class="icon-' + $game.iconNames[reward.name] + '"></i></p>';
-			$GAMEBOARD.append(html);
-			//add to inventory
-			var selector = '.' + reward.name;
-			for(var i = 0; i < reward.count; i++) {
-				$(selector).append('<i class="icon-' + $game.iconNames[reward.name] + '">');
-			}
+			var html = '<p class="reward">+';
+			for (var name in reward.count) {	
+				var count = reward.count[name];
+				var icon = $game.iconNames[name];
+				html += count + ' <i class="icon-' + icon + '"></i></p>';
 
+				//add to inventory
+				var selector = '.' + name;
+				for(var i = 0; i < count; i++) {
+					$(selector).append('<i class="icon-' + icon + '">');
+				}
+			}
+			 
+			$GAMEBOARD.append(html);
+			
 			//animated it off
 			$('.reward').animate({
 				opacity: 1
@@ -295,14 +302,14 @@
 				targetIndex: 0, 
 				answers: [], 
 				tasks: {
-					stephen: false,
+					stephen: true,
 					eric: false,
 					christina: false,
-					sam: true,
-					russell: true,
-					aidan: true,
-					jedd: true,
-					jesse: true
+					sam: false,
+					russell: false,
+					aidan: false,
+					jedd: false,
+					jesse: false
 				},
 				inventory: {
 					awards: 0,

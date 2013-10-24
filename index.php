@@ -60,7 +60,7 @@
 					</p>
 					<p>
 						<span>Arbitrary Badges:</span>
-						<span class='badge'></span>
+						<span class='shield'></span>
 					</p>
 					<p>
 						<span>Fake Bitcoins:</span>

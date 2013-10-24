@@ -20,29 +20,13 @@
 		start: function() {
 			$('#codegame').empty().append('<p class="codegameText"></p><p class="codegamePI"><input class="codegameInput"></p>');
 			_bindTypeCheck();
-			console.log('start');
 			_curChallenge = 0;
 			_nextChallenge();
 			_playing = true;
 		}
 	};
-	// function _updateTime(){
-	// 	_time += 100;
-	// 	_elapsed = _target - Math.floor(_time / 1000);
-
-	// 	var diff = (new Date().getTime() - _start) - _time;
-		
-	// 	$('.codegameTimer').text(_elapsed);
-
-	// 	if(_elapsed <= 0) {
-	// 		_fail();
-	// 	} else {
-	// 		setTimeout(_updateTime, (100 - diff));
-	// 	}
-	// }
 
 	function _fail() {
-		console.log('fail');
 		_playing = false;
 		$('.codegameText').text('Oh No! Try again.').css('opacity', 1);
 		_curChallenge = 0;
@@ -52,8 +36,8 @@
 	function _win() {
 		_playing = false;
 		$('.codegameText').text('You did it!').css('opacity', 1);
-		if($game.localStore.playing && $game.localStore.targetPerson === 'stephen') {
-			$game.localStore.tasks.stephen = true;
+		if($game.localStore.playing && $game.localStore.targetPerson === 'russell') {
+			$game.localStore.tasks.russell = true;
 			$game.updateStorage();
 		}
 		setTimeout(function() {

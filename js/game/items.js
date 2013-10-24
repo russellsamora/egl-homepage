@@ -593,17 +593,17 @@
 			'computer': {
 				class: 'computer',
 				x: 2570,
-				y: 400,
+				y: 650,
 				action: function() {
-					if($game.localStore.playing && $game.localStore.targetPerson === 'stephen') {
+					if($game.localStore.playing && $game.localStore.targetPerson === 'russell') {
 						$game.codegame.show();
 					}
 				}
 			},
 			'water': {
 				class: 'water',
-				x: 2200,
-				y: 650,
+				x: 2100,
+				y: 50,
 				// invisible: true,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
@@ -622,8 +622,8 @@
 			},
 			'coffeetable': {
 				class: 'coffeetable',
-				x: 2400,
-				y: 800,
+				x: 2500,
+				y: 240,
 				invisible: true
 			},
 			'crat': {
@@ -808,8 +808,7 @@
 					future: 'No future from me.',
 					reward: {
 						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
-						name: 'dongle',
-						count: 3
+						count: {dongle: 3},
 					},
 					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
 					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
@@ -843,8 +842,7 @@
 					future: 'Later...',
 					reward: {
 						text: 'I like it! You\'ve earned an award!',
-						name: 'award',
-						count: 1
+						count: {award: 1}
 					},
 					clue: 'To find your next guide, you\'ll have to take a seat.',
 					chatClue: 'Still looking for her? I thought my clue was easy enough. Have a seat, get it?',
@@ -880,8 +878,7 @@
 					future: 'Dear Sir or madam... no, that\'s not right at all. Hmmm...',
 					reward: {
 						text: 'Very good! I award you six arbitrary badges.',
-						name: 'badge',
-						count: 6
+						count: {shield: 6}
 					},
 					clue: 'Wow, you\'ve earned the Badge-Collector Badge! Great job. For the next stage in the game, you\'ll need to get technical.',
 					chatClue: 'Found that tech-savvy EGLer yet? His face was just on the TV.',
@@ -907,8 +904,7 @@
 					future: 'Can\'t talk. Coding.',
 					reward: {
 						text: 'That sounds good to me! Here\'s some stuff!',
-						name: 'bitcoin',
-						count: 8
+						count: {dongle: 5, trophy: 1, bitcoin: 7}
 					},
 					clue: 'Next, you need to take your idea and play around with it a little. Who could help you do that?',
 					chatClue: 'What are you waiting for? It\'s your move.',
@@ -921,8 +917,8 @@
 				}
 			},
 			'sam': {
-				x: 2300,
-				y: 200,
+				x: 2260,
+				y: 120,
 				frames: 8,
 				animation: [0,1,2,3,4,5,6,7],
 				paused: false,
@@ -1027,7 +1023,7 @@
 			},
 			'jesse': {
 				x: 1000,
-				y: 620,
+				y: 650,
 				frames: 5,
 				animation: [0,1,2,1,2,0,4,0,2,0,1,2,4,3,4,2,2,1,0],
 				paused: false,
