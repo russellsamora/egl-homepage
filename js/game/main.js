@@ -76,7 +76,6 @@
 				}
 				if(data.target) {
 					data.message += ' <a href"#>view</a>';
-					msgLength += 5;
 				}
 				$MESSAGE_TEXT.html(data.message);
 				
