@@ -43,6 +43,8 @@
 				</div>
 				<div id='challengeBox'>
 				</div>
+				<div id='codegame'>
+				</div>
 				<div id='inventoryButton'>
 					<p><i class='icon-briefcase'></i></p>
 				</div>
@@ -157,6 +159,7 @@
 					.script('js/game/whiteboard.js')
 					.script('js/game/tv.js')
 					.script('js/game/wiki.js')
+					.script('js/game/codegame.js')
 					.script('js/game/player.js').wait(function() {
 						$game.beginGame();
 					});

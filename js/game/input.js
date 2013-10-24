@@ -161,6 +161,7 @@
 		});		
 
 		$BODY.on('click','.beginGame', function(e) {
+			$game.reallyStarted = true;
 			e.preventDefault();
 			$('#popupBox').hide(); 
 			return false;

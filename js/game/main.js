@@ -207,6 +207,7 @@
 			$('#cover').hide();
 			$('.discoball').hide();
 			$game.updateStorage();
+			$game.reallyStarted = false;
 		},
 
 		toggleDiscoMode: function() {
@@ -294,7 +295,7 @@
 				targetIndex: 0, 
 				answers: [], 
 				tasks: {
-					stephen: true,
+					stephen: false,
 					eric: false,
 					christina: false,
 					sam: true,
@@ -329,6 +330,7 @@
 			.script('js/game/whiteboard.js')
 			.script('js/game/tv.js')
 			.script('js/game/wiki.js')
+			.script('js/game/codegame.js')
 			.script('js/game/player.js').wait(function() {
 				$game.beginGame();
 			});

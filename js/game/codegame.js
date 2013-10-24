@@ -1,0 +1,114 @@
+(function(){
+	var _time,
+		_start,
+		_challenges = ['10','010','1011', '01101', '010110', 'var x = 42;'],
+		_curChallenge,
+		_playing;
+
+	var codegame = $game.codegame = {
+		ready: true,
+		show: function() {
+			if($game.reallyStarted) {
+				$('#codegame').empty().append('<p>Welcome to Russell\'s <b>coding challenge!</b>  Type the codes as fast as you can before they disappear. Binary! Awesome!</p><p><a href="#" class="beginCodeGame">Begin</a></p>');
+				$('#codegame').show();
+				_bindStartButton();
+				setTimeout(function() {
+					$game.input.preventMoveForever();
+				}, 100);
+			}
+		},
+		start: function() {
+			$('#codegame').empty().append('<p class="codegameText"></p><p class="codegamePI"><input class="codegameInput"></p>');
+			_bindTypeCheck();
+			console.log('start');
+			_curChallenge = 0;
+			_nextChallenge();
+			_playing = true;
+		}
+	};
+	// function _updateTime(){
+	// 	_time += 100;
+	// 	_elapsed = _target - Math.floor(_time / 1000);
+
+	// 	var diff = (new Date().getTime() - _start) - _time;
+		
+	// 	$('.codegameTimer').text(_elapsed);
+
+	// 	if(_elapsed <= 0) {
+	// 		_fail();
+	// 	} else {
+	// 		setTimeout(_updateTime, (100 - diff));
+	// 	}
+	// }
+
+	function _fail() {
+		console.log('fail');
+		_playing = false;
+		$('.codegameText').text('Oh No! Try again.').css('opacity', 1);
+		_curChallenge = 0;
+		setTimeout(_nextChallenge, 2000);
+	}
+
+	function _win() {
+		_playing = false;
+		$('.codegameText').text('You did it!').css('opacity', 1);
+		if($game.localStore.playing && $game.localStore.targetPerson === 'stephen') {
+			$game.localStore.tasks.stephen = true;
+			$game.updateStorage();
+		}
+		setTimeout(function() {
+			$('#codegame').hide();
+		},2000);
+		$game.input.enableMove();
+	}
+
+	function _nextChallenge() {
+		_playing = true;
+		$('.codegameInput').val('').focus();
+		if(_curChallenge >= _challenges.length) {
+			_win();
+		} else {
+			var timeout = 3000;
+			if(_curChallenge === _challenges.length - 1) {
+				timeout = 5000;
+			}
+			$('.codegameText').text(_challenges[_curChallenge]).css('opacity',1).animate({
+				opacity: 0
+			}, timeout, function() {
+				_fail();
+			});
+		}
+	}
+
+	function _bindTypeCheck() {
+		$('.codegameInput').on('input', function() {
+			if(_playing) {
+				var val = $(this).val().trim();
+				if(val === _challenges[_curChallenge]) {
+					//TODO correct
+					_curChallenge += 1;
+					$('.codegameText').stop();
+					var sound;
+					if(_curChallenge === _challenges.length) {
+						sound = 'win6';
+					} else {
+						sound = 'win' + Math.floor(Math.random() * 6);
+					}
+					$game.audio.playFx(sound);
+					_nextChallenge();
+				}
+			}
+		});
+	}
+
+	function _bindStartButton() {
+		$BODY.on('click', '.beginCodeGame', function(e) {
+			e.preventDefault();
+			if(!_playing) {
+				codegame.start();	
+			}
+			return false;
+		});
+	}
+})();
+

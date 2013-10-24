@@ -590,6 +590,16 @@
 				bind: 'christina',
 				bindName: 'couch'
 			},
+			'computer': {
+				class: 'computer',
+				x: 2570,
+				y: 400,
+				action: function() {
+					if($game.localStore.playing && $game.localStore.targetPerson === 'stephen') {
+						$game.codegame.show();
+					}
+				}
+			},
 			'water': {
 				class: 'water',
 				x: 2200,
