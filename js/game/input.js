@@ -52,7 +52,7 @@
 						$game.showGameInstructions();
 					}
 				} else {
-					$game.items.showBioCard(key);	
+					$game.people.showBioCard(key);	
 				}
 				input.preventMove();
 				$('messageText a').off('click');
@@ -63,7 +63,7 @@
 		bindChallengeLink: function() {
 			$('.messageText a').on('click', function(e) {
 				e.preventDefault();
-				$game.items.showChallenge();
+				$game.people.showChallenge();
 				input.preventMove();
 				$('messageText a').off('click');
 				return false;
@@ -74,7 +74,7 @@
 			$('#challengeBox .nextSlide').on('click', function(e) {
 				e.preventDefault();
 				$('#challengeBox .nextSlide').off('click');
-				$game.items.nextSlide();
+				$game.people.nextSlide();
 				return false;
 			});
 		},
@@ -102,9 +102,9 @@
 		});
 		//clicking on gameboard for move
 		$BODY.on('click touch', '#game', function(e) {
-			if($game.items.showingBio) {
+			if($game.people.showingBio) {
 				$('#popupBox').hide();
-				$game.items.showingBio = false;
+				$game.people.showingBio = false;
 			}
 			if(!$game.player.inTransit && $game.playing && $game.started && !_preventMovement) {
 				e.preventDefault();
@@ -144,7 +144,7 @@
 			if(!$game.player.inTransit && $game.playing) {
 				input.preventMove();
 				var key = $(this).attr('data-key');
-				$game.items.clickedPerson(key, this);
+				$game.people.clickedPerson(key, this);
 			}
 		});
 
@@ -183,6 +183,7 @@
 			top: Math.max(0,GAMEBOARD_HEIGHT - input.height + NAVBAR_HEIGHT)
 		};
 		$game.items.checkScreen();
+		$game.people.checkScreen();
 		var gameOn = $('#game').css('display');
 		//resuming game
 		if(gameOn !== 'none' && !$game.playing && $game.started) {

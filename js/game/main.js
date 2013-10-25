@@ -49,6 +49,7 @@
 		},
 
 		showMessage: function(data) {
+			$game.hidePopup();
 			//add link for bio
 			var topOffset = 50,
 				msgLength = data.message.length + 3;
@@ -76,6 +77,7 @@
 				}
 				if(data.target) {
 					data.message += ' <a href"#>view</a>';
+					msgLength += 5;
 				}
 				$MESSAGE_TEXT.html(data.message);
 				
@@ -135,6 +137,7 @@
 			$('#popupBox .soundcloud').hide();
 			$('#popupBox .bio').hide();
 			$('#popupBox .gameInstructions').hide();
+			$('#popupBox').hide();
 		},
 
 		pauseGame: function() {
@@ -224,11 +227,11 @@
 		},
 
 		spawnReward: function(reward) {
-			var html = '<p class="reward">+';
-			for (var name in reward.count) {	
+			var html = '<p class="reward">';
+			for (var name in reward.count) {
 				var count = reward.count[name];
 				var icon = $game.iconNames[name];
-				html += count + ' <i class="icon-' + icon + '"></i></p>';
+				html += ' +' + count + '<i class="icon-' + icon + '"></i>';
 
 				//add to inventory
 				var selector = '.' + name;
@@ -236,6 +239,7 @@
 					$(selector).append('<i class="icon-' + icon + '">');
 				}
 			}
+			html += '</p>';
 			 
 			$GAMEBOARD.append(html);
 			
@@ -272,10 +276,11 @@
 	}
 
 	function _beginGame() {
-		if($game.input.ready && $game.items.ready && $game.audio.ready  && $game.player.ready && $game.whiteboard.ready && $game.tv.ready) {
+		if($game.input.ready && $game.items.ready && $game.people.ready && $game.audio.ready  && $game.player.ready && $game.whiteboard.ready && $game.tv.ready) {
 			$game.input.forceResize();
 			$game.ready = true;
 			$game.items.checkScreen();
+			$game.people.checkScreen();
 			if(DEV_MODE) {
 				$('.character').addClass('devHitBoundP');
 				// $('.item, .character, .person').addClass('devBottomBound');
@@ -333,6 +338,7 @@
 			.script('js/game/input.js')
 			.script('js/game/audio.js')
 			.script('js/game/items.js')
+			.script('js/game/people.js')
 			.script('js/game/whiteboard.js')
 			.script('js/game/tv.js')
 			.script('js/game/wiki.js')
@@ -352,9 +358,11 @@
 			//add / remove items from onscreen rendering
 			if($game.player.inTransit) {
 				$game.items.checkScreen();
+				$game.people.checkScreen();
 			}
 			if(_currentFrame % 8 === 0) {
-				$game.items.updateItemAnimations();
+				$game.items.updateAnimations();
+				$game.people.updateAnimations();
 				$game.player.idle();
 				if(_discoMode) {
 					var r = Math.floor(Math.random() * 255),

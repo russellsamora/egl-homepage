@@ -94,6 +94,7 @@
 			
 			//set the z-indexes to the right value
 			$game.items.setZIndex(input);
+			$game.people.setZIndex(input);
 
 			//reset the frame
 			_currentFrame = 0;
@@ -102,6 +103,7 @@
 
 			//for hitting AND for flipping index
 			$game.items.hitTest();
+			$game.people.hitTest();
 
 
 			//set the animation so the player moves

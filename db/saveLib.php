@@ -23,10 +23,11 @@ $dbSelected = mysql_select_db($dbname, $con);
 
 $lib = $_POST[lib];
 $score = $_POST[score];
-$name = $_POST[name];
+$author = $_POST[author];
+$game = $_POST[game];
 
 // $insert = 'INSERT INTO ' . $dbtable . ' (image) VALUES (' . $fileName . ')';
-$insert = 'INSERT INTO ' . $dbtable . ' (lib,score,name) VALUES ("' . $lib . '", ' . $score . ', "' . $name . '")';
+$insert = 'INSERT INTO ' . $dbtable . ' (lib,score,name,game) VALUES ("' . $lib . '", ' . $score. ', "' . $author . ', "' . $game . '")';
 
 $insertResult = mysql_query($insert);
 if(!$insertResult) {

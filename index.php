@@ -156,6 +156,7 @@
 					.script('js/game/input.js')
 					.script('js/game/audio.js')
 					.script('js/game/items.js')
+					.script('js/game/people.js')
 					.script('js/game/whiteboard.js')
 					.script('js/game/tv.js')
 					.script('js/game/wiki.js')
