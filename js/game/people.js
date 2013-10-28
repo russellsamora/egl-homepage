@@ -337,20 +337,20 @@
 				game: {
 					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
 					task: 'no task from me.',
-					present: 'Oh, hey there! Thanks for visiting the Lab. Ready to get to work? I mean... fun?',
-					future: 'No future from me.',
+					present: 'Oh, hey, it\'s you. Thanks for visiting the Lab. Ready to get to work? I mean... fun? I mean, just forget it, ok... can we just start?',
+					future: 'hi',
 					reward: {
-						text: 'Nice! Here, take some dongles. They\'ll help you in your quest.',
+						text: 'Tha\'s problem alright... Here, take some dongles. They\'ll help you in your quest.',
 						count: {dongle: 3},
 					},
-					clue: 'To get to the next stage in the game, you\'ll need to talk to our fearless leader. Good luck!',
-					chatClue: 'Have you found our fearless leader yet? He\'s right over there!',
-					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world change. For example, we saw barriers to entry and discussion in local planning, so we decided to make <a href="/projects/community-planit" target="_blank">Community PlanIt</a> to help break those barriers down. Games can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities.</p>',
-					question: 'What real world problem will your engagement game help solve? Use this space to describe a real world issue in 25 words or less.',
+					clue: 'To get to the next stage in the game, you\'ll need to talk to the person with the most book-learnin\'. Good luck and stuff.',
+					chatClue: 'Have you clicked on the nerd with the book yet? This isn\'t exactly rocket science.',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world action. Our game Community PlanIt  [New Tab] responds to barriers to entry and a lack of meaningful deliberation in local planning, while our game <a href="projects/upriver/" target="_blank">UpRiver</a> emerged from the lack of communication and prediction awareness along flood-prone areas of the Zambezi River in Zambia. Games and playful systems can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities. Unlike gamification, which is simply behavior modification, engagement games aim to use play to scaffold emergent and original forms of citizen action through learning and empathy. </p>',
+					question: 'What is the real-world problem you want to address?',
 					lead: [''],
 					questionType: 'open',
 					maxLength: 125,
-					over: 'That was fun. Now I need a refill.'
+					over: 'That was fun I guess. Now I need a refill.'
 				}
 			},
 			'eric': {
@@ -370,17 +370,17 @@
 				jobTitle: 'Executive Director',
 				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.',
 				game: {
-					past: 'Bored? You could always talk to Rob and learn some more facts.',
+					past: 'Bored? You could always talk to Rob and learn some more facts. Or see what\'s on the TV.',
 					task: 'You\'ve found me, the fearless leader of the Lab.  Ready to rock and roll? So am I, but first, put on some tunes, and then I\'ll help you.',
 					present: 'Awesome song! You are now ready.',
 					future: 'Later...',
 					reward: {
-						text: 'I like it! You\'ve earned an award!',
+						text: 'Interesting, very interesting... Here\'s an award so you\'ll keep playing. ',
 						count: {award: 1}
 					},
 					clue: 'To find your next guide, you\'ll have to take a seat.',
 					chatClue: 'Still looking for her? I thought my clue was easy enough. Have a seat, get it?',
-					information: '<p>The difference between engagement games and other "learning" or "serious" games is action. An engagement game doesn\'t just teach about a topic or encourage later action - the very act of playing the game <b>is</b> real-world action. </p><p>For instance, in <a href="/projects/upriver/" target="_blank">UpRiver</a>, the game requires players to make real predictions about river levels near them and accurately measure those levels. This arms them with real-life information that could save them from floods!</p>',
+					information: '<p>The difference between engagement games and other "learning" or "serious" games is action. An engagement game doesn\'t just teach about a topic or encourage later action — the very act of playing the game IS real-world action. For instance, <a href="projects/community-planit" target="_blank">Community PlanIt</a> allows citizens to deliberate and give input on official planning processes while also being able to create and fund local community causes. You can read more about this in our <a href="resources/" target="_blank">engagement game manual</a>.</p>',
 					question: 'What real-world action will your game facilitate?',
 					lead: ['My game will get people to'],
 					questionType: 'open',
@@ -435,7 +435,7 @@
 				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.',
 				game: {
 					past: 'Your game\'s coming along great. You\'re almost done!',
-					task: 'Hey, robo-dude. I think you\'re ready to start building your game, but I\'m too busy to help you. Take care of this bit of coding for me, and I\'ll help you.',
+					task: 'Hey, robo-dude. I think you\'re ready to start building your game, but I\'m too busy to help you. I set up a work station for you over there. Do some coding for me, and I\'ll help you',
 					present: 'Sweet. Let\'s get crackin.',
 					future: 'Can\'t talk. Coding.',
 					reward: {
@@ -468,14 +468,14 @@
 				},
 				fullName: 'Sam Liberty',
 				jobTitle: 'Game Writer',
-				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of the Spoiled Flush Games design studio. ',
+				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of tohe Spoiled Flush Games design studio. ',
 				game: {
 					past: 'I\'ve redesigned this game. Now it\'s gin rummy, but with flame-throwers.',
-					task: 'Before we get started, I want you to gain some knowledge by learning a random fact from someone who seems to be holding a lot of it.',
-					present: 'You learned a most-excellent fact. It looks like you\'ve got a solid framwork around your game. You know who will play it, and what real-world action you\'re trying to enable, and you also know what format the game will be created in. Now it\'s time to figure out the narrative of your game.',
+					task: 'Cool. You\'re in the right place, but before we get started, I want you to gain some knowledge. Learn a random fact from someone who seems to be holding a lot of it.',
+					present: 'Genius! It looks like you\'ve got a solid framwork around your game. You know who will play it, and what real-world action you\'re trying to enable, and you also know what format the game will be created in. Now it\'s time to figure out the narrative of your game.',
 					future: 'This game combines Sorry, Monopoly, Candy Land, and Trivial Persuit. It is the worst game ever. Come back later.',
 					reward: {
-						text: 'Awesome! You earned the Write Stuff award! Also, take a dongle.',
+						text: 'Awesome! You earned the Write Stuff award! Also, take a dongle, cause I like your face.',
 						count: {dongle: 1, award: 1}
 					},
 					clue: 'For your next task, you must find... your creator.',
@@ -552,7 +552,7 @@
 					},
 					clue: 'There\'s just one more person left to talk to. Can you find her?',
 					chatClue: 'There\'s just one more person left to talk to. Can you find her?',
-					information: '<p>Our engagement games are developed in cooperation with community partners. By working with organizations who have a need and are experts on their communities, we can create games that come from a place of trust and knowledge. For example, when we create a game on our Community PlanIt [NEW WINDOW] platform, we partner with local planning departments, non-profit organizations, schools, and local governments.</p>',
+					information: '<p>Our engagement games and playful projects are developed in cooperation with community partners. By working with organizations who have a need and are experts on their communities, we can create games that come from a place of trust and knowledge. DARG is one explores we\'ve created that illuminates these relationships. The <a href="resources" target="_blank">DARG Guide Book</a> can tell you more about partnering with organizations in your community.</p>',
 					question: 'Who will you partner with to make your game a success?',
 					lead: ['I\'ll partner with'],
 					questionType: 'open',
@@ -591,7 +591,7 @@
 					question: 'How wil you evaluate your game to see if it worked? Select one.',
 					lead: [''],
 					answers: ['I\'ll use in-game analytics', 'I\'ll conduct a survey', 'I\'ll conduct an experiment with different variables', 'I\'ll talk to actual human beings'],
-					hiddenValues: ['robust in-game analytics.' , 'a set of surveys.' , 'an experiment with different variables.' , 'interviews with real humans who played the game.'],
+					hiddenValues: ['robust in-game analytics' , 'a set of surveys' , 'an experiment with different variables' , 'interviews with real humans who played the game'],
 					questionType: 'choice',
 					maxLength: 40,
 					over: 'Oh dinosaur, you\'re the only one for me. Get lost, robot.'
@@ -738,7 +738,7 @@
 		$.post('../../db/saveLib.php', {lib: lib, author: authorName, game: libName, email: emailName},
 			function(res) {
 				console.log(res);
-				_showCode();
+				// _showCode();
 			}, 'text');
 	}
 
@@ -749,7 +749,7 @@
 		
 		$game.localStore.lib += '.  In order to reach that audience and create the best possible experience, the game is concieved of as ' + $game.localStore.answers[3][0];
 		$game.localStore.lib += '.  The narrative of the game is relatively simple. Players play as ' + $game.localStore.answers[4][0] +' trying to ' + $game.localStore.answers[4][1] + ' by ' + $game.localStore.answers[4][2];
-		$game.localStore.lib += '.  The game will utilize a ' + $game.localStore.answers[5][0] + ' aesthetic to set the proper tone and interface style';
+		$game.localStore.lib += '.</p><p>  The game will utilize a ' + $game.localStore.answers[5][0] + ' aesthetic to set the proper tone and interface style';
 		$game.localStore.lib += '.  To build trust in the community and give the game a platform, our partners will include ' + $game.localStore.answers[6][0];
 		$game.localStore.lib += '.  Once the game is complete, we\'ll evaluate its impact through solid research, including ' + $game.localStore.answers[7][0] + '.</p>';
 	}
@@ -757,6 +757,6 @@
 	function _showCode() {
 		$('#challengeBox').empty();
 		var html = '<p>You can check out other players\' games at the bookshelf.  The code is: "pizza".</p>';
-		$('#challengeBox').html(html).show().delay(2000).fadeOut();	
+		$('#challengeBox').html(html).show().delay(5000).fadeOut();	
 	}
 })();

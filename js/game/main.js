@@ -56,7 +56,7 @@
 
 			if(!$game.localStore.playing) {
 				if(data.bioKey) {
-					data.message += ' <a href"#" data-key="' + data.bioKey + '">view bio</a>';
+					data.message += ' <br><a href"#" data-key="' + data.bioKey + '">view bio</a>';
 					msgLength += 10;
 					$game.audio.playFx('pop');
 				}
@@ -185,7 +185,7 @@
 		},
 
 		updateStorage: function() {
-			localStorage.setItem('egl-game', JSON.stringify($game.localStore));
+			sessionStorage.setItem('egl-game', JSON.stringify($game.localStore));
 		},
 
 		showGameInstructions: function() {
@@ -308,9 +308,8 @@
 	}
 
 	function _checkReturning() {
-		//TODO: remove this dev thing
-		localStorage.clear();
-		var storage = localStorage.getItem('egl-game');
+		// localStorage.clear();
+		var storage = sessionStorage.getItem('egl-game');
 		if(storage) {
 			$game.localStore = JSON.parse(storage);
 		} else {
@@ -335,8 +334,31 @@
 					dongles: 0,
 					badges: 0,
 					coins: 0
-				}
+				},
 			};
+			// $game.localStore = {
+			// 	id: id, 
+			// 	people: {}, 
+			// 	targetIndex: 7,
+			// 	targetPerson: 'jesse', 
+			// 	answers: [['a'],['b'],['c'],['d','e','f'],['g'],['h'],['i']], 
+			// 	tasks: {
+			// 		stephen: true,
+			// 		eric: true,
+			// 		christina: true,
+			// 		sam: true,
+			// 		russell: true,
+			// 		aidan: true,
+			// 		jedd: true,
+			// 		jesse: true
+			// 	},
+			// 	inventory: {
+			// 		awards: 0,
+			// 		dongles: 0,
+			// 		badges: 0,
+			// 		coins: 0
+			// 	},
+			// };
 			$game.updateStorage();
 		}
 	}

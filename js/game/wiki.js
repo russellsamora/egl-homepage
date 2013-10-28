@@ -8,7 +8,7 @@
         getWiki: function() {
             _currentBlurb = _nextBlurb;
             _getArticle();
-            return _currentBlurb;
+            return _currentBlurb + ' [click to close]';
         }
     };
 

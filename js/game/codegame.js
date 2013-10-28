@@ -92,6 +92,7 @@
 	function _bindQuitButton() {
 		$BODY.on('click', '.quitcodegame a', function(e) {
 			e.preventDefault();
+			$game.input.enableMove();
 			$('#codegame').hide();
 			$('.codegameText').stop();
 			_playing = false;

@@ -341,8 +341,8 @@
 			},
 			'book': {
 				class: 'book',
-				x: 165,
-				y: 68,
+				x: 168,
+				y: 120,
 				action: function() {
 					//open secret images page
 					window.open('http://engagementgamelab.org/wearewatchingyou/index.html', '_blank');
@@ -433,7 +433,7 @@
 					}, timeout, this);
 				},
 				action: function(el) {
-					var msg = 'I say, my good fellow! The Lab is your oyster. Explore to your heart\'s content. OR... if you\'re feeling adventurous, you can try out the once-in-a-lifetime experience of Game Mode. Ready to give it a go? ';
+					var msg = 'I say, my good automaton! The Lab is your oyster. Explore to your heart\'s content. OR... if you\'re feeling adventurous, you can try out the once-in-a-lifetime experience of Game Mode. Ready to give it a go?';
 					if($game.localStore.playing) {
 						msg = 'Game Mode Activated! Jolly good! You can EXIT Game Mode at any time by coming back to me. To begin your quest, search the lab for the staff member with THE MOST COFFEE. Good luck!';
 					}
