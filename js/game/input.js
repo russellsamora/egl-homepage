@@ -51,6 +51,8 @@
 						$('#inventoryButton').show();
 						$game.showGameInstructions();
 					}
+				} else if(key === 'nothanks') {
+					$('#message').hide();
 				} else {
 					$game.people.showBioCard(key);	
 				}

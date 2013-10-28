@@ -103,6 +103,7 @@
   font-size: 3em;
   font-weight: 700;
   text-align: center;
+  text-shadow: 0px 0px 3px #555555;
 }
 #game #message {
   display: none;
@@ -133,6 +134,10 @@
   letter-spacing: 0;
   color: white;
   font-size: .8em;
+}
+#game #message .messageText a.nothanks {
+  margin-left: 10px;
+  background: #d43200;
 }
 #game #popupBox {
   display: none;
@@ -196,10 +201,13 @@
   display: none;
   position: fixed;
   padding: 0;
-  top: 200px;
+  top: 50%;
   left: 50%;
   margin-left: -360px;
+  margin-top: -150px;
   width: 720px;
+  max-height: 400px;
+  overflow: auto;
   z-index: 100;
   background: rgba(51, 144, 150, 0.85);
   background: rgba(255, 255, 255, 0.9);
@@ -214,7 +222,8 @@
 }
 #game #challengeBox input.open,
 #game #challengeBox #authorName,
-#game #challengeBox #libName {
+#game #challengeBox #libName,
+#game #challengeBox #emailName {
   width: 50%;
   margin-left: 5px;
   line-height: 1;
@@ -226,7 +235,8 @@
 }
 #game #challengeBox input.open:focus,
 #game #challengeBox #authorName:focus,
-#game #challengeBox #libName:focus {
+#game #challengeBox #libName:focus,
+#game #challengeBox #emailName:focus {
   outline: none;
 }
 #game #challengeBox input.choice {
@@ -306,6 +316,18 @@
   float: right;
   margin-bottom: 10px;
 }
+#game #codegame .quitcodegame {
+  text-align: right;
+  padding: 5px;
+}
+#game #codegame .quitcodegame a {
+  background: #ff5622;
+  padding: 5px;
+  cursor: pointer;
+  letter-spacing: 0;
+  color: white;
+  font-size: .8em;
+}
 #game #inventoryButton {
   display: none;
   z-index: 100;
@@ -369,12 +391,26 @@
   right: 80px;
   opactiy: 0.3;
   color: white;
-  font-size: 3em;
-  font-weight: 500;
+  font-size: 4em;
+  font-weight: 700;
   z-index: 100;
+  text-shadow: 0px 0px 3px #555555;
 }
 #game .reward i {
   color: white;
+  text-shadow: 0px 0px 3px #555555;
+}
+#game .taskcomplete {
+  position: fixed;
+  top: 100px;
+  left: 40px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 3em;
+  font-weight: 700;
+  z-index: 100;
+  text-shadow: 0px 0px 3px #555555;
 }
 #game .discoball {
   display: none;

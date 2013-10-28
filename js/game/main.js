@@ -58,11 +58,13 @@
 				if(data.bioKey) {
 					data.message += ' <a href"#" data-key="' + data.bioKey + '">view bio</a>';
 					msgLength += 10;
+					$game.audio.playFx('pop');
 				}
 
 				if(data.crat) {
-					data.message += ' <a href"#" data-key="crat">play now</a>';
+					data.message += ' <br><a href"#" data-key="crat">play now</a><a href="#" class="nothanks" data-key="nothanks">no thanks</a>';
 					msgLength += 10;
+					$game.audio.playFx('pop');
 				}
 
 				$MESSAGE_TEXT.html(data.message);
@@ -74,10 +76,12 @@
 				if(data.crat) {
 					data.message +=  ' <a href"#" data-key="crat">stop</a>';
 					msgLength += 5;
+					$game.audio.playFx('pop');
 				}
 				if(data.target) {
 					data.message += ' <a href"#>view</a>';
 					msgLength += 5;
+					$game.audio.playFx('pop');
 				}
 				$MESSAGE_TEXT.html(data.message);
 				
@@ -247,15 +251,26 @@
 			$('.reward').animate({
 				opacity: 1
 			}, 500, function() {
-				$(this).animate({
+				$(this).delay(500).animate({
 					opacity: 0,
 					top: '0px',
 				},2000, function() {
 					$(this).remove();
 				});
-				$('#inventoryButton p i').animate({opacity: 0.5}, 500, function() {
+				$('#inventoryButton p i').animate({opacity: 0.2}, 500, function() {
 					$('#inventoryButton p i').animate({opacity: 1},500);
 				});
+			});
+		},
+
+		taskComplete: function() {
+			var html = '<p class="taskcomplete">TASK COMPLETE</p>';
+			$GAMEBOARD.append(html);
+			$game.audio.playFx('taskcomplete');
+			
+			//animated it off
+			$('.taskcomplete').delay(1000).fadeOut(function() {
+				$(this).remove();
 			});
 		}
 	};

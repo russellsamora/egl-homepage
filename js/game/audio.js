@@ -27,7 +27,9 @@
 					win5: [5100, 900],
 					win6: [6000, 1500],
 					win7: [7500, 1400],
-					win8: [8900, 1100]
+					win8: [8900, 1100],
+					taskcomplete: [11000, 1400],
+					pop: [13000, 200]
 				}
 			});
 			audio.ready = true;	
@@ -87,6 +89,14 @@
 	function _loadSong() {
 		_songTransition = true;
 		var url = '/tracks/' + _playlist.tracks[_currentTrack].id;
+		
+		//show loading info
+		$('#popupBox .soundcloud .songTitle').text('');
+		$('#popupBox .soundcloud .user').text('loading jam...');
+		$game.hidePopup();
+		$('#popupBox .soundcloud').show();
+		$('#popupBox').show();
+
 		SC.stream(url, function(song) {
 			_songTransition = false;
 			_playlist.tracks[_currentTrack].song = song;
@@ -96,8 +106,11 @@
 
 	function _nextSong(ended) {
 		//if game mode then mark as complete
-		if($game.localStore.playing && $game.localStore.targetPerson === 'sam') {
-			$game.localStore.tasks.sam = true;
+		if($game.localStore.playing && $game.localStore.targetPerson === 'eric') {
+			if(!$game.localStore.tasks.eric) {
+				$game.taskComplete();	
+			}
+			$game.localStore.tasks.eric = true;
 			$game.updateStorage();
 		}
 		if(audio.isPlaying) {
@@ -116,6 +129,7 @@
 
 	function _playSong() {
 		audio.isPlaying = true;
+		_playlist.tracks[_currentTrack].song.setVolume(30);
 		_playlist.tracks[_currentTrack].song.play({
 			onfinish: function() {
 				setTimeout(_nextSong, 100, true);
@@ -135,7 +149,7 @@
 		$('#popupBox .soundcloud').show();		
 		$('#popupBox').show();
 		clearTimeout(_infoTimer);
-		var _infoTimer = setTimeout(function() {
+		_infoTimer = setTimeout(function() {
 			$('#popupBox').hide();
 		}, 4000);
 	}

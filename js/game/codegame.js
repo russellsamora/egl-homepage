@@ -1,7 +1,5 @@
 (function(){
-	var _time,
-		_start,
-		_challenges = ['10','010','1011', '01101', '010110', 'var x = 42;'],
+	var _challenges = ['10','010','1011', '01101', '010110', 'var x = 42;'],
 		_curChallenge,
 		_playing;
 
@@ -19,7 +17,9 @@
 			}
 		},
 		start: function() {
-			$('#codegame').empty().append('<p class="codegameText"></p><p class="codegamePI"><input class="codegameInput"></p>');
+			$('#codegame').empty().append('<p class="codegameText"></p><p class="codegamePI"><input class="codegameInput"></p><p class="quitcodegame"><a href="#">quit</a></p>');
+			$('.codegameText').css('opacity', 1);
+			_bindQuitButton();
 			_bindTypeCheck();
 			_curChallenge = 0;
 			_nextChallenge();
@@ -38,6 +38,9 @@
 		_playing = false;
 		$('.codegameText').text('You did it!').css('opacity', 1);
 		if($game.localStore.playing && $game.localStore.targetPerson === 'russell') {
+			if(!$game.localStore.tasks.russell) {
+				$game.taskComplete();	
+			}
 			$game.localStore.tasks.russell = true;
 			$game.updateStorage();
 		}
@@ -83,6 +86,18 @@
 					_nextChallenge();
 				}
 			}
+		});
+	}
+
+	function _bindQuitButton() {
+		$BODY.on('click', '.quitcodegame a', function(e) {
+			e.preventDefault();
+			$('#codegame').hide();
+			$('.codegameText').stop();
+			_playing = false;
+			$BODY.off('click', '.quitcodegame a');
+			$('.codegameInput').off('input');
+			return false;
 		});
 	}
 

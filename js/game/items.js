@@ -267,7 +267,8 @@
 				y: 650,
 				frames: 8,
 				animation: [0,1,2,3,4,5,6,7],
-				paused: false
+				paused: false,
+				message: 'Must make coffee!'
 			},
 			'discoball': {
 				class: 'discoball',
@@ -276,14 +277,19 @@
 				frames: 8,
 				animation: [0,1,2,3,4,5,6,7],
 				paused: false,
-				action: function() {
+				action: function(el) {
 					$game.toggleDiscoMode();
 					setTimeout(function() {
 						$game.toggleDiscoMode();
 					}, 5000);
 					if($game.localStore.playing && $game.localStore.targetPerson === 'jesse') {
+						if(!$game.localStore.tasks.jesse) {
+							$game.taskComplete();	
+						}
 						$game.localStore.tasks.jesse = true;
 						$game.updateStorage();
+					} else {
+						$game.showMessage({el: el, message: 'Disco Stu likes disco music.'});
 					}
 				}
 			},
@@ -320,6 +326,9 @@
 					var url = 'url(' + 'img/other/panda.gif)';
 					$('#tele').css('background-image', url);
 					if($game.localStore.playing && $game.localStore.targetPerson === 'christina') {
+						if(!$game.localStore.tasks.christina) {
+							$game.taskComplete();	
+						}
 						$game.localStore.tasks.christina = true;
 						$game.updateStorage();
 					}
@@ -339,6 +348,9 @@
 					window.open('http://engagementgamelab.org/wearewatchingyou/index.html', '_blank');
 					window.focus();
 					if($game.localStore.playing && $game.localStore.targetPerson === 'jedd') {
+						if(!$game.localStore.tasks.jedd) {
+							$game.taskComplete();	
+						}
 						$game.localStore.tasks.jedd = true;
 						$game.updateStorage();
 					}
@@ -369,11 +381,13 @@
 			},
 			'computer': {
 				class: 'computer',
-				x: 2570,
+				x: 2420,
 				y: 650,
-				action: function() {
+				action: function(el) {
 					if($game.localStore.playing && $game.localStore.targetPerson === 'russell') {
 						$game.codegame.show();
+					} else {
+						$game.showMessage({el: el, message: 'Jony Ive hates me.'});
 					}
 				}
 			},
@@ -385,6 +399,7 @@
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
 				paused: false,
+				message: 'I am just a water cooler...',
 				playSound: function() {
 					$game.audio.playFx('water');
 				},
@@ -418,9 +433,9 @@
 					}, timeout, this);
 				},
 				action: function(el) {
-					var msg = 'Hey there! Havin\' fun exploring the Lab? Want to kick things into high gear? We\'ll help you create your own engagement game! Just enter "game-mode" and start playing.';
+					var msg = 'I say, my good fellow! The Lab is your oyster. Explore to your heart\'s content. OR... if you\'re feeling adventurous, you can try out the once-in-a-lifetime experience of Game Mode. Ready to give it a go? ';
 					if($game.localStore.playing) {
-						msg = 'Want to exit Game Mode? Your progress will be saved.';
+						msg = 'Game Mode Activated! Jolly good! You can EXIT Game Mode at any time by coming back to me. To begin your quest, search the lab for the staff member with THE MOST COFFEE. Good luck!';
 					}
 					$game.showMessage({el: el, message: msg, crat: true});
 				}	
@@ -449,8 +464,11 @@
 						items.showingBio = true;
 					}, 17);
 					//only add as task done if steve is current target
-					if($game.localStore.playing && $game.localStore.targetPerson === 'eric') {
-						$game.localStore.tasks.eric = true;
+					if($game.localStore.playing && $game.localStore.targetPerson === 'sam') {
+						if(!$game.localStore.tasks.sam) {
+							$game.taskComplete();
+						}
+						$game.localStore.tasks.sam = true;
 						$game.updateStorage();
 					}
 				}	

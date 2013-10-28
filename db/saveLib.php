@@ -22,18 +22,18 @@ $dbSelected = mysql_select_db($dbname, $con);
 
 
 $lib = $_POST[lib];
-$score = $_POST[score];
+$email = $_POST[email];
 $author = $_POST[author];
 $game = $_POST[game];
 
 // $insert = 'INSERT INTO ' . $dbtable . ' (image) VALUES (' . $fileName . ')';
-$insert = 'INSERT INTO ' . $dbtable . ' (lib,score,name,game) VALUES ("' . $lib . '", ' . $score. ', "' . $author . ', "' . $game . '")';
+$insert = 'INSERT INTO ' . $dbtable . ' (lib,email,name,game) VALUES ("' . $lib . '", ' . $email. ', "' . $author . ', "' . $game . '")';
 
 $insertResult = mysql_query($insert);
 if(!$insertResult) {
-	echo 'bad';
+	echo $insert . ' bad';
 } else {
-	echo 'good';
+	echo $insert . ' good';
 }
 
 mysql_close($con);

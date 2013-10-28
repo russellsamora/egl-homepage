@@ -46,15 +46,18 @@
 			});
 
 			$('#whiteboardCanvas').on('mousedown touchstart', function(e) {
-				if($game.localStore.playing && $game.localStore.targetPerson === 'aidan') {
-					$game.localStore.tasks.aidan = true;
-					$game.updateStorage();
-				}
 				whiteboard.drawingExists = true;
 				_drawing = true;
 				clearTimeout(_doneTimer);
 			});
 			$('#whiteboardCanvas').on('mouseup touchend', function(e) {
+				if($game.localStore.playing && $game.localStore.targetPerson === 'aidan') {
+					if(!$game.localStore.tasks.aidan) {
+						$game.taskComplete();
+					}
+					$game.localStore.tasks.aidan = true;
+					$game.updateStorage();
+				}
 				if(_started) {
 					_doneTimer = setTimeout(function() {
 						whiteboard.saveDrawing();

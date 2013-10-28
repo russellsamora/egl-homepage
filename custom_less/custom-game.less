@@ -120,6 +120,7 @@
 			font-size: 3em;
 			font-weight: 700;
 			text-align: center;
+			text-shadow: 0px 0px 3px @grayDark;
 		}
 	}
 	#message {
@@ -150,6 +151,10 @@
 				letter-spacing: 0;
 				color: white;
 				font-size: .8em;
+			}
+			a.nothanks {
+				margin-left: 10px;
+				background: @redDarker;
 			}
 		}
 	}
@@ -218,10 +223,13 @@
 		display: none;
 		position: fixed;
 		padding: 0;
-		top: 200px;
+		top: 50%;
 		left: 50%;
 		margin-left: -360px;
+		margin-top: -150px;
 		width: 720px;
+		max-height: 400px;
+		overflow: auto;
 		z-index: @zMessage;
 		background: fade(@greenDarkest, 85%);
 		background: rgba(255,255,255,0.9);
@@ -233,7 +241,7 @@
 			font-size: 1.3em;
 			font-weight: 100;
 		}
-		input.open, #authorName, #libName {
+		input.open, #authorName, #libName, #emailName {
 			width: 50%;
 			margin-left: 5px;
 			line-height: 1;
@@ -323,6 +331,18 @@
 			float: right;
 			margin-bottom: 10px;
 		}
+	.quitcodegame {
+			text-align: right;
+			padding: 5px;
+			a {
+				background: @red;
+				padding: 5px;
+				cursor: pointer;
+				letter-spacing: 0;
+				color: white;
+				font-size: .8em;
+			}
+		}
 	}
 
 	#inventoryButton {
@@ -388,12 +408,26 @@
 		right: 80px;
 		opactiy: 0.3;
 		color: white;
-		font-size: 3em;
-		font-weight: 500;
+		font-size: 4em;
+		font-weight: 700;
 		z-index: @zMessage;
+		text-shadow: 0px 0px 3px @grayDark;
 		i {
 			color: white;
+			text-shadow: 0px 0px 3px @grayDark;
 		}
+	}
+	.taskcomplete {
+		position: fixed;
+		top: 100px;
+		left: 40px;
+		text-align: center;
+		margin: 0 auto;
+		color: white;
+		font-size: 3em;
+		font-weight: 700;
+		z-index: @zMessage;
+		text-shadow: 0px 0px 3px @grayDark;
 	}
 	.discoball {
 		display: none;
