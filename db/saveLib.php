@@ -11,10 +11,10 @@ $dbpass = 'Gnomes4eva!';
 $dbname = 'gamelib';
 $dbtable = 'lib';
 
-$lib = mysql_real_escape_string($_POST[lib]);
-$email = mysql_real_escape_string($_POST[email]);
-$author = mysql_real_escape_string($_POST[author]);
-$game = mysql_real_escape_string($_POST[game]);
+$lib = base64_encode($_POST[lib]);
+$email = $_POST[email];
+$author = $_POST[author];
+$game = $_POST[game];
 
 $len = strlen($email);
 // if($len > 5) {

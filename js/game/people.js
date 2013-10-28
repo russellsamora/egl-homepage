@@ -340,13 +340,13 @@
 					present: 'Oh, hey, it\'s you. Thanks for visiting the Lab. Ready to get to work? I mean... fun? I mean, just forget it, ok... can we just start?',
 					future: 'hi',
 					reward: {
-						text: 'Tha\'s problem alright... Here, take some dongles. They\'ll help you in your quest.',
+						text: 'That is a problem alright... Here, take some dongles. They\'ll help you in your quest.',
 						count: {dongle: 3},
 					},
 					clue: 'To get to the next stage in the game, you\'ll need to talk to the person with the most book-learnin\'. Good luck and stuff.',
 					chatClue: 'Have you clicked on the nerd with the book yet? This isn\'t exactly rocket science.',
-					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world action. Our game Community PlanIt  [New Tab] responds to barriers to entry and a lack of meaningful deliberation in local planning, while our game <a href="projects/upriver/" target="_blank">UpRiver</a> emerged from the lack of communication and prediction awareness along flood-prone areas of the Zambezi River in Zambia. Games and playful systems can be used to solve huge problems that affect millions of people, or bite-sized problems that affect small, local communities. Unlike gamification, which is simply behavior modification, engagement games aim to use play to scaffold emergent and original forms of citizen action through learning and empathy. </p>',
-					question: 'What is the real-world problem you want to address?',
+					information: '<p>All engagement games begin with a real-world problem, because the purpose of an engagement game is to enable real-world action. Unlike gamification, which is simply behavior modification, engagement games aim to use play to scaffold emergent and original forms of citizen action through learning and empathy.  Our game <a href="projects/community-planit" target="_blank">Community PlanIt</a> responds to barriers to entry and a lack of meaningful deliberation in local planning, while our game <a href="projects/upriver/" target="_blank">UpRiver</a> emerged from the lack of communication and prediction awareness along flood-prone areas of the Zambezi River in Zambia. Games and playful systems can be used to solve problems global or local.</p>',
+					question: 'What is the real-world problem you want to address?  Use this space to describe a real world issue in 25 words or less.',
 					lead: [''],
 					questionType: 'open',
 					maxLength: 125,
@@ -380,7 +380,7 @@
 					},
 					clue: 'To find your next guide, you\'ll have to take a seat.',
 					chatClue: 'Still looking for her? I thought my clue was easy enough. Have a seat, get it?',
-					information: '<p>The difference between engagement games and other "learning" or "serious" games is action. An engagement game doesn\'t just teach about a topic or encourage later action — the very act of playing the game IS real-world action. For instance, <a href="projects/community-planit" target="_blank">Community PlanIt</a> allows citizens to deliberate and give input on official planning processes while also being able to create and fund local community causes. You can read more about this in our <a href="resources/" target="_blank">engagement game manual</a>.</p>',
+					information: '<p>The difference between engagement games and other "learning" or "serious" games is action. An engagement game doesn\'t just teach about a topic or encourage later action - the very act of playing the game IS real-world action. For instance, <a href="projects/community-planit" target="_blank">Community PlanIt</a> allows citizens to deliberate and give input on official planning processes while also being able to create and fund local community causes. You can read more about this in our <a href="resources/" target="_blank">Engagement Game Manual</a>.</p>',
 					question: 'What real-world action will your game facilitate?',
 					lead: ['My game will get people to'],
 					questionType: 'open',
@@ -408,7 +408,7 @@
 				bind: 'couch',
 				game: {
 					past: 'Check out Community PlanIt on our projects page.',
-					task: 'Oh! Nice to meet you. I think you\'re ready for the next step in developing your game... but first do me a solid and put on the Panda Cam. Then we\'ll talk.',
+					task: 'Oh! Nice to meet you. I think you\'re ready for the next step in developing your game... but first we lost the remote. Could you turn on the Panda Cam? Then we\'ll talk.',
 					present: 'Pandas, yay!',
 					future: 'Dear Sir or madam... no, that\'s not right at all. Hmmm...',
 					reward: {
@@ -417,7 +417,7 @@
 					},
 					clue: 'Wow, you\'ve earned the Badge-Collector Badge! Great job. For the next stage in the game, you\'ll need to get technical.',
 					chatClue: 'Found that tech-savvy EGLer yet? His face was just on the TV.',
-					information: '<p>You know what real-world actions you\'d like to enable with your game, so you probably have some idea of who you want to play the game. Let\'s think a little more about that. When we designed <a href="/projects/community-planit" target="_blank">Community PlanIt</a>, we wanted it to be playable by stakeholders in the community. This includes people who live, work, and hang out in the community, decision makers, school officials, students, senior citizens... everyone in a given community. Other games are narrower, like <a href="/projects/civic-seed" target="_blank">Civic Seed</a>, which was designed only for students learning about Civic Engagement.</p>',
+					information: '<p>You know what real-world actions you\'d like to enable with your game, so you probably have some idea of who you want to play the game. Let\'s think a little more about that. When we designed <a href="projects/habitat" target="_blank">Habit@</a>, we wanted it to make it open to stakeholders in the community, specifically Dudley Square. This includes people who live, work, and hang out in the community, decision makers, school officials, students, senior citizens... everyone who inhabits that shared space. </p>',
 					question: 'Who is the target audience of your game?',
 					lead: ['My game will be played by'],
 					questionType: 'open',
@@ -435,7 +435,7 @@
 				about: 'Russell is an interactive developer who creates games and data visualizations at the lab.',
 				game: {
 					past: 'Your game\'s coming along great. You\'re almost done!',
-					task: 'Hey, robo-dude. I think you\'re ready to start building your game, but I\'m too busy to help you. I set up a work station for you over there. Do some coding for me, and I\'ll help you',
+					task: 'Hey, robo-dude. I think you\'re ready to start building your game, but I\'m too busy to help you. I set up a work station for you over there. Do some coding for me, and I\'ll help you.',
 					present: 'Sweet. Let\'s get crackin.',
 					future: 'Can\'t talk. Coding.',
 					reward: {
@@ -468,14 +468,14 @@
 				},
 				fullName: 'Sam Liberty',
 				jobTitle: 'Game Writer',
-				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of tohe Spoiled Flush Games design studio. ',
+				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of the Spoiled Flush Games design studio. ',
 				game: {
 					past: 'I\'ve redesigned this game. Now it\'s gin rummy, but with flame-throwers.',
 					task: 'Cool. You\'re in the right place, but before we get started, I want you to gain some knowledge. Learn a random fact from someone who seems to be holding a lot of it.',
 					present: 'Genius! It looks like you\'ve got a solid framwork around your game. You know who will play it, and what real-world action you\'re trying to enable, and you also know what format the game will be created in. Now it\'s time to figure out the narrative of your game.',
 					future: 'This game combines Sorry, Monopoly, Candy Land, and Trivial Persuit. It is the worst game ever. Come back later.',
 					reward: {
-						text: 'Awesome! You earned the Write Stuff award! Also, take a dongle, cause I like your face.',
+						text: 'Awesome! You earned the Write Stuff award! Also, take a dongle, \'cause I like your face.',
 						count: {dongle: 1, award: 1}
 					},
 					clue: 'For your next task, you must find... your creator.',
@@ -513,7 +513,7 @@
 						text: 'A sound choice. You\'ve got the Amateur Artist Award.',
 						count: {award: 1}
 					},
-					clue: 'For the next stage, seek out the Great Tall One.',
+					clue: 'For the next stage, seek out the great great grand nephew of Paul Bunyan.',
 					chatClue: 'I love dinosaurs, don\'t you? Maybe I\'ll draw one.',
 					information: '<p>The look of a game has a huge impact on how people experience it. It\'s important that your aesthetic choices support the tone you\'re going for, while enabling fun. Take a look at the lab space on your screen now. Everything you see was a stylistic choice made to express the mood of the lab, create a playful atmosphere, make people excited to explore. Of course, this is a 2-D envirnoment, but it feels 3-D thanks to my visuals.</p>',
 					question: 'How will your game look? Choose one.',
@@ -543,7 +543,7 @@
 				about: 'Jedd is working to adapt Community PlanIt for use in schools and other community and advocacy organizations.',
 				game: {
 					past: 'Hang on, I\'m on a call. Can you come back later?',
-					task: 'Hey, I need your help. There\'s a book on the book shelf that I need. It\'s called "We\'re Watching You: A History of the NSA." They\'re listening to my call right now! If you go grab it for me, I\'ll help you with your game.',
+					task: 'Hey, I need your help. There\'s a book I need called "We\'re Watching You: A History of the NSA." They\'re listening to my call right now! If you go grab it for me, I\'ll help you with your game.',
 					present: 'Aw, thanks! That\'s really, really just the best. Thanks so much. ',
 					future: 'Hang on, I\'m on a call. Can you come back later?',
 					reward: {
