@@ -12,6 +12,7 @@
 
 		init: function() {
 			//reset scroll top
+			_preventMovement = true;
 			$SCROLL_ELEMENT.scrollTop(0);
 			$SCROLL_ELEMENT.scrollLeft(0);
 			input.ready = true;

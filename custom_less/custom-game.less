@@ -53,6 +53,9 @@
 			width: 80%;
 			margin: 0 auto;
 			margin-top: 80px;
+			span {
+				font-size: .8em;
+			}
 		}
 		.specialLink {
 			width: 100px;
@@ -271,6 +274,12 @@
 				outline: none;
 			}
 		}
+		.overLib {
+			span {
+				font-weight: 500;
+				color: @greenDarker;
+			}
+		}
 	}
 	#whiteboardCanvas {
 		cursor: crosshair;
@@ -431,6 +440,36 @@
 	}
 	.discoball {
 		display: none;
+	}
+}
+
+#helpArrows {
+	.rightArrow {
+		position: fixed;
+		top: 50%;
+		margin-top: -10px;
+		right: 40px;
+		font-size: 3em;
+		z-index: @zMessage;
+		opacity: .8;
+		pointer-events:none;
+		i {
+			color: white;
+		}
+	}
+	.downArrow {
+		color: white;
+		position: fixed;
+		left: 50%;
+		margin-left: -10px;
+		bottom: 0;
+		font-size: 3em;
+		z-index: @zMessage;
+		opacity: .8;
+		pointer-events:none;
+		i {
+			color: white;
+		}
 	}
 }
 

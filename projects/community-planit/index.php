@@ -12,7 +12,7 @@
 					</p>
 				</div>
 				<p class='projectTagline'>
-					Your Voice, Your Stake, Your Move!		
+					Your Community, Your Future, Your Move!		
 				</p>
 			</div>
 			<div class='container projectPage'>

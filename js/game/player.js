@@ -20,7 +20,7 @@
 		id: 'player',
 		class: 'character',
 		x: 450,
-		y: 250,
+		y: -180,
 		w: 80,
 		h: 160,
 		offset: {
@@ -54,6 +54,15 @@
 				console.log('player ready');
 			}
 			i.src = '../../img/player/' + file + '.png';
+		},
+
+		entrance: function() {
+			player.y = 250;
+			player.selector.delay(1000).animate({
+				top: 250
+			},1500, function() {
+				$game.input.enableMove();
+			});
 		},
 
 		//figure out where to move the player and move em!
@@ -229,15 +238,18 @@
 
 			//choose which to animate (must lump together so it doesn't halt other)
 			if(destX !== undefined && destY !== undefined) {
+				$game.hasScrolled = true;
 				$SCROLL_ELEMENT.stop().animate({
 					scrollLeft: destX,
 					scrollTop: destY
 				}, speed,'linear');	
 			} else if(destY !== undefined) {
+				$game.hasScrolled = true;
 				$SCROLL_ELEMENT.stop().animate({
 					scrollTop: destY
 				}, speed,'linear');	
 			} else if(destX !== undefined) {
+				$game.hasScrolled = true;
 				$SCROLL_ELEMENT.stop().animate({
 					scrollLeft: destX
 				}, speed,'linear');	

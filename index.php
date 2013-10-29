@@ -83,9 +83,9 @@
 							We are an applied research lab at <a class='emerson' href='http://emerson.edu' target='_blank'>Emerson College</a> that designs and studies playful approaches to serious problems. Our <a href='/projects'>PROJECTS</a> span from community engagement in Detroit to disaster preparedness in Zambia. Our <a href='/research'>RESEARCH</a> frames all our projects and ranges from issues of global/networked citizenship to youth and civic media. Check out our <a href='/resources'>RESOURCES</a> page for design guides, curricula, and courses, or learn some more <a href='/about'>ABOUT US</a>.
 							<br><br>
 							<!-- MAKE UPDATES HERE -->
-							<!-- <span>
-								In the news: New York Times writes scathing review of the Engagement Game Lab. <a href='/blog'>[read it]</a>
-							</span> -->
+							<span>
+								<b>FROM THE BLOG: </b>Why We Engage: How Theories of Human Behavior Contribute to Our Understanding of Civic Engagement in a Digital Era<a href='/blog'> [read it]</a>
+							</span>
 						</p>
 					</div>
 					<div class='rightHalf'>
@@ -98,7 +98,10 @@
 				</div>
 				<div id='cover'></div>
 			</div>
-			<div id='blogTease'></div>
+			<div id='helpArrows'>
+				<p class='rightArrow'><i class='icon-chevron-right'></i></p>
+				<p class='downArrow'><i class='icon-chevron-down'></i></p>
+			</div>
 			<div id='nongame'>
 				<div class='row-fluid'>
 					<div class='span4 projectsLink'>

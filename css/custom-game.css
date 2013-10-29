@@ -45,6 +45,9 @@
   margin: 0 auto;
   margin-top: 80px;
 }
+#game #pregame .introText span {
+  font-size: .8em;
+}
 #game #pregame .specialLink {
   width: 100px;
   margin: 0 auto;
@@ -256,6 +259,10 @@
 #game #challengeBox input.multiple:focus {
   outline: none;
 }
+#game #challengeBox .overLib span {
+  font-weight: 500;
+  color: #40b4bc;
+}
 #game #whiteboardCanvas {
   cursor: crosshair;
 }
@@ -414,6 +421,33 @@
 }
 #game .discoball {
   display: none;
+}
+#helpArrows .rightArrow {
+  position: fixed;
+  top: 50%;
+  margin-top: -10px;
+  right: 40px;
+  font-size: 3em;
+  z-index: 100;
+  opacity: .8;
+  pointer-events: none;
+}
+#helpArrows .rightArrow i {
+  color: white;
+}
+#helpArrows .downArrow {
+  color: white;
+  position: fixed;
+  left: 50%;
+  margin-left: -10px;
+  bottom: 0;
+  font-size: 3em;
+  z-index: 100;
+  opacity: .8;
+  pointer-events: none;
+}
+#helpArrows .downArrow i {
+  color: white;
 }
 #cover {
   width: 100%;

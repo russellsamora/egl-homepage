@@ -399,7 +399,13 @@
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
 				paused: false,
-				message: 'I am just a water cooler...',
+				action: function(el) {
+					if($game.localStore.over) {
+						_promptCode();
+					} else {
+						$game.showMessage({el: el, message: 'I am just a water cooler...'});
+					}
+				},
 				playSound: function() {
 					$game.audio.playFx('water');
 				},
@@ -618,5 +624,9 @@
 		if(typeof item.css.updateImage === 'function') {
 			item.css.updateImage();
 		}
+	}
+
+	function _promptCode() {
+		
 	}
 })();

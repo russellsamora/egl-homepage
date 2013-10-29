@@ -7,6 +7,13 @@
 	<body>
 		<div id='wrap'>
   			<?php include '../nav.php' ?>
+  			<div class='container'>
+  				<div class='row'>
+	  				<div class='span12'>
+	  					<h1 class='blogTitle'>Blog</h1>
+	  				</div>
+  				</div>
+			</div>
 			<div class='container blogContainer'>
 			</div>
 			<div id='push'></div>

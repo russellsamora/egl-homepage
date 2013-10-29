@@ -9154,6 +9154,11 @@ a.badge:focus {
 #blog {
   display: none;
 }
+.blogTitle {
+  font-weight: 800;
+  color: #ff5622;
+  text-align: center;
+}
 .blogContainer {
   margin-bottom: 100px;
 }
@@ -9166,20 +9171,36 @@ a.badge:focus {
   margin-top: 40px;
 }
 .blogContainer .postDate {
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 1em;
+  color: #78cbd1;
+}
+.blogContainer .postAuthor {
+  font-weight: 500;
 }
 .blogContainer .postTitle {
-  font-size: 1em;
+  font-size: 1.2em;
+  font-weight: 700;
   padding-bottom: 10px;
   border-bottom: 1px dashed #999999;
 }
 .blogContainer .post {
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   border-bottom: 1px dashed #999999;
   padding-bottom: 40px;
 }
 .blogContainer .post p {
   font-weight: 100;
+}
+.blogContainer .imageDiv {
+  font-size: .9em;
+}
+.blogContainer .imageDiv img {
+  display: block;
+  margin-bottom: 5px;
+}
+.blogContainer a {
+  font-weight: 500;
 }
 #footer {
   background: #555555;

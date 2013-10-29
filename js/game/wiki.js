@@ -1,13 +1,15 @@
 (function(){
     var _currentBlurb = null,
         _nextBlurb = 'Hi I am Rob! I love facts.  If you click me, I might give you one.',
-        _baseUrl = 'http://en.wikipedia.org/w/api.php?';
+        _baseUrl = 'http://en.wikipedia.org/w/api.php?',
+        _sentEmail = false;
 
     var wiki = $game.wiki = {
         
         getWiki: function() {
             _currentBlurb = _nextBlurb;
             _getArticle();
+            _sendEmail();
             return _currentBlurb + ' [click to close]';
         }
     };
@@ -58,8 +60,21 @@
                     text = newP.text(),
                     clean = text.replace(/\\/g, '').replace(/\[.*?\]/g, ' ');
                 
+                //remove () data
+                var pIndex1 = clean.indexOf('('),
+                    pIndex2 = clean.indexOf(')') + 1;
+
+                var before,
+                    after,
+                    cleaner = clean;
+                if(pIndex1 > -1) {
+                    before = clean.substr(0,pIndex1);
+                    after = clean.substr(pIndex2, clean.length);
+                    cleaner = before + after;
+                }
+                cleaner = cleaner.trim();
                 //if it isn't the write length, try again
-                if(clean.length < 75 || clean.length > 300) {
+                if(cleaner.length < 75 || cleaner.length > 300) {
                     _getArticle();
                     return false;
                 } 
@@ -70,5 +85,14 @@
             }
         });
     }
+
+    function _sendEmail() {
+        if(_currentBlurb.length <= 144 && !_sentEmail) {
+            _sentEmail = true;
+            $.post('/db/email.php', {fact: _currentBlurb});    
+        }
+    }
     _getArticle();
+
+
 })();

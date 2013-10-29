@@ -371,7 +371,7 @@
 				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.',
 				game: {
 					past: 'Bored? You could always talk to Rob and learn some more facts. Or see what\'s on the TV.',
-					task: 'You\'ve found me, the fearless leader of the Lab.  Ready to rock and roll? So am I, but first, put on some tunes, and then I\'ll help you.',
+					task: 'You\'ve found me, the fearless leader of the Lab.  Ready to rock and roll? So am I, but first, put on some tunes, and then I come back to me and I\'ll help you',
 					present: 'Awesome song! You are now ready.',
 					future: 'Later...',
 					reward: {
@@ -738,25 +738,25 @@
 		$.post('../../db/saveLib.php', {lib: lib, author: authorName, game: libName, email: emailName},
 			function(res) {
 				console.log(res);
-				// _showCode();
+				_showCode();
 			}, 'text');
 	}
 
 	function _createLib() {
-		$game.localStore.lib = '<p>' + $game.localStore.answers[0][0];
-		$game.localStore.lib +=  '.  To help solve this problem, we\'ll use an engagement game designed to get players to ' + $game.localStore.answers[1][0] + '.</p>';
-		$game.localStore.lib += '<p>This game will mostly target ' + $game.localStore.answers[2][0];
+		$game.localStore.lib = '<div class="overLib"><p><span>' + $game.localStore.answers[0][0] + '</span>';
+		$game.localStore.lib +=  '.  To help solve this problem, we\'ll use an engagement game designed to get players to <span>' + $game.localStore.answers[1][0] + '.</span></p>';
+		$game.localStore.lib += '<p>This game will mostly target <span>' + $game.localStore.answers[2][0] + '</span>';
 		
-		$game.localStore.lib += '.  In order to reach that audience and create the best possible experience, the game is concieved of as ' + $game.localStore.answers[3][0];
-		$game.localStore.lib += '.  The narrative of the game is relatively simple. Players play as ' + $game.localStore.answers[4][0] +' trying to ' + $game.localStore.answers[4][1] + ' by ' + $game.localStore.answers[4][2];
-		$game.localStore.lib += '.</p><p>  The game will utilize a ' + $game.localStore.answers[5][0] + ' aesthetic to set the proper tone and interface style';
-		$game.localStore.lib += '.  To build trust in the community and give the game a platform, our partners will include ' + $game.localStore.answers[6][0];
-		$game.localStore.lib += '.  Once the game is complete, we\'ll evaluate its impact through solid research, including ' + $game.localStore.answers[7][0] + '.</p>';
+		$game.localStore.lib += '.  In order to reach that audience and create the best possible experience, the game is concieved of as <span>' + $game.localStore.answers[3][0] + '</span>';
+		$game.localStore.lib += '.  The narrative of the game is relatively simple. Players play as <span>' + $game.localStore.answers[4][0] +'</span> trying to <span>' + $game.localStore.answers[4][1] + '</span> by <span>' + $game.localStore.answers[4][2] + '</span>';
+		$game.localStore.lib += '.</p><p>  The game will utilize a <span>' + $game.localStore.answers[5][0] + '</span> aesthetic to set the proper tone and interface style';
+		$game.localStore.lib += '.  To build trust in the community and give the game a platform, our partners will include <span>' + $game.localStore.answers[6][0] + '</span>';
+		$game.localStore.lib += '.  Once the game is complete, we\'ll evaluate its impact through solid research, including <span>' + $game.localStore.answers[7][0] + '</span>.</p></div>';
 	}
 
 	function _showCode() {
 		$('#challengeBox').empty();
-		var html = '<p>You can check out other players\' games at the bookshelf.  The code is: "pizza".</p>';
+		var html = '<p>You can check out other players\' games at the water cooler.  The code is: "agua".</p>';
 		$('#challengeBox').html(html).show().delay(5000).fadeOut();	
 	}
 })();

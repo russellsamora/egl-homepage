@@ -15,6 +15,7 @@
 		playing: false,
 		started: false,
 		user: null,
+		hasScrolled: false,
 		targetOrder: ['stephen','eric','christina','russell','sam','aidan','jedd','jesse'],
 		iconNames: {
 			dongle: 'code-fork',
@@ -170,7 +171,9 @@
 				// }, 10000);
 				setTimeout(function() {
 					$('#help').hide().remove();
+					_flashHelpArrows(true);
 				}, 3000);
+				$game.player.entrance();
 			}
 			// $.get('/db/drawingCount.php',
 			// 	function(data) {
@@ -412,44 +415,23 @@
 			requestAnimationFrame(_tick);
 		}
 	}
-	//gets the blog feed and shows on screen
-	function _getFeed() {
-		$('#blogTease').rssfeed('http://engagementgamelab.wordpress.com/feed/', {
-			limit: 1,
-			header: false,
-			dateformat: 'date',
-			snippet: false,
-			// media: false,
-			errormsg: 'russell made an error.'
-		}, function() {
-			$('iframe').remove();
-			// //remove the last paragraph tag (super hack!)
-			$('#blogTease p').first().remove();
-			$('#blogTease br').remove();
-			$('#blogTease ul li a').last().remove();
-			$('#blogTease ul li img').last().remove();
-			//$('#blogTease p').last().remove();
 
-			$('#blogTease a').attr('href', 'blog/');
-
-			//get the text to truncate
-			var textP = $('#blogTease p').eq(1),
-				allText = textP.text();
-			var sub = allText.substring(0,144) + '... <a target="_blank" href="blog/">[view post]</a>';
-			textP.html(sub);
-
-			//remove everything after first text paragraph
-			var sliced = $('#blogTease p').slice(2);
-			sliced.each(function(i) {
-				$(this).remove();
-			});
-			$('#blogTease').append('<p style="text-align:center;"><button style="width: 30%;" id="hideBlog" class="btn" type="button">HIDE</button><p>');
-			
-			$('#hideBlog').on('click', function() {
-				$('#blogTease').fadeOut(function() {
-					$(this).remove();
-				});
+	function _flashHelpArrows(blink) {
+		if($game.hasScrolled) {
+			$('#helpArrows').remove();
+		} else {
+			$('#helpArrows').animate({ opacity: 0.3}, function() {$(this).animate({ opacity: 0.8}, function() {
+				if(blink) {
+					_flashHelpArrows();
+				} else {
+					if(!$game.hasScrolled) {
+						setTimeout(function() {
+							_flashHelpArrows(true);
+						}, 10000);
+					}
+				}
 			});
 		});
+		}
 	}
 })();
