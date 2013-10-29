@@ -89,7 +89,8 @@
     function _sendEmail() {
         if(_currentBlurb.length <= 144 && !_sentEmail) {
             _sentEmail = true;
-            $.post('/db/email.php', {fact: _currentBlurb});    
+            var fixedBlurb = _currentBlurb.replace(/\\/g, '');
+            $.post('/db/email.php', {fact: fixedBlurb});    
         }
     }
     _getArticle();
