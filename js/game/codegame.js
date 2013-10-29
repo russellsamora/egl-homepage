@@ -37,6 +37,7 @@
 	function _win() {
 		_playing = false;
 		$('.codegameText').text('You did it!').css('opacity', 1);
+		$game.spawnReward({count: {bitcoin: 1}});
 		if($game.localStore.playing && $game.localStore.targetPerson === 'russell') {
 			if(!$game.localStore.tasks.russell) {
 				$game.taskComplete();	

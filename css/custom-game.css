@@ -89,7 +89,8 @@
   z-index: 3;
   cursor: pointer;
 }
-#game #help {
+#game #help,
+#game .denied {
   display: none;
   position: fixed;
   padding: 0;
@@ -100,7 +101,8 @@
   width: 480px;
   z-index: 100;
 }
-#game #help p {
+#game #help p,
+#game .denied p {
   color: #ffffff;
   margin: 10px;
   font-size: 3em;
@@ -260,8 +262,8 @@
   outline: none;
 }
 #game #challengeBox .overLib span {
-  font-weight: 500;
-  color: #40b4bc;
+  font-weight: 300;
+  color: #ff5622;
 }
 #game #whiteboardCanvas {
   cursor: crosshair;
@@ -421,6 +423,62 @@
 }
 #game .discoball {
   display: none;
+}
+#game .promptCode {
+  display: none;
+  position: fixed;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  width: 300px;
+  z-index: 100;
+  background: rgba(51, 144, 150, 0.85);
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid #b1e1e4;
+}
+#game .promptCode p {
+  color: #ffffff;
+  color: #40b4bc;
+  margin: 10px;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+#game .promptCode input {
+  width: 95%;
+  margin-left: 5px;
+  line-height: 1;
+  color: #ff5622;
+  font-weight: 300;
+  border: none;
+  border-bottom: 1px solid #ff5622;
+  background: none;
+}
+#game .promptCode input:focus {
+  outline: none;
+}
+#game .promptCode p.unlockButton {
+  cursor: pointer;
+  font-size: .9em;
+  background: #ff5622;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+  width: 35%;
+  text-align: center;
+  float: right;
+}
+#game .promptCode p.closeButton {
+  cursor: pointer;
+  font-size: .9em;
+  background: #ff5622;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+  width: 30%;
+  text-align: center;
+  float: left;
 }
 #helpArrows .rightArrow {
   position: fixed;
@@ -598,7 +656,8 @@
   #game,
   #pregame,
   #blogTease,
-  #nongameH {
+  #nongameH,
+  #displayArows {
     display: none;
   }
   #nongame {
@@ -617,7 +676,8 @@
   #game,
   #pregame,
   #blogTease,
-  #nongame {
+  #nongame,
+  #displayArrows {
     display: none;
   }
   #nongameH {

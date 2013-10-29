@@ -77,6 +77,21 @@
 						<img class='grayscale christinaInventory' src='img/people/inventory/christina.jpg'>
 					</p>
 				</div>
+				<div class='promptCode'>
+					<p>What is the code?</p>
+					<p><input></p>
+					<p class='unlockButton'>
+						UNLOCK
+					</p>
+					<p class='closeButton'>
+						CLOSE
+					</p>
+				</div>
+				<div class='denied'>
+					<p>ACCESS DENIED</p>
+				</div>
+				<div class='otherLibs'>
+				</div>
 				<div id='pregame'>
 					<div class='leftHalf'>
 						<p class='introText'>

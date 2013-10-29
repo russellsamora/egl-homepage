@@ -163,23 +163,12 @@
 				$('#pregame').fadeOut();
 				$game.started = true;
 				$('#help').show();
-				// $('#blogTease').show();
-				// setTimeout(function() {
-				// 	$('#blogTease').fadeOut(function() {
-				// 		$(this).remove();
-				// 	});
-				// }, 10000);
 				setTimeout(function() {
 					$('#help').hide().remove();
 					_flashHelpArrows(true);
 				}, 3000);
 				$game.player.entrance();
 			}
-			// $.get('/db/drawingCount.php',
-			// 	function(data) {
-			// 		_numDrawings = parseInt(data, 10);
-			// 		console.log(_numDrawings);
-			// 	}, 'text');
 		},
 
 		exitAndSave: function() {
@@ -311,7 +300,7 @@
 	}
 
 	function _checkReturning() {
-		// localStorage.clear();
+		sessionStorage.clear();
 		var storage = sessionStorage.getItem('egl-game');
 		if(storage) {
 			$game.localStore = JSON.parse(storage);
@@ -344,7 +333,7 @@
 				people: {}, 
 				targetIndex: 7,
 				targetPerson: 'jesse', 
-				answers: [['a'],['b'],['c'],['d','e','f'],['g'],['h'],['i']], 
+				answers: [['a'],['b'],['c'],['d'],['e','f','z'],['g'],['h'],['i']],
 				tasks: {
 					stephen: true,
 					eric: true,

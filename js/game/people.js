@@ -338,7 +338,7 @@
 					past: 'What are you doing back here? Did you want to change your answer? Well, too bad!',
 					task: 'no task from me.',
 					present: 'Oh, hey, it\'s you. Thanks for visiting the Lab. Ready to get to work? I mean... fun? I mean, just forget it, ok... can we just start?',
-					future: 'hi',
+					future: 'I am from the future',
 					reward: {
 						text: 'That is a problem alright... Here, take some dongles. They\'ll help you in your quest.',
 						count: {dongle: 3},
@@ -371,7 +371,7 @@
 				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.',
 				game: {
 					past: 'Bored? You could always talk to Rob and learn some more facts. Or see what\'s on the TV.',
-					task: 'You\'ve found me, the fearless leader of the Lab.  Ready to rock and roll? So am I, but first, put on some tunes, and then I come back to me and I\'ll help you',
+					task: 'You\'ve found me, the fearless leader of the Lab.  Ready to rock and roll? So am I, but first, put on some tunes, and then come back to me and I\'ll help you',
 					present: 'Awesome song! You are now ready.',
 					future: 'Later...',
 					reward: {
@@ -480,7 +480,7 @@
 					},
 					clue: 'For your next task, you must find... your creator.',
 					chatClue: 'Haven\'t found your creator yet? Maybe this game\'s not drawing you in.',
-					information: '<p>Narrative can be a powerful driver for player engagement. In <a href="/projects/civic-seed" target="_blank">Civic Seed</a>, we created a fantasy world where players control avatars and interact with strange people and palces. Compare that to <a href="/projects/community-planit" target="_blank">Community PlanIt</a>, where players play as themeselves, and move through challenges by answering questions about real-world issues. What approach you use is a big part of your design, but largely a matter tone.</p>',
+					information: '<p>Narrative can be a powerful driver for player engagement. In <a href="/projects/civic-seed" target="_blank">Civic Seed</a>, we created a fantasy world where players control avatars and interact with strange people and places. Compare that to <a href="/projects/community-planit" target="_blank">Community PlanIt</a>, where players play as themeselves, and move through challenges by answering questions about real-world issues. What approach you use is a big part of your design, but largely a matter tone.</p>',
 					question: 'What will the narrative of your game be?',
 					lead: ['In my engagement game, players play as','trying to','by'],
 					questionType: 'multiple',
@@ -709,7 +709,7 @@
 
 	function _promptName() {
 		$('#challengeBox').empty();
-		var html = '<p>Enter your name and the name of your game to save it.</p><p><input placeholder="game name" id="libName" maxLength="20"></p><p><input placeholder="your name" id="authorName" maxLength="20"></p>';
+		var html = '<p>Enter your name and the name of your game to save it.</p><p><input placeholder="game name" id="libName" maxLength="40"></p><p><input placeholder="your name" id="authorName" maxLength="20"></p>';
 		html += '<p>Enter your email to get updates on lab news and events:</p><p><input placeholder="email" id="emailName" maxLength="30"></p>';
 		html += '<p><a href="#" class="saveLib">Submit</a></p>';
 		$('#challengeBox').html(html).show();
@@ -722,8 +722,8 @@
 			$game.localStore.authorName = authorName;
 			$game.localStore.emailName = emailName;
 			$game.updateStorage();
-			_saveLib();
 			$('#challengeBox').hide();
+			_saveLib();
 			$game.input.enableMove();
 			return false;
 		});
@@ -735,16 +735,17 @@
 			authorName = $game.localStore.authorName,
 			emailName = $game.localStore.emailName;
 
-		$.post('../../db/saveLib.php', {lib: lib, author: authorName, game: libName, email: emailName},
-			function(res) {
-				console.log(res);
-				_showCode();
-			}, 'text');
+		// $.post('../../db/saveLib.php', {lib: lib, author: authorName, game: libName, email: emailName},
+		// 	function(res) {
+		// 		console.log(res);
+		// 		_showCode();
+		// 	}, 'text');
+		_showCode();
 	}
 
 	function _createLib() {
 		$game.localStore.lib = '<div class="overLib"><p><span>' + $game.localStore.answers[0][0] + '</span>';
-		$game.localStore.lib +=  '.  To help solve this problem, we\'ll use an engagement game designed to get players to <span>' + $game.localStore.answers[1][0] + '.</span></p>';
+		$game.localStore.lib +=  '.  To help solve this problem, we\'ll use an engagement game designed to get players to <span>' + $game.localStore.answers[1][0] + '</span>.</p>';
 		$game.localStore.lib += '<p>This game will mostly target <span>' + $game.localStore.answers[2][0] + '</span>';
 		
 		$game.localStore.lib += '.  In order to reach that audience and create the best possible experience, the game is concieved of as <span>' + $game.localStore.answers[3][0] + '</span>';
@@ -756,7 +757,7 @@
 
 	function _showCode() {
 		$('#challengeBox').empty();
-		var html = '<p>You can check out other players\' games at the water cooler.  The code is: "agua".</p>';
-		$('#challengeBox').html(html).show().delay(5000).fadeOut();	
+		var html = '<p>You can check out other players\' games at the cooler.  The code is: <b>agua</b>.</p>';
+		$('#challengeBox').html(html).show().delay(5000).fadeOut();
 	}
 })();

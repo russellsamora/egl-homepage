@@ -103,7 +103,7 @@
 		z-index: 3;
 		cursor: pointer;
 	}
-	#help {
+	#help, .denied {
 		display: none;
 		position: fixed;
 		padding: 0;
@@ -276,8 +276,8 @@
 		}
 		.overLib {
 			span {
-				font-weight: 500;
-				color: @greenDarker;
+				font-weight: 300;
+				color: @red;
 			}
 		}
 	}
@@ -440,6 +440,62 @@
 	}
 	.discoball {
 		display: none;
+	}
+	.promptCode {
+		display: none;
+		position: fixed;
+		padding: 0;
+		top: 50%;
+		left: 50%;
+		margin-left: -150px;
+		margin-top: -150px;
+		width: 300px;
+		z-index: @zMessage;
+		background: fade(@greenDarkest, 85%);
+		background: rgba(255,255,255,0.9);
+		border: 4px solid @greenLighter;
+		p {
+			color: @white;
+			color: @greenDarker;
+			margin: 10px;
+			font-size: 1.3em;
+			font-weight: 100;
+		}
+		input {
+			width: 95%;
+			margin-left: 5px;
+			line-height: 1;
+			color: @red;
+			font-weight: 300;
+			border: none;
+			border-bottom: 1px solid @red;
+			background: none;
+			&:focus {
+				outline: none;
+			}
+		}
+		p.unlockButton {
+			cursor: pointer;
+			font-size: .9em;
+			background: @red;
+			color: white;
+			font-weight: 700;
+			padding: 5px;
+			width: 35%;
+			text-align: center;
+			float: right;
+		}
+		p.closeButton {
+			cursor: pointer;
+			font-size: .9em;
+			background: @red;
+			color: white;
+			font-weight: 700;
+			padding: 5px;
+			width: 30%;
+			text-align: center;
+			float: left;
+		}
 	}
 }
 
@@ -647,7 +703,7 @@
 
 
 @media (max-width: 767px) {
-	#game, #pregame, #blogTease, #nongameH {
+	#game, #pregame, #blogTease, #nongameH, #displayArows {
 		display: none;
 	}
 	#nongame {
@@ -665,7 +721,7 @@
 }
 
 @media (max-height: 540px) and (min-width: 768px) {
-	#game, #pregame, #blogTease, #nongame {
+	#game, #pregame, #blogTease, #nongame, #displayArrows {
 		display: none;
 	}
 	#nongameH {

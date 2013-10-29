@@ -627,6 +627,33 @@
 	}
 
 	function _promptCode() {
-		
+		setTimeout($game.input.preventMoveForever, 100);
+		$('.promptCode').show();
+		$('.promptCode .unlockButton').on('click', function() {
+			var code = $('.promptCode input').val().toLowerCase().trim();
+			_showLibs(code);
+		});
+		$('.promptCode .closeButton').on('click', function() {
+			$('.promptCode').hide();
+			setTimeout($game.input.enableMove,100);
+		});
+	}
+
+	function _showLibs(code) {
+		$('.promptCode .unlockButton').off('click');
+		$('.promptCode .closeButton').off('click');
+		$('.promptCode').hide();
+		if(code === 'agua') {
+			$.get('../../db/getLibs.php',
+				function(res) {
+				console.log(res);
+			}, 'text');
+		} else {
+			$('.denied').show();
+			setTimeout(function() {
+				$('.denied').hide();
+			},2000);
+			setTimeout($game.input.enableMove,100);
+		}
 	}
 })();
