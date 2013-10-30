@@ -300,49 +300,26 @@
 	}
 
 	function _checkReturning() {
-		sessionStorage.clear();
+		// sessionStorage.clear();
 		var storage = sessionStorage.getItem('egl-game');
 		if(storage) {
 			$game.localStore = JSON.parse(storage);
 		} else {
 			var id = Math.random().toString(36).slice(2);
-			// $game.localStore = {
-			// 	id: id, 
-			// 	people: {}, 
-			// 	targetIndex: 0, 
-			// 	answers: [], 
-			// 	tasks: {
-			// 		stephen: true,
-			// 		eric: false,
-			// 		christina: false,
-			// 		sam: false,
-			// 		russell: false,
-			// 		aidan: false,
-			// 		jedd: false,
-			// 		jesse: false
-			// 	},
-			// 	inventory: {
-			// 		awards: 0,
-			// 		dongles: 0,
-			// 		badges: 0,
-			// 		coins: 0
-			// 	},
-			// };
 			$game.localStore = {
 				id: id, 
 				people: {}, 
-				targetIndex: 7,
-				targetPerson: 'jesse', 
-				answers: [['a'],['b'],['c'],['d'],['e','f','z'],['g'],['h'],['i']],
+				targetIndex: 0, 
+				answers: [], 
 				tasks: {
 					stephen: true,
-					eric: true,
-					christina: true,
-					sam: true,
-					russell: true,
-					aidan: true,
-					jedd: true,
-					jesse: true
+					eric: false,
+					christina: false,
+					sam: false,
+					russell: false,
+					aidan: false,
+					jedd: false,
+					jesse: false
 				},
 				inventory: {
 					awards: 0,
@@ -351,6 +328,30 @@
 					coins: 0
 				},
 			};
+			// $game.localStore = {
+			// 	id: id, 
+			// 	people: {}, 
+			// 	targetIndex: 7,
+			// 	targetPerson: 'jesse', 
+			// 	answers: [['a'],['b'],['c'],['d'],['e','f','z'],['g'],['h'],['i']],
+			// 	tasks: {
+			// 		stephen: true,
+			// 		eric: true,
+			// 		christina: true,
+			// 		sam: true,
+			// 		russell: true,
+			// 		aidan: true,
+			// 		jedd: true,
+			// 		jesse: true
+			// 	},
+			// 	inventory: {
+			// 		awards: 0,
+			// 		dongles: 0,
+			// 		badges: 0,
+			// 		coins: 0
+			// 	},
+			// 	over: true
+			// };
 			$game.updateStorage();
 		}
 	}

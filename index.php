@@ -87,10 +87,20 @@
 						CLOSE
 					</p>
 				</div>
+				<div class='otherLibs'>
+					<div class='libList'>
+					</div>
+					<div class='currentLib'>
+					</div>
+					<p class='closeLibs'>
+						CLOSE
+					</p>
+					<p class='backLibs'>
+						BACK
+					</p>
+				</div>
 				<div class='denied'>
 					<p>ACCESS DENIED</p>
-				</div>
-				<div class='otherLibs'>
 				</div>
 				<div id='pregame'>
 					<div class='leftHalf'>
@@ -99,7 +109,7 @@
 							<br><br>
 							<!-- MAKE UPDATES HERE -->
 							<span>
-								<b>FROM THE BLOG: </b>Why We Engage: How Theories of Human Behavior Contribute to Our Understanding of Civic Engagement in a Digital Era<a href='/blog'> [read it]</a>
+								FROM THE BLOG: Why We Engage: How Theories of Human Behavior Contribute to Our Understanding of Civic Engagement in a Digital Era<a href='/blog'> [read it]</a>
 							</span>
 						</p>
 					</div>

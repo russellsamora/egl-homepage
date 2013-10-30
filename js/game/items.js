@@ -631,7 +631,7 @@
 		$('.promptCode').show();
 		$('.promptCode .unlockButton').on('click', function() {
 			var code = $('.promptCode input').val().toLowerCase().trim();
-			_showLibs(code);
+			_unlock(code);
 		});
 		$('.promptCode .closeButton').on('click', function() {
 			$('.promptCode').hide();
@@ -639,14 +639,14 @@
 		});
 	}
 
-	function _showLibs(code) {
+	function _unlock(code) {
 		$('.promptCode .unlockButton').off('click');
 		$('.promptCode .closeButton').off('click');
 		$('.promptCode').hide();
 		if(code === 'agua') {
-			$.get('../../db/getLibs.php',
+			$.get('../../db/getAllLibs.php',
 				function(res) {
-				console.log(res);
+				_showLibs(res);
 			}, 'text');
 		} else {
 			$('.denied').show();
@@ -655,5 +655,53 @@
 			},2000);
 			setTimeout($game.input.enableMove,100);
 		}
+	}
+
+	function _showLibs(data) {
+		var all = data.split('/');
+		var html = '<h4>Click a game to view the lib.</h4>';
+		for(var i = 0; i < all.length - 1; i++) {
+			var cur = all[i].split(',');
+			html += '<p data-id="' + cur[0] + '"><span>' + cur[2] +  '</span> by ' + cur[1] + '</p>';
+		}
+		$('.promptCode').hide();
+		$('.libList').empty().html(html);
+		_bindLibClick();
+		$('.closeLibs').show();
+		$('.backLibs').hide();
+		$('.otherLibs').show();
+	}
+
+	function _bindLibClick() {
+		$('.libList p').on('click', function() {
+			var id = $(this).attr('data-id');
+			$.post('../../db/getLib.php', {id: id},
+				function(res) {
+				_showSingleLib(res);
+			}, 'text');
+		});
+
+		$('.otherLibs .closeLibs').on('click', function() {
+			//unbind
+			$(this).off('click');
+			$('.otherLibs .backLibs').off('click');
+			$('.libList p').off('click');
+			$('.otherLibs').hide();
+			setTimeout($game.input.enableMove,100);
+		});
+
+		$('.otherLibs .backLibs').on('click', function() {
+			$('.libList').show();
+			$(this).hide();
+			$('.otherLibs .closeLibs').show();
+			$('.currentLib').hide();
+		});
+	}
+
+	function _showSingleLib(html) {
+		$('.libList').hide();
+		$('.closeLibs').hide();
+		$('.backLibs').show();
+		$('.currentLib').empty().html(html).show();
 	}
 })();
