@@ -66,20 +66,22 @@
 
                 var before,
                     after,
-                    cleaner = clean;
+                    cleaner;
                 if(pIndex1 > -1) {
                     before = clean.substr(0,pIndex1);
                     after = clean.substr(pIndex2, clean.length);
                     cleaner = before + after;
+                    cleaner = cleaner.trim();
+                } else {
+                    cleaner = clean.trim();
                 }
-                cleaner = cleaner.trim();
-                //if it isn't the write length, try again
+                //if it isn't the right length, try again
                 if(cleaner.length < 75 || cleaner.length > 300) {
                     _getArticle();
                     return false;
                 } 
                 console.log('wiki good');
-                _nextBlurb = clean;
+                _nextBlurb = cleaner;
             } else {
                 _getArticle();
             }
@@ -90,8 +92,7 @@
         if(_currentBlurb.length <= 144 && !_sentEmail) {
             _sentEmail = true;
             var fixedBlurb = _currentBlurb.replace(/\\/g, '');
-            console.log(fixedBlurb);
-            // $.post('/db/email.php', {fact: fixedBlurb});    
+            $.post('/db/email.php', {fact: fixedBlurb});    
         }
     }
     _getArticle();

@@ -400,11 +400,7 @@
 				animation: [0,1,2,3,4,5,6],
 				paused: false,
 				action: function(el) {
-					if($game.localStore.over) {
-						_promptCode();
-					} else {
-						$game.showMessage({el: el, message: 'I am just a water cooler...'});
-					}
+					_promptCode();
 				},
 				playSound: function() {
 					$game.audio.playFx('water');
@@ -702,6 +698,8 @@
 		$('.libList').hide();
 		$('.closeLibs').hide();
 		$('.backLibs').show();
-		$('.currentLib').empty().html(html).show();
+
+		var clean = html.replace(/\\/g, '');
+		$('.currentLib').empty().html(clean).show();
 	}
 })();
