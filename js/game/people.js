@@ -749,8 +749,10 @@
 		$game.localStore.lib += '<p>This game will mostly target <span>' + $game.localStore.answers[2][0] + '</span>';
 		
 		$game.localStore.lib += '.  In order to reach that audience and create the best possible experience, the game is concieved of as <span>' + $game.localStore.answers[3][0] + '</span>';
-		$game.localStore.lib += '.  The narrative of the game is relatively simple. Players play as <span>' + $game.localStore.answers[4][0] +'</span> trying to <span>' + $game.localStore.answers[4][1] + '</span> by <span>' + $game.localStore.answers[4][2] + '</span>';
-		$game.localStore.lib += '.</p><p>  The game will utilize a <span>' + $game.localStore.answers[5][0] + '</span> aesthetic to set the proper tone and interface style';
+		$game.localStore.lib += '.  The narrative of the game is relatively simple. Players play as <span>' + $game.localStore.answers[4][0] +'</span> trying to <span>' + $game.localStore.answers[4][1] + '</span> by <span>' + $game.localStore.answers[4][2] + '</span>.</p><p>';
+		if($game.localStore.answers[5][0] !== 'omit') {
+			$game.localStore.lib += ' The game will utilize a <span>' + $game.localStore.answers[5][0] + '</span> aesthetic to set the proper tone and interface style';
+		}
 		$game.localStore.lib += '.  To build trust in the community and give the game a platform, our partners will include <span>' + $game.localStore.answers[6][0] + '</span>';
 		$game.localStore.lib += '.  Once the game is complete, we\'ll evaluate its impact through solid research, including <span>' + $game.localStore.answers[7][0] + '</span>.</p></div>';
 	}
