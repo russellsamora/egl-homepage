@@ -1,6 +1,6 @@
 (function() {
-	$('#blog').rssfeed('http://engagementgamelab.wordpress.com/feed/', {
-		limit: 7,
+	$('#blog').rssfeed('http://engagementgamelab.wordpress.com/feed?', {
+		limit: 3,
 		header: false,
 		dateformat: 'date',
 		snippet: false,
@@ -48,10 +48,17 @@
 				author = $(this).find('p').first().text();
 
 
-			var o1 = '<div class="row"><div class="span9 offset3"><p class="postImage postImage' + i + '"></p></div></div>',
-				o2 = '<div class="row"><div class="span3"><p class="postTitle postTitle' + i + '"></p><p class="postAuthro author' + i + '"></p><p class="postDate date' + i + '"></p></div>',
-				o3 = '<div class="span9 post post' + i + '"></div></div>';
-				outline = o1 + o2 + o3;
+			var o1 = '<div class="row"><div class="span3"><p class="postTitle postTitle' + i + '"></p><p class="postAuthro author' + i + '"></p><p class="postDate date' + i + '"></p></div>',
+				o2 = '<div class="span7 post post' + i + '"></div>';
+
+			outline = o1 + o2;
+
+			if(i === 0) {
+				outline += '<div class="span2"><div class="blogSidebar"><h3>View By Author</h3><p>Eric Gordon</p><p>Jesse Baldwin-Philippi</p><p>Stephen Walter</p><p>Russell Goldenberg</p><p>Sam Liberty</p></div>';
+				outline += '<p class="archives">View Archives</p></div>';
+			}
+
+			outline += '</div>';
 			
 			$('.blogContainer').append(outline);
 

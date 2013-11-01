@@ -9202,6 +9202,43 @@ a.badge:focus {
 .blogContainer a {
   font-weight: 500;
 }
+.blogContainer .blogSidebar {
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+  background: #78cbd1;
+}
+.blogContainer .blogSidebar h3 {
+  font-size: 1.2em;
+  color: white;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  text-align: center;
+}
+.blogContainer .blogSidebar p {
+  color: #339096;
+  font-size: 1em;
+}
+.blogContainer .archives {
+  padding: 10px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+  background: #ff5622;
+  text-align: center;
+}
 #footer {
   background: #555555;
   color: #ffffff;
@@ -9460,17 +9497,43 @@ a.badge:focus {
   margin-top: -60px;
 }
 /* creates the smaller  triangle */
-#initiatives h4 {
+#initiatives .bigButton {
+  background: #ff5622;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
+  border-radius: 10px;
+  background-clip: padding-box;
+  height: 150px;
+}
+#initiatives .bigButton .specialIcon {
+  padding: 0;
+  margin: 10px;
+  float: left;
+}
+#initiatives .bigButton .specialIcon img {
+  width: 100%;
+}
+#initiatives .bigButton .specialText {
   color: #ffffff;
-  background: #78cbd1;
   font-weight: 300;
-  font-size: 2em;
+  font-size: 1.5em;
+  line-height: 1.2;
   padding: 10px;
-  margin-bottom: 0;
-  height: 160px;
+  padding-top: 20px;
+  text-align: right;
+}
+#initiatives .bigButton:hover {
+  background: #d43200;
 }
 #initiatives p {
   color: #999999;
+  font-size: 1.2em;
+  padding: 0 10px;
+}
+#initiatives .bigButton {
+  cursor: pointer;
 }
 #publications {
   margin-bottom: 80px;
@@ -9745,20 +9808,25 @@ a:hover {
   max-width: 640px;
 }
 .whatIsIt {
-  background: white;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #d7f0f1;
+  background: url(../img/other/dots2.png);
+  background: #d7f0f1 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANklEQVQYV2NkIBIwEqmOgXyFWy6cTgPZ4mNgOgvZNhQTYYpgCpAVk6cQZBJRVuMLAfJ9jctUAN0NEAtnt4P2AAAAAElFTkSuQmCC);
 }
-.whatIsIt .projectLogo p {
-  text-align: center;
-  margin: 110px 0 0 0;
+.whatIsIt p {
+  color: #339096;
 }
-.whatIsIt p.projectTagline {
-  color: #ffffff;
-  background: #78cbd1;
-  margin-top: 0;
-  text-align: center;
-  padding: 10px 5px;
+.whatIsIt .projectDescription {
+  margin-top: 40px;
+}
+.whatIsIt .projectContext .funTitle {
+  color: #ff5622;
+  font-weight: 800;
+}
+.whatIsIt .projectContext p {
   font-size: 1.2em;
-  font-weight: 100;
 }
 .briefOverview {
   padding-bottom: 40px;
@@ -9805,6 +9873,14 @@ a:hover {
 .btn {
   border: none;
 }
+@media (max-width: 979px) {
+  .whatIsIt .projectDescription {
+    margin-top: -20px;
+  }
+  .whatIsIt .videoContainer {
+    margin-top: 100px;
+  }
+}
 @media (max-width: 767px) {
   .nav li {
     text-align: center;
@@ -9812,9 +9888,14 @@ a:hover {
   .navbar-static-top {
     margin: 0;
   }
-  .whatIsIt .projectLogo p {
-    margin: 0;
-    padding-top: 20px;
+  .whatIsIt .projectLogo {
+    text-align: center;
+  }
+  .whatIsIt .projectDescription {
+    margin-top: 0;
+  }
+  .whatIsIt .videoContainer {
+    margin-top: 40px;
   }
   #initiatives {
     margin-top: 20px;

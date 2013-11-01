@@ -114,6 +114,33 @@
 	a {
 		font-weight: 500;
 	}
+	.blogSidebar {
+		padding: 10px;
+		.border-radius(10px);
+		background: @green;
+		h3 {
+			font-size: 1.2em;
+			color: white;
+			margin: 0;
+			padding: 0;
+			line-height: 1;
+			font-weight: 700;
+			text-align: center;
+		}
+		p {
+			color: @greenDarkest;
+			font-size: 1em;
+		}
+	}
+	.archives {
+		padding: 10px;
+		color: white;
+		font-size: 1.2em;
+		font-weight: 700;
+		.border-radius(10px);
+		background: @red;
+		text-align: center;
+	}
 }
 
 
@@ -340,17 +367,38 @@
 
 //-------------- RESEARCH PAGE ------------
 #initiatives {
-	h4 {
-		color: @white;
-		background: @green;
-		font-weight: 300;
-		font-size: 2em;
-		padding: 10px;
-		margin-bottom:0;
-		height: 160px;
+	.bigButton {
+		background: @red;
+		.border-radius(10px);
+		height: 150px;
+		.specialIcon {
+			padding: 0;
+			margin: 10px;
+			float: left;
+			img {
+				width: 100%;
+			}
+		}
+		.specialText {
+			color: @white;
+			font-weight: 300;
+			font-size: 1.5em;
+			line-height: 1.2;
+			padding: 10px;
+			padding-top: 20px;
+			text-align:right;
+		}
+		&:hover {
+			background: @redDarker;
+		}
 	}
 	p {
 		color: @gray;
+		font-size: 1.2em;
+		padding: 0 10px;
+	}
+	.bigButton {
+		cursor: pointer;
 	}
 }
 #publications {
@@ -623,21 +671,26 @@ a {
 }
 
 .whatIsIt {
-	background: white;
-	.projectLogo {
-		p {
-			text-align: center;
-			margin: 110px 0 0 0;
-		}
+	padding: 10px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: @greenLightest;
+	background: url(../img/other/dots2.png);
+	background: @greenLightest url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANklEQVQYV2NkIBIwEqmOgXyFWy6cTgPZ4mNgOgvZNhQTYYpgCpAVk6cQZBJRVuMLAfJ9jctUAN0NEAtnt4P2AAAAAElFTkSuQmCC);
+	p {
+		color: @greenDarkest;
 	}
-	p.projectTagline {
-		color: @white;
-		background: @green;
-		margin-top: 0;
-		text-align: center;
-		padding: 10px 5px;
-		font-size: 1.2em;
-		font-weight: 100;
+	.projectDescription {
+		margin-top: 40px;
+	}
+	.projectContext {
+		.funTitle {
+			color: @red;
+			font-weight: 800;
+		}
+		p {
+			font-size: 1.2em;
+		}
 	}
 }
 .briefOverview {
@@ -695,6 +748,16 @@ a {
 .btn {
 	border: none;
 }
+@media (max-width: 979px) {
+	.whatIsIt {
+		.projectDescription {
+			margin-top: -20px;
+		}
+		.videoContainer {
+			margin-top: 100px;
+		}
+	}
+}
 
 @media (max-width: 767px) {
 	.nav li {
@@ -703,9 +766,16 @@ a {
 	.navbar-static-top {
 		margin: 0;
 	}
-	.whatIsIt .projectLogo p {
-		margin: 0;
-		padding-top: 20px;
+	.whatIsIt .projectLogo {
+		text-align: center;
+	}
+	.whatIsIt {
+		.projectDescription {
+			margin-top: 0;
+		}
+		.videoContainer {
+			margin-top: 40px;
+		}
 	}
 	#initiatives {
 		margin-top: 20px;

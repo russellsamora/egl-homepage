@@ -1,0 +1,42 @@
+.whatIsIt {
+	background: @greenLightest;
+	width: 100%;
+	padding-bottom: 40px;
+	.projectLogoTest {
+		margin-top: 40px;
+	}
+	// .projectLogo {
+	// 	.border-radius(150px);
+	// 	margin-top: -50px;
+	// 	width: 300px;
+	// 	height: 300px;
+	// 	background: white;
+	// 	border: 40px solid @green;
+	// 	p {
+	// 		text-align: center;
+	// 		color: @gray;
+	// 		font-size: .9em;
+	// 	}
+	// 	p.logoImage {
+	// 		padding-top: 20px;
+	// 	}
+	// }
+	p {
+		color: @greenDarkest;
+	}
+	.projectDescription {
+		margin-top: 80px;
+	}
+	h2.funTitle {
+		font-weight: 800;
+		font-size: 2.5em;
+		color: @red;
+		margin-bottom: 0;
+	} 
+	.projectContext {
+		p {
+			font-size: 1.1em;
+			font-weight: 500;	
+		}
+	}
+}
