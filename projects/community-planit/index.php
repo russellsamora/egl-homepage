@@ -80,9 +80,75 @@
 					<div class='row'>
 						<div class='span12'>
 							<h2 class='funTitle'>Implementations</h2>
-							<p style='text-align:center;'><img src='../../img/projects/other/table.jpg'></p>
 						</div>
 					</div>
+					<div class='row'>
+						<div class='span8 offset2'>
+							<div id='myCarousel' class='carousel slide'>
+								<ol class="carousel-indicators">
+									<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+									<li data-target="#myCarousel" data-slide-to="1"></li>
+									<li data-target="#myCarousel" data-slide-to="2"></li>
+									<li data-target="#myCarousel" data-slide-to="3"></li>
+									<li data-target="#myCarousel" data-slide-to="4"></li>
+									<li data-target="#myCarousel" data-slide-to="5"></li>
+									<li data-target="#myCarousel" data-slide-to="6"></li>
+									<li data-target="#myCarousel" data-slide-to="7"></li>
+									<li data-target="#myCarousel" data-slide-to="8"></li>
+							  	</ol>
+	  							<div class='carousel-inner'>
+								    <div class='active item'><p><img src='../../img/projects/infographics/philadelphia.jpg'></p></div>
+								    <div class='item'><p><img src='../../img/projects/infographics/detroit.jpg'></p></div>
+								    <div class='item'><p><img src='../../img/projects/infographics/la.jpg'></p></div>
+								    <div class='item'><p><img src='../../img/projects/infographics/boston.jpg'></p></div>
+								    <div class='item'><p><img src='../../img/projects/infographics/cape.jpg'></p></div>
+								    <div class='item'><p><img src='../../img/projects/infographics/quincy.jpg'></p></div>
+								    <div class='item'><p><img src='../../img/projects/infographics/salem.jpg'></p></div>
+								    <div class='item'><p><img src='../../img/projects/infographics/lambton.jpg'></p></div>
+								    <div class='item'><p><img src='../../img/projects/infographics/malmo.jpg'></p></div>
+	  							</div>
+								<a class='carousel-control left' href='#myCarousel' data-slide='prev'>prev</a>
+								<a class='carousel-control right' href='#myCarousel' data-slide='next'>next</a>
+							</div>
+						</div>
+					</div>
+					<!-- <div class='row'>
+						<div class='span6'>
+							<p><img src='../../img/projects/infographics/philadelphia.jpg'></p>
+						</div>
+						<div class='span6'>
+							<p><img src='../../img/projects/infographics/detroit.jpg'></p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span6'>
+							<p><img src='../../img/projects/infographics/la.jpg'></p>
+						</div>
+						<div class='span6'>
+							<p><img src='../../img/projects/infographics/boston.jpg'></p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span6'>
+							<p><img src='../../img/projects/infographics/cape.jpg'></p>
+						</div>
+						<div class='span6'>
+							<p><img src='../../img/projects/infographics/quincy.jpg'></p>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span6'>
+							<p><img src='../../img/projects/infographics/salem.jpg'></p>
+						</div>
+						<div class='span6'>
+							<p><img src='../../img/projects/infographics/malmo.jpg'></p>
+						</div>
+					</div>
+					<div cass='row'>
+						<div class='span6'>
+							<p><img src='../../img/projects/infographics/lambton.jpg'></p>
+						</div>
+					</div> -->
 				</div>
 				<div class='theMedia'>
 					<div class='row'>
@@ -117,7 +183,8 @@
     		.script('/js/libs/jquery.min.js').wait()
 			.script('/js/libs/bootstrap.min.js').wait()
 			.script('/js/libs/fitvids.js').wait()
-			.script('/js/other/vimeo.js');
+			.script('/js/other/vimeo.js')
+			.script('/js/other/custom-util.js');
     	</script>
   </body>
 </html>

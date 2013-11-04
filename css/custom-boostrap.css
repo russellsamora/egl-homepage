@@ -9593,6 +9593,36 @@ a.badge:focus {
   background-clip: padding-box;
   box-shadow: 0px 0px 0px 4px #d7f0f1;
 }
+.implementations p {
+  text-align: center;
+}
+.implementations p img {
+  border: 4px solid #b1e1e4;
+}
+.implementations .carousel-control {
+  opacity: 0.8;
+  padding: 5px 10px 10px 10px;
+  margin: 0;
+  width: auto;
+  font-weight: 300;
+  font-size: 1em;
+  color: #ffffff;
+  text-align: center;
+  background: #999999;
+  border: none;
+}
+.implementations .carousel-indicators {
+  position: static;
+  width: 280px;
+  margin: 0 auto;
+  padding: 15px;
+}
+.implementations .carousel-indicators li {
+  background: #999999;
+}
+.implementations .carousel-indicators li.active {
+  background: #ff5622;
+}
 #projectBlurb {
   width: 100%;
   background: #d43200;
@@ -9827,27 +9857,9 @@ a:hover {
 .whatIsIt .projectContext p {
   font-size: 1.2em;
 }
-.briefOverview {
-  padding-bottom: 40px;
-  border-bottom: 1px dashed #40b4bc;
-}
-.briefOverview div {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.briefOverview p {
-  color: #339096;
-  font-size: 1.5em;
-  font-weight: 100;
-}
-.briefOverview p span {
-  font-weight: 800;
-  letter-spacing: .1em;
-  font-size: 1.3em;
-}
-.briefOverview .videoContainer {
+.whatIsIt .videoContainer {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 50px;
 }
 .realActions p span {
   font-weight: 800;
