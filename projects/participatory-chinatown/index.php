@@ -4,41 +4,28 @@
 		<?php include '../../head.php' ?>
 	</head>
 	<body>
-		<div id='wrap' class='specialBackground'>
+		<div id='wrap'>
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
-				<div class='projectLogo'>
-					<p><a href='http://participatorychinatown.org' target='_blank'><img src='../../img/projects/logos/chinatown.png'></a>
-					</p>
-				</div>
-				<p class='projectTagline'>
-					Participatory Chinatown
-				</p>
-			</div>
-			<div class='container projectPage'>
-				<div class='row briefOverview'>
-					<div class='span6'>
+				<div class='container'>
+					<div class='row'>
+						<div class='span4'>
+							<div class='projectLogo'>
+								<img src='../../img/projects/logos/chinatown.png'>
+							</div>
+						</div>
+						<div class='span8 projectDescription'>
 							<p>
 								<span><a href='http://participatorychinatown.org' target='_blank'>Participatory Chinatown</a></span> is a 3-D immersive game designed to be part of the master planning process for Boston's Chinatown. Participatory Chinatown won the <a href='http://www.gamesforchange.org/festival2011/awards/direct-impact/participatory-chinatown/' target='_blank'>Games for Change 2011 Direct Impact Award</a>.
 							</p>
+						</div>
 					</div>
-					<div class='span6 videoContainer'>
-						<iframe src="//www.youtube.com/embed/jA5sz-ymv6k" frameborder="0" allowfullscreen></iframe>
-						<!-- <iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe> -->
-					</div>
-				</div>
-				<div class='realProblem'>
 					<div class='row'>
-						<div class='span12'>
-							<h2 class='funTitle indentH2'>
+						<div class='span6 projectContext'>
+							<h2 class='funTitle'>
 								Context
 							</h2>
-						</div>
-						<div class='span12'>
 							<p>	
-								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
-
-								<img class='inlineImage' src='../../img/projects/other/chinatown2.png'>
 								Since 1990, Chinatown, a 46-acre neighborhood in Boston, 
 								has been engaged in several master-planning processes to 
 								determine the future growth pattern of the neighborhood. 
@@ -60,10 +47,14 @@
 							<p>
  								The resulting plan was meant to guide conversation for the coming decade. In addition to 
 								the traditional mechanism of engaging the community in town-hall style meetings, Participatory Chinatown was introduced into the process in order to create better learning and increase diversity of participants.
-							</p>
+						</div>
+						<div class='span6 videoContainer'>
+							<iframe src="//www.youtube.com/embed/jA5sz-ymv6k" frameborder="0" allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class='container projectPage'>
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>

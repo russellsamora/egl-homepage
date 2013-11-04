@@ -4,48 +4,41 @@
 		<?php include '../../head.php' ?>
 	</head>
 	<body>
-		<div id='wrap' class='specialBackground'>
+		<div id='wrap'>
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
-				<div class='projectLogo'>
-					<p><img src='../../img/projects/logos/habitat.jpg'>
-					</p>
-				</div>
-				<p class='projectTagline'>
-					Understanding local technology ecosystems in urban neighborhoods
-				</p>
-			</div>
-			<div class='container projectPage'>
-				<div class='row briefOverview'>
-					<div class='span6'>
+				<div class='container'>
+					<div class='row'>
+						<div class='span4'>
+							<div class='projectLogo'>
+								<img src='../../img/projects/logos/habitat.jpg'>
+							</div>
+						</div>
+						<div class='span8 projectDescription'>
 							<p>
 								A <span>Habit@</span> is an ecosystem of civic technologies and tools, deployed on a local, physical scale. It is designed to give local citizens many ways to both make their voice heard and access important information, and take action with others in their community.
 							</p>
+						</div>
 					</div>
-					<div class='span6 videoContainer'>
-						<img src='../../img/projects/other/habitat3.jpg'>
-					</div>
-				</div>
-				<div class='realProblem'>
 					<div class='row'>
-						<div class='span12'>
+						<div class='span6 projectContext'>
 							<h2 class='funTitle'>
 								Context
 							</h2>
-						</div>
-						<div class='span12'>
 							<p>	
-								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
-
-								<!-- <img src='http://placehold.it/160x160.png' style='float:left; padding: 10px;'> -->
 								As buzz builds around the idea of civic innovation, there has been little effort to actually frame the new tools created out of this movement. This disconnects tools from their local context, limits their reach, and reduces their capacity to introduce systemic change within a neighborhood.
 							</p>
 							<p>
 								By creating a Habit@, those tools can exist as a living part of the community. But would this actually be beneficial? Could it even work? The Habit@ project seeks to unpack and answer these questions.
 							</p>
 						</div>
+						<div class='span6 videoContainer'>
+							<img src='../../img/projects/other/habitat3.jpg'>
+						</div>
 					</div>
 				</div>
+			</div>
+			<div class='container projectPage'>
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>

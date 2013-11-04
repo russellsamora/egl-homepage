@@ -4,50 +4,42 @@
 		<?php include '../../head.php' ?>
 	</head>
 	<body>
-		<div id='wrap' class='specialBackground'>
+		<div id='wrap'>
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
-				<div class='projectLogo'>
-					<p><a href='http://communityplanit.org' target='_blank'><img src='../../img/projects/logos/cpi.png'></a>
-					</p>
-				</div>
-				<p class='projectTagline'>
-					Your Community, Your Future, Your Move!		
-				</p>
-			</div>
-			<div class='container projectPage'>
-				<div class='row briefOverview'>
-					<div class='span6'>
+				<div class='container'>
+					<div class='row'>
+						<div class='span4'>
+							<div class='projectLogo'>
+								<img src='../../img/projects/logos/cpi.png'>
+							</div>
+						</div>
+						<div class='span8 projectDescription'>
 							<p>
 								<span><a target='_blank' href='http://communityplanit.org'>Community PlanIt</a></span> is a playful and dynamic way to give input to city officials for long-range strategic planning, while rallying around awards for local causes, connecting with others in your community, and gaining a sense of empowerment in the process of active of civic engagement.
 							</p>
+						</div>
 					</div>
-					<div class='span6 videoContainer'>
-						<iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe>
-					</div>
-				</div>
-				<div class='realProblem'>
 					<div class='row'>
-						<div class='span12'>
-							<h2 class='funTitle indentH2'>
+						<div class='span6 projectContext'>
+							<h2 class='funTitle'>
 								Context
 							</h2>
-						</div>
-						<div class='span12'>
 							<p>	
-								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
-
-								<img class='inlineImage' src='../../img/projects/other/cpi1.png'>
 								Civic leaders and town planners often seek community input when trying to imagine solutions to complex issues that take into consideration the actual needs of the community. With our busy schedules and other pressing obligations, it is often difficult, if not outright impossible, for people to attend in-person town hall meetings where input is given, costs and benefits are debated, and decisions get made. 
-								Even if one can attend such official gatherings, not everyone feels comfortable standing up before others and voicing their opinion. <img class='inlineImageRightBig' src='../../img/projects/other/cpi2.jpg'>Meetings can be dominated by the loudest voices in the room, not always the most prudent or knowledgeable.
+								Even if one can attend such official gatherings, not everyone feels comfortable standing up before others and voicing their opinion.  Meetings can be dominated by the loudest voices in the room, not always the most prudent or knowledgeable.
 								To lower the barriers for participation we must remove obstacles:
 								scheduling conflicts discomfort with public speaking lack of transportation or simple boredom or disenchantment with public processes.
 
-
 							</p>
+						</div>
+						<div class='span6 videoContainer'>
+							<iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class='container projectPage'>
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>

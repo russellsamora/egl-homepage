@@ -4,48 +4,41 @@
 		<?php include '../../head.php' ?>
 	</head>
 	<body>
-		<div id='wrap' class='specialBackground'>
+		<div id='wrap'>
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
-				<div class='projectLogo'>
-					<p><a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/cs.jpg'></a>
-					</p>
-				</div>
-				<p class='projectTagline'>
-					Let Knowledge Take Root
-				</p>
-			</div>
-			<div class='container projectPage'>
-				<div class='row briefOverview'>
-					<div class='span6'>
+				<div class='container'>
+					<div class='row'>
+						<div class='span4'>
+							<div class='projectLogo'>
+								<img src='../../img/projects/logos/cs.jpg'>
+							</div>
+						</div>
+						<div class='span8 projectDescription'>
 							<p>
 								<span><a target='_blank' href='http://civicseed.org'>Civic Seed</a></span> is a multi-player RPG that harnesses the power of online social play to teach and certify students to civically engage with partner communities.
 							</p>
+						</div>
 					</div>
-					<div class='span6 videoContainer'>
-						<iframe src="//player.vimeo.com/video/64315985?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					</div>
-				</div>
-				<div class='realProblem'>
 					<div class='row'>
-						<div class='span12'>
-							<h2 class='funTitle indentH2'>
+						<div class='span6 projectContext'>
+							<h2 class='funTitle'>
 								Context
 							</h2>
-						</div>
-						<div class='span12'>
 							<p>	
-								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
-
-								<img class='inlineImage' src='../../img/projects/other/civic_seed3.png'> 
 								Many incoming university students are eager to get involved with their school's partner communities and create positive change. However, to most, the people and challenges of these communities are unknown, and under-trained volunteers can even do more harm than good.
 							</p>
 							<p>
 								For local organizations, it's difficult to know which students have the necessary knowledge and skills to collaborate effectively and whose personal goals align with the goals of the organization and the community.
 							</p>
 						</div>
+						<div class='span6 videoContainer'>
+							<iframe src="//player.vimeo.com/video/64315985?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
 					</div>
 				</div>
+			</div>
+			<div class='container projectPage'>
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>
@@ -79,8 +72,8 @@
 					</div>
 				</div>
 			</div>
-			<div id='push'></div>
-   		</div>
+		</div>
+		<div id='push'></div>
 		<?php include '../../footer.php' ?>
 
     	<!- Los javascripts ->

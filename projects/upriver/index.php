@@ -4,43 +4,28 @@
 		<?php include '../../head.php' ?>
 	</head>
 	<body>
-		<div id='wrap' class='specialBackground'>
+		<div id='wrap'>
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
-				<div class='projectLogo'>
-					<p>
-						<a href='http://civicseed.org' target='_blank'><img src='../../img/projects/logos/upriver.png'></a>
-					</p>
-				</div>
-				<p class='projectTagline'>
-					What comes Up must flow Down
-				</p>
-			</div>
-			<div class='container projectPage'>
-				<div class='row briefOverview'>
-					<div class='span6'>
+				<div class='container'>
+					<div class='row'>
+						<div class='span4'>
+							<div class='projectLogo'>
+								<img src='../../img/projects/logos/upriver.png'>
+							</div>
+						</div>
+						<div class='span8 projectDescription'>
 							<p>
 								<span>UpRiver</span> is a multi-phase game (physical and digital) that enables communication and flood prediction for people living in high-risk areas along major rivers. The physical game teaches the principles of flood prediction. The digital game lets players use SMS-enabled cell phones to report, predict, and gather information about the current and future water level of the river, local to them.
 							</p>
+						</div>
 					</div>
-					<div class='span6 videoContainer'>
-						<img src='../../img/projects/other/upriver1.jpg'>
-						<!-- <iframe src="//www.youtube.com/embed/jA5sz-ymv6k" frameborder="0" allowfullscreen></iframe> -->
-						<!-- <iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe> -->
-					</div>
-				</div>
-				<div class='realProblem'>
 					<div class='row'>
-						<div class='span12'>
+						<div class='span6 projectContext'>
 							<h2 class='funTitle'>
 								Context
 							</h2>
-						</div>
-						<div class='span12'>
 							<p>	
-								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
-
-								<!-- <img src='http://placehold.it/160x160.png' style='float:left; padding: 10px;'> -->
 								Every year, people die in completely predictable floods. A rainstorm in the mountains overflows the banks of the Zambezi river, and water flows downstream, hitting each population in order from the source of the flood to the sea, where the river empties.
 							</p>
 							<p>
@@ -55,8 +40,13 @@
 								UpRiver was designed in cooperation with the Red Cross /  Red Crescent Climate Centre and the Zambian Red  Cross, which works directly with people affected by floods to communicate these important ideas and save lives.
 							</p>
 						</div>
+						<div class='span6 videoContainer'>
+							<img src='../../img/projects/other/upriver1.jpg'>
+						</div>
 					</div>
 				</div>
+			</div>
+			<div class='container projectPage'>
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>

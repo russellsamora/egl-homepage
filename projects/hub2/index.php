@@ -4,45 +4,38 @@
 		<?php include '../../head.php' ?>
 	</head>
 	<body>
-		<div id='wrap' class='specialBackground'>
+		<div id='wrap'>
 			<?php include '../../nav.php' ?>
 			<div class='whatIsIt'>
-				<div class='projectLogo'>
-					<p><a href='http://hub2.org' target='_blank'><img src='../../img/projects/logos/hub2.png'></a>
-					</p>
-				</div>
-				<p class='projectTagline'>
-					At the Hub
-				</p>
-			</div>
-			<div class='container projectPage'>
-				<div class='row briefOverview'>
-					<div class='span6'>
+				<div class='container'>
+					<div class='row'>
+						<div class='span4'>
+							<div class='projectLogo'>
+								<img src='../../img/projects/logos/hub2.png'>
+							</div>
+						</div>
+						<div class='span8 projectDescription'>
 							<p>
 								<span>Hub2</span> was a pilot project in Boston, Massachusetts, which employed the virtual world Second Life as a means of engaging residents in the planning of a neighborhood park.
 							</p>
+						</div>
 					</div>
-					<div class='span6 videoContainer'>
-						<img src='../../img/projects/other/hub2.jpg'>
-					</div>
-				</div>
-				<div class='realProblem'>
 					<div class='row'>
-						<div class='span12'>
+						<div class='span6 projectContext'>
 							<h2 class='funTitle'>
 								Context
 							</h2>
-						</div>
-						<div class='span12'>
 							<p>	
-								<!-- <span class='contextTagline'>Better Access, Broader Input, More Discussion and Deliberation</span><br> -->
-
 								This project focused on one key challenge - the limitations among the untrained public to adequately understand abstract space. But urban planning poses other challenges as well. Most notable is conflict negotiation. Planning issues often involve conflicting interests coupled with deep resentments and community divides. Building a new highway, for example, is seldom only a question of the highway's design, but the destiny of the land, the community, and individual residents. 
-
 							</p>
+						</div>
+						<div class='span6 videoContainer'>
+							<img src='../../img/projects/other/hub2.jpg'>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class='container projectPage'>
 				<div class='theGame'>
 					<div class='row'>
 						<div class='span12'>
