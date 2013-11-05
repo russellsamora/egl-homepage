@@ -33,8 +33,10 @@
 
 							</p>
 						</div>
-						<div class='span6 videoContainer'>
-							<iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe>
+						<div class='span6'>
+							<div class='videoContainer'>
+								<iframe src="http://player.vimeo.com/video/55893197?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" allowfullscreen=""></iframe>
+							</div>
 						</div>
 					</div>
 				</div>

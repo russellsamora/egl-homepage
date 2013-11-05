@@ -46,7 +46,7 @@
 					<div class='row'>
 						<div class='span6'>
 							<div class= 'bigButton' data-toggle='collapse' data-target='#r3'>
-								<p class='specialIcon'><img src='../img/research/capitol.png'></p>
+								<p class='specialIcon'><img src='../img/research/phone.png'></p>
 								<p class='specialText'>Play and Civic Learning</p>
 							</div>
 							<p id='r3' class='collapse out'>
@@ -55,7 +55,7 @@
 						</div>
 						<div class='span6'>
 							<div class= 'bigButton' data-toggle='collapse' data-target='#r4'>
-								<p class='specialIcon'><img src='../img/research/capitol.png'></p>
+								<p class='specialIcon'><img src='../img/research/youth.png'></p>
 								<p class='specialText'>Youth and Civic Media</p>
 							</div>
 							<p id='r4' class='collapse out'>
