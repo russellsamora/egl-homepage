@@ -11,7 +11,7 @@
 					<div class='row'>
 						<div class='span4'>
 							<div class='projectLogo'>
-								<img src='../../img/projects/logos/t1.png'>
+								<img src='../../img/projects/logos/streetcred.png'>
 							</div>
 						</div>
 						<div class='span8 projectDescription'>

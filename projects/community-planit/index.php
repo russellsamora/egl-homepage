@@ -156,9 +156,9 @@
 					<div class='row'>
 						<div class='span12'>
 							<h2 class='funTitle'>Media</h2>
-							<p>
-								<iframe align="center" src="http://www.flickr.com/slideShow/index.gne?set_id=72157629640337246" width="500" height="500" frameBorder="0" scrolling="no"></iframe>
-							</p>
+							<div class='flickr'>
+								<object width="640" height="480"> <param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fcommunity_planit%2Fshow%2Fwith%2F10711514293%2F&page_show_back_url=%2Fphotos%2Fcommunity_planit%2Fwith%2F10711514293%2F&user_id=101325841@N02&jump_to=10711514293"></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=124984"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=124984" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fcommunity_planit%2Fshow%2Fwith%2F10711514293%2F&page_show_back_url=%2Fphotos%2Fcommunity_planit%2Fwith%2F10711514293%2F&user_id=101325841@N02&jump_to=10711514293" width="640" height="480"></embed></object>
+							</div>
 						</div>
 					</div>
 				</div>

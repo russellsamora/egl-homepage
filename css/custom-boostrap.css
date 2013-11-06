@@ -9867,6 +9867,10 @@ a:hover {
 .specialBackground {
   background: #d7f0f1;
 }
+.flickr {
+  width: 66%;
+  margin: 40px auto;
+}
 @media (min-width: 768px) {
   ul.nav li.dropdown:hover ul.dropdown-menu {
     display: block;

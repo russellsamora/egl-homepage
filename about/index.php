@@ -148,6 +148,20 @@
 							</div>
 						</div>
 						<div class='span4 person'>
+							<p><img data-toggle='collapse' data-target='#robBio' src='../img/people/bio/rob.jpg' data-real='rob' class='headshot'></p>
+							<p class='trigger' data-toggle='collapse' data-target='#robBio'>Rob McKenzie</p>
+							<p class='trigger' data-toggle='collapse' data-target='#robBio'>Lab Coordinator</p>
+							<div id='robBio' class='collapse out'>
+								<p>
+									Rob helps the lab function on a daily basis and coordinates lab events, student outreach, and impromptu Nerf Gun battles. He graduated in 2013 from Emerson College with a degree in Writing for Film and Television and has previously worked for Antiques Roadshow and Good Universe Productions. His interests include theater, internet culture, and of course, whitewater kayaking.
+								</p>
+								<p>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='span4 person'>
 							<p><img data-toggle='collapse' data-target='#studentBio' src='../img/people/bio/student.jpg' data-real='student' class='headshot'></p>
 							<p class='trigger' data-toggle='collapse' data-target='#studentBio'>Students</p>
 							<p class='trigger' data-toggle='collapse' data-target='#studentBio'>Lab Assistants</p>
