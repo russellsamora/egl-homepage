@@ -47,7 +47,7 @@
 							<p class='trigger' data-toggle='collapse' data-target='#stephenBio'>Managing Director</p>
 							<div id='stephenBio' class='collapse out'>
 								<p>
-									Stephen makes and studies media that aim to foster and amplify experiences of complexity, difference, and play. He's worked at Boston EMS, the Boston Public Health Commission, the Boston Center for the Arts, the Harvard Graduate School of Education, and the PBS television shows Frontline and Nova. At the EGL, he's helped lead the design and development of civic media projects in Detroit, Boston, Philadelphia, Los Angeles, South Africa, Sweden, and Zambia. He is a person.
+									Stephen is a person who makes and studies media that aim to foster experiences of complexity, difference, and play. He's worked at Boston EMS, the Boston Public Health Commission, the Boston Center for the Arts, the Harvard Graduate School of Education, and the PBS television shows Frontline and Nova. At the EGL, he's helped lead the development of civic media projects in Detroit, Boston, Philadelphia, Los Angeles, South Africa, Sweden, Moldova, and Zambia. <a href='http://www.chrono-synclastic-infundibulum.com/Resume.html' target='_blank'>Here</a> is a cv. 
 								</p>
 								<p>
 									<a href='http://www.chrono-synclastic-infundibulum.com/' target='_blank'><i class='icon-star icon-large' rel='tooltip' data-title='website'></i></a>
@@ -141,7 +141,7 @@
 							<p class='trigger' data-toggle='collapse' data-target='#christinaBio'>Project Manager</p>
 							<div id='christinaBio' class='collapse out'>
 								<p>
-									Christina's abiding interests in open access to a participatory democracy, ethics, and the role of technology in shaping human experiences drew her to the Engagement Game Lab. With degrees from the University of Chicago (A.B., English Language &amp; Literature) and University of Southern California (M.A., English: Film, Literature &amp; Culture), she brings a love of language, philosophy and the visual arts a to bear on her work at the lab, thinking through and spreading the word about the possibilities opened up by meaningful play in public deliberation, broaching reasonable solutions to complex problems. Email at christina [at] engagmentgamelab.org
+									Christina's abiding interests in open access to a participatory democracy, ethics, and the role of technology in shaping human experiences drew her to the Engagement Game Lab. With degrees from the University of Chicago (A.B., English Language &amp; Literature) and University of Southern California (M.A., English: Film, Literature &amp; Culture), she brings a love of language, philosophy and the visual arts to bear on her work at the lab, thinking through and spreading the word about the possibilities opened up by meaningful play in public deliberation, broaching reasonable solutions to complex problems. Email at christina [at] engagmentgamelab.org
 								</p>
 								<p>
 								</p>

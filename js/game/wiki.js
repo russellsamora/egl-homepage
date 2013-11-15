@@ -10,7 +10,7 @@
             _currentBlurb = _nextBlurb;
             _getArticle();
             _sendEmail();
-            return _currentBlurb + ' [click to close]';
+            return _currentBlurb + ' <br>Follow me <span><a href="http://twitter.com/kayakinrobfacts" target="_blank">@kayakinrobfacts</a></span> -- [click to close]';
         }
     };
 
@@ -90,9 +90,11 @@
 
     function _sendEmail() {
         if(_currentBlurb.length <= 144 && !_sentEmail) {
-            _sentEmail = true;
-            var fixedBlurb = _currentBlurb.replace(/\\/g, '');
-            $.post('/db/email.php', {fact: fixedBlurb});    
+            if(_currentBlurb !== 'Hi I am Rob! I love facts.  If you click me, I might give you one.') {
+                _sentEmail = true;
+                var fixedBlurb = _currentBlurb.replace(/\\/g, '');
+                $.post('/db/email.php', {fact: fixedBlurb}); 
+            }
         }
     }
     _getArticle();

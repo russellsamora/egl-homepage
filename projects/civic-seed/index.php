@@ -16,7 +16,7 @@
 						</div>
 						<div class='span8 projectDescription'>
 							<p>
-								<span><a target='_blank' href='http://civicseed.org'>Civic Seed</a></span> is a multi-player RPG that harnesses the power of online social play to teach and certify students to civically engage with partner communities.
+								<span><a target='_blank' href='http://civicseed.org'>Civic Seed</a></span> is a multi-player RPG that harnesses the power of online social play to teach and certify students to civically engage with partner communities. Students must think creatively, self-reflect, and collect resources to complete the game and create their sharable civic resume.
 							</p>
 						</div>
 					</div>
@@ -29,7 +29,7 @@
 								Many incoming university students are eager to get involved with their school's partner communities and create positive change. However, to most, the people and challenges of these communities are unknown, and under-trained volunteers can even do more harm than good.
 							</p>
 							<p>
-								For local organizations, it's difficult to know which students have the necessary knowledge and skills to collaborate effectively and whose personal goals align with the goals of the organization and the community.
+								For local organizations, it's difficult to know which students have the necessary knowledge and skills to collaborate effectively and whose personal goals align with the goals of the organization and the community.  Civic Seed is designed in cooperation with Tufts University's <a href="http://activecitizen.tufts.edu/" target="_blank">Tisch College of Citizenship and Public Service</a>, which promotes a culture of active citizenship for Tufts students throughout the university and in their communities.
 							</p>
 						</div>
 						<div class='span6 videoContainer'>

@@ -202,6 +202,10 @@
 #game #popupBox .gameInstructions {
   display: none;
 }
+#game #popupBox .wiki p span {
+  font-weight: 700;
+  color: #ff5622;
+}
 #game #challengeBox {
   display: none;
   position: fixed;

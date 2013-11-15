@@ -458,7 +458,7 @@
 				},
 				action: function() {
 					var wiki = $game.wiki.getWiki();
-					$('#popupBox .wiki p').text(wiki);
+					$('#popupBox .wiki p').html(wiki);
 					$game.hidePopup();
 					$('#popupBox .wiki').show();
 					$('#popupBox').show();

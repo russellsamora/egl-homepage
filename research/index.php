@@ -79,11 +79,13 @@
 						<div class='span12'>
 							<p>Gordon and Baldwin-Philippi (2013). "Playful Civic Learning: Enabling Lateral Trust and Reflection in Game-based Public Participation," working paper.</a></p>
 
+							<p>Gordon, Eric and Baldwin-Philippi, Jessica and Balestra, Martina. <a href='http://ssrn.com/abstract=2343762' target='_blank'>"Why We Engage: How Theories of Human Behavior Contribute to Our Understanding of Civic Engagement in a Digital Era"</a> (October 22, 2013). Berkman Center Research Publication No. 21.</p>
+
 							<p>Gordon, E and Jessica Baldwin-Philippi. <a href='http://beyondtransparency.org/chapters/part-3/making-a-habit-out-of-engagement-how-the-culture-of-open-data-is-reframing-civic-life/' target='_blank'>"Making a Habit Out of Engagement: How the Culture of Open Data Is Reframing Civic Life" in Code for America Open Data Anthology.</a> O'Reilly Media.</p>
 
 							<p>Baldwin-Philippi, J. and Gordon E. (2013). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.bostonarearesearchinitiative.net%2Fpolicy-briefs.php&sa=D&sntz=1&usg=AFQjCNHlC7dkvWiJfDArdOQeyoqbsPlikg' target='_blank'>"Designing Citizen Relationship Management Systems to Cultivate Good Civic Habits." Boston Area Research Initiative Policy Brief."</a></p>
 
-							<p>Gordon, E. (2013). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.jodml.org%2F2013%2F02%2F01%2Fdesign-for-civic-web%2F&sa=D&sntz=1&usg=AFQjCNHZQc0pSQRVKAY77BRVSKchgiPRSA' target='_blank'>"Beyond Participation: Designing for the Civic Web," Journal of Digital and Media Literacy, February 1.  </a></p>
+							<p>Gordon, E. (2013). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.jodml.org%2F2013%2F02%2F01%2Fdesign-for-civic-web%2F&sa=D&sntz=1&usg=AFQjCNHZQc0pSQRVKAY77BRVSKchgiPRSA' target='_blank'>"Beyond Participation: Designing for the Civic Web,"</a>  Journal of Digital and Media Literacy, February 1.</p>
 
 							<p>Baldwin-Philippi, J. (2013) <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.tandfonline.com%2Feprint%2F5mkaMNEAJgUfteFUZCFz%2Ffull&sa=D&sntz=1&usg=AFQjCNEDjHuWRyfAqzynk4ng-UdT3A0yhA' target='_blank'>"Constructing skeptical citizens: How campaign microsites foster new ways of engaging political information and understanding citizenship"  Journal of Information Technology &amp; Politics. 10(3): 245-260.</a></p>
 							
