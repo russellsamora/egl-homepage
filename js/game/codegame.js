@@ -6,6 +6,7 @@
 	var codegame = $game.codegame = {
 		ready: true,
 		show: function() {
+			console.log('really started', $game.reallyStarted);
 			if($game.reallyStarted) {
 				$game.hideMessage();
 				$('#codegame').empty().append('<p>Welcome to Russell\'s <b>coding challenge!</b>  Type the codes as fast as you can before they disappear. Binary! Awesome!</p><p><a href="#" class="beginCodeGame">Begin</a></p>');

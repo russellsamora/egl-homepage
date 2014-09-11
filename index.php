@@ -122,10 +122,10 @@
 					</div>
 				</div>
 				<div id='cover'></div>
-			</div>
-			<div id='helpArrows'>
-				<p class='rightArrow'><i class='icon-chevron-right'></i></p>
-				<p class='downArrow'><i class='icon-chevron-down'></i></p>
+				<div id='helpArrows'>
+					<p class='rightArrow'><i class='icon-chevron-right'></i></p>
+					<p class='downArrow'><i class='icon-chevron-down'></i></p>
+				</div>
 			</div>
 			<div id='nongame'>
 				<div class='row-fluid'>
@@ -177,6 +177,7 @@
 			.script('js/libs/bootstrap.min.js')
 			.script('js/libs/modernizr.js')
 			.script('js/libs/plugins.js').wait()
+			.script('js/libs/pathfinding-browser.min.js').wait()
 			.script('js/game/main.js').wait(function() {
 				var gotGame = $game.init();
 				if(gotGame) {

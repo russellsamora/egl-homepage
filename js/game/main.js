@@ -7,7 +7,8 @@
 		_currentFrame = 0,
 		_numDrawings = 0,
 		_discoMode = false,
-		_maxMsgWidth = 520;
+		_maxMsgWidth = 520,
+		_msgFadeDuration = 100;
 
 	window.$game = {
 
@@ -75,7 +76,8 @@
 				}
 			} else {
 				if(data.crat) {
-					data.message +=  ' <a href"#" data-key="crat">stop</a>';
+					//data.message +=  ' <a href"#" data-key="crat">stop</a>';
+					data.message +=  ' <a href"#" data-key="crat">stop</a><a href="#" class="nothanks" data-key="reset">reset</a>';
 					msgLength += 5;
 					$game.audio.playFx('pop');
 				}
@@ -100,6 +102,10 @@
 				topOffset = 100;
 			} else {
 				$('.soundcloud').hide();
+			}
+			
+			if(data.discoball) {
+				topOffset = -150;
 			}
 			
 			//figure out how to align it center
@@ -187,8 +193,12 @@
 			$('#popupBox').show();
 			$game.localStore.started = true;
 			$game.localStore.playing = true;
-			$('#cover').show();
+			$('#cover').fadeIn(1000, 'swing');
 			$('.discoball').show();
+			$('.discoball').animate({
+				top: '-150px'
+			});
+
 			$game.localStore.targetPerson = $game.targetOrder[$game.localStore.targetIndex];
 			if($game.localStore.targetIndex > 0) {
 				$game.localStore.previousPerson = $game.targetOrder[$game.localStore.targetIndex -1];
@@ -202,10 +212,44 @@
 			clearTimeout(_messageTimeout);
 			$game.hideMessage();
 			$game.localStore.playing = false;
-			$('#cover').hide();
-			$('.discoball').hide();
+			$('#cover').fadeOut(1000, 'swing');
+			//$('.discoball').hide();
+			$('.discoball').animate({
+				top: '-300px'
+			}, function(){
+				$('.discoball').hide();
+			});
 			$game.updateStorage();
 			$game.reallyStarted = false;
+		},
+
+		resetGame: function() {
+			sessionStorage.clear();
+			var storage = sessionStorage.getItem('egl-game');
+			var id = Math.random().toString(36).slice(2);
+			$game.localStore = {
+				id: id, 
+				people: {}, 
+				targetIndex: 0, 
+				answers: [], 
+				tasks: {
+					stephen: true,
+					eric: false,
+					christina: false,
+					sam: false,
+					russell: false,
+					aidan: false,
+					jedd: false,
+					jesse: false
+				},
+				inventory: {
+					awards: 0,
+					dongles: 0,
+					badges: 0,
+					coins: 0
+				},
+			};
+			$game.stopPlaying();
 		},
 
 		toggleDiscoMode: function() {
@@ -280,6 +324,8 @@
 		window.HEIGHT_BUFFER = 10;
 		window.WALL_HEIGHT = 200;
 		window.DEV_MODE = false;
+		window.TILE_SIZE = 25;
+		window.GRID = new PF.Grid(GAMEBOARD_WIDTH / TILE_SIZE, GAMEBOARD_HEIGHT / TILE_SIZE);
 	}
 
 	function _beginGame() {
@@ -293,6 +339,17 @@
 				// $('.item, .character, .person').addClass('devBottomBound');
 			}
 			$game.playing = true;
+
+			//if we're loading a previously started game, set game mode
+			if ($game.localStore.playing) {
+				$('#cover').show();
+				$('.discoball').show();
+				$('.discoball').top = '-150px';
+				$('.discoball').animate({
+					top: '-150px'
+				});
+				$game.reallyStarted = true;
+			}
 			_tick();
 		} else {
 			requestAnimationFrame(_beginGame);
@@ -300,7 +357,7 @@
 	}
 
 	function _checkReturning() {
-		// sessionStorage.clear();
+		//sessionStorage.clear();
 		var storage = sessionStorage.getItem('egl-game');
 		if(storage) {
 			$game.localStore = JSON.parse(storage);
@@ -359,12 +416,13 @@
 	function _resize() {
 		var gameOn = $('#game').css('display');
 		if(gameOn !== 'none') {
-			//dissable resize function to trigger game start
+			//disable resize function to trigger game start
 			$(window).off('resize');
 			_setupGlobals();
 			_gotGame = true;
 			//load the rest of the scripts
 			$LAB
+			.script('js/libs/pathfinding-browser.min.js')
 			.script('js/game/input.js')
 			.script('js/game/audio.js')
 			.script('js/game/items.js')
@@ -394,6 +452,7 @@
 				$game.items.updateAnimations();
 				$game.people.updateAnimations();
 				$game.player.idle();
+				$game.player.tick();
 				if(_discoMode) {
 					var r = Math.floor(Math.random() * 255),
 						g = Math.floor(Math.random() * 255),
@@ -408,16 +467,22 @@
 
 	function _flashHelpArrows(blink) {
 		if($game.hasScrolled) {
-			$('#helpArrows').remove();
+			$('#helpArrows').fadeOut('slow', function(){
+				$('#helpArrows').remove()
+			});
 		} else {
-			$('#helpArrows').animate({ opacity: 0.3}, function() {$(this).animate({ opacity: 0.8}, function() {
+			$('#helpArrows').animate({ opacity: 0.2}, function() {$(this).animate({ opacity: 0.8}, function() {
 				if(blink) {
 					_flashHelpArrows();
 				} else {
 					if(!$game.hasScrolled) {
 						setTimeout(function() {
 							_flashHelpArrows(true);
-						}, 10000);
+						}, 100);
+					} else {
+						$('#helpArrows').fadeOut('slow', function(){
+							$('#helpArrows').remove()
+						});
 					}
 				}
 			});

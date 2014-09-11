@@ -144,6 +144,9 @@
   margin-left: 10px;
   background: #d43200;
 }
+#game #message .messageText a.nothanks a:hover{
+  background: black;
+}
 #game #popupBox {
   display: none;
   position: fixed;
@@ -549,7 +552,7 @@
   max-height: 400px;
   overflow: auto;
 }
-#helpArrows .rightArrow {
+#game #helpArrows .rightArrow {
   position: fixed;
   top: 50%;
   margin-top: -10px;
@@ -559,10 +562,10 @@
   opacity: .8;
   pointer-events: none;
 }
-#helpArrows .rightArrow i {
+#game #helpArrows .rightArrow i {
   color: white;
 }
-#helpArrows .downArrow {
+#game #helpArrows .downArrow {
   color: white;
   position: fixed;
   left: 50%;
@@ -573,7 +576,7 @@
   opacity: .8;
   pointer-events: none;
 }
-#helpArrows .downArrow i {
+#game #helpArrows .downArrow i {
   color: white;
 }
 #cover {
@@ -726,7 +729,8 @@
   #pregame,
   #blogTease,
   #nongameH,
-  #displayArows {
+  #helpArrows,
+  #displayArrows {
     display: none;
   }
   #nongame {
@@ -746,6 +750,7 @@
   #pregame,
   #blogTease,
   #nongame,
+  #helpArrows,
   #displayArrows {
     display: none;
   }

@@ -40,35 +40,32 @@
 			//items
 			for(var i = 0; i < items.itemKeys.length; i++) {
 				var item = items.itemData[items.itemKeys[i]];
-				//see if it will be in range of the new walk
-				if ((minX + input.w >= item.x) && (minX <= item.x + item.w) && (minY + input.h >= item.y) && (minY <= item.y + item.h)) {
-					item.flipped = false;
-					item.kind = 'item';
-					_hitList.push(item);
-					//check to see which side the player is on (above or below)
-					if(playerBottom < item.bottom) {
-						//above
-						item.selector.addClass('fgItem');
-						//HACK
-						//TODO
-						// if(item.bind) {
-						// 	items.peopleData[item.bind].selector.addClass('fgPerson');
-						// }
-						item.side = -1;
-					} else {
-						//below
-						item.selector.removeClass('fgItem');
-						item.side = 1;
-						//TODO
-						// if(item.bind) {
-						// 	items.peopleData[item.bind].selector.removeClass('fgPerson');
-						// }
-					}
+			
+				//check to see which side the player is on (above or below)
+				if(playerBottom < item.bottom) {
+					//above
+					item.selector.addClass('fgItem');
+					//HACK
+					//TODO
+					// if(item.bind) {
+					// 	items.peopleData[item.bind].selector.addClass('fgPerson');
+					// }
+					item.side = -1;
+				} else {
+					//below
+					item.selector.removeClass('fgItem');
+					item.side = 1;
+					//TODO
+					// if(item.bind) {
+					// 	items.peopleData[item.bind].selector.removeClass('fgPerson');
+					// }
 				}
 			}
 		},
 
+		// TODO don't think this function is used anymore (jay)
 		hitTest: function() {
+			console.log('hit item');
 			//only test if moving...
 			if($game.player.inTransit) {
 				//must pull the current position (yuck)
@@ -139,6 +136,15 @@
 			//compare each item and see if it is on screen
 			for (var itemName in items.itemData) {
 				var item = items.itemData[itemName];
+				//discoball is a special case
+				if(item.class == 'discoball') {
+					if (top > (item.y + item.h - 150)) {
+						item.onScreen = true;
+					} else {
+						item.onScreen = false;
+					}
+					continue;
+				}
 				if(	top > (item.y + item.h) 
 					|| (top + $game.input.height) < item.y 
 					|| left > (item.x + item.w) 
@@ -179,6 +185,16 @@
 			item.setAttribute('class', info.class + ' item'); 
 			item.setAttribute('data-key', key);
 			var divWidth, divHeight;
+
+			//add the item to the grid for pathfinding (jay)
+			if (info.occx && info.occy) {
+				for (var i = 0; i < info.occx.length; i ++) {
+					for (var j = 0; j < info.occy.length; j ++) {
+						GRID.setWalkableAt(info.occx[i], info.occy[j], false);
+					}
+				}
+			}
+
 			//set size, based on if it is animated or not
 			if(info.frames) {
 				//if animted, add it to animation list
@@ -259,12 +275,16 @@
 				class: 'boombox',
 				x: 1450,
 				y: 700,
+				occx: [56, 57, 58, 59, 60, 61, 62],
+				occy: [24, 25],
 				message: 'use my buttons to pump up the jams!'
 			},
 			'coffeemaker': {
 				class: 'coffee',
 				x: 50,
 				y: 650,
+				occx: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+				occy: [30, 31, 32],
 				frames: 8,
 				animation: [0,1,2,3,4,5,6,7],
 				paused: false,
@@ -273,7 +293,7 @@
 			'discoball': {
 				class: 'discoball',
 				x: 1205,
-				y: -150,
+				y: -300,
 				frames: 8,
 				animation: [0,1,2,3,4,5,6,7],
 				paused: false,
@@ -289,7 +309,7 @@
 						$game.localStore.tasks.jesse = true;
 						$game.updateStorage();
 					} else {
-						$game.showMessage({el: el, message: 'Disco Stu likes disco music.'});
+						$game.showMessage({el: el, message: 'Disco Stu likes disco music.', discoball: true});
 					}
 				}
 			},
@@ -337,7 +357,7 @@
 			'bookshelf': {
 				class: 'bookshelf',
 				x: 130,
-				y: 0
+				y: 0,
 			},
 			'book': {
 				class: 'book',
@@ -360,6 +380,8 @@
 				class: 'plant0',
 				x: -60,
 				y: 130,
+				occx: [0, 1],
+				occy: [9, 10],
 				invisible: true
 				
 			},
@@ -367,6 +389,8 @@
 				class: 'plant1',
 				x: 800,
 				y: 650,
+				occx: [33, 34, 35, 36],
+				occy: [30, 31],
 				invisible: true
 				// bind: 'jesse',
 				// bindName: 'plant1'
@@ -375,6 +399,8 @@
 				class: 'couch',
 				x: 1560,
 				y: 150,
+				occx: [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77],
+				occy: [4, 5, 6],
 				invisible: true,
 				bind: 'christina',
 				bindName: 'couch'
@@ -383,6 +409,8 @@
 				class: 'computer',
 				x: 2420,
 				y: 650,
+				occx: [95, 96, 97, 98, 99, 100, 101, 102, 103],
+				occy: [27, 28, 29, 30, 31],
 				action: function(el) {
 					if($game.localStore.playing && $game.localStore.targetPerson === 'russell') {
 						$game.codegame.show();
@@ -395,10 +423,13 @@
 				class: 'water',
 				x: 2100,
 				y: 50,
+				occx: [82, 83, 84, 85],
+				occy: [3, 4],
 				// invisible: true,
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
 				paused: false,
+				wait: 0,
 				action: function(el) {
 					_promptCode();
 				},
@@ -418,6 +449,8 @@
 				class: 'coffeetable',
 				x: 2500,
 				y: 240,
+				occx: [98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111],
+				occy: [7, 8, 9],
 				invisible: true
 			},
 			'crat': {
@@ -425,8 +458,11 @@
 				x: 600,
 				y: 150,
 				frames: 8,
+				occx: [22, 23, 24, 25, 26, 27],
+				occy: [3, 4, 5],
 				animation: [0,1,2,3,4,5,6,7],
 				paused: false,
+				wait: 0,
 				sleep: function() {
 					this.paused = true;
 					var timeout = Math.floor(Math.random() * 6000 + 2000);
@@ -444,11 +480,14 @@
 			},
 			'rob': {
 				class: 'rob',
-				x: 1300,
+				x: 1275,
 				y: 30,
+				occx: [50, 51, 52, 53, 54],
+				occy: [6, 7, 8],
 				frames: 5,
 				animation: [0,1,2,3,4],
 				paused: false,
+				wait: 0,
 				sleep: function() {
 					this.paused = true;
 					var timeout = Math.floor(Math.random() * 2000 + 2000);
@@ -591,17 +630,29 @@
 	}
 
 	function _animateItem(item) {
-		//console.log(item.paused, item.curFrame, item.animation.length);
 		if(!item.paused && item.onScreen) {
-			item.curFrame++;
-			if(item.curFrame >= item.animation.length) {
-				item.curFrame = 0;
-				if(item.sleep) {
-					item.sleep();
+			//doing it this way because settimeout isn't working in the sleep function
+			if (item.wait !== undefined) {
+				if (item.wait > 0) {
+					item.wait --;
+				} else {
+					if(item.curFrame < item.animation.length) {
+						item.curFrame ++;
+					} else {
+						item.curFrame = 0;
+						item.wait = Math.round(Math.random() * 50) + 25;
+					}
+				}
+			} else {
+				item.curFrame++;
+				if(item.curFrame >= item.animation.length) {
+					item.curFrame = 0;
+					if(item.sleep) {
+						item.sleep();
+					}
 				}
 			}
 			var position = - item.animation[item.curFrame] * item.w + 'px 0';
-			// console.log(position);
 			item.selector.css('background-position', position);
 		}
 	}
@@ -609,7 +660,7 @@
 	function _prefixedEvent(element, type, callback) {
 		for (var p = 0; p < _pfx.length; p++) {
 		if (!_pfx[p]) type = type.toLowerCase();
-		element.addEventListener(_pfx[p]+type, callback, false);
+			element.addEventListener(_pfx[p]+type, callback, false);
 		}
 	}
 
