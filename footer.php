@@ -2,7 +2,7 @@
 	<div class='container'>
 		<div class='row'>
 			<div class='span12 eglName'>
-				<h3>Engagement Game Lab</h3>
+				<h3>Engagement Lab</h3>
 			</div>
 		</div>
 		<div class='row'>
@@ -41,7 +41,10 @@
 	<div class='row social'>
 		<div class='span12'> 
 			<p>
-				<span>address: </span>120 Boylston St, Boston, MA 02116
+				<span>mailing address: </span>120 Boylston St, Boston, MA 02116
+			</p>
+            <p>
+				<span>physical address: </span>160 Boylston St, Boston, MA 02116, 4th floor
 			</p>
 		</div>
 	</div>

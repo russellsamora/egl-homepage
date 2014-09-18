@@ -1,0 +1,31 @@
+﻿#subscribeForm, #subscribeForm p {
+	margin:0;
+	padding:0;
+}
+#subscribeForm fieldset{
+	margin:0;
+	padding:10px;
+	border: 0;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#F9F9F9), to(#ECECEC)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #F9F9F9, #ECECEC); /* Chrome 10+, Saf5.1+ */
+	background-image: -moz-linear-gradient(top, #F9F9F9, #ECECEC); /* FF3.6+ */
+	background-image: -ms-linear-gradient(top, #F9F9F9, #ECECEC); /* IE10 */
+	background-image: -o-linear-gradient(top, #F9F9F9, #ECECEC); /* Opera 11.10+ */
+	background-image: linear-gradient(top, #F9F9F9, #ECECEC); /* W3C */
+}
+#subscribeForm input[type=submit]{
+	border:1px solid #555;
+	color:#fff;
+	background-color:#888;
+	cursor:pointer;
+	font-size: 11px;
+	padding: 2px 3px;
+}
+#subscribeForm h3, #subscribeForm h3.widget-title,  #subscribeForm h3 + p {
+	position:absolute;
+	left:-9999px;
+}
+#subscribeForm .muSubmit {
+	margin: 5px 0 0 0;
+	padding: 0;
+}

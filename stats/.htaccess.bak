@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName " Statistics"
+AuthName "engagementgamelab.org Statistics"
+AuthUserFile /var/chroot/home/content/31/6483931/html/stats/.statspwd
+Require valid-user
+DirectoryIndex index.html

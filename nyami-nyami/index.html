@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Redcross Game</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- include jQuery library -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<!-- include Cycle plugin -->
+<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+
+	    $('.slideshow').cycle({ 
+		    fx:     'fade', 
+		    speed:  'fast', 
+		    timeout: 0, 
+			pager: '#pager',
+		    next:   '#next', 
+		    prev:   '#prev',
+
+		});
+
+	});
+
+</script>
+
+</head>
+
+<body>
+
+	<div class="slideshow">
+		<img src="images/slide_01.png">
+		<img src="images/slide_02.png">
+		<img src="images/slide_03.png">
+		<img src="images/slide_4.jpg">
+        <img src="images/water_05.png">
+        <img src="images/water_06.png">
+        <img src="images/water_07.png">
+        <img src="images/water_08.png">
+        <img src="images/water_09.png">
+        <img src="images/water_10.png">
+
+	</div>
+
+	<div class="nav">
+    	<div class="nav_inner">
+            <button class="button_nav" id="prev">Previous</button>
+            <button class="button_nav" id="next">Next</button>
+            <p> Water Level </p>
+            <div class="pager" id="pager"></div>
+        </div>
+	</div>
+
+</body>
+</html>

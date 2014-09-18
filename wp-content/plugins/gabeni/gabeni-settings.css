@@ -1,0 +1,48 @@
+.gabeni_shadow {-moz-box-shadow: 0 0 5px #888; -webkit-box-shadow: 0 0 5px#888; box-shadow: 0 0 5px #888;}
+.gabeni_round {-moz-border-radius: 7px; border-radius: 7px; }
+#gabeni_logo { width:200px; height:49px; margin: 15px 0 0 0;}
+#gabeni-message, .gabeni-message {
+	background-color: #fffbcc;
+	border-color: #e6db55;
+	color: #555;
+	line-height: 19px;
+	padding: 5px 0;
+	font-size: 12px;
+	text-align: left;
+	margin: -1px 15px 0 5px;
+	border-width: 1px;
+	border-style: solid;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.gabeni-w10 { width: 10px; }
+.gabeni-w20 { width: 20px; }
+.gabeni-w50 { width: 50px; }
+.gabeni-w80 { width: 80px; }
+.gabeni-w100 { width: 100px; }
+.gabeni-w150 { width: 150px; }
+.gabeni-w200 { width: 200px; }
+
+input.gabeni-action.gabeni-delete { color: red; }
+
+table.gabeni-tbl thead tr th,
+table.gabeni-tbl thead tr td,
+table.gabeni-tbl tbody tr th,
+table.gabeni-tbl tbody tr td,
+table.gabeni-tbl tfoot tr th,
+table.gabeni-tbl tfoot tr td
+{
+	vertical-align: middle;
+}
+table#gabeni-list thead th input.gabeni-list-cb-all,
+table#gabeni-list tfoot th input.gabeni-list-cb-all,
+table#gabeni-list tbody td input.gabeni-list-cb
+{
+	margin: 0;
+}
+.gabeni_empty{ background-color:#FAC0CA}
+.gabeni_trial{ background-color:#F8E9AD}
+.gabeni_paying{ background-color:none;}

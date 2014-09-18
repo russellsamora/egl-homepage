@@ -1,0 +1,29 @@
+#mc_embed_signup{
+	background:#fff; 
+	clear:left; 
+	font:14px Helvetica,Arial,sans-serif; 
+	max-width: 500px;
+	width: 80%;
+	margin: 0 auto;
+}
+#mc_embed_signup h2{
+	margin: 0;
+}
+.mc-field-group input{
+	height: 40px;
+	margin-bottom: 4px;
+}
+.mc-field-group input[name="EMAIL"]{
+	width: 416px;
+}
+.clear input[name="subscribe"]{
+	background: #d43200;
+	border: none;
+	color: #fff;
+	padding: 5px 10px;
+	font-size: 20px;
+	border-radius: 10px;
+}
+.clear input[name="subscribe"]:hover{
+	background: #ff5622;
+}

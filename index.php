@@ -111,6 +111,8 @@
 							<span>
 								 <b>NEWS:</b> Games for Democracy: 5 Takeaways From Playing @Stake at the Frontiers of Democracy Conference, by Becky Michelson <a href='/blog'>[read the post]</a>
 							</span>
+							<br><br>
+							<?php include 'email-signup.php' ?>
 						</p>
 					</div>
 					<div class='rightHalf'>

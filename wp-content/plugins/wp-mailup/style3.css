@@ -1,0 +1,57 @@
+﻿#subscribeForm {
+}
+#subscribeForm fieldset{
+	width: 200px;
+	margin:10px 0;
+	border:1px solid #DDD;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	background-color:#000000;
+}
+#subscribeForm textarea{
+}
+#subscribeForm input[type=text]{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	background-color:#777;
+	border: 1px solid #444;
+	color:#FFF;
+	width: 170px;
+	height: 18px;
+}
+#subscribeForm input[type=submit]{
+	border:2px solid #fff;
+	color:#fff;
+	background-color:#000;
+	cursor:pointer;
+	text-transform:uppercase;
+	font-weight:bold;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	margin-bottom:10px;
+}
+#subscribeForm input[type=submit]:hover{
+	color:#fff;
+	background-color:#333;
+}
+#subscribeForm{
+	color:#fff;
+}
+#subscribeForm p,  #subscribeForm h1, #subscribeForm h2, #subscribeForm h3,  #subscribeForm h4,  #subscribeForm h5{
+	color:#fff;
+}
+#subscribeForm p {
+	padding:0;
+	margin: 0 10px 10px 10px;
+}
+#subscribeForm h3 {
+	padding:0;
+	margin: 10px 0 0 10px;
+	font-size: 12px;
+}
+#subscribeForm fieldset img {
+	margin-left: 10px;
+}

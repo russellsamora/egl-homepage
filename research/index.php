@@ -6,134 +6,307 @@
 	<body>
 		<div id='wrap'>
   			<?php include '../nav.php' ?>
-  			<div id='researchTop'>
-				<div class='row'>
-					<div class='researchBody'>
-						<!-- <h2> What We Do </h2> -->
-						<p class='bigIdea'>
-							We are a research lab focused on understanding the intersections of technology, play and civic life. We engage in two primary modes of research: <b>Participatory Action Research</b> where we design our own games and playful systems that we implement and evaluate in partnership with communities and organizations and <b>Basic Research</b> where we take on some of the fundamental questions facing the field, including youth and online civic participation, organizational capacity to work with technology, and how play factors into systems design. Our research is international, with active projects in the United States, Europe and Africa, and framed by the initiatives below. 
-						</p>
-					</div>
-				</div>
-			</div>
+  			
 			<div class='container'>
 				<div id='initiatives'>
-					<!-- <div class='row'>
-						<div class='span12'>
-							<h2> Initiatives </h2>
-						</div>
-					</div> -->
-					<div class='row extraTopPadding'>
-						<div class='span6'>
+					<div id="articles" class="anchor">
+						<h1>Research Areas</h1>
+						<div>
 							<div class= 'bigButton' data-toggle='collapse' data-target='#r1'>
-								<p class='specialIcon'><img src='../img/research/capitol.png'></p>
-								<p class='specialText'>Design Action Research for Government Project (DARG)</p>
-							</div>
-							<p id='r1' class='collapse out'>
-								The Design Action Research for Government Project (DARG) is a partnership between EGL and the Mayor's Office of New Urban Mechanics in Boston. DARG is a model for collaboration between government and universities, and its goal is to advance the capacity of local governments to foster civic engagement through technological innovations. Its mission is to provide a conceptual framework and evaluative capacity to guide city-level innovations that create opportunities for the public to meaningfully engage in the creation and study of public lThe project employs techniques of action and design research to source, create, and study civic technology projects in Boston. Undertaking a research program that goes beyond traditional measures of engagement, DARG also aims to improve the way research concerning civic media in governance takes place. 
-							</p>
-						</div>
-						<div class='span6'>
-							<div class= 'bigButton' data-toggle='collapse' data-target='#r2'>
-								<p class='specialIcon'><img src='../img/research/globe.png'></p>
-								<p class='specialText'>Global/Networked Citizenship</p>
-							</div>
-							<p id='r2' class='collapse out'>
-								This initiative involves multiple ongoing research projects that explore transformations in the definition and qualities of citizenship in the context of new digital tools and practices, and focuses both on global and local citizenship in a digital era. In our international projects, we are building and researching games for international humanitarian organizations and programs dedicated to improving media literacy and activism. Our local projects explore concepts of play, connectivity, and attention in various spaces of civic life, from deliberative planning issues to electoral campaigns. The research is based on data gathered from the lab's affiliated games and tools as well as analysis of digital media used by governmental institutions. 
-							</p>
-						</div>
-					</div>
-					<div class='row'>
-						<div class='span6'>
-							<div class= 'bigButton' data-toggle='collapse' data-target='#r3'>
 								<p class='specialIcon'><img src='../img/research/phone.png'></p>
-								<p class='specialText'>Play and Civic Learning</p>
+								<p class='specialText'>Play and Engagement</p>
 							</div>
-							<p id='r3' class='collapse out'>
-								This initiative looks at how games and play create productive informal learning environments for young people and adults. Focusing on a variety of games, and engaging in both qualitative and quantitative analysis of how people use playful civic tools and how play affects civic attitudes and behaviors. Specifically, we ask: What are the affordances of online games for civic learning and participation? How can games develop specific civic skills like deliberative capabilities and efficacy? Can they increase players' levels of engagement?
-							</p>
+							<div id='r1' class='collapse out'>
+								<p>
+									What role can games play in serious work? Can games provide meaningful structures for activism, civic participation, and civic learning? Are there particular designs and modalities of games that work better in different situations or with different populations? And what are the political and institutional tensions inherent in making and playing games? Our research focuses on games in civic contexts, primarily in partnership with government or NGOs working to enhance democratic participation, community cohesion or civic action-taking.
+								</p>
+								<p>
+									Faculty: Eric Gordon, Sarah Zaidan, Miranda Banks
+								</p>
+								<p>
+									For a complete list of publications, look in the approrpriate faculty's CV in the <a href='/about/#people'>people</a> section of our website.
+								</p>	 
+									<div class='row' id='publications'>
+										<div class='span12'>
+											<p>Gordon, E., and Baldwin-Philippi, J. (2014). <a href='http://ijoc.org/index.php/ijoc/article/view/2195' target='_blank'> "Playful Civic Learning: Enabling Lateral Trust and Reflection in Game-based Public Participation"</a> International Journal Of Communication, 8, 28. </p>
+
+											<p>Gordon, E., and Schirra, S (2013). <a href='http://www.amazon.com/Media-Literacy-Education-Action-Perspectives/dp/0415658373' target='_blank'> "Game-based Civic Learning in Public Participation Processes,"</a> On Media Literacy, eds. Paul Milhailidis and Belinha de Abreau. New York: Routledge.</p>
+
+											<p>Gordon, E. and Schirra, S. (2011) <a href='http://www.google.com/url?q=http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D2103378&sa=D&sntz=1&usg=AFQjCNGvjSJYrGB7qh_32n6yCmSb4CAM_g' target='_blank'>"Playing with Empathy: Digital Role-Playing Games in Public Meetings."Proceedings of the 5th International Conference on Communities &amp; Technologies, Brisbane, Australia.</a></p>
+										</div>
+									</div>
+							</div>
 						</div>
-						<div class='span6'>
+					
+						<div>
+							<div class= 'bigButton' data-toggle='collapse' data-target='#r3'>
+								<p class='specialIcon'><img src='../img/research/capitol.png'></p>
+								<p class='specialText'>Civic Media</p>
+							</div>
+							<div id='r3' class='collapse out'>
+								<p >
+								Civic media is media with the <em>intentionality</em> of public good or instrumental benefit to a group beyond the individuals or entities involved in its production. People make or use civic media when they seek to impact something or someone; it is not an end in itself. Our research explores the following questions: What are the conditions under which civic media are made? What forms do civic media take? What are the effective ways of measuring their impact? And what are the unique relationships between local and global, 
+								self and other, space and place, that are forged in civic mediated practice? 
+								</p>
+								<p>Faculty: Eric Gordon, Paul Mihailidis, Vincent Raynauld, Russell Newman, Catherine D&#39;Ignazio</p>
+								<p>
+									For a complete list of publications, look in the approrpriate faculty's CV in the <a href='/about/#people'>people</a> section of our website.
+								</p>
+								<div class='row' id='publications'>
+										<div class='span12'>
+											<p>Gordon, E., & Baldwin-Philippi, J. (2014). <a href='http://ijoc.org/index.php/ijoc/article/view/2195' target='_blank'> "Playful Civic Learning: Enabling Lateral Trust and Reflection in Game-based Public Participation"</a> International Journal Of Communication, 8, 28. </p>
+
+											<p>Gordon, Eric and Baldwin-Philippi, Jessica and Balestra, Martina. <a href='http://ssrn.com/abstract=2343762' target='_blank'>"Why We Engage: How Theories of Human Behavior Contribute to Our Understanding of Civic Engagement in a Digital Era"</a> (October 22, 2013). Berkman Center Research Publication No. 21.</p>
+
+											<p>Gordon, E and Jessica Baldwin-Philippi. <a href='http://beyondtransparency.org/chapters/part-3/making-a-habit-out-of-engagement-how-the-culture-of-open-data-is-reframing-civic-life/' target='_blank'>"Making a Habit Out of Engagement: How the Culture of Open Data Is Reframing Civic Life" in Code for America Open Data Anthology.</a> O'Reilly Media.</p>
+
+											<p>Gordon, E. &amp; Manosevitch, E. (2011) <a href='http://www.google.com/url?q=http%3A%2F%2Fnms.sagepub.com%2Fcontent%2F13%2F1%2F75.abstract&sa=D&sntz=1&usg=AFQjCNHVUQ5D0zQ99Ypxo5L3qhG1Wiw-Fg' target='_blank'>"Augmented Deliberation: Merging Physical and Virtual Interaction to Engage Communities in Urban Planning." 13 (1), 75-95.</a></p>
+
+											
+										</div>
+
+								</div>
+							</div>
+						</div>
+						<div>
 							<div class= 'bigButton' data-toggle='collapse' data-target='#r4'>
 								<p class='specialIcon'><img src='../img/research/youth.png'></p>
-								<p class='specialText'>Youth and Civic Media</p>
+								<p class='specialText'>Digital and Media Literacy</p>
 							</div>
-							<p id='r4' class='collapse out'>
-								This project investigates how games and social media tools enable youth to engage in civic issues, and examines the impact of this engagement. Using game data across multiple platforms and numerous cities, we focus on areas of youth empowerment and connection to civic life, the benefits of intergenerational publics, and ways of framing civic issues for youth.
-							</p>
+								<div id='r4' class='collapse out'>
+								<p >
+									What are the competencies that people need to effectively use and engage with media in daily life? How can formal and informal pedagogies support active and inclusive participation in communities? Our Research in this area explores the role of media literacy in building skills and dispositions for young people to participate in networked communities around news, politics, arts, advocacy, etc. We ask what approaches to teaching and learning can best facilitate the acquisition of media literate competencies, and how they can be used for expression and engagement in daily life.	
+								</p>
+								<p>
+									Faculty: Paul Mihailidis, Miranda Banks, Vincent Reynauld
+								</p>
+								<p>
+									For a complete list of publications, look in the approrpriate faculty's CV in the <a href='/about/#people'>people</a> section of our website.
+								</p>
+								<div class='row' id='publications'>
+										<div class='span12'>
+											<p>Mihailidis, P. (2014).<a href='http://www.tandfonline.com/doi/abs/10.1080/1369118X.2013.877054#.VAChKrytm4g' target='_blank'>"The Civic-Social Media Disconnect: Exploring Perceptions of Social Media for Engagement in the Daily Life of College Students."</a> Information, Communication & Society, 17(9), 1-13.</p>
+
+											<p>Mihailidis, P. (2014).<a href='http://mmc.sagepub.com/content/2/1/58.abstract'>"A Tethered Generation: Exploring the Role of Mobile Phones in the Daily Life of Young People."</a> Mobile Media & Communication, 2(1), 58-72.</p>
+
+											<p>Mihailidis, P. & Thevenin, B. (2013).<a href='http://abs.sagepub.com/content/early/2013/05/31/0002764213489015' target='_blank'>"Media Literacy as a Core Competency for Engaged Citizenship in Participatory Democracy."</a> American Behavioral Scientist, 57(9), 1611-1622.</p>
+
+											<p>Mihailidis, P. (2011).<a href='http://www.tandfonline.com/doi/abs/10.1080/01626620.2011.569421#.VACkMLytm4g' target='_blank'>"(Re)Mix, (Re)Purpose, (Re)Learn: Using Participatory Tools for Media Literacy Learning Outcomes in the Classroom."</a>Action in Teacher Education, 33/2, 1-12.</p>
+
+											<p>Mihailidis, P. (2009).<a href='http://www.mitpressjournals.org/doi/abs/10.1162/ijlm_a_00027#.VAClvLytm4g' target='_blank'>"Beyond Cynicism: Media Education and Civic Learning Outcomes in the University"</a>International Journal of Media and Learning 1/3, 1-13.</p>
+										</div>
+
+								</div>
+							</div>	
+						
+						</div>
+						<div id='books' class='anchor'>
+							<h1>Books</h1>
+						</div>
+				
+					<div class='guidebookBox'>
+						<div class='row'>
+								<div class='span12'>
+									<h2><a href='http://www.amazon.com/Media-Literacy-Emerging-Citizen-Participation/dp/1433121794'>Media Literacy and the Emerging Citizen: Youth, Engagement and Participation in Digital Culture</a></h2>	
+								</div>
+						</div>		
+						<div class='row'>
+								<div class='span3'>
+									<p class='bookImage'>
+										<img src='/img/projects/other/emergingcitizen.jpg'>
+									</p>
+									<div class='span3'>
+										<h6>Mihailidis, P. (2014). Media Literacy and The Emerging Citizen: Youth, Engagement and Participation in Digital Culture. Peter Lang Publishers.</h6>
+									</div>
+								</div>
+								<div class='span9 bookDescription'>
+									<h3>									
+										At the heart of this book are the opportunities that social media platforms and mobile technologies provide for communication, connectivity, and community. 			
+									</h3>
+									<p>
+										<em>Media Literacy and the Emerging Citizen</em> is about enhancing engagement in a digital media culture, and the models that educators, parents, and policy makers can utilize to place a media savvy citizenry into positions of purpose, responsibility, and power.
+									</p>
+									<p>
+										Two specific challenges are at the core of this book&#39;s argument <em>that media literacy is the path towards more active and robust civic engagement in the 21st Century.</em>
+									</p>
+									<ol>
+										<li>
+											How can media literacy enable core competencies for value-driven, diverse and robust digital media use?										
+										</li>	
+										<li>
+											How can media literacy enable a more civic-minded participatory culture?										
+										</li>	
+									</ol>
+									<p>
+										Media Literacy and the Emerging Citizen is a manifesto for media literacy education that is at the center of how young people understand the influence social media have on their personal and public lives and use digital media for more inclusive lifestyles. The opportunity to reframe the debate on what an engaged citizen is and on how media literacy education can stand to empower the next generation of leaders is apparent and glaring. This book is driven by the potential of networked communities to build new collaborative participation across all facets of society (Neal 2012). Clay Shirky (2010) sees this as the true opportunity for collaboration today: &ldquo;People want to do something to make the world a better place. They will help when they are invited to.&rdquo; (p. 17). Media literacy can help activate that human element by harnessing the true power each individual has to add value in society today. And we are not that far away.
+									</p>
+								</div>
 						</div>
 					</div>
+				<div class='row'>
 				</div>
-				<div id='publications'>
-					<div class='row'>
-						<div class='span12'>
-							<h2>Publications</h2>
+				<div class='guidebookBox'>
+							<div class='row'>
+								<div class='span12'>
+									<h2><a href='http://www.amazon.com/Media-Literacy-Education-Action-Perspectives/dp/0415658373'>Media Literacy Education in Action: Theoretical and Pedagogical Perspectives</a></h2>
+								</div>
+							</div>
+							<div class='row'>
+								<div class='span3'>
+									<p class='bookImage'>
+										<img src='/img/projects/other/medialitedu.jpg'>
+									</p>
+									<div class='span3'>
+										<h6>S. De Abreu, B. and Mihailidis, P. (2013). Media Literacy Education in Action: Theoretical and Pedagogical Perspectives. Routledge.</h6>
+									</div>
+								</div>
+								<div class='span9 bookDescription'>
+									<h3>									
+										Media Literacy Education in Action brings together the field&#339;s leading scholars and advocates to present a snapshot of the theoretical and conceptual development of media literacy education&ndash;what has influenced it, current trends, and ideas about its future.
+									</h3>
+									<p>
+										Featuring a mix of perspectives, it explores the divergent ways in which media literacy is connected to educational communities and academic areas in both local and global contexts. The volume is structured around seven themes:
+									</p>	
+									<ul>
+										<li>
+											Media Literacy: Past and Present
+										</li>	
+										<li>
+											Digital Media and Learning
+										</li>	
+										<li>	
+											Global Perspectives
+										</li>
+										<li>	
+											Public Spaces
+										</li>
+										<li>	
+											Civic Activism
+										</li>
+										<li>	
+											Policy and Digital Citizenship
+										</li>
+										<li>	
+											Future Connections
+										</li>	
+									</ul>
+									<p>
+										Compelling, well-organized, and authoritative, this one-stop resource for understanding more about media literacy education across disciplines, cultures, and divides offers the fresh outlook that is needed at this point in time. Globally, as more and more states and countries call for media literacy education more explicitly in their curriculum guidelines, educators are being required to teach media literacy in both elementary and secondary education contexts.
+									</p>
+								</div>
+								
+							</div>
+						<div class='row'>	
 						</div>
-					</div>
-					<div class='row'>
-						<div class='span12'>
-							<h2 class='subH2'> ARTICLES </h2>
-						</div>
-					</div>
-					<div class='row'>
-						<div class='span12'>
-							<p>Gordon and Baldwin-Philippi (2013). "Playful Civic Learning: Enabling Lateral Trust and Reflection in Game-based Public Participation," working paper.</a></p>
-
-							<p>Gordon, Eric and Baldwin-Philippi, Jessica and Balestra, Martina. <a href='http://ssrn.com/abstract=2343762' target='_blank'>"Why We Engage: How Theories of Human Behavior Contribute to Our Understanding of Civic Engagement in a Digital Era"</a> (October 22, 2013). Berkman Center Research Publication No. 21.</p>
-
-							<p>Gordon, E and Jessica Baldwin-Philippi. <a href='http://beyondtransparency.org/chapters/part-3/making-a-habit-out-of-engagement-how-the-culture-of-open-data-is-reframing-civic-life/' target='_blank'>"Making a Habit Out of Engagement: How the Culture of Open Data Is Reframing Civic Life" in Code for America Open Data Anthology.</a> O'Reilly Media.</p>
-
-							<p>Baldwin-Philippi, J. and Gordon E. (2013). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.bostonarearesearchinitiative.net%2Fpolicy-briefs.php&sa=D&sntz=1&usg=AFQjCNHlC7dkvWiJfDArdOQeyoqbsPlikg' target='_blank'>"Designing Citizen Relationship Management Systems to Cultivate Good Civic Habits." Boston Area Research Initiative Policy Brief."</a></p>
-
-							<p>Gordon, E. (2013). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.jodml.org%2F2013%2F02%2F01%2Fdesign-for-civic-web%2F&sa=D&sntz=1&usg=AFQjCNHZQc0pSQRVKAY77BRVSKchgiPRSA' target='_blank'>"Beyond Participation: Designing for the Civic Web,"</a>  Journal of Digital and Media Literacy, February 1.</p>
-
-							<p>Baldwin-Philippi, J. (2013) <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.tandfonline.com%2Feprint%2F5mkaMNEAJgUfteFUZCFz%2Ffull&sa=D&sntz=1&usg=AFQjCNEDjHuWRyfAqzynk4ng-UdT3A0yhA' target='_blank'>"Constructing skeptical citizens: How campaign microsites foster new ways of engaging political information and understanding citizenship"  Journal of Information Technology &amp; Politics. 10(3): 245-260.</a></p>
-							
-							<p>Gupta, J., Bouvier, J., and Gordon, E. (2012). <a href='http://www.google.com/url?q=http%3A%2F%2Fengagementgamelab.org%2Fwp-content%2Fuploads%2F2011%2F03%2FEngagement_Game_Lab_CPI-Eval_6.11.12.pdf&sa=D&sntz=1&usg=AFQjCNG62rkTuSVUbDz7R0Eq8UCA7MhOXg' target='_blank'>"Exploring New Modalities of Public Engagement." An Evaluation of Digital Gaming Platforms on Civic Capacity and Collective Action in the Boston Public School District.</a></p>
-
-							<p>Harry, D., Gordon, E., Schmandt, C. (2012). <a href='http://www.google.com/url?q=http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D2145364%26preflayout%3Dtabs&sa=D&sntz=1&usg=AFQjCNEbVr36K6o8LPzdfR7lGhFfbsENVQ' target='_blank'>"Setting the Stage for Interaction: A Tablet Application to Augment Group Discussion in a Seminar Class." Proceedings of Community Supported Cooperative Work, Seattle, WA.</a></p>
-
-							<p>Gordon, E. and Schirra, S. (2011) <a href='http://www.google.com/url?q=http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D2103378&sa=D&sntz=1&usg=AFQjCNGvjSJYrGB7qh_32n6yCmSb4CAM_g' target='_blank'>"Playing with Empathy: Digital Role-Playing Games in Public Meetings."Proceedings of the 5th International Conference on Communities &amp; Technologies, Brisbane, Australia.</a></p>
-
-							<p>Baldwin-Philippi, J. (2011). <a href='' target='_blank'> "Bringing Science and Technology Studies to bear in Communication Studies Research" Communication Research Trends. 30(2): 4-20</a></p>
-							
-							<p>Gordon, E., Schirra, S., and Hollander, J. (2011). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.envplan.com%2Fabstract.cgi%3Fid%3Db37013&sa=D&sntz=1&usg=AFQjCNFYF2ZlCFOfXOEEiGIcklfs3oqX6w' target='_blank'>"Immersive Planning: An Evaluative Framework for New Technologies in the Public Participation Process." Environment and Planning B: Planning and Design, 38 (3), 505-519.</a></p>
-
-							<p>Gordon, E. &amp; Manosevitch, E. (2011) <a href='http://www.google.com/url?q=http%3A%2F%2Fnms.sagepub.com%2Fcontent%2F13%2F1%2F75.abstract&sa=D&sntz=1&usg=AFQjCNHVUQ5D0zQ99Ypxo5L3qhG1Wiw-Fg' target='_blank'>"Augmented Deliberation: Merging Physical and Virtual Interaction to Engage Communities in Urban Planning." 13 (1), 75-95.</a></p>
-
-							<p>Bachen, C., Raphael, C., Lynn, K., Baldwin-Philippi, J., McKee, K.  (2010)  <a href='http://www.google.com/url?q=http%3A%2F%2Fgac.sagepub.com%2Fcontent%2F5%2F2%2F199.abstract&sa=D&sntz=1&usg=AFQjCNEJXvwYmoMWhvNgEGg_TC3Ezek2sQ' target='_blank'>"Games for Civic Learning: A Conceptual Framework and Agenda for Research and Design" in Games and Culture. 5(2): 199-235. </a></p>
-							
-							<p>Raphael, C., Bachen, C., Lynn, K., McKee, K., Philippi, J., (2008). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.tandfonline.com%2Fdoi%2Fabs%2F10.1080%2F10584600802197525%23.Uh-nOGTXgh0&sa=D&sntz=1&usg=AFQjCNEpL0RbB-4o5WbYrRuvbSb1ZujXkg' target='_blank'> "Civic Engagement, Pedagogy, and Information Technology on Web Sites for Youth." Political Communication. Volume 25, Issue 3, pp 290-310.</a></p>
-							
-							<p>Gordon, E. &amp; Koo, G. (2008) <a href='http://www.google.com/url?q=http%3A%2F%2Fsac.sagepub.com%2Fcontent%2F11%2F3%2F204.abstract&sa=D&sntz=1&usg=AFQjCNHCZpsQXZr-NQQDFkkT5qOyq6eyCw' target='_blank'>"Placeworlds: Using Virtual Worlds to Foster Civic Engagement." Space and Culture 11(3), 204-221.</a></p>
-
-						</div>
-					</div>
-					<div class='row'>
-						<div class='span12'>
-							<h2 class='subH2'> BOOKS </h2>
-						</div>
-					</div>
-					<div class='row'>
-						<div class='span12'>
-							<p>Gordon, E. and de Souza e Silva, A. (2011). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.wiley.com%2FWileyCDA%2FWileyTitle%2FproductCd-1405180609.html&sa=D&sntz=1&usg=AFQjCNFcLzHyKZv8MPs2TiryGyPEMJsepA' target='_blank'>Net Locality: Why Location Matters in a Networked World. New York: Wiley-Blackwell.</a></p>
-
-							<p>Gordon, E. (2010). <a href='http://www.google.com/url?q=http%3A%2F%2Fwww.amazon.com%2FUrban-Spectator-American-Concept-Cities-Interfaces%2Fdp%2F1584658037%2Fref%3Dpd_sim_b_4&sa=D&sntz=1&usg=AFQjCNG14db2gFYAZGwtavr3vT0eKBl-4g' target='_blank'>The Urban Spectator: American Concept-cities From Kodak to Google. Hanover, NH: Dartmouth University Press.</a></p>
-
-						</div>
-					</div>
 				</div>
+				<div class='row'>
+				</div>	
+					
+					<div class='guidebookBox'>
+							<div class='row'>
+								<div class='span12'>
+									<h2><a href='http://www.amazon.com/Net-Locality-Location-Matters-Networked/dp/1405180609'>Net Locality: Why Location Matters in a Networked World</a></h2>
+								</div>
+							</div>
+							<div class='row'>
+								<div class='span3'>
+									<p class='bookImage'>
+										<img src='/img/projects/other/netlocality.jpg'>
+									</p>
+									<div class='span3'>
+										<h6>Gordon, E. and de Souza e Silva, A. (2011). Net Locality: Why Location Matters in a Networked World. New York: Wiley-Blackwell.</h7>
+									</div>
+								</div>
+								<div class='span9 bookDescription'>
+										<h3>									
+											Net Locality analyzes the effect on individuals and societies when everything is located or locatable.
+										</h3>	
+									<ul>
+										<li>
+											Describes net locality as an emerging form of location awareness central to all aspects of digital media, from mobile phones, to Google Maps, to location-based social networks and games, such as Foursquare and Facebook.
+										</li>	
+										<li>
+											Warns of the threats these technologies, such as data surveillance, present to our sense of privacy, while also outlining the opportunities for pro-social developments.
+										</li>	
+										<li>	
+											Provides a theory of the web in the context of the history of emerging technologies, from GeoCities to GPS, Wi-Fi, Wiki Me, and Google Android.
+										</li>	
+									</ul>	
+								</div>
+								
+							</div>
+						<div class='row'>	
+						</div>
+				</div>
+				<div class='row'>
+				</div>	
+				<div class='guidebookBox'>
+						<div class='row'>
+								<div class='span12'>
+									<h2><a href='http://www.amazon.com/News-Literacy-Perspectives-Communication-Journalism/dp/1433115638/ref=sr_1_1?s=books&ie=UTF8&qid=1409167140&sr=1-1&keywords=news+literacy+global+perspectives'>News Literacy: Global Perspectives for the Newsroom and the Classroom</a></h2>	
+								</div>
+						</div>		
+					<div class='row'>
+								<div class='span3'>
+									<p class='bookImage'>
+										<img src='/img/projects/other/newsliteracy.jpg'>
+									</p>
+									<div class='span3'>
+										<h6>Mihailidis, P. (2011). News Literacy: Global Perspectives for the Newsroom and the Classroom. Peter Lang Publishers.</h6>
+									</div>
+								</div>
+								<div class='span9 bookDescription'>
+									<h3>									
+										News Literacy gathers leading scholars, educators, and media makers to explore new approaches to thinking about, examining, and evaluating news media and civic engagement around these fundamental questions: What are the most pressing issues in news, media, and culture in a converged, digital, and global media age?									
+									</h3>
+									<p>
+										What are the best educational practices to foster media literate understanding, engagement, and expression across borders, across cultures, and across divides? The book will prepare future media practitioners (and citizens) to embrace new media environments that can simultaneously empower their craft and their civic voice. This means teaching not only about the various ways new technologies are used and to what end, but also how these tools can enable better engagement with audiences, more dialog with communities, and a more nuanced understanding of how information is processed through new media platforms. Such an approach can empower a more active, collaborative, and empowered information landscape for the digital age.
+									</p>
+							</div>
+						</div>
+				</div>
+				<div class='row'>
+				</div>
+				<div class='guidebookBox'>
+						<div class='row'>
+								<div class='span12'>
+									<h2><a href='http://www.amazon.com/The-Urban-Spectator-Concept-Cities-Interfaces/dp/1584658037'>The Urban Spectator: American Concept-Cities from Kodak to Google</a></h2>	
+								</div>
+						</div>		
+					<div class='row'>
+								<div class='span3'>
+									<p class='bookImage'>
+										<img src='/img/projects/other/urban.jpg'>
+									</p>
+									<div class='span3'>
+										<h6>Gordon, E. (2010). The Urban Spectator: American Concept-cities From Kodak to Google. Hanover, NH: Dartmouth University Press.</h6>
+									</div>
+								</div>
+								<div class='span9 bookDescription'>
+									<h3>
+									The Urban Spectator is a lively and utterly fascinating exploration of the ways in which technologies have influenced our collective conception of the American city, as well as our relationship with urban space and architecture.									
+									</h3>
+									<p>
+										Eric Gordon argues that the city, developing late and in conjunction with a range of modern media, produced a particular way of seeing what he labels &ldquo;possessive spectatorship.&rdquo;
+										Lacking the historical rootedness of European cities, the American city was open to individual interpretation, definition, and ownership. Beginning with the White City of the Chicago World&#39;s Fair of 1893 and the efforts to commodify the concept city through photography, Gordon shows how the American city has always been a product of the collision between the dominant conceptualization, shaped by contemporary media, and the spectator. From the viewfinder of the Kodak camera, to the public display of early cinema, to the speculative desire of network radio, all the way to machine-age utopianism, nostalgia, and America&#39;s &ldquo;rerun&rdquo; culture, the city is an amalgam of practice and concept. All of this comes to a head in the &ldquo;database city&rdquo; where urban spectatorship takes on the characteristics of a Google search. In new urban developments, the spectator searches, retrieves, and combines urban references to construct each experience of the city.
+									</p>
+							</div>
+						</div>
+				</div>		
 			</div>
-			<div id='push'></div>
-   		</div>
-		<?php include '../footer.php' ?>
+        </div>
+     </div>
+			<!-- <div id='push'></div> -->
+			
+   		
 
-    	<!- Los javascripts ->
+    	<!-- Los javascripts -->
     	<script src='/js/libs/lab.js'></script>
     	<script>
     		$LAB
     		.script('/js/libs/jquery.min.js').wait()
 			.script('/js/libs/bootstrap.min.js');
     	</script>
+    <?php include '../footer.php' ?>
   </body>
 </html>
