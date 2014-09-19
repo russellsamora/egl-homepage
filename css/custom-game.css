@@ -22,7 +22,7 @@
   cursor: default;
 }
 #game #pregame .leftHalf {
-  width: 70%;
+  width: 65%;
   float: left;
   background: white;
   height: 100%;
@@ -30,7 +30,7 @@
 }
 #game #pregame .rightHalf {
   color: white;
-  width: 30%;
+  width: 35%;
   background: rgba(255, 86, 34, 0.8);
   float: right;
   height: 100%;
@@ -40,7 +40,7 @@
   display: none;
 }
 #game #pregame .introText {
-  max-width: 800px;
+  max-width: 700px;
   width: 80%;
   margin: 0 auto;
   margin-top: 80px;
