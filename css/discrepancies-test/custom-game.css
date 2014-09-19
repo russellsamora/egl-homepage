@@ -1,0 +1,775 @@
+#game {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 2800px;
+  height: 1000px;
+  margin: 0 auto 0 auto;
+  background: url('../img/office_bg.jpg') no-repeat 0 0;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+}
+#game #pregame {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 80px;
+  z-index: 999;
+  cursor: default;
+}
+#game #pregame .leftHalf {
+  width: 70%;
+  float: left;
+  background: white;
+  height: 100%;
+  color: #999999;
+}
+#game #pregame .rightHalf {
+  color: white;
+  width: 30%;
+  background: rgba(255, 86, 34, 0.8);
+  float: right;
+  height: 100%;
+}
+#game #pregame .rightHalf .loading {
+  text-align: center;
+  display: none;
+}
+#game #pregame .introText {
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+#game #pregame .introText span {
+  font-size: .8em;
+}
+#game #pregame .specialLink {
+  width: 100px;
+  margin: 0 auto;
+  font-weight: 800;
+}
+#game #pregame .playBig {
+  width: 200px;
+  margin: 0 auto;
+  font-size: 4em;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  margin-top: 60px;
+}
+#game #pregame .playBig a {
+  color: white;
+}
+#game #pregame .playBig a:hover {
+  color: #ff916f;
+}
+#game .item {
+  cursor: pointer;
+  z-index: 1;
+}
+#game .person {
+  cursor: pointer;
+  z-index: 2;
+}
+#game .fgPerson {
+  z-index: 5;
+}
+#game .fgItem {
+  z-index: 4;
+}
+#game .hitItem {
+  cursor: pointer;
+  z-index: 4;
+}
+#game #player {
+  z-index: 3;
+  cursor: pointer;
+}
+#game #help,
+#game .denied {
+  display: none;
+  position: fixed;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  margin-left: -240px;
+  margin-top: -80px;
+  width: 480px;
+  z-index: 100;
+}
+#game #help p,
+#game .denied p {
+  color: #ffffff;
+  margin: 10px;
+  font-size: 3em;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0px 0px 3px #555555;
+}
+#game #message {
+  display: none;
+  position: absolute;
+  padding: 0;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid #b1e1e4;
+  width: auto;
+  max-width: 520px;
+}
+#game #message .messageText {
+  color: #ffffff;
+  color: #40b4bc;
+  padding: 10px 10px;
+  margin: 0;
+  cursor: default;
+  font-family: 'Inconsolata', Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 1em;
+  line-height: 1.5;
+}
+#game #message .messageText a {
+  background: #ff5622;
+  padding: 5px;
+  cursor: pointer;
+  letter-spacing: 0;
+  color: white;
+  font-size: .8em;
+}
+#game #message .messageText a.nothanks {
+  margin-left: 10px;
+  background: #d43200;
+}
+#game #message .messageText a.nothanks a:hover{
+  background: black;
+}
+#game #popupBox {
+  display: none;
+  position: fixed;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  margin-left: -320px;
+  margin-top: -150px;
+  width: 640px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid #b1e1e4;
+}
+#game #popupBox p {
+  color: #ffffff;
+  color: #40b4bc;
+  margin: 10px;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+#game #popupBox .bio p {
+  color: #d7f0f1;
+  color: #339096;
+  font-weight: 900;
+  letter-spacing: .2em;
+}
+#game #popupBox .bio p span {
+  font-weight: 100;
+  letter-spacing: .1em;
+}
+#game #popupBox .soundcloud {
+  padding: 10px;
+}
+#game #popupBox .soundcloud p {
+  text-align: center;
+  padding: 2px 0;
+  margin: 0;
+}
+#game #popupBox .soundcloud p a {
+  color: #ff5622;
+}
+#game #popupBox .soundcloud .user {
+  color: #777;
+}
+#game #popupBox .bioImage {
+  width: 96px;
+  border-radius: 48px;
+  margin: 0 10px;
+  float: left;
+}
+#game #popupBox .beginGame {
+  background: #ff5622;
+  color: white;
+  padding: 8px;
+}
+#game #popupBox .gameInstructions {
+  display: none;
+}
+#game #popupBox .wiki p span {
+  font-weight: 700;
+  color: #ff5622;
+}
+#game #challengeBox {
+  display: none;
+  position: fixed;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  margin-left: -360px;
+  margin-top: -150px;
+  width: 720px;
+  max-height: 400px;
+  overflow: auto;
+  z-index: 100;
+  background: rgba(51, 144, 150, 0.85);
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid #b1e1e4;
+}
+#game #challengeBox p {
+  color: #ffffff;
+  color: #40b4bc;
+  margin: 10px;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+#game #challengeBox input.open,
+#game #challengeBox #authorName,
+#game #challengeBox #libName,
+#game #challengeBox #emailName {
+  width: 50%;
+  margin-left: 5px;
+  line-height: 1;
+  color: #ff5622;
+  font-weight: 300;
+  border: none;
+  border-bottom: 1px solid #ff5622;
+  background: none;
+}
+#game #challengeBox input.open:focus,
+#game #challengeBox #authorName:focus,
+#game #challengeBox #libName:focus,
+#game #challengeBox #emailName:focus {
+  outline: none;
+}
+#game #challengeBox input.choice {
+  margin-top: -2px;
+  margin-right: 10px;
+}
+#game #challengeBox input.multiple {
+  width: 20%;
+  margin-left: 5px;
+  line-height: 1;
+  color: #ff5622;
+  font-weight: 300;
+  border: none;
+  border-bottom: 1px solid #ff5622;
+  background: none;
+}
+#game #challengeBox input.multiple:focus {
+  outline: none;
+}
+#game #challengeBox .overLib span {
+  font-weight: 300;
+  color: #ff5622;
+}
+#game #whiteboardCanvas {
+  cursor: crosshair;
+}
+#game #codegame {
+  display: none;
+  position: fixed;
+  padding: 0;
+  top: 200px;
+  left: 50%;
+  margin-left: -320px;
+  width: 640px;
+  z-index: 100;
+  background: rgba(51, 144, 150, 0.85);
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid #b1e1e4;
+}
+#game #codegame p {
+  color: #ffffff;
+  color: #40b4bc;
+  margin: 10px;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+#game #codegame input {
+  width: 50%;
+  margin-left: 5px;
+  line-height: 1;
+  color: #ff5622;
+  font-weight: 300;
+  border: none;
+  border: 1px solid #ff5622;
+  background: none;
+}
+#game #codegame input:focus {
+  outline: none;
+}
+#game #codegame .codegameText {
+  letter-spacing: .2em;
+  font-weight: 500;
+  font-size: 2em;
+  text-align: center;
+}
+#game #codegame .codegameInput {
+  letter-spacing: .2em;
+}
+#game #codegame .codegamePI {
+  text-align: center;
+}
+#game #codegame .codegameTimer {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+#game #codegame .beginCodeGame {
+  background: #ff5622;
+  color: white;
+  padding: 5px;
+  float: right;
+  margin-bottom: 10px;
+}
+#game #codegame .quitcodegame {
+  text-align: right;
+  padding: 5px;
+}
+#game #codegame .quitcodegame a {
+  background: #ff5622;
+  padding: 5px;
+  cursor: pointer;
+  letter-spacing: 0;
+  color: white;
+  font-size: .8em;
+}
+#game #inventoryButton {
+  display: none;
+  z-index: 100;
+  position: fixed;
+  right: 10px;
+  top: 45px;
+}
+#game #inventoryButton p {
+  font-size: 3em;
+}
+#game #inventoryButton p i {
+  background: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 86, 34, 0.8);
+  border: 2px solid white;
+  padding: 5px 5px 0 5px;
+}
+#game #inventoryButton p i:hover {
+  color: #ff5622;
+}
+#game #inventory {
+  display: none;
+  position: fixed;
+  padding: 0;
+  top: 200px;
+  left: 50%;
+  margin-left: -360px;
+  width: 720px;
+  z-index: 100;
+  background: white;
+  border: 4px solid #b1e1e4;
+}
+#game #inventory p {
+  color: #ffffff;
+  color: #40b4bc;
+  margin: 10px;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+#game #inventory p i {
+  padding: 3px;
+}
+#game #inventory p img {
+  border: 2px solid #78cbd1;
+  margin: 7px;
+}
+#game h3,
+#game .h3like {
+  color: #ff5622;
+  font-weight: 700;
+  line-height: 1;
+}
+#game h3 {
+  margin: 10px;
+}
+#game i {
+  color: #ff5622;
+}
+#game .reward {
+  position: fixed;
+  top: 120px;
+  right: 80px;
+  opactiy: 0.3;
+  color: white;
+  font-size: 4em;
+  font-weight: 700;
+  z-index: 100;
+  text-shadow: 0px 0px 3px #555555;
+}
+#game .reward i {
+  color: white;
+  text-shadow: 0px 0px 3px #555555;
+}
+#game .taskcomplete {
+  position: fixed;
+  top: 100px;
+  left: 40px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 3em;
+  font-weight: 700;
+  z-index: 100;
+  text-shadow: 0px 0px 3px #555555;
+}
+#game .discoball {
+  display: none;
+}
+#game .promptCode {
+  display: none;
+  position: fixed;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  width: 300px;
+  z-index: 100;
+  background: rgba(51, 144, 150, 0.85);
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid #b1e1e4;
+}
+#game .promptCode p {
+  color: #ffffff;
+  color: #40b4bc;
+  margin: 10px;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+#game .promptCode input {
+  width: 95%;
+  margin-left: 5px;
+  line-height: 1;
+  color: #ff5622;
+  font-weight: 300;
+  border: none;
+  border-bottom: 1px solid #ff5622;
+  background: none;
+}
+#game .promptCode input:focus {
+  outline: none;
+}
+#game .promptCode p.unlockButton {
+  cursor: pointer;
+  font-size: .9em;
+  background: #ff5622;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+  width: 35%;
+  text-align: center;
+  float: right;
+}
+#game .promptCode p.closeButton {
+  cursor: pointer;
+  font-size: .9em;
+  background: #ff5622;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+  width: 30%;
+  text-align: center;
+  float: left;
+}
+#game .otherLibs {
+  display: none;
+  position: fixed;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  margin-left: -320px;
+  margin-top: -150px;
+  width: 640px;
+  z-index: 100;
+  background: rgba(51, 144, 150, 0.85);
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid #b1e1e4;
+}
+#game .otherLibs p {
+  color: #ffffff;
+  color: #40b4bc;
+  margin: 10px;
+  font-size: 1.3em;
+  font-weight: 100;
+  cursor: pointer;
+}
+#game .otherLibs .libList h4 {
+  padding: 0;
+  margin: 0;
+  color: #78cbd1;
+  line-height: 1;
+  padding: 10px 0 0 10px;
+}
+#game .otherLibs .libList p {
+  float: left;
+}
+#game .otherLibs .libList p span {
+  font-weight: 700;
+  color: #ff5622;
+}
+#game .otherLibs p.closeLibs {
+  cursor: pointer;
+  float: right;
+  font-size: .9em;
+  background: #ff5622;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+  width: 15%;
+  text-align: center;
+  clear: both;
+}
+#game .otherLibs p.backLibs {
+  display: none;
+  cursor: pointer;
+  float: right;
+  font-size: .9em;
+  background: #ff5622;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+  width: 15%;
+  text-align: center;
+  clear: both;
+}
+#game .otherLibs .currentLib {
+  max-height: 400px;
+  overflow: auto;
+}
+#game #helpArrows .rightArrow {
+  position: fixed;
+  top: 50%;
+  margin-top: -10px;
+  right: 20px;
+  font-size: 3em;
+  z-index: 100;
+  opacity: .8;
+  pointer-events: none;
+}
+#game #helpArrows .rightArrow i {
+  color: white;
+}
+#game #helpArrows .downArrow {
+  color: white;
+  position: fixed;
+  left: 50%;
+  margin-left: -10px;
+  bottom: -40px;
+  font-size: 3em;
+  z-index: 100;
+  opacity: .8;
+  pointer-events: none;
+}
+#game #helpArrows .downArrow i {
+  color: white;
+}
+#cover {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  background: rgba(0, 0, 0, 0.3);
+}
+#blogTease {
+  z-index: 998;
+  background: rgba(50, 50, 50, 0.8);
+  position: fixed;
+  margin: 0;
+  padding-right: 20px;
+  top: 80px;
+  right: 0;
+  display: none;
+  width: 300px;
+  color: #ffffff;
+}
+#blogTease h4 {
+  margin: 10px 0;
+}
+#blogTease ul {
+  margin: 0 0 0 25px;
+}
+#blogTease ul li {
+  list-style: none;
+  margin: 0;
+}
+#blogTease a {
+  text-decoration: none;
+}
+#blogTease p {
+  margin: 5px 0 20px 0;
+  font-size: 1em;
+}
+#nongame {
+  margin: 20px 0 0 0;
+}
+#nongame .row-fluid {
+  border: 2px solid #ffffff;
+}
+#nongame .row-fluid .span4 {
+  color: #ffffff;
+  height: 70px;
+  background: #999999;
+  cursor: pointer;
+}
+#nongame .row-fluid .span4 p {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+#nongame .row-fluid .span4 p a {
+  color: #ffffff;
+  display: block;
+  padding: 20px;
+}
+#nongame .row-fluid .projectsLink {
+  background: #78cbd1;
+}
+#nongame .row-fluid .researchLink {
+  background: #40b4bc;
+}
+#nongame .row-fluid .aboutLink {
+  background: #339096;
+}
+#nongame .row-fluid .blogLink {
+  background: #266b70;
+}
+#nongameH {
+  display: none;
+}
+#nongameH p {
+  font-weight: 100;
+  color: #ffffff;
+}
+#nongameH p span {
+  font-weight: 700;
+}
+.devDirtyBound {
+  background: rgba(0, 0, 255, 0.3);
+}
+.devHitBoundP {
+  background: rgba(255, 255, 0, 0.4);
+}
+#cloud0 {
+  -webkit-animation: 20s cloudZero infinite linear;
+  background-position-x: -85px;
+}
+@-webkit-keyframes cloudZero {
+  from {
+    background-position-x: -85px;
+  }
+  to {
+    background-position-x: 193px;
+  }
+}
+#cloud1 {
+  -webkit-animation: 20s cloudOne infinite linear 30s;
+  background-position-x: -85px;
+}
+@-webkit-keyframes cloudOne {
+  from {
+    background-position-x: -85px;
+  }
+  to {
+    background-position-x: 193px;
+  }
+}
+#cloud2 {
+  background-position-x: -85px;
+  -webkit-animation: 20s cloudTwo infinite linear 60s;
+}
+@-webkit-keyframes cloudTwo {
+  from {
+    background-position-x: -85px;
+  }
+  to {
+    background-position-x: 193px;
+  }
+}
+#cloud3 {
+  background-position-x: -85px;
+  -webkit-animation: 20s cloudThree infinite linear 90s;
+}
+@-webkit-keyframes cloudThree {
+  from {
+    background-position-x: -85px;
+  }
+  to {
+    background-position-x: 193px;
+  }
+}
+.offscreen {
+  display: none;
+}
+#challengeBox .nextSlide,
+#challengeBox .saveLib {
+  background: #ff5622;
+  color: white;
+  padding: 5px;
+  float: right;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  #game,
+  #pregame,
+  #blogTease,
+  #nongameH,
+  #helpArrows,
+  #displayArrows {
+    display: none;
+  }
+  #nongame {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    overflow: hidden;
+  }
+  #nongame {
+    display: none;
+  }
+}
+@media (max-height: 540px) and (min-width: 768px) {
+  #game,
+  #pregame,
+  #blogTease,
+  #nongame,
+  #helpArrows,
+  #displayArrows {
+    display: none;
+  }
+  #nongameH {
+    display: block;
+  }
+  body {
+    background: #78cbd1;
+  }
+}
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+}
+.centerText {
+  text-align: center;
+}
+.redify {
+  color: #ff5622;
+}
