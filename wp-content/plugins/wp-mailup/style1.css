@@ -1,0 +1,41 @@
+﻿#subscribeForm {
+}
+#subscribeForm fieldset{
+	width: 200px;
+	margin:10px 0;
+	border:1px solid #DDD;
+	background-color: #ECECEC;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#F9F9F9), to(#ECECEC)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #F9F9F9, #ECECEC); /* Chrome 10+, Saf5.1+ */
+	background-image: -moz-linear-gradient(top, #F9F9F9, #ECECEC); /* FF3.6+ */
+	background-image: -ms-linear-gradient(top, #F9F9F9, #ECECEC); /* IE10 */
+	background-image: -o-linear-gradient(top, #F9F9F9, #ECECEC); /* Opera 11.10+ */
+	background-image: linear-gradient(top, #F9F9F9, #ECECEC); /* W3C */
+}
+#subscribeForm input[type=text]{
+	width: 170px;
+	height: 18px;
+}
+#subscribeForm input[type=submit]{
+	border:1px solid #555;
+	color:#fff;
+	background-color:#888;
+	cursor:pointer;
+	text-transform:uppercase;
+	font-weight:bold;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+#subscribeForm p {
+	padding:0;
+	margin: 0 10px 10px 10px;
+}
+#subscribeForm h3 {
+	padding:0;
+	margin: 10px 0 0 10px;
+	font-size: 12px;
+}
+#subscribeForm fieldset img {
+	margin-left: 10px;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name='viewport' content='initial-scale=1.0, user-scalable=no' />
+		<title>DSNI Touch</title>
+		<link href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+		<link type='text/css' rel='stylesheet' href='../css/base.css'></link>
+		<link type='text/css' rel='stylesheet' href='../css/globals.css'></link>
+		<link type='text/css' rel='stylesheet' href='../css/screensaver.css'></link>
+	</head>
+	<body>
+		<div id='touch'></div>
+		<div class='boundary'></div>
+		<div class='container'>
+			<div id='mbta'>
+				<div class='heading'>Bus Schedule</div>
+				<div class='east stop'>
+					<div class='animatedBusLeft'></div>
+					<h3 class='stopName'>Dudley St &amp; East Cottage St</h3>
+					<div class='stop1484'>
+						<div class='bus bus15'>
+							<p class='data'>
+								<span class='route'>15</span>
+								<!-- <i class='prediction fa fa-clock-o'></i> -->
+								<span class='prediction minutes'></span>
+								<span class='prediction postMin'> min</span>
+								<span class='noPrediction'>no buses</span>
+							</p>
+							<p class='stationP'>
+								to <br>
+								<span class='station'></span>
+							</p>
+						</div>
+							<div class='bus bus41'>
+							<p class='data'>
+								<span class='route'>41</span>
+								<!-- <i class='prediction fa fa-clock-o'></i> -->
+								<span class='prediction minutes'></span>
+								<span class='prediction postMin'> min</span>
+								<span class='noPrediction'>no buses</span>
+							</p>
+							<p class='stationP'>
+								to <br>
+								<span class='station'></span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class='west stop'>
+					<div class='animatedBusRight'></div>
+					<h3 class='stopName'>Dudley St &amp; West Cottage St</h3>
+					<div class='stop1499'>
+						<div class='bus bus15'>
+							<p class='data'>
+								<span class='route'>15</span>
+								<!-- <i class='prediction fa fa-clock-o'></i> -->
+								<span class='prediction minutes'></span>
+								<span class='prediction postMin'> min</span>
+								<span class='noPrediction'>no buses</span>
+							</p>
+							<p class='stationP'>
+								to <br>
+								<span class='station'></span>
+							</p>
+						</div>
+							<div class='bus bus41'>
+							<p class='data'>
+								<span class='route'>41</span>
+								<!-- <i class='prediction fa fa-clock-o'></i> -->
+								<span class='prediction minutes'></span>
+								<span class='prediction postMin'> min</span>
+								<span class='noPrediction'>no buses</span>
+							</p>
+							<p class='stationP'>
+								to <br>
+								<span class='station'></span>
+							</p>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class='bg'></div>
+			<div class='slideshow'>
+			</div>
+			<div class='touchLeft'>
+				<img src='../img/screensaver/touch.png'>
+				<p class='languages'>
+					<span class='english'>TOUCH TO BEGIN</span>
+					<span class='spanish'>TOCA PARA EMPEZAR</span>
+					<span class='portuguese'>TOCAR PARA COME&Ccedil;AR</span>
+				</p>
+			</div>
+		</div>
+		<div class='logos'></div>
+		<script src='../js/libs/jquery.min.js'></script>
+		<script src='../js/libs/xmltojson.js'></script>
+		<script src='../js/libs/transit.js'></script>
+		<script src='../js/mbta.js'></script>
+		<script src='../js/screensaver.js'></script>
+
+<script>
+	
+	window.oncontextmenu = function() {
+		return false;
+	};
+
+	function RightClickDisable(keyp)
+	{
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) //Google chrome browser
+		{return false; }
+		if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) //Microsoft IE browser
+		{return false; }
+	}
+	document.onmousedown = RightClickDisable;
+
+	var image1 = new Image();
+	image1.src = 'url(../img/screensaver/popup.png)';
+
+	var image2 = new Image();
+	image2.src = 'url(../img/screensaver/popup2.png)';
+
+	var Touch = document.getElementById('touch');
+	
+	var busText = document.getElementById('mbta');
+	busText.style.zoom = Touch.offsetHeight/busText.offsetHeight - (0.1);
+	
+	function showInfo()
+	{
+		var inf = document.createElement('div');
+		inf.style.position = 'absolute';
+		inf.style.height = '100%';
+		inf.style.width = '100%';
+		inf.style.backgroundColor = '#fff';
+		inf.style.backgroundImage = 'url(../img/screensaver/popup.png)';
+		inf.style.backgroundSize = 'contain';
+		inf.style.backgroundRepeat = 'no-repeat';
+		inf.style.backgroundPosition = 'center';
+		inf.style.zIndex = 5;
+		Touch.appendChild(inf);
+
+		inf.closeTime = 300;
+
+		inf.fadeOut = function()
+		{
+			inf.closeTime -= 1;
+			inf.style.opacity = Math.min(1,inf.closeTime/25);
+			if (inf.closeTime <= 0)
+			{
+				Touch.removeChild(inf);
+				inf.fadeOut = function(){};
+			}
+			setTimeout(function(){inf.fadeOut()},33);
+		}
+		inf.fadeOut();
+
+		inf.onclick = function()
+		{
+			inf.closeTime += 50;
+
+			tap = document.createElement('div');
+			tap.style.position = 'absolute';
+			tap.style.height = '100%';
+			tap.style.width = '100%';
+			tap.style.backgroundColor = '#fff';
+			tap.style.backgroundImage = 'url(../img/screensaver/popup2.png)';
+			tap.style.backgroundSize = 'contain';
+			tap.style.backgroundRepeat = 'no-repeat';
+			tap.style.backgroundPosition = 'center';
+			tap.style.zIndex = 6;
+			Touch.appendChild(tap);
+
+			tap.closeTime = 50;
+
+			tap.fadeOut = function()
+			{
+				tap.closeTime -= 1;
+				tap.style.opacity = Math.min(1,tap.closeTime/25);
+				if (tap.closeTime <= 0)
+				{
+					Touch.removeChild(tap);
+					tap.fadeOut = function(){};
+				}
+				setTimeout(function(){tap.fadeOut()},33);
+			}
+			tap.fadeOut();
+		}
+		
+	}
+	touch.onclick = function()
+	{
+		showInfo();
+	}
+</script>
+
+	</body>
+</html>

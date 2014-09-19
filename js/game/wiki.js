@@ -1,6 +1,6 @@
 (function(){
     var _currentBlurb = null,
-        _nextBlurb = 'Hi I am Rob! I love facts.  If you click me, I might give you one.',
+        _nextBlurb = 'Hi, I am Rob! I love facts.  If you click me, I might give you one.',
         _baseUrl = 'http://en.wikipedia.org/w/api.php?',
         _sentEmail = false;
 
@@ -90,7 +90,7 @@
 
     function _sendEmail() {
         if(_currentBlurb.length <= 144 && !_sentEmail) {
-            if(_currentBlurb !== 'Hi I am Rob! I love facts.  If you click me, I might give you one.') {
+            if(_currentBlurb !== 'Hi, I am Rob! I love facts.  If you click me, I might give you one.') {
                 _sentEmail = true;
                 var fixedBlurb = _currentBlurb.replace(/\\/g, '');
                 $.post('/db/email.php', {fact: fixedBlurb}); 

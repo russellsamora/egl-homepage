@@ -22,7 +22,7 @@
   cursor: default;
 }
 #game #pregame .leftHalf {
-  width: 50%;
+  width: 65%;
   float: left;
   background: white;
   height: 100%;
@@ -30,9 +30,9 @@
 }
 #game #pregame .rightHalf {
   color: white;
-  width: 50%;
+  width: 35%;
   background: rgba(255, 86, 34, 0.8);
-  float: left;
+  float: right;
   height: 100%;
 }
 #game #pregame .rightHalf .loading {
@@ -40,7 +40,7 @@
   display: none;
 }
 #game #pregame .introText {
-  max-width: 500px;
+  max-width: 700px;
   width: 80%;
   margin: 0 auto;
   margin-top: 80px;
@@ -143,6 +143,9 @@
 #game #message .messageText a.nothanks {
   margin-left: 10px;
   background: #d43200;
+}
+#game #message .messageText a.nothanks a:hover{
+  background: black;
 }
 #game #popupBox {
   display: none;
@@ -549,7 +552,7 @@
   max-height: 400px;
   overflow: auto;
 }
-#helpArrows .rightArrow {
+#game #helpArrows .rightArrow {
   position: fixed;
   top: 50%;
   margin-top: -10px;
@@ -559,10 +562,10 @@
   opacity: .8;
   pointer-events: none;
 }
-#helpArrows .rightArrow i {
+#game #helpArrows .rightArrow i {
   color: white;
 }
-#helpArrows .downArrow {
+#game #helpArrows .downArrow {
   color: white;
   position: fixed;
   left: 50%;
@@ -573,7 +576,7 @@
   opacity: .8;
   pointer-events: none;
 }
-#helpArrows .downArrow i {
+#game #helpArrows .downArrow i {
   color: white;
 }
 #cover {
@@ -726,7 +729,8 @@
   #pregame,
   #blogTease,
   #nongameH,
-  #displayArows {
+  #helpArrows,
+  #displayArrows {
     display: none;
   }
   #nongame {
@@ -746,6 +750,7 @@
   #pregame,
   #blogTease,
   #nongame,
+  #helpArrows,
   #displayArrows {
     display: none;
   }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gala</title>
+        <style>
+            html,body {
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                background: #fff no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+     <script src='../js/jquery-2.0.3.min.js'></script>
+     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script>
+        (function() {
+            var ready = false;
+
+            var dataRef = new Firebase("https://gala.firebaseio.com"),
+                listRef = dataRef.child('pictures');
+            
+            listRef.on('child_added', function(snapshot) {
+                if(ready) {
+                    var data = snapshot.val();
+                    for(var p in data) {
+                        var file = data[p].file;
+                        getPicture(file);
+                    }
+                }
+            });
+
+            function getPicture(file) {
+                var img = new Image();
+                img.onload = function() {
+                    $('img').attr('src', img.src);
+                    $('html').css({
+                        background: 'url(' + img.src + ') no-repeat center center fixed'
+                    });
+                };
+                img.src = '../img/' + file;
+            }
+            //wait for all pics to load first...
+            setTimeout(function() {
+                ready = true;
+            }, 5000);
+        })();
+    </script>
+</html>

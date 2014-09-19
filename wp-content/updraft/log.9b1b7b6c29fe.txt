@@ -1,0 +1,108 @@
+0000.000 Opened log file at time: Tue, 19 Feb 2013 19:52:24 +0000
+0000.001 UpdraftPlus: 1.4.13 WordPress: 3.2.1 PHP: 5.2.17 (Linux p3nlhg277.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64) PHP Max Execution Time: 900 ZipArchive::addFile exists: Y
+0000.044 Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.045 Processed schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.052 Backup run: resumption=0, nonce=9b1b7b6c29fe, begun at=1361303544
+0000.052 Scheduling a resumption (1) in case this run gets aborted
+0000.054 Creation of backups of directories: beginning
+0000.056 Beginning creation of dump of plugins
+0006.472 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-plugins.zip.tmp: 100 files added (size: 290.7 Kb)
+0008.686 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-plugins.zip.tmp: 200 files added (size: 769.5 Kb)
+0011.771 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-plugins.zip.tmp: 300 files added (size: 1320.7 Kb)
+0014.706 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-plugins.zip.tmp: 400 files added (size: 2202.1 Kb)
+0017.009 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-plugins.zip.tmp: 500 files added (size: 2320.5 Kb)
+0023.402 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-plugins.zip.tmp: 600 files added (size: 2539.6 Kb)
+0027.078 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-plugins.zip.tmp: 700 files added (size: 3116.1 Kb)
+0038.820 Created plugins zip - file size is 32668.6 Kb in 38.7 s (843.3 Kb/s)
+0038.827 Beginning creation of dump of themes
+0045.281 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-themes.zip.tmp: 100 files added (size: 1273.6 Kb)
+0052.313 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-themes.zip.tmp: 200 files added (size: 2421.9 Kb)
+0057.331 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-themes.zip.tmp: 300 files added (size: 3144.1 Kb)
+0060.817 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-themes.zip.tmp: 400 files added (size: 3392.2 Kb)
+0063.469 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-themes.zip.tmp: 500 files added (size: 3621 Kb)
+0066.428 Created themes zip - file size is 6627.5 Kb in 27.6 s (240.2 Kb/s)
+0066.432 Beginning creation of dump of uploads
+0070.207 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-uploads.zip.tmp: 100 files added (size: 5720.8 Kb)
+0073.709 Zip: backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-uploads.zip.tmp: 200 files added (size: 9798.5 Kb)
+0078.592 Created uploads zip - file size is 18023.1 Kb in 12.1 s (1483.5 Kb/s)
+0078.598 Beginning backup of other directories found in the content directory
+0078.599 Looking for candidates to back up in: /home/content/31/6483931/html/wp-content
+0078.603 others: themes: skipping: this is the themes directory
+0078.604 others: index.php: skipping: excluded by options
+0078.605 others: plugins: skipping: this is the plugins directory
+0078.606 others: uploads: skipping: this is the uploads directory
+0078.606 others: upgrade: skipping: excluded by options
+0078.607 others: updraft: skipping: this is the updraft directory
+0078.611 No backup of other directories: there was nothing found to back up
+0078.616 Beginning creation of database dump
+0078.631 Table wp_commentmeta: Total rows added: 0 in 0.00 seconds
+0078.635 Table wp_commentmeta: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_commentmeta.table.gz)
+0078.659 Table wp_comments: Total rows added: 13 in 0.01 seconds
+0078.662 Table wp_comments: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_comments.table.gz)
+0078.677 Table wp_customcontactforms_field_options: Total rows added: 5 in 0.00 seconds
+0078.680 Table wp_customcontactforms_field_options: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_field_options.table.gz)
+0078.702 Table wp_customcontactforms_fields: Total rows added: 10 in 0.01 seconds
+0078.706 Table wp_customcontactforms_fields: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_fields.table.gz)
+0078.719 Table wp_customcontactforms_forms: Total rows added: 1 in 0.01 seconds
+0078.724 Table wp_customcontactforms_forms: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_forms.table.gz)
+0078.743 Table wp_customcontactforms_styles: Total rows added: 0 in 0.01 seconds
+0078.747 Table wp_customcontactforms_styles: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_styles.table.gz)
+0078.760 Table wp_customcontactforms_user_data: Total rows added: 2 in 0.00 seconds
+0078.762 Table wp_customcontactforms_user_data: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_user_data.table.gz)
+0078.778 Table wp_gabeni: Total rows added: 11 in 0.00 seconds
+0078.781 Table wp_gabeni: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_gabeni.table.gz)
+0078.805 Table wp_gabeni_backups: Total rows added: 0 in 0.00 seconds
+0078.810 Table wp_gabeni_backups: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_gabeni_backups.table.gz)
+0078.829 Table wp_links: Total rows added: 7 in 0.01 seconds
+0078.837 Table wp_links: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_links.table.gz)
+0078.884 Table wp_mail_list_table: Total rows added: 3 in 0.00 seconds
+0078.891 Table wp_mail_list_table: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_mail_list_table.table.gz)
+0078.958 Table wp_options: Total rows added: 289 in 0.05 seconds
+0078.964 Table wp_options: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_options.table.gz)
+0079.001 Table wp_postmeta: Total rows added: 274 in 0.02 seconds
+0079.005 Table wp_postmeta: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_postmeta.table.gz)
+0079.224 Table wp_posts: Total rows added: 437 in 0.21 seconds
+0079.234 Table wp_posts: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_posts.table.gz)
+0079.261 Table wp_term_relationships: Total rows added: 11 in 0.01 seconds
+0079.267 Table wp_term_relationships: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_term_relationships.table.gz)
+0079.289 Table wp_term_taxonomy: Total rows added: 4 in 0.01 seconds
+0079.295 Table wp_term_taxonomy: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_term_taxonomy.table.gz)
+0079.321 Table wp_terms: Total rows added: 4 in 0.01 seconds
+0079.325 Table wp_terms: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_terms.table.gz)
+0079.352 Table wp_usermeta: Total rows added: 41 in 0.01 seconds
+0079.356 Table wp_usermeta: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_usermeta.table.gz)
+0079.389 Table wp_users: Total rows added: 2 in 0.01 seconds
+0079.460 Table wp_users: finishing file (backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_users.table.gz)
+0079.474 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_commentmeta.table.gz: adding to final database dump
+0079.481 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_comments.table.gz: adding to final database dump
+0079.490 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_field_options.table.gz: adding to final database dump
+0079.497 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_fields.table.gz: adding to final database dump
+0079.504 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_forms.table.gz: adding to final database dump
+0079.509 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_styles.table.gz: adding to final database dump
+0079.516 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_customcontactforms_user_data.table.gz: adding to final database dump
+0079.523 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_gabeni.table.gz: adding to final database dump
+0079.529 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_gabeni_backups.table.gz: adding to final database dump
+0079.535 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_links.table.gz: adding to final database dump
+0079.540 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_mail_list_table.table.gz: adding to final database dump
+0079.546 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_options.table.gz: adding to final database dump
+0079.571 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_postmeta.table.gz: adding to final database dump
+0079.586 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_posts.table.gz: adding to final database dump
+0079.701 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_term_relationships.table.gz: adding to final database dump
+0079.726 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_term_taxonomy.table.gz: adding to final database dump
+0079.733 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_terms.table.gz: adding to final database dump
+0079.742 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_usermeta.table.gz: adding to final database dump
+0079.755 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db-table-wp_users.table.gz: adding to final database dump
+0079.771 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db.gz: finished writing out complete database file (192 Kb)
+0079.831 Total database tables backed up: 19
+0079.835 Saving backup history
+0079.842 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0079.843 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0079.845 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0079.847 backup_2013-02-19-1952_Engagement_Game_Lab_9b1b7b6c29fe-db.gz: db: This file has not yet been successfully uploaded: will queue
+0079.849 Requesting backup of the files that were not successfully uploaded
+0079.850 Cloud backup selection: 
+0079.861 Beginning dispatch of backup to remote
+0079.862 Resume backup (9b1b7b6c29fe, 0): finish run
+0079.864 There were no errors in the uploads, so the 'resume' event is being unscheduled
+0079.868 No email will/can be sent - the user has not configured an email address.
+0079.868 The backup apparently succeeded and is now complete

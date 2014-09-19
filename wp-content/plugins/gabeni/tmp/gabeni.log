@@ -1,0 +1,1156 @@
+[2013-02-20 01:04:20] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg1030.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361322000,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 01:04:21] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 01:04:21 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 01:04:21] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 01:04:21 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 01:04:21] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 02:05:10] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg1030.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361329200,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 02:05:10] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 02:05:10 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 02:05:10] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 02:05:10 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 02:05:10] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 03:21:32] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg277.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361332800,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 03:21:33] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 03:21:33 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 03:21:33] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 03:21:33 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 03:21:33] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 04:21:45] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg275.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361336400,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 04:21:46] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 04:21:46 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 04:21:46] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 04:21:46 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 04:21:46] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 06:08:13] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg273.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361343600,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 06:08:14] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 06:08:14 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 06:08:14] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 06:08:14 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 06:08:14] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 07:01:18] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg275.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361347200,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 07:01:19] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 07:01:19 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 07:01:19] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 07:01:19 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 07:01:19] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 08:22:23] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg275.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361350800,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 08:22:23] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 08:22:23 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 08:22:23] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 08:22:23 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 08:22:23] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 09:01:27] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg275.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361354400,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 09:01:28] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 09:01:28 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 09:01:28] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 09:01:28 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 09:01:28] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 10:21:37] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg275.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361358000,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 10:21:38] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 10:21:38 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 10:21:38] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 10:21:38 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 10:21:38] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 11:33:16] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg1030.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361361600,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 11:33:16] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 11:33:16 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 11:33:16] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 11:33:16 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 11:33:16] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 12:00:16] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg273.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361365200,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 12:00:16] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 12:00:16 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 12:00:16] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 12:00:16 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 12:00:17] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 13:02:23] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg273.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361368800,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 13:02:25] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 13:02:25 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 13:02:25] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 13:02:25 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 13:02:25] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 14:01:04] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg275.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361372400,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 14:01:05] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 14:01:05 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 14:01:05] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 14:01:05 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 14:01:05] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 15:00:30] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg273.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361376000,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 15:00:31] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 15:00:31 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 15:00:31] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 15:00:31 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 15:00:31] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 16:00:43] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg273.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361379600,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 16:00:44] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 16:00:44 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 16:00:44] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 16:00:44 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 16:00:44] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 17:00:59] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg273.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361383200,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 17:01:00] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 17:01:00 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 17:01:00] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 17:01:00 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 17:01:00] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No
+[2013-02-20 18:00:15] {}: array (
+  'key' => '5123d1250b9c95123d1250ba53',
+  'customer_id' => '5123d1250bb01',
+  'site_id' => '165375',
+  'call_type' => 'quota',
+  'uname' => 'Linux p3nlhg275.shr.prod.phx3.secureserver.net 2.6.32-279.19.1.el6.x86_64 #1 SMP Wed Dec 19 07:05:20 UTC 2012 x86_64',
+  'sapi' => 'cgi-fcgi',
+  'settings' => 
+  array (
+    'last_response' => 'Success',
+    'has_account' => '1',
+    'claims_has_account' => '0',
+    'gabeni_action_status' => '',
+    'backup_frequency' => 'manual',
+    'last_store' => 'Error occured during upload: Problem storing backup.<br>Please contact support.',
+    'rotate' => '1',
+    'show_footer_link' => '0',
+    'next_daily' => 1361408400,
+    'next_hourly' => 1361386800,
+    'doing_cron' => 1,
+  ),
+)
+[2013-02-20 18:00:16] {}: Response: array (
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 18:00:16 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'body' => 'a:2:{s:6:"status";b:1;s:6:"reason";a:3:{s:5:"total";s:9:"104857600";s:4:"used";N;s:4:"free";i:104857600;}}',
+  'response' => 
+  array (
+    'code' => 200,
+    'message' => 'OK',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'filename' => NULL,
+)
+[2013-02-20 18:00:16] {}: Final response:array (
+  'status' => true,
+  'reason' => 'Success',
+  'headers' => 
+  array (
+    'date' => 'Wed, 20 Feb 2013 18:00:16 GMT',
+    'server' => 'Apache/2.2.16 (Debian)',
+    'x-powered-by' => 'PHP/5.3.3-7+squeeze14',
+    'vary' => 'Accept-Encoding',
+    'content-length' => '106',
+    'connection' => 'close',
+    'content-type' => 'text/html; charset=utf-8',
+  ),
+  'cookies' => 
+  array (
+  ),
+  'data' => 
+  array (
+    'total' => '104857600',
+    'used' => NULL,
+    'free' => 104857600,
+  ),
+)
+[2013-02-20 18:00:16] {}: Got quota information: Total: 104857600 Used:  Free: 104857600 Paying: No

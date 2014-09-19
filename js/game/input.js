@@ -53,7 +53,12 @@
 						$game.showGameInstructions();
 					}
 				} else if(key === 'nothanks') {
-					$('#message').hide();
+					//$('#message').hide();
+					$game.hideMessage();
+				} else if(key === 'reset') {
+					$game.resetGame();
+					//$('#message').hide();
+					$game.hideMessage();
 				} else {
 					$game.people.showBioCard(key);	
 				}
@@ -110,6 +115,7 @@
 				$game.people.showingBio = false;
 			}
 			if(!$game.player.inTransit && $game.playing && $game.started && !_preventMovement) {
+				var playerOffsetX = $game.player.offset.x;
 				e.preventDefault();
 				//hide message boxes
 				$game.hideMessage();
@@ -117,12 +123,12 @@
 				if(e.pageY < WALL_HEIGHT + NAVBAR_HEIGHT + 5) { return false; }
 				// if(e.pageY > GAMEBOARD_HEIGHT + NAVBAR_HEIGHT - $game.player.offset.y) { return false; }
 				if(e.pageY > GAMEBOARD_HEIGHT + NAVBAR_HEIGHT) { return false; }
-				if(e.pageX <  $game.player.offset.x) { return false; }
-				if(e.pageX > GAMEBOARD_WIDTH - $game.player.offset.x) { return false; }
+				if(e.pageX <  playerOffsetX) { return false; }
+				if(e.pageX > GAMEBOARD_WIDTH - playerOffsetX) { return false; }
 
 				// var y = e.pageY - $game.player.offset.y,
 				var y = e.pageY - $game.player.h - $game.player.offset.y,
-					x = e.pageX - $game.player.offset.x;
+					x = e.pageX - playerOffsetX;
 
 				var input = {
 					x: x,

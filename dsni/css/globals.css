@@ -1,0 +1,47 @@
+
+@font-face {
+    font-family: 'ostrich_sansblack';
+    src: url('font/ostrichsans-black-webfont.eot');
+    src: url('font/ostrichsans-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/ostrichsans-black-webfont.woff') format('woff'),
+         url('font/ostrichsans-black-webfont.ttf') format('truetype'),
+         url('font/ostrichsans-black-webfont.svg#ostrich_sansblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;	
+}
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Helvetica, sans-serif;
+	color: #333;
+	background: #fff;
+	position: relative;
+}
+
+h1,h2,h3,h4 {
+	font-family: 'ostrich_sansblack', sans-serif;
+}
+
+.container {
+	margin-top: 20px;
+}
+
+.boundary {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 0px dashed rgba(50,50,50,0.2);
+}
+
+.container .homeMenu {
+	float: right;
+}

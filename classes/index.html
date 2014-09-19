@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>vm402</title>
+<style type="text/css">
+<!--
+body {
+	background: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;
+	line-height: 1.4;
+}
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing block. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the blocks, instead of the block elements themselves, gets rid of any box model math. A nested block with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #0000FF;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #FF0000;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+/* ~~ This fixed width container surrounds all other blocks ~~ */
+.container {
+	width: 960px;
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+/* ~~ The header is not given a width. It will extend the full width of your layout. ~~ */
+header {
+	background-color: #FFFFFF;
+}
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the block elements. The elements within these blocks have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the block itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the block element and place a second block element within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a block set to float right). Many times, padding can be used instead. For blocks where this rule must be broken, you should add a "display:inline" declaration to the block element's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar blocks could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the left instead of the right, simply float these columns the opposite direction (all left instead of all right) and they'll render in reverse order. There's no need to move the blocks around in the HTML source.
+
+*/
+.sidebar1 {
+	float: right;
+	width: 180px;
+	padding-bottom: 10px;
+	background-color: #CCCCCC;
+}
+.content {
+	padding: 10px 0;
+	width: 780px;
+	float: right;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol {
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+nav ul {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+nav ul li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+}
+nav ul a, nav ul a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background-color: #C6D800;
+}
+nav ul a:hover, nav ul a:active, nav ul a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	color: #FFF;
+	background-color: #CCCCFF;
+}
+
+/* ~~ The footer ~~ */
+footer {
+	padding: 10px 0;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+	background-color: #CCCCCC;
+}
+
+/*HTML 5 support - Sets new HTML 5 tags to display:block so browsers know how to render the tags properly. */
+header, section, footer, aside, nav, article, figure {
+	display: block;
+}
+.container .content section table tr td {
+	font-family: Verdana, Geneva, sans-serif;
+}
+-->
+</style><!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--></head>
+
+<body bgcolor="#EDEDED" vlink="#FF3700">
+
+<div class="container">
+  <header><img src="../../../_Engagement Game Lab/Images/EGL logos/EGL.png" width="300" height="74">
+   
+  </header>
+  <div class="sidebar1">
+    <nav>
+      <ul>
+        <li><a href="#">Tumblr </a></li>
+        <li><a href="#">resources</a></li>
+        <li><a href="#">other</a></li>
+        <li><a href="#">other</a></li>
+      </ul>
+    </nav>
+    <aside>
+      <p> This class satisfies the seminar requirements within the department of visual and media arts at Emerson College. It is taught in conjunction with the Engagement Game Lab and seeks to advance the possibilities of working with media to enhance our urban environments.</p>
+    </aside>
+  <!-- end .sidebar1 --></div>
+  <article class="content">
+    <h1>VM303: Ubiquitous Media</h1>
+    <section>
+     <h2>about the class</h2>
+      <p>This class  will examine how mobile devices and location awareness are transforming media consumption and production, and as a consequence, transforming interpersonal communication, community organization and political boundaries in the city.&nbsp; We will look at the convergence of location technologies and mobile computing over the last decade and identify the various genres that have emerged, including augmented reality, alternate reality games, location-based social networks, and location-based annotations.&nbsp; The class will focus on how these genres are creating new cultural norms for communicating in public spaces, as well as opening up new opportunities for protest and organization, especially in the developing world.</p>
+      <p>The laboratory piece of this class will involve observations and experimentation in the urban environment of Boston. It will be our goal to understand how to transform city space through play, performance, networks and tools. The class will result in a design book and website that will function as a record of the knowledge produced during the semester with the intention of sharing widely.</p>
+    </section><section></section>
+    <section>
+      <h2>assignments</h2>
+      <p><strong>Urban Augmentation (15%)</strong><br>
+      <em>Urban spaces are composed of flows of people and things. There are patterns and habits that come to define every space. Using signage, screens and/or performance, create a change in how people occupy space. The augmentations should be documented on video and edited to demonstrate results.</em></p>
+      <p><br>
+        <strong>Design Journal (25%)</strong><br>
+      Everyone will get a Tumblr for the course. The Tumblr should be used to keep reading notes, and design notes and updated at least once a week. These design journals will be graded twice during the semester. </p>
+      <p><br>
+        <strong>Final Project Proposal (10%)</strong><br>
+      The final project proposal should be a thoughtful statement of a problem, complete with a theoretical justification. It should include a detailed solution statement that proposes the details of a project. This should include a literature review of similar projects, how they worked and what you intend to do differently.</p>
+      <p><br>
+        <strong>Final Project (25%)</strong><br>
+        The final projects will be fully executed prototype projects. They will be critiqued by a panel and graded based on quality of execution and production values.</p>
+      <p><br>
+        <strong>Final Project Documentation (25%)</strong><br>
+        All final projects will be documented via videos or images and included in the overall design site produced from the class. </p>
+    </section>
+    <section>
+      <h2>Schedule      </h2>
+      <table width="779" height="1453" border="1">
+        <tr>
+          <th width="64" scope="col">date</th>
+          <th width="134" scope="col">theme</th>
+          <th width="380" scope="col">reading</th>
+          <th width="173" scope="col">lab</th>
+        </tr>
+        <tr>
+          <td>9/5</td>
+          <td>introduction</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>9/10</td>
+          <td>urban archeology</td>
+          <td>Walter Benjamin, <a href="Benjamin_Flaneur_Arcades_MRCExcerpt.pdf">&ldquo;Flaneur&rdquo;</a><br>
+Charles Baudelaire,<a href="reading/Baudeliare_PainterOfModernLife_MRCExcerpt.pdf"> &ldquo;The Painter of Modern Life&rdquo;</a><br>
+Guy Debord, <a href="http://www.bopsecrets.org/SI/2.derive.htm">&ldquo;Theory of the Derive&rdquo;</a></td>
+          <td><p>&nbsp;</p></td>
+        </tr>
+        <tr>
+          <td>9/12</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>Observations and photo documentation of how people occupy urban space. Make connections between physical space and behavior.</td>
+        </tr>
+        <tr>
+          <td>9/17</td>
+          <td>mobility and urban flows</td>
+          <td><p>John Urry, <em>Mobilities </em>(pp. 1-184)</p></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>9/19</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><p>Production on Urban Intervention project. This time can be used to create media, build assets, or work on documentation.</p></td>
+        </tr>
+        <tr>
+          <td>9/24</td>
+          <td>Internet and the public sphere</td>
+          <td><p>Habermas, Jurgen. (2006). Political communication in media sociey. Communication Theory 16 (4): 411-426.</p>
+            <p>Papacharissi, Z., (2002). The Virtual Sphere: The Internet as the Public Sphere, New Media &amp; Society, 4(1), 5-23.</p>
+          <p>Benkler, Jochai, &quot;Introduction.&quot;&nbsp;<em>The Wealth of Networks: How Social Production Transforms Markets and Freedom</em>. 2007.</p></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>9/26</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><p>Continued work on urban intervention project. </p></td>
+        </tr>
+        <tr>
+          <td>10/1</td>
+          <td>location, computing and ubiquity</td>
+          <td><p>Gordon, Eric and Adriana de Souza e Silva. (2011) &ldquo;Net Locality: Why Location Matters in a Networked World.&rdquo; (pp. 1-58; 85-154)</p></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>10/3</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><strong>Urban intervention projects due. </strong></td>
+        </tr>
+        <tr>
+          <td>10/9 (tues)</td>
+          <td>City 2.0 and Participation</td>
+          <td><p>Dourish, P, and G Bell. &ldquo;The Infrastructure of Experience and the Experience of Infrastructure: Meaning and Structure in Everyday Encounters with Space.&rdquo; Environment and Planning B: Planning and Design 34.3 (2007): 414.                       </p>
+            <p>Ratti, Carlo, and Anthony Townsend. &ldquo;Harnessing Residents' Electronic Devices Will Yield Truly Smart Cities.&rdquo; Scientific American 16 Aug. 2011.</p>
+            <p>Humphreys, L. (2005).&nbsp;<a href="http://placeofsocialmedia.com/reading/Humphreys_cellphone.pdf" title="Cellphones in Public">Cellphones in Public</a>.&nbsp;<em>New Media &amp; Society, 7</em>(6), 810-833.</p>
+          <p>Gordon, Eric, Steven Schirra, and Justin Hollander. &ldquo;Immersive Planning: a Conceptual Model for Designing Public Participation with New Technologies.&rdquo; Environment and Planning B: Planning and Design 38.3 (2011): 505–519.</p></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>10/10</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>Form groups for final projects and work on proposals.</td>
+        </tr>
+        <tr>
+          <td>10/15</td>
+          <td>youth engagement</td>
+          <td><p>boyd, danah.  (2011). &ldquo;White Flight in Networked Publics? How Race and Class Shaped American Teen Engagement with MySpace and Facebook.&rdquo; In Race After the Internet (eds.  Lisa Nakamura and Peter A. Chow-White). Routledge, pp. 203-222.<br>
+          </p>
+            <p>Weber, S, and C Mitchell. &ldquo;Imaging, Keyboarding, and Posting Identities: Young People and New Media Technologies.&rdquo; The John D. and Catherine T. MacArthur Foundation Series on Digital Media and Learning (2007): 25–47.</p>
+            <p>Stald, G. &ldquo;Mobile Identity: Youth, Identity, and Mobile Communication Media.&rdquo; The John D. and Catherine T. MacArthur Foundation Series on Digital Media and Learning (2007): 143–164. Print. </p></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>10/17</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>Guest: Rey Junco, Harvard Berkman Center</td>
+        </tr>
+        <tr>
+          <td>10/22</td>
+          <td>gamified city</td>
+          <td><p>Taylor, Madeleine, and Anne Whatley. Battlestorm Social Impact Game. Knight Foundation, 2012.                        </p>
+            <p>Gordon, Eric and Adriana de Souza e Silva (2011). <em>Net Locality: Why Location Matters in a Networked World. </em>(59-84)                        </p>
+            <p>Rogler, Kyle, (2012). <a href="http://thisbigcity.net/future-city-crowd-sourcing-gamification-city-2-0/    ">&ldquo;The Future of the City: Crowd-sourcing and Gamification for City 2.0&quot;</a>                    </p>
+            <p>Nagel, Jeremy. (2012). <a href="http://blog.jeremynagel.info/2012/03/rebuilding-social-capital-by-gamifying.html">&ldquo;Rebuilding Social Capital by Gamifying Ride Sharing.&rdquo; </a></p>
+            <p>Ruiz, Susana, Ben Stokes and Jeff Watson (2012). <a href="http://civictripod.com/">The Civic Tripod for Mobile and Games: Activism, Art and Learning. </a></p></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>10/24</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>Game design exercise and beginning game design</td>
+        </tr>
+        <tr>
+          <td>10/29</td>
+          <td>final project proposals</td>
+          <td>&nbsp;</td>
+          <td>Groups 1-2</td>
+        </tr>
+        <tr>
+          <td>10/31</td>
+          <td>final project proposals</td>
+          <td>&nbsp;</td>
+          <td>Groups 3-5</td>
+        </tr>
+        <tr>
+          <td>11/5</td>
+          <td>interactive urban screens</td>
+          <td>&nbsp;</td>
+          <td>observations on </td>
+        </tr>
+        <tr>
+          <td>11/7</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>guest: Kate Belug, Harvard GSD</td>
+        </tr>
+        <tr>
+          <td>11/12</td>
+          <td>no class</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>11/14</td>
+          <td>augmented reality</td>
+          <td>&nbsp;</td>
+          <td>guest: John (Craig) Freeman, Emerson College</td>
+        </tr>
+        <tr>
+          <td>11/19</td>
+          <td>cross-reality environments</td>
+          <td><p>Reading: D'Ignazio, Catherine. &quot;Art and Cartography.&quot; In&nbsp;<em>International Encyclopedia of Human Geography</em>. 2009<br>
+            <br>
+          Coleman, Beth. 2009. &ldquo;Using Sensor Inputs to Affect Virtual and Real Environments&rdquo;. <em>Pervasive Computing. </em></p></td>
+          <td>guest: Beth Coleman (?)</td>
+        </tr>
+        <tr>
+          <td>11/21</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>project work</td>
+        </tr>
+        <tr>
+          <td>11/26</td>
+          <td>crowdsourced urbanism</td>
+          <td><p>Cabannes, Yves. &ldquo;Participatory Budgeting: a Significant Contribution to Participatory Democracy.&rdquo; Environment and Urbanization 16.1 (2004): 27–46.</p>
+            <p>Weinberger, David. (2012). <em>Too Big To Know: Rethinking Knowledge Now That the Facts Aren&rsquo;t the Facts, Experts Are Everywhere, and the Smartest Person in the Room is the Room. </em>(pp. 1-42) </p></td>
+          <td>guest: Matt Leineger (?)</td>
+        </tr>
+        <tr>
+          <td>11/28</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>project work</td>
+        </tr>
+        <tr>
+          <td>12/3</td>
+          <td>desk crits</td>
+          <td>&nbsp;</td>
+          <td>groups 1-3</td>
+        </tr>
+        <tr>
+          <td>12/5</td>
+          <td>desk crits</td>
+          <td>&nbsp;</td>
+          <td>groups 4-5</td>
+        </tr>
+        <tr>
+          <td>12/10</td>
+          <td>final presentations</td>
+          <td>TBD</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>12/17 @2pm</td>
+          <td>design books due</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+</section>
+    <!-- end .content --></article>
+  <footer>
+    <blockquote>
+      <p><img src="../../../_Engagement Game Lab/Images/EGL logos/EGL.png" width="300" height="74"> Engagement Game Lab • 2 Boylston Street. Boston, MA 02116    </p>
+    </blockquote>
+  </footer>
+<!-- end .container --></div>
+</body>
+</html>

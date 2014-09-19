@@ -10,6 +10,7 @@ type='text/css'> -->
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <link href='/css/custom-boostrap.css' rel='stylesheet'>
 <link href='/css/responsive-nav.css' rel='stylesheet'>
+<link href='/css/email-signup.css' rel='stylesheet'>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

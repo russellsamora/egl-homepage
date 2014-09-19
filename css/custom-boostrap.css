@@ -6460,6 +6460,11 @@ input[type="submit"].btn.btn-mini {
   text-align: center;
   *zoom: 1;
 }
+.center1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 370px;
+}
 .pager:before,
 .pager:after {
   display: table;
@@ -8835,6 +8840,11 @@ a.badge:focus {
   .thumbnails > li {
     float: none;
     margin-left: 0;
+
+
+
+
+
   }
   [class*="span"],
   .uneditable-input[class*="span"],
@@ -9518,11 +9528,11 @@ a.badge:focus {
 #initiatives .bigButton .specialText {
   color: #ffffff;
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 2.5em;
   line-height: 1.2;
   padding: 10px;
   padding-top: 20px;
-  text-align: right;
+  text-align: left;
 }
 #initiatives .bigButton:hover {
   background: #d43200;
@@ -9707,11 +9717,36 @@ a.badge:focus {
 .guidebookBox .bookDescription {
   padding: 10px;
 }
-#darg h1 {
+#workshop h1 {
   text-align: center;
   color: #ff5622;
   font-weight: 800;
 }
+
+#articles h1 {
+  text-align: center;
+  color: #ff5622;
+  font-weight: 800;
+}
+
+#resources h1 {
+  text-align: center;
+  color: #ff5622;
+  font-weight: 800;
+}
+
+#guidebooks h1 {
+  text-align: center;
+  color: #ff5622;
+  font-weight: 800;
+}
+
+#books h1 {
+  text-align: center;
+  color: #ff5622;
+  font-weight: 800;
+}
+
 h1,
 h2,
 h3 {
@@ -9799,6 +9834,14 @@ a:hover {
   width: 20%;
   min-width: 96px;
 }
+.inlineImageRightMedium {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: right;
+  margin-left: 20px;
+  width: 40%;
+  min-width: 96px;
+}
 .projectPage .realProblem {
   margin-bottom: 40px;
 }
@@ -9847,6 +9890,11 @@ a:hover {
   background: #d7f0f1 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANklEQVQYV2NkIBIwEqmOgXyFWy6cTgPZ4mNgOgvZNhQTYYpgCpAVk6cQZBJRVuMLAfJ9jctUAN0NEAtnt4P2AAAAAElFTkSuQmCC);
   color: #339096;
 }
+.curvycurve{
+border-radius: 100%;
+
+
+}
 .whatIsIt .projectDescription {
   margin-top: 40px;
 }
@@ -9871,6 +9919,25 @@ a:hover {
   width: 66%;
   margin: 40px auto;
 }
+#jobs {
+  margin-bottom: 60px;
+  color: #555555;
+}
+#jobs h1 {
+  color: #ff5622;
+  font-weight: 800;
+}
+#jobs h4 {
+  font-size: 1.4em;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+#jobs span {
+  font-weight: 800;
+}
+#jobs ul li {
+  font-size: 1.2em;
+}
 @media (min-width: 768px) {
   ul.nav li.dropdown:hover ul.dropdown-menu {
     display: block;
@@ -9880,7 +9947,7 @@ a:hover {
     border-bottom: 1px solid #999999;
   }
 }
-@media (max-width: 1180px) {
+@media (max-width: 1330px) {
   .tagline {
     display: none;
   }

@@ -31,23 +31,19 @@
 			//people
 			for(var j = 0; j < people.peopleKeys.length; j++) {
 				var person = people.peopleData[people.peopleKeys[j]];
-				if ((minX + input.w >= person.x) && (minX <= person.x + person.w) && (minY + input.h >= person.y) && (minY <= person.y + person.h)) {
-					person.flipped = false;
-					person.kind = 'person';
-					_hitList.push(person);
-					//check to see which side the player is on (above or below)
-					if(playerBottom < person.bottom) {
-						person.selector.addClass('fgPerson');
-						person.side = -1;
-					} else {
-						person.selector.removeClass('fgPerson');
-						person.side = 1;
-					}
+				if(playerBottom < person.bottom) {
+					person.selector.addClass('fgPerson');
+					person.side = -1;
+				} else {
+					person.selector.removeClass('fgPerson');
+					person.side = 1;
 				}
 			}
 		},
 
+		// TODO I don't think this function is used anymore (jay)
 		hitTest: function() {
+			console.log('hit person');
 			//only test if moving...
 			if($game.player.inTransit) {
 				//must pull the current position (yuck)
@@ -277,6 +273,16 @@
 			person.setAttribute('class', 'person');
 			person.setAttribute('data-key', key);
 			var divWidth;
+			
+			//add the person to the grid for pathfinding (jay)
+			if (info.occx && info.occy) {
+				for (var i = 0; i < info.occx.length; i ++) {
+					for (var j = 0; j < info.occy.length; j ++) {
+						GRID.setWalkableAt(info.occx[i], info.occy[j], false);
+					}
+				}
+			} 
+
 			//set size, based on if it is animated or not
 			if(info.frames) {
 				//if animted, add it to animation list
@@ -329,6 +335,8 @@
 			'stephen': {
 				x: 300,
 				y: 500,
+				occx: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
+				occy: [21, 22, 23, 24, 25, 26],
 				frames: 8,
 				animation: [4,5,6,7,0,1,2,3,6,7,5,6,5,0,1,4,5,6,7,6,5,4,0,1,2,1,0,6,5,7,4,6,5,4],
 				fullName: 'Stephen Walter',
@@ -356,9 +364,12 @@
 			'eric': {
 				x: 250,
 				y: 80,
+				occx: [8, 9, 10, 11, 12, 13, 14],
+				occy: [8],
 				frames: 5,
 				animation: [0,1,2,3,4],
 				paused: false,
+				wait: 0,
 				sleep: function() {
 					this.paused = true;
 					var timeout = Math.floor(Math.random() * 10000 + 4000);
@@ -371,7 +382,7 @@
 				about: 'Eric studies civic media, mediated cities and playful engagement.  He is a fellow at the Berkman Center for Internet and Society at Harvard University and he is an associate professor in the department of Visual and Media Arts at Emerson College.',
 				game: {
 					past: 'Bored? You could always talk to Rob and learn some more facts. Or see what\'s on the TV.',
-					task: 'You\'ve found me, the fearless leader of the Lab.  Ready to rock and roll? So am I, but first, put on some tunes, and then come back to me and I\'ll help you',
+					task: 'You\'ve found me, the fearless leader of the Lab.  Ready to rock and roll? So am I, but first, put on some tunes, and then come back to me and I\'ll help you.',
 					present: 'Awesome song! You are now ready.',
 					future: 'Later...',
 					reward: {
@@ -391,9 +402,12 @@
 			'christina': {
 				x: 1620,
 				y: 70,
+				occx: [63, 64, 65, 66, 67, 68, 69],
+				occy: [4, 5, 6, 7, 8],
 				frames: 4,
 				animation: [0,1,2,3,1,1,2,3,1,2,3,1,2,3,1,2,2,3,2,1,2],
 				paused: false,
+				wait: 0,
 				sleep: function() {
 					this.paused = true;
 					var timeout = Math.floor(Math.random() * 3000 + 2000);
@@ -410,7 +424,7 @@
 					past: 'Check out Community PlanIt on our projects page.',
 					task: 'Oh! Nice to meet you. I think you\'re ready for the next step in developing your game... but first we lost the remote. Could you turn on the Panda Cam? Then we\'ll talk.',
 					present: 'Pandas, yay!',
-					future: 'Dear Sir or madam... no, that\'s not right at all. Hmmm...',
+					future: 'Dear Sir or Madam... no, that\'s not right at all. Hmmm...',
 					reward: {
 						text: 'Very good! I award you six arbitrary badges.',
 						count: {shield: 6}
@@ -428,6 +442,8 @@
 			'russell': {
 				x: 1900,
 				y: 450,
+				occx: [74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86],
+				occy: [20, 21, 22, 23, 24],
 				frames: 3,
 				animation: [0,0,1,2,1,1,2,0,0,2,1,2,1,2],
 				fullName: 'Russell Goldenberg',
@@ -436,7 +452,7 @@
 				game: {
 					past: 'Your game\'s coming along great. You\'re almost done!',
 					task: 'Hey, robo-dude. I think you\'re ready to start building your game, but I\'m too busy to help you. I set up a work station for you over there. Do some coding for me, and I\'ll help you.',
-					present: 'Sweet. Let\'s get crackin.',
+					present: 'Sweet. Let\'s get crackin\'.',
 					future: 'Can\'t talk. Coding.',
 					reward: {
 						text: 'That sounds good to me! Here\'s some stuff!',
@@ -444,7 +460,7 @@
 					},
 					clue: 'Next, you need to take your idea and play around with it a little. Who could help you do that?',
 					chatClue: 'What are you waiting for? It\'s your move.',
-					information: '<p>When we design games, we think about how people will actually play them, and what the best medium might be to reach the audience we\'ve invisioned for the game. Many of our games are web-based, like <a href="/projects/civic-seed/" target="_blank">Civic Seed</a>, so players can colaborate online in a shared virtual environment. Others, like the first phase of <a href="/projects/upriver/" target="_blank">UpRiver</a>, are low-tech, played with physical pieces, so people can play them even without electricity.</p>',
+					information: '<p>When we design games, we think about how people will actually play them, and what the best medium might be to reach the audience we\'ve envisioned for the game. Many of our games are web-based, like <a href="/projects/civic-seed/" target="_blank">Civic Seed</a>, so players can collaborate online in a shared virtual environment. Others, like the first phase of <a href="/projects/upriver/" target="_blank">UpRiver</a>, are low-tech, played with physical pieces, so people can play them even without electricity.</p>',
 					question: 'What medium will your game be created in? Pick one:',
 					answers: ['a web game built in HTML5', 'a mobile app for smart phones', 'a physical game played live in a real space', 'an SMS (text messaging) game', 'a social media game played through existing platforms', 'an alternate reality game'],
 					lead: ['The issue is '],
@@ -456,8 +472,10 @@
 			'sam': {
 				x: 2260,
 				y: 120,
+				occx: [88, 89, 90, 91, 92, 93, 94, 95, 96],
+				occy: [4, 5, 6, 7, 8, 9],
 				frames: 8,
-				animation: [0,1,2,3,4,5,6,7],
+				animation: [0,1,2,3,4,5,6,7,7,7,7,6,5,4,3,2,1,0],
 				paused: false,
 				sleep: function() {
 					this.paused = true;
@@ -466,6 +484,7 @@
 						self.paused = false;
 					}, timeout, this);
 				},
+				wait: 0,
 				fullName: 'Sam Liberty',
 				jobTitle: 'Game Writer',
 				about: 'Sam is lead writer for EGL\'s projects, including Community PlanIt and Civic Seed, and one half of the Spoiled Flush Games design studio. ',
@@ -473,14 +492,14 @@
 					past: 'I\'ve redesigned this game. Now it\'s gin rummy, but with flame-throwers.',
 					task: 'Cool. You\'re in the right place, but before we get started, I want you to gain some knowledge. Learn a random fact from someone who seems to be holding a lot of it.',
 					present: 'Genius! It looks like you\'ve got a solid framwork around your game. You know who will play it, and what real-world action you\'re trying to enable, and you also know what format the game will be created in. Now it\'s time to figure out the narrative of your game.',
-					future: 'This game combines Sorry, Monopoly, Candy Land, and Trivial Persuit. It is the worst game ever. Come back later.',
+					future: 'This game combines Sorry, Monopoly, Candy Land, and Trivial Pursuit. It is the worst game ever. Come back later.',
 					reward: {
 						text: 'Awesome! You earned the Write Stuff award! Also, take a dongle, \'cause I like your face.',
 						count: {dongle: 1, award: 1}
 					},
 					clue: 'For your next task, you must find... your creator.',
 					chatClue: 'Haven\'t found your creator yet? Maybe this game\'s not drawing you in.',
-					information: '<p>Narrative can be a powerful driver for player engagement. In <a href="/projects/civic-seed" target="_blank">Civic Seed</a>, we created a fantasy world where players control avatars and interact with strange people and places. Compare that to <a href="/projects/community-planit" target="_blank">Community PlanIt</a>, where players play as themeselves, and move through challenges by answering questions about real-world issues. What approach you use is a big part of your design, but largely a matter tone.</p>',
+					information: '<p>Narrative can be a powerful driver for player engagement. In <a href="/projects/civic-seed" target="_blank">Civic Seed</a>, we created a fantasy world where players control avatars and interact with strange people and places. Compare that to <a href="/projects/community-planit" target="_blank">Community PlanIt</a>, where players play as themeselves, and move through challenges by answering questions about real-world issues. What approach you use is a big part of your design, but largely a matter of tone.</p>',
 					question: 'What will the narrative of your game be?',
 					lead: ['In my engagement game, players play as','trying to','by'],
 					questionType: 'multiple',
@@ -491,9 +510,12 @@
 			'aidan': {
 				x: 850,
 				y: 200,
+				occx: [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
+				occy: [8, 9, 10, 11, 12, 13],
 				frames: 7,
 				animation: [0,1,2,3,4,5,6],
 				paused: false,
+				wait: 0,
 				sleep: function() {
 					this.paused = true;
 					var timeout = Math.floor(Math.random() * 3000 + 2000);
@@ -506,7 +528,7 @@
 				about: 'Aidan graduated from the Rhode Island School of Design with a degree in painting, and has also studied design and architecture.',
 				game: {
 					past: 'I\'m drawing... can you come back a little later?',
-					task: 'Hey! Let\'s get to work on the look of your game... first thing\'s first, go draw me something nice on the whiteboard, then come back.',
+					task: 'Hey! Let\'s get to work on the look of your game... first things first, go draw me something nice on the whiteboard, then come back.',
 					present: 'I like it. It\'s very... distinctive. Now let\'s play with your look.',
 					future: 'I\'m drawing... can you come back a little later?',
 					reward: {
@@ -519,7 +541,7 @@
 					question: 'How will your game look? Choose one.',
 					lead: ['none'],
 					questionType: 'choice',
-					answers: ['3D interactive environment', '2D environment', 'Stylized text with a few drawings', 'A clean utilitarian interface', 'No visuals some games don\'t require them!)'],
+					answers: ['3D interactive environment', '2D environment', 'Stylized text with a few drawings', 'A clean utilitarian interface', 'No visuals. Some games don\'t require them!'],
 					hiddenValues: ['3D','2D','textually-driven','sleek and spare','omit'],
 					maxLength: 40,
 					over: 'Make more drawings! Can you guess which ones are mine?'
@@ -528,9 +550,12 @@
 			'jedd': {
 				x: 1600,
 				y: 450,
+				occx: [63, 64, 65, 66, 67],
+				occy: [24, 25, 26],
 				frames: 4,
 				animation: [2,0,1,2,2,2,0,0,1,1,1,0,0,1,2,1,3,3,3,0,0,1,0,0,1,2,1,1,0,0,0,1,2],
 				paused: false,
+				wait: 0,
 				sleep: function() {
 					this.paused = true;
 					var timeout = Math.floor(Math.random() * 4000 + 2000);
@@ -552,7 +577,7 @@
 					},
 					clue: 'There\'s just one more person left to talk to. Can you find her?',
 					chatClue: 'There\'s just one more person left to talk to. Can you find her?',
-					information: '<p>Our engagement games and playful projects are developed in cooperation with community partners. By working with organizations who have a need and are experts on their communities, we can create games that come from a place of trust and knowledge. DARG is one explores we\'ve created that illuminates these relationships. The <a href="resources" target="_blank">DARG Guide Book</a> can tell you more about partnering with organizations in your community.</p>',
+					information: '<p>Our engagement games and playful projects are developed in cooperation with community partners. By working with organizations who have a need and are experts on their communities, we can create games that come from a place of trust and knowledge. DARG is one we\'ve created that illuminates these relationships. The <a href="resources" target="_blank">DARG Guide Book</a> can tell you more about partnering with organizations in your community.</p>',
 					question: 'Who will you partner with to make your game a success?',
 					lead: ['I\'ll partner with'],
 					questionType: 'open',
@@ -563,9 +588,12 @@
 			'jesse': {
 				x: 1000,
 				y: 650,
+				occx: [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+				occy: [28, 29, 30, 31, 32],
 				frames: 5,
 				animation: [0,1,2,1,2,0,4,0,2,0,1,2,4,3,4,2,2,1,0],
 				paused: false,
+				wait: 0,
 				sleep: function() {
 					this.paused = true;
 					var timeout = Math.floor(Math.random() * 1000 + 1900);
@@ -574,7 +602,7 @@
 					}, timeout, this);
 				},
 				fullName: 'Jesse Baldwin-Philippi',
-				jobTitle: 'Rsearcher & Visiting Professor',
+				jobTitle: 'Researcher & Visiting Professor',
 				about: 'Jesse is a visiting faculty member in Emerson\'s Department of Visual and Media Arts, and studies civic engagement, citizenship, and digital media.',
 				game: {
 					past: 'na',
@@ -633,17 +661,29 @@
 	}
 
 	function _animatePerson(person) {
-		//console.log(person.paused, person.curFrame, person.animation.length);
 		if(!person.paused && person.onScreen) {
-			person.curFrame++;
-			if(person.curFrame >= person.animation.length) {
-				person.curFrame = 0;
-				if(person.sleep) {
-					person.sleep();
+			//doing it this way because settimeout isn't working in the sleep function
+			if (person.wait !== undefined) {
+				if (person.wait > 0) {
+					person.wait --;
+				} else {
+					if(person.curFrame < person.animation.length) {
+						person.curFrame ++;
+					} else {
+						person.curFrame = 0;
+						person.wait = Math.round(Math.random() * 50) + 25;
+					}
+				}
+			} else {
+				person.curFrame++;
+				if(person.curFrame >= person.animation.length) {
+					person.curFrame = 0;
+					if(person.sleep) {
+						person.sleep();
+					}
 				}
 			}
 			var position = - person.animation[person.curFrame] * person.w + 'px 0';
-			// console.log(position);
 			person.selector.css('background-position', position);
 		}
 	}

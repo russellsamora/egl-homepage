@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gala</title>
+        <style>
+            html,body {
+                margin: 0;
+                padding: 0;
+            }
+            img {
+                margin: 1.5%;
+                width: 30%;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+     <script src='../js/jquery-2.0.3.min.js'></script>
+     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script>
+        (function() {
+            var ready = false;
+
+            var dataRef = new Firebase("https://gala.firebaseio.com"),
+                listRef = dataRef.child('pictures');
+            
+            listRef.on('child_added', function(snapshot) {
+                var data = snapshot.val();
+                for(var p in data) {
+                    var file = data[p].file;
+                    getPicture(file);
+                }
+            });
+
+            function getPicture(file) {
+                var img = new Image();
+                img.onload = function() {
+                    $('body').append(img);
+                };
+                img.src = '../img/' + file;
+            }
+        })();
+    </script>
+</html>
